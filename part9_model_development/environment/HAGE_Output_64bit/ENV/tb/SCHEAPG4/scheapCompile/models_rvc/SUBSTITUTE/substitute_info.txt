@@ -1,0 +1,52 @@
+%MODULE substitute
+    #              name     offset_size  
+    %%REG_INSTANCE reg_def  15           
+
+%REG_CHANNEL   reg_def
+     %%TITLE    name        reg_name     size    length   offset   factor_start   factor_end    factor_index    factor_step  init        access  support  callback
+     %%REG      CTRL         CTRL         32      32       0x7FF0      -             -               -              -          0          W|R      TRUE      -   
+     %%REG      PARAM1       PARAM1       32      32       0x7FF4      -             -               -              -          0          W|R      TRUE      - 
+     %%REG      PARAM2       PARAM2       16      16       0x7FF8      -             -               -              -          0          W|R      TRUE      -
+     %%REG      JUDGE        JUDGE        16      16       0x7FFC      -             -               -              -          0          W|R      TRUE      W    
+     %%REG      END          END          16      16       0x7FFF      -             -               -              -          0          W|R      TRUE      W    
+
+
+%REG_NAME      CTRL 
+   %%TITLE     name       upper   lower     init    access      support     callback    
+   %%BIT       CTRL0       0        0        0        W|R        TRUE           W
+   %%BIT       CTRL1        1       1        0        W|R        TRUE           -
+   %%BIT       CTRL2        2       2        0        W|R        TRUE           -
+   %%BIT       CTRL3        3       3        0        W|R        TRUE           -
+   %%BIT       CTRL4        4       4        0        W|R        TRUE           -
+   %%BIT       CTRL5        5       5        0        W|R        TRUE           -
+   %%BIT       CTRL6        6       6        0        W|R        TRUE           -
+   %%BIT       CTRL7        7       7        0        W|R        TRUE           -
+   %%BIT       CTRL8        8       8        0        W|R        TRUE           -
+   %%BIT       CTRL9        9       9        0        W|R        TRUE           -
+   %%BIT       CTRL10       10      10       0        W|R        TRUE           -
+   %%BIT       CTRL11       11      11       0        W|R        TRUE           -
+   %%BIT       CTRL12       12      12       0        W|R        TRUE           -
+   %%BIT       CTRL13       13      13       0        W|R        TRUE           -
+   %%BIT       CTRL14       14      14       0        W|R        TRUE           -
+   %%BIT       CTRL15       15      15       0        W|R        TRUE           -
+   %%BIT       CTRL16       16      16       0        W|R        TRUE           -
+   %%BIT       CTRL17       17      17       0        W|R        TRUE           -
+   %%BIT       CTRL18       18      18       0        W|R        TRUE           -
+   %%BIT       CTRL19       19      19       0        W|R        TRUE           -
+   %%BIT       CTRL20       20      20       0        W|R        TRUE           -
+   %%BIT       CTRL21       21      21       0        W|R        TRUE           -
+   %%BIT       CTRL22       22      22       0        W|R        TRUE           -
+   %%BIT       CTRL23       23      23       0        W|R        TRUE           -
+   %%BIT       CTRL24       24      24       0        W|R        TRUE           -
+   %%BIT       CTRL25       25      25       0        W|R        TRUE           -
+   %%BIT       CTRL26       26      26       0        W|R        TRUE           -
+   %%BIT       CTRL27       27      27       0        W|R        TRUE           -
+   %%BIT       CTRL28       28      28       0        W|R        TRUE           -
+   %%BIT       CTRL29       29      29       0        W|R        TRUE           -
+   %%BIT       CTRL30       30      30       0        W|R        TRUE           -
+   %%BIT       CTRL31       31      31       0        W|R        TRUE           -
+
+ 
+%CMD_BASEID  tgt reg
+%CMD_NODUMP_API CommandCB AssertReset DumpProfile ClearProfile
+

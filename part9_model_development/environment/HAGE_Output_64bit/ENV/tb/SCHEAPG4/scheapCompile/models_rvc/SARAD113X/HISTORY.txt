@@ -1,0 +1,28 @@
+=============================================
+=               RELEASE HISTORY             =
+=============================================
+
+v2015_08_14
+  - Support register rw
+v2015_08_19
+  - Add Python I/F
+  - Change module name to sarad113x
+v2015_08_30
+  - Functional debug for Linux
+v2015_09_01
+  - Functional debug for Windows
+v2015_09_03
+  - Fix bug of reset
+v2015_09_07
+  - Correct bit name "DRj" of DIR register in Register IF
+v2015_09_11
+  - Add test item for negative voltage input
+v2015_10_28
+  - Add public API GetWrittenData() to get written value of TLM transaction for wrapper
+  - Fix ADOP_OPAn_PSEL (n=1~3) to 0 in F1K
+v2016_10_25
+- Fix time resolution bug
+  - Symptom: the operation is not correct when using a time resolution that is not nano second (SC_NS).
+  - Cause: current code use "sc_time_stamp().to_double()", its result is based on time resolution.
+  - How to fix: add GetCurTime() function, to change other time resolution to nano second (SC_NS)
+  - How to check: add new test patterns tp06_01_001, tp06_02_001, tp06_03_001 (based on tp03_04_01_01).

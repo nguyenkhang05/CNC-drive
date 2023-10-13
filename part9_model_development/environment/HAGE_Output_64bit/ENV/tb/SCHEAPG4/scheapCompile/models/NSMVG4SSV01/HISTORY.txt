@@ -1,0 +1,32 @@
+NSMVG4SSV01 HISTORY
+
+--------------------------------------------------------
+<2018.12.4>
+
+SVN version
+  Rev.169
+
+File
+  NSMVG4SSV01.cpp,h 
+    - integrated INTC2G_U2
+
+--------------------------------------------------------
+<2018.2.22>
+
+SVN version
+  Rev.30
+
+File
+  NSMVG4SSV01.cpp,h 
+    - added the connection CPU guest mode info of INTC2
+    - deleted GAPB_PFSS0, GAPB_PFSS1, APG_PFSS0 and APG_PFSS1
+
+--------------------------------------------------------
+<2017.8.28>
+
+SVN version
+  Rev.124
+
+File
+  NSMVG4SSV01.cpp,h 
+    - integrated TPTM, INTC2G and BootControlSignal

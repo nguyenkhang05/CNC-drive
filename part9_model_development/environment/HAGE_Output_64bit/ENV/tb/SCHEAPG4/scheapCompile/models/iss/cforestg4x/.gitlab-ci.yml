@@ -1,0 +1,185 @@
+image: cpusys.mu.renesas.com:5500/cforest/cforestg4x
+
+stages:
+  - get_repo
+  - cmake
+  - build
+  - unit_testing
+  - integrated_testing
+  - cleanup
+
+variables:
+  BUILD_TYPE: "Release"
+  BUILD_TEST: "ON"
+  GIT_SSL_NO_VERIFY: "true"
+  GIT_STRATEGY: "none"
+  GIT_DEPTH: "1000"                  # - git fetch --depth=10000 # git fetch --unshallow
+  # GIT_SUBMODULE_STRATEGY: "recursive" # - git submodule update --init Device/Core/INST/test/data
+
+# cache:
+#   key: "$CI_COMMIT_SHA"
+#   untracked: true
+
+before_script:
+  - export TOP=${HOME}/builds/pipleline; mkdir -p ${TOP}
+  - export PIPELINE=${TOP}/${CI_PIPELINE_ID}; mkdir -p ${PIPELINE}
+  - export BUILD=${PIPELINE}/build
+  - export SRC=${PIPELINE}/${CI_PROJECT_NAME}
+  - export GCC=`which gcc-4.9 2> /dev/null; if [ $? -ne 0 ];then which gcc;fi`
+  - export GPP=`which g++-4.9 2> /dev/null; if [ $? -ne 0 ];then which g++;fi`
+  - export CMAKE=`which cmake 2> /dev/null; if [ $? -ne 0 ];then which cmake3;fi`
+  - export CTEST=`which ctest 2> /dev/null; if [ $? -ne 0 ];then which ctest3;fi`
+  - export BS=`[ "${LSF_PROJECT}" ] && echo "bs -os RHEL6 -M 80000"`
+  # - export
+
+get_cforest:
+  stage: get_repo
+  script:
+    - ${BS} git clone --no-checkout ${CI_PROJECT_URL} ${SRC} --depth ${GIT_DEPTH} --branch ${CI_BUILD_REF_NAME}
+    - cd ${SRC}
+    - ${BS} git checkout -f -q ${CI_BUILD_REF}
+    - ${BS} git submodule sync --recursive
+    - ${BS} git submodule update --init --recursive
+  # variables:
+  #   CI_DEBUG_TRACE: "true"
+
+cmake_job:
+  stage: cmake
+  script:
+    - rm -rf ${BUILD}
+    - mkdir -p ${BUILD}
+    - cd ${BUILD}
+    - ${BS} ${CMAKE} ${SRC} -G 'Unix Makefiles' -DTARGET=CFORESTG4X -DCMAKE_C_COMPILER=${GCC} -DCMAKE_CXX_COMPILER=${GPP} -DPYTHON_EXECUTABLE=$(which python2.7) -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DBUILD_TEST=${BUILD_TEST}
+
+build_job:
+  stage: build
+  script:
+    - cd ${BUILD}
+    - ${BS} make -j24
+
+.prepare_fpu_test:
+  script: &prepare_fpu_test
+    - cd ${BUILD}
+    - RES=`${CTEST} -N | grep -e "Total Tests:" | grep -o "[0-9]*"`
+    - if [ $RES -eq 0 ];then exit 1;fi
+    - if [ ! -e ${SRC}/Device/Core/INST/test/data/UT_RTG_fmaf_min_1M_0-a.csv ]; then exit 1; fi
+    - ${BS} ${CTEST} -j4 -L FULL_FPU_${CATEGORY} --schedule-random --output-on-failure
+  only: &restriction
+    - develop
+    - feature/test-ci
+    - /^release.*$/
+    - /^hotfix.*$/
+    - /^bugfix.*$/
+    - /^support.*$/
+    - tags
+
+unittest_full_fpu_0:
+  stage: unit_testing
+  script:
+    *prepare_fpu_test
+  only:
+    *restriction
+  variables:
+    CATEGORY: 0
+
+unittest_full_fpu_1:
+  stage: unit_testing
+  script:
+    *prepare_fpu_test
+  only:
+    *restriction
+  variables:
+    CATEGORY: 1
+
+unittest_full_fpu_2:
+  stage: unit_testing
+  script:
+    *prepare_fpu_test
+  only:
+    *restriction
+  variables:
+    CATEGORY: 2
+
+unittest_full_fpu_3:
+  stage: unit_testing
+  script:
+    *prepare_fpu_test
+  only:
+    *restriction
+  variables:
+    CATEGORY: 3
+
+unittest_full_fpu_4:
+  stage: unit_testing
+  script:
+    *prepare_fpu_test
+  only:
+    *restriction
+  variables:
+    CATEGORY: 4
+
+unittest_full_fpu_5:
+  stage: unit_testing
+  script:
+    *prepare_fpu_test
+  only:
+    *restriction
+  variables:
+    CATEGORY: 5
+
+unittest_full_fpu_6:
+  stage: unit_testing
+  script:
+    *prepare_fpu_test
+  only:
+    *restriction
+  variables:
+    CATEGORY: 6
+
+unittest_full_fpu_7:
+  stage: unit_testing
+  script:
+    *prepare_fpu_test
+  only:
+    *restriction
+  variables:
+    CATEGORY: 7
+
+unittest_full_fpu_8:
+  stage: unit_testing
+  script:
+    *prepare_fpu_test
+  only:
+    *restriction
+  variables:
+    CATEGORY: 8
+
+unittest:
+  stage: unit_testing
+  script:
+    - cd ${BUILD}
+    - RES=`${CTEST} -N | grep -e "Total Tests:" | grep -o "[0-9]*"`
+    - if [ $RES -eq 0 ];then exit 1;fi
+    - ${BS} ${CTEST} -j24 -LE FULL --output-on-failure
+
+runtest:
+  stage: integrated_testing
+  script:
+    - cd ${SRC}/Device/API/CFORESTG4X/test
+    - cp -f test.py test.hex ${BUILD}
+    - cd ${BUILD}
+    - if [ ! -f ${BUILD}/Device/API/CFORESTG4X/src/cforestg4x ];then exit 1;fi
+    - ${BS} ${BUILD}/Device/API/CFORESTG4X/src/cforestg4x --scr test.py --use-stopio --max 42164571
+
+cleanup_job:
+  stage: cleanup
+  script:
+    - echo "cleanup after jobs"
+    - rm -rf ${PIPELINE}
+  only:
+    - branches
+    - tags
+    - schedules
+  except:
+    - test-ci
+  when: always

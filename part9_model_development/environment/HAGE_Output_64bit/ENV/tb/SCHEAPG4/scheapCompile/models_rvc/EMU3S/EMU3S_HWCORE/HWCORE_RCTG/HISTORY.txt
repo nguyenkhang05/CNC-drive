@@ -1,0 +1,55 @@
+// Description: History file
+// Ref: {HWCORE_RCTG_UD_ATT1_003}
+***************************************************************************************************
+- Release info: Offical release.
+- Release date: Nov 13, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  HWCORE_RCTG.cpp               1.7
+  HWCORE_RCTG_Func.cpp          1.6
+  hwcore_rctg_regif.cpp         1.4
+  hwcore_rctg_regif.h           1.4
+  
+- Update points:
+   + Update Operation of PRESETn port : Only reset regiser and update register-reflected output ports (ticket #130625)
+
+***************************************************************************************************
+- Release info: Final release source code.
+- Release date: September 01, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  HWCORE_RCTG.cpp               1.4
+  HWCORE_RCTG_Func.cpp          1.5
+
+- Update points:
+    + HWCORE_RCTG_Func.cpp: add reqtify for address mask (Redmine #128230)and register base address (Redmine #128452)
+    + HWCORE_RCTG.cpp: add initialize for some member variables
+
+***************************************************************************************************
+- Release info: Release alpha source code.
+- Release date: Aug 24, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  HWCORE_RCTG.cpp               1.3
+  HWCORE_RCTG.h                 1.3
+  HWCORE_RCTG_AgentController.h 1.2
+  HWCORE_RCTG_Func.cpp          1.3
+  HWCORE_RCTG_Func.h            1.3
+  HWCORE_RCTG_cmdif.h           1.3
+  PY_HWCORE_RCTG.cpp            1.2
+  PY_HWCORE_RCTG.h              1.2
+  hwcore_rctg_regif.h           1.2
+  hwcore_rctg_regif.cpp         1.3
+
+- Supported features:
+  + Calculate the output level of U/V/W waveforms and the angle value for use in comparison
+     // Ref: {HWCORE_RCTG_UD_Feature_001}
+  + Generate end trigger
+     // Ref: {HWCORE_RCTG_UD_Feature_002}
+
+- Non-supported features and limitation:
+  + None.
+   // Ref: {HWCORE_RCTG_UD_Limitation_001}

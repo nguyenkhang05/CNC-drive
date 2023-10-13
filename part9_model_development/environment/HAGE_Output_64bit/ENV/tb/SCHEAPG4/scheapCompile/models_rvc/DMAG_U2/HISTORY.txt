@@ -1,0 +1,188 @@
+***************************************************************************************************
+DMAG_U2_Output_64bit_20200220.7z
+-----------------------------
+- Release info: Update to adapt HWM spec Rev.061
+- Release date: Feb 20, 2020
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+    DMAG_U2.h                      (v1.4)
+    DMAG_U2_AgentController.h      (v1.4)
+    DMAG_U2_cmdif.h                (v1.3)
+    DMAG_U2_Common_Guard.h         (v1.4)
+    DMAG_U2_Func.h                 (v1.4)
+    dmag_u2_regif.h                (v1.4)
+    PY_DMAG_U2.h                   (v1.3)
+    DMAG_U2.cpp                    (v1.7)
+    DMAG_U2_Common_Guard.cpp       (v1.9)
+    DMAG_U2_Func.cpp               (v1.4)
+    dmag_u2_regif.cpp              (v1.5)
+    PY_DMAG_U2.cpp                 (v1.4)
+
+- Supported features: not change
+
+***************************************************************************************************
+DMAG_U2_Output_64bit_20190517.7z
+-----------------------------
+- Release info: Remove 2bytes characters as feedback from ticket #99928
+- Release date: May 17, 2019
+- Test environment: SC-HEAP G4 Rev135 64 bit
+- Source code (CVS repository):
+    DMAG_U2.h                      (v1.3)
+    DMAG_U2_AgentController.h      (v1.3)
+    DMAG_U2_cmdif.h                (v1.2)
+    DMAG_U2_Common_Guard.h         (v1.3)
+    DMAG_U2_Func.h                 (v1.3)
+    dmag_u2_regif.h                (v1.3)
+    PY_DMAG_U2.h                   (v1.2)
+    DMAG_U2.cpp                    (v1.6)
+    DMAG_U2_Common_Guard.cpp       (v1.8)
+    DMAG_U2_Func.cpp               (v1.3)
+    dmag_u2_regif.cpp              (v1.4)
+    PY_DMAG_U2.cpp                 (v1.3)
+
+- Supported features: not change
+
+***************************************************************************************************
+DMAG_U2_Output_64bit_20190110.7z
+-----------------------------
+- Release info: Release updated expected log and Simulation result
+- Release date: Jan 10, 2019
+- Test environment: SC-HEAP G4 Rev135 64 bit
+- Source code (CVS repository): not change
+- Supported features: not change
+
+***************************************************************************************************
+DMAG_U2_Output_64bit_20190104.7z
+-----------------------------
+- Release info: Relase for final release
+- Release date: Jan 04, 2019
+- Test environment: SC-HEAP G4 Rev135 64 bit
+- Source code (CVS repository):
+    DMAG_U2.cpp               (v1.5)
+    DMAG_U2.h                 (v1.3)
+    DMAG_U2_AgentController.h (v1.3)
+    DMAG_U2_Common_Guard.cpp  (v1.7)
+    DMAG_U2_Common_Guard.h    (v1.3)
+    DMAG_U2_Func.cpp          (v1.3)
+    DMAG_U2_Func.h            (v1.3)
+    DMAG_U2_cmdif.h           (v1.2)
+    PY_DMAG_U2.cpp            (v1.3)
+    PY_DMAG_U2.h              (v1.2)
+    dmag_u2_regif.cpp         (v1.3)
+    dmag_u2_regif.h           (v1.3)
+
+- Supported features: not change
+
+***************************************************************************************************
+src_DMAG_U2_20181225.7z
+-----------------------------
+- Release info: Relase soon for releasing to ASTC
+- Release date: Dec 25, 2018
+- Test environment: SC-HEAP G4 Rev135 64 bit
+- Source code (CVS repository):
+    DMAG_U2.cpp               (v1.5)
+    DMAG_U2.h                 (v1.3)
+    DMAG_U2_AgentController.h (v1.3)
+    DMAG_U2_Common_Guard.cpp  (v1.7)
+    DMAG_U2_Common_Guard.h    (v1.3)
+    DMAG_U2_Func.cpp          (v1.3)
+    DMAG_U2_Func.h            (v1.3)
+    DMAG_U2_cmdif.h           (v1.2)
+    PY_DMAG_U2.cpp            (v1.3)
+    PY_DMAG_U2.h              (v1.2)
+    dmag_u2_regif.cpp         (v1.3)
+    dmag_u2_regif.h           (v1.3)
+
+- Supported features: not change
+
+***************************************************************************************************
+src_DMAG_U2_20181203.7z
+-----------------------------
+- Release info: Relase for Code Review 2
+- Release date: Dec 03, 2018
+- Test environment: SC-HEAP G4 Rev135 64 bit
+- Source code (CVS repository):
+    DMAG_U2.cpp                  (v1.4)
+    DMAG_U2.h                    (v1.3)
+    DMAG_U2_AgentController.h    (v1.3)
+    DMAG_U2_Common_Guard.cpp     (v1.3)
+    DMAG_U2_Common_Guard.h       (v1.3)
+    DMAG_U2_Func.cpp             (v1.3)
+    DMAG_U2_Func.h               (v1.3)
+    DMAG_U2_cmdif.h              (v1.2)
+    PY_DMAG_U2.cpp               (v1.3)
+    PY_DMAG_U2.h                 (v1.2)
+    dmag_u2_regif.cpp            (v1.3)
+    dmag_u2_regif.h              (v1.3)
+
+- Supported features: not change
+
+***************************************************************************************************
+src_DMAG_U2_20181122_2.7z
+-----------------------------
+- Release info: Fix I/F Port which fixed bug #78353
+- Release date: Nov 22, 2018
+- Test environment: SC-HEAP G4 Rev135 64 bit
+- Source code (CVS repository):
+    PY_DMAG_U2.cpp               (v1.2)
+    PY_DMAG_U2.h                 (v1.2)
+    DMAG_U2_AgentController.h    (v1.2)
+    DMAG_U2_cmdif.h              (v1.2)
+    DMAG_U2.cpp                  (v1.3)
+    DMAG_U2.h                    (v1.2)
+    DMAG_U2_Common_Guard.cpp     (v1.2)
+    DMAG_U2_Common_Guard.h       (v1.2)
+    DMAG_U2_Func.cpp             (v1.2)
+    DMAG_U2_Func.h               (v1.2)
+    dmag_u2_regif.cpp            (v1.2)
+    dmag_u2_regif.h              (v1.2)
+- Supported features: not change
+- Fix bug #78353
+ 
+***************************************************************************************************
+src_DMAG_U2_20181122.7z
+-----------------------------
+- Release info: Fix I/F Port
+- Release date: Nov 22, 2018
+- Test environment: SC-HEAP G4 Rev135 64 bit
+- Source code (CVS repository):
+    PY_DMAG_U2.cpp               (v1.2)
+    PY_DMAG_U2.h                 (v1.2)
+    DMAG_U2_AgentController.h    (v1.2)
+    DMAG_U2_cmdif.h              (v1.2)
+    DMAG_U2.cpp                  (v1.2)
+    DMAG_U2.h                    (v1.2)
+    DMAG_U2_Common_Guard.cpp     (v1.2)
+    DMAG_U2_Common_Guard.h       (v1.2)
+    DMAG_U2_Func.cpp             (v1.2)
+    DMAG_U2_Func.h               (v1.2)
+    dmag_u2_regif.cpp            (v1.2)
+    dmag_u2_regif.h              (v1.2)
+- Supported features: not change
+- Removed PRESETZ port and use resetPort which inherited from BusBridgeModuleBase instead 
+ (confirmed via ticket redmine #78240)
+
+***************************************************************************************************
+src_DMAG_U2_20181116.7z
+-----------------------------
+- Release info: Alpha release data
+- Release date: Nov 16, 2018
+- Test environment: SC-HEAP G4 Rev135 64 bit
+- Source code (CVS repository):
+    PY_DMAG_U2.cpp               (v1.1)
+    PY_DMAG_U2.h                 (v1.1)
+    DMAG_U2_AgentController.h    (v1.1)
+    DMAG_U2_cmdif.h              (v1.1)
+    DMAG_U2.cpp                  (v1.1)
+    DMAG_U2.h                    (v1.1)
+    DMAG_U2_Common_Guard.cpp     (v1.1)
+    DMAG_U2_Common_Guard.h       (v1.1)
+    DMAG_U2_Func.cpp             (v1.1)
+    DMAG_U2_Func.h               (v1.1)
+    dmag_u2_regif.cpp            (v1.1)
+    dmag_u2_regif.h              (v1.1)
+- Supported features:
+    + Detect illegal access
+    + Key code protection
+    + Notify outside the illegal access detection
+    + Hold illegal access information

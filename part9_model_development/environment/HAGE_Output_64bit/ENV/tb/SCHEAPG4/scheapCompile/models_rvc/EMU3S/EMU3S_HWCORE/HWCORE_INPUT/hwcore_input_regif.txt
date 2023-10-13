@@ -1,0 +1,158 @@
+%MODULE HWCORE_INPUT
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  11
+
+%REG_CHANNEL reg_def
+  %%TITLE    name               reg_name             size         wsize         rsize       length      offset    factor_start   factor_end   factor_index   factor_step     init        access    support    callback
+  %%REG      CTRINMD             CTRINMD              16            16         8|16|32        16       0x200        -             -            -             -             0x0000           R|W       TRUE       w
+  %%REG      THTESFT             THTESFT              16            16         8|16|32        16       0x204        -             -            -             -             0x0000           R|W       TRUE       -
+  %%REG      THTEIBUF            THTEIBUF             16            16         8|16|32        16       0x206        -             -            -             -             0x0000           R|W       TRUE       -
+  %%REG      EARD                EARD                 16            16         8|16|32        16       0x208        -             -            -             -             0x0000           R|W       TRUE       -
+  %%REG      THTESEL             THTESEL              16            16         8|16|32        16       0x20A        -             -            -             -             0x0000           R|W       TRUE       -
+  %%REG      AD0IBUF             AD0IBUF              16            16         8|16|32        16       0x20C        -             -            -             -             0x0000           R|W       TRUE       -
+  %%REG      AD1IBUF             AD1IBUF              16            16         8|16|32        16       0x20E        -             -            -             -             0x0000           R|W       TRUE       -
+  %%REG      AD2IBUF             AD2IBUF              16            16         8|16|32        16       0x210        -             -            -             -             0x0000           R|W       TRUE       -
+  %%REG      AD0OFS              AD0OFS               16            16         8|16|32        16       0x212        -             -            -             -             0x0800           R|W       TRUE       -
+  %%REG      AD1OFS              AD1OFS               16            16         8|16|32        16       0x214        -             -            -             -             0x0800           R|W       TRUE       -
+  %%REG      AD2OFS              AD2OFS               16            16         8|16|32        16       0x216        -             -            -             -             0x0800           R|W       TRUE       -
+  %%REG      DIVLSB              DIVLSB               32            32         8|16|32        32       0x218        -             -            -             -             0x00010000       R|W       TRUE       -
+  %%REG      IUFIX               IUFIX                32            32         8|16|32        32       0x21C        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      IVFIX               IVFIX                32            32         8|16|32        32       0x220        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      IWFIX               IWFIX                32            32         8|16|32        32       0x224        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      KCLCTR              KCLCTR               16            16         8|16|32        16       0x228        -             -            -             -             0x0000           R|W       TRUE       -
+  %%REG      KCLJUD              KCLJUD               32            32         8|16|32        32       0x22C        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      KCLSTAT             KCLSTAT               8             -         8|16|32         8       0x230        -             -            -             -             0x00             R         TRUE       -
+  %%REG      KCLSTATC            KCLSTATC              8             8         8|16|32         8       0x231        -             -            -             -             0x00             R|W       TRUE       w
+  %%REG      KCLCNT              KCLCNT                8             -         8|16|32         8       0x232        -             -            -             -             0x00             R         TRUE       -
+  %%REG      SR2                 SR2                  32            32         8|16|32        32       0x234        -             -            -             -             0x0000D106       R|W       TRUE       -
+  %%REG      IDFIX               IDFIX                32            32         8|16|32        32       0x238        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      IQFIX               IQFIX                32            32         8|16|32        32       0x23C        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      IUFIXOBUF           IUFIXOBUF            32             -         8|16|32        32       0x240        -             -            -             -             0x00000000       R         TRUE       -
+  %%REG      IVFIXOBUF           IVFIXOBUF            32             -         8|16|32        32       0x244        -             -            -             -             0x00000000       R         TRUE       -
+  %%REG      IWFIXOBUF           IWFIXOBUF            32             -         8|16|32        32       0x248        -             -            -             -             0x00000000       R         TRUE       -
+  %%REG      IDFIXOBUF           IDFIXOBUF            32            32         8|16|32        32       0x24C        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      IQFIXOBUF           IQFIXOBUF            32            32         8|16|32        32       0x250        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      THTRESFIXIN         THTRESFIXIN          16             -         8|16|32        16       0x254        -             -            -             -             0x0000           R         TRUE       -
+
+%REG_NAME CTRINMD
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   IIRDQ            12      12     0x0       R|W      TRUE     -
+    %%BIT   INSTCTR           7       6     0x0       R|W      TRUE     w
+    %%BIT   CMUVW             5       3     0x0       R|W      TRUE     -
+    %%BIT   CMES              2       2     0x0       R|W      TRUE     -
+    %%BIT   KCL               1       1     0x0       R|W      TRUE     -
+    %%BIT   FREGIN            0       0     0x0       R|W      TRUE     -
+
+%REG_NAME THTESFT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             11       0     0x0       R|W      TRUE     -
+
+%REG_NAME THTEIBUF
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             11       0     0x0       R|W      TRUE     -
+
+%REG_NAME EARD
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             11       0     0x0       R|W      TRUE     -
+
+%REG_NAME THTESEL
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             11       0     0x0       R|W      TRUE     w
+
+%REG_NAME AD0IBUF
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             11       0     0x0       R|W      TRUE     w
+
+%REG_NAME AD1IBUF
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             11       0     0x0       R|W      TRUE     w
+
+%REG_NAME AD2IBUF
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             11       0     0x0       R|W      TRUE     w
+
+%REG_NAME AD0OFS
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0800    R|W      TRUE     -
+
+%REG_NAME AD1OFS
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0800    R|W      TRUE     -
+
+%REG_NAME AD2OFS
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0800    R|W      TRUE     -
+
+%REG_NAME DIVLSB
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x10000   R|W      TRUE     -
+
+%REG_NAME IUFIX
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     w
+
+%REG_NAME IVFIX
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     w
+
+%REG_NAME IWFIX
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     w
+
+%REG_NAME KCLCTR
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   EN                8       8     0x0       R|W      TRUE     -
+    %%BIT   DATA              7       0     0x0       R|W      TRUE     -
+
+%REG_NAME KCLJUD
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             30       0     0x0       R|W      TRUE     -
+
+%REG_NAME KCLSTAT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   ST                0       0     0x0       R        TRUE     -
+
+%REG_NAME KCLSTATC
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   CLR               0       0     0x0       R|W      TRUE     w
+
+%REG_NAME KCLCNT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA              7       0     0x0       R        TRUE     -
+
+%REG_NAME SR2
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0xD106    R|W      TRUE     -
+
+%REG_NAME IDFIX
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME IQFIX
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME IUFIXOBUF
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R        TRUE     -
+
+%REG_NAME IVFIXOBUF
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R        TRUE     -
+
+%REG_NAME IWFIXOBUF
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R        TRUE     -
+
+%REG_NAME IDFIXOBUF
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     w
+
+%REG_NAME IQFIXOBUF
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     w
+
+%REG_NAME THTRESFIXIN
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             11       0     0x0       R       TRUE     -
+

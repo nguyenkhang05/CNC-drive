@@ -1,0 +1,292 @@
+%MODULE HSIFL10_ALL
+
+%%REG_INSTANCE  reg_def 8
+
+%REG_CHANNEL reg_def
+    %%TITLE     name             reg_name        wsize     rsize     length      offset      access      init           factor_start    factor_end      factor_step     support     callback
+    %%REG       RHSIFMDCR        RHSIFMDCR       32          8|16|32   32          0x0         R|W         0x00010100     -               -               -               TRUE        -
+    %%REG       RHSIFSMCR        RHSIFSMCR       32        8|16|32   32          0x4         R|W         0x00000000     -               -               -               TRUE        -
+    %%REG       RHSIFPCR         RHSIFPCR        32        8|16|32   32          0x8         R|W         0x00000001     -               -               -               TRUE        -
+    %%REG       RHSIFSPCR        RHSIFSPCR       32        8|16|32   32          0xC         R|W         0x00000000     -               -               -               TRUE        -
+    %%REG       RHSIFTMDCR       RHSIFTMDCR      32        8|16|32   32          0x10        R|W         0x00000000     -               -               -               TRUE        -    
+    %%REG       RHSIFL1SR        RHSIFL1SR       -         8|16|32   32          0x18        R           0x00010101     -               -               -               TRUE        -
+    %%REG       RHSIFLTXFRMRL1   RHSIFLTXFRMRL1  -         8|16|32   32          0x30        R           0x00000000     -               -               -               TRUE        -
+    %%REG       RHSIFLRXFRMRL1   RHSIFLRXFRMRL1  -         8|16|32   32          0x34        R           0x00000000     -               -               -               TRUE        -
+    %%REG       RHSIFLTXFRMRL2   RHSIFLTXFRMRL2  -         8|16|32   32          0x38        R           0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFLRXFRMRL2   RHSIFLRXFRMRL2  -         8|16|32   32          0x3C        R           0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFTXRXCR      RHSIFTXRXCR     32        8|16|32   32          0x50        R|W         0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFICCR        RHSIFICCR       32        8|16|32   32          0x60        R|W         0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFCCR         RHSIFCCR        32        8|16|32   32          0x70        R|W         0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFTXCMPST     RHSIFTXCMPST    -         8|16|32   32          0x80        R           0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFTXCMPSC     RHSIFTXCMPSC    32        8|16|32   32          0x84        R|W1:0      0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFTXCMPIE     RHSIFTXCMPIE    32        8|16|32   32          0x88        R|W         0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFTXERRST     RHSIFTXERRST    -         8|16|32   32          0x90        R           0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFTXERRSC     RHSIFTXERRSC    32        8|16|32   32          0x94        R|W1:0      0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFTXERRIE     RHSIFTXERRIE    32        8|16|32   32          0x98        R|W         0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFRXCMPST     RHSIFRXCMPST    -         8|16|32   32          0xA0        R           0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFRXCMPSC     RHSIFRXCMPSC    32        8|16|32   32          0xA4        R|W1:0      0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFRXCMPIE     RHSIFRXCMPIE    32        8|16|32   32          0xA8        R|W         0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFRXERRST     RHSIFRXERRST    -         8|16|32   32          0xB0        R           0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFRXERRSC     RHSIFRXERRSC    32        8|16|32   32          0xB4        R|W1:0      0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFRXERRIE     RHSIFRXERRIE    32        8|16|32   32          0xB8        R|W         0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFRXICST      RHSIFRXICST     -         8|16|32   32          0xC0        R           0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFRXICSC      RHSIFRXICSC     32        8|16|32   32          0xC4        R|W1:0      0x00000000     -               -               -               TRUE        -
+       %%REG       RHSIFRXICIE      RHSIFRXICIE     32        8|16|32   32          0xC8        R|W         0x00000000     -               -               -               TRUE        -
+
+
+%REG_NAME RHSIFMDCR
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       CTSEN       16      16      1       R|W     TRUE        W
+       %%BIT       CTSV          8       8       1       R|W     TRUE        -
+    %%BIT       CLKSEL      1       1       0       R|W     TRUE        -
+    %%BIT       MST         0       0       0       R|W     TRUE        -
+
+%REG_NAME RHSIFPCR
+     %%TITLE     name        upper   lower   init    access  support     callback
+     %%BIT       PLLSTBY     0       0       1       R|W     TRUE        -
+    
+%REG_NAME RHSIFSMCR
+     %%TITLE     name        upper   lower   init    access  support     callback
+     %%BIT       SLP         0       0       0       R|W     TRUE        -
+
+%REG_NAME RHSIFSPCR
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       FMBR        25      24      0       R|W     TRUE        W
+       %%BIT       TXSP        8       8       0       R|W     TRUE        -
+    %%BIT       RXSP        0       0       0       R|W     TRUE        -
+    
+%REG_NAME RHSIFTMDCR
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       CKTM        9       9       0       R|W     TRUE        -
+       %%BIT       CKTMSEL     8       8       0       R|W     TRUE        -
+    %%BIT       TXLPBK      1       1       0       R|W     TRUE        -
+    %%BIT       RXLPBK      0       0       0       R|W     TRUE        W
+
+%REG_NAME RHSIFL1SR
+     %%TITLE     name        upper   lower   init    access  support     callback
+     %%BIT       RCTS        16      16      1       R       TRUE        -
+     %%BIT       TFFUL       9       9       0       R       TRUE        -
+     %%BIT       TFEMP       8       8       1       R       TRUE        -
+     %%BIT       RFFUL       1       1       0       R       TRUE        -
+     %%BIT       RFEMP       0       0       1       R       TRUE        -
+
+%REG_NAME RHSIFLTXFRMRL1
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       TL1E        16      16      0       R       TRUE        -
+    %%BIT       TL1P        15      8       0       R       TRUE        -
+    %%BIT       TL1H        7       0       0       R       TRUE        -
+
+%REG_NAME RHSIFLRXFRMRL1
+     %%TITLE     name        upper   lower   init    access  support     callback
+     %%BIT       RL1E        16      16      0       R       TRUE        -
+     %%BIT       RL1P        15      8       0       R       TRUE        -
+     %%BIT       RL1H        7       0       0       R       TRUE        -
+
+%REG_NAME RHSIFLTXFRMRL2
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       T2L2H       31      16      0       R       TRUE        -
+    %%BIT       T2L1H       7       0       0       R       TRUE        -
+
+%REG_NAME RHSIFLRXFRMRL2
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       R2L2H       31      16      0       R       TRUE        -
+    %%BIT       R2L1H       7       0       0       R       TRUE        -
+    
+%REG_NAME RHSIFTXRXCR
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       TXEN        16      16      0       R|W     TRUE        -
+    %%BIT       RXEN        0       0       0       R|W     TRUE        -
+    
+%REG_NAME RHSIFICCR
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       ITRG        16      16      0       R|W     TRUE        W
+    %%BIT       PLD         7       0       0       R|W     TRUE        -
+    
+%REG_NAME RHSIFCCR
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       CTRG        16      16      0       R|W     TRUE        W
+    %%BIT       CTS         8       8       0       R|W     TRUE        -
+    %%BIT       PLD         7       0       0       R|W     TRUE        -
+    
+%REG_NAME RHSIFTXCMPST
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       TCL2        16      16      0       R         TRUE        -
+       %%BIT       TCCT        8       8       0       R         TRUE        -
+    %%BIT       TCIC        0       0       0       R         TRUE        -
+    
+%REG_NAME RHSIFTXCMPSC
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       TCCL2       16      16      0       R|W1:0  TRUE        W
+       %%BIT       TCCCT       8       8       0       R|W1:0  TRUE        -
+    %%BIT       TCCIC       0       0       0       R|W1:0  TRUE        -
+
+%REG_NAME RHSIFTXCMPIE
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       TCEL2       16      16      0       R|W     TRUE        -
+    %%BIT       TCECT       8       8       0       R|W     TRUE        -
+    %%BIT       TCEIC       0       0       0       R|W     TRUE        -
+
+%REG_NAME RHSIFTXERRST
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       TERSZ       31      31      0       R       TRUE        -
+       %%BIT       TERSZI5     20      20      0       R       TRUE        -
+       %%BIT       TERSZI4     19      19      0       R       TRUE        -
+       %%BIT       TERCTF      15      15      0       R       TRUE        -
+       %%BIT       TERCTE      14      14      0       R       TRUE        -
+       %%BIT       TERCTD      13      13      0       R       TRUE        -
+       %%BIT       TERCTC      12      12      0       R       TRUE        -
+       %%BIT       TERCTB      11      11      0       R       TRUE        -
+       %%BIT       TERCTA      10      10      0       R       TRUE        -
+       %%BIT       TERCT9      9       9       0       R       TRUE        -
+       %%BIT       TERCT8      8       8       0       R       TRUE        -
+       %%BIT       TERCT2      2       2       0       R       TRUE        -
+    %%BIT       TERCT1      1       1       0       R       TRUE        -
+
+%REG_NAME RHSIFTXERRSC
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       TERCSZ      31      31      0       R|W1:0  TRUE        W
+       %%BIT       TERCSZI5    20      20      0       R|W1:0  TRUE        -
+       %%BIT       TERCSZI4    19      19      0       R|W1:0  TRUE        -
+       %%BIT       TERCCTF     15      15      0       R|W1:0  TRUE        -
+       %%BIT       TERCCTE     14      14      0       R|W1:0  TRUE        -
+       %%BIT       TERCCTD     13      13      0       R|W1:0  TRUE        -
+       %%BIT       TERCCTC     12      12      0       R|W1:0  TRUE        -
+       %%BIT       TERCCTB     11      11      0       R|W1:0  TRUE        -
+       %%BIT       TERCCTA     10      10      0       R|W1:0  TRUE        -
+       %%BIT       TERCCT9     9       9       0       R|W1:0  TRUE        -
+       %%BIT       TERCCT8     8       8       0       R|W1:0  TRUE        -
+       %%BIT       TERCCT2     2       2       0       R|W1:0  TRUE        -
+    %%BIT       TERCCT1     1       1       0       R|W1:0  TRUE        -
+
+%REG_NAME RHSIFTXERRIE
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       TERESZ      31      31      0       R|W     TRUE        -
+       %%BIT       TERESZI5    20      20      0       R|W     TRUE        -
+       %%BIT       TERESZI4    19      19      0       R|W     TRUE        -
+       %%BIT       TERECTF     15      15      0       R|W     TRUE        -
+       %%BIT       TERECTE     14      14      0       R|W     TRUE        -
+       %%BIT       TERECTD     13      13      0       R|W     TRUE        -
+       %%BIT       TERECTC     12      12      0       R|W     TRUE        -
+       %%BIT       TERECTB     11      11      0       R|W     TRUE        -
+       %%BIT       TERECTA     10      10      0       R|W     TRUE        -
+       %%BIT       TERECT9     9       9       0       R|W     TRUE        -
+       %%BIT       TERECT8     8       8       0       R|W     TRUE        -
+       %%BIT       TERECT2     2       2       0       R|W     TRUE        -
+    %%BIT       TERECT1     1       1       0       R|W     TRUE        -
+
+%REG_NAME RHSIFRXCMPST
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       RCL2        16      16      0       R       TRUE        -
+       %%BIT       RCCT        8       8       0       R       TRUE        -
+       %%BIT       RCIC        0       0       0       R       TRUE        -
+
+%REG_NAME RHSIFRXCMPSC
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       RCCL2       16      16      0       R|W1:0  TRUE        W
+       %%BIT       RCCCT       8       8       0       R|W1:0  TRUE        -
+       %%BIT       RCCIC       0       0       0       R|W1:0  TRUE        -
+
+%REG_NAME RHSIFRXCMPIE
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       RCEL2       16      16      0       R|W     TRUE        -
+       %%BIT       RCECT       8       8       0       R|W     TRUE        -
+       %%BIT       RCEIC       0       0       0       R|W     TRUE        -
+
+%REG_NAME RHSIFRXERRST
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       RERSZ       31      31      0       R       TRUE        -
+       %%BIT       RERSZI5     20      20      0       R       TRUE        -
+       %%BIT       RERSZI4     19      19      0       R       TRUE        -
+       %%BIT       RERCTF      15      15      0       R       TRUE        -
+       %%BIT       RERCTE      14      14      0       R       TRUE        -
+       %%BIT       RERCTD      13      13      0       R       TRUE        -
+       %%BIT       RERCTC      12      12      0       R       TRUE        -
+       %%BIT       RERCTB      11      11      0       R       TRUE        -
+       %%BIT       RERCTA      10      10      0       R       TRUE        -
+       %%BIT       RERCT9      9       9       0       R       TRUE        -
+       %%BIT       RERCT8      8       8       0       R       TRUE        -
+       %%BIT       RERCT2      2       2       0       R       TRUE        -
+    %%BIT       RERCT1      1       1       0       R       TRUE        -
+       %%BIT       RERIPV      0       0       0       R       TRUE        -
+
+%REG_NAME RHSIFRXERRSC
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       RERCSZ      31      31      0       R|W1:0  TRUE        W
+       %%BIT       RERCSZI5    20      20      0       R|W1:0  TRUE        -
+       %%BIT       RERCSZI4    19      19      0       R|W1:0  TRUE        -
+       %%BIT       RERCCTF     15      15      0       R|W1:0  TRUE        -
+       %%BIT       RERCCTE     14      14      0       R|W1:0  TRUE        -
+       %%BIT       RERCCTD     13      13      0       R|W1:0  TRUE        -
+       %%BIT       RERCCTC     12      12      0       R|W1:0  TRUE        -
+       %%BIT       RERCCTB     11      11      0       R|W1:0  TRUE        -
+       %%BIT       RERCCTA     10      10      0       R|W1:0  TRUE        -
+       %%BIT       RERCCT9     9       9       0       R|W1:0  TRUE        -
+       %%BIT       RERCCT8     8       8       0       R|W1:0  TRUE        -
+       %%BIT       RERCCT2     2       2       0       R|W1:0  TRUE        -
+    %%BIT       RERCCT1     1       1       0       R|W1:0  TRUE        -
+       %%BIT       RERCIPV     0       0       0       R|W1:0  TRUE        -
+
+%REG_NAME RHSIFRXERRIE
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       RERESZ      31      31      0       R|W     TRUE        -
+       %%BIT       RERESZI5    20      20      0       R|W     TRUE        -
+       %%BIT       RERESZI4    19      19      0       R|W     TRUE        -
+       %%BIT       RERECTF     15      15      0       R|W     TRUE        -
+       %%BIT       RERECTE     14      14      0       R|W     TRUE        -
+       %%BIT       RERECTD     13      13      0       R|W     TRUE        -
+       %%BIT       RERECTC     12      12      0       R|W     TRUE        -
+       %%BIT       RERECTB     11      11      0       R|W     TRUE        -
+       %%BIT       RERECTA     10      10      0       R|W     TRUE        -
+       %%BIT       RERECT9     9       9       0       R|W     TRUE        -
+       %%BIT       RERECT8     8       8       0       R|W     TRUE        -
+       %%BIT       RERECT2     2       2       0       R|W     TRUE        -
+    %%BIT       RERECT1     1       1       0       R|W     TRUE        -
+       %%BIT       REREIPV     0       0       0       R|W     TRUE        -
+
+%REG_NAME RHSIFRXICST
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       RIPA        16      16      0       R       TRUE        -
+       %%BIT       RITOL       11      11      0       R       TRUE        -
+       %%BIT       RITOF       10      10      0       R       TRUE        -
+       %%BIT       RITON       9       9       0       R       TRUE        -
+       %%BIT       RIDT        8       8       0       R       TRUE        -
+       %%BIT       RIET        7       7       0       R       TRUE        -
+       %%BIT       RIFT        6       6       0       R       TRUE        -
+       %%BIT       RIST        5       5       0       R       TRUE        -
+       %%BIT       RIFR        4       4       0       R       TRUE        -
+       %%BIT       RISR        3       3       0       R       TRUE        -
+       %%BIT       RIPSTP      2       2       0       R       TRUE        -
+       %%BIT       RIPSRT      1       1       0       R       TRUE        -
+    %%BIT       RIPG        0       0       0       R       TRUE        -
+
+%REG_NAME RHSIFRXICSC
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       RICPA       16      16      0       R|W1:0  TRUE        W
+       %%BIT       RICTOL      11      11      0       R|W1:0  TRUE        -
+       %%BIT       RICTOF      10      10      0       R|W1:0  TRUE        -
+       %%BIT       RICTON      9       9       0       R|W1:0  TRUE        -
+       %%BIT       RICDT       8       8       0       R|W1:0  TRUE        -
+       %%BIT       RICET       7       7       0       R|W1:0  TRUE        -
+       %%BIT       RICFT       6       6       0       R|W1:0  TRUE        -
+       %%BIT       RICST       5       5       0       R|W1:0  TRUE        -
+       %%BIT       RICFR       4       4       0       R|W1:0  TRUE        -
+       %%BIT       RICSR       3       3       0       R|W1:0  TRUE        -
+       %%BIT       RICPSTP     2       2       0       R|W1:0  TRUE        -
+       %%BIT       RICPSRT     1       1       0       R|W1:0  TRUE        -
+    %%BIT       RICPG       0       0       0       R|W1:0  TRUE        -
+
+%REG_NAME RHSIFRXICIE
+    %%TITLE     name        upper   lower   init    access  support     callback
+       %%BIT       RIEPA        16      16      0       R|W    TRUE        -
+       %%BIT       RIETOL       11      11      0       R|W    TRUE        -
+       %%BIT       RIETOF       10      10      0       R|W    TRUE        -
+       %%BIT       RIETON       9       9       0       R|W    TRUE        -
+       %%BIT       RIEDT        8       8       0       R|W    TRUE        -
+       %%BIT       RIEET        7       7       0       R|W    TRUE        -
+       %%BIT       RIEFT        6       6       0       R|W    TRUE        -
+       %%BIT       RIEST        5       5       0       R|W    TRUE        -
+       %%BIT       RIEFR        4       4       0       R|W    TRUE        -
+       %%BIT       RIESR        3       3       0       R|W    TRUE        -
+       %%BIT       RIEPSTP      2       2       0       R|W    TRUE        -
+       %%BIT       RIEPSRT      1       1       0       R|W    TRUE        -
+    %%BIT       RIEPG        0       0       0       R|W    TRUE        -

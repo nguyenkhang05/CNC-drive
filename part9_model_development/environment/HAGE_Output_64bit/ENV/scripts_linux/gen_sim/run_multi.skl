@@ -1,0 +1,35 @@
+#!/bin/csh -f
+
+set variables
+set SIMX_DIR="./"
+set MULT_DIR=${MULTI_LOCATION}
+set DSRV_DIR=${MULTI_SERVER_LOCATION}
+set HEAP_CFG="./%%TM_NAME.cfg"
+set RSLT_LOG="result.txt"
+set SOFT_PE1="./%%TM_NAME.out"
+set PY_SCRIPT="./%%TM_NAME.py"
+set USER_SCRIPT="./user.rc"
+set TIME_OUT="20"
+
+set MULTIEXE="$MULT_DIR/multi"
+set RTESERV2="$DSRV_DIR/rteserv2"
+set MULTI_RC="./multicfg.rc"
+
+set CNCT_CMD="${RTESERV2} -cpu pe1 -sc_heap_config ${HEAP_CFG} -sc_heap_e3 ${SIMX_DIR} -sc_heap_opt "'"'"-py_scr ${PY_SCRIPT}"'"'"" 
+set RCON_CMD="target reconnect"
+
+# multi rc
+echo "debugbutton reconnect i=letter_r c="'"'"$RCON_CMD"'"' > ${MULTI_RC}
+
+# user script
+echo "b main#12"    >  ${USER_SCRIPT}
+echo "halt"      >>  ${USER_SCRIPT}
+# invoke command
+(echo -n "#### Created date was "; date +'%D %T %Z') >& ${RSLT_LOG}
+(echo -n "#### current directory was "; pwd)        >>& ${RSLT_LOG}
+(echo    "#### check programs are as follows")      >>& ${RSLT_LOG}
+(grep "G3MCPU_PROGRAM" ${HEAP_CFG})                 >>& ${RSLT_LOG}
+(echo    "#### ${HEAP_CFG}")                        >>& ${RSLT_LOG}
+cat ${HEAP_CFG}                                     >>  ${RSLT_LOG}
+echo "${MULTIEXE} -rc ${USER_SCRIPT} -p ${MULTI_RC} -servertimeout $TIME_OUT -connect="${CNCT_CMD}" ${SOFT_PE1}" >>& ${RSLT_LOG}
+${MULTIEXE} -rc ${USER_SCRIPT} -p ${MULTI_RC} -servertimeout $TIME_OUT -connect="${CNCT_CMD}" ${SOFT_PE1} >>& ${RSLT_LOG}

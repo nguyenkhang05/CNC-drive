@@ -1,0 +1,497 @@
+NSMVG4CPUV01 HISTORY
+--------------------------------------------------------
+<2020.3.19>
+
+SVN version
+  Rev.314
+
+File
+  G4_NoDbgIF.cpp
+    L876-2050	: Fix the compile warning C6262 issue (Change the scope of read_config_file()'s error_message_buf from each block's variable to function's variable)
+    L2641	: Fix the compile warning C6297 issue (add cast "unsigned long long")
+
+--------------------------------------------------------
+<2019.7.16>
+
+SVN version
+  Rev.223
+
+File
+  CaISS/G4_CaIss.cpp 
+    L887-888,1046-1047: Fix the bug which is reported ASTC #289.
+                        The output port for PEG is changed correctly from mpCramGrderrAdapter to mpPePegErrSAdapter of slave PE.
+--------------------------------------------------------
+<2018.11.8>
+
+SVN version
+  Rev.154
+
+File
+  Makefile
+    L73		: Add path "-I$(MODEL_CFOREST_PATH)/COMMON/include" at "INCPATH_CFOREST"
+  NSMVG4CPUV01.cpp 
+    L18-21  	: Add the undef macro of min and max for Windows.
+  CaISS/G4_CaIss.cpp 
+    L18-21  	: Add the undef macro of min and max for Windows.
+  CaISS/G4_IsLapbIf.cpp 
+    L20-23  	: Add the undef macro of min and max for Windows.
+  CaISS/G4_IsVciIf.cpp 
+    L20-23  	: Add the undef macro of min and max for Windows.
+  CaISS/G4_IsVpiIf.cpp 
+    L20-23  	: Add the undef macro of min and max for Windows.
+  CaISS/G4_TsIf.cpp 
+    L19-22  	: Add the undef macro of min and max for Windows.
+
+--------------------------------------------------------
+<2018.10.22>
+
+SVN version
+  Rev.149
+
+File
+  NSMVG4CPUV01.cpp 
+    L489-605	: Add the CpuInitAdapter for cpu start control mode.
+    L837	: Add the initilized operation for mIsAutoMode.
+    L865, 1104, 1120-1123, 1139 : Add the instantiation operation for mpCpuInitAdapter.
+    L1471 	: Add the delete operation for mpCpuInitAdapter.
+    L1959	: Add the reset operation for mpCpuInitAdapter.
+    L2411-2435	: Add the pursing operation of [G4CPU_START_MODE].
+  NSMVG4CPUV01.h
+    L178-195	: Add the CpuInitAdapter for cpu start control mode.
+    L232	: Add the mIsAutoMode for cpu start control mode.
+    L272	: Add the CpuInitAdapter for cpu start control mode.
+  G4_NoDbgIF.cppn
+    L77		: Add the initilized operation for mIsAutoMode.
+    L352-354	: Change the calling operation for mpFastIssIF->CancelContEvent().
+    L363-373	: Add the CPU start control operation (Setting of target PE for CycleExecute()).
+    L486-490	: Change the calling condition of mpFastIssIF->SetContEvent() from always to cpu start control mode.
+    L672-714	: Add the control operation of execution for cpu start control mode.
+    L2003-2027	: Add the pursing operation of [G4CPU_START_MODE].
+  G4_NoDbgIF.h
+    L161	: Add the mIsAutoMode for cpu start control mode.
+    L193	: Add the SetExecutionMode() for cpu start control mode.
+  PECORESS/PECORESS.cpp
+    L78 	: Add the initilized operation for syserr_init_event.
+    L156, 346, 369	: Change the size of SysserrCodeNm_sig.
+    L158-159,249, 255, 298, 347, 370	: Delete SyserrEbvNm_sig, add the SyserrModeNm_sig.
+    L262-269	: Add the process of Reset SyserrInitProcess for initialization of SyserrXxxNm_sig.
+    L388-390	: Change the code from initilization signal to call syserr_init_event.
+    L394-411	: Add Reset() and SyserrInitProcess().
+  PECORESS/PECORESS.h
+    L2		: Change the Copyright from "2015-2017" to "2015-2018".
+    L92 	: Change the size of SysserrCodeNm_sig.
+    L93 	: Delete SyserrEbvNm_sig.
+    L93, 95	: Add SyserrModeNm_sig and syserr_init_event
+    L107-108	: Add Reset() and SyserrInitProcess()
+  FastISS/G4_FastIssIF.cpp
+    L68, 70, 73	: Change the argument of CancelContEvent from void to "unsigned int pe_id"
+    L72, 83, 85	: Add the check operation of the valid pe_id.
+    L2145, 2153, 2155, 2157	: Add the read operation for L1RCFG, DECFG, DECTRL, and DEVDS.
+  FastISS/G4_FastIssIF.h
+    L2		: Change the Copyright from "2015-2017" to "2015-2018".
+    L42		: Change the argument of CancelContEvent() from void to "unsigned int pe_id".
+
+--------------------------------------------------------
+--------------------------------------------------------
+<2018.9.12>
+  fix the bug Defect #185345
+
+SVN version
+  Rev.139
+
+File
+  G4_CaIss.cpp
+    L219	: Correct the delete operation for mpIsLapbIf[i] (add the key word "delete").
+
+--------------------------------------------------------
+<2018.9.5>
+  fix the bug Defect #183934
+
+SVN version
+  Rev.132
+
+File
+  G4_NoDbgIF.cpp
+    L1907, L1921: Correct the spell from "numner" to "number".
+
+--------------------------------------------------------
+<2018.8.31>
+  update for U2A release3
+  - support U2A PEG and CRG
+  - adapt for new cforestg4(ddf381cd + old INTC)
+  - add syserr function for the operand factor
+
+SVN version
+  Rev.123
+
+File
+  NSMVG4CPUV01.cpp 
+    L2317-2318, 2322 : Use the define macro
+    L2517-2545	: Add the setSyserrOperandOut() for syserr of the operand factor.
+  NSMVG4CPUV01.h
+    L389	: Add the setSyserrOperandOut() for syserr of the operand factor.
+  G4_NoDbgIF.cpp
+    L145-151	: Initialize the mpCrgInfo[]
+    L291	: Change the address for the self address of LRAM
+    L651	: Change the calling API, when EIINT is canceled.
+    L1867-1943	: Add the parsing operation for G4CPU_CRG_INFO
+  G4_NoDbgIF_closed.cpp
+    L98-99, 105, 142, 386, 292 : Use the define macro
+    L107-130    : Add the address and information setting for U2A's CRG
+    L144-152    : Add the address setting for U2A's PEG
+    L376        : Unified the calling API for U2A(G4MH 2.0) and E2x(G4MH1.x)
+    L383-418	: Add the setSyserrOperandOut() for syserr of the operand factor.
+  G4_NoDbgIF.h
+    L39-40	: Add the maxiam value of CRG channel and CSG channel.
+    L111	: Add mpCrgInfo[].
+    L273-278	: Add the setSyserrOperandOut() for syserr of the operand factor.
+  G4_PEGERR_OR.cpp
+    L239-246	: Delete the each instance (PE_sys_clk[], PE_PegInfoIn[], PE_PegInfoOut[], mpPegInfo[], PE_PegInfoInAdapter[], PE_PegInfoOutAdapter[])
+  CaISS/G4_CaIss.cpp
+    L60-63, 240-241, 249-250 : Use the define macro
+    L215-221	: Delete the each instance (mpIsVciIf, mpIsVpiIf, mpIsVpiIf_gc, mpIsLapbIf[]) in the destractor.
+  CaISS/G4_IsLapbIf.cpp
+    L52-53	: clear the extension payload (mDbgG3mExt, mDbgVciExt) in the destractor.
+  CaISS/G4_IsVciIf.cpp
+    L55-56	: clear the extension payload (mDbgG3mExt, mDbgVciExt) in the destractor.
+  CaISS/G4_IsVpiIf.cpp
+    L55-56	: clear the extension payload (mDbgG3mExt, mDbgVciExt) in the destractor.
+  CLUSTERSS/CLUSTERSS.cpp
+    L382-410	: Add the setSyserrOperandOut() for syserr of the operand factor.
+  CLUSTERSS/CLUSTERSS.h
+    L96		: Add the setSyserrOperandOut() for syserr of the operand factor.
+  PECORESS/PECORESS.cpp
+    L386	 : Use the define macro
+    L143	: Change the code to adapt new G4_PEG (add new param at 2nd position).
+    L319, 504-578 : Add read_config_file_PeType()
+    L341-372    : Add the setSyserrOperandOut() for syserr of the operand factor.
+    L388-394	: Add the address setting for U2A's PEG
+  PECORESS/PECORESS.h
+    L84		: Add mPeType
+    L103	: Add the setSyserrOperandOut() for syserr of the operand factor.
+  g4cpu_def.h
+    L51-55	: Add 4 define macros (LRSRC_INIT_BASE, LRSRC_INIT_SIZE, CRG_INIT_BASE, PEG_INIT_BASE).
+  g4cpu_typ.h
+    L27-33	: Add g4cpu_crg_info for CRG of U2A(G4MH2.0).
+--------------------------------------------------------
+<2018.5.16>
+Fix the following bug
+  Defect #167439: U2A CPUモデル：リセット時のCPUモードの確認に対するテストパタン漏れ
+
+SVN version
+  Rev.69
+
+File
+  NSMVG4CPUV01.cpp 
+    L1831	: Add the code to fix the bug #167439.
+
+--------------------------------------------------------
+<2018.4.18>
+Fix the following bug
+  Defect #163979 (G4CPU_MPU_ENTRYの第一引数に対するエラーメッセージ(仕様書上：NO.40)が仕様通りのメッセージになっていない。)
+  Defect #164729 (CPUモード切り替え時のCPUモード取得処理の不具合)
+  Defect #164732 (BGEIINT, BGFEINTのビットパタンの認識間違い)
+
+SVN version
+  Rev.58
+
+File
+  G4_NoDbgIF.cpp
+    L567, 606-609, 611, 636-639, 641	: Change the argument value to fix the bug #163979
+    L1818-1815                          : Change the argument value to fix the bug #164729
+  G4_NoDbgIF_closed.cpp
+    L309				: Change the error message to fix the bug #164732
+  G4_PAYLOAD_ADDER.h
+    L154-161				: Add debug message for UT
+  FastISS/G4_FastIssIF.cpp
+    L499, 516, 534			: Add the initial value for DBCFG.
+
+--------------------------------------------------------
+<2018.3.26>
+Fix the following bug
+  Defect #157693 (CAISS:Can't issue the force SYSERR)
+  Defect #159484 (U2A CAISS：MPUエントリ数の設定の対応漏れ)
+
+SVN version
+  Rev.54
+
+File
+  G4_NoDbgIF.cpp
+    L1815-1854 	: Add the configuration [G4CPU_MPU_ENTRY] to fix the bug #157865
+  G4_NoDbgIF.h
+    L32        	: Change the vaule of MPU_MAX_NUM from 24 to 32
+  G4_NoDbgIF_closed.cpp
+    L362	: Change the calling API for G4MH 2.0 temporarily to fix the bug #157693
+                  After the spec of cforest API for G4MH 2.0, it will be changed to new API.
+  G4_PAYLOAD_ADDER.h
+    L390-393	: Add debug message for UT
+  CaISS/G4_IsIfBase.h
+    L178-181	: Add debug message for UT
+
+--------------------------------------------------------
+<2018.3.7>
+Fix the following bug
+  Defect #156064 (FastISS:degrade the ldsr instruction, when add the G4MH 2.0 function)
+  Defect #157864 (FastISS：UT用ログの記述ミス)に対応
+　Defect #157865 (Lack the update condition of G4MH 2.0 for PC detection of SWDT)
+  Defect #157693 (CAISS:Can't issue the force SYSERR)
+
+SVN version
+  Rev.44
+
+File
+  NSMVG4CPUV01.cpp 
+    L2261	: Change the output message to fix the bug #157864
+  G4_NoDbgIF.cpp
+    L2569, 2623	: Add the condtion to fix the bug #157865
+  G4_NoDbgIF_closed.cpp
+    L2569, 2623	: Change the calling API for G4MH 1.x to fix the bug #157693
+  G4_FastIssIF.cpp
+    L1056-1058, 1107-1109 : Add the conditon (for G4MH 2.0) to fix the bug #156064
+
+--------------------------------------------------------
+<2018.2.21>
+For adding the G4MH 2.0 functions
+
+SVN version
+  Rev.28
+
+File
+  NSMVG4CPUV01.cpp 
+    L127        : Add the time stamp into the debug log.
+    L250, 253, 258, 379, 387-390, 385-396 : Change the debug log to add the CPU mode, GPID, Back ground flag.
+    L478-563    : Add CpuGmInfoAdapter class's operation.
+    L704        : Add the initialization code for "mIsOldTraceFormat".
+    L731, 970, 985-987 : Add the initialization code for "CpuGmInfoAdapter".
+    L731, 975, 993 : Add the initialization code for "PE_CpuGmInfo".
+    L999        : Add the connection code between "PE_CpuGmInfo" and "mpCpuGmInfoAdapter"
+    L1005       : Add the connection code between "mpCpuGmInfoAdapter" and CLUSTERSS.
+    L1329, 1330 : Add the delete code for "mIsOldTraceFormat" and "PE_CpuGmInfo".
+    L1469-1486  : Add the operation of SetCpuGmInfoFromCa().
+    L1495, 2451, 2701 : Add the CPU type of G4MH_V20 for SWDT PC detection function.
+    L2197       : Add the CPU type of G4MH_V20 for configuration function of [G4CPU_PE_TYPE].
+    L2253-2266  : Add the pursing operation of [G4CPU_PROFILE_TRACE_FORMAT]
+    L2311-2315  : Add the argument for FastIssIF::AttachAnalysisUnit()
+  NSMVG4CPUV01.h
+    L177-200  : Add the CpuGmInfoAdapter class to notify the CPU mode (Host/Gust&GPID).
+    L252      : Add the variable "mpCpuGmInfoAdapter[PE_MAX_NUM]" for the insutnace of CpuGmInfoAdapter class.
+    L295      : Add the variable "PE_CpuGmInfo[PE_MAX_NUM]" for the notification port of the CPU mode (Host/Gust&GPID).
+    L358      : Add the function "SetCpuGmInfoFromCa()" for the notification of the CPU mode (Host/Gust&GPID) from CAISS.
+  CLUSTERSS.cpp
+    L123-124  : Add the initialization code for "PE_CpuGmInfo[CL_PE_NUM]".
+    L219      : Add the connection code between "PE_CpuGmInfo[CL_PE_NUM]" and PECORESS
+    L308      : Add the delete code for "PE_CpuGmInfo[CL_PE_NUM]".
+  CLUSTERSS.h
+    L76       : Add the variable "PE_CpuGmInfo[CL_PE_NUM]" for the notification port of the CPU mode (Host/Gust&GPID).
+  PECORESS.cpp
+    L68       : Add the initialization code for "CpuGmInfo".
+    L236      : Add the connection code between "CpuGmInfo" and FastISS_ASTC
+  PECORESS.h
+    L71       : Add the variable "CpuGmInfo" for the notification port of the CPU mode (Host/Gust&GPID).
+  G4_NoDbgIF.cpp
+    L131      : Add the initial value into mpPeInfo[i].gmspid_ival.
+    L135      : Add the initial value into mpPeInfo[i].hvcfg_ival.
+    L175      : Add the calling operation of SetHvInfo().
+    L208      : Add the condition "TRC_OLD_PC" for the CAISS's trace.
+    L400-407  : Add the operation, when CPU mode returns form CycleExecute with BRK_CHANGE_PSWH.
+    L599, 606-610 : Add the argument for SetFeintReq() and ForestUtil::ReqFeintToCpu()
+    L627, 634-638 : Add the argument for SetEiintReq() and ForestUtil::ReqInterruptToCpu()
+    L780-781  : Add the check operation of the G4MH_V20 at [G4CPU_PE_TYPE]'s pursing.
+    L950      : Change the check operation of the 7th parameter at [G4CPU_PE_INFO]'s puursing.
+    L971-1016 : Add the pursing operation for [G4CPU_HV_INFO].
+    L1516-1517: Add the check operation of the OLD_PC at [G4CPU_PROFILE_TRACE_FORMAT]'s pursing.
+    L1931-1932: Add the setting operation for G4MH 2.0 for cforestg4.
+    L1939-1954: Add the setting function of HV infor for cforestg4.
+    L2666, 2682-2686:Add the condtion and operation, when the trace mode is OLD_PC.
+  G4_NoDbgIF_closed.cpp
+    L298-312  : Add the operation "GetSPswh()" to get the PSWH value from cforestg4.
+  G4_NoDbgIF.h
+    L186      : Add the argument for SetFeintReq()
+    L187      : Add the argument for SetEiintReq()
+    L292      : Add the function "SetHvInfo()" for setting the HV information
+    L338-342  : Add the function "GetSPswh()" to get the PSWH value from cforestg4.
+  G4_IsIfBase.h
+    L96-129   : Add the function and operation "getSpcLd", "getGm", "getGpid" from sideband info of cforestg4.
+    L153, 175 : Add the "speculativeMode" at the 7th parameter of setTransG3m, and setting code.
+  G4_IsLapbIf.cpp 
+    L182, 197-198, 267, 272-273, 321, 326-327, 388, 404: Change the 1st and 6th parametar value, add the 7th parameter setting.
+  G4_IsVciIf.cpp 
+    L198, 203-204, 274, 279-280, 328, 333-334, 400, 419: Change the 1st and 6th parametar value, add the 7th parameter setting.
+  G4_IsVpiIf.cpp 
+    L195, 200-201, 270, 275-276, 324, 329-330, 392, 409: Change the 1st and 6th parametar value, add the 7th parameter setting.
+  G4_FastIssIF.cpp
+    L42, 46   : Add the intial value into PeInfo[pe_id].gmspid_ival and PeInfo[pe_id].hvcfg_ival.
+    L451      : Set the configulation value at PeInfo[pe_id].gmspid_ival.
+    L457, 466 : Set PeInfo[pe_id].hvcfg_ival value
+    L460-463  : Add G4MH 2.0 setting.
+    L475-533  : Add the reset value for new system registers.
+    L607      : Change the argument of AttachAnalysisUnit().
+    L1055-1058: Add the selid9's operation.
+    L1067-1071: Add the selid14's operation
+    L1073-1076: Add the selid15's operation
+    L1104-1107: Add the selid9's operation.
+    L1117-1120: Add the selid14's operation
+    L1122-1125: Add the selid15's operation
+    L1286-3362: Update the operation for new system registers.
+  G4_FastIssIF.h
+    L53       : Change the argument of AttachAnalysisUnit().
+    L82, 87-88, 95, 100-101: Add the function "readSrSelid9", "readSrSelid14", "readSrSelid15", "writeSrSelid9", "writeSrSelid14", and "writeSrSelid15"  for new system registers
+  G4_PAYLOAD_ADDER.h
+    L19       : inculude "g4cpu_def.h"
+    L170-177  : Add the setting code of the speculation load flag for LRAM access.
+    L183, 185, 216, 262, 264, 373 : Add the speculation load flag at the 3rd argument of setTransG3m().
+    L384      : Add the setting code of the speculation load flag into TlmG3mExtension.
+  g4cpu_typ.h
+   L18        : Add the member "gmspid_ival" to g4cpu_pe_info.
+   L22        : Add the member "hvcfg_ival" to g4cpu_pe_info.
+   L30        : Add the member "CPU_G4MH_2_0" to CPU_KIND_T.
+
+--------------------------------------------------------
+<2017.12.1>
+For correct the instance name of fenmiack_faiss
+
+SVN version
+  Rev.156
+
+File
+  NSMVG4CPUV01.cpp 
+    81: Change the instance name of fenmiack_fastiss from "femmiack_fastiss" to "fenmiack_fastiss"
+
+--------------------------------------------------------
+<2017.11.16>
+For fix the bug of redmine ticket Defect #142369
+
+SVN version
+  Rev.148
+
+File
+  NSMVG4CPUV01.cpp 
+    L2052, 2086: Add the initial value (0) at peid of read_config_file().
+
+  G4_NoDbgIF.cpp 
+    L734, 819, 850, 948, 1282, 1676, 1710, 1748: Add the initial value (0) at "peid" of read_config_file().
+    L1095, 1238: Add the initial value (0) at "size" of read_config_file().
+
+
+--------------------------------------------------------
+<2017.10.25>
+For fix the bug of redmine ticket Defect #142081
+
+SVN version
+  Rev.145
+
+File
+  PECORESS.cpp 
+    L99: Add true at the 2nd argument of rh850g4::core(), when it is instantiated.
+
+--------------------------------------------------------
+<2017.10.25>
+For 64-bit application and compiler update
+
+SVN version
+  Rev.139
+
+File
+  G4_NoDbgIF.cpp 
+    L2765-2766, L2888-2811, L2857-2858: Change the type from unsigned long long to RegData64.
+    L2825, L2868: Add "return(0);"
+
+  I_CONNECTOR.h 
+    L5	: Change the copyright data.
+    L211, L289: Add the scope "CmErrMsg::" to printErrorMessage() for copile error
+
+  NSMVG4CPUV01.cpp 
+    L77-78 : Change the initilize operation of the signal (fenmireq_iss_sig and fenmiack_iss_sig) from the initialization list to the internal constructor.
+
+  Rteserv2Controller.h
+    L17-19 : Add "include <windows.h>" for ULONG
+
+--------------------------------------------------------
+<2017.8.28>
+
+SVN version
+  Rev.125
+
+File
+  NSMVG4CPUV01.cpp 
+    L671, 678-679: Add the port "sys_cpinit" for CPU start control.
+
+  NSMVG4CPUV01.h
+    L248	: Add the port "sys_cpinit" for CPU start control.
+
+--------------------------------------------------------
+<2017.8.7>
+
+SVN version
+  Rev.123
+
+File
+  G4_NoDbgIF.cpp
+    L2588-2599	: Include the operation with "#ifndef FASTISS_NO_SUPPORT" and "endif", because those codes are for Fast ISS model with PMS (for ASTC).
+
+  CLUSTERSS\CLUSTERSS.cpp
+    L250-256	: Add the operation for only CAISS model (ex. for SNPS)
+    L341-346	: Include the operation with "#ifndef FASTISS_NO_SUPPORT" and "endif", because those codes are for Fast ISS model with PMS (for ASTC).
+
+--------------------------------------------------------
+<2017.6.5>
+
+SVN version
+  Rev.111
+
+File
+  G4_NoDbgIF.cpp
+    L127	: Change the initial value of mPeType[i] from CPU_G4MH to CPU_G4MH_1_0
+    L182	: Change the setting value of SetPeType()'s 2nd argument.
+    L279-280	: Change the setting value of configure()'s 3rd and 4th arguments.
+    L454-456	: Change the callig operation of mpFastIssIF->SetContEvent(i).
+    L750-754	: Change the setting value of the mpPeType[].
+    L1016-1135	: Change the operation of reading [G4CPU_ROM_INFO]
+    L1160-1278	: Change the operation of reading [G4CPU_CRAM_INFO]
+    L1709-1740	: Add the operation of reading [G4CPU_FXU_ENABLE]
+    L1857-1859	: Add the setting operation of the CPU type "CORE_VER_11" for cforestg4.
+    L1953-2004	: Change the setting operation of the ROM/CRAM initial values.
+    L2124-2128	: Change the initialize operation of the ROM area.
+    L2479,2533	: Change the condition of the CPU type.
+    L2756-2773	: Add the read value operation of the global registers (readGrValue()).
+    L2776-2793	: Add the write value operation of the global registers (writeGrValue()).
+    L2796-2819	: Add the read value operation of the vector registers (readWrValue()).
+    L2822-2839	: Add the write value operation of the vector registers (writeWrValue()).
+    L2842-2860	: Add the read value operation of the system registers (readSrValue()).
+    L2863-2880	: Add the write value operation of the system registers (writeSrValue()).
+  G4_NoDbgIF.h
+    L128	: Change the size of mRomInfoQue and mCRamInfoQue
+    L256-261	: Add the prototype declaration for new function.
+  G4_NoDbgIF_closed.cpp
+    L110	: Change the setting operation for CRG registers area.
+    L163-264	: Change the setting operation of ROM and CRAM area.
+  g4cpu_typ.h
+    L26-27 	: Change the member variable from CPU_G4MH to CPU_G4MH_1_0 and CPU_G4MH_1_1.
+  NSMVG4CPUV01.cpp
+    L650	: Change the initial value of mPeType[i] from G4MH to G4MH_V10.
+    L1363,2065,2311,3550 : Change the condition of the CPU type.
+    L2593-2604	: Add the read value operation of the global registers (readGrValue()).
+    L2607-2617	: Add the write value operation of the global registers (writeGrValue()).
+    L2620-2632	: Add the read value operation of the vector registers (readWrValue()).
+    L2635-2646	: Add the write value operation of the vector registers (writeWrValue()).
+    L2648-2661	: Add the read value operation of the system registers (readSrValue()).
+    L2664-2675	: Add the write value operation of the system registers (writeSrValue()).
+  NSMVG4CPUV01.h
+    L386-391	: Add the prototype declaration for new function.
+  FastISS\G4_FastIssIF.cpp
+    L38		: Change the initial value of mPeType[i] from CPU_G4MH to CPU_G4MH_1_0
+    L78		: Change the argument of SetContEvent() from "void" to "unsigned int pe_id", and operation.
+    L453-458	: Add the setting operation of the core type for rh850g4:core class
+    L477-488	: Add the setting operation of the system registers' reset value for G4MH 1.1.
+    L724-800	: Add the read value operation of the global registers (readGrValue()).
+    L803-878	: Add the write value operation of the global registers (writeGrValue()).
+    L881-893	: Add the read value operation of the vector registers (readWrValue()).
+    L896-1004	: Add the write value operation of the vector registers (writeWrValue()).
+    L1007-1040	: Add the read value operation of the system registers (readSrValue()).
+    L1043-1074	: Add the write value operation of the system registers (writeSrValue()).
+    L1077-1231	: Add the read value operation of the vector registers (readWrLowerValue(), readWrUpperValue).
+    L1233-2009	: Add the read value operation of the system registers (readSrSelidXX()).
+    L2011-2777	: Add the write value operation of the system registers (writeSrSelidXX()).
+  FastISS\G4_FastIssIF.h
+    L43		: Change the argument of SetContEvent() from "void" to "unsigned int pe_id", and operation.
+    L66-71, 73-95 : Add the prototype declaration for new function.

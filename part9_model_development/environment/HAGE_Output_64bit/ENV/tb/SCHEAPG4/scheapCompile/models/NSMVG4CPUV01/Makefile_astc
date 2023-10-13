@@ -1,0 +1,143 @@
+#############################################################################
+# Makefile for NSMVG4CPUV01
+#############################################################################
+
+#
+# Name(overwrite from the top make)
+#
+MODEL			= NSMVG4CPUV01
+
+#
+# Location(overwrite from the top make)
+#
+PROJ_HOME		= $(shell pwd)/../..
+LIBPATH			= lib-$(MODEL)
+#
+# Location(for local)
+#
+MODEL_HOME			= $(PROJ_HOME)/models
+MODEL_COMMON_PATH		= $(MODEL_HOME)/common
+MODEL_COMMON_BUS_PATH		= $(MODEL_HOME)/common_bus
+MODEL_CFOREST_PATH		= $(MODEL_HOME)/iss/cforestg4x
+MODEL_FASTISS_ASTC_MEMORY_PATH	= $(MODEL_HOME)/iss/fastiss_astc/memory_wrapper
+MODEL_FASTISS_ASTC_PATH		= $(MODEL_HOME)/iss/fastiss_astc/rh850g4/iss/src
+MODEL_FASTISS_ASTC_ANALYSIS_PATH = $(MODEL_HOME)/iss/fastiss_astc/rh850g4/analysis/src
+MODEL_NSMVINTC1V02_PATH		= $(MODEL_HOME)/NSMVINTC1V02
+MODEL_VCI2VPI_PATH              = $(MODEL_HOME)/VCI2VPI
+
+#
+# SystemC location and architecture(overwrite from the top make)
+#
+ifeq "$(shell uname -n)" "sdlpc567"
+    SYSTEMC_HOME	= /eda_tools/systemc
+else
+    SYSTEMC_HOME	= /home/product/systemc/tools/systemc
+endif
+ifeq "$(shell uname -s)" "SunOS"
+    TARGET_ARCH		= gccsparcOS5
+else
+    TARGET_ARCH		= linux
+endif
+SYSTEMC_INCPATH		= $(SYSTEMC_HOME)/include
+
+#
+# Make command(overwrite from the top make)
+#
+MAKE			= gmake
+
+#
+# other command(for local)
+#
+RM			= rm
+RM_OPT			= -rf
+AR			= ar cqs
+
+#
+# Linux RedHat7.3 - gcc2.96(overwrite from the top make)
+#
+CXX			= /usr/bin/g++
+OPTFLAG			= -g
+DEFFLAG			= -DLINUX_DEF
+DBGFLAG			= -Wno-deprecated
+INCPATH			= -I$(SYSTEMC_INCPATH) -I. -I$(MODEL_COMMON_PATH)
+
+#
+# Linux RedHat7.3 - gcc2.96(for local)
+#
+DEPFLAG		= -MM
+DEFFLAG_MINE	= -DSUPPORT_SC_HEAP -DDISABLE_GDB -DDISABLE_PYTHON
+DBGFLAG_MINE	=
+
+INCPATH_MINE	= -I./CaISS -I./CLUSTERSS -I./PECORESS -I./Rteserv2 -I./FastISS -I$(MODEL_FASTISS_ASTC_PATH)/core  -I$(MODEL_FASTISS_ASTC_PATH)/runtime -I$(MODEL_FASTISS_ASTC_MEMORY_PATH) -I$(MODEL_COMMON_PATH) -I$(MODEL_NSMVINTC1V02_PATH) -I$(MODEL_COMMON_BUS_PATH) -I$(MODEL_VCI2VPI_PATH) -I$(MODEL_FASTISS_ASTC_ANALYSIS_PATH) -I$(MODEL_HOME)/ForestUtilScIf
+
+INCPATH_CFOREST	= -I$(MODEL_CFOREST_PATH)/libforestg4x_scheap/include
+
+CXXFLAGS	= $(OPTFLAG) $(DEFFLAG) $(DEFFLAG_MINE) $(DBGFLAG) $(DBGFLAG_MINE) $(INCPATH) $(INCPATH_MINE) $(INCPATH_CFOREST)
+
+#
+# Files(for local)
+#
+SOURCES		= G4_NoDbgIF.cpp \
+		  NSMVG4CPUV01.cpp
+OBJECTS		= $(LIBPATH)/G4_NoDbgIF.o \
+		  $(LIBPATH)/G4_NoDbgIF_closed.o\
+		  $(LIBPATH)/HexLoader.o \
+		  $(LIBPATH)/G4_LinkManager.o \
+		  $(LIBPATH)/G4_FastIssIF.o \
+		  $(LIBPATH)/PECORESS.o   \
+		  $(LIBPATH)/CLUSTERSS.o \
+		  $(LIBPATH)/G4_PEGERR_OR.o \
+		  $(LIBPATH)/NSMVG4CPUV01.o\
+		  $(LIBPATH)/G4_CaIss.o \
+		  $(LIBPATH)/G4_IsIfBase.o \
+		  $(LIBPATH)/G4_IsVciIf.o \
+		  $(LIBPATH)/G4_IsLapbIf.o \
+		  $(LIBPATH)/G4_IsVpiIf.o \
+		  $(LIBPATH)/G4_TsIf.o \
+		  $(LIBPATH)/Rteserv2Controller.o \
+		  $(LIBPATH)/Rteserv2IF.o \
+		  $(LIBPATH)/SysRegInfo.o 
+TARGET		= $(LIBPATH)/$(MODEL).a
+
+#
+# Implicit rules
+#
+%.d:%.cpp
+	$(CXX) $(DEPFLAG) $(CXXFLAGS) $< | sed 's!$*.o:!$$(LIBPATH)/&!g' > $@
+
+#$(LIBPATH)/%.o:%.cpp
+#	$(CXX) -c $(CXXFLAGS) -o $@ $<
+
+#
+# Build rules
+#
+.PHONY : all compile clean
+all:
+	if test ! -d $(LIBPATH); then mkdir $(LIBPATH); fi;
+	echo all
+	$(MAKE) -f Makefile_astc compile
+
+compile: $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	$(AR) $@ $(OBJECTS) 2>&1 | c++filt
+	@echo "Done"
+
+$(LIBPATH)/NoDbgIF.o:NoDbgIF.cpp
+	$(CXX) -c $(CXXFLAGS) -o $(LIBPATH)/NoDbgIF.o NoDbgIF.cpp
+
+$(LIBPATH)/NSMVG4CPUV01.o:NSMVG4CPUV01.cpp
+	$(CXX) -c $(CXXFLAGS) -o $(LIBPATH)/NSMVG4CPUV01.o NSMVG4CPUV01.cpp
+
+$(OBJECTS): $(SOURCES) $(SOURCES:.cpp=.d)
+
+clean:
+	find . -name "*~" -print -exec rm -f {} \;
+	-$(RM) $(RM_OPT) $(SOURCES:.cpp=.d) $(LIBPATH)/NoDbgIF.o $(LIBPATH)/NSMVG4CPUV01.o $(TARGET) core
+
+
+#
+# Dependencies
+#
+-include $(SOURCES:.cpp=.d)
+

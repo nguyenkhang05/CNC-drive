@@ -1,0 +1,85 @@
+#  COPYRIGHT (C) NEC Electronics Corporation 2005
+#  NEC ELECTRONICS CONFIDENTIAL AND PROPRIETARY
+#  All rights reserved by NEC Electronics Corporation.
+#  This program must be used solely for the purpose for which
+#  it was furnished by NEC Electronics Corporation. No part of this
+#  program may be reproduced or disclosed to others, in any 
+#  form, without the prior written permission of NEC Electronics
+#  Corporation. Use of copyright notice does not evidence
+#  publication of the program.
+
+# $Id: imakefile.skl,v 1.1.1.1 2012/09/27 10:12:25 chaunguyen Exp $
+
+#COMMON_DIR = ../../0_common_files
+
+# Tools
+#TOOLS           = /common/appl/Multi_v6/comp_201251/
+#CC		= $(TOOLS)/ccrh850
+#AS		= $(TOOLS)/ccrh850
+CC		= $(TOOLS)/cxrh850
+AS		= $(TOOLS)/cxrh850
+LD		= $(TOOLS)/elxr
+AR		= $(TOOLS)/ax
+GSREC		= $(TOOLS)/gsrec
+DUMP		= $(TOOLS)/gdump
+RM		= /bin/rm -f
+
+# Source directory
+SRCDIR		= .
+
+# Tool options
+CFLAGS		= -c -G -noobj -cpu=rh850 -I$(COMMON_DIR) -I. %%TIMEMODE
+ASFLAGS		= $(CFLAGS) -D__asm__
+LDFLAGS		= -map -Y UL,$(TOOLS)/lib/rh850
+ARFLAGS		= rv
+
+# Objects
+OBJS		= $(SRCFILE).o start1.o boot.o share.o intv1m.o int.o 
+DIRS		= $(COMMON_DIR)/tp1.850
+TARGET		= %%TM_NAME
+SRCFILE     = %%TM_NAME
+
+# Make target
+all:	$(TARGET).hex $(TARGET).asm $(TARGET).dump
+
+$(TARGET).hex:	$(TARGET).out
+	$(GSREC) $< -o $@
+
+$(TARGET).asm:	$(TARGET).out
+	$(DUMP) -ytext -yl  -N $< > $@
+
+$(TARGET).dump:	$(TARGET).out
+	$(DUMP) -ytext -raw -N $< > $@
+
+clean		: 
+	$(RM) $(OBJS)
+	$(RM) $(TARGET).out $(TARGET).hex $(TARGET).asm $(TARGET).dump $(TARGET).map $(TARGET) $(TARGET).o
+	$(RM) *.dbo m.r *~
+
+$(TARGET).out:	$(OBJS) $(DIRS)
+	$(LD) $(LDFLAGS) -T $(DIRS) $(OBJS)	\
+		-lansi -lind_sf -lstartup -lsys -larch -v800_old_callt	\
+		-e 0x0					\
+		-o $@
+	ln -s $(TARGET).out $(TARGET)
+
+boot.o:		$(COMMON_DIR)/boot.850
+	$(AS) $(ASFLAGS) $<
+
+start1.o:	$(COMMON_DIR)/start1.850
+	$(AS) $(ASFLAGS) $<
+
+share.o:	$(COMMON_DIR)/share.c
+	$(CC) $(CFLAGS) $<
+
+int.o:		$(COMMON_DIR)/int.850
+	$(AS) $(ASFLAGS) $<
+
+intv1m.o:	$(SRCDIR)/intv1m.c
+	$(CC) $(CFLAGS) $<
+
+$(SRCFILE).o:	$(SRCDIR)/$(SRCFILE).c
+	$(CC) $(CFLAGS) $<
+
+
+

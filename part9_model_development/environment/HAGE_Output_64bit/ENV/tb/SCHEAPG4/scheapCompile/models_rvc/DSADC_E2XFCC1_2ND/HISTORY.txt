@@ -1,0 +1,245 @@
+***************************************************************************************************
+DSADC_Output_20191128.7z
+-----------------------------
+- Release info: Official release
+- Release date: Nov 28, 2019
+- Test environment: SC-HEAP G4 Rev191, gcc4.9.3, x64
+- Updated source code:  Update DSADC_E2XFCC1_2ND_Func.cpp to prohibit transaction access with NULL extension. 
+   + DSADC_E2XFCC1_2ND.cpp               	1.8
+   + DSADC_E2XFCC1_2ND.h                 	1.4
+   + DSADC_E2XFCC1_2ND_AgentController.h 	1.4
+   + DSADC_E2XFCC1_2ND_cmdif.h           	1.2
+   + DSADC_E2XFCC1_2ND_Func.cpp          	1.6 (change)
+   + DSADC_E2XFCC1_2ND_Func.h            	1.3
+   + dsadc_e2xfcc1_2nd_regif.cpp         	1.3
+   + dsadc_e2xfcc1_2nd_regif.h           	1.2
+   + PY_DSADC_E2XFCC1_2ND.cpp            	1.1
+   + PY_DSADC_E2XFCC1_2ND.h              	1.1
+- Supported functions (NOT CHANGE):
+    + Analog to digital conversion function
+    + Calibration function
+    + Time-stamp output function
+    + Single End input and Differential input
+    + Input gain function
+    + A/D conversion start/end trigger
+    + Entry to digital filter engine
+    + DMA transfer function
+    + AD error and AD parity error interrupts
+    + Setting range of the analog conversion voltage
+    + A/D conversion monitor output
+    + Disconnection detection function
+    + Safety functions
+    + Boundary Flag Generating Signal Output Function
+
+***************************************************************************************************
+DSADC_Output_20191126.7z
+-----------------------------
+- Release info: Official release
+- Release date: Nov 26, 2019
+- Test environment: SC-HEAP G4 Rev191, gcc4.9.3, x64
+- Updated source code:  Update DSADC_E2XFCC1_2ND_Func.cpp to prohibit transaction access with NULL extension. 
+   + DSADC_E2XFCC1_2ND.cpp               	1.8
+   + DSADC_E2XFCC1_2ND.h                 	1.4
+   + DSADC_E2XFCC1_2ND_AgentController.h 	1.4
+   + DSADC_E2XFCC1_2ND_cmdif.h           	1.2
+   + DSADC_E2XFCC1_2ND_Func.cpp          	1.5 (change)
+   + DSADC_E2XFCC1_2ND_Func.h            	1.3
+   + dsadc_e2xfcc1_2nd_regif.cpp         	1.3
+   + dsadc_e2xfcc1_2nd_regif.h           	1.2
+   + PY_DSADC_E2XFCC1_2ND.cpp            	1.1
+   + PY_DSADC_E2XFCC1_2ND.h              	1.1
+- Supported functions (NOT CHANGE):
+    + Analog to digital conversion function
+    + Calibration function
+    + Time-stamp output function
+    + Single End input and Differential input
+    + Input gain function
+    + A/D conversion start/end trigger
+    + Entry to digital filter engine
+    + DMA transfer function
+    + AD error and AD parity error interrupts
+    + Setting range of the analog conversion voltage
+    + A/D conversion monitor output
+    + Disconnection detection function
+    + Safety functions
+    + Boundary Flag Generating Signal Output Function
+
+***************************************************************************************************
+DSADC_Output_64bit_20190625.7z
+-----------------------------
+- Release info: Merge source with E2x/FCC2 and update env to version 191. 
+- Release date: June 26, 2019
+- Test environment: SC-HEAP G4 Rev191, gcc4.9.3, x64
+- Updated source code:  Using RVC common file function. 
+                        Using UNIT from DSADC_Base. 
+                        
+   + DSADC_E2XFCC1_2ND.cpp               	1.8
+   + DSADC_E2XFCC1_2ND.h                 	1.4
+   + DSADC_E2XFCC1_2ND_AgentController.h 	1.4
+   + DSADC_E2XFCC1_2ND_cmdif.h           	1.2
+   + DSADC_E2XFCC1_2ND_Func.cpp          	1.4
+   + DSADC_E2XFCC1_2ND_Func.h            	1.3
+   + dsadc_e2xfcc1_2nd_regif.cpp         	1.3
+   + dsadc_e2xfcc1_2nd_regif.h           	1.2
+   + PY_DSADC_E2XFCC1_2ND.cpp            	1.1
+   + PY_DSADC_E2XFCC1_2ND.h              	1.1
+
+- Supported functions: Not change from previous release
+
+***************************************************************************************************
+DSADC_Output_64bit_20190515.7z
+-----------------------------
+- Release info: Merge source with E2x/FCC2 and update env to version 191. 
+- Release date: May 15, 2019
+- Test environment: SC-HEAP G4 Rev191, gcc4.9.3, x64
+- Updated source code:  Using RVC common file function. 
+                        Using UNIT from DSADC_Base. 
+                        
+   + DSADC_E2XFCC1_2ND.cpp               	1.6
+   + DSADC_E2XFCC1_2ND.h                 	1.4
+   + DSADC_E2XFCC1_2ND_AgentController.h 	1.4
+   + DSADC_E2XFCC1_2ND_cmdif.h           	1.2
+   + DSADC_E2XFCC1_2ND_Func.cpp          	1.4
+   + DSADC_E2XFCC1_2ND_Func.h            	1.3
+   + dsadc_e2xfcc1_2nd_regif.cpp         	1.3
+   + dsadc_e2xfcc1_2nd_regif.h           	1.2
+   + PY_DSADC_E2XFCC1_2ND.cpp            	1.1
+   + PY_DSADC_E2XFCC1_2ND.h              	1.1
+
+- Supported functions: Not change from previous release
+
+***************************************************************************************************
+DSADC_E2XFCC1_2ND_Output_20180919.7z
+-----------------------------
+- Release info: Not change from previous release
+- Release date: Sep 19, 2018
+- Test environment: SC-HEAP G4 Rev073, gcc4.9.3, x64
+- Updated source code: Rename "DSADC" to "DSADC_E2XFCC1_2ND", register name is not change
+    + PY_DSADC_E2XFCC1_2ND.h                     1.1
+    + DSADC_E2XFCC1_2ND_UNIT.cpp                 1.1
+    + DSADC_E2XFCC1_2ND_cmdif.h                  1.1
+    + dsadc_e2xfcc1_2nd_regif.cpp                1.1
+    + dsadc_e2xfcc1_2nd_unit_regif.h             1.1
+    + DSADC_E2XFCC1_2ND.h                        1.1
+    + DSADC_E2XFCC1_2ND_Func.cpp                 1.1
+    + DSADC_E2XFCC1_2ND_Func.h                   1.1
+    + DSADC_E2XFCC1_2ND_AgentController.h        1.1
+    + DSADC_E2XFCC1_2ND_UNIT_AgentController.h   1.1
+	+ dsadc_e2xfcc1_2nd_unit_regif.cpp           1.1
+	+ DSADC_E2XFCC1_2ND_UNIT.h                   1.1
+	+ DSADC_E2XFCC1_2ND_Func.h                   1.1
+	+ PY_DSADC_E2XFCC1_2ND.cpp                   1.1
+	+ dsadc_e2xfcc1_2nd_regif.h                  1.1
+	+ DSADC_E2XFCC1_2ND_Func.cpp                 1.1
+	+ DSADC_E2XFCC1_2ND.cpp                      1.1
+	+ DSADC_E2XFCC1_2ND_UNIT_cmdif.h             1.1
+
+- Supported functions: Not change from previous release
+
+***************************************************************************************************
+DSADC_Output_20180723.7z
+-----------------------------
+- Release info: Not change from previous release
+- Release date: Jul 23, 2018
+- Test environment: SC-HEAP G4 Rev073, gcc4.9.3, x64
+- Updated source code (Not change):
+    + PY_DSADC.h                     7967
+    + DSADC_UNIT.cpp                 7975
+    + DSADC_cmdif.h                  7967
+    + dsadc_regif.cpp                7967
+    + dsadc_unit_regif.h             7967
+    + DSADC.h                        7967
+    + DSADC_UNIT_Func.cpp            7975
+    + DSADC_UNIT_Func.h              7975
+    + DSADC_AgentController.h        7967
+    + DSADC_UNIT_AgentController.h   7967
+	+ dsadc_unit_regif.cpp           7967
+	+ DSADC_UNIT.h                   8045
+	+ DSADC_Func.h                   7967
+	+ PY_DSADC.cpp                   7975
+	+ dsadc_regif.h                  7967
+	+ DSADC_Func.cpp                 7971
+	+ DSADC.cpp                      7967
+	+ DSADC_UNIT_cmdif.h             7967
+
+- Supported functions: Not change from previous release
+
+***************************************************************************************************
+DSADC_Output_20180716.7z
+-----------------------------
+- Release info: Update to UM Rev0.80
+- Release date: Jul 16, 2018
+- Test environment: SC-HEAP G4 Rev073, gcc4.9.3, x64
+- Updated source code:
+    + PY_DSADC.h                     7967
+    + DSADC_UNIT.cpp                 7975
+    + DSADC_cmdif.h                  7967
+    + dsadc_regif.cpp                7967
+    + dsadc_unit_regif.h             7967
+    + DSADC.h                        7967
+    + DSADC_UNIT_Func.cpp            7975
+    + DSADC_UNIT_Func.h              7975
+    + DSADC_AgentController.h        7967
+    + DSADC_UNIT_AgentController.h   7967
+	+ dsadc_unit_regif.cpp           7967
+	+ DSADC_UNIT.h                   8045
+	+ DSADC_Func.h                   7967
+	+ PY_DSADC.cpp                   7975
+	+ dsadc_regif.h                  7967
+	+ DSADC_Func.cpp                 7971
+	+ DSADC.cpp                      7967
+	+ DSADC_UNIT_cmdif.h             7967
+
+- Supported functions: not change from previous release
+
+***************************************************************************************************
+DSADC_Output_01212017.7z
+-----------------------------
+- Release info: Update to UM Rev0.10
+- Release date: Jan 21, 2017
+- Test environment: SCHEAP G4 Rev80
+- Updated source code:
+    + DSADC_Func.cpp        (v1.2)
+    + DSADC_Func.h          (v1.1)
+    + dsadc_regif.cpp       (v1.1)
+    + dsadc_regif.h         (v1.1)
+    + DSADC_UNIT.cpp        (v1.3)
+    + DSADC_UNIT_Func.cpp   (v1.2)
+    + DSADC_UNIT_Func.h     (v1.2)
+    + DSADC_UNIT_Func.h     (v1.2)
+    + dsadc_unit_regif.cpp  (v1.1)
+    + dsadc_unit_regif.h    (v1.1)
+- Supported functions: not change from previous release
+
+***************************************************************************************************
+DSADC_Output_05062016.7z
+-----------------------------
+- Release info: Fix interrupt timing bug
+- Release date: May 06, 2016
+- Test environment: SCHEAP E3 Rev443
+- Updated source code:
+    + DSADC_UNIT.cpp        (v1.2)
+- Supported functions: not change from previous release
+
+***************************************************************************************************
+DSADC_Output_04252016.7z
+-----------------------------
+- Release info: Official release
+- Release date: Apr 25, 2016
+- Test environment: SCHEAP E3 Rev443
+- Supported functions:
+    + Analog to digital conversion function
+    + Calibration function
+    + Time-stamp output function
+    + Single End input and Differential input
+    + Input gain function
+    + A/D conversion start/end trigger
+    + Entry to digital filter engine
+    + DMA transfer function
+    + AD error and AD parity error interrupts
+    + Setting range of the analog conversion voltage
+    + A/D conversion monitor output
+    + Disconnection detection function
+    + Safety functions
+    + Boundary Flag Generating Signal Output Function
+

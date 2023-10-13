@@ -1,0 +1,157 @@
+-----------------------------
+http://172.29.139.78/mcu_modeling_01/release/source_code/18017_U2A_LPS/LPSA100
+-----------------------------
+- Release info: Release source code to fix bug on redmine ticket #81283
+- Release date: May 29, 2020
+- Source code (CVS repository):
+    LPSA100.cpp                    (1.15)
+    LPSA100.h                      (1.10)
+    LPSA100_AgentController.h      (1.2)
+    LPSA100_cmdif.h                (1.5)
+    LPSA100_Func.cpp               (1.6)
+    LPSA100_Func.h                 (1.4)
+    lpsa100_regif.cpp              (1.4)
+    lpsa100_regif.h                (1.4)
+    LPS_def.h                      (1.2)
+    PY_LPSA100.cpp                 (1.5)
+    PY_LPSA100.h                   (1.3)
+
+- Supported features: (not change)
+- None supported features: (not change)
+
+-----------------------------
+LPSA100_Output_64bit_20200221.7z
+-----------------------------
+- Release info: Release source code to following HWM spec Rev.061
+- Release date: Feb 21, 2020
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+    LPSA100.cpp                    (1.13)
+    LPSA100.h                      (1.9)
+    LPSA100_AgentController.h      (1.2)
+    LPSA100_cmdif.h                (1.5)
+    LPSA100_Func.cpp               (1.6)
+    LPSA100_Func.h                 (1.4)
+    lpsa100_regif.cpp              (1.4)
+    lpsa100_regif.h                (1.4)
+    LPS_def.h                      (1.2)
+    PY_LPSA100.cpp                 (1.5)
+    PY_LPSA100.h                   (1.3)
+
+- Supported features: (not change)
+- None supported features: (not change)
+
+-----------------------------
+LPSA100_Output_64bit_20200205.7z
+-----------------------------
+- Release info: Release source code to following HWM spec Rev.061
+- Release date: Feb 05, 2020
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+    LPSA100.cpp                    (1.13)
+    LPSA100.h                      (1.9)
+    LPSA100_AgentController.h      (1.2)
+    LPSA100_cmdif.h                (1.3)
+    LPSA100_Func.cpp               (1.6)
+    LPSA100_Func.h                 (1.4)
+    lpsa100_regif.cpp              (1.3)
+    lpsa100_regif.h                (1.3)
+    LPS_def.h                      (1.2)
+    PY_LPSA100.cpp                 (1.5)
+    PY_LPSA100.h                   (1.3)
+
+- Supported features: (not change)
+- Remove feature
+    + Analog port error interrupt (INTAPE):
+        Level sensitive interrupt indicating a data comparison mismatch is generated for analog input. 
+        This interrupt is generated not only in standby mode but also in RUN mode.
+- None supported features: (not change)
+
+-----------------------------
+LPSA100_Output_64bit_20181116.7z
+-----------------------------
+- Release info: Release source code for fixing ticket #76265
+- Release date: Nov 12, 2018
+- Test environment: SC-HEAP G4 Rev135 64 bit
+- Source code (CVS repository):
+    LPSA100.cpp                    (1.11)
+    LPSA100.h                      (1.8)
+    LPSA100_AgentController.h      (1.1)
+    LPSA100_cmdif.h                (1.2)
+    LPSA100_Func.cpp               (1.5)
+    LPSA100_Func.h                 (1.3)
+    lpsa100_regif.cpp              (1.2)
+    lpsa100_regif.h                (1.2)
+    LPS_def.h                      (1.1)
+    PY_LPSA100.cpp                 (1.4)
+    PY_LPSA100.h                   (1.2)
+
+- Supported features: (not change)
+- Add feature
+    + Digital port error interrupt (INTDPE):
+        . Level sensitive interrupt indicating a data comparison mismatch is generated for digital input. This interrupt
+          is generated not only in standby mode but also in RUN mode.
+    + Analog port error interrupt (INTAPE):
+        . Level sensitive interrupt indicating a data comparison mismatch is generated for analog input. This interrupt
+          is generated not only in standby mode but also in RUN mode.
+- None supported features: (not change)
+
+-----------------------------
+LPSA100_Output_64bit_20181025.7z
+-----------------------------
+- Release info: Final release
+- Release date: Oct 25, 2018
+- Test environment: SC-HEAP G4 Rev135 64 bit
+- Source code (CVS repository):
+    LPSA100.cpp                    (1.9)
+    LPSA100.h                      (1.6)
+    LPSA100_AgentController.h      (1.1)
+    LPSA100_cmdif.h                (1.2)
+    LPSA100_Func.cpp               (1.5)
+    LPSA100_Func.h                 (1.3)
+    lpsa100_regif.cpp              (1.2)
+    lpsa100_regif.h                (1.2)
+    LPS_def.h                      (1.1)
+    PY_LPSA100.cpp                 (1.4)
+    PY_LPSA100.h                   (1.2)
+
+- Supported features: (not change)
+- None supported features: (not change)
+
+-----------------------------
+src_LPSA100_20181010.7z
+-----------------------------
+- Release info: Release source code for code review 2
+- Release date: Oct 10, 2018
+- Test environment: SC-HEAP G4 Rev135 64 bit
+- Source code (CVS repository):
+    LPSA100.cpp                (v1.5)
+    LPSA100.h                  (v1.4)
+    LPSA100_AgentController.h  (v1.1)
+    LPSA100_Func.cpp           (v1.2)
+    LPSA100_Func.h             (v1.2)
+    LPSA100_cmdif.h            (v1.1)
+    LPS_def.h                  (v1.1)
+    PY_LPSA100.cpp             (v1.3)
+    PY_LPSA100.h               (v1.2)
+    lpsa100_regif.cpp          (v1.1)
+    lpsa100_regif.h            (v1.1)
+
+- Supported features:
+    + Max frequency of clock CLK_LSB, CLKA_LPS: Unlimited frequency
+    + Synchronous reset (PRESETn): Asynchronous
+    + Access to registers: Use TLM target socket to access to registers from APB bus
+    + Check the digital input ports without using the CPU:
+        . LPSA100 can compare expected value set by LPSA100's registers with data which the LPSA100 acquired 
+          from the digital port input. If they are different, an interrupt is notified. 
+        . Support number of times the input ports are read up to 8.
+    + Check the analog input ports without using the CPU:
+        . LPSA100 can check the A/D error signal of the A/D converter is notified or not. If it is notified, 
+          an interrupt is notified.
+    + Dual Mode:
+        . If Digital Input Mode and Analog Input Mode is enabled in same time, two mode can run in parallel
+        . LPSA100 operation is stopped when both mode finished and disabled.
+    + Select Start Trigger:
+        . LPSA100 can select start trigger in 8 triggers which received from TAUJy module
+        . If LPSA100 is started by a start trigger, other start trigger will be rejected unless LPSA100 operation is done
+- None supported features: None.

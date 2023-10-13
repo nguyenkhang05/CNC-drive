@@ -1,0 +1,43 @@
+***************************************************************************************************
+HI20FSGD2_Output_64bit_20191220.7z
+-----------------------------
+- Release info: Final release
+- Release date: Dec/20/2019
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+- SVN path: mcu_modeling_01/release/source_code/
+
+- File (CVS repository):
+    + HI20FSGD2_ERRSLV_AgentController.h     1.1
+    + HI20FSGD2_ERRSLV_cmdif.h               1.1
+    + HI20FSGD2_ERRSLV.cpp                   1.4
+    + HI20FSGD2_ERRSLV_Func.cpp              1.4
+    + HI20FSGD2_ERRSLV_Func.h                1.2
+    + HI20FSGD2_ERRSLV.h                     1.1
+    + hi20fsgd2_errslv_regif.cpp             1.1
+    + hi20fsgd2_errslv_regif.h               1.2
+    + PY_HI20FSGD2_ERRSLV.cpp                1.2
+    + PY_HI20FSGD2_ERRSLV.h                  1.1
+
+- Supported functions:
+    + Capture error information
+
+***************************************************************************************************
+- Release info: Release alpha source code
+- Release date: Nov/28/2019
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+- SVN path: mcu_modeling_01/release/source_code/
+
+- File (CVS repository):
+    + HI20FSGD2_ERRSLV_AgentController.h     1.1
+    + HI20FSGD2_ERRSLV_cmdif.h               1.1
+    + HI20FSGD2_ERRSLV.cpp                   1.3
+    + HI20FSGD2_ERRSLV_Func.cpp              1.3
+    + HI20FSGD2_ERRSLV_Func.h                1.2
+    + HI20FSGD2_ERRSLV.h                     1.1
+    + hi20fsgd2_errslv_regif.cpp             1.1
+    + hi20fsgd2_errslv_regif.h               1.2
+    + PY_HI20FSGD2_ERRSLV.cpp                1.2
+    + PY_HI20FSGD2_ERRSLV.h                  1.1
+
+- Supported functions:
+    + Capture error information

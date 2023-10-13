@@ -1,0 +1,327 @@
+***************************************************************************************************
+(*) Status of ATU5010_Output_r24_20170918.7z/ATU5010_Output_r106_20170918.7z:
+-----------------------------
+- Release info: Fix bug lack number of sub-block in Wrapper module (Redmine ticket #4166)
+- Release date: Sep 18, 2017
+- Test environment: SCHEAP G4 Rev24 & Rev106
+- Updated source code:
+    ATU5010.cpp                             v1.2
+    ATU5010_AgentController.h               v1.1
+- Supported features: not change from previous release.
+
+***************************************************************************************************
+(*) Status of ATU5010_Output_r24_20170824.7z/ATU5010_Output_r106_20170824.7z:
+-----------------------------
+- Release info: This module's development is based on E2x-FCC1's ATU5 module and updated some new features
+- Release date: Aug 24, 2017
+- Test environment: SCHEAP G4 Rev24 & Rev106
+
+---------------------------------------------------------------------------------------------------
+ATU5010_Wrapper module
+---------------------------------------------------------------------------------------------------
+- Files:
+    ATU5010.cpp                             v1.1
+    ATU5010.h                               v1.1
+    ATU5010_AgentController.h               v1.0
+    ATU5010_cmdif.h                         v1.0
+    ATU5010_Func.cpp                        v1.0
+    ATU5010_Func.h                          v1.0
+    atu5010_regif.cpp                       v1.0
+    atu5010_regif.h                         v1.0
+    ATU5010_Timer.cpp                       v1.1
+    ATU5010_Timer.h                         v1.1
+    PY_ATU5010.cpp                          v1.0
+    PY_ATU5010.h                            v1.0
+    Cgeneral_timer.cpp                      v2017_07_31
+    Cgeneral_timer.h                        v2017_07_31
+
+- Supported features:
+    1. Prescaler
+    2. Automatic Switching of DMA and AD Requests
+    3. Trigger select function
+
+- Non-supported features and limitation: none
+
+---------------------------------------------------------------------------------------------------
+ATU5010_TimerA module
+---------------------------------------------------------------------------------------------------
+- Files:
+    ATU5010_TIMERA.cpp                      v1.1
+    ATU5010_TIMERA.h                        v1.0
+    ATU5010_TIMERA_Base.h                   v1.0
+    ATU5010_TIMERA_cmdif.h                  v1.0
+    ATU5010_TIMERA_Func.cpp                 v1.0
+    ATU5010_TIMERA_Func.h                   v1.0
+    atu5010_timera_regif.cpp                v1.0
+    atu5010_timera_regif.h                  v1.0
+
+- Supported features:
+    1. Free Running counter
+    2. Input capture
+    3. Event output
+    4. Pin level output
+    5. Noise Canceller function
+    6. Clock input from Timer B
+
+- Non-supported features and limitation: none
+
+---------------------------------------------------------------------------------------------------
+ATU5010_TimerB module
+---------------------------------------------------------------------------------------------------
+- Files:
+    ATU5010_TIMERB.cpp                      v1.3
+    ATU5010_TIMERB.h                        v1.1
+    ATU5010_TIMERB_Base.h                   v1.0
+    ATU5010_TIMERB_cmdif.h                  v1.0
+    ATU5010_TIMERB_Func.cpp                 v1.1
+    ATU5010_TIMERB_Func.h                   v1.1
+    atu5010_timerb_regif.cpp                v1.1
+    atu5010_timerb_regif.h                  v1.1
+
+- Supported features:
+    1. Edge-Interval Measuring Block
+        1.1 Counter B0:
+            1.1.1 Time Interval measure
+            1.1.2 Compare match OCRB0
+            1.1.3 Input capture ICRB0
+            1.1.4 Input capture ICRB1, ICRB2
+        1.2 Counter B1:
+            1.2.1 Count External Event
+            1.2.2 Compare match OCRB1
+            1.2.3 Compare match OCRB10 11 12
+            1.2.4 Input capture ICRB30-37
+        1.3 Correction value control circuit
+    2. Frequency-Multiplied Clock Generator
+        2.1 Counter B2:
+            2.1.1 Reload operation
+            2.1.2 Count down PIMR
+            2.1.3 Count up RLDB
+            2.1.4 Generate AGCK1 signal
+        2.2 Counter B6:
+            2.2.1 Count up at AGCK1
+            2.2.2 Compare match OCRB6
+            2.2.2 Compare match OCRB7
+        2.3 Counter B6M:
+            2.3.1 Count up at AGCK1
+            2.3.2 Compare match CMFB6M
+            2.3.2 Compare match CMFB6E
+    3. Frequency-Multiplied Clock Signal Corrector
+        3.1 Counter B3:
+            3.1.1 Count up at external event
+            3.1.2 Cleared at compare match OCRB10
+            3.1.3 Cleared at compare match OCRB8
+            3.1.4 Cleared at compare match OCRB6
+        3.2 Counter B4:
+            3.2.1 Count up at AGCK1
+            3.2.2 Counter Correction Select
+            3.2.3 Load value of TCNTB3 at external event
+        3.3 Counter B5:
+            3.3.1 Count up follow Counter B4
+            3.3.2 Auto count up (PCLK clock) mode
+            3.3.3 Clear operation
+            3.3.4 Disable counter B5
+            3.3.5 Generate AGCKM signal
+            3.3.5 Generate Clear signal to TimerD
+
+- Non-supported features and limitation: none
+
+---------------------------------------------------------------------------------------------------
+ATU5010_TimerC module
+---------------------------------------------------------------------------------------------------
+- Files:
+    ATU5010_TIMERC.cpp                      v1.1
+    ATU5010_TIMERC.h                        v1.1
+    ATU5010_TIMERC_AgentController.h        v1.0
+    ATU5010_TIMERC_cmdif.h                  v1.0
+    ATU5010_TIMERC_Func.cpp                 v1.0
+    ATU5010_TIMERC_Func.h                   v1.0
+    atu5010_timerc_regif.cpp                v1.0
+    atu5010_timerc_regif.h                  v1.0
+    ATU5010_TIMERC_SUB.cpp                  v1.2
+    ATU5010_TIMERC_SUB.h                    v1.1
+    ATU5010_TIMERC_SUB_AgentController.h    v1.0
+    ATU5010_TIMERC_SUB_cmdif.h              v1.0
+    ATU5010_TIMERC_SUB_Func.cpp             v1.0
+    ATU5010_TIMERC_SUB_Func.h               v1.0
+    atu5010_timerc_sub_regif.cpp            v1.0
+    atu5010_timerc_sub_regif.h              v1.0
+
+- Supported features:
+    1. Input Capture Function
+    2. Compare Match Function
+    3. PWM Function
+    4. One-Shot Pulse Function
+    5. Counter Upper-Limit Setting Function
+    6. Noise canceller
+    7. Clock input from Timer B
+    8. Number of sub-block: 14
+
+- Non-supported features and limitation: none
+
+---------------------------------------------------------------------------------------------------
+ATU5010_TimerD module
+---------------------------------------------------------------------------------------------------
+- Files:
+    ATU5010_TIMERD.cpp                      v1.2
+    ATU5010_TIMERD.h                        v1.0
+    ATU5010_TIMERD_AgentController.h        v1.0
+    ATU5010_TIMERD_cmdif.h                  v1.0
+    ATU5010_TIMERD_Func.cpp                 v1.0
+    ATU5010_TIMERD_Func.h                   v1.0
+    atu5010_timerd_regif.cpp                v1.0
+    atu5010_timerd_regif.h                  v1.0
+    ATU5010_TIMERD_SUB.cpp                  v1.1
+    ATU5010_TIMERD_SUB.h                    v1.1
+    ATU5010_TIMERD_SUB_AgentController.h    v1.0
+    ATU5010_TIMERD_SUB_cmdif.h              v1.0
+    ATU5010_TIMERD_SUB_Func.cpp             v1.0
+    ATU5010_TIMERD_SUB_Func.h               v1.0
+    atu5010_timerd_sub_regif.cpp            v1.0
+    atu5010_timerd_sub_regif.h              v1.0
+
+- Supported features:
+    1. Compare Match A and Compare Match B
+    2. Down Counter Trigger and One_shot pulse output
+    3. Shut off output waveform priority
+    4. Capture value when Compare Match occurs
+    5. Pulse on Compare Match A and B
+    6. Interrupt request on Compare Match A and B
+    8. Range Compare Function
+    9. Clear TCNT1D and TCNT2D on compare match
+    10. Interrupt request on Overflow of TCNT1D and TCNT2D
+    11. Interrupt request on DCNTD underflow
+    12. Offset base register captures Counter value
+    13. Clearing TCNT1D and TCNT2D by clear signal from TimerB
+    14. Modify with of TODxyB output
+    15. Capture TCNT1D or TCNT2D on Edges of TODxyB
+    16. Clock input from Timer B
+    18. MIN Guard function
+    19. Common input capture
+    20. Number of sub-block: 15
+
+- Non-supported features and limitation: none
+
+---------------------------------------------------------------------------------------------------
+ATU5010_TimerE module
+---------------------------------------------------------------------------------------------------
+- Files:
+    ATU5010_TIMERE.cpp                      v1.0
+    ATU5010_TIMERE.h                        v1.0
+    ATU5010_TIMERE_AgentController.h        v1.0
+    ATU5010_TIMERE_cmdif.h                  v1.0
+    ATU5010_TIMERE_Func.cpp                 v1.0
+    ATU5010_TIMERE_Func.h                   v1.0
+    atu5010_timere_regif.cpp                v1.0
+    atu5010_timere_regif.h                  v1.0
+    ATU5010_TIMERE_SUB.cpp                  v1.2
+    ATU5010_TIMERE_SUB.h                    v1.1
+    ATU5010_TIMERE_SUB_AgentController.h    v1.0
+    ATU5010_TIMERE_SUB_cmdif.h              v1.0
+    ATU5010_TIMERE_SUB_Func.cpp             v1.0
+    ATU5010_TIMERE_SUB_Func.h               v1.0
+    atu5010_timere_sub_regif.cpp            v1.0
+    atu5010_timere_sub_regif.h              v1.0
+
+- Supported features:
+    1. PWM output operation
+    2. Counter clearing
+    3. Shut-off Request
+    4. Cycle force compare match
+    5. On-state and Off-state duty mode
+    6. Interrupt
+    7. Clock input from Timer B
+    8. Number of sub-block: 10
+
+- Non-supported features and limitation:
+    + Emulation function is not supported
+    + Debug mode is NOT supported.
+    + When writing a value to the timer counter and incrementation occur simultaneously while the counter
+        is 0xFFFFFF00, the overflow flag is set to 1 but the counter value is changed to the written value
+        instead of 0x0: NOT supported.
+    + If a write to CYLRExy occurs at the same timing as cycle match counter clearing, TCNTExy is cleared
+        as in the same manner as normal cycle match, a cycle match interrupt request is issued, and the
+        cycle match status and PWM output are changed: NOT supported.
+    + When a write to TCNTExy occurs simultaneously with counter clearing by cycle match, the counter is
+        not cleared and TCNTExy is written to. However, a cycle match interrupt request is issued, the cycle
+        match status is set, and reload of the cycle-setting register and the duty cycle setting register
+        are performed PWM waveform output at the time of cycle match is also performed: NOT supported.
+    + If setting of the cycle match flag (cycle match) and clearing of the flag by the timer status clear
+        register occur simultaneously, clearing of the flag takes priority. Where flag setting by cycle
+        match and flag clearing by the timer status clear register occur simultaneously: NOT supported.
+    + Operation when writing “0” to TCNTExy occurs simultaneously with cycle match is shown below.
+        The waveforms in show a case in which 000000H is written to TCNTExy at the same time TCNTExy is
+        cleared to 000001H due to cycle match. A cycle match interrupt request is issued and the cycle
+        match status is set, but PWM output does not start because writing “0” takes priority. PWM output
+        restarts when TCNTExy counts up to 000001H: NOT supported.
+    + When data transfer occurs simultaneously with a write to the transfer destination register, writing
+        takes priority and the attempt of data transfer is ignored. If writing to CYLRExy occurs at the same
+        timing as cycle reload, writing takes priority: NOT supported.
+    + When data transfer occurs simultaneously with a write to the transfer source register, the value prior
+        to writing is transferred. At the same time, the value of the transfer source register is modified.
+        If writing to CRLDExy occurs at the same timing as cycle reload, the value immediately before writing
+        is reloaded: NOT supported.
+    + When counter overflow occurs simultaneously with a write to TCNTExy, writing to TCNTExy takes priority.
+        However, an overflow interrupt request is issued, and the overflow status is set: NOT supported.
+    + When clearing and setting of the overflow status flag occur simultaneously, clearing takes priority.
+        Where status flag setting by an overflow of the counter value (FFFFFF00H to 00000000H) and flag
+        clearing by the timer status clear register occur simultaneously: NOT supported. 
+
+---------------------------------------------------------------------------------------------------
+ATU5010_TimerF module
+---------------------------------------------------------------------------------------------------
+- Files:
+    ATU5010_TIMERF.cpp                      v1.2
+    ATU5010_TIMERF.h                        v1.1
+    ATU5010_TIMERF_AgentController.h        v1.0
+    ATU5010_TIMERF_cmdif.h                  v1.0
+    ATU5010_TIMERF_Func.cpp                 v1.1
+    ATU5010_TIMERF_Func.h                   v1.0
+    atu5010_timerf_regif.cpp                v1.0
+    atu5010_timerf_regif.h                  v1.0
+    ATU5010_TIMERF_Sub.cpp                  v1.1
+    ATU5010_TIMERF_Sub.h                    v1.3
+    ATU5010_TIMERF_Sub_AgentController.h    v1.0
+    ATU5010_TIMERF_Sub_cmdif.h              v1.0
+    ATU5010_TIMERF_Sub_Func.cpp             v1.1
+    ATU5010_TIMERF_Sub_Func.h               v1.1
+    atu5010_timerf_sub_regif.cpp            v1.0
+    atu5010_timerf_sub_regif.h              v1.0
+
+- Supported features:
+    1. Edge Counting in a given time
+    2. Effective Edge Interval Counting
+    3. Measurement of Time during High/Low Input Levels
+    4. Measurement of PWM Input Waveform Timing
+    5. Rotation Speed/Pulse Measurement
+    6. Up/Down Event Count
+    7. Four-time Multiplication Event Count
+    8. Noise canceller
+    9. Clock input from Timer B
+    10. Number of sub-block: 20
+
+- Non-supported features and limitation: none
+
+---------------------------------------------------------------------------------------------------
+ATU5010_TimerG module
+---------------------------------------------------------------------------------------------------
+- Files:
+    ATU5010_TIMERG.cpp                      v1.0
+    ATU5010_TIMERG.h                        v1.0
+    ATU5010_TIMERG_AgentController.h        v1.0
+    ATU5010_TIMERG_cmdif.h                  v1.0
+    ATU5010_TIMERG_Common.h                 v1.0
+    ATU5010_TIMERG_Func.cpp                 v1.0
+    ATU5010_TIMERG_Func.h                   v1.0
+    ATU5010_TIMERG_Func_Timers.cpp          v1.1
+    ATU5010_TIMERG_Func_Timers.h            v1.1
+    atu5010_timerg_regif.cpp                v1.0
+    atu5010_timerg_regif.h                  v1.0
+
+- Supported new features:
+    1. Normal counter mode
+    2. Event sync mode
+    3. Compare match, reload
+    4. Clock input from Timer B
+
+- Non-supported features and limitation: none
+***************************************************************************************************

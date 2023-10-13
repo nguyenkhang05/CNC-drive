@@ -1,0 +1,55 @@
+// Description: History file
+// Ref: {SPIDCTL_DD_ATT1_003}
+
+***************************************************************************************************
+- Release info: Release source code after fix bug and coverage.
+                + Update SPIDCTL::NotifyUpdateSPIDValue() function to prevent update process when reset is asserted or clock is zero.
+                + Update SPIDCTL_Func::DumpStatusInfo() function to print correct format of message.
+                + Update file header comment of file SPIDCTL_cmdif.h to correctly parse file version.
+                + Update Cspidctl_regif::UpdateLocalVal() and Cspidctl_regif::UpdateRegVal() to avoid 1Team analysis bug.
+                + Update source code makefile to run coverage properly
+- Release date:
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  SPIDCTL.cpp               1.2
+  SPIDCTL_Func.cpp          1.2
+  SPIDCTL_cmdif.h           1.2
+  spidctl_regif.cpp         1.2
+  Makefile                   -
+  
+- Supported features: No change
+
+- Non-supported features and limitation:
+  + None.
+   
+***************************************************************************************************
+- Release info: Release alpha source code.
+- Release date: Jan 21, 2020.
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  SPIDCTL.cpp               1.1
+  SPIDCTL.h                 1.1
+  SPIDCTL_AgentController.h 1.1
+  SPIDCTL_Func.cpp          1.1
+  SPIDCTL_Func.h            1.1
+  SPIDCTL_cmdif.h           1.1
+  PY_SPIDCTL.cpp            1.1
+  PY_SPIDCTL.h              1.1
+  spidctl_regif.h           1.1
+  spidctl_regif.cpp         1.1
+
+- Supported features:
+  + High flexibility: 
+     // Ref: {SPIDCTL_DD_Feature_003}
+  + Assign SPID to bus master:
+     // Ref: {SPIDCTL_DD_Feature_004}
+  + Limit SPID by mask register:
+     // Ref: {SPIDCTL_DD_Feature_005}
+  + Security purpose:
+     // Ref: {SPIDCTL_DD_Feature_006}
+
+- Non-supported features and limitation:
+  + None.
+   // Ref: {SPIDCTL_DD_Limitation_001}

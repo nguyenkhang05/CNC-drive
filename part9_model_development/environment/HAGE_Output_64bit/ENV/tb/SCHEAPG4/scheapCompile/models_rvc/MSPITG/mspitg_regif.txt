@@ -1,0 +1,59 @@
+%MODULE MSPITG
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         8
+
+%REG_CHANNEL reg_def
+    %%TITLE  group  name            reg_name        wsize     rsize    length   offset   factor_start  factor_end  factor_index factor_step     access  init    	support     callback
+    %%REG    -      MSPITGCTLn      MSPITGCTLn      8|16|32    8|16|32  32       0x0      0              9          -             0x4         	R|W     0x0000      TRUE    	 W
+    %%REG    -      MSPITGDMAALT    MSPITGDMAALT    8|16|32    8|16|32  32       0x28     -              -          -             -         	R|W     0x0000      TRUE    	 W
+    %%REG    -      MSPITGDTSALT    MSPITGDTSALT    8|16|32    8|16|32  32       0x2c     -              -          -             -         	R|W     0x0000      TRUE    	 W
+
+    	
+
+%REG_NAME	MSPITGCTLn
+	%%TITLE		name				upper	lower		init		access		support		callback
+	%%BIT		TRGSEL0			    0		0			0x0 		R|W			TRUE		W		
+    %%BIT		SRCSEL0			    3		1			0x0 		R|W			TRUE		-		
+    %%BIT		TRGSEL1			    4		4			0x0 		R|W			TRUE		-		
+    %%BIT		SRCSEL1			    7		5			0x0 		R|W			TRUE		-		
+    %%BIT		TRGSEL2			    8		8			0x0 		R|W			TRUE		-		
+    %%BIT		SRCSEL2			    11		9			0x0 		R|W			TRUE		-		
+    %%BIT		TRGSEL3			    12		12			0x0 		R|W			TRUE		-		
+    %%BIT		SRCSEL3			    15		13			0x0 		R|W			TRUE		-	
+    %%BIT		TRGSEL4			    16		16			0x0 		R|W			TRUE		-		
+    %%BIT		SRCSEL4			    19		17			0x0 		R|W			TRUE		-	
+    %%BIT		TRGSEL5			    20		20			0x0 		R|W			TRUE		-		
+    %%BIT		SRCSEL5			    23		21			0x0 		R|W			TRUE		-	
+    %%BIT		TRGSEL6			    24		24			0x0 		R|W			TRUE		-		
+    %%BIT		SRCSEL6			    27		25			0x0 		R|W			TRUE		-	
+    %%BIT		TRGSEL7			    28		28			0x0 		R|W			TRUE		-		
+    %%BIT		SRCSEL7			    31		29			0x0 		R|W			TRUE		-		
+
+%REG_NAME   MSPITGDMAALT	
+	%%TITLE		name				upper	lower		init		access		support		callback
+	%%BIT		DMAAS02		        0		0			0x0 		R|W			TRUE		W		
+	%%BIT		DMAAS03     		1		1			0x0 		R|W			TRUE		-		
+	%%BIT		DMAAS06     		2		2			0x0 		R|W			TRUE		-		
+	%%BIT		DMAAS07    		    3		3			0x0 		R|W			TRUE		-		
+	%%BIT		DMAAS12     		4		4			0x0 		R|W			TRUE		-		
+	%%BIT		DMAAS13     		5		5			0x0 		R|W			TRUE		-		
+	%%BIT		DMAAS16     		6		6			0x0 		R|W			TRUE		-		
+	%%BIT		DMAAS17     		7		7			0x0 		R|W			TRUE		-		    
+			
+%REG_NAME   MSPITGDTSALT	
+	%%TITLE		name				upper	lower		init		access		support		callback
+	%%BIT		DMAAS06			    0		0			0x0 		R|W 		TRUE		W	
+	%%BIT		DMAAS07			    1		1			0x0 		R|W 		TRUE		-	
+	%%BIT		DMAAS14			    2		2			0x0 		R|W 		TRUE		-	
+	%%BIT		DMAAS15			    3		3			0x0 		R|W 		TRUE		-	
+	%%BIT		DMAAS16		        4		4			0x0 		R|W 		TRUE		-	
+	%%BIT		DMAAS17		        5		5			0x0 		R|W 		TRUE		-	
+	%%BIT		DMAAS24		        6		6			0x0 		R|W 		TRUE		-	
+	%%BIT		DMAAS25		        7		7			0x0 		R|W 		TRUE		-	
+	%%BIT		DMAAS26		        8		8			0x0 		R|W 		TRUE		-	
+	%%BIT		DMAAS27		        9		9			0x0 		R|W 		TRUE		-	
+	%%BIT		DMAAS34			    10		10			0x0 		R|W 		TRUE		-	
+	%%BIT		DMAAS35		        11		11			0x0 		R|W 		TRUE		-	
+	%%BIT		DMAAS36			    12		12			0x0 		R|W 		TRUE		-	
+	%%BIT		DMAAS37		        13		13			0x0 		R|W 		TRUE		-		
+		

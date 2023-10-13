@@ -1,0 +1,27 @@
+%MODULE SPIDCTL
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  10
+
+%REG_CHANNEL reg_def
+    %%TITLE    name             reg_name            wsize   rsize       length  offset        factor_start    factor_end  factor_index    factor_step  access   init        support  callback
+    %%REG      BMSPID           BMSPID              8|16|32 8|16|32     32      0x0           0               63          -               -            R|W      0x0         TRUE     -
+    %%REG      BMSPIDMSK        BMSPIDMSK           8|16|32 8|16|32     32      0x100         0               63          -               -            R|W      0xFFFFFFFF  TRUE     -
+    %%REG      BMSPIDMSKLOCK    BMSPIDMSKLOCK       8|16|32 8|16|32     32      0x200         0               63          -               -            R|W      0x0         TRUE     -
+    %%REG      SPIDKCPROT       SPIDKCPROT          32      8|16|32     32      0x300         -               -           -               -            R|W      0x0         TRUE     -
+
+%REG_NAME BMSPID
+    %%TITLE  name               upper   lower   init         access  support     callback
+    %%BIT    SPID               4       0       0x0          R|W     TRUE        W
+
+%REG_NAME BMSPIDMSK
+    %%TITLE  name               upper   lower   init         access  support     callback
+    %%BIT    SPIDMSK            31      0       0xFFFFFFFF   R|W     TRUE        W
+
+%REG_NAME BMSPIDMSKLOCK
+    %%TITLE  name               upper   lower   init         access  support     callback
+    %%BIT    LOCK               0       0       0x0          R|W     TRUE        W
+
+%REG_NAME SPIDKCPROT
+    %%TITLE  name               upper   lower   init         access  support     callback
+    %%BIT    KCPROT             31      1       0x0          W       TRUE        -
+    %%BIT    KCE                0       0       0x0          R|W     TRUE        W

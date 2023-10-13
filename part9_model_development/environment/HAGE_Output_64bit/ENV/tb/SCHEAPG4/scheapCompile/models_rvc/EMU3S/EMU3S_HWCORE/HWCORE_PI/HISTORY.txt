@@ -1,0 +1,79 @@
+// Description: History file
+// Ref: {HWCORE_PI_UD_ATT1_003}
+***************************************************************************************************
+- Release info: Release source code to fix bug #133158.
+                    HWCORE_PI.cpp:                  - Added callback functions for registers IDIN, IQIN, ID, IQ, VD and VQ.
+                                                    - Updated function WritePIDataOutPortsMethod(), PIIP_IDLE_Start_Method(),
+                                                    Handle_rdata_em2iidfixobuf_Method(), Handle_rdata_em2iiqfixobuf_Method(),
+                                                    Handle_rdata_iiroutdat0_Method() and Handle_rdata_iiroutdat1_Method()
+                                                    to reflect data to ports.
+                    HWCORE_PI.h:                    - Added callback functions for registers IDIN, IQIN, ID, IQ, VD and VQ.
+                    HWCORE_PI_Func.cpp:             - Added callback functions for registers IDIN, IQIN, ID, IQ, VD and VQ.
+                    HWCORE_PI_Func.h:               - Added callback functions for registers IDIN, IQIN, ID, IQ, VD and VQ.
+                    hwcore_pi_regif.cpp:            - Added callback functions for registers IDIN, IQIN, ID, IQ, VD and VQ.
+                    hwcore_pi_regif.h:              - Added callback functions for registers IDIN, IQIN, ID, IQ, VD and VQ.
+                    HWCORE_PI_AgentController.h:    - Added callback functions for registers IDIN, IQIN, ID, IQ, VD and VQ.
+- Release date: Nov 10, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  HWCORE_PI.cpp               1.6
+  HWCORE_PI.h                 1.4
+  HWCORE_PI_AgentController.h 1.3
+  HWCORE_PI_Func.cpp          1.4
+  HWCORE_PI_Func.h            1.3
+  HWCORE_PI_cmdif.h           1.1
+  PY_HWCORE_PI.cpp            1.1
+  PY_HWCORE_PI.h              1.1
+  hwcore_pi_regif.h           1.4
+  hwcore_pi_regif.cpp         1.3
+
+- Supported features: No change
+
+***************************************************************************************************
+- Release info: Release source code after UT phase and for tickets #130789, #130796 and #131082.
+                    HWCORE_PI.cpp:      - Update port's name for message of port "pi_end_sp_reg" (ticket: #131082).
+                                        - Update when messages "HWCORE_PI start Func(pin)" is printed.
+                    hwcore_pi_regif.h:  - Update comment at line 377 for ticket #130796.
+                    Makefile:           - Update structure for ticket #130789
+- Release date: Nov 05, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  HWCORE_PI.cpp               1.4
+  HWCORE_PI.h                 1.2
+  HWCORE_PI_AgentController.h 1.1
+  HWCORE_PI_Func.cpp          1.2
+  HWCORE_PI_Func.h            1.2
+  HWCORE_PI_cmdif.h           1.1
+  PY_HWCORE_PI.cpp            1.1
+  PY_HWCORE_PI.h              1.1
+  hwcore_pi_regif.h           1.3
+  hwcore_pi_regif.cpp         1.2
+
+- Supported features: No change
+
+***************************************************************************************************
+- Release info: Release alpha source code.
+- Release date: Oct 07, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  HWCORE_PI.cpp               1.3
+  HWCORE_PI.h                 1.2
+  HWCORE_PI_AgentController.h 1.1
+  HWCORE_PI_Func.cpp          1.2
+  HWCORE_PI_Func.h            1.2
+  HWCORE_PI_cmdif.h           1.1
+  PY_HWCORE_PI.cpp            1.1
+  PY_HWCORE_PI.h              1.1
+  hwcore_pi_regif.h           1.2
+  hwcore_pi_regif.cpp         1.2
+
+- Supported features:
+  + Operating clock:
+      // Ref: {HWCORE_PI_UD_Feature_001}
+  + Asynchronous reset:
+      // Ref: {HWCORE_PI_UD_Feature_002}
+  + PI Control IP:
+      // Ref: {HWCORE_PI_UD_Feature_003}

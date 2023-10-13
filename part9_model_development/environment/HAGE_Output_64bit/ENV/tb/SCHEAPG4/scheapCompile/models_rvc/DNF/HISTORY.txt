@@ -1,0 +1,54 @@
+##################################
+- Release info: Release source code after update to HW UM061 
+- Release date: Feb 07, 2020
+  + Update model to support Debug Master access in case zero clock or reset (#112436)
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+- File (CVS repository):
+  DNF.cpp                 v1.6
+  DNF.h                   v1.3
+  DNF_AgentController.h   v1.3
+  DNF_Func.cpp            v1.3
+  DNF_Func.h              v1.3
+  DNF_cmdif.h             v1.3
+  PY_DNF.cpp              v1.4
+  PY_DNF.h                v1.3
+  dnf_regif.cpp           v1.3
+  dnf_regif.h             v1.3
+- Supported features: No change 
+- Non-supported features and limitation:
+  N/A
+
+#############################
+## DNF_Output_64bit_20180604.7z
+#############################
+- Release info: update DNF::CalculateCLKPosEdge to:
+  + Add the start time of PCLK, DNFATCKI (via mStartPCLKTime and mStartDNFATCKITime)
+  + Add add_period parameter
+
+- Release date: June 04, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  DNF.cpp                 v1.3
+  DNF.h                   v1.2
+  DNF_AgentController.h   v1.2
+  DNF_Func.cpp            v1.2
+  DNF_Func.h              v1.2
+  DNF_cmdif.h             v1.2
+  PY_DNF.cpp              v1.2
+  PY_DNF.h                v1.2
+  dnf_regif.cpp           v1.2
+  dnf_regif.h             v1.2
+    
+- Supported features:
+  + Eliminate digital noise from an input signal and output the nose-eliminated signal
+  + Provide an edge-detection function for digital-noise-eliminated signals
+  + Provide a function for selecting whether to output digital-noise-eliminated signals or digital-noise-uneliminated signals
+  + Number of sampling times for digital noise elimination (elimination width) can be selected from among 2, 3, 4, and 5.
+  + Eight types of sampling clock frequencies can be selected (1/1, 1/2, 1/4, 1/8, 1/16, 1/32, 1/64, 1/128)
+  + Select number of channels (maximum 16 channels)
+  + Stop FF operation for channels on which digital noise elimination is canceled.
+
+- Non-supported features and limitation:
+  N/A

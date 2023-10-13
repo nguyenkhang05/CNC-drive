@@ -1,0 +1,18 @@
+#!/bin/bash
+
+setup_environment() {
+    # IGNORE_ERRORS=E221,E701,E202
+    IGNORE_ERRORS=E402,E501,F821,H401,H404,H405
+}
+
+main() {
+    setup_environment
+    # PYFLAKES=$(which pyflakes) || exit 254
+    # PEP8=$(which pep8) || exit 254
+    # ${PYFLAKES} $*
+    # ${PEP8} --ignore=$IGNORE_ERRORS --repeat $*
+    FLAKE8=$(which flake8) || exit 254
+    ${FLAKE8} --ignore=$IGNORE_ERRORS $*
+}
+
+main $*

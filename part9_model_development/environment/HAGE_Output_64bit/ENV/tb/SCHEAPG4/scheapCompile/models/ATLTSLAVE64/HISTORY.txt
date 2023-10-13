@@ -1,0 +1,22 @@
+ATLTSLAVE64 HISTORY
+
+--------------------------------------------------------
+<2017.11.27>
+
+SVN version
+  Rev.152
+
+File
+  - MemoryFunction64.h
+    - Changed the format specifier from %x to %llx at output of transaction pointer and address.
+
+--------------------------------------------------------
+<2017.10.26>
+
+SVN version
+  Rev.142 (Adapted to 64 bit OS)
+
+File
+  - MemoryFunction64.h
+    - deleted the cast of "unsigned int" for pointer at debug log output
+

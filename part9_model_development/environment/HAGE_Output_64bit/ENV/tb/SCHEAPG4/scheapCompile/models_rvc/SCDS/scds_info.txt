@@ -1,0 +1,18 @@
+%MODULE scds
+    #              name     offset_size  
+    %%REG_INSTANCE reg_def  9           
+
+%REG_CHANNEL   reg_def
+     %%TITLE    name        reg_name     size    length   offset   factor_start   factor_end      factor_index                  init        access  support  callback
+     %%REG      GREG        GREG          32       32     0x000         -             -         0,4-19,28-119,123           0xFFFFFFFF      W|R     TRUE       W
+     %%REG      Rsv1_GREG   Rsv1_GREG     32       32     0x004         -             -         1-3,25-27,121               0xFFFFFFFF      W|R     FALSE      -
+     %%REG      Rsv2_GREG   Rsv2_GREG     32       32     0x050         -             -         20-24,120,122,124-127       0xFFFFFFFF      W|R     FALSE      W|R
+
+
+%CMD_BASEID  tgt reg
+%CMD_NODUMP_API CommandCB DumpProfile ClearProfile EnableInsertInput EnableDumpResult
+
+%CMD_ACTION SetRegEnable <index: unsigned int> <enable: bool> : std::string @ Set register implemented or not implemented
+%CMD_ACTION SetRegSize <index: unsigned int> <size: unsigned int> : std::string @ Set register bit size
+%CMD_ACTION SetCLKfreq <clk_name: std::string> <clk_freq: double> : void @ Set clock frequency for pclk port
+

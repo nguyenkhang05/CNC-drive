@@ -1,0 +1,60 @@
+%MODULE ATU5
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         16
+
+%REG_CHANNEL reg_def
+    %%TITLE  name           reg_name       wsize    rsize    length  offset  factor_start  factor_end  factor_index  factor_step  access init  support callback
+    %%REG    ATUENR         ATUENR         8        8|16|32  8       0x0000  -             -           -             -            W|R    0     TRUE    W
+    %%REG    CBCNT          CBCNT          8        8|16|32  8       0x0002  -             -           -             -            W|R    0     TRUE    W
+    %%REG    NCMR           NCMR           8        8|16|32  8       0x0003  -             -           -             -            W|R    0     TRUE    -
+    %%REG    PSCR           PSCR           16       8|16|32  16      0x0080  0             3           -             0x4          W|R    0     TRUE    W
+    %%REG    TRGSRDMA       TRGSRDMA       8        8|16|32  8       0x00C0  0             1           -             0x10         R      0     TRUE    -
+    %%REG    TRGSELDMA0     TRGSELDMA0     8        8|16|32  8       0x00C4  0             1           -             0x2          W|R    0     TRUE    W
+    %%REG    TRGSELAD       TRGSELAD       8        8|16|32  8       0x00C8  -             -           -             -            W|R    0     TRUE    W
+    %%REG    TRGSELDMA1     TRGSELDMA1     8        8|16|32  8       0x00D4  0             1           -             0x2          W|R    0     TRUE    W
+
+
+%REG_NAME ATUENR
+    %%TITLE  name       upper  lower  init  access  support  callback
+    %%BIT    TGE        7      7      0     W|R     TRUE     -
+    %%BIT    TFE        6      6      0     W|R     TRUE     -
+    %%BIT    TEE        5      5      0     W|R     TRUE     -
+    %%BIT    TDE        4      4      0     W|R     TRUE     -
+    %%BIT    TCE        3      3      0     W|R     TRUE     -
+    %%BIT    TBE        2      2      0     W|R     TRUE     -
+    %%BIT    TAE        1      1      0     W|R     TRUE     -
+    %%BIT    PSCE       0      0      0     W|R     TRUE     W
+
+%REG_NAME CBCNT
+    %%TITLE  name       upper  lower  init  access  support  callback
+    %%BIT    CB4EG      5      4      0     W|R     TRUE     -
+    %%BIT    CB5SEL     2      2      0     W|R     TRUE     -
+    %%BIT    CB5EG      1      0      0     W|R     TRUE     W
+
+%REG_NAME NCMR
+    %%TITLE  name       upper  lower  init  access  support  callback
+    %%BIT    NCCSEL     7      7      0     W|R     TRUE     -
+    %%BIT    NCMSEL     4      4      0     W|R     TRUE     -
+    %%BIT    NCMF       2      2      0     W|R     TRUE     -
+    %%BIT    NCMC       1      1      0     W|R     TRUE     -
+    %%BIT    NCMA       0      0      0     W|R     TRUE     W
+
+%REG_NAME PSCR
+    %%TITLE  name       upper  lower  init  access  support  callback
+    %%BIT    PSC        9      0      0     W|R     TRUE     W
+
+%REG_NAME TRGSRDMA
+    %%TITLE  name       upper  lower  init  access  support  callback
+    %%BIT    OUTSRDMA   0      0      0     R       TRUE     -
+
+%REG_NAME TRGSELDMA0
+    %%TITLE  name       upper  lower  init  access  support  callback
+    %%BIT    INSELDMA0  3      0      0     W|R     TRUE     W
+
+%REG_NAME TRGSELAD
+    %%TITLE  name       upper  lower  init  access  support  callback
+    %%BIT    INSELAD    1      0      0     W|R     TRUE     W
+
+%REG_NAME TRGSELDMA1
+    %%TITLE  name       upper  lower  init  access  support  callback
+    %%BIT    INSELDMA1  1      0      0     W|R     TRUE     W

@@ -1,0 +1,149 @@
+%MODULE SFMA
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  7 
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name             reg_name            wsize   rsize       length  offset  factor_start    factor_end  factor_index    factor_step access   init        support  callback
+    %%REG      SFMACMNCR        SFMACMNCR           32      8|16|32     32      0x00    -               -           -               -           R|W      0x01AA4000  TRUE     -
+    %%REG      SFMASSLDR        SFMASSLDR           32      8|16|32     32      0x04    -               -           -               -           R|W      0x00070707  TRUE     -
+    %%REG      SFMASPBCR        SFMASPBCR           32      8|16|32     32      0x08    -               -           -               -           R|W      0x00000003  TRUE     -
+    %%REG      SFMADRCR         SFMADRCR            32      8|16|32     32      0x0C    -               -           -               -           R|W      0x0         TRUE     -
+    %%REG      SFMADRCMR        SFMADRCMR           32      8|16|32     32      0x10    -               -           -               -           R|W      0x00030000  TRUE     -
+    %%REG      SFMADREAR        SFMADREAR           32      8|16|32     32      0x14    -               -           -               -           R|W      0x00000001  TRUE     -
+    %%REG      SFMADROPR        SFMADROPR           32      8|16|32     32      0x18    -               -           -               -           R|W      0x0         TRUE     -
+    %%REG      SFMADRENR        SFMADRENR           32      8|16|32     32      0x1C    -               -           -               -           R|W      0x00004700  TRUE     -
+    %%REG      SFMASMCR         SFMASMCR            32      8|16|32     32      0x20    -               -           -               -           R|W      0x0         TRUE     -
+    %%REG      SFMASMCMR        SFMASMCMR           32      8|16|32     32      0x24    -               -           -               -           R|W      0x0         TRUE     -
+    %%REG      SFMASMADR        SFMASMADR           32      8|16|32     32      0x28    -               -           -               -           R|W      0x0         TRUE     -
+    %%REG      SFMASMOPR        SFMASMOPR           32      8|16|32     32      0x2C    -               -           -               -           R|W      0x0         TRUE     -
+    %%REG      SFMASMENR        SFMASMENR           32      8|16|32     32      0x30    -               -           -               -           R|W      0x00004000  TRUE     -
+    %%REG      SFMASMRDR        SFMASMRDR           -       8|16|32     32      0x38    -               -           -               -           R        0x0         TRUE     -
+    %%REG      SFMASMWDR        SFMASMWDR           8|16|32 8|16|32     32      0x40    -               -           -               -           R|W      0x0         TRUE     -
+    %%REG      SFMACMNSR        SFMACMNSR           -       8|16|32     32      0x48    -               -           -               -           R        0x00000001  TRUE     -
+    %%REG      SFMADRDMCR       SFMADRDMCR          32      8|16|32     32      0x58    -               -           -               -           R|W      0x0         TRUE     -
+    %%REG      SFMASMDMCR       SFMASMDMCR          32      8|16|32     32      0x60    -               -           -               -           R|W      0x0         TRUE     -
+
+%REG_NAME SFMACMNCR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    MD                 31      31      0           R|W     TRUE        -
+    %%BIT    RESERVED           24      24      0x1         R|W0:1  TRUE        -
+    %%BIT    MOIIO3             23      22      0x2         R|W     TRUE        -
+    %%BIT    MOIIO2             21      20      0x2         R|W     TRUE        -
+    %%BIT    MOIIO1             19      18      0x2         R|W     TRUE        -
+    %%BIT    MOIIO0             17      16      0x2         R|W     TRUE        -
+    %%BIT    IO3FV              15      14      0x1         R|W     TRUE        -
+    %%BIT    IO2FV              13      12      0x0         R|W     TRUE        -
+    %%BIT    IO0FV              9       8       0x0         R|W     TRUE        -
+    %%BIT    CPHAT              6       6       0x0         R|W     TRUE        -
+    %%BIT    CPHAR              5       5       0x0         R|W     TRUE        -
+    %%BIT    SSLP               4       4       0x0         R|W     TRUE        w
+    %%BIT    CPOL               3       3       0x0         R|W     TRUE        -
+    
+%REG_NAME SFMASSLDR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    SPNDL              18      16      0x7         R|W     TRUE        w
+    %%BIT    SLNDL              10      8       0x7         R|W     TRUE        -
+    %%BIT    SCKDL              2       0       0x7         R|W     TRUE        -
+	
+%REG_NAME SFMASPBCR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    SPBR               15      8       0           R|W     TRUE        w
+    %%BIT    BRDV               1       0       0x3         R|W     TRUE        -
+	
+%REG_NAME SFMADRCR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    SSLN               24      24      0           R|W     TRUE        w
+    %%BIT    RBURST             19      16      0           R|W     TRUE        -
+    %%BIT    RCF                9       9       0           R|W     TRUE        -
+    %%BIT    RBE                8       8       0           R|W     TRUE        -
+    %%BIT    SSLE               0       0       0           R|W     TRUE        -
+	
+%REG_NAME SFMADRCMR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    CMD                23      16      0x3         R|W     TRUE        w
+    %%BIT    OCMD               7       0       0x0         R|W     TRUE        -
+	
+%REG_NAME SFMADREAR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    EAV                22      17      0x0         R|W     TRUE        w
+    %%BIT    RESERVED            0       0      0x1         R|W0:1  TRUE        -
+	
+%REG_NAME SFMADROPR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    OPD3               31      24      0           R|W     TRUE        w
+    %%BIT    OPD2               23      16      0           R|W     TRUE        -
+    %%BIT    OPD1               15      8       0           R|W     TRUE        -
+    %%BIT    OPD0               7       0       0           R|W     TRUE        -
+	
+%REG_NAME SFMADRENR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    CDB                31      30      0           R|W     TRUE        w
+    %%BIT    OCDB               29      28      0           R|W     TRUE        -
+    %%BIT    ADB                25      24      0           R|W     TRUE        -
+    %%BIT    OPDB               21      20      0           R|W     TRUE        -
+    %%BIT    DRDB               17      16      0           R|W     TRUE        -
+    %%BIT    DME                15      15      0           R|W     TRUE        -
+    %%BIT    CDE                14      14      0x1         R|W     TRUE        -
+    %%BIT    OCDE               12      12      0           R|W     TRUE        -
+    %%BIT    ADE                11      8       0x7         R|W     TRUE        -
+    %%BIT    OPDE               7       4       0           R|W     TRUE        -
+	
+%REG_NAME SFMASMCR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    SSLKP              8       8       0           R|W     TRUE        -
+    %%BIT    SPIRE              2       2       0           R|W     TRUE        -
+    %%BIT    SPIWE              1       1       0           R|W     TRUE        -
+    %%BIT    SPIE               0       0       0           R|W     TRUE        w
+	
+%REG_NAME SFMASMCMR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    CMD                23      16      0x0         R|W     TRUE        w
+    %%BIT    OCMD               7       0       0x0         R|W     TRUE        -
+	
+%REG_NAME SFMASMADR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    ADR                31      0       0x0         R|W     TRUE        w
+	
+%REG_NAME SFMASMOPR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    OPD3               31      24      0           R|W     TRUE        w
+    %%BIT    OPD2               23      16      0           R|W     TRUE        -
+    %%BIT    OPD1               15      8       0           R|W     TRUE        -
+    %%BIT    OPD0               7       0       0           R|W     TRUE        -
+	
+%REG_NAME SFMASMENR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    CDB                31      30      0           R|W     TRUE        w
+    %%BIT    OCDB               29      28      0           R|W     TRUE        -
+    %%BIT    ADB                25      24      0           R|W     TRUE        -
+    %%BIT    OPDB               21      20      0           R|W     TRUE        -
+    %%BIT    SPIDB              17      16      0           R|W     TRUE        -
+    %%BIT    DME                15      15      0           R|W     TRUE        -
+    %%BIT    CDE                14      14      0x1         R|W     TRUE        -
+    %%BIT    OCDE               12      12      0           R|W     TRUE        -
+    %%BIT    ADE                11      8       0           R|W     TRUE        -
+    %%BIT    OPDE               7       4       0           R|W     TRUE        -
+    %%BIT    SPIDE              3       0       0           R|W     TRUE        -
+	
+%REG_NAME SFMASMRDR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    RDATA              31      0       0           R       TRUE        -
+	
+%REG_NAME SFMASMWDR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    WDATA              31      0       0           R|W     TRUE        w
+	
+%REG_NAME SFMACMNSR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    SSLF               1       1       0x0         R       TRUE        -
+    %%BIT    TEND               0       0       0x1         R       TRUE        -
+	
+%REG_NAME SFMADRDMCR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    DMDB               17      16      0           R|W     TRUE        w
+    %%BIT    DMCYC              2       0       0           R|W     TRUE        -
+	
+%REG_NAME SFMASMDMCR
+    %%TITLE  name               upper   lower   init        access  support     callback
+    %%BIT    DMDB               17      16      0           R|W     TRUE        w
+    %%BIT    DMCYC              2       0       0           R|W     TRUE        -

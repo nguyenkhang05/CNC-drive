@@ -1,0 +1,54 @@
+// Description: History file
+// Ref: {SPID_MODIFIER_DD_ATT1_002}
+###############################
+- Release info: Release beta source code for ticket #123986 
+- Release date: May/26/2020
+- Source code: 
+   + SPID_MODIFIER.cpp                     (1.9)
+- Supported functions: Not change
+###############################
+- Release info: Release data after update Makefile follow ticket #117852
+- Release date: Mar/30/2020
+- Source code: Not change
+- Supported functions: Not change
+
+###############################
+- Release info: Release data after update Makefile follow ticket #117330
+- Release date: Jan/08/2020
+- Source code: Not change
+- Supported functions: Not change
+
+###############################
+- Release info: Final source code
+- Release date: Dec/30/2019
+
+- File (CVS repository):
+    + SPID_MODIFIER.cpp                     (1.7)
+    + SPID_MODIFIER.h                       (1.3)
+    + SPID_MODIFIER_cmdif.h                 (1.2)
+    + PY_SPID_MODIFIER.cpp                  (1.3)
+    + PY_SPID_MODIFIER.h                    (1.2)
+
+
+- Supported functions: Not change
+
+###############################
+- Release info: Source code Beta version ( PASS some basic TM)
+- Release date: Dec/21/2019
+
+- File (CVS repository):
+    + SPID_MODIFIER.cpp                     (1.2)
+    + SPID_MODIFIER.h                       (1.2)
+    + SPID_MODIFIER_cmdif.h                 (1.2)
+    + PY_SPID_MODIFIER.cpp                  (1.2)
+    + PY_SPID_MODIFIER.h                    (1.2)
+
+
+- Supported functions:
+      + Get the updated SPID information from the SPID model
+      + Overwrite the current SPID information into the transaction that SPID_MODIFIER receives from the master IP model; 
+      then SPID_MODIFIER forwards the modified transaction down to the slave bus model.
+      + Revert the SPID information into transaction before forward transaction to Master IP.
+
+    
+

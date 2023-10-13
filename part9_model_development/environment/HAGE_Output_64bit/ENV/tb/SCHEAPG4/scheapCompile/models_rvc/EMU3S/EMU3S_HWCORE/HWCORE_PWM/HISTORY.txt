@@ -1,0 +1,68 @@
+// Description: History file
+// Ref: {HWCORE_PWM_UD_ATT1_003}
+- Release info: Release Final source code.
+- Release date: Nov 17, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  HWCORE_PWM.cpp               1.13
+  HWCORE_PWM.h                 1.5
+  HWCORE_PWM_AgentController.h 1.3
+  HWCORE_PWM_Func.cpp          1.7
+  HWCORE_PWM_Func.h            1.3
+  HWCORE_PWM_cmdif.h           1.3
+  PY_HWCORE_PWM.cpp            1.3
+  PY_HWCORE_PWM.h              1.3
+  hwcore_pwm_regif.h           1.4
+  hwcore_pwm_regif.cpp         1.3
+
+- Supported features:
+  + Calculate the comparison value for 3 phase U,V,W for PWM modulation
+ 
+- Non-supported features and limitation:
+  + None.
+------------------------------------------------
+- Release info: Release Beta source code (after functional debug on Linux).
+- Release date: Nov 03, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  HWCORE_PWM.cpp               1.9
+  HWCORE_PWM.h                 1.5
+  HWCORE_PWM_AgentController.h 1.3
+  HWCORE_PWM_Func.cpp          1.5
+  HWCORE_PWM_Func.h            1.3
+  HWCORE_PWM_cmdif.h           1.3
+  PY_HWCORE_PWM.cpp            1.3
+  PY_HWCORE_PWM.h              1.3
+  hwcore_pwm_regif.h           1.4
+  hwcore_pwm_regif.cpp         1.3
+
+- Supported features:
+  + Calculate the comparison value for 3 phase U,V,W for PWM modulation
+ 
+- Non-supported features and limitation:
+  + None.
+-------------------------------------------------
+- Release info: Release Alpha source code.
+- Release date: Oct 06, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  HWCORE_PWM.cpp               1.5
+  HWCORE_PWM.h                 1.3
+  HWCORE_PWM_AgentController.h 1.3
+  HWCORE_PWM_Func.cpp          1.3
+  HWCORE_PWM_Func.h            1.3
+  HWCORE_PWM_cmdif.h           1.3
+  PY_HWCORE_PWM.cpp            1.3
+  PY_HWCORE_PWM.h              1.3
+  hwcore_pwm_regif.h           1.3
+  hwcore_pwm_regif.cpp         1.3
+  sin_table.h                  1.3
+
+- Supported features:
+  + Calculate the comparison value for 3 phase U,V,W for PWM modulation
+ 
+- Non-supported features and limitation:
+  + None.

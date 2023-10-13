@@ -1,0 +1,52 @@
+// Description: History file
+//Ref: {HWCORE_IRCTG3_UD_ATT1_006, HWCORE_IRCTG3_UD_ATT1_007}
+- Release data name : HWCORE_IRCTG3_Output_64bit_20201030.7z
+- Release info: Final release source code.
+- Release date: Oct 30, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  HWCORE_IRCTG3.cpp               1.9
+  HWCORE_IRCTG3.h                 1.5
+  HWCORE_IRCTG3_AgentController.h 1.4
+  HWCORE_IRCTG3_Func.cpp          1.10
+  HWCORE_IRCTG3_Func.h            1.5
+  hwcore_irctg3_regif.cpp         1.3
+  hwcore_irctg3_regif.h           1.4
+
+- Supported features:
+  + The startup trigger generation of the HWCORE_IRCTG3 generates start trigger when the HWCORE_IRCTG3 starts up.
+  + The register block of the HWCORE_IRCTG3 consists of retention buffers, the internal registers, reference buffers, and the enable signal generation.
+  + HWCORE_IRCTG3 determines the zone in the zone search and pattern interrupt generation. According to the result, it switches the rectangle wave pattern and outputs a zone transition detection signal, interrupt signal, and A/D start trigger signal.
+
+- Non-supported features and limitation:
+  + None.
+
+***************************************************************************************************
+- Release info: Alpha release source code.
+- Release date: Sep 30, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  HWCORE_IRCTG3.cpp               1.4
+  HWCORE_IRCTG3.h                 1.4
+  HWCORE_IRCTG3_AgentController.h 1.3
+  HWCORE_IRCTG3_Func.cpp          1.4
+  HWCORE_IRCTG3_Func.h            1.4
+  HWCORE_IRCTG3_cmdif.h           1.2
+  PY_HWCORE_IRCTG3.cpp            1.3
+  PY_HWCORE_IRCTG3.h              1.1
+  hwcore_irctg3_regif.h           1.2
+  hwcore_irctg3_regif.cpp         1.2
+
+- Supported features:
+  + The startup trigger generation of the HWCORE_IRCTG3 generates start trigger when the HWCORE_IRCTG3 starts up.
+  //Ref: {HWCORE_IRCTG3_UD_Feature_001}
+  + The register block of the HWCORE_IRCTG3 consists of retention buffers, the internal registers, reference buffers, and the enable signal generation.
+  //Ref: {HWCORE_IRCTG3_UD_Feature_002}
+  + HWCORE_IRCTG3 determines the zone in the zone search and pattern interrupt generation. According to the result, it switches the rectangle wave pattern and outputs a zone transition detection signal, interrupt signal, and A/D start trigger signal.
+  //Ref: {HWCORE_IRCTG3_UD_Feature_003}
+
+- Non-supported features and limitation:
+  + None.
+  //Ref: {HWCORE_IRCTG3_UD_Limitation_001}

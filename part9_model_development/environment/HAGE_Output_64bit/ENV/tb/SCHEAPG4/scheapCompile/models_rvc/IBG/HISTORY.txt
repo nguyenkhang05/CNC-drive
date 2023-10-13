@@ -1,0 +1,175 @@
+***************************************************************************************************
+IBG_Output_64bit_20190721.7z
+-----------------------------
+- Release info: Release after update fix bug #77037
+- Release date: Jul 21, 2019
+- Test environment: SCHEAP G4 Rev191 (Not change from previous release)
+- Source code (CVS repository) :
+  IBG.cpp                              (v1.13)
+  IBG.h                                (v1.10)
+  IBG_CommonGuard.cpp                  (v1.7)
+  IBG_CommonGuard.h                    (v1.5)
+  IBG_CommonGuardAgentControllerIf.h   (v1.5)
+  IBG_Func.cpp                         (v1.6)
+  IBG_Func.h                           (v1.6)
+  IBG_cmdif.h                          (v1.5)
+  PY_IBG.cpp                           (v1.5)
+  PY_IBG.h                             (v1.6)
+  ibg_regif.cpp                        (v1.7)
+  ibg_regif.h                          (v1.6)
+
+- Supported functions: no change
+   + Replaced tab-characters to 4 spaces.
+- Un-support functions: no change
+
+
+***************************************************************************************************
+IBG_Output_64bit_20190608.7z
+-----------------------------
+- Release info: Release after update to use as a common model for both E2x-FCC1 (Rev.0.80), E2x-FCC2 (Rev.0.60) platform (SCHEAP191, gcc4.9.3, x64)
+- Release date: Jun 20, 2019
+- Test environment: SCHEAP G4 Rev191
+- Source code (CVS repository) :
+  IBG.cpp                              (v1.12)
+  IBG.h                                (v1.9)
+  IBG_cmdif.h                          (v1.5)
+  IBG_CommonGuard.cpp                  (v1.7)
+  IBG_CommonGuard.h                    (v1.5)
+  IBG_CommonGuardAgentControllerIf.h   (v1.5)
+  IBG_Func.cpp                         (v1.6)
+  IBG_Func.h                           (v1.6)
+  ibg_regif.cpp                        (v1.6)
+  ibg_regif.h                          (v1.6)
+  PY_IBG.cpp                           (v1.5)
+  PY_IBG.h                             (v1.5)
+
+  
+- Supported functions: no change
+  + Allow access registers when clock is zero or reset in debug mode with debug master ID 0xFF
+  + Change CWR_SYSTEMC to USR_CWR_SYSTEM
+  + Use rvc_common_model.cpp/h
+  + Get coverage C1.
+  + Check 2bytes-characters, uninitialized variables
+- Un-support functions: no change
+
+***************************************************************************************************
+IBG_Output_64bit_20181228.7z
+-----------------------------
+- Release info: Delete mIsResetPortInit flag to prevent issue , add TMs to confirm status flags is correct
+- Release date: Dec 28, 2018
+- Test environment: SCHEAP G4 Rev73 (Not change from previous release)
+- Source code (CVS repository) :
+  IBG_cmdif.h                           1.4        
+  IBG_CommonGuard.h                     1.4        
+  IBG_CommonGuardAgentControllerIf.h    1.4    
+  ibg_regif.h                           1.4        
+  PY_IBG.h                              1.4        
+  IBG_CommonGuard.cpp                   1.6        
+  IBG_Func.cpp                          1.5        
+  ibg_regif.cpp                         1.4        
+  PY_IBG.cpp                            1.4        
+  ibg_regif.txt                         -          
+  HISTORY.txt                           -          
+  IBG_Func.h                            1.5        
+  IBG.cpp                               1.8        
+  IBG.h                                 1.7        
+- Support changed features:
+  Not change from previous release
+***************************************************************************************************
+src_IBG_E2x_20181220.7z
+-----------------------------
+- Release info: Fix issue set wrong reset status flag mIsResetPortInit in resetPortMethod method
+- Release date: Dec 20, 2018
+- Test environment: SCHEAP G4 Rev73 (Not change from previous release)
+- Updated source code:
+  + File IBG.cpp function resetPortMethod()
+
+- Support changed features:
+  Not change from previous release
+***************************************************************************************************
+
+***************************************************************************************************
+IBG_Output_20180705.7z
+-----------------------------
+- Release info: Update DummyMaster to update uncoverage code.
+- Release date: Jul 5, 2018
+- Test environment: SCHEAP G4 Rev73
+- Updated source code:
+  Not change.
+
+- Support changed features:
+  Not change
+***************************************************************************************************
+IBG_Output_20180629.7z
+-----------------------------
+- Release info: Update TMs to update uncoverage code.
+- Release date: Jun 29, 2018
+- Test environment: SCHEAP G4 Rev73
+- Updated source code:
+  Not change.
+
+- Support changed features:
+  Not change
+
+***************************************************************************************************
+IBG_Output_20180620.7z
+-----------------------------
+- Release info: Update source code to change register access size, status and interrupt function.
+- Release date: Jun 20, 2018
+- Test environment: SCHEAP G4 Rev73
+- Updated source code:
+ibg_regif.cpp                       7372
+ibg_regif.h                         7538
+IBG_CommonGuardAgentControllerIf.h  7538 
+IBG_Func.h                          7538
+IBG_Func.cpp                        7538
+ibg_regif.txt                       -   
+PY_IBG.cpp                          7538
+IBG_CommonGuard.cpp                 7658
+HISTORY.txt                         -   
+IBG.cpp                             7658
+IBG_CommonGuard.h                   7538
+PY_IBG.h                            7538
+IBG.h                               7538
+IBG_cmdif.h                         7538   
+
+- Support changed features:
+  + Update register access size: GERRCLR, GERRSTAT, GERRTYPE, GPROT0_n, GPROT1_n
+  + status and interrupt function: Error address and attributes of transaction is stored before GERRSTAT.ERR bit is not set.
+  + update feature: can not write to register block when zero clock
+***************************************************************************************************
+IBG_Output_64bit_20180205.7z
+-----------------------------
+- Release info: fix CalculateCLKPosEdge() issue (Redmine #87854) & update to 64bit env
+- Release date: Feb 05, 2018
+- Test environment: SCHEAP G4 Rev163 (64bit)
+- Updated source code:
+    + IBG.cpp                   (v1.1 (r5217))
+- Supported features: Not change from previous release
+
+***************************************************************************************************
+IBG_Output_04042017.7z
+-----------------------------
+- Release info: Update source code to change PEID of Debug master to 0xFF
+- Release date: Apr 04, 2017
+- Test environment: SCHEAP G4 Rev80
+- Updated source code:
+    + IBG_CommonGuard.cpp       (v1.1 (r2653))
+- Supported features: Not change from previous release
+
+***************************************************************************************************
+IBG_Output_01262017.7z
+-----------------------------
+- Release info: Official release
+- Release date: Jan 26, 2017
+- Test environment: SCHEAP G4 Rev80
+- Supported features:
+    + One of a guard on Inter-cluster Bus (I-BUS) protects the Mutual Exclusive (ME), Barrier
+      Synchronization (BARR), Inter-processor interrupt (IPIR), and Time Protection Timer (TPTM)
+      from illegal accesses. The transaction is not forwarded to Slave in case illegal access.
+    + Notify the illegal access to the ECM whenever an illegal access is detected. The details of
+      such illegal access is described in status registers.
+    + The protection is configurable by setting- and control-registers. These registers, in turn,
+      are also protected by key-code.
+
+***************************************************************************************************

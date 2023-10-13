@@ -1,0 +1,36 @@
+=================================
+=        RELEASE HISTORY        =
+=================================
+
+v2020_03_26: Bug fix (refs #117731)
+    - Description:
+      + If reset (preset_n then erroutresz) asserts when the error output clear invalidation period is not over,
+        the error output clear invalidation status is not initialized and error output cannot be cleared after reset negates.
+
+v2019_12_12: New updating with HWM 0.61
+    - Update according HWM 0.61 r01uh0864ej0061-rh850u2a.pdf:
+        + Update size of registers (8bit -> 32bit) (refs #89115)
+        + Update Error Input list (refs #95322)
+    - Update related to Pseudo errors (refs #105523)
+    - Update related to counter register (ECMDTMR) by accessing debug mode (refs #81507)
+
+v2018_01_05: alpha version (for registers and port I/F)
+    - Update according RH850_P2F2_Requirement_Specification_ECM_20171220.pptx:
+        + Update register list and register's address offset:
+            . Removed ECMDTMCMP0 -> 3
+            . Added ECMDTMCFG, ECMDTMCFGn
+            . Changed address offset of ECMEOCCFG to 0x71C
+            . Changed address offset of ECMETCCFGn to (0x720 + 0x4*n)
+            . Changed address offset of ECMPEM to 0x740
+        + Update TM related to delay timer to change setting due to above change
+
+
+=================================
+v2017_12_15
+    - Create new U2A/ECM with HWM: 45_ECM_P2F2_TS_0.03.docx.
+        + Code Review 1: on progress
+        + Functional debug: Finish checking 1_Register_RW's TMs
+
+=================================
+v2018_02_12
+    - Release final version.

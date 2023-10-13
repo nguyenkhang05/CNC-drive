@@ -1,0 +1,185 @@
+=================================
+=        RELEASE HISTORY        =
+=================================
+
+v2019_09_18
+    - Update pseudo errors will automatically be cleared from "after 1 cntclk cycle" to "after 1 pclk cycle" (refs #105523)
+
+v2019_07_05
+    - Reflect RegisterIF Generator verion v2019_06_21 to ECM E2
+
+v2018_08_10
+    - Enhancement for E2x-FCC1-2nd 
+
+v2018_02_28
+    - Update source code to fix segmentation fault on SC-HEAP (gcc issue related to double)
+
+v2017_08_22
+    - Regression test for E2x-FCC1
+
+v2017_08_08
+    - update to support new reset port: erroutresz_for_sync
+
+
+=================================
+
+v2017_08_03
+    - Update from v2017_06_30 (for E2x_FCC2 product): Complete functional debug
+        + Update test patterns
+        + Adding expected log
+        + Update source code after functional debug
+    - Added run1team_tp to check 1team for TMs
+        Below are some notices for 1team report when check E2x_FCC2's TMs
+            + ignore fault: unrecognized #pragma
+            + ignore fault: variable "i", "j", "k" and "reg_val" was declared but never referenced.
+                            Because checklist automatically genertate TMs, included these variable.
+                            They are used in some TMs, and some TMs just use 1 or 2 variable "i", "j", "k"
+                            or "reg_val" (not all of them). Due to a considerable amount of TMs, if fixing,
+                            maybe creating some unwanted trouble (missed earsing or lacked variable)
+v2017_06_30
+    - Update to support for E2x_FCC2 product.
+        Note: this version just be used for E2x_FCC2 product only.
+              It cannot be used for E2x_FCC1 product because below different points:
+            + Interrupt feature:
+                . E2x_FCC1: 1) Assert/Negate based on error status and do not synchronized with pclk
+                . E2x_FCC2: 1) Assert when capture an error source with period = 1 cycle of pclk
+            + Zero clock feature:
+                . E2x_FCC1: 1) When an error source occurs while pclk = 0 or cntclk = 0, do nothing
+                . E2x_FCC2: 1) When an error source occurs while pclk = 0 or cntclk = 0, error status is captured, error output and internal reset active
+            + Timeout feature:
+                . E2x_FCC1: 1) When receive dtmtrgin signal, delay timer start counting immediately
+                            2) When users write ECMDTMCTL.DTMSTP = 1, delay timer stop counting immediately
+                            3) When users write ECMDTMCTL.DTMSTA = 0, do nothing
+                . E2x_FCC2: 1) When receive dtmtrgin signal, delay timer start counting after "3 cntclk"
+                            2) When users write ECMDTMCTL.DTMSTP = 1, delay timer stop counting after "3 cntclk"
+                            3) When users write ECMDTMCTL.DTMSTA = 0, delay timer stop counting after "3 cntclk"
+            + Clearing mask feature:
+                . E2x_FCC1: 1) When users write ECMmECLR.ECMmECT = 1 to clear error pin output, clear action is called after "3 cntclk + 5 pclk"
+                            2) The writing ECMmECLR.ECMmECT = 1 to clear error pin output just effect after an error source occurs "(ECMEOUTCLRT)*cntclk"
+                            3) Clearing of the error pin is only possible if ???
+                                Condition to clear ok != [(esstr > emk) && (ECMmESSTR9[bit29] && !ECMEMK9[bit29])]
+                . E2x_FCC2: 1) When users write ECMmECLR.ECMmECT = 1 to clear error pin output, clear action is called after "3 cntclk"
+                            2) The writing ECMmECLR.ECMmECT = 1 to clear error pin output just effect after an error source occurs "(ECMEOUTCLRT + 2)*cntclk"
+                            3) Clearing of the error pin is only possible if all errors, not masked by ECMEMK registers, are cleared beforehand
+                                Condition to clear ok != (esstr && !emk)
+            + Reset feature:
+                . E2x_FCC1: 1) "ecmtresz" is changed to inactive when error input factor negated
+                            2) cntclk_preset_n: Do nothing
+                            3) cntclk_erroutresz: Do nothing
+                . E2x_FCC2: 1) While "ecmtresz" active, only presetn can change it value into inactive
+                            2) cntclk_preset_n: Reset output ports (ecmterroz, ecmterroutz, ecmterroutz_m/c)
+                            3) cntclk_erroutresz: Reset output ports (ecmterroz, ecmterroutz, ecmterroutz_m/c)
+            + Register_RW:
+                . E2x_FCC1: 1) Initial value of ECMEMKn = 0
+                            2) Cannot write value to ECMDTMCMP register if ECMDTMCTL.DTMSTA is set = 1 beforehand (while delay timer does not start counting yet)
+                            3) Write access size
+                                Write access size of <ECMmESET> is 8|16|32                  Write access size of <ECMmECLR> is 8|16|32
+                                Write access size of <ECMEPCFG> is 8|16|32                  Write access size of <ECMMICFG0> is 8|16|32
+                                Write access size of <ECMMICFG> is 8|16|32                  Write access size of <ECMMICFG9> is 8|16|32
+                                Write access size of <ECMNMICFG0> is 8|16|32                Write access size of <ECMNMICFG> is 8|16|32
+                                Write access size of <ECMNMICFG9> is 8|16|32                Write access size of <ECMIRCFG0> is 8|16|32
+                                Write access size of <ECMIRCFG> is 8|16|32                  Write access size of <ECMIRCFG9> is 8|16|32
+                                Write access size of <ECMEMK0> is 8|16|32                   Write access size of <ECMEMK> is 8|16|32
+                                Write access size of <ECMEMK9> is 8|16|32                   Write access size of <ECMDTMCTL> is 8|16|32
+                                Write access size of <ECMDTMR> is 8|16|32                   Write access size of <ECMDTMCMP> is 8|16|32
+                                Write access size of <ECMMIDTMCFG0> is 8|16|32              Write access size of <ECMMIDTMCFG> is 8|16|32
+                                Write access size of <ECMMIDTMCFG9> is 8|16|32              Write access size of <ECMNMIDTMCFG0> is 8|16|32
+                                Write access size of <ECMNMIDTMCFG> is 8|16|32              Write access size of <ECMNMIDTMCFG9> is 8|16|32
+                                Write access size of <ECMEOCCFG> is 8|16|32
+                . E2x_FCC2: 1) Initial value of ECMEMKn as below
+                                n = 0: 0xC0C0F0F0;      n = 1: 0xC0C0C0C0;      n = 2: 0xC0FFFFC0;      n = 3: 0xC0FFC0C0;      n = 4: 0xFFFFFFC0;
+                                n = 5: 0xC00001F0;      n = 6: 0xF8F0FFFF;      n = 7: 0x80E0F0F8;      n = 8: 0xFFFFFFFF;      n = 9: 0xCC040E00
+                            2) Can write value to ECMDTMCMP register while delay timer does not start counting yet
+                            3) Write access size
+                                Write access size of <ECMmESET> is 8                        Write access size of <ECMmECLR> is 8
+                                Write access size of <ECMEPCFG> is 8                        Write access size of <ECMMICFG0> is 32
+                                Write access size of <ECMMICFG> is 32                       Write access size of <ECMMICFG9> is 32
+                                Write access size of <ECMNMICFG0> is 32                     Write access size of <ECMNMICFG> is 32
+                                Write access size of <ECMNMICFG9> is 32                     Write access size of <ECMIRCFG0> is 32
+                                Write access size of <ECMIRCFG> is 32                       Write access size of <ECMIRCFG9> is 32
+                                Write access size of <ECMEMK0> is 32                        Write access size of <ECMEMK> is 32
+                                Write access size of <ECMEMK9> is 32                        Write access size of <ECMDTMCTL> is 8
+                                Write access size of <ECMDTMR> is 16                        Write access size of <ECMDTMCMP> is 32
+                                Write access size of <ECMMIDTMCFG0> is 32                   Write access size of <ECMMIDTMCFG> is 32
+                                Write access size of <ECMMIDTMCFG9> is 32                   Write access size of <ECMNMIDTMCFG0> is 32
+                                Write access size of <ECMNMIDTMCFG> is 32                   Write access size of <ECMNMIDTMCFG9> is 32
+                                Write access size of <ECMEOCCFG> is 32
+
+v2017_05_24
+    - Fix wrong implementation of v2017_03_31
+        * The second issue "Counting value > 0 at start time" was a misdetection
+          It is not a bug. The symptom is correct.
+        * How to fix: Do not set counting value to 0 at start time (revert previous source code).
+        * How to check:
+            + Revise TM tp04_03_004
+    - Fix issue of register access to General Timer when clock is 0
+        * Symptom: When clock is 0, value is written to ECMDTMCMP register. When clock becomes valid, that
+                   value does not has effect on delay time.
+        * Expected: Value written when clock is 0 should be used.
+        * Cause: callback function are not processed when clock is 0.
+        * How to fix: Check common models (General Timer) whether it is necessary to update their settings
+                      on register access.
+        * How to check:
+            + Revise TMs tp04_11_001 and tp04_11_002
+
+v2017_03_31
+    - Fix issue "Time out feature is not expected when ECMDTMCMP = 0"
+        * Symptom: When ECMDTMCMP = 0, timer start and count up with delay time = max value of ECMDTMCMP
+                   register (e.g: 0xFFFF)
+        * Expected: When ECMDTMCMP = 0, delay time = 0
+        * Cause: Lack of checking condition for case ECMDTMCMP = 0 in Cecm::StartStopCounter()
+        * How to fix: Add checking condition for case ECMDTMCMP = 0 in Cecm::StartStopCounter()
+        * How to check:
+            + Modify TMs tp04_01_002, tp05_01_001 to set value for ECMDTMCMP before start timer
+            + Add TMs tp04_01_003, tp05_01_002
+    - Fix issue "Counting value > 0 at start time"
+        * Symptom: When another error is inputted to start delay timer, the counting value at the start time
+                   is calculated from 1st start time
+        * Expected: the counting value at the start time is zero
+        * Cause: counting value is not reset to zero at start time in Cecm::StartStopCounter()
+        * How to fix: Set counting value to 0 at start time in Cecm::StartStopCounter()
+        * How to check:
+            + Add TM tp04_03_004
+
+v2016_11_08
+    - Update expected log of TM tp02_01_001 in AT mode.
+    - Add "setenv SC_SIGNAL_WRITE_CHECK DISABLE" in sim/scripts_linux/env_rvc_set.csh file. 
+    - Revise env. path in sim/scripts_linux/env_rvc_set.csh and sim/scripts_linux/astc_env_rvc_set.csh files.
+
+v2016_10_25
+    - Fix time resolution bug
+        * Symptom: the operation is not correct when using a time resolution that is not nano second (SC_NS).
+        * Cause: current code use "sc_time_stamp().to_double()", its result is based on time resolution.
+        * How to fix: add GetCurTime() function, to change other time resolution to nano second (SC_NS)
+        * How to check: add new test patterns tp08_01_001, tp08_02_001, tp08_03_001 (based on tp04_06_001).
+
+v2016_04_12
+    - Fix issue related to power on reset (Redmine ticket #53949)
+
+v2016_03_24
+    - Update E2x/ECM_E2 with HWM: 28_add_uhi20ecm0000_target_speicfication_ver1_20160217
+        and 28_E2x_TS_28_ECM_Rev0.20_160203a.
+        (old project no: 15011, new project number: 15017)
+
+v2016_01_27
+    - Revise PY I/F of ECM to revise from "ECM" to "ECM_E2".
+
+v2016_01_25
+    - Revise file names and class names from "ecm" to "ecm_e2", from "ECM" to "ECM_E2".
+
+v2016_01_08
+    - Revise set_env.bat for RSD using.
+
+v2016_01_07
+    - Optimize script windows and update astc_env_rel_set.csh file according RSD request.
+
+v2016_01_06
+    - Fix issue related to "Uninitialized memory read".
+      Add code to initialize mSGATIPEArray in constructor to fix this issue.
+
+v2015_12_28
+    - Create new E2x/ECM with HWM: 28_E2xFCC1_ECM_uhi20ecm0000_target_speicfication_ver0_1112.
+
+
+
+

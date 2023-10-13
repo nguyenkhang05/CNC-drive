@@ -1,0 +1,74 @@
+=================================
+=        RELEASE HISTORY        =
+=================================
+v2017_05_24
+    - Fix wrong implementation of v2017_03_31
+        * The second issue "Counting value > 0 at start time" was a misdetection
+          It is not a bug. The symptom is correct.
+        * How to fix: Do not set counting value to 0 at start time (revert previous source code).
+        * How to check:
+            + Revise TM tp04_03_004
+    - Fix issue of register access to General Timer when clock is 0
+        * Symptom: When clock is 0, value is written to ECMDTMCMP register. When clock becomes valid, that
+                   value does not has effect on delay time.
+        * Expected: Value written when clock is 0 should be used.
+        * Cause: callback function are not processed when clock is 0.
+        * How to fix: Check common models (General Timer) whether it is necessary to update their settings
+                      on register access.
+        * How to check:
+            + Revise TMs tp04_11_001 and tp04_11_002
+
+v2017_03_31
+    - Fix issue "Time out feature is not expected when ECMDTMCMP = 0"
+        * Symptom: When ECMDTMCMP = 0, timer start and count up with delay time = max value of ECMDTMCMP
+                   register (e.g: 0xFFFF)
+        * Expected: When ECMDTMCMP = 0, delay time = 0
+        * Cause: Lack of checking condition for case ECMDTMCMP = 0 in Cecm::StartStopCounter()
+        * How to fix: Add checking condition for case ECMDTMCMP = 0 in Cecm::StartStopCounter()
+        * How to check:
+            + Modify TMs tp04_01_002, tp05_01_001 to set value for ECMDTMCMP before start timer
+            + Add TMs tp04_01_003, tp05_01_002
+    - Fix issue "Counting value > 0 at start time"
+        * Symptom: When another error is inputted to start delay timer, the counting value at the start time
+                   is calculated from 1st start time
+        * Expected: the counting value at the start time is zero
+        * Cause: counting value is not reset to zero at start time in Cecm::StartStopCounter()
+        * How to fix: Set counting value to 0 at start time in Cecm::StartStopCounter()
+        * How to check:
+            + Add TM tp04_03_004
+
+v2016_10_25
+    - Fix time resolution bug
+        * Symptom: the operation is not correct when using a time resolution that is not nano second (SC_NS).
+        * Cause: current code use "sc_time_stamp().to_double()", its result is based on time resolution.
+        * How to fix: add GetCurTime() function, to change other time resolution to nano second (SC_NS)
+        * How to check: add new test patterns tp08_01_001, tp08_02_001, tp08_03_001 (based on tp04_06_001)
+
+v2016_07_01
+    - Continue fixing issue related to power on reset (v2016_04_20 not fix this issue yet).
+        * Symptom: Error status is not clear when PRESETn port is activate and resstg1z/pclkin_resstg1z
+                   are activated.
+        * Cause: The error inputs are not forwarded from wrapper to Master/Checker.
+                 So, after negate reset, the Master/Checker operate with wrong input values.
+        * How to fix: Remove code line check clock is 0 or not in Cecm_wp::ReceiveExternalErrorMethod()
+                 to forward error input into Master/Checker.
+
+v2016_04_20
+    - Fix issue related to power on reset.
+        * Symptom: Error status is not clear when PRESETn port is activate and resstg1z/pclkin_resstg1z
+                   are activated.
+        * Cause: PRESETn port is checked when clearing error status.
+        * How to fix: Remove code line check mIsReset in ClearErrorStatusMethod()
+
+v2015_03_09
+    - Fixed issue #152 
+        * Symptom: ERROUTCLRT register value is not clear when PRESETn and erroutresz are asserted 
+                   at the same time
+        * Cause: Restoration value of ERROUTCLRT was also done when internal reset (PRESETn)
+                 is de-asserted (it is redundant code)
+        * How to fix: 
+            + Remove above redundant code 
+            + Unactive reset for ERROUTCLRT before restoring value
+
+
+

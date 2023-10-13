@@ -1,0 +1,21 @@
+%MODULE DummyPeripheralRVC
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  12
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name                           reg_name                     wsize   rsize        length  offset  factor_start    factor_end  factor_index    factor_step access   init   support  callback
+    %%REG      JUDGE_REG                      JUDGE_REG                    32      8|16|32      32      0x00    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      RESET_REG                      RESET_REG                    32      8|16|32      32      0x04    -               -           -               -           R/W      0x1     TRUE     -
+    %%REG      PCLK_REG                       PCLK_REG                     32      8|16|32      32      0x10    0               1           -               -           R/W      0x0     TRUE     -
+    
+%REG_NAME JUDGE_REG                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    JUDGE               0       0       0      R|W     TRUE        W
+
+%REG_NAME RESET_REG
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    PRESETn             0       0       1      R|W     TRUE        W
+
+%REG_NAME PCLK_REG   
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    PCLK               31       0       0      R|W     TRUE        W

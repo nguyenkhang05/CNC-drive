@@ -1,0 +1,73 @@
+COMMON_RVC HISTORY
+(Notes: the latest updated information is on top of the file)
+--------------------------------------------------------
+<2021.07.28>
+
+File
+ - ECC_def.h                v1.4
+   - Add SPID value into ErrorInfo struct
+--------------------------------------------------------
+<2021.06.07>
+
+File
+ - rvc_common_model.h       v1.7
+ - rvc_common_model.cpp     v1.5
+    - Add new function CommonCommandInit for initialize variable
+--------------------------------------------------------
+<2021.01.27>
+
+File
+ - rvc_common_model.h       v1.6
+    
+--------------------------------------------------------
+<2021.01.21>
+
+File
+ - rvc_common_model.cpp     v1.4
+ - rvc_common_model.h       v1.4
+
+--------------------------------------------------------
+<2020.10.23>
+
+File
+  - emu3s_sin_table.h        v1.1
+    - Add SINE table definition for used in HWCORE_INPUT and HWCORE_PWM models
+
+--------------------------------------------------------
+<2020.08.06>
+
+File
+  - CRWInterface.h           v1.1
+    - Add interface for sub-models that have a common target socket
+
+--------------------------------------------------------
+<2020.04.21>
+
+File
+  - Cgeneral_timer.h         v1.1.1.1
+  - commandHandler.h         v1.10
+  - dbglib.h                 v1.3
+  - ECC_def.h                v1.3
+  - general_reset.h          v1.1.1.1
+  - general_sci.h            v1.3
+  - HSIF_Common.h            v1.9
+  - reg_super.h              v1.13
+  - re_define.h              v1.2
+  - re_security.h            v1.7
+  - rvc_common_model.h       v1.3
+  - tlm_if.h                 v1.21.2.1
+  - tlm_if_command.h         v1.9
+  - tlm_ini_if.h             v1.25
+  - tlm_tgt_if.h             v1.28
+  - tlm_tgt_if_base.h        v1.4
+  - tlm_tgt_if_tagged.h      v1.9
+  - Cgeneral_timer.cpp       v1.1.1.1
+  - general_sci.cpp          v1.5
+  - HSIF_Common.cpp          v1.7
+  - re_security.cpp          v1.9
+  - rvc_common_model.cpp     v1.3
+  - re_register.cpp          v2016_09_21
+  - re_register.h            v2016_09_21
+  - SubstituteModel.h
+  - tlm_tgt_if_unit.h
+

@@ -1,0 +1,9 @@
+####################################################
+## Model info file
+####################################################
+%HEADER_FILES ecc.h
+%IMPLEMENTATION_FILES ecc.cpp ecc_regif.cpp
+%PORT pclk                64     in     sc_dt::uint64
+%PORT preset_n            1      in     bool
+%PORT ec7tie1             1     out     bool
+%PORT ec7tie2             1     out     bool

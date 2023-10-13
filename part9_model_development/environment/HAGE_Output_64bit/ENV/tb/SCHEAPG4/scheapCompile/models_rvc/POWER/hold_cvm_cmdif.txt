@@ -1,0 +1,3 @@
+%MODULE hold_cvm 
+%CMD_NODUMP_API CommandCB DumpProfile ClearProfile EnableInsertInput EnableDumpResult
+%CMD_ACTION SetCLKfreq <clk_name: std::string> <clk_freq: double> : void @ Set clock frequency for pclk port

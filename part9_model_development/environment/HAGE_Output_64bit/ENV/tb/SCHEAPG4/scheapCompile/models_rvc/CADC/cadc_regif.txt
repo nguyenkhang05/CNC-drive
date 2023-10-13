@@ -1,0 +1,18 @@
+%MODULE CADC
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         4
+
+%REG_CHANNEL reg_def
+    %%TITLE  name          reg_name      wsize    rsize    length  offset  factor_start  factor_end  factor_index  factor_step  access init  support callback
+    %%REG    CADCADGCR    CADCADGCR    8        8|16|32  8       0x04    -             -           -             -            W|R    0     TRUE    -
+    %%REG    CADCTDCR     CADCTDCR     8        8|16|32  8       0x0C    -             -           -             -            W|R    0     TRUE    -
+
+%REG_NAME CADCADGCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADCODDE        5      5      0     W|R     TRUE     -
+    %%BIT    CADCODE         4      4      0     W|R     TRUE     -
+    %%BIT    CADCUNSND       0      0      0     W|R     TRUE     -
+
+%REG_NAME CADCTDCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADCTDE     0      0      0     W|R     TRUE     W

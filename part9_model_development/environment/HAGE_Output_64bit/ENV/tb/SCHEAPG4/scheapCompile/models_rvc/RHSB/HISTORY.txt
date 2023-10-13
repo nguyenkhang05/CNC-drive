@@ -1,0 +1,28 @@
+***************************************************************************************************
+RHSB_Output_20180817.7z
+-----------------------------
+- Release info: Update to UM Rev0.80
+- Release date: Aug 17, 2018
+- Test environment: SC-HEAP G4 Rev041, gcc4.9.3, x64
+- Updated source code:
+    + PY_RHSB.cpp                    1.2 
+    + PY_RHSB.h                      1.2 
+    + RHSB.cpp                       1.4 
+    + RHSB.h                         1.3 
+    + RHSB_Func.cpp                  1.4 
+    + RHSB_Func.h                    1.3 
+    + RHSB_cmdif.h                   1.3 
+    + RHSB_define.h                  1.3 
+    + rhsb_regif.cpp                 1.2 
+    + rhsb_regif.h                   1.2 
+
+- Supported functions: 
+	+ Downstream communication
+	+ Upstream Communication 
+	+ Timeout Detection
+	+ Test mode
+	+ DMA Capability
+
+***************************************************************************************************
+***************************************************************************************************
+

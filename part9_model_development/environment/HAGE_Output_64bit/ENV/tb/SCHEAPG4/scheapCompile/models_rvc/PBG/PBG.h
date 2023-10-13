@@ -1,0 +1,147 @@
+// ---------------------------------------------------------------------
+// $Id: PBG.h,v 1.9 2019/06/16 06:02:16 nhuvo Exp $
+//
+// Copyright(c) 2018-2019 Renesas Electronics Corporation
+// Copyright(c) 2018-2019 Renesas Design Vietnam Co., Ltd.
+// RENESAS ELECTRONICS CONFIDENTIAL AND PROPRIETARY.
+// This program must be used solely for the purpose for which
+// it was furnished by Renesas Electronics Corporation. No part of this
+// program may be reproduced or disclosed to others, in any
+// form, without the prior written permission of Renesas Electronics
+// Corporation.
+// ---------------------------------------------------------------------
+
+#ifndef __PBG_H__
+#define __PBG_H__
+
+#include "BusBridgeModuleBase.h"
+#include "BusBridgeSlaveBase.h"
+#include "BusMasterBase.h"
+#include "BusSlaveBase.h"
+#include "PBG_AgentController.h"
+#include "rvc_common_model.h"
+
+
+template<unsigned int BUSWIDTH, unsigned int S_NUM> class BusBridgeSlaveBase;
+template<unsigned int BUSWIDTH, unsigned int S_NUM> class BusMasterBase;
+template<unsigned int BUSWIDTH> class TlmTargetSocket;
+template<unsigned int BUSWIDTH> class TlmInitiatorSocket;
+class PBG_Func;
+class PBG_Common_Guard;
+class PBG:  public PBG_AgentController,
+public BusBridgeModuleBase<32,32>,
+public BusBridgeSlaveBase<32,1>,
+public BusMasterBase<32,1>,
+public BusSlaveBase<32,1>,
+public rvc_common_model
+{
+private:
+    enum eResetActiveLevel {    // Define active level of reset signal
+        emResetActive = 0
+    };
+    //  std::map<std::string, unsigned int> mGroupIdMap;
+
+
+    PBG_Func        *mPBG_Func;                 //PBG_Func class instance
+    PBG_Common_Guard *mPBG_DataHandler;          //PBG_Common_Guard class instance
+
+    sc_dt::uint64   mPCLKPeriod;                //Period value of clock
+    sc_dt::uint64   mPCLKFreq;                  //Frequency value of clock
+    sc_dt::uint64   mPCLKOrgFreq;               //Original frequency of clock
+    std::string     mPCLKFreqUnit;              //Frequency unit of clock
+
+    sc_dt::uint64   mTimeResolutionValue;       //Time resolution value of simulation
+    sc_time_unit    mTimeResolutionUnit;        //Time resolution unit of simulation
+
+    bool            mResetCurVal;               //Store current value of reset signals
+    bool            mResetPreVal;               //Store previous value of reset signals
+    bool            mIsResetHardActive;         //Reset operation status of reset signals
+    bool            mIsResetCmdReceive;         //Receive status of AssertReset command of reset signals
+    bool            mIsResetCmdActive;          //Active status of AssertReset command of reset signals
+    double          mResetCmdPeriod;            //Period of AssertReset command of reset signals
+    double          mTimeCLKChangePoint;        //The time clock is changed its value
+
+    bool            mDumpInterrupt;             // Enable/Disable dumping the interrupt info
+    bool            mEnableRegisterMessage;
+    /// Declare events
+    sc_event mResetHardEvent;                   //Call HandleResetHardMethod when reset is active
+    sc_event mResetCmdEvent;                    //Call HandleResetCmdMethod when AssertReset is called
+    sc_event mResetCmdCancelEvent;              //Call CancelResetCmdMethod when AssertReset is over
+
+    sc_event mAssertPBG_ERREvent;               //Assert PBG_ERR output
+    sc_event mDeassertPBG_ERREvent;             //Deassert PBG_ERR output
+
+    sc_event mWritePBG_ERREvent;                //Write to PBG_ERR output
+    bool     mPBG_ERR_value;                    //Value of PBG_ERRR output
+    bool     mLock;                         //Store the value of lock bit which is set from Python
+    bool     mSec;                          //Store the value of sec bit which is set from Python
+
+public:
+    SC_HAS_PROCESS(PBG);
+    PBG(sc_module_name name,
+            unsigned int rLatency,
+            unsigned int wLatency,
+            unsigned int iCHAN_NUM,
+            SIM_MODE_T simmode);
+    ~PBG(void);
+
+    sc_in<sc_dt::uint64> PCLK;
+    sc_out<bool> PBG_ERR;
+
+    //Socket declaration
+    TlmTargetSocket<32> *tsp;
+    TlmTargetSocket<32> *tsv;
+    TlmInitiatorSocket<32> *is;
+
+    void AssertReset (const std::string reset_name, const double start_time, const double period);
+    void SetCLKFreq (const std::string clock_name, const sc_dt::uint64 freq, const std::string unit);
+    void GetCLKFreq (const std::string clock_name);
+    void ForceRegister (const std::string reg_name, const unsigned int reg_value);
+    void ReleaseRegister (const std::string reg_name);
+    void WriteRegister (const std::string reg_name, const unsigned int reg_value);
+    void ReadRegister (const std::string reg_name);
+    void ListRegister (void);
+
+    void Help (const std::string type);
+    void SetMessageLevel (const std::string msg_lv);
+    void DumpRegisterRW (const std::string is_enable);
+    void DumpInterrupt (const std::string is_enable);
+    void EnableRegisterMessage(const std::string is_enable);
+
+    void SetAreaAddress (const std::string group_id, const unsigned int start_addr, const unsigned int size, const unsigned int ch_id);
+    void LOCK_SUPPORT(unsigned int value);      //Set mLock
+    bool GetLOCK_SUPPORT();             //Get mLock
+    void SEC_SUPPORT(unsigned int value);       //Set mSec
+    bool GetSEC_DISABLED();              //Get mSec
+    void DumpStatusInfo  ();                    ///< Dump the status information of model
+
+private:
+    /// Declare methods
+    void HandleErrorMethod (void);
+    void HandlePCLKSignalMethod (void);
+
+    void HandleResetSignalMethod (void);
+    void HandleResetHardMethod (void);
+    void HandleResetCmdMethod (void);
+    void CancelResetCmdMethod (void);
+
+    void AssertPBG_ERRMethod (void);
+    void DeassertPBG_ERRMethod (void);
+    void WritePBG_ERRMethod (void);
+
+    /// Internal functions
+    void DumpInterruptMsg (const std::string intr_name, const bool value);              //Dump interrupt message
+    void EnableReset (const std::string reset_name, const bool is_active);
+    uint32_t GetPBGERRSTAT();    //Dump value of PBGERRSTAT register
+
+    void CancelEvents (void);
+    void RegisterHandler (const std::vector<std::string> cmd);
+    void PCLKUpdate (void);
+
+    bool CheckClockPeriod (const std::string clock_name);
+    bool GetResetStatus();
+    void SetPBGPROT1(const unsigned int spid, const unsigned int ch_id);
+    void SetPBGPROT0(const unsigned int gen, const unsigned int dbg, const unsigned int um, const unsigned int wg, const unsigned int rg, const unsigned int sec, const unsigned int ch_id);
+};
+#endif //__PBG_H__
+//

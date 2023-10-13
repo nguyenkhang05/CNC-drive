@@ -1,0 +1,125 @@
+/*
+ * (c) 2011,2012,2013 Renesas Electronics Corporation
+ * RENESAS ELECTRONICS CONFIDENTIAL AND PROPRIETARY
+ * This program must be used solely for the purpose for which
+ * it was furnished by Renesas Electronics Corporation. No part of this
+ * program may be reproduced or disclosed to others, in any
+ * form, without the prior written permission of Renesas Electronics
+ * Corporation.
+ */
+#pragma once
+
+// ===============
+// Global variable
+// ===============
+#cmakedefine VERSION "@VERSION@"
+#cmakedefine REVISION "@REVISION@"
+
+// =============
+// Global switch
+// =============
+// * API/PYTHON
+#cmakedefine ENABLE_PYTHON
+// * Peripheral/SIMIO
+#cmakedefine USE_SIM_IO
+// * Peripheral/TMU
+#cmakedefine ENABLE_TMU
+// * Peripheral/UART
+#cmakedefine ENABLE_UART
+// * Peripheral/PERFCNT
+#cmakedefine ENABLE_PERFCNT
+// * API/GDB
+#cmakedefine ENABLE_GDB
+// * Peripheral/ERRORAREA
+#cmakedefine ENABLE_ERROR_AREA
+// * Peripheral/OSTM
+#cmakedefine ENABLE_OSTM
+// * Core/SIMBREAK
+#cmakedefine ENABLE_SAME_PC_BREAK
+// * Core/CEDAR
+#cmakedefine FROG_API_IF
+#cmakedefine FROG_API_G4MH_UT
+#cmakedefine SUPPORT_CUBESUITE
+#cmakedefine SUPPORT_SC_HEAP
+#cmakedefine COMP_RUNNER
+#cmakedefine COMP_RUNNER_G4MH
+#cmakedefine ENABLE_MISR
+
+// * Core/INST
+#cmakedefine DEBUG_CORE_INT
+#cmakedefine MASK_INT_BY_GPID
+
+// * Core/CYCLESIM
+#cmakedefine DEBUG_CS
+#cmakedefine DEBUG_CS_LSU
+#cmakedefine DEBUG_CS_MEM
+#cmakedefine PRINT_FXU_PIPE
+#cmakedefine SYNC_PE_LSU_TIME
+#cmakedefine ENABLE_EXE_ORDER_CTRL
+
+// * Core/TRACE
+#cmakedefine DEBUG_PRINT_STALL
+
+// * Core/DEBUGBREAK
+#cmakedefine ENABLE_DEBUG
+
+// * API/SCHEAP
+#if defined(BUILD_CFOREST)
+#cmakedefine DLLEXPORT
+#endif // defined(BUILD_CFOREST)
+
+// * API/CSPLUS
+#cmakedefine ENABLE_BARRIER_CSP
+
+// * API/CompRunner
+#cmakedefine ENABLE_COMP_DEBUG
+#cmakedefine ENABLE_TRACE_MDP_SUPPRESS
+
+// * Core/LSU
+#cmakedefine ENABLE_ROM_W_ERROR
+
+// * Peripheral/LATENCYINFO
+#cmakedefine ENBALE_SUBBANK_LRAM
+#cmakedefine ENBALE_SUBBANK_CRAM
+
+// ==============
+// Local variable
+// ==============
+// * Core/BTB
+#cmakedefine BTAC_ENTRY_NUM @BTAC_ENTRY_NUM@
+#cmakedefine BTAC_WAY_NUM @BTAC_WAY_NUM@
+
+// ============
+// Local switch
+// ============
+// * Core/BTB
+#cmakedefine ALLOW_MULTI_HIT
+#cmakedefine BTAC_RR_EACH_ENTRY
+#cmakedefine STUDY_GHR_64BIT
+#cmakedefine USE_2BIT_COUNTER_BHT
+#cmakedefine USE_6BIT_GHR
+#cmakedefine USE_BTAC_DIRECT_MAP
+#cmakedefine USE_BTAC_LRU
+#cmakedefine USE_BTAC_ROUNDROBIN
+#cmakedefine USE_GSHARE_BHT
+#cmakedefine USE_HYBRID_BP
+#cmakedefine USE_TAKEN_GHT
+// * Core/CEDAR
+#cmakedefine ENABLE_PIC
+// * Core/DEBUGBREAK
+#cmakedefine ENABLE_DBG_BREAK
+#cmakedefine ENABLE_DBG_PMC
+// * Core/PE
+#cmakedefine ENABLE_RB_MDP
+#cmakedefine ENABLE_ROM_IDCONFLICT
+#cmakedefine CHECK_LACK_DBREG
+#cmakedefine USE_STALL_COUNT
+#cmakedefine DISABLE_DESTRUCTOR_CYCLE
+#cmakedefine ENABLE_GRG
+#cmakedefine CCG3M_GRAM
+#cmakedefine CCG3M_DBUF
+#cmakedefine ENABLE_TRACE_BUF
+#cmakedefine TEST_SC_HEAP
+#cmakedefine ENABLE_FLC_I
+#cmakedefine ENABLE_FLC_D
+#cmakedefine ENABLE_PEID_POS_CTRL

@@ -1,0 +1,210 @@
+***************************************************************************************************
+PBG_Output_64bit_20190616.7z
+-----------------------------
+- Release info: updated two adapt FCC1 and FCC2 0.60
+- Release date: Jun 25, 2019
+- Test environment: SC-HEAP Rev191, machine x64, gcc4.9.3
+- Update source code:
+    PBG.cpp                        (1.11)
+    PBG.h                          (1.9 )
+    PBG_AgentController.h          (1.8 )
+    PBG_Common_Guard.cpp           (1.2 )
+    PBG_Common_Guard.h             (1.2 )
+    PBG_Func.cpp                   (1.9 )
+    PBG_Func.h                     (1.4 )
+    PBG_cmdif.h                    (1.3 )
+    PY_PBG.cpp                     (1.5 )
+    PY_PBG.h                       (1.4 )
+    pbguard_regif.cpp              (1.8 )
+    pbguard_regif.h                (1.7 )
+
+
+- Supported functions: no change
+  + Allow access registers when clock is zero or reset in debug mode with debug master ID 0xFF
+  + Change CWR_SYSTEMC to USR_CWR_SYSTEM
+  + Use rvc_common_model.cpp/h
+  + Get coverage C1.
+  + Check 2bytes-characters, uninitialized variables
+- Un-support functions: no changee
+
+***************************************************************************************************
+PBG_Output_64bit_20190213.7z
+-----------------------------
+- Release info: Upgrade ENV, change reset port from presetz to resetPort, change behavior at zero clock, SEC function supported
+- Release date: Feb 13, 2019
+- Test environment: SC-HEAP Rev135, machine x64, gcc4.9.3
+- Update source code:
+    PBG_Common_Guard.h      7706
+    PBG.cpp               	7706
+    PBG_AgentController.h 	7706
+    pbguard_regif.cpp     	7706
+    PBG_Common_Guard.cpp    7706
+    PBG_Func.h            	7706
+    PBG_cmdif.h           	7706
+    PBG.h                 	7706
+    PY_PBG.cpp            	7706
+    PBG_Func.cpp          	7706
+    pbguard_regif.h       	7706
+    PY_PBG.h              	7706
+
+
+- Supported functions:
+    + Bit SEC is forward to slave if transaction is allowed. Otherwise, bit SEC is reported in PBGERRTYPE register
+    + Support checking security of a transaction if P_SEC_DIS parameter is false
+- Non-supported features and limitation:
+    + None
+
+***************************************************************************************************
+PBG_Output_64bit_20180702.7z
+-----------------------------
+- Release info: Upgrade ENV, Fix bug related to updating PBGERRSTAT, PBGERRTYPE registers, interrupt
+- Release date: July 2, 2018
+- Test environment: SCHEAP G4 Rev73, machine x64, gcc4.9.3
+- Update source code:
+    Common_Guard.h        	7706
+    PBG.cpp               	7706
+    PBG_AgentController.h 	7706
+    pbguard_regif.cpp     	7706
+    Common_Guard.cpp      	7706
+    PBG_Func.h            	7706
+    PBG_cmdif.h           	7706
+    PBG.h                 	7706
+    PY_PBG.cpp            	7706
+    PBG_Func.cpp          	7706
+    pbguard_regif.h       	7706
+    PY_PBG.h              	7706
+
+
+- Supported functions:
+    + Support new PBG groups and change the number of channel in some old PBG groups
+    + Set P_LOCK_SUPPORT parameter to see if there are necessary regard to the setting of LOCK bit for model or not
+    + Support R/W for SEC bit of PBGPROT0_m register
+    + Protect peripheral circuits
+- Non-supported features and limitation:
+    + None
+
+
+***************************************************************************************************
+PBG_Output_64bit_20180625.7z
+-----------------------------
+- Release info: Upgrade ENV, Add paramter P_SEC_DIS to support SEC bit of PBGPROT0 register, Change write access size of registers as PBGERRSTAT, PBGERRTYPE, PBGPROT0, PBGPROT1
+- Release date: Jun 25, 2018
+- Test environment: SCHEAP G4 Rev73, machine x64, gcc4.9.3
+- Update source code:
+    Common_Guard.h        	7577
+    PBG.cpp               	7577
+    PBG_AgentController.h 	7577
+    pbguard_regif.cpp     	7577
+    Common_Guard.cpp      	7577
+    PBG_Func.h            	7577
+    PBG_cmdif.h           	7577
+    PBG.h                 	7577
+    PY_PBG.cpp            	7577
+    PBG_Func.cpp          	7577
+    pbguard_regif.h       	7577
+    PY_PBG.h              	7577
+
+- Supported functions:
+    + Change write access size of registers as PBGERRSTAT, PBGERRTYPE, PBGPROT0, PBGPROT1
+    + Add paramter P_SEC_DIS to support SEC bit of PBGPROT0 register
+***************************************************************************************************
+PBG_Output_20180224.7z
+-----------------------------
+- Release info: Upgrade ENV, update source code (use constructor for channel number), change test env(use heap configure), add TM to check reserved area when PBG is created with channel < 16, add TM to check invalid pbg_id
+- Release date: Feb 12, 2018
+- Test environment: SCHEAP-G4 Rev163, machine x64, gcc4.9.3
+- Updated source code: 
+    + PBG.cpp
+- Supported functions: Not change from previous release.
+
+***************************************************************************************************
+PBG_Output_20171223.7z
+-----------------------------
+- Release info: Fix bug in ticket #18264 related to PBGPORT1_m.
+- Release date: Dec 23, 2017
+- Test environment: SCHEAP-G4 Rev144, machine x64, gcc4.9.3
+- Updated source code: 
+    + Common_Guard.cpp      r4818(v1.3)
+
+- Supported functions: Not change from previous release.
+
+***************************************************************************************************
+PBG_Output_20170922.7z
+-----------------------------
+- Release info: Update source code to change PEID of Debug master to 0xFF
+- Release date: Apr 04, 2017
+- Test environment: SCHEAP G4 Rev32
+- Updated source code:
+    + PBG.cpp                  r4146(v1.3)             
+    + PBG_AgentController.h    r4146(v1.1) 
+    + pbguard_regif.cpp        r4146(v1.2)
+    + Common_Guard.cpp         r4146(v1.2)   
+    + PBG.h                    r4146(v1.2)     
+    + PY_PBG.cpp               r4146(v1.1)     
+    + PBG_Func.cpp             r4146(v1.2)   
+    + pbguard_regif.h          r4146(v1.2)  
+    + PY_PBG.h                 r4146(v1.1)
+- Supported functions:
+    + Protect peripheral circuits
+- Added new features:
+    + Support new PBG groups and change the number of channel in some old PBG groups
+    + Set P_LOCK_SUPPORT parameter to see if there are necessary regard to the setting of LOCK bit for model or not
+    + Support R/W for SEC bit of PBGPROT0_m register
+- Non-supported features and limitation:
+    + In this model, P_SEC_DIS parameter is not supported, although this parameter is available in hardware
+
+***************************************************************************************************
+PBG_Output_04132017.7z
+-----------------------------
+- Release info: Update source code to fix bug in reading PBGERRCLR register
+- Release date: Apr 13, 2017
+- Test environment: SCHEAP G4 Rev32
+- Updated source code:
+    + PBG.cpp               (v1.2)
+    + PBG.h                 (v1.1)
+    + PBG_Func.cpp          (v1.1)
+    + pbguard_regif.cpp     (v1.1)
+    + pbguard_regif.h       (v1.1)
+- Supported functions:
+    + Protect peripheral circuits
+
+***************************************************************************************************
+PBG_Output_04042017.7z
+-----------------------------
+- Release info: Update source code to change PEID of Debug master to 0xFF
+- Release date: Apr 04, 2017
+- Test environment: SCHEAP G4 Rev32
+- Updated source code:
+    + Common_Guard.cpp      (v1.2)
+- Supported functions:
+    + Protect peripheral circuits
+
+***************************************************************************************************
+PBG_Output_01212017.7z
+-----------------------------
+- Release info: Update source code to fix compile error in DEBUG mode
+- Release date: Jan 21, 2017
+- Test environment: SCHEAP G4 Rev32
+- Updated source code:
+    + Common_Guard.cpp      (v1.1)
+    + PBG.cpp               (v1.1)
+- Supported functions:
+    + Protect peripheral circuits
+
+***************************************************************************************************
+PBG_Output_11062016.7z
+-----------------------------
+- Release info: Official release
+- Release date: Nov 11, 2016
+- Test environment: SCHEAP G4 Rev32
+- Supported functions:
+    + Protect peripheral circuits
+
+***************************************************************************************************
+PBG_Output_10212016.7z
+-----------------------------
+- Release info: Beta data
+- Release date: Oct 21, 2016
+- Test environment: SCHEAP G4 Rev32
+- Supported functions:
+    + Protect peripheral circuits (under testing)

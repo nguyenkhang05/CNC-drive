@@ -1,0 +1,16 @@
+%MODULE ecc_ethernet_e2
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  6
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name              reg_name                    wsize   rsize        length  offset  factor_start    factor_end  factor_index  factor_step access   init   support  callback
+    %%REG      ETCTXECCCTL       ETCTXECCCTL                 8|16|32 8|16|32      32     0x00    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      ETCRXECCCTL       ETCRXECCCTL                 8|16|32 8|16|32      32     0x04    -               -           -               -           R/W      0x0     TRUE     -
+    
+%REG_NAME ETCTXECCCTL
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    EC1ECP             5        5      0       R|W     TRUE        W
+
+%REG_NAME ETCRXECCCTL
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    EC1ECP             5        5      0       R|W     TRUE        W

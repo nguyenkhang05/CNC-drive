@@ -1,0 +1,64 @@
+#############################
+## QLAPBFICTLAV1_Output_64bit_20200327.7z
+#############################
+- Release info: Release final source code ( U2A version)
+				Update code to adapt UM 0.61: change bit name, register name
+				Update condition access Read/Write function for debug master mode in case of zero clock or reset(ID 80007)
+				Using RVC common model for common methods
+				Using pre-defined macro for magic number (e.g APB Bus width,...)
+- Release date: Mar 27, 2020
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- File (SVN repository):
+- File                          
+ qlapbfictlav1_sub_regif.cpp    		(v1.3)
+ QLAPBFICTLAV1_Func.h           		(v1.3)
+ QLAPBFICTLAV1_Func.cpp                 (v1.3)
+ QLAPBFICTLAV1.h                        (v1.3)
+ QLAPBFICTLAV1.cpp                      (v1.4)
+ QLAPBFICTLAV1_Sub_cmdif.h              (v1.3)
+ qlapbfictlav1_sub_regif.txt              - 
+ QLAPBFICTLAV1_cmdif.h                  (v1.2)
+ QLAPBFICTLAV1_Sub.h                    (v1.2)
+ QLAPBFICTLAV1_Sub_Func.h               (v1.3)
+ QLAPBFICTLAV1_Sub_AgentController.h    (v1.3)
+ PY_QLAPBFICTLAV1.cpp                   (v1.3)
+ qlapbfictlav1_sub_regif.h              (v1.3)
+ QLAPBFICTLAV1_Sub.cpp          		(v1.3)
+ QLAPBFICTLAV1_AgentController.h        (v1.3)
+ QLAPBFICTLAV1_Sub_Func.cpp             (v1.3)
+ PY_QLAPBFICTLAV1.h                     (v1.3)
+     
+- Supported functions : No change
+- Non supported features and limitations (No change)
+
+#############################
+## MSPI000_Output_20180517.7z
+#############################
+- Release info: Official release ( U2A version)
+- Release date: May 19, 2018
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+- File (SVN repository):
+- File                          Revision   Codeline
+ qlapbfictlav1_sub_regif.cpp    6349       984
+ QLAPBFICTLAV1_Func.h           6349       34
+ QLAPBFICTLAV1_Func.cpp         6370       72
+ QLAPBFICTLAV1.h                6349       128
+ QLAPBFICTLAV1.cpp              6690       785
+ QLAPBFICTLAV1_Sub_cmdif.h      6349       801
+ qlapbfictlav1_sub_regif.txt    -          18
+ QLAPBFICTLAV1_cmdif.h          6349       801
+ QLAPBFICTLAV1_Sub.h            6636       88
+ QLAPBFICTLAV1_Sub_Func.h       -          57
+ QLAPBFICTLAV1_Sub_AgentController.h 6636       45
+ PY_QLAPBFICTLAV1.cpp           6616       258
+ qlapbfictlav1_sub_regif.h      6349       176
+ QLAPBFICTLAV1_Sub.cpp          6651       315
+ QLAPBFICTLAV1_AgentController.h 6370       51
+ QLAPBFICTLAV1_Sub_Func.cpp     6636       178
+ PY_QLAPBFICTLAV1.h             6349       34
+     
+- Supported functions:
+    + Noise filter bypass function
+    + Edge setting function for edge detectors
+    + Level detector and its enable/disable function
+

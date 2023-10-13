@@ -1,0 +1,73 @@
+-----------------------------
+- Release info: update read(), write API to allow access register in case of NULL extension 
+               (Except: zero clock and asserted reset)(Redmine #115338)
+- Release date: Nov 29, 2019
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+    RHSB_XBAR_Func.cpp           (v1.7)
+
+- Supported features: No change
+
+- None supported features: No change
+
+-----------------------------
+- Release info: update read(), write API to use "if else" instead of sc_assert() for the TLM generic payload extension checking
+- Release date: Nov 14, 2019
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+    RHSB_XBAR_Func.cpp           (v1.6)
+
+- Supported features: No change
+
+- None supported features: No change
+
+-----------------------------
+RHSB_XBAR_Output_64bit_20190913.7z
+-----------------------------
+- Release info: Final release
+- Release date: Sep 13, 2019
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+    RHSB_XBAR.cpp                (v1.8)
+    RHSB_XBAR.h                  (v1.6)
+    RHSB_XBAR_AgentController.h  (v1.4)
+    RHSB_XBAR_Func.cpp           (v1.5)
+    RHSB_XBAR_Func.h             (v1.3)
+    RHSB_XBAR_cmdif.h            (v1.3)
+    PY_RHSB_XBAR.cpp             (v1.4)
+    PY_RHSB_XBAR.h               (v1.4)
+    rhsb_xbar_regif.cpp          (v1.3)
+    rhsb_xbar_regif.h            (v1.3)
+
+- Supported features: No change
+
+- None supported features: No change
+
+-----------------------------
+src_RHSB_XBAR_20190628.7z
+-----------------------------
+- Release info: Release source code for code review 2
+- Release date: Aug 28, 2019
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+    RHSB_XBAR.cpp                (v1.5)
+    RHSB_XBAR.h                  (v1.5)
+    RHSB_XBAR_AgentController.h  (v1.4)
+    RHSB_XBAR_Func.cpp           (v1.5)
+    RHSB_XBAR_Func.h             (v1.3)
+    RHSB_XBAR_cmdif.h            (v1.3)
+    PY_RHSB_XBAR.cpp             (v1.3)
+    PY_RHSB_XBAR.h               (v1.3)
+    rhsb_xbar_regif.cpp          (v1.3)
+    rhsb_xbar_regif.h            (v1.3)
+
+- Supported features:
+    + Max frequency of clock CLK_LSB: Unlimited frequency.
+    + Synchronous reset (PRESETn): Asynchronous.
+    + Access to registers: Use TLM target socket to access to registers from APB bus.
+    + Cross bar: select signals from the timer and GPIO with the multiplexer and outputs arbitrary signals to the RHSB.
+
+- None supported features:
+    + The model has no function to detect the stable of input signal.
+
+

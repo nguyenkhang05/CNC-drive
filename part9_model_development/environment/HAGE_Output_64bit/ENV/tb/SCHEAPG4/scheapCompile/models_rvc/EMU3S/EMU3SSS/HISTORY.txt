@@ -1,0 +1,148 @@
+// Description: History file
+// Ref: {EMU3SSS_UD_ATT1_002, EMU3SSS_UD_ATT1_003}
+
+**************************************************************
+
+- Release info: Release final source code
+- Release date: Nov 21, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- EMU3SSS (CVS repository):
+  EMU3S_AHB_ARB.cpp         1.5
+  EMU3S_AHB_ARB.h           1.5
+  EMU3S_AHB_ARB_Func.cpp    1.6
+  EMU3S_AHB_ARB_Func.h      1.6
+  EMU3S_APB_DEC.cpp         1.6
+  EMU3S_APB_DEC.h           1.5
+  EMU3S_APB_DEC_Func.cpp    1.8
+  EMU3S_APB_DEC_Func.h      1.5
+  EMU3SSS.cpp               1.11
+  EMU3SSS.h                 1.10
+  EMU3SSS_cmdif.h           1.1
+  PY_EMU3SSS.cpp            1.3
+  PY_EMU3SSS.h              1.1
+  Makefile                  1.3
+
+- Supported features: No change
+- Non-supported features and limitation: No change
+
+**************************************************************
+
+- Release info: Updated code from REL's feedback
+- Release date: Nov 13, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- EMU3SSS (CVS repository):
+  EMU3S_AHB_ARB.cpp         1.1
+  EMU3S_AHB_ARB.h           1.1
+  EMU3S_AHB_ARB_Func.cpp    1.1
+  EMU3S_AHB_ARB_Func.h      1.1
+  EMU3S_APB_DEC.cpp         1.1
+  EMU3S_APB_DEC.h           1.1
+  EMU3S_APB_DEC_Func.cpp    1.1
+  EMU3S_APB_DEC_Func.h      1.1
+  EMU3SSS.cpp               1.4
+  EMU3SSS.h                 1.4
+  EMU3SSS_cmdif.h           1.1
+  PY_EMU3SSS.cpp            1.3
+  PY_EMU3SSS.h              1.1
+  Makefile                  1.3
+
+Note:
+1, Remove EMU3SSS_Func.cpp and EMU3SSS_Func.h
+2, Changed name:
+       - AHB_ARB.cpp      to EMU3S_AHB_ARB.cpp
+       - AHB_ARB.h        to EMU3S_AHB_ARB.h
+       - APB_DEC.cpp      to EMU3S_APB_DEC.cpp
+       - APB_DEC.h        to EMU3S_APB_DEC.h
+       - AHB_ARB_Func.cpp to EMU3S_AHB_ARB_Func.cpp
+       - AHB_ARB_Func.h   to EMU3S_AHB_ARB_Func.h
+       - APB_DEC_Func.cpp to EMU3S_APB_DEC_Func.cpp
+       - APB_DEC_Func.h   to EMU3S_APB_DEC_Func.h
+
+- Supported features: No change
+- Non-supported features and limitation: No change
+
+**************************************************************
+
+- Release info: Release alpha source code.
+- Release date: Nov 11, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- EMU3SSS (CVS repository):
+  AHB_ARB.cpp               1.3
+  AHB_ARB.h                 1.3
+  AHB_ARB_Func.cpp          1.1
+  AHB_ARB_Func.h            1.1
+  APB_DEC.cpp               1.3
+  APB_DEC.h                 1.3
+  APB_DEC_Func.cpp          1.1
+  APB_DEC_Func.h            1.1
+  EMU3SSS.cpp               1.3
+  EMU3SSS.h                 1.3
+  EMU3SSS_cmdif.h           1.1
+  EMU3SSS_Func.cpp          1.1
+  EMU3SSS_Func.h            1.1
+  PY_EMU3SSS.cpp            1.3
+  PY_EMU3SSS.h              1.1
+
+- Supported features: No change
+- Non-supported features and limitation: No change
+
+**************************************************************
+
+- Release info: Release updated source code for first review.
+- Release date: Nov 06, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- EMU3SSS (CVS repository):
+  AHB_ARB.cpp               1.2
+  AHB_ARB.h                 1.2
+  APB_DEC.cpp               1.2
+  APB_DEC.h                 1.2
+  EMU3SSS.cpp               1.2
+  EMU3SSS.h                 1.2
+  EMU3SSS_cmdif.h           1.1
+  EMU3SSS_Func.cpp          1.1
+  EMU3SSS_Func.h            1.1
+  PY_EMU3SSS.cpp            1.2
+  PY_EMU3SSS.h              1.1
+
+- Supported features: No change
+- Non-supported features and limitation: No change
+
+**************************************************************
+
+- Release info: Release interface source code.
+- Release date: Nov 02, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- EMU3SSS (CVS repository):
+  AHB_ARB.cpp               1.1
+  AHB_ARB.h                 1.1
+  APB_DEC.cpp               1.1
+  APB_DEC.h                 1.1
+  EMU3SSS.cpp               1.1
+  EMU3SSS.h                 1.1
+  EMU3SSS_cmdif.h           1.1
+  EMU3SSS_Func.cpp          1.1
+  EMU3SSS_Func.h            1.1
+  PY_EMU3SSS.cpp            1.1
+  PY_EMU3SSS.h              1.1
+
+- Supported features:
+  + Input
+  + Output
+  + Register interface
+  + Interrupt output
+  + Memory transfer block
+  + Safety Functions Control via Python:
+        -  EDC error 
+        -  LCST error (error detected by the redundancy system)
+  + System control interface
+ 
+// Ref: {EMU3SSS_UD_Ports_003, EMU3SSS_UD_Limitation_001, EMU3SSS_UD_Limitation_002, EMU3SSS_UD_Limitation_003}
+- Non-supported features and limitation:
+  + Support I/F with PSEQ
+  + Support I/F with DEBUGGER
+  + Support redundancy system 

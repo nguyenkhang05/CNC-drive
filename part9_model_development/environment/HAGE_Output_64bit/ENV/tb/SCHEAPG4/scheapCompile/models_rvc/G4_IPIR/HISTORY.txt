@@ -1,0 +1,31 @@
+G4_IPIR_Output_64bit_20190713.7z
+-----------------------------
+- Release info: Release final data after update to adapt FCC2 0.60
+- Release date: Jul 13, 2019
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+    G4_IPIR.cpp                  (v1.14)
+    G4_IPIR.h                    (v1.7) 
+    G4_IPIR_AgentController.h    (v1.6) 
+    G4_IPIR_Func.cpp             (v1.11)
+    G4_IPIR_Func.h               (v1.7) 
+    G4_IPIR_cmdif.h              (v1.2) 
+    G4_OR_IPIR.cpp               (v1.4) 
+    G4_OR_IPIR.h                 (v1.3) 
+    PY_G4_IPIR.cpp               (v1.3) 
+    PY_G4_IPIR.h                 (v1.2) 
+    g4_ipir_regif.cpp            (v1.2) 
+    g4_ipir_regif.h              (v1.2) 
+- Supported functions: no change
+  + Initial setting
+  + Inter-PE interrupt request
+  + Demand mask function
+  + Inter-PE interrupt request in two or more systems
+  + Inter-PE interrupt request clearness function
+- Update:
+  + Allow access registers when clock is zero or reset in debug mode with debug master ID 0xFF
+  + Change CWR_SYSTEMC to USR_CWR_SYSTEM
+  + Use rvc_common_model.cpp/h
+  + Get coverage C1.
+  + Check 2bytes-characters, uninitialized variables
+- Un-support functions: no change

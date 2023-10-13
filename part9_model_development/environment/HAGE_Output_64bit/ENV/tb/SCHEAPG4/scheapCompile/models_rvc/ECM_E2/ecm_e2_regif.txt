@@ -1,0 +1,957 @@
+## ----------------------------------------------------------------------
+## $Id: $
+##
+## Copyright(c) 2015 Renesas System Design Co., Ltd.
+## Copyright(c) 2015 Renesas Design Vietnam Co., Ltd.
+## RENESAS ELECTRONICS CONFIDENTIAL AND PROPRIETARY.
+## This program must be used solely for the purpose for which
+## it was furnished by Renesas Electronics Corporation. No part of this
+## program may be reproduced or disclosed to others, in any
+## form, without the prior written permission of Renesas Electronics
+## Corporation.
+## ----------------------------------------------------------------------
+
+%MODULE ECM_E2 
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  10
+
+%REG_CHANNEL reg_def
+    %%TITLE    name         reg_name       size       wsize      length  offset    factor_start factor_end  factor_step access  init     support  callback
+    %%REG      ECMmESET     ECMmESET       8|16|32    8           8       0x000      -           -           -           W       0        TRUE     -
+    %%REG      ECMmECLR     ECMmECLR       8|16|32    8           8       0x004      -           -           -           W       0        TRUE     -
+    %%REG      ECMmESSTR0   ECMmESSTR0     8|16|32    32          32      0x008      -           -           -           R       0        TRUE     -
+    %%REG      ECMmESSTR    ECMmESSTR      8|16|32    32          32      0x00C      1           8           0x4         R       0        TRUE     -
+    %%REG      ECMmESSTR9   ECMmESSTR9     8|16|32    32          32      0x02C      -           -           -           R       0        TRUE     -
+                                                                  
+    %%REG      ECMEPCFG     ECMEPCFG       8|16|32    8           8       0x100      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMMICFG0    ECMMICFG0      8|16|32    32          32      0x104      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMMICFG     ECMMICFG       8|16|32    32          32      0x108      1           8           0x4         R|W     0        TRUE     -
+    %%REG      ECMMICFG9    ECMMICFG9      8|16|32    32          32      0x128      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMNMICFG0   ECMNMICFG0     8|16|32    32          32      0x12C      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMNMICFG    ECMNMICFG      8|16|32    32          32      0x130      1           8           0x4         R|W     0        TRUE     -
+    %%REG      ECMNMICFG9   ECMNMICFG9     8|16|32    32          32      0x150      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMIRCFG0    ECMIRCFG0      8|16|32    32          32      0x154      -           -           -           R|W     0x10000        TRUE     -
+    %%REG      ECMIRCFG     ECMIRCFG       8|16|32    32          32      0x158      1           8           0x4         R|W     0        TRUE     -
+    %%REG      ECMIRCFG9    ECMIRCFG9      8|16|32    32          32      0x178      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMEMK0      ECMEMK0        8|16|32    32          32      0x17C      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMEMK       ECMEMK         8|16|32    32          32      0x180      1           8           0x4         R|W     0        TRUE     -
+    %%REG      ECMEMK9      ECMEMK9        8|16|32    32          32      0x1A0      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMESSTC0    ECMESSTC0      8|16|32    32          32      0x1A4      -           -           -           W       0        TRUE     -
+    %%REG      ECMESSTC     ECMESSTC       8|16|32    32          32      0x1A8      1           8           0x4         W       0        TRUE     -
+    %%REG      ECMESSTC9    ECMESSTC9      8|16|32    32          32      0x1C8      -           -           -           W       0        TRUE     -
+    %%REG      ECMKCPROT    ECMKCPROT      8|16|32    32          32      0x1CC      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMPE0       ECMPE0         8|16|32    32          32      0x1D0      -           -           -           W       0        TRUE     -
+    %%REG      ECMPE        ECMPE          8|16|32    32          32      0x1D4      1           8           0x4         W       0        TRUE     -
+    %%REG      ECMPE9       ECMPE9         8|16|32    32          32      0x1F4      -           -           -           W       0        TRUE     -
+    %%REG      ECMDTMCTL    ECMDTMCTL      8|16|32    8           8       0x1F8      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMDTMR      ECMDTMR        8|16|32    16          16      0x1FC      -           -           -           R       0        TRUE     -
+    %%REG      ECMDTMCMP    ECMDTMCMP      8|16|32    32          32      0x200      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMMIDTMCFG0 ECMMIDTMCFG0   8|16|32    32          32      0x204      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMMIDTMCFG  ECMMIDTMCFG    8|16|32    32          32      0x208      1           8           0x4         R|W     0        TRUE     -
+    %%REG      ECMMIDTMCFG9 ECMMIDTMCFG9   8|16|32    32          32      0x228      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMNMIDTMCFG0 ECMNMIDTMCFG0 8|16|32    32          32      0x22C      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMNMIDTMCFG  ECMNMIDTMCFG  8|16|32    32          32      0x230      1           8           0x4         R|W     0        TRUE     -
+    %%REG      ECMNMIDTMCFG9 ECMNMIDTMCFG9 8|16|32    32          32      0x250      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMEOCCFG    ECMEOCCFG      8|16|32    32          32      0x254      -           -           -           R|W     0        TRUE     -
+    %%REG      ECMPEM       ECMPEM         8|16|32    32          32      0x258      -           -           -           R|W     0        TRUE     -
+
+%REG_NAME ECMmESET      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMmEST        0      0      0     W1       TRUE     W   
+
+%REG_NAME ECMmECLR      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMmECT        0      0      0     W1       TRUE     W   
+
+%REG_NAME ECMmESSTR0      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMmSSE031    31     31     0     R       TRUE     -    
+    %%BIT    ECMmSSE030    30     30     0     R       TRUE     -    
+    %%BIT    ECMmSSE029    29     29     0     R       TRUE     -    
+    %%BIT    ECMmSSE028    28     28     0     R       TRUE     -    
+    %%BIT    ECMmSSE027    27     27     0     R       TRUE     -    
+    %%BIT    ECMmSSE026    26     26     0     R       TRUE     -    
+    %%BIT    ECMmSSE025    25     25     0     R       TRUE     -    
+    %%BIT    ECMmSSE024    24     24     0     R       TRUE     -    
+    %%BIT    ECMmSSE023    23     23     0     R       TRUE     -    
+    %%BIT    ECMmSSE022    22     22     0     R       TRUE     -    
+    %%BIT    ECMmSSE021    21     21     0     R       TRUE     -    
+    %%BIT    ECMmSSE020    20     20     0     R       TRUE     -    
+    %%BIT    ECMmSSE019    19     19     0     R       TRUE     -    
+    %%BIT    ECMmSSE018    18     18     0     R       TRUE     -    
+    %%BIT    ECMmSSE017    17     17     0     R       TRUE     -    
+    %%BIT    ECMmSSE016    16     16     0     R       TRUE     -    
+    %%BIT    ECMmSSE01514  15     14     0     R       TRUE     -    
+    %%BIT    ECMmSSE01312  13     12     0     R       TRUE     -    
+    %%BIT    ECMmSSE01110  11     10     0     R       TRUE     -    
+    %%BIT    ECMmSSE00908  9      8      0     R       TRUE     -    
+    %%BIT    ECMmSSE00706  7      6      0     R       TRUE     -    
+    %%BIT    ECMmSSE00504  5      4      0     R       TRUE     -    
+    %%BIT    ECMmSSE00302  3      2      0     R       TRUE     -    
+    %%BIT    ECMmSSE00100  1      0      0     R       TRUE     -    
+    
+%REG_NAME ECMmESSTR      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMmSSE31      31     31     0     R       TRUE     -    
+    %%BIT    ECMmSSE30      30     30     0     R       TRUE     -    
+    %%BIT    ECMmSSE29      29     29     0     R       TRUE     -    
+    %%BIT    ECMmSSE28      28     28     0     R       TRUE     -    
+    %%BIT    ECMmSSE27      27     27     0     R       TRUE     -    
+    %%BIT    ECMmSSE26      26     26     0     R       TRUE     -    
+    %%BIT    ECMmSSE25      25     25     0     R       TRUE     -    
+    %%BIT    ECMmSSE24      24     24     0     R       TRUE     -    
+    %%BIT    ECMmSSE23      23     23     0     R       TRUE     -    
+    %%BIT    ECMmSSE22      22     22     0     R       TRUE     -    
+    %%BIT    ECMmSSE21      21     21     0     R       TRUE     -    
+    %%BIT    ECMmSSE20      20     20     0     R       TRUE     -    
+    %%BIT    ECMmSSE19      19     19     0     R       TRUE     -    
+    %%BIT    ECMmSSE18      18     18     0     R       TRUE     -    
+    %%BIT    ECMmSSE17      17     17     0     R       TRUE     -    
+    %%BIT    ECMmSSE16      16     16     0     R       TRUE     -    
+    %%BIT    ECMmSSE15      15     15     0     R       TRUE     -    
+    %%BIT    ECMmSSE14      14     14     0     R       TRUE     -    
+    %%BIT    ECMmSSE13      13     13     0     R       TRUE     -    
+    %%BIT    ECMmSSE12      12     12     0     R       TRUE     -    
+    %%BIT    ECMmSSE11      11     11     0     R       TRUE     -    
+    %%BIT    ECMmSSE10      10     10     0     R       TRUE     -    
+    %%BIT    ECMmSSE09      9      9      0     R       TRUE     -    
+    %%BIT    ECMmSSE08      8      8      0     R       TRUE     -    
+    %%BIT    ECMmSSE07      7      7      0     R       TRUE     -    
+    %%BIT    ECMmSSE06      6      6      0     R       TRUE     -    
+    %%BIT    ECMmSSE05      5      5      0     R       TRUE     -    
+    %%BIT    ECMmSSE04      4      4      0     R       TRUE     -    
+    %%BIT    ECMmSSE03      3      3      0     R       TRUE     -    
+    %%BIT    ECMmSSE02      2      2      0     R       TRUE     -    
+    %%BIT    ECMmSSE01      1      1      0     R       TRUE     -    
+    %%BIT    ECMmSSE00      0      0      0     R       TRUE     -    
+
+%REG_NAME ECMmESSTR9      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMmSSE931      31     31     0     R       TRUE     -    
+    %%BIT    ECMmSSE930      30     30     0     R       TRUE     -    
+    %%BIT    ECMmSSE929      29     29     0     R       TRUE     -    
+    %%BIT    ECMmSSE928      28     28     0     R       TRUE     -    
+    %%BIT    ECMmSSE927      27     27     0     R       TRUE     -    
+    %%BIT    ECMmSSE926      26     26     0     R       TRUE     -    
+    %%BIT    ECMmSSE925      25     25     0     R       TRUE     -    
+    %%BIT    ECMmSSE924      24     24     0     R       TRUE     -    
+    %%BIT    ECMmSSE923      23     23     0     R       TRUE     -    
+    %%BIT    ECMmSSE922      22     22     0     R       TRUE     -    
+    %%BIT    ECMmSSE921      21     21     0     R       TRUE     -    
+    %%BIT    ECMmSSE920      20     20     0     R       TRUE     -    
+    %%BIT    ECMmSSE919      19     19     0     R       TRUE     -    
+    %%BIT    ECMmSSE918      18     18     0     R       TRUE     -    
+    %%BIT    ECMmSSE917      17     17     0     R       TRUE     -    
+    %%BIT    ECMmSSE916      16     16     0     R       TRUE     -    
+    %%BIT    ECMmSSE915      15     15     0     R       TRUE     -    
+    %%BIT    ECMmSSE914      14     14     0     R       TRUE     -    
+    %%BIT    ECMmSSE913      13     13     0     R       TRUE     -    
+    %%BIT    ECMmSSE912      12     12     0     R       TRUE     -    
+    %%BIT    ECMmSSE911      11     11     0     R       TRUE     -    
+    %%BIT    ECMmSSE910      10     10     0     R       TRUE     -    
+    %%BIT    ECMmSSE909      9      9      0     R       TRUE     -    
+    %%BIT    ECMmSSE908      8      8      0     R       TRUE     -    
+    %%BIT    ECMmSSE907      7      7      0     R       TRUE     -    
+    %%BIT    ECMmSSE906      6      6      0     R       TRUE     -    
+    %%BIT    ECMmSSE905      5      5      0     R       TRUE     -    
+    %%BIT    ECMmSSE904      4      4      0     R       TRUE     -    
+    %%BIT    ECMmSSE903      3      3      0     R       TRUE     -    
+    %%BIT    ECMmSSE902      2      2      0     R       TRUE     -    
+    %%BIT    ECMmSSE901      1      1      0     R       TRUE     -    
+    %%BIT    ECMmSSE900      0      0      0     R       TRUE     -    
+
+%REG_NAME ECMEPCFG      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMSL0         0      0      0     R|W     TRUE     -   
+
+%REG_NAME ECMMICFG0      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMMIE031    31     31     0     R|W       TRUE     -    
+    %%BIT    ECMMIE030    30     30     0     R|W       TRUE     -    
+    %%BIT    ECMMIE029    29     29     0     R|W       TRUE     -    
+    %%BIT    ECMMIE028    28     28     0     R|W       TRUE     -    
+    %%BIT    ECMMIE027    27     27     0     R|W       TRUE     -    
+    %%BIT    ECMMIE026    26     26     0     R|W       TRUE     -    
+    %%BIT    ECMMIE025    25     25     0     R|W       TRUE     -    
+    %%BIT    ECMMIE024    24     24     0     R|W       TRUE     -    
+    %%BIT    ECMMIE023    23     23     0     R|W       TRUE     -    
+    %%BIT    ECMMIE022    22     22     0     R|W       TRUE     -    
+    %%BIT    ECMMIE021    21     21     0     R|W       TRUE     -    
+    %%BIT    ECMMIE020    20     20     0     R|W       TRUE     -    
+    %%BIT    ECMMIE019    19     19     0     R|W       TRUE     -    
+    %%BIT    ECMMIE018    18     18     0     R|W       TRUE     -    
+    %%BIT    ECMMIE017    17     17     0     R|W       TRUE     -    
+    %%BIT    ECMMIE016    16     16     0     R|W       TRUE     -    
+    %%BIT    ECMMIE01514  15     14     0     R|W       TRUE     -    
+    %%BIT    ECMMIE01312  13     12     0     R|W       TRUE     -    
+    %%BIT    ECMMIE01110  11     10     0     R|W       TRUE     -    
+    %%BIT    ECMMIE00908  9      8      0     R|W       TRUE     -    
+    %%BIT    ECMMIE00706  7      6      0     R|W       TRUE     -    
+    %%BIT    ECMMIE00504  5      4      0     R|W       TRUE     -    
+    %%BIT    ECMMIE00302  3      2      0     R|W       TRUE     -    
+    %%BIT    ECMMIE00100  1      0      0     R|W       TRUE     -    
+    
+%REG_NAME ECMMICFG       
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMMIE31     31     31     0     R|W     TRUE     -    
+    %%BIT    ECMMIE30     30     30     0     R|W     TRUE     -    
+    %%BIT    ECMMIE29     29     29     0     R|W     TRUE     -    
+    %%BIT    ECMMIE28     28     28     0     R|W     TRUE     -    
+    %%BIT    ECMMIE27     27     27     0     R|W     TRUE     -    
+    %%BIT    ECMMIE26     26     26     0     R|W     TRUE     -    
+    %%BIT    ECMMIE25     25     25     0     R|W     TRUE     -    
+    %%BIT    ECMMIE24     24     24     0     R|W     TRUE     -    
+    %%BIT    ECMMIE23     23     23     0     R|W     TRUE     -    
+    %%BIT    ECMMIE22     22     22     0     R|W     TRUE     -    
+    %%BIT    ECMMIE21     21     21     0     R|W     TRUE     -    
+    %%BIT    ECMMIE20     20     20     0     R|W     TRUE     -    
+    %%BIT    ECMMIE19     19     19     0     R|W     TRUE     -    
+    %%BIT    ECMMIE18     18     18     0     R|W     TRUE     -    
+    %%BIT    ECMMIE17     17     17     0     R|W     TRUE     -    
+    %%BIT    ECMMIE16     16     16     0     R|W     TRUE     -    
+    %%BIT    ECMMIE15     15     15     0     R|W     TRUE     -    
+    %%BIT    ECMMIE14     14     14     0     R|W     TRUE     -    
+    %%BIT    ECMMIE13     13     13     0     R|W     TRUE     -    
+    %%BIT    ECMMIE12     12     12     0     R|W     TRUE     -    
+    %%BIT    ECMMIE11     11     11     0     R|W     TRUE     -    
+    %%BIT    ECMMIE10     10     10     0     R|W     TRUE     -    
+    %%BIT    ECMMIE09     9      9      0     R|W     TRUE     -    
+    %%BIT    ECMMIE08     8      8      0     R|W     TRUE     -    
+    %%BIT    ECMMIE07     7      7      0     R|W     TRUE     -    
+    %%BIT    ECMMIE06     6      6      0     R|W     TRUE     -    
+    %%BIT    ECMMIE05     5      5      0     R|W     TRUE     -    
+    %%BIT    ECMMIE04     4      4      0     R|W     TRUE     -    
+    %%BIT    ECMMIE03     3      3      0     R|W     TRUE     -    
+    %%BIT    ECMMIE02     2      2      0     R|W     TRUE     -    
+    %%BIT    ECMMIE01     1      1      0     R|W     TRUE     -    
+    %%BIT    ECMMIE00     0      0      0     R|W     TRUE     -    
+
+%REG_NAME ECMMICFG9      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMMIE928     28     28     0     R|W     TRUE     -    
+    %%BIT    ECMMIE927     27     27     0     R|W     TRUE     -    
+    %%BIT    ECMMIE926     26     26     0     R       TRUE     -    
+    %%BIT    ECMMIE925     25     25     0     R|W     TRUE     -    
+    %%BIT    ECMMIE924     24     24     0     R|W     TRUE     -    
+    %%BIT    ECMMIE923     23     23     0     R|W     TRUE     -    
+    %%BIT    ECMMIE922     22     22     0     R|W     TRUE     -    
+    %%BIT    ECMMIE921     21     21     0     R|W     TRUE     -    
+    %%BIT    ECMMIE920     20     20     0     R|W     TRUE     -    
+    %%BIT    ECMMIE919     19     19     0     R|W     TRUE     -    
+    %%BIT    ECMMIE918     18     18     0     R|W     TRUE     -    
+    %%BIT    ECMMIE917     17     17     0     R|W     TRUE     -    
+    %%BIT    ECMMIE916     16     16     0     R|W     TRUE     -    
+    %%BIT    ECMMIE915     15     15     0     R|W     TRUE     -    
+    %%BIT    ECMMIE914     14     14     0     R|W     TRUE     -    
+    %%BIT    ECMMIE913     13     13     0     R|W     TRUE     -    
+    %%BIT    ECMMIE912     12     12     0     R|W     TRUE     -    
+    %%BIT    ECMMIE911     11     11     0     R|W     TRUE     -    
+    %%BIT    ECMMIE910     10     10     0     R|W     TRUE     -    
+    %%BIT    ECMMIE909     9      9      0     R|W     TRUE     -    
+    %%BIT    ECMMIE908     8      8      0     R|W     TRUE     -    
+    %%BIT    ECMMIE907     7      7      0     R|W     TRUE     -    
+    %%BIT    ECMMIE906     6      6      0     R|W     TRUE     -    
+    %%BIT    ECMMIE905     5      5      0     R|W     TRUE     -    
+    %%BIT    ECMMIE904     4      4      0     R|W     TRUE     -    
+    %%BIT    ECMMIE903     3      3      0     R|W     TRUE     -    
+    %%BIT    ECMMIE902     2      2      0     R|W     TRUE     -    
+    %%BIT    ECMMIE901     1      1      0     R|W     TRUE     -    
+    %%BIT    ECMMIE900     0      0      0     R|W     TRUE     -    
+
+
+%REG_NAME ECMNMICFG0      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMNMIE031    31     31     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE030    30     30     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE029    29     29     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE028    28     28     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE027    27     27     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE026    26     26     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE025    25     25     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE024    24     24     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE023    23     23     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE022    22     22     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE021    21     21     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE020    20     20     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE019    19     19     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE018    18     18     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE017    17     17     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE016    16     16     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE01514  15     14     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE01312  13     12     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE01110  11     10     0     R|W       TRUE     -    
+    %%BIT    ECMNMIE00908  9      8      0     R|W       TRUE     -    
+    %%BIT    ECMNMIE00706  7      6      0     R|W       TRUE     -    
+    %%BIT    ECMNMIE00504  5      4      0     R|W       TRUE     -    
+    %%BIT    ECMNMIE00302  3      2      0     R|W       TRUE     -    
+    %%BIT    ECMNMIE00100  1      0      0     R|W       TRUE     -    
+    
+%REG_NAME ECMNMICFG       
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMNMIE31     31     31     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE30     30     30     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE29     29     29     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE28     28     28     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE27     27     27     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE26     26     26     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE25     25     25     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE24     24     24     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE23     23     23     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE22     22     22     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE21     21     21     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE20     20     20     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE19     19     19     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE18     18     18     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE17     17     17     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE16     16     16     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE15     15     15     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE14     14     14     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE13     13     13     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE12     12     12     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE11     11     11     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE10     10     10     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE09     9      9      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE08     8      8      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE07     7      7      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE06     6      6      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE05     5      5      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE04     4      4      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE03     3      3      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE02     2      2      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE01     1      1      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE00     0      0      0     R|W     TRUE     -    
+
+%REG_NAME ECMNMICFG9      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMNMIE928     28     28     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE927     27     27     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE926     26     26     0     R       TRUE     -    
+    %%BIT    ECMNMIE925     25     25     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE924     24     24     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE923     23     23     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE922     22     22     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE921     21     21     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE920     20     20     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE919     19     19     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE918     18     18     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE917     17     17     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE916     16     16     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE915     15     15     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE914     14     14     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE913     13     13     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE912     12     12     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE911     11     11     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE910     10     10     0     R|W     TRUE     -    
+    %%BIT    ECMNMIE909     9      9      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE908     8      8      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE907     7      7      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE906     6      6      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE905     5      5      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE904     4      4      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE903     3      3      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE902     2      2      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE901     1      1      0     R|W     TRUE     -    
+    %%BIT    ECMNMIE900     0      0      0     R|W     TRUE     -    
+
+%REG_NAME ECMIRCFG0      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMIRE031    31     31     0     R|W       TRUE     -    
+    %%BIT    ECMIRE030    30     30     0     R|W       TRUE     -    
+    %%BIT    ECMIRE029    29     29     0     R|W       TRUE     -    
+    %%BIT    ECMIRE028    28     28     0     R|W       TRUE     -    
+    %%BIT    ECMIRE027    27     27     0     R|W       TRUE     -    
+    %%BIT    ECMIRE026    26     26     0     R|W       TRUE     -    
+    %%BIT    ECMIRE025    25     25     0     R|W       TRUE     -    
+    %%BIT    ECMIRE024    24     24     0     R|W       TRUE     -    
+    %%BIT    ECMIRE023    23     23     0     R|W       TRUE     -    
+    %%BIT    ECMIRE022    22     22     0     R|W       TRUE     -    
+    %%BIT    ECMIRE021    21     21     0     R|W       TRUE     -    
+    %%BIT    ECMIRE020    20     20     0     R|W       TRUE     -    
+    %%BIT    ECMIRE019    19     19     0     R|W       TRUE     -    
+    %%BIT    ECMIRE018    18     18     0     R|W       TRUE     -    
+    %%BIT    ECMIRE017    17     17     0     R|W       TRUE     -    
+    %%BIT    ECMIRE016    16     16     1     R|W       TRUE     -    
+    %%BIT    ECMIRE01514  15     14     0     R|W       TRUE     -    
+    %%BIT    ECMIRE01312  13     12     0     R|W       TRUE     -    
+    %%BIT    ECMIRE01110  11     10     0     R|W       TRUE     -    
+    %%BIT    ECMIRE00908  9      8      0     R|W       TRUE     -    
+    %%BIT    ECMIRE00706  7      6      0     R|W       TRUE     -    
+    %%BIT    ECMIRE00504  5      4      0     R|W       TRUE     -    
+    %%BIT    ECMIRE00302  3      2      0     R|W       TRUE     -    
+    %%BIT    ECMIRE00100  1      0      0     R|W       TRUE     -    
+    
+%REG_NAME ECMIRCFG       
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMIRE31      31     31     0     R|W     TRUE     -    
+    %%BIT    ECMIRE30      30     30     0     R|W     TRUE     -    
+    %%BIT    ECMIRE29      29     29     0     R|W     TRUE     -    
+    %%BIT    ECMIRE28      28     28     0     R|W     TRUE     -    
+    %%BIT    ECMIRE27      27     27     0     R|W     TRUE     -    
+    %%BIT    ECMIRE26      26     26     0     R|W     TRUE     -    
+    %%BIT    ECMIRE25      25     25     0     R|W     TRUE     -    
+    %%BIT    ECMIRE24      24     24     0     R|W     TRUE     -    
+    %%BIT    ECMIRE23      23     23     0     R|W     TRUE     -    
+    %%BIT    ECMIRE22      22     22     0     R|W     TRUE     -    
+    %%BIT    ECMIRE21      21     21     0     R|W     TRUE     -    
+    %%BIT    ECMIRE20      20     20     0     R|W     TRUE     -    
+    %%BIT    ECMIRE19      19     19     0     R|W     TRUE     -    
+    %%BIT    ECMIRE18      18     18     0     R|W     TRUE     -    
+    %%BIT    ECMIRE17      17     17     0     R|W     TRUE     -    
+    %%BIT    ECMIRE16      16     16     0     R|W     TRUE     -    
+    %%BIT    ECMIRE15      15     15     0     R|W     TRUE     -    
+    %%BIT    ECMIRE14      14     14     0     R|W     TRUE     -    
+    %%BIT    ECMIRE13      13     13     0     R|W     TRUE     -    
+    %%BIT    ECMIRE12      12     12     0     R|W     TRUE     -    
+    %%BIT    ECMIRE11      11     11     0     R|W     TRUE     -    
+    %%BIT    ECMIRE10      10     10     0     R|W     TRUE     -    
+    %%BIT    ECMIRE09      9      9      0     R|W     TRUE     -    
+    %%BIT    ECMIRE08      8      8      0     R|W     TRUE     -    
+    %%BIT    ECMIRE07      7      7      0     R|W     TRUE     -    
+    %%BIT    ECMIRE06      6      6      0     R|W     TRUE     -    
+    %%BIT    ECMIRE05      5      5      0     R|W     TRUE     -    
+    %%BIT    ECMIRE04      4      4      0     R|W     TRUE     -    
+    %%BIT    ECMIRE03      3      3      0     R|W     TRUE     -    
+    %%BIT    ECMIRE02      2      2      0     R|W     TRUE     -    
+    %%BIT    ECMIRE01      1      1      0     R|W     TRUE     -    
+    %%BIT    ECMIRE00      0      0      0     R|W     TRUE     -    
+
+%REG_NAME ECMIRCFG9      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMIRE929      29     29     0     R|W     TRUE     -    
+    %%BIT    ECMIRE928      28     28     0     R|W     TRUE     -    
+    %%BIT    ECMIRE927      27     27     0     R|W     TRUE     -    
+    %%BIT    ECMIRE926      26     26     0     R       TRUE     -    
+    %%BIT    ECMIRE925      25     25     0     R|W     TRUE     -    
+    %%BIT    ECMIRE924      24     24     0     R|W     TRUE     -    
+    %%BIT    ECMIRE923      23     23     0     R|W     TRUE     -    
+    %%BIT    ECMIRE922      22     22     0     R|W     TRUE     -    
+    %%BIT    ECMIRE921      21     21     0     R|W     TRUE     -    
+    %%BIT    ECMIRE920      20     20     0     R|W     TRUE     -    
+    %%BIT    ECMIRE919      19     19     0     R|W     TRUE     -    
+    %%BIT    ECMIRE918      18     18     0     R|W     TRUE     -    
+    %%BIT    ECMIRE917      17     17     0     R|W     TRUE     -    
+    %%BIT    ECMIRE916      16     16     0     R|W     TRUE     -    
+    %%BIT    ECMIRE915      15     15     0     R|W     TRUE     -    
+    %%BIT    ECMIRE914      14     14     0     R|W     TRUE     -    
+    %%BIT    ECMIRE913      13     13     0     R|W     TRUE     -    
+    %%BIT    ECMIRE912      12     12     0     R|W     TRUE     -    
+    %%BIT    ECMIRE911      11     11     0     R|W     TRUE     -    
+    %%BIT    ECMIRE910      10     10     0     R|W     TRUE     -    
+    %%BIT    ECMIRE909      9      9      0     R|W     TRUE     -    
+    %%BIT    ECMIRE908      8      8      0     R|W     TRUE     -    
+    %%BIT    ECMIRE907      7      7      0     R|W     TRUE     -    
+    %%BIT    ECMIRE906      6      6      0     R|W     TRUE     -    
+    %%BIT    ECMIRE905      5      5      0     R|W     TRUE     -    
+    %%BIT    ECMIRE904      4      4      0     R|W     TRUE     -    
+    %%BIT    ECMIRE903      3      3      0     R|W     TRUE     -    
+    %%BIT    ECMIRE902      2      2      0     R|W     TRUE     -    
+    %%BIT    ECMIRE901      1      1      0     R|W     TRUE     -    
+    %%BIT    ECMIRE900      0      0      0     R|W     TRUE     -    
+
+%REG_NAME ECMEMK0      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMEMK031    31     31     0     R|W       TRUE     -    
+    %%BIT    ECMEMK030    30     30     0     R|W       TRUE     -    
+    %%BIT    ECMEMK029    29     29     0     R|W       TRUE     -    
+    %%BIT    ECMEMK028    28     28     0     R|W       TRUE     -    
+    %%BIT    ECMEMK027    27     27     0     R|W       TRUE     -    
+    %%BIT    ECMEMK026    26     26     0     R|W       TRUE     -    
+    %%BIT    ECMEMK025    25     25     0     R|W       TRUE     -    
+    %%BIT    ECMEMK024    24     24     0     R|W       TRUE     -    
+    %%BIT    ECMEMK023    23     23     0     R|W       TRUE     -    
+    %%BIT    ECMEMK022    22     22     0     R|W       TRUE     -    
+    %%BIT    ECMEMK021    21     21     0     R|W       TRUE     -    
+    %%BIT    ECMEMK020    20     20     0     R|W       TRUE     -    
+    %%BIT    ECMEMK019    19     19     0     R|W       TRUE     -    
+    %%BIT    ECMEMK018    18     18     0     R|W       TRUE     -    
+    %%BIT    ECMEMK017    17     17     0     R|W       TRUE     -    
+    %%BIT    ECMEMK016    16     16     0     R|W       TRUE     -    
+    %%BIT    ECMEMK01514  15     14     0     R|W       TRUE     -    
+    %%BIT    ECMEMK01312  13     12     0     R|W       TRUE     -    
+    %%BIT    ECMEMK01110  11     10     0     R|W       TRUE     -    
+    %%BIT    ECMEMK00908  9      8      0     R|W       TRUE     -    
+    %%BIT    ECMEMK00706  7      6      0     R|W       TRUE     -    
+    %%BIT    ECMEMK00504  5      4      0     R|W       TRUE     -    
+    %%BIT    ECMEMK00302  3      2      0     R|W       TRUE     -    
+    %%BIT    ECMEMK00100  1      0      0     R|W       TRUE     W    
+    
+%REG_NAME ECMEMK       
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMEMK31      31     31     0     R|W     TRUE     -    
+    %%BIT    ECMEMK30      30     30     0     R|W     TRUE     -    
+    %%BIT    ECMEMK29      29     29     0     R|W     TRUE     -    
+    %%BIT    ECMEMK28      28     28     0     R|W     TRUE     -    
+    %%BIT    ECMEMK27      27     27     0     R|W     TRUE     -    
+    %%BIT    ECMEMK26      26     26     0     R|W     TRUE     -    
+    %%BIT    ECMEMK25      25     25     0     R|W     TRUE     -    
+    %%BIT    ECMEMK24      24     24     0     R|W     TRUE     -    
+    %%BIT    ECMEMK23      23     23     0     R|W     TRUE     -    
+    %%BIT    ECMEMK22      22     22     0     R|W     TRUE     -    
+    %%BIT    ECMEMK21      21     21     0     R|W     TRUE     -    
+    %%BIT    ECMEMK20      20     20     0     R|W     TRUE     -    
+    %%BIT    ECMEMK19      19     19     0     R|W     TRUE     -    
+    %%BIT    ECMEMK18      18     18     0     R|W     TRUE     -    
+    %%BIT    ECMEMK17      17     17     0     R|W     TRUE     -    
+    %%BIT    ECMEMK16      16     16     0     R|W     TRUE     -    
+    %%BIT    ECMEMK15      15     15     0     R|W     TRUE     -    
+    %%BIT    ECMEMK14      14     14     0     R|W     TRUE     -    
+    %%BIT    ECMEMK13      13     13     0     R|W     TRUE     -    
+    %%BIT    ECMEMK12      12     12     0     R|W     TRUE     -    
+    %%BIT    ECMEMK11      11     11     0     R|W     TRUE     -    
+    %%BIT    ECMEMK10      10     10     0     R|W     TRUE     -    
+    %%BIT    ECMEMK09      9      9      0     R|W     TRUE     -    
+    %%BIT    ECMEMK08      8      8      0     R|W     TRUE     -    
+    %%BIT    ECMEMK07      7      7      0     R|W     TRUE     -    
+    %%BIT    ECMEMK06      6      6      0     R|W     TRUE     -    
+    %%BIT    ECMEMK05      5      5      0     R|W     TRUE     -    
+    %%BIT    ECMEMK04      4      4      0     R|W     TRUE     -    
+    %%BIT    ECMEMK03      3      3      0     R|W     TRUE     -    
+    %%BIT    ECMEMK02      2      2      0     R|W     TRUE     -    
+    %%BIT    ECMEMK01      1      1      0     R|W     TRUE     -    
+    %%BIT    ECMEMK00      0      0      0     R|W     TRUE     W    
+
+%REG_NAME ECMEMK9      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMEMK931      31     31     0     R|W     TRUE     -    
+    %%BIT    ECMEMK930      30     30     0     R|W     TRUE     -    
+    %%BIT    ECMEMK929      29     29     0     R|W     TRUE     -    
+    %%BIT    ECMEMK928      28     28     0     R|W     TRUE     -    
+    %%BIT    ECMEMK927      27     27     0     R|W     TRUE     -    
+    %%BIT    ECMEMK926      26     26     0     R       TRUE     -    
+    %%BIT    ECMEMK925      25     25     0     R|W     TRUE     -    
+    %%BIT    ECMEMK924      24     24     0     R|W     TRUE     -    
+    %%BIT    ECMEMK923      23     23     0     R|W     TRUE     -    
+    %%BIT    ECMEMK922      22     22     0     R|W     TRUE     -    
+    %%BIT    ECMEMK921      21     21     0     R|W     TRUE     -    
+    %%BIT    ECMEMK920      20     20     0     R|W     TRUE     -    
+    %%BIT    ECMEMK919      19     19     0     R|W     TRUE     -    
+    %%BIT    ECMEMK918      18     18     0     R|W     TRUE     -    
+    %%BIT    ECMEMK917      17     17     0     R|W     TRUE     -    
+    %%BIT    ECMEMK916      16     16     0     R|W     TRUE     -    
+    %%BIT    ECMEMK915      15     15     0     R|W     TRUE     -    
+    %%BIT    ECMEMK914      14     14     0     R|W     TRUE     -    
+    %%BIT    ECMEMK913      13     13     0     R|W     TRUE     -    
+    %%BIT    ECMEMK912      12     12     0     R|W     TRUE     -    
+    %%BIT    ECMEMK911      11     11     0     R|W     TRUE     -    
+    %%BIT    ECMEMK910      10     10     0     R|W     TRUE     -    
+    %%BIT    ECMEMK909      9      9      0     R|W     TRUE     -    
+    %%BIT    ECMEMK908      8      8      0     R|W     TRUE     -    
+    %%BIT    ECMEMK907      7      7      0     R|W     TRUE     -    
+    %%BIT    ECMEMK906      6      6      0     R|W     TRUE     -    
+    %%BIT    ECMEMK905      5      5      0     R|W     TRUE     -    
+    %%BIT    ECMEMK904      4      4      0     R|W     TRUE     -    
+    %%BIT    ECMEMK903      3      3      0     R|W     TRUE     -    
+    %%BIT    ECMEMK902      2      2      0     R|W     TRUE     -    
+    %%BIT    ECMEMK901      1      1      0     R|W     TRUE     -    
+    %%BIT    ECMEMK900      0      0      0     R|W     TRUE     W    
+
+%REG_NAME ECMESSTC0      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMCLSSE031    31     31     0     W         TRUE     -    
+    %%BIT    ECMCLSSE030    30     30     0     W         TRUE     -    
+    %%BIT    ECMCLSSE029    29     29     0     W         TRUE     -    
+    %%BIT    ECMCLSSE028    28     28     0     W         TRUE     -    
+    %%BIT    ECMCLSSE027    27     27     0     W         TRUE     -    
+    %%BIT    ECMCLSSE026    26     26     0     W         TRUE     -    
+    %%BIT    ECMCLSSE025    25     25     0     W         TRUE     -    
+    %%BIT    ECMCLSSE024    24     24     0     W         TRUE     -    
+    %%BIT    ECMCLSSE023    23     23     0     W         TRUE     -    
+    %%BIT    ECMCLSSE022    22     22     0     W         TRUE     -    
+    %%BIT    ECMCLSSE021    21     21     0     W         TRUE     -    
+    %%BIT    ECMCLSSE020    20     20     0     W         TRUE     -    
+    %%BIT    ECMCLSSE019    19     19     0     W         TRUE     -    
+    %%BIT    ECMCLSSE018    18     18     0     W         TRUE     -    
+    %%BIT    ECMCLSSE017    17     17     0     W         TRUE     -    
+    %%BIT    ECMCLSSE016    16     16     0     W         TRUE     -    
+    %%BIT    ECMCLSSE01514  15     14     0     W         TRUE     -    
+    %%BIT    ECMCLSSE01312  13     12     0     W         TRUE     -    
+    %%BIT    ECMCLSSE01110  11     10     0     W         TRUE     -    
+    %%BIT    ECMCLSSE00908  9      8      0     W         TRUE     -    
+    %%BIT    ECMCLSSE00706  7      6      0     W         TRUE     -    
+    %%BIT    ECMCLSSE00504  5      4      0     W         TRUE     -    
+    %%BIT    ECMCLSSE00302  3      2      0     W         TRUE     -    
+    %%BIT    ECMCLSSE00100  1      0      0     W         TRUE     W    
+    
+%REG_NAME ECMESSTC       
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMCLSSE31    31     31     0     W       TRUE     -    
+    %%BIT    ECMCLSSE30    30     30     0     W       TRUE     -    
+    %%BIT    ECMCLSSE29    29     29     0     W       TRUE     -    
+    %%BIT    ECMCLSSE28    28     28     0     W       TRUE     -    
+    %%BIT    ECMCLSSE27    27     27     0     W       TRUE     -    
+    %%BIT    ECMCLSSE26    26     26     0     W       TRUE     -    
+    %%BIT    ECMCLSSE25    25     25     0     W       TRUE     -    
+    %%BIT    ECMCLSSE24    24     24     0     W       TRUE     -    
+    %%BIT    ECMCLSSE23    23     23     0     W       TRUE     -    
+    %%BIT    ECMCLSSE22    22     22     0     W       TRUE     -    
+    %%BIT    ECMCLSSE21    21     21     0     W       TRUE     -    
+    %%BIT    ECMCLSSE20    20     20     0     W       TRUE     -    
+    %%BIT    ECMCLSSE19    19     19     0     W       TRUE     -    
+    %%BIT    ECMCLSSE18    18     18     0     W       TRUE     -    
+    %%BIT    ECMCLSSE17    17     17     0     W       TRUE     -    
+    %%BIT    ECMCLSSE16    16     16     0     W       TRUE     -    
+    %%BIT    ECMCLSSE15    15     15     0     W       TRUE     -    
+    %%BIT    ECMCLSSE14    14     14     0     W       TRUE     -    
+    %%BIT    ECMCLSSE13    13     13     0     W       TRUE     -    
+    %%BIT    ECMCLSSE12    12     12     0     W       TRUE     -    
+    %%BIT    ECMCLSSE11    11     11     0     W       TRUE     -    
+    %%BIT    ECMCLSSE10    10     10     0     W       TRUE     -    
+    %%BIT    ECMCLSSE09    9      9      0     W       TRUE     -    
+    %%BIT    ECMCLSSE08    8      8      0     W       TRUE     -    
+    %%BIT    ECMCLSSE07    7      7      0     W       TRUE     -    
+    %%BIT    ECMCLSSE06    6      6      0     W       TRUE     -    
+    %%BIT    ECMCLSSE05    5      5      0     W       TRUE     -    
+    %%BIT    ECMCLSSE04    4      4      0     W       TRUE     -    
+    %%BIT    ECMCLSSE03    3      3      0     W       TRUE     -    
+    %%BIT    ECMCLSSE02    2      2      0     W       TRUE     -    
+    %%BIT    ECMCLSSE01    1      1      0     W       TRUE     -    
+    %%BIT    ECMCLSSE00    0      0      0     W       TRUE     W    
+
+%REG_NAME ECMESSTC9      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMCLSSE930    30     30     0     W       TRUE     -    
+    %%BIT    ECMCLSSE929    29     29     0     W       TRUE     -    
+    %%BIT    ECMCLSSE928    28     28     0     W       TRUE     -    
+    %%BIT    ECMCLSSE927    27     27     0     W       TRUE     -    
+    %%BIT    ECMCLSSE926    26     26     0     W       TRUE     -    
+    %%BIT    ECMCLSSE925    25     25     0     W       TRUE     -    
+    %%BIT    ECMCLSSE924    24     24     0     W       TRUE     -    
+    %%BIT    ECMCLSSE923    23     23     0     W       TRUE     -    
+    %%BIT    ECMCLSSE922    22     22     0     W       TRUE     -    
+    %%BIT    ECMCLSSE921    21     21     0     W       TRUE     -    
+    %%BIT    ECMCLSSE920    20     20     0     W       TRUE     -    
+    %%BIT    ECMCLSSE919    19     19     0     W       TRUE     -    
+    %%BIT    ECMCLSSE918    18     18     0     W       TRUE     -    
+    %%BIT    ECMCLSSE917    17     17     0     W       TRUE     -    
+    %%BIT    ECMCLSSE916    16     16     0     W       TRUE     -    
+    %%BIT    ECMCLSSE915    15     15     0     W       TRUE     -    
+    %%BIT    ECMCLSSE914    14     14     0     W       TRUE     -    
+    %%BIT    ECMCLSSE913    13     13     0     W       TRUE     -    
+    %%BIT    ECMCLSSE912    12     12     0     W       TRUE     -    
+    %%BIT    ECMCLSSE911    11     11     0     W       TRUE     -    
+    %%BIT    ECMCLSSE910    10     10     0     W       TRUE     -    
+    %%BIT    ECMCLSSE909    9      9      0     W       TRUE     -    
+    %%BIT    ECMCLSSE908    8      8      0     W       TRUE     -    
+    %%BIT    ECMCLSSE907    7      7      0     W       TRUE     -    
+    %%BIT    ECMCLSSE906    6      6      0     W       TRUE     -    
+    %%BIT    ECMCLSSE905    5      5      0     W       TRUE     -    
+    %%BIT    ECMCLSSE904    4      4      0     W       TRUE     -    
+    %%BIT    ECMCLSSE903    3      3      0     W       TRUE     -    
+    %%BIT    ECMCLSSE902    2      2      0     W       TRUE     -    
+    %%BIT    ECMCLSSE901    1      1      0     W       TRUE     -    
+    %%BIT    ECMCLSSE900    0      0      0     W       TRUE     W    
+
+%REG_NAME ECMKCPROT
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    KCPROT         31     1      0     W       TRUE     -    
+    %%BIT    KCE            0      0      0     R|W     TRUE     W    
+
+%REG_NAME ECMPE0      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMPE031    31     31     0     W         TRUE     -    
+    %%BIT    ECMPE030    30     30     0     W         TRUE     -    
+    %%BIT    ECMPE029    29     29     0     W         TRUE     -    
+    %%BIT    ECMPE028    28     28     0     W         TRUE     -    
+    %%BIT    ECMPE027    27     27     0     W         TRUE     -    
+    %%BIT    ECMPE026    26     26     0     W         TRUE     -    
+    %%BIT    ECMPE025    25     25     0     W         TRUE     -    
+    %%BIT    ECMPE024    24     24     0     W         TRUE     -    
+    %%BIT    ECMPE023    23     23     0     W         TRUE     -    
+    %%BIT    ECMPE022    22     22     0     W         TRUE     -    
+    %%BIT    ECMPE021    21     21     0     W         TRUE     -    
+    %%BIT    ECMPE020    20     20     0     W         TRUE     -    
+    %%BIT    ECMPE019    19     19     0     W         TRUE     -    
+    %%BIT    ECMPE018    18     18     0     W         TRUE     -    
+    %%BIT    ECMPE017    17     17     0     W         TRUE     -    
+    %%BIT    ECMPE016    16     16     0     W         TRUE     -    
+    %%BIT    ECMPE01514  15     14     0     W         TRUE     -    
+    %%BIT    ECMPE01312  13     12     0     W         TRUE     -    
+    %%BIT    ECMPE01110  11     10     0     W         TRUE     -    
+    %%BIT    ECMPE00908  9      8      0     W         TRUE     -    
+    %%BIT    ECMPE00706  7      6      0     W         TRUE     -    
+    %%BIT    ECMPE00504  5      4      0     W         TRUE     -    
+    %%BIT    ECMPE00302  3      2      0     W         TRUE     -    
+    %%BIT    ECMPE00100  1      0      0     W         TRUE     W    
+    
+%REG_NAME ECMPE       
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMPE31       31     31     0     W       TRUE     -    
+    %%BIT    ECMPE30       30     30     0     W       TRUE     -    
+    %%BIT    ECMPE29       29     29     0     W       TRUE     -    
+    %%BIT    ECMPE28       28     28     0     W       TRUE     -    
+    %%BIT    ECMPE27       27     27     0     W       TRUE     -    
+    %%BIT    ECMPE26       26     26     0     W       TRUE     -    
+    %%BIT    ECMPE25       25     25     0     W       TRUE     -    
+    %%BIT    ECMPE24       24     24     0     W       TRUE     -    
+    %%BIT    ECMPE23       23     23     0     W       TRUE     -    
+    %%BIT    ECMPE22       22     22     0     W       TRUE     -    
+    %%BIT    ECMPE21       21     21     0     W       TRUE     -    
+    %%BIT    ECMPE20       20     20     0     W       TRUE     -    
+    %%BIT    ECMPE19       19     19     0     W       TRUE     -    
+    %%BIT    ECMPE18       18     18     0     W       TRUE     -    
+    %%BIT    ECMPE17       17     17     0     W       TRUE     -    
+    %%BIT    ECMPE16       16     16     0     W       TRUE     -    
+    %%BIT    ECMPE15       15     15     0     W       TRUE     -    
+    %%BIT    ECMPE14       14     14     0     W       TRUE     -    
+    %%BIT    ECMPE13       13     13     0     W       TRUE     -    
+    %%BIT    ECMPE12       12     12     0     W       TRUE     -    
+    %%BIT    ECMPE11       11     11     0     W       TRUE     -    
+    %%BIT    ECMPE10       10     10     0     W       TRUE     -    
+    %%BIT    ECMPE09       9      9      0     W       TRUE     -    
+    %%BIT    ECMPE08       8      8      0     W       TRUE     -    
+    %%BIT    ECMPE07       7      7      0     W       TRUE     -    
+    %%BIT    ECMPE06       6      6      0     W       TRUE     -    
+    %%BIT    ECMPE05       5      5      0     W       TRUE     -    
+    %%BIT    ECMPE04       4      4      0     W       TRUE     -    
+    %%BIT    ECMPE03       3      3      0     W       TRUE     -    
+    %%BIT    ECMPE02       2      2      0     W       TRUE     -    
+    %%BIT    ECMPE01       1      1      0     W       TRUE     -    
+    %%BIT    ECMPE00       0      0      0     W       TRUE     W    
+
+%REG_NAME ECMPE9      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMPE929       29     29     0     W       TRUE     -    
+    %%BIT    ECMPE928       28     28     0     W       TRUE     -    
+    %%BIT    ECMPE927       27     27     0     R       TRUE     -    
+    %%BIT    ECMPE926       26     26     0     R       TRUE     -    
+    %%BIT    ECMPE925       25     25     0     W       TRUE     -    
+    %%BIT    ECMPE924       24     24     0     W       TRUE     -    
+    %%BIT    ECMPE923       23     23     0     W       TRUE     -    
+    %%BIT    ECMPE922       22     22     0     W       TRUE     -    
+    %%BIT    ECMPE921       21     21     0     W       TRUE     -    
+    %%BIT    ECMPE920       20     20     0     W       TRUE     -    
+    %%BIT    ECMPE919       19     19     0     W       TRUE     -    
+    %%BIT    ECMPE918       18     18     0     W       TRUE     -    
+    %%BIT    ECMPE917       17     17     0     W       TRUE     -    
+    %%BIT    ECMPE916       16     16     0     W       TRUE     -    
+    %%BIT    ECMPE915       15     15     0     W       TRUE     -    
+    %%BIT    ECMPE914       14     14     0     W       TRUE     -    
+    %%BIT    ECMPE913       13     13     0     W       TRUE     -    
+    %%BIT    ECMPE912       12     12     0     W       TRUE     -    
+    %%BIT    ECMPE911       11     11     0     W       TRUE     -    
+    %%BIT    ECMPE910       10     10     0     W       TRUE     -    
+    %%BIT    ECMPE909       9      9      0     W       TRUE     -    
+    %%BIT    ECMPE908       8      8      0     W       TRUE     -    
+    %%BIT    ECMPE907       7      7      0     W       TRUE     -    
+    %%BIT    ECMPE906       6      6      0     W       TRUE     -    
+    %%BIT    ECMPE905       5      5      0     W       TRUE     -    
+    %%BIT    ECMPE904       4      4      0     W       TRUE     -    
+    %%BIT    ECMPE903       3      3      0     W       TRUE     -    
+    %%BIT    ECMPE902       2      2      0     W       TRUE     -    
+    %%BIT    ECMPE901       1      1      0     W       TRUE     -    
+    %%BIT    ECMPE900       0      0      0     W       TRUE     W    
+
+%REG_NAME ECMDTMCTL      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    DTMSTACNTCLK   4      4      0     R       TRUE     -    
+    %%BIT    DTMSTP         1      1      0     W       TRUE     W    
+    %%BIT    DTMSTA         0      0      0     R|W     TRUE     -    
+
+%REG_NAME ECMDTMR      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMDTMR        15     0      0     R       TRUE     R    
+
+%REG_NAME ECMDTMCMP      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    CMPW           16     16     0     R       TRUE     -    
+    %%BIT    ECMDTMCMP      15     0      0     R|W     TRUE     W    
+
+
+%REG_NAME ECMMIDTMCFG0      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMMITE031    31     31     0     R|W       TRUE     -    
+    %%BIT    ECMMITE030    30     30     0     R|W       TRUE     -    
+    %%BIT    ECMMITE029    29     29     0     R|W       TRUE     -    
+    %%BIT    ECMMITE028    28     28     0     R|W       TRUE     -    
+    %%BIT    ECMMITE027    27     27     0     R|W       TRUE     -    
+    %%BIT    ECMMITE026    26     26     0     R|W       TRUE     -    
+    %%BIT    ECMMITE025    25     25     0     R|W       TRUE     -    
+    %%BIT    ECMMITE024    24     24     0     R|W       TRUE     -    
+    %%BIT    ECMMITE023    23     23     0     R|W       TRUE     -    
+    %%BIT    ECMMITE022    22     22     0     R|W       TRUE     -    
+    %%BIT    ECMMITE021    21     21     0     R|W       TRUE     -    
+    %%BIT    ECMMITE020    20     20     0     R|W       TRUE     -    
+    %%BIT    ECMMITE019    19     19     0     R|W       TRUE     -    
+    %%BIT    ECMMITE018    18     18     0     R|W       TRUE     -    
+    %%BIT    ECMMITE017    17     17     0     R|W       TRUE     -    
+    %%BIT    ECMMITE016    16     16     0     R|W       TRUE     -    
+    %%BIT    ECMMITE01514  15     14     0     R|W       TRUE     -    
+    %%BIT    ECMMITE01312  13     12     0     R|W       TRUE     -    
+    %%BIT    ECMMITE01110  11     10     0     R|W       TRUE     -    
+    %%BIT    ECMMITE00908  9      8      0     R|W       TRUE     -    
+    %%BIT    ECMMITE00706  7      6      0     R|W       TRUE     -    
+    %%BIT    ECMMITE00504  5      4      0     R|W       TRUE     -    
+    %%BIT    ECMMITE00302  3      2      0     R|W       TRUE     -    
+    %%BIT    ECMMITE00100  1      0      0     R|W       TRUE     -    
+    
+%REG_NAME ECMMIDTMCFG       
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMMITE31       31     31      0     R|W     TRUE     -    
+    %%BIT    ECMMITE30       30     30      0     R|W     TRUE     -    
+    %%BIT    ECMMITE29       29     29      0     R|W     TRUE     -    
+    %%BIT    ECMMITE28       28     28      0     R|W     TRUE     -    
+    %%BIT    ECMMITE27       27     27      0     R|W     TRUE     -    
+    %%BIT    ECMMITE26       26     26      0     R|W     TRUE     -    
+    %%BIT    ECMMITE25       25     25      0     R|W     TRUE     -    
+    %%BIT    ECMMITE24       24     24      0     R|W     TRUE     -    
+    %%BIT    ECMMITE23       23     23      0     R|W     TRUE     -    
+    %%BIT    ECMMITE22       22     22      0     R|W     TRUE     -    
+    %%BIT    ECMMITE21       21     21      0     R|W     TRUE     -    
+    %%BIT    ECMMITE20       20     20      0     R|W     TRUE     -    
+    %%BIT    ECMMITE19       19     19      0     R|W     TRUE     -    
+    %%BIT    ECMMITE18       18     18      0     R|W     TRUE     -    
+    %%BIT    ECMMITE17       17     17      0     R|W     TRUE     -    
+    %%BIT    ECMMITE16       16     16      0     R|W     TRUE     -    
+    %%BIT    ECMMITE15       15     15      0     R|W     TRUE     -    
+    %%BIT    ECMMITE14       14     14      0     R|W     TRUE     -    
+    %%BIT    ECMMITE13       13     13      0     R|W     TRUE     -    
+    %%BIT    ECMMITE12       12     12      0     R|W     TRUE     -    
+    %%BIT    ECMMITE11       11     11      0     R|W     TRUE     -    
+    %%BIT    ECMMITE10       10     10      0     R|W     TRUE     -    
+    %%BIT    ECMMITE09       9      9       0     R|W     TRUE     -    
+    %%BIT    ECMMITE08       8      8       0     R|W     TRUE     -    
+    %%BIT    ECMMITE07       7      7       0     R|W     TRUE     -    
+    %%BIT    ECMMITE06       6      6       0     R|W     TRUE     -    
+    %%BIT    ECMMITE05       5      5       0     R|W     TRUE     -    
+    %%BIT    ECMMITE04       4      4       0     R|W     TRUE     -    
+    %%BIT    ECMMITE03       3      3       0     R|W     TRUE     -    
+    %%BIT    ECMMITE02       2      2       0     R|W     TRUE     -    
+    %%BIT    ECMMITE01       1      1       0     R|W     TRUE     -    
+    %%BIT    ECMMITE00       0      0       0     R|W     TRUE     -    
+
+%REG_NAME ECMMIDTMCFG9      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMMITE928       28     28      0     R|W     TRUE     -    
+    %%BIT    ECMMITE927       27     27      0     R|W     TRUE     -    
+    %%BIT    ECMMITE926       26     26      0     R       TRUE     -    
+    %%BIT    ECMMITE925       25     25      0     R|W     TRUE     -    
+    %%BIT    ECMMITE924       24     24      0     R|W     TRUE     -    
+    %%BIT    ECMMITE923       23     23      0     R|W     TRUE     -    
+    %%BIT    ECMMITE922       22     22      0     R|W     TRUE     -    
+    %%BIT    ECMMITE921       21     21      0     R|W     TRUE     -    
+    %%BIT    ECMMITE920       20     20      0     R|W     TRUE     -    
+    %%BIT    ECMMITE919       19     19      0     R|W     TRUE     -    
+    %%BIT    ECMMITE918       18     18      0     R|W     TRUE     -    
+    %%BIT    ECMMITE917       17     17      0     R|W     TRUE     -    
+    %%BIT    ECMMITE916       16     16      0     R|W     TRUE     -    
+    %%BIT    ECMMITE915       15     15      0     R|W     TRUE     -    
+    %%BIT    ECMMITE914       14     14      0     R|W     TRUE     -    
+    %%BIT    ECMMITE913       13     13      0     R|W     TRUE     -    
+    %%BIT    ECMMITE912       12     12      0     R|W     TRUE     -    
+    %%BIT    ECMMITE911       11     11      0     R|W     TRUE     -    
+    %%BIT    ECMMITE910       10     10      0     R|W     TRUE     -    
+    %%BIT    ECMMITE909       9      9       0     R|W     TRUE     -    
+    %%BIT    ECMMITE908       8      8       0     R|W     TRUE     -    
+    %%BIT    ECMMITE907       7      7       0     R|W     TRUE     -    
+    %%BIT    ECMMITE906       6      6       0     R|W     TRUE     -    
+    %%BIT    ECMMITE905       5      5       0     R|W     TRUE     -    
+    %%BIT    ECMMITE904       4      4       0     R|W     TRUE     -    
+    %%BIT    ECMMITE903       3      3       0     R|W     TRUE     -    
+    %%BIT    ECMMITE902       2      2       0     R|W     TRUE     -    
+    %%BIT    ECMMITE901       1      1       0     R|W     TRUE     -    
+    %%BIT    ECMMITE900       0      0       0     R|W     TRUE     -    
+
+%REG_NAME ECMNMIDTMCFG0      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMNMITE031    31     31     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE030    30     30     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE029    29     29     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE028    28     28     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE027    27     27     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE026    26     26     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE025    25     25     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE024    24     24     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE023    23     23     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE022    22     22     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE021    21     21     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE020    20     20     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE019    19     19     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE018    18     18     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE017    17     17     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE016    16     16     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE01514  15     14     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE01312  13     12     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE01110  11     10     0     R|W       TRUE     -    
+    %%BIT    ECMNMITE00908  9      8      0     R|W       TRUE     -    
+    %%BIT    ECMNMITE00706  7      6      0     R|W       TRUE     -    
+    %%BIT    ECMNMITE00504  5      4      0     R|W       TRUE     -    
+    %%BIT    ECMNMITE00302  3      2      0     R|W       TRUE     -    
+    %%BIT    ECMNMITE00100  1      0      0     R|W       TRUE     -    
+    
+%REG_NAME ECMNMIDTMCFG       
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMNMITE31       31     31      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE30       30     30      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE29       29     29      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE28       28     28      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE27       27     27      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE26       26     26      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE25       25     25      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE24       24     24      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE23       23     23      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE22       22     22      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE21       21     21      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE20       20     20      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE19       19     19      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE18       18     18      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE17       17     17      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE16       16     16      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE15       15     15      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE14       14     14      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE13       13     13      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE12       12     12      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE11       11     11      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE10       10     10      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE09       9      9       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE08       8      8       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE07       7      7       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE06       6      6       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE05       5      5       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE04       4      4       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE03       3      3       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE02       2      2       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE01       1      1       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE00       0      0       0     R|W     TRUE     -    
+
+%REG_NAME ECMNMIDTMCFG9      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    ECMNMITE928       28     28      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE927       27     27      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE926       26     26      0     R       TRUE     -    
+    %%BIT    ECMNMITE925       25     25      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE924       24     24      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE923       23     23      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE922       22     22      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE921       21     21      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE920       20     20      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE919       19     19      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE918       18     18      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE917       17     17      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE916       16     16      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE915       15     15      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE914       14     14      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE913       13     13      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE912       12     12      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE911       11     11      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE910       10     10      0     R|W     TRUE     -    
+    %%BIT    ECMNMITE909       9      9       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE908       8      8       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE907       7      7       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE906       6      6       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE905       5      5       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE904       4      4       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE903       3      3       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE902       2      2       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE901       1      1       0     R|W     TRUE     -    
+    %%BIT    ECMNMITE900       0      0       0     R|W     TRUE     -    
+
+%REG_NAME ECMEOCCFG        
+    %%TITLE  name               upper  lower   init  access  support  callback    
+    %%BIT    EOCIEN             31     31      0     R|W     TRUE     -    
+    %%BIT    CMPW               16     16      0     R       TRUE     -    
+    %%BIT    ECMEOUTCLRT        15     0       0     R|W     TRUE     W    
+
+%REG_NAME ECMPEM        
+    %%TITLE  name               upper  lower   init  access  support  callback    
+    %%BIT    MSKM               1      1       0     R|W     TRUE     -    
+    %%BIT    MSKC               0      0       0     R|W     TRUE     W    

@@ -1,0 +1,44 @@
+=============================================
+=               RELEASE HISTORY             =
+=============================================
+
+v2020_04_03
+  - Release data of U2A/SARAD to update for HWM0.70
+  - Fix incorrect messages for SARAD_U2A (refs #117406)
+
+v2019_11_29
+  - Release data of U2A/SARAD to update for HWM0.61
+
+v2018_12_13
+  - Fix bug of register address (refs #81146)
+
+v2018_11_29
+  - Release data of U2A/SARAD to fix the issue of TLM target sockets (refs #76891)
+
+v2018_10_25
+  - Release data of U2A/SARAD phase 2
+
+v2018_05_25
+  - Fix clock change issue (refs #35426)
+
+v2018_04_02
+  - Final version 
+    . source code: Add data format (DFMT) for Varition-B to Final version 
+                   with full verification environment
+v2018_02_05
+  - Final version 
+    . source code: Final version with full verification environment
+
+v2018_01_05
+  - Alpha version 
+    . source code: complete Register I/F
+    . environment:
+        . register verification on Linux/OSCI-ASTC/LT-AT
+        . check compilation on Windows
+
+
+
+
+
+
+

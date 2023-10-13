@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="PY_Debug|x64">
+      <Configuration>PY_Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="GT_Debug|x64">
+      <Configuration>GT_Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models\APISS\APISS.cpp" />
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models\common\CmErrMsg.cpp" />
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models\VCI2APB\VCI2APB.cpp" />
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models\VCI2APB\VCI2APB_core.cpp" />
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\COMMON_RVC\re_register.cpp" />
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\COMMON_RVC\rvc_common_model.cpp" />
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\DummyMasterRvc.cpp" />
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\DummyMasterRvc_Func.cpp" />
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\dummymasterrvc_regif.cpp" />
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\PY_DummyMasterRvc.cpp" />
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\DummyPeripheralRvc.cpp" />
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\DummyPeripheralRvc_Func.cpp" />
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\dummyperipheralrvc_regif.cpp" />
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\PY_DummyPeripheralRvc.cpp" />
+    <ClCompile Include="..\..\..\HAGE\HAGE.cpp" />
+    <ClCompile Include="..\..\..\HAGE\HAGE_Func.cpp" />
+    <ClCompile Include="..\..\..\HAGE\hage_regif.cpp" />
+    <ClCompile Include="..\..\..\HAGE\PY_HAGE.cpp" />
+    <ClCompile Include="..\..\..\test\UT_Top\UT_Top.cpp" />
+    <ClCompile Include="..\..\gtest\src\gtest-all.cc" />
+    <ClCompile Include="..\..\gtest\src\gtest_main.cc" />
+    <ClCompile Include="..\..\TestENV\src\BV_TestENV.cpp" />
+    <ClCompile Include="..\..\TestENV\src\NSMVG4SSLITE\NSMVG4SSLITE.cpp" />
+    <ClCompile Include="..\..\TestENV\src\NSMVRH850LITE\NSMVRH850LITE.cpp" />
+    <ClCompile Include="..\..\TestENV\src\NSMVRH850LITE\pltfrmGND.cpp" />
+    <ClCompile Include="..\..\TestENV\src\ShPythonAPI.cpp" />
+    <ClCompile Include="MemoryRVC.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\DummyMasterRvc.h" />
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\DummyMasterRvc_Base.h" />
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\DummyMasterRvc_Func.h" />
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\dummymasterrvc_regif.h" />
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\iodefine_dummymasterrvc.h" />
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\PY_DummyMasterRvc.h" />
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\DummyPeripheralRvc.h" />
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\DummyPeripheralRvc_Base.h" />
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\DummyPeripheralRvc_Func.h" />
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\dummyperipheralrvc_regif.h" />
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\iodefine_dummyperipheralrvc.h" />
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\PY_DummyPeripheralRvc.h" />
+    <ClInclude Include="..\..\..\HAGE\HAGE.h" />
+    <ClInclude Include="..\..\..\HAGE\HAGE_AgentController.h" />
+    <ClInclude Include="..\..\..\HAGE\HAGE_Func.h" />
+    <ClInclude Include="..\..\..\HAGE\hage_regif.h" />
+    <ClInclude Include="..\..\..\HAGE\iodefine_hage.h" />
+    <ClInclude Include="..\..\..\HAGE\PY_HAGE.h" />
+    <ClInclude Include="..\..\..\test\UT_Top\UT_Python_Load.h" />
+    <ClInclude Include="..\..\..\test\UT_Top\UT_Top.h" />
+    <ClInclude Include="..\..\TestENV\src\BV_TestENV.h" />
+    <ClInclude Include="..\..\TestENV\src\NSMVG4SSLITE\NSMVG4SSLITE.h" />
+    <ClInclude Include="..\..\TestENV\src\NSMVRH850LITE\NSMVRH850LITE.h" />
+    <ClInclude Include="..\..\TestENV\src\ShPythonAPI.h" />
+    <ClInclude Include="MemoryRVC.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\test\BUS.map" />
+    <None Include="..\..\..\test\config.cfg" />
+    <None Include="..\..\..\test\PythonTest\iodef.py" />
+    <None Include="..\..\..\test\PythonTest\simmode.py" />
+    <None Include="..\..\..\test\PythonTest\test_script.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\HAGE\hage_regif.txt" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8E38C055-2035-4F49-A738-980D7A081C0E}</ProjectGuid>
+    <RootNamespace>TestBench</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>HAGE</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GT_Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='PY_Debug|x64'">
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='GT_Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="UserSetting.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='PY_Debug|x64'">
+    <Import Project="UserSetting.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='GT_Debug|x64'">
+    <IncludePath>..\..\..\HAGE;..\..\..\test\UT_Top;$(IncludePath)</IncludePath>
+    <ReferencePath>$(VC_ReferencesPath_x64);</ReferencePath>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <OutDir>$(SolutionDir)$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='PY_Debug|x64'">
+    <ExecutablePath>$(VC_ExecutablePath_x64);$(WindowsSDK_ExecutablePath);$(VS_ExecutablePath);$(MSBuild_ExecutablePath);$(FxCopDir);$(PATH);</ExecutablePath>
+    <IncludePath>..\..\..\HAGE;..\..\..\test\UT_Top;$(IncludePath)</IncludePath>
+    <ReferencePath>$(VC_ReferencesPath_x64);</ReferencePath>
+    <OutDir>$(SolutionDir)$(ProjectName)\$(Platform)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='GT_Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>false</SDLCheck>
+      <PreprocessorDefinitions>SC_INCLUDE_DYNAMIC_PROCESSES;_CRT_SECURE_NO_WARNINGS;REGIF_SC_REPORT;RH850;RVC_GTEST</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <AdditionalOptions>/vmg %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>systemc.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;python27.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SCHEAP_PYTHON_HOME)\libs;$(SCHEAP_SYSTEMC_HOME)\msvc140\SystemC\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='PY_Debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>SC_INCLUDE_DYNAMIC_PROCESSES;_CRT_SECURE_NO_WARNINGS;RH850;REGIF_SC_REPORT;IS_RESET_ACTIVE_LOW;NDEBUG</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>
+      </AdditionalIncludeDirectories>
+      <AdditionalOptions>/vmg %(AdditionalOptions)</AdditionalOptions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
+      <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SCHEAP_PYTHON_HOME)\libs;$(SCHEAP_SYSTEMC_HOME)\msvc140\SystemC\x64\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>systemc.lib;python27.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>
+      </AdditionalOptions>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

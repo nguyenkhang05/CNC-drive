@@ -1,0 +1,168 @@
+#############################################################################
+# Makefile for NSMVG4CPUV01
+#############################################################################
+
+#
+# Name(overwrite from the top make)
+#
+MODEL			= NSMVG4CPUV01
+
+#
+# Location(overwrite from the top make)
+#
+PROJ_HOME		= $(shell pwd)/../..
+LIBPATH			= lib-$(MODEL)
+#
+# Location(for local)
+#
+MODEL_HOME			= $(PROJ_HOME)/models
+MODEL_COMMON_PATH		= $(MODEL_HOME)/common
+MODEL_COMMON_BUS_PATH		= $(MODEL_HOME)/common_bus
+MODEL_CFOREST_PATH		= $(MODEL_HOME)/iss/cforestg4x/Device
+MODEL_FASTISS_ASTC_MEMORY_PATH	= $(MODEL_HOME)/iss/fastiss_astc/memory_wrapper
+MODEL_FASTISS_ASTC_PATH		= $(MODEL_HOME)/iss/fastiss_astc/rh850g4/iss/src
+MODEL_FASTISS_ASTC_ANALYSIS_PATH = $(MODEL_HOME)/iss/fastiss_astc/rh850g4/analysis/src
+MODEL_NSMVINTC1V02_PATH		= $(MODEL_HOME)/NSMVINTC1V02
+MODEL_VCI2VPI_PATH              = $(MODEL_HOME)/VCI2VPI
+
+#
+# SystemC location and architecture(overwrite from the top make)
+#
+ifeq "$(shell uname -n)" "sdlpc567"
+    SYSTEMC_HOME	= /eda_tools/systemc
+else
+    SYSTEMC_HOME	= /home/product/systemc/tools/systemc
+endif
+ifeq "$(shell uname -s)" "SunOS"
+    TARGET_ARCH		= gccsparcOS5
+else
+    TARGET_ARCH		= linux
+endif
+SYSTEMC_INCPATH		= $(SYSTEMC_HOME)/include
+
+#
+# Make command(overwrite from the top make)
+#
+MAKE			= gmake
+
+#
+# other command(for local)
+#
+RM			= rm
+RM_OPT			= -rf
+AR			= ar cqs
+
+#
+# Linux RedHat7.3 - gcc2.96(overwrite from the top make)
+#
+CXX			= /usr/bin/g++
+OPTFLAG			= -g
+DEFFLAG			= -DLINUX_DEF
+DBGFLAG			= -Wno-deprecated
+INCPATH			= -I$(SYSTEMC_INCPATH) -I. -I$(MODEL_COMMON_PATH)
+
+#
+# Linux RedHat7.3 - gcc2.96(for local)
+#
+DEPFLAG		= -MM
+DEFFLAG_MINE	= -DSUPPORT_SC_HEAP -DDISABLE_GDB -DDISABLE_PYTHON
+DBGFLAG_MINE	=
+
+INCPATH_MINE	=  -I./CaISS -I./CLUSTERSS -I./PECORESS -I./Rteserv2 -I./FastISS -I$(MODEL_FASTISS_ASTC_PATH)/core -I$(MODEL_FASTISS_ASTC_PATH)/runtime -I$(MODEL_FASTISS_ASTC_MEMORY_PATH) -I$(MODEL_COMMON_PATH) -I$(MODEL_NSMVINTC1V02_PATH) -I$(MODEL_COMMON_BUS_PATH) -I$(MODEL_VCI2VPI_PATH) -I$(MODEL_FASTISS_ASTC_ANALYSIS_PATH) -I$(MODEL_HOME)/ForestUtilScIf
+
+INCPATH_CFOREST	= -I$(MODEL_CFOREST_PATH)/COMMON/include -I$(MODEL_CFOREST_PATH)/Utility/include -I$(MODEL_CFOREST_PATH)/Core/LSU/include -I$(MODEL_CFOREST_PATH)/Core/REG/include -I$(MODEL_CFOREST_PATH)/Core/TRACE/include/ -I$(MODEL_CFOREST_PATH)/Bus/FSBUS/include -I$(MODEL_CFOREST_PATH)/Peripheral/LATENCYINFO/include
+
+CXXFLAGS	= $(OPTFLAG) $(DEFFLAG) $(DEFFLAG_MINE) $(DBGFLAG) $(DBGFLAG_MINE) $(INCPATH) $(INCPATH_MINE) $(INCPATH_CFOREST)
+
+#
+# Files(for local)
+#
+SOURCES		= G4_NoDbgIF.cpp \
+		  G4_NoDbgIF_closed.cpp\
+		  HexLoader.cpp \
+		  G4_LinkManager.cpp \
+		  FastISS/G4_FastIssIF.cpp \
+		  PECORESS/PECORESS.cpp \
+		  CLUSTERSS/CLUSTERSS.cpp \
+		  G4_PEGERR_OR.cpp \
+		  NSMVG4CPUV01.cpp\
+		  CaISS/G4_CaIss.cpp \
+		  CaISS/G4_IsIfBase.cpp \
+		  CaISS/G4_IsVciIf.cpp \
+		  CaISS/G4_IsLapbIf.cpp \
+		  CaISS/G4_IsVpiIf.cpp \
+		  CaISS/G4_TsIf.cpp \
+		  Rteserv2/Rteserv2Controller.cpp\
+		  Rteserv2/Rteserv2IF.cpp\
+		  Rteserv2/SysRegInfo.cpp\
+		  $(MODEL).cpp
+OBJECTS		= $(LIBPATH)/G4_NoDbgIF.o \
+		  $(LIBPATH)/G4_NoDbgIF_closed.o\
+		  $(LIBPATH)/HexLoader.o \
+		  $(LIBPATH)/G4_LinkManager.o \
+		  $(LIBPATH)/G4_FastIssIF.o \
+		  $(LIBPATH)/PECORESS.o   \
+		  $(LIBPATH)/CLUSTERSS.o \
+		  $(LIBPATH)/G4_PEGERR_OR.o \
+		  $(LIBPATH)/NSMVG4CPUV01.o\
+		  $(LIBPATH)/G4_CaIss.o \
+		  $(LIBPATH)/G4_IsIfBase.o \
+		  $(LIBPATH)/G4_IsVciIf.o \
+		  $(LIBPATH)/G4_IsLapbIf.o \
+		  $(LIBPATH)/G4_IsVpiIf.o \
+		  $(LIBPATH)/G4_TsIf.o \
+		  $(LIBPATH)/Rteserv2Controller.o \
+		  $(LIBPATH)/Rteserv2IF.o \
+		  $(LIBPATH)/SysRegInfo.o \
+		  $(LIBPATH)/$(MODEL).o
+TARGET		= $(LIBPATH)/$(MODEL).a
+
+#
+# Implicit rules
+#
+%.d:%.cpp
+	$(CXX) $(DEPFLAG) $(CXXFLAGS) $< | sed 's!$*.o:!$$(LIBPATH)/&!g' > $@
+$(LIBPATH)/%.o:%.cpp
+	$(CXX) -c $(CXXFLAGS) -o $@ $<
+$(LIBPATH)/%.o:CaISS/%.cpp
+	$(CXX) -c $(CXXFLAGS) -o $@ $<
+$(LIBPATH)/%.o:FastISS/%.cpp
+	$(CXX) -c $(CXXFLAGS) -o $@ $<
+$(LIBPATH)/%.o:CLUSTERSS/%.cpp
+	$(CXX) -c $(CXXFLAGS) -o $@ $<
+$(LIBPATH)/%.o:PECORESS/%.cpp
+	$(CXX) -c $(CXXFLAGS) -o $@ $<
+$(LIBPATH)/%.o:Rteserv2/%.cpp
+	$(CXX) -c $(CXXFLAGS) -o $@ $<
+#$(LIBPATH)/%.o:CForestG3M/%.cpp
+#	$(CXX) -c $(CXXFLAGS) -o $@ $<
+#$(LIBPATH)/%.o:CedarE3V5/%.cpp
+#	$(CXX) -c $(CXXFLAGS) -o $@ $<
+#$(LIBPATH)/%.o:CedarE3V5/fpu_soft/%.cpp
+#	$(CXX) -c $(CXXFLAGS) -o $@ $<
+
+#
+# Build rules
+#
+.PHONY : all compile clean
+all:
+	if test ! -d $(LIBPATH); then mkdir $(LIBPATH); fi;
+	$(MAKE) compile
+
+compile: $(TARGET)
+
+$(TARGET): $(OBJECTS)
+	$(AR) $@ $(OBJECTS) 2>&1 | c++filt
+	@echo "Done"
+
+$(OBJECTS): $(SOURCES) $(SOURCES:.cpp=.d)
+
+clean:
+	find . -name "*~" -print -exec rm -f {} \;
+	-$(RM) $(RM_OPT) $(SOURCES:.cpp=.d) $(OBJECTS) $(TARGET) core
+	-$(RM) $(RM_OPT) $(LIBPATH)
+
+#
+# Dependencies
+#
+-include $(SOURCES:.cpp=.d)

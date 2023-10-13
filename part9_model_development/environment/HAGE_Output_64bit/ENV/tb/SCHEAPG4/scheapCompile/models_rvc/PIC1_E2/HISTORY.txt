@@ -1,0 +1,17 @@
+***************************************************************************************************
+PIC1_E2_Output_08292017.7z
+-----------------------------
+- Release info: fix CalculateCLKPosEdge issue (ticket #87854)
+- Release date: Aug 29, 2017
+- Supported functions:
+    + Timer synchronization: Simultaneously start OSTMOSTM, support 7 timers OSTM0 to OSTM6
+- Updated source code:
+    + PIC1_E2.cpp       3883
+
+***************************************************************************************************
+PIC1_E2_Output_07072017.7z
+-----------------------------
+- Release info: Official release
+- Release date: July 07, 2017
+- Supported functions:
+    + Timer synchronization: Simultaneously start OSTMOSTM, support 7 timers OSTM0 to OSTM6

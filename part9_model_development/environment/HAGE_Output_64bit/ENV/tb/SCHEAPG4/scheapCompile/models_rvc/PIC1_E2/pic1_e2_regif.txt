@@ -1,0 +1,22 @@
+%MODULE PIC1_E2
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         5
+
+%REG_CHANNEL reg_def
+    %%TITLE  name       reg_name   wsize  rsize    length  offset  factor_start  factor_end  factor_index  factor_step  access  init        support  callback
+    %%REG    PIC1SST    PIC1SST     8     8|16|32  8       0x0004  -             -           -             -             W|R      0           TRUE     W
+    %%REG    PIC1SSER0  PIC1SSER0  16     8|16|32  16      0x0010  -             -           -             -             W|R      0           TRUE     -
+
+%REG_NAME PIC1SST
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    SYNCTRG      0      0      0     W|R     TRUE     W
+
+%REG_NAME PIC1SSER0
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    PIC1SSER006  6      6      0     W|R     TRUE     -
+    %%BIT    PIC1SSER005  5      5      0     W|R     TRUE     -
+    %%BIT    PIC1SSER004  4      4      0     W|R     TRUE     -
+    %%BIT    PIC1SSER003  3      3      0     W|R     TRUE     -
+    %%BIT    PIC1SSER002  2      2      0     W|R     TRUE     -
+    %%BIT    PIC1SSER001  1      1      0     W|R     TRUE     -
+    %%BIT    PIC1SSER000  0      0      0     W|R     TRUE     -

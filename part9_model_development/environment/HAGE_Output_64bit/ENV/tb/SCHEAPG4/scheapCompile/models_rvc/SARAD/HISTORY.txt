@@ -1,0 +1,88 @@
+=============================================
+=               RELEASE HISTORY             =
+=============================================
+
+v2019_06_14
+  - Update features to support E2x-FCC1 and E2x-FCC2
+
+v2019_01_04
+  - Update to separate TARGET_PRODUCT for FCC1 & FCC2 
+
+v2018_12_20
+  - Update feature (setting condition of registers) of RH850/E2x enhancement
+
+v2018_06_22
+  - Fix bug of Open-circuit error for CCC/D1 & D2 (Redmine #26114)
+
+v2018_02_28
+  - Update source code to fix segmentation fault on SC-HEAP (gcc issue related to double)
+
+v2017_11_16
+  - Remove the use of mutex in implementation (adc.h and adc.cpp)
+
+v2017_10_24
+  - Update adc.h due to below compiling issue on Windows 64bits:
+        --------
+          adc.h(255): error C3646: 'm_mutex': unknown override specifier ...
+          adc.h(255): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int  ...
+          adc.cpp(156): error C2065: 'm_mutex': undeclared identifier ...
+        --------
+
+v2017_07_25
+  - Update features to support RH850/E2x-FCC2
+
+v2015_05_18 (fixed issue of ticket #36503)
+  - Updated constrain of writing VCR
+    + VCR.GCTRL can be written when:
+      ++ The related scan group is in ADC mode ADCFnVCRj.CNVCLS[2:0] = 0H (Normal A/D conversion) or = 3H (Diagnosis) or = 4H (Normal A/D conversion in addition mode)
+      ++ Confirm for the related scan group that ADSTARTE = 0H
+      ++ Confirm for the related scan group that TRGMD = 0H
+      ++ Confirm for the related scan group that SGACT = 0H
+  - Fixed issue of setting HLDTE (cannot set to 1 when TRGMD != 0)
+    + Fixed to allow HLDTE is set from 0 to 1 when TRGMD == 1
+
+v2015_06_23
+  - Update features to support RH850/ CCC_D1D2 and P1M-E
+
+v2015_06_25
+  - Remove redundant test patterns of P1M-E
+
+v2015_06_28
+  - Fix issue of ForcedBreak command in CCC D1D2
+
+v2015_09_14
+  - Fix issue of Negative Input port.
+
+v2015_10_30
+  - Change the MPX channel of CCC D1/D2 from 6 to 10
+  - Support user to configure the attribute before start simulation for all products
+
+v2015_11_11
+  - Update the expected log of Windows environment
+
+v2016_01_28
+  - Update features to support RH850/E2x
+
+v2016_05_31
+  - Add features of RH850/E2x enhancement
+
+v2016_06_20
+  - Update in RH850/E2x enhancement (update HWM)
+    + Change address of SGVCOWRx to 4B4H
+    + Change condition of write into specific registers (SGSR.SGACT = 0)
+    + Add write condition to some specific registers.
+    + Add condition that EVCC can be guaranteed in 5V
+    + Add restriction that using DFMT = 1 is prohibited in case of using DFE, ASF, IFC
+
+v2016_10_26
+- Fix time resolution bug
+  - Symptom: the operation is not correct when using a time resolution that is not nano second (SC_NS).
+  - Cause: current code use "sc_time_stamp().to_double()", its result is based on time resolution.
+  - How to fix: add GetCurTime() function, to change other time resolution to nano second (SC_NS)
+  - How to check: add new test patterns tp03_04_03_003_restime_fs, tp03_04_03_003_restime_ps (based on tp03_04_03_003).
+
+v2016_11_09
+  - Correct the order of test patterns (SC_FS and SC_PS) in sim/scripts_windows/run.bat
+  - Update the expected log of tp03_04_03_003_restime_ps in Windows env
+  - Remove redundant commands in sim/scripts_linux/run_all/run_all.csh
+  - Revise env path of sim/scripts_linux/astc_env_rvc_set.csh and sim/scripts_linux/env_rvc_set.csh

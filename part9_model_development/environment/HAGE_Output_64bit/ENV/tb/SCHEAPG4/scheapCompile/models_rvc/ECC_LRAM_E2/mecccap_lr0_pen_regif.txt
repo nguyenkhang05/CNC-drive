@@ -1,0 +1,79 @@
+%MODULE mecccap_lr0_pen
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  8 
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name                           reg_name                     wsize   rsize      length offset  factor_start    factor_end  factor_index    factor_step access   init   support  callback
+    %%REG      LR0_ERRINT                     LR0_ERRINT                   8|16|32 8|16|32      32     0x00    -               -           -               -           R/W      0x8F    TRUE     -
+    %%REG      LR0_SSTCLR                     LR0_SSTCLR                   8|16|32 8|16|32      32     0x10    -               -           -               -           W        0x0     TRUE     W
+    %%REG      LR0_DSTCLR                     LR0_DSTCLR                   8|16|32 8|16|32      32     0x14    -               -           -               -           W        0x0     TRUE     -
+    %%REG      LR0_OVFCLR                     LR0_OVFCLR                   8|16|32 8|16|32      32     0x18    -               -           -               -           W        0x0     TRUE     -
+    %%REG      LR0_SERSTR                     LR0_SERSTR                   -       8|16|32      32     0x20    -               -           -               -           R        0x0     TRUE     -
+    %%REG      LR0_DERSTR                     LR0_DERSTR                   8|16|32 8|16|32      32     0x24    -               -           -               -           R        0x0     TRUE     -
+    %%REG      LR0_OVFSTR                     LR0_OVFSTR                   8|16|32 8|16|32      32     0x28    -               -           -               -           R        0x0     TRUE     -
+    %%REG      LR0_SERINF                     LR0_SERINF                   8|16|32 8|16|32      32     0x30    -               -           -               -           R        0x0     TRUE     -
+    %%REG      LR0_ERMSA0                     LR0_ERMSA0                        32 8|16|32      32     0x60    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      LR0_ERMEA0                     LR0_ERMEA0                        32 8|16|32      32     0x64    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      LR0_ERMSA1                     LR0_ERMSA1                        32 8|16|32      32     0x68    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      LR0_ERMEA1                     LR0_ERMEA1                        32 8|16|32      32     0x6C    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      LR0_nSEADR                     LR0_nSEADR                   -       8|16|32      32     0x70    0               31          -               4           R        0x0     TRUE     -
+    %%REG      LR0_00DEADR                    LR0_00DEADR                  -       8|16|32      32     0xF0    -               -           -               -           R        0x0     TRUE     -
+    
+%REG_NAME LR0_ERRINT                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SEOVFIE            7        7      1       R|W     TRUE        -
+    %%BIT    AFEIE              3        3      1       R|W     TRUE        -
+    %%BIT    RESERVED           2        2      1       R       TRUE        -
+    %%BIT    DEDIE              1        1      1       R|W     TRUE        -
+    %%BIT    SEDIE              0        0      1       R|W     TRUE        -
+
+%REG_NAME LR0_DSTCLR                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DSTCLR00           0        0      0       W       TRUE        W
+
+%REG_NAME LR0_OVFCLR                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SERROVFCLR1        1        1      0       W       TRUE        -
+    %%BIT    SERROVFCLR0        0        0      0       W       TRUE        W
+
+%REG_NAME LR0_DERSTR                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    AFEF00             3        3      0       R       TRUE        -
+    %%BIT    DEDF00             1        1      0       R       TRUE        -
+
+%REG_NAME LR0_OVFSTR                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SERROVF1           1        1      0       R       TRUE        -
+    %%BIT    SERROVF0           0        0      0       R       TRUE        -
+
+%REG_NAME LR0_SERINF                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SEDLINF            4        0      0       R       TRUE        -
+
+%REG_NAME LR0_ERMSA0                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    ERMSA              26       12     0       R|W     TRUE        W
+    %%BIT    EN                 0        0      0       R|W     TRUE        -
+
+%REG_NAME LR0_ERMEA0                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    ERMEA              26       12     0       R|W     TRUE        W
+
+%REG_NAME LR0_ERMSA1                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    ERMSA              26       12     0       R|W     TRUE        W
+    %%BIT    EN                 0        0      0       R|W     TRUE        -
+
+%REG_NAME LR0_ERMEA1                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    ERMEA              26       12     0       R|W     TRUE        W
+
+%REG_NAME LR0_nSEADR                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SEDL               31       27     0       R       TRUE        -
+    %%BIT    SEADR0             26       2      0       R       TRUE        -
+
+%REG_NAME LR0_00DEADR                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DEDL               31       27     0       R       TRUE        -
+    %%BIT    DEADR0             26       2      0       R       TRUE        -

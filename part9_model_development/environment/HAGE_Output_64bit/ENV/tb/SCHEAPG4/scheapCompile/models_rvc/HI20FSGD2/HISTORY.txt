@@ -1,0 +1,57 @@
+***************************************************************************************************
+HI20FSGD2_Output_64bit_20191220.7z
+-----------------------------
+- Release info: Final release
+- Release date: Dec/20/2019
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+- SVN path: mcu_modeling_01/release/source_code/
+
+- File (CVS repository):
+    + HI20FSGD2.cpp                 1.8
+    + HI20FSGD2.h                   1.6
+    + HI20FSGD2_AgentController.h   1.6
+    + HI20FSGD2_Func.cpp            1.5
+    + HI20FSGD2_Func.h              1.4
+    + HI20FSGD2_Common_Guard.cpp    1.6
+    + HI20FSGD2_Common_Guard.h      1.2
+    + HI20FSGD2_cmdif.h             1.2
+    + PY_HI20FSGD2.cpp              1.3
+    + PY_HI20FSGD2.h                1.2
+    + hi20fsdg2_regif.ccp           1.3
+    + hi20fsdg2_regif.h             1.3
+    + HI20FSGD2_ERR_INFO.ccp        1.1
+    + HI20FSGD2_ERR_INFO.h          1.1
+
+- Supported features:
+    + Protect peripheral circuits
+
+- Non-supported features and limitation:
+    + Status registers is updated at next rising edge of clock after getting errors. Status registers is updated after getting errors.
+
+***************************************************************************************************
+- Release info: Release update source code.
+- Release date: Nov 28, 2019.
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+- SVN path: mcu_modeling_01/release/source_code/
+
+- File (CVS repository):
+    + HI20FSGD2.cpp                 1.7
+    + HI20FSGD2.h                   1.6
+    + HI20FSGD2_AgentController.h   1.5
+    + HI20FSGD2_Func.cpp            1.4
+    + HI20FSGD2_Func.h              1.3
+    + HI20FSGD2_Common_Guard.cpp    1.4
+    + HI20FSGD2_Common_Guard.h      1.2
+    + HI20FSGD2_cmdif.h             1.2
+    + PY_HI20FSGD2.cpp              1.3
+    + PY_HI20FSGD2.h                1.2
+    + hi20fsdg2_regif.ccp           1.3
+    + hi20fsdg2_regif.h             1.3
+    + HI20FSGD2_ERR_INFO.ccp        1.1
+    + HI20FSGD2_ERR_INFO.h          1.1
+
+- Supported features:
+    + Protect peripheral circuits
+
+- Non-supported features and limitation:
+    + Status registers is updated at next rising edge of clock after getting errors. Status registers is updated after getting errors.

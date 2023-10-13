@@ -1,0 +1,29 @@
+***************************************************************************************************
+DNF_Output_08042017.7z
+-----------------------------
+- Release info: Official release
+- Release date: Aug 04, 2017
+- Supported functions:
+    + DNFP010_E2 supports up to 15 channels
+
+***************************************************************************************************
+DNF_Output_20170829.7z
+-----------------------------
+- Release info: Official release
+- Release date: Aug 29, 2017
+- Supported functions: Not change
+- Source code: Fix issue related to CalculateNextClockEdge() function. Refer ticket #87854 for detail.
+
+***************************************************************************************************
+DNF_Output_20180224.7z
+-----------------------------
+- Release info: Official release
+- Release date: Feb 24, 2018
+- Supported functions:- Supported functions: Not change
+- Source code:
+    + Replace template (supported channels) by passing via constructor
+        .DNFP010_E2.cpp
+        .DNFP010_E2.h
+        .DNFP010_E2_Sub.h
+        .PY_DNFP010_E2.cpp
+        .PY_DNFP010_E2.h

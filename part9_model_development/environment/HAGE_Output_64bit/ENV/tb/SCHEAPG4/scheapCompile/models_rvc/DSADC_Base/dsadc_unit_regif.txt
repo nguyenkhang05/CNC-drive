@@ -1,0 +1,145 @@
+%MODULE DSADC_UNIT
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         8
+
+%REG_CHANNEL reg_def
+    %%TITLE  name          reg_name      wsize    rsize    length  offset  factor_start  factor_end  factor_index  factor_step  access init        support callback
+    %%REG    DSADnVCR      DSADnVCR      8|16|32  8|16|32  32      0x00    0             7           -             -            W|R    0           TRUE    -
+    %%REG    DSADnDIR      DSADnDIR      8|16|32  8|16|32  32      0x20    0             7           -             -            R      0           TRUE    -
+    %%REG    DSADnADSTCR   DSADnADSTCR   8        8|16|32  8       0x40    -             -           -             -            W      0           TRUE    W
+    %%REG    DSADnADENDCR  DSADnADENDCR  8        8|16|32  8       0x44    -             -           -             -            W      0           TRUE    W
+    %%REG    DSADnCLBSTCR  DSADnCLBSTCR  8        8|16|32  8       0x48    -             -           -             -            W      0           TRUE    W
+    %%REG    DSADnCLBEDCR  DSADnCLBEDCR  8        8|16|32  8       0x4C    -             -           -             -            W      0           TRUE    W
+    %%REG    DSADnADTCR    DSADnADTCR    8        8|16|32  8       0x50    -             -           -             -            W|R    0           TRUE    -
+    %%REG    DSADnUCR      DSADnUCR      8|16|32  8|16|32  32      0x54    -             -           -             -            W|R    0           TRUE    -
+    %%REG    DSADnVCPTRR   DSADnVCPTRR   8        8|16|32  8       0x58    -             -           -             -            W|R    0           TRUE    W
+    %%REG    DSADnADSR     DSADnADSR     8|16|32  8|16|32  8       0x60    -             -           -             -            R      0           TRUE    -
+    %%REG    DSADnUDPTRR   DSADnUDPTRR   8|16|32  8|16|32  8       0x64    -             -           -             -            R      0           TRUE    -
+    %%REG    DSADnUDIR     DSADnUDIR     8|16|32  8|16|32  32      0x68    -             -           -             -            R      0           TRUE    -
+    %%REG    DSADnTSVAL    DSADnTSVAL    8|16|32  8|16|32  32      0x6C    -             -           -             -            R      0x007F0000  TRUE    -
+    %%REG    DSADnSFTCR    DSADnSFTCR    8        8|16|32  8       0x70    -             -           -             -            W|R    0           TRUE    -
+    %%REG    DSADnECR      DSADnECR      8        8|16|32  8       0x74    -             -           -             -            W      0           TRUE    W
+    %%REG    DSADnER       DSADnER       8|16|32  8|16|32  32      0x78    -             -           -             -            R      0           TRUE    -
+    %%REG    DSADnTDLVR    DSADnTDLVR    8        8|16|32  8       0x7C    -             -           -             -            W|R    0           TRUE    -
+    %%REG    DSADnULTBR    DSADnULTBR    16|32    8|16|32  32      0x80    0             3           -             -            W|R    0x7FFF8000  TRUE    -
+
+
+%REG_NAME DSADnVCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    GAIN        29     28     0     W|R     TRUE     -
+    %%BIT    VCULME      27     27     0     W|R     TRUE     -
+    %%BIT    VCLLME      26     26     0     W|R     TRUE     -
+    %%BIT    VCULLMTBS   25     24     0     W|R     TRUE     -
+    %%BIT    ORT         23     23     0     W|R     TRUE     -
+    %%BIT    TPVSL       22     20     0     W|R     TRUE     -
+    %%BIT    DSDFTYP     17     16     0     W|R     TRUE     -
+    %%BIT    ADIE        15     15     0     W|R     TRUE     -
+    %%BIT    ULEIE       14     14     0     W|R     TRUE     -
+    %%BIT    DFENT       12     12     0     W|R     TRUE     -
+    %%BIT    DFTAG       11     8      0     W|R     TRUE     -
+    %%BIT    CNVCLS      5      4      0     W|R     TRUE     -
+    %%BIT    GCTRL       3      0      0     W|R     TRUE     -
+
+%REG_NAME DSADnDIR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    IDEF        26     26     0     R       TRUE     -
+    %%BIT    WFLG        25     25     0     R       TRUE     -
+    %%BIT    PRTY        24     24     0     R       TRUE     -
+    %%BIT    DR          15     0      0     R       TRUE     -
+
+%REG_NAME DSADnADSTCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    ADST        0      0      0     W       TRUE     W
+
+%REG_NAME DSADnADENDCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    ADEND       0      0      0     W       TRUE     W
+
+%REG_NAME DSADnCLBSTCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CLBST       0      0      0     W       TRUE     W
+
+%REG_NAME DSADnCLBEDCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CLBEND      0      0      0     W       TRUE     W
+
+%REG_NAME DSADnADTCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    ADSTTE      6      6      0     W|R     TRUE     -
+    %%BIT    ENDTRGE     1      1      0     W|R     TRUE     -
+    %%BIT    STTRGE      0      0      0     W|R     TRUE     -
+
+%REG_NAME DSADnUCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    VPRSTE      29     29     0     W|R     TRUE     -
+    %%BIT    RDMA        28     28     0     W|R     TRUE     -
+    %%BIT    RESO0       26     26     0     W|R     TRUE     -
+    %%BIT    DFES        24     24     0     W|R     TRUE     -
+    %%BIT    DFMT        11     8      0     W|R     TRUE     -
+    %%BIT    VCEP        2      0      0     W|R     TRUE     -
+
+%REG_NAME DSADnVCPTRR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    VCPTR       2      0      0     W|R     TRUE     W
+
+%REG_NAME DSADnADSR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CLBACT      1      1      0     R       TRUE     -
+    %%BIT    ADACT       0      0      0     R       TRUE     -
+
+%REG_NAME DSADnUDPTRR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    UDPTR       2      0      0     R       TRUE     -
+
+%REG_NAME DSADnUDIR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CHNUM       31     29     0     R       TRUE     -
+    %%BIT    UIDEF       26     26     0     R       TRUE     -
+    %%BIT    UWFLG       25     25     0     R       TRUE     -
+    %%BIT    UPRTY       24     24     0     R       TRUE     -
+    %%BIT    UDR         15     0      0     R       TRUE     -
+
+%REG_NAME DSADnTSVAL
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    TSVAL       22     16     0x7F  R       TRUE     -
+    %%BIT    TSDR        15     0      0     R       TRUE     -
+
+%REG_NAME DSADnSFTCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    RDCLRE      7      7      0     W|R     TRUE     -
+    %%BIT    OWEIE       2      2      0     W|R     TRUE     -
+    %%BIT    PEIE        1      1      0     W|R     TRUE     -
+    %%BIT    IDEIE       0      0      0     W|R     TRUE     -
+
+%REG_NAME DSADnECR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    ULEC        4      4      0     W       TRUE     -
+    %%BIT    LLEC        3      3      0     W       TRUE     -
+    %%BIT    OWEC        2      2      0     W       TRUE     -
+    %%BIT    PEC         1      1      0     W       TRUE     W
+
+%REG_NAME DSADnER
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    ULE         31     31     0     R       TRUE     -
+    %%BIT    LLE         30     30     0     R       TRUE     -
+    %%BIT    ULECAP      26     24     0     R       TRUE     -
+    %%BIT    OWE         23     23     0     R       TRUE     -
+    %%BIT    OWECAP      18     16     0     R       TRUE     -
+    %%BIT    PE          15     15     0     R       TRUE     -
+    %%BIT    PECAP       10     8      0     R       TRUE     -
+
+%REG_NAME DSADnTDLVR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    AN3NLV      7      7      0     W|R     TRUE     -
+    %%BIT    AN3PLV      6      6      0     W|R     TRUE     -
+    %%BIT    AN2NLV      5      5      0     W|R     TRUE     -
+    %%BIT    AN2PLV      4      4      0     W|R     TRUE     -
+    %%BIT    AN1NLV      3      3      0     W|R     TRUE     -
+    %%BIT    AN1PLV      2      2      0     W|R     TRUE     -
+    %%BIT    AN0NLV      1      1      0     W|R     TRUE     -
+    %%BIT    AN0PLV      0      0      0     W|R     TRUE     -
+
+%REG_NAME DSADnULTBR
+    %%TITLE  name        upper  lower  init    access  support  callback
+    %%BIT    ULMTB       31     16     0x7FFF  W|R     TRUE     -
+    %%BIT    LLMTB       15     0      0x8000  W|R     TRUE     -

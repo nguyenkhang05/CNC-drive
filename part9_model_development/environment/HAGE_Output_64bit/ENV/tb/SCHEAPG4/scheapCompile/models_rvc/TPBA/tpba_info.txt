@@ -1,0 +1,88 @@
+ %MODULE TPBA
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  10
+
+%REG_CHANNEL reg_def
+    %%TITLE  group   name           reg_name         size       length  offset    factor_start  factor_end  factor_index  factor_step  access  init     support  callback
+    %%REG    -       TPBA0BUF       TPBA0BUF         16         16      0x000     0             63          -             4            -       0        TRUE     -
+    %%REG    -       TPBA0CMP0      TPBA0CMP0        16         16      0x100     -             -           -             -            -       0        TRUE     -  
+    %%REG    -       TPBA0CMP1      TPBA0CMP1        8          8       0x104     -             -           -             -            -       -        TRUE     -
+    %%REG    -       TPBA0CNT0      TPBA0CNT0        16         16      0x108     -             -           -             -            R       0xFFFF   TRUE     R 
+    %%REG    -       TPBA0CNT1      TPBA0CNT1        8          8       0x10C     -             -           -             -            -       -        TRUE     -
+    %%REG    -       TPBA0RSF       TPBA0RSF         8          8       0x110     -             -           -             -            -       -        TRUE     -
+    %%REG    -       TPBA0RDT       TPBA0RDT         8          8       0x114     -             -           -             -            -       -        TRUE     -
+    %%REG    -       TPBA0RDM       TPBA0RDM         8          8       0x118     -             -           -             -            -       -        TRUE     -
+    %%REG    -       TPBA0TO        TPBA0TO          8          8       0x11C     -             -           -             -            -       -        TRUE     -
+    %%REG    -       TPBA0TOE       TPBA0TOE         8          8       0x120     -             -           -             -            -       -        TRUE     -
+    %%REG    -       TPBA0TOL       TPBA0TOL         8          8       0x124     -             -           -             -            -       -        TRUE     -
+    %%REG    -       TPBA0TE        TPBA0TE          8          8       0x128     -             -           -             -            -       -        TRUE     -
+    %%REG    -       TPBA0TS        TPBA0TS          8          8       0x12C     -             -           -             -            -       -        TRUE     -
+    %%REG    -       TPBA0TT        TPBA0TT          8          8       0x130     -             -           -             -            -       -        TRUE     -
+    %%REG    -       TPBA0CTL       TPBA0CTL         8          8       0x200     -             -           -             -            -       -        TRUE     -
+    %%REG    -       TPBA0EMU       TPBA0EMU         8          8       0x204     -             -           -             -            -       -        FALSE    -
+                       
+%REG_NAME TPBA0CMP1
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TPBA0CMP1      6      0      0     W|R     TRUE     W    
+    
+%REG_NAME TPBA0CNT1
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TPBA0CNT1      6      0      0     R       TRUE     -    
+    
+%REG_NAME TPBA0RSF
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TPBA0RSF0      0      0      0     R       TRUE     -    
+    %%BIT    TPBA0RSF1      1      1      0     R       TRUE     -    
+
+%REG_NAME TPBA0RDT
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TPBA0RDT0      0      0      0     W       TRUE     W    
+    %%BIT    TPBA0RDT1      1      1      0     W       TRUE     -        
+
+%REG_NAME TPBA0RDM
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TPBA0RDM0      0      0      0     W|R     TRUE     -    
+
+%REG_NAME TPBA0TO
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TPBA0TO0       0      0      0     D       TRUE     W
+
+%REG_NAME TPBA0TOE
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TPBA0TOE0      0      0      0     W|R     TRUE     W
+
+%REG_NAME TPBA0TOL
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TPBA0TOL0      0      0      0     W|R     TRUE     -
+
+%REG_NAME TPBA0TE
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TPBA0TE0       0      0      0     R       TRUE     -
+
+%REG_NAME TPBA0TS
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TPBA0TS0       0      0      0     D       TRUE     W
+
+%REG_NAME TPBA0TT
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TPBA0TT0       0      0      0     W       TRUE     W
+
+%REG_NAME TPBA0CTL
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TPBA0DPS       0      0      0     D       TRUE     -
+    %%BIT    TPBA0PRS0      4      4      0     D       TRUE     -
+    %%BIT    TPBA0PRS1      5      5      0     D       TRUE     -
+
+%REG_NAME TPBA0EMU
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TPBA0SVSDIS    7      7      0     W|R     FALSE    -
+
+
+
+   %CMD_BASEID tgt reg
+   %CMD_NODUMP_API CommandCB EnableInsertInput DumpProfile ClearProfile EnableDumpResult
+   %CMD_RW DumpInterrupt <enable:bool=false> @ Enable/disable interrupt information display when an interrupt is sent
+   %CMD_RW EnableTransInfo <enable:bool=false> @ Enable/disable information display when CNT0 match CB0 or CB2
+   %CMD_ACTION DumpStatInfo : void @ Dumps status information about TPBA
+   %CMD_ACTION UpdateRegisters : void @ copy the latest counter value of general timer to counter registers of tpba
+   %CMD_ACTION SetCLKfreq <clk_name:std::string> <clk_freq:double> : void @ Set a new clock frequency [Hz]

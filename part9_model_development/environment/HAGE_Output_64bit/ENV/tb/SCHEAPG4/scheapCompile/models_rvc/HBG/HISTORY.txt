@@ -1,0 +1,92 @@
+###############################
+- Release info: 
+    + Fix bit_select() issue (#83222)
+    + Fix segmentation fault when the platform resets issue (#83223)
+    + Change message level from WARNING to INFO when an unprotected address is accessed
+    + Update source code to prevent writing to register when zero clock
+    + Update source code to store SEC bit of register HBGERRTYPE when error occurs
+- Release date: Jan 21, 2019
+- Test environment: SCHEAP-G4 Rev135, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+    +HBG.cpp              	   (1.12)
+    +HBG.h                	   (1.8)
+    +HBGERRSLV_Func.cpp   	   (1.8)
+    +HBGERRSLV_Func.h     	   (1.4)
+    +HBG_AgentController.h	   (1.9)
+    +HBG_Common_Guard.cpp 	   (1.11)
+    +HBG_Common_Guard.h   	   (1.5)
+    +HBG_Func.cpp         	   (1.8)
+    +HBG_Func.h           	   (1.6)
+    +HBG_cmdif.h          	   (1.4)
+    +PY_HBG.cpp           	   (1.4)
+    +PY_HBG.h             	   (1.4)
+    +hbg_regif.cpp        	   (1.7)
+    +hbg_regif.h          	   (1.6)
+    +hbgerrslv_regif.cpp  	   (1.7)
+    +hbgerrslv_regif.h    	   (1.7)
+
+- Supported functions: Not change
+	
+###############################
+- Release info: Add to support debug master id feature.
+- Release date: Oct 23, 2018.
+- Test environment: SCHEAP-G4 Rev135, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+    +HBG.cpp              	   (1.7)
+    +HBG.h                	   (1.7)
+    +HBGERRSLV_Func.cpp   	   (1.6)
+    +HBGERRSLV_Func.h     	   (1.4)
+    +HBG_AgentController.h	   (1.6)
+    +HBG_Common_Guard.cpp 	   (1.9)
+    +HBG_Common_Guard.h   	   (1.5)
+    +HBG_Func.cpp         	   (1.6)
+    +HBG_Func.h           	   (1.6)
+    +HBG_cmdif.h          	   (1.4)
+    +PY_HBG.cpp           	   (1.4)
+    +PY_HBG.h             	   (1.4)
+    +hbg_regif.cpp        	   (1.6)
+    +hbg_regif.h          	   (1.5)
+    +hbgerrslv_regif.cpp  	   (1.6)
+    +hbgerrslv_regif.h    	   (1.6)
+
+- Supported functions:
+    + Protect peripheral circuits
+    + Support HBG groups 
+    + Set P_LOCK_SUPPORT parameter to see if there are necessary regard to the setting of LOCK bit for model or not
+	+ Set P_SEC_DIS parameter to enable mSecure mode
+	+ Set RESET_VALUE parameter to set init value for HBGPROT0
+	+ Set SPID_RESET_VALUE parameter to set init value for HBGPROT1
+
+###############################
+- Release info: Create new model HBG.
+- Release date: Oct 03nd, 2018.
+- Test environment: SCHEAP-G4 Rev135, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+    +HBG.cpp              	   (1.6)
+    +HBG.h                	   (1.6)
+    +HBGERRSLV_Func.cpp   	   (1.6)
+    +HBGERRSLV_Func.h     	   (1.4)
+    +HBG_AgentController.h	   (1.6)
+    +HBG_Common_Guard.cpp 	   (1.8)
+    +HBG_Common_Guard.h   	   (1.5)
+    +HBG_Func.cpp         	   (1.6)
+    +HBG_Func.h           	   (1.6)
+    +HBG_cmdif.h          	   (1.4)
+    +PY_HBG.cpp           	   (1.4)
+    +PY_HBG.h             	   (1.4)
+    +hbg_regif.cpp        	   (1.6)
+    +hbg_regif.h          	   (1.5)
+    +hbgerrslv_regif.cpp  	   (1.6)
+    +hbgerrslv_regif.h    	   (1.6)
+
+- Supported functions:
+    + Protect peripheral circuits
+    + Support HBG groups 
+    + Set P_LOCK_SUPPORT parameter to see if there are necessary regard to the setting of LOCK bit for model or not
+	+ Set P_SEC_DIS parameter to enable mSecure mode
+	+ Set RESET_VALUE parameter to set init value for HBGPROT0
+	+ Set SPID_RESET_VALUE parameter to set init value for HBGPROT1
+

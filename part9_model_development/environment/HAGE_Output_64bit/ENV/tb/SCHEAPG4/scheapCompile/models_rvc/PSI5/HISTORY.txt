@@ -1,0 +1,160 @@
+#############################
+- Release info: Release to fix issue about timer can not count to 0xFFFFFFFF.
+
+- Release date: Apr. 23, 2020.
+
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (SVN repository):
+                                | Revision
+  + PY_PSI5.h                   |   1.2
+  + PSI5_Func.h                 |   1.5
+  + PSI5_Timer.h                |   1.7
+  + psi5_regif.h                |   1.2
+  + PSI5_cmdif.h                |   1.2
+  + psi5_regif.cpp              |   1.2
+  + PSI5_AgentController.h      |   1.7
+  + PSI5_Timer.cpp              |   1.7
+  + PSI5_Func.cpp               |   1.10
+  + PSI5.cpp                    |   1.13
+  + PY_PSI5.cpp                 |   1.2
+  + PSI5.h                      |   1.9
+                                   
+- Supported features: similar to previous release
+- Non-supported features and limitation: similar to previous release
+
+#############################
+## PSI5_Output_64bit_20200420.7z
+#############################
+- Release info: Release to fix issue #122063.
+
+- Release date: Apr. 20, 2020.
+
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (SVN repository):
+                                | Revision
+  + PY_PSI5.h                   |   1.2
+  + PSI5_Func.h                 |   1.2
+  + PSI5_Timer.h                |   1.4
+  + psi5_regif.h                |   1.2
+  + PSI5_cmdif.h                |   1.2
+  + psi5_regif.cpp              |   1.2
+  + PSI5_AgentController.h      |   1.6
+  + PSI5_Timer.cpp              |   1.4
+  + PSI5_Func.cpp               |   1.7
+  + PSI5.cpp                    |   1.10
+  + PY_PSI5.cpp                 |   1.2
+  + PSI5.h                      |   1.6
+                                   
+- Supported features: similar to previous release
+- Non-supported features and limitation: similar to previous release
+
+#############################
+## PSI5_Output_64bit_20200414.7z
+#############################
+- Release info: final release. (update source code to UM 0.70)
+
+- Release date: Apr. 14, 2020.
+
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (SVN repository):
+                                | Revision
+  + PY_PSI5.h                   |   1.2
+  + PSI5_Func.h                 |   1.2
+  + PSI5_Timer.h                |   1.2
+  + psi5_regif.h                |   1.2
+  + PSI5_cmdif.h                |   1.2
+  + psi5_regif.cpp              |   1.2
+  + PSI5_AgentController.h      |   1.4
+  + PSI5_Timer.cpp              |   1.2
+  + PSI5_Func.cpp               |   1.5 
+  + PSI5.cpp                    |   1.8 
+  + PY_PSI5.cpp                 |   1.2
+  + PSI5.h                      |   1.4  
+                                   
+- Supported features: similar to previous release
+- Non-supported features and limitation: similar to previous release
+#############################
+## src_U2A_PSI5_Output_20180724.7z
+#############################
+- Release info: Offical release. (update source code for software reset and coverage)
+
+- Release date: Jul. 24, 2018.
+
+- Test environment: SCHEAP-G4 Rev73, machine x64, gcc4.9.3.
+
+- File (SVN repository):
+                                | Revision
+  + PY_PSI5.h                   |   1.1
+  + PSI5_Func.h                 |   1.1
+  + PSI5_Timer.h                |   1.1
+  + psi5_regif.h                |   1.1
+  + PSI5_cmdif.h                |   1.1
+  + psi5_regif.cpp              |   1.1
+  + PSI5_AgentController.h      |   1.1
+  + PSI5_Timer.cpp              |   1.1
+  + PSI5_Func.cpp               |   1.2 (*)
+  + PSI5.cpp                    |   1.2 (*)
+  + PY_PSI5.cpp                 |   1.1
+  + PSI5.h                      |   1.1  
+(*) updated source code in this release  
+                                   
+- Supported features: similar to previous release
+- Non-supported features and limitation: similar to previous release
+  
+#############################
+## src_U2A_PSI5_Output_20180705.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Jul. 05, 2018.
+
+- Test environment: SCHEAP-G4 Rev73, machine x64, gcc4.9.3.
+
+- File (SVN repository):
+                                | Revision
+  + PY_PSI5.h                   |   1.1
+  + PSI5_Func.h                 |   1.1
+  + PSI5_Timer.h                |   1.1
+  + psi5_regif.h                |   1.1
+  + PSI5_cmdif.h                |   1.1
+  + psi5_regif.cpp              |   1.1
+  + PSI5_AgentController.h      |   1.1
+  + PSI5_Timer.cpp              |   1.1
+  + PSI5_Func.cpp               |   1.1
+  + PSI5.cpp                    |   1.1
+  + PY_PSI5.cpp                 |   1.1
+  + PSI5.h                      |   1.1              
+                                   
+- Supported features:
+  + Communication mode:
+    . PSI5-A: Asynchronous
+	. PSI5-P: Synchronous Parallel Bus Mode 
+	. PSI5_U: Synchronous Parallel Universal Bus Mode
+	. PSI5-D: Synchronous Daisy Chain Bus Mode 
+	. PSI5-V: Variable Time Triggered Synchronous Operation Mode 
+  + Sensor to ECU communication:
+    . Data can be received up to eight slots
+	. Automatic detection of start bits 
+	. 10 to 28 bits of data can be received 
+	. Serial message frames can be received up to eight slots
+    . Automatic calculation of check bits for both data and serial message frames
+    . Stores CRC and parity bits received with the data 
+  + ECU to Sensor Communication:
+    . Tooth Gap Mode
+	. Pulse Width Mode
+	. Automatic detection of start conditions
+	. Frames 1, 2, 3, and 4
+	. Automatic appending of synchronization bits
+	. Automatic appending of CRCs 
+  + PAS Compatibility Mode:
+    . Data word length (8 to 24 bits) 
+	. Data check scheme (Parity and CRCs) 
+	. Data direction (MSB first)
+	. Communication mode (PSI5-A, PSI5-P, PSI5_U, PSI5-D, PSI5-V)
+  + Software reset function.
+- Non-supported features and limitation:
+  + Manchester to binary code conversion
+  + Debug registers (DBGCTRL, DBGST, DBGSTCLR, DBGINTEN, DBGENABLE)

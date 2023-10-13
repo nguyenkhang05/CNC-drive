@@ -1,0 +1,43 @@
+%MODULE apltsc000
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  7 
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name             reg_name            wsize   rsize       length  offset  factor_start    factor_end  factor_index    factor_step access   init   support  callback
+    %%REG      LTSCnTCS    	    LTSCnTCS          8|32    8|16|32     32      0x10    -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      LTSCnTCT    	    LTSCnTCT	     8|32    8|16|32     32      0x14    -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      LTSCnCSTR  	    LTSCnCSTR        8|32    8|16|32     32      0x18    -               -           -               -           R        0x0     TRUE     -
+    %%REG      LTSCnRM  	    LTSCnRM          8|32    8|16|32     32      0x34    -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      LTSCnEMU  	    LTSCnEMU         8|32    8|16|32     32      0x38    -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      LTSCnCNTL  	    LTSCnCNTL        32      8|16|32     32      0x40    -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      LTSCnCNTH  	    LTSCnCNTH        32      8|16|32     32      0x44    -               -           -               -           R|W      0x0     TRUE     -
+	
+%REG_NAME LTSCnTCS
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT      LTSCnTS	        0       0       0       R|W     TRUE        W
+    
+%REG_NAME LTSCnTCT
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT      LTSCnTT	        0       0       0       R|W     TRUE        W
+ 
+%REG_NAME LTSCnCSTR
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT      LTSCnCST	        0       0       0       R       TRUE        -
+	
+%REG_NAME LTSCnRM
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT      LTSCnRM	        0       0       0       R|W     TRUE        W
+
+%REG_NAME LTSCnEMU
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT      LTSCnSVSDIS      7       7       0       R|W     TRUE        W
+
+%REG_NAME LTSCnCNTL
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT      LTSCnCNTL	31      0       0       R|W     TRUE        W
+	
+%REG_NAME LTSCnCNTH
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT      LTSCnCNTH        31      0       0       R|W     TRUE        W
+	
+	

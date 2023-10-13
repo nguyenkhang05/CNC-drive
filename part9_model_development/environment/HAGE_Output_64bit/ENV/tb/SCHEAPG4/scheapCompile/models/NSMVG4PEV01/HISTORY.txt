@@ -1,0 +1,23 @@
+NSMVG4PEV01 HISTORY
+
+--------------------------------------------------------
+<2018.2.22>
+
+SVN version
+  Rev.30
+
+File
+  NSMVG4PEV01.cpp,h 
+    - added the connection CPU guest mode info of INTC1
+
+--------------------------------------------------------
+<2017.10.26>
+
+SVN version
+  Rev.142 (Adapted to 64 bit OS)
+
+File
+  - NSMVG4PEV01.cpp, NSMVG4PEV01.h
+    - NSMVG4PEV01_INTC1_SELF_ADDRESS (unsigned int)0xFFFC0000 -> (ADDRESS_TYPE)0xFFFC0000
+    - NSMVG4PEV01_INTC1_OFFS_ADDRESS (unsigned int)0x00004000 -> (ADDRESS_TYPE)0x00004000
+

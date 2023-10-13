@@ -1,0 +1,106 @@
+# -----------------------------------------------------------------------------
+# $Id$
+#
+# Copyright(c) 2012-2015 Renesas System Design Co., Ltd.
+# Copyright(c) 2012-2015 Renesas Design Vietnam Co., Ltd.
+# RENESAS ELECTRONICS CONFIDENTIAL AND PROPRIETARY.
+# This program must be used solely for the purpose for which
+# it was furnished by Renesas Electronics Corporation. No part of this
+# program may be reproduced or disclosed to others, in any
+# form, without the prior written permission of Renesas Electronics
+# Corporation.
+# -----------------------------------------------------------------------------
+
+%MODULE sarad
+    #              name     offset_size  
+    %%REG_INSTANCE reg_def  11           
+
+%REG_CHANNEL   reg_def
+     %%TITLE    name        reg_name     wsize     rsize     length   offset   factor_start   factor_end    factor_index    factor_step  init        access  support  callback
+     %%REG      ADSYNSTCR   ADSYNSTCR    8|16|32   8|16|32   8        0x300       -             -               -              -          0          W        TRUE      -
+     %%REG      ADTSYNSTCR  ADTSYNSTCR   8|16|32   8|16|32   8        0x304       -             -               -              -          0          W        TRUE      - 
+     %%REG      RDRVR       RDRVR        32        8|16|32   32       0x308       -             -               -              -          0          W|R      FALSE     -   
+     %%REG      VMONVDCR1   VMONVDCR1    8         8         8        0x30C       -             -               -              -          0          W|R      TRUE      -
+     %%REG      VMONVDCR2   VMONVDCR2    8         8         8        0x310       -             -               -              -          0          W|R      TRUE      - 
+
+%REG_NAME  ADSYNSTCR 
+   %%TITLE     name       upper   lower     init    access      support     callback    
+   %%BIT       ADSTART    0        0        0        W           -           W
+
+%REG_NAME  ADTSYNSTCR
+   %%TITLE     name       upper   lower     init    access      support     callback    
+   %%BIT       ADTSTART    0        0        0       W           -           W
+
+%REG_NAME  RDRVR
+   %%TITLE     name       upper   lower     init    access      support     callback    
+   %%BIT        KEY         31     16        0      W|R          FALSE          - 
+   %%BIT        RVRS         0     0         0      W|R          FALSE          -
+
+%REG_NAME  VMONVDCR1
+   %%TITLE     name       upper   lower     init    access      support     callback  
+   %%BIT        VDE1         0     0         0      W|R          TRUE        W
+
+%REG_NAME  VMONVDCR2
+   %%TITLE     name       upper   lower     init    access      support     callback 
+   %%BIT        VDE2         0     0         0      W|R          TRUE        W
+
+%CMD_BASEID  tgt reg
+%CMD_NODUMP_API EnableInsertInput EnableDumpResult DumpProfile ClearProfile
+%CMD_RW DumpInterrupt      <enable: bool=false>             @ Display interrupt information when interrupt get set[ns]
+%CMD_RW EnableConvertInfo  <enable: bool=false>             @ Display AD convert activity
+
+%CMD_RW Avrefh0            <Avrefh0: double=3.3>            @ Reference voltage of AVREFH0
+%CMD_RW Avrefh1            <Avrefh1: double=3.3>            @ Reference voltage of AVREFH1
+%CMD_RW Avrefh2            <Avrefh2: double=3.3>            @ Reference voltage of AVREFH2
+%CMD_RW Avrefh3            <Avrefh3: double=3.3>            @ Reference voltage of AVREFH3
+%CMD_RW AVcc0              <AVcc0: double=3.3>              @ Reference voltage of AVCC0
+%CMD_RW AVcc1              <AVcc1: double=3.3>              @ Reference voltage of AVCC1
+%CMD_RW AVcc2              <AVcc2: double=3.3>              @ Reference voltage of AVCC2
+%CMD_RW AVcc3              <AVcc3: double=3.3>              @ Reference voltage of AVCC3
+
+%CMD_RW tTSPL              <tTSPL: double=27>               @ Number of sampling cycles in T&H circuit (AD clock)
+%CMD_RW tTHSD              <tTHSD: double=5>                @ Delay time from detecting a hold trigger until starting to hold an analog input (AD clock)
+%CMD_RW tTHLD              <tTHLD: double=10>               @ Delay time from starting to hold an analog input until starting AD conversion (AD clock)
+%CMD_RW ExSmpt             <ExSmpt: unsigned int=18>        @ Number of sampling cycles in AD conversion (AD clock)
+%CMD_RW tSAR               <tSAR: double=0>                 @ Successive approximation AD convert cycle (AD clock)
+%CMD_RW tD                 <tD: double=0>                   @ Delay time until starting scan group (APB clock)
+%CMD_RW tED                <tED: double=0>                  @ Delay time until complete scan group (APB clock)
+
+%CMD_RW ForcedIdError0     <enable: bool=false>             @ The ID error occurs forcibly into ADCA0 when writting DRn
+%CMD_RW ForcedIdError1     <enable: bool=false>             @ The ID error occurs forcibly into ADCA1 when writting DRn
+%CMD_RW ForcedIdError2     <enable: bool=false>             @ The ID error occurs forcibly into ADCA2 when writting DRn
+%CMD_RW ForcedIdError3     <enable: bool=false>             @ The ID error occurs forcibly into ADCA3 when writting DRn
+%CMD_RW ForcedParityError0 <enable: bool=false>             @ The parity error occurs forcibly into ADCA0 when reading DRn or DIRn
+%CMD_RW ForcedParityError1 <enable: bool=false>             @ The parity error occurs forcibly into ADCA1 when reading DRn or DIRn
+%CMD_RW ForcedParityError2 <enable: bool=false>             @ The parity error occurs forcibly into ADCA2 when reading DRn or DIRn
+%CMD_RW ForcedParityError3 <enable: bool=false>             @ The parity error occurs forcibly into ADCA3 when reading DRn or DIRn
+%CMD_RW ForcedOpenError0   <enable: bool=false>             @ The open circuit error occurs forcibly into ADCA0 when VCRn.PUE or PDE is 1
+%CMD_RW ForcedOpenError1   <enable: bool=false>             @ The open circuit error occurs forcibly into ADCA1 when VCRn.PUE or PDE is 1
+%CMD_RW ForcedOpenError2   <enable: bool=false>             @ The open circuit error occurs forcibly into ADCA2 when VCRn.PUE or PDE is 1
+%CMD_RW ForcedOpenError3   <enable: bool=false>             @ The open circuit error occurs forcibly into ADCA3 when VCRn.PUE or PDE is 1
+%CMD_RW ForcedBreak0       <enable: bool=false>             @ The break circuit error occurs forcibly into ADCA0 when ODCR.ODDE = 1
+%CMD_RW ForcedBreak1       <enable: bool=false>             @ The break circuit error occurs forcibly into ADCA1 when ODCR.ODDE = 1
+%CMD_RW ForcedBreak2       <enable: bool=false>             @ The break circuit error occurs forcibly into ADCA2 when ODCR.ODDE = 1
+%CMD_RW ForcedBreak3       <enable: bool=false>             @ The break circuit error occurs forcibly into ADCA3 when ODCR.ODDE = 1
+
+%CMD_RW StartAddrADCA0     <addr: unsigned int=0x1000>      @ The start address of ADCA0 module
+%CMD_RW StartAddrADCA1     <addr: unsigned int=0x2000>      @ The start address of ADCA1 module
+%CMD_RW StartAddrADCA2     <addr: unsigned int=0x3000>      @ The start address of ADCA2 module
+%CMD_RW StartAddrADCA3     <addr: unsigned int=0x4000>      @ The start address of ADCA3 module
+%CMD_RW EndAddressADCA0    <addr: unsigned int=0x1FFF>      @ The end address of ADCA0 module
+%CMD_RW EndAddressADCA1    <addr: unsigned int=0x2FFF>      @ The end address of ADCA1 module
+%CMD_RW EndAddressADCA2    <addr: unsigned int=0x3FFF>      @ The end address of ADCA1 module
+%CMD_RW EndAddressADCA3    <addr: unsigned int=0x4FFF>      @ The end address of ADCA2 module
+%CMD_RW OffsetAddMask      <addr: unsigned int=0x7FFF>      @ The offset address mask
+%CMD_RW ADOPDIG0Addr       <addr: unsigned int=0xFFF23000>  @ The address of ADOPDIG0 register
+%CMD_RW ADOPDIG1Addr       <addr: unsigned int=0xFFF23040>  @ The address of ADOPDIG1 register
+
+%CMD_RW EnableTimeCalculation   <enable: bool=true>         @ Enable using formula to calculate the delay times
+
+%CMD_RW AVccMax            <AVccMax: double=3.6>            @ The maximum value of AVCCm
+%CMD_RW AVccMin            <AVccMin: double=3>              @ The minimum value of AVCCm
+%CMD_RW AvrefhMin          <AvrefhMin: double=3>            @ The minimum value of Avrefhm
+
+%CMD_ACTION DumpStatInfo : void @ Dump the statistical information about SAR model activity
+%CMD_ACTION SetCLKfreq <clk_name: std::string> <clk_freq: double>: void @ Setup the new clock frequency
+%CMD_ACTION AssignTHCircuit <adc_index: unsigned int> <th_channel: unsigned int> <group_channel: unsigned int> <physic_channel: unsigned int>: void @ Assign the T&H channel to corresponding analog channel

@@ -1,0 +1,12 @@
+%MODULE kcprot_e2
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  4 
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name                           reg_name                     wsize   rsize        length  offset  factor_start    factor_end  factor_index    factor_step access   init   support  callback
+    %%REG      KCPROT                         KCPROT                       32      8|16|32      32      0x00    -               -           -               -           R/W      0x0     TRUE     -
+    
+%REG_NAME KCPROT                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    KCPROT             31       1      0       W       TRUE        -
+    %%BIT    KCE                0        0      0       R|W     TRUE        W

@@ -1,0 +1,20 @@
+// ----------------------------------------------------------------------
+// $Id: ecm_e2_wp_cmdif.txt,v 1.5 2012/09/19 04:07:40 lamdangpham Exp $
+// 
+// Copyright(c) 2012 Renesas Electronics Corporation
+// Copyright(c) 2012 Renesas Design Vietnam Co., Ltd.
+// RENESAS ELECTRONICS CONFIDENTIAL AND PROPRIETARY
+// This program must be used solely for the purpose for which
+// it was furnished by Renesas Electronics Corporation. No part of this
+// program may be reproduced or disclosed to others, in any
+// form, without the prior written permission of Renesas Electronics
+// Corporation.
+// ----------------------------------------------------------------------
+
+%MODULE ecm_e2_wp
+  %CMD_BASEID tgt
+  %CMD_NODUMP_API EnableDumpResult EnableInsertInput CommandCB DumpProfile ClearProfile
+  %CMD_RW DumpInterrupt <enable:bool=false> @ Enable/disable interrupt information display when an interrupt is sent
+  %CMD_RW EnableTransInfo <enable:bool=false> @ Enable/disable information display when ECM is turned on/off
+  %CMD_ACTION DumpStatInfo : void @ Dumps statistical information of ECM
+  %CMD_ACTION SetCLKfreq <clk_name: std::string> <clk_freq: double>: void @ Setup the new clock frequency

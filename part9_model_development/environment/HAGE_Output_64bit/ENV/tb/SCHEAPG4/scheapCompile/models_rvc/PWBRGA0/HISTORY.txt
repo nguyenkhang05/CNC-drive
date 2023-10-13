@@ -1,0 +1,142 @@
+***************************************************************************************************
+src_PRM_Diag_20180820.7z
+-----------------------------
+- Release info: Send alpha source code
+- Release date: Aug 20, 2018
+- Test environment: SCHEAP G4 Rev73, gcc 4.1.3, x64
+- Update source code:
+    PWBRGA0_AgentController.h     1.3
+    PWBRGA0.cpp                   1.7
+    PWBRGA0.h                     1.4
+    PWBRGA0_Func.cpp              1.5
+    PWBRGA0_Func.h                1.1
+    pwbrga0_regif.cpp             1.2
+    pwbrga0_regif.h               1.2
+    PWBRGA0_cmdif.h               1.1
+    PY_PWBRGA0.cpp                1.1
+    PY_PWBRGA0.h                  1.1
+
+- Supported functions: 
+    + Max frequency of clock (PCLK): unlimited frequency
+    + Synchronous reset (PRESETZ): async.
+    + Equipped with 4 sets of 11bit timer counter
+        . There are 4 registers PWBA0BRSn (n = 0-3). Each register has 11bit to set baud rate clock cycle.
+    + Four enable signals to intermittent operate PCLK are output
+        . There are 4 output clock enable port PWBA_CKENn (n = 0-3)
+    + Emulation function
+        . This macro provides with the SVSTOP signal as an emulation function. 
+        The SVSTOP input is PWBA0EMU: It is controlled by the PWBA0SVSDIS bit. 
+        The SVSTOP input is designed on the assumption that a synchronous PCLK/PCLKRW signal is input. 
+
+***************************************************************************************************
+PWM_Output_20180904.7z
+-----------------------------
+- Release info: Final release
+- Release date: Sep 04, 2018
+- Test environment: SCHEAP G4 Rev73, gcc 4.1.3, x64
+- Update source code:
+    PWBRGA0_AgentController.h     1.4
+    PWBRGA0.cpp                   1.8
+    PWBRGA0.h                     1.5
+    PWBRGA0_Func.cpp              1.6
+    PWBRGA0_Func.h                1.1
+    pwbrga0_regif.cpp             1.2
+    pwbrga0_regif.h               1.2
+    PWBRGA0_cmdif.h               1.1
+    PY_PWBRGA0.cpp                1.1
+    PY_PWBRGA0.h                  1.1
+
+- Supported functions: Not change
+- Non supported functions: Not support SCAN test
+
+***************************************************************************************************
+PWM_Output_20180915.7z
+-----------------------------
+Not change.
+
+***************************************************************************************************
+src_PRM_Diag_20180924.7z
+-----------------------------
+- Release info: Release update code to improve simulation speed as ticket #59163
+- Release date: Sep 24, 2018
+- Test environment: SCHEAP G4 Rev73, gcc 4.1.3, x64
+- Update source code:
+    PWBRGA0_AgentController.h     1.4
+    PWBRGA0.cpp                   1.11
+    PWBRGA0.h                     1.7
+    PWBRGA0_Func.cpp              1.6
+    PWBRGA0_Func.h                1.1
+    pwbrga0_regif.cpp             1.2
+    pwbrga0_regif.h               1.2
+    PWBRGA0_cmdif.h               1.1
+    PY_PWBRGA0.cpp                1.2
+    PY_PWBRGA0.h                  1.2
+
+    Update PWBRGA0.cpp to ver1.11, PWBRGA0.h ver1.7, PY_PWBRGA0.cpp ver1.2, PY_PWBRGA0.h ver1.2 to:
+      + change the output ports CKEN from bool to sc_dt::uint64. These ports store period value of CKEN with time unit according to time resolution.
+      + Add python command EnableRegisterMessage to enable/disable info/warning/error message in register IF
+
+- Supported functions: Not change
+- Non supported functions: Not change
+
+***************************************************************************************************
+PWM_Output_20181002.7z
+-----------------------------
+- Release info: Release update code to improve simulation speed as ticket #59163
+- Release date: Oct 01, 2018
+- Test environment: SCHEAP G4 Rev73, gcc 4.1.3, x64
+- Update source code (not change):
+    PWBRGA0_AgentController.h     1.4
+    PWBRGA0.cpp                   1.11
+    PWBRGA0.h                     1.7
+    PWBRGA0_Func.cpp              1.6
+    PWBRGA0_Func.h                1.1
+    pwbrga0_regif.cpp             1.2
+    pwbrga0_regif.h               1.2
+    PWBRGA0_cmdif.h               1.1
+    PY_PWBRGA0.cpp                1.2
+    PY_PWBRGA0.h                  1.2
+
+- Supported functions: Not change
+- Non supported functions: Not change
+
+***************************************************************************************************
+PWM_Output_64bit_20200224.7z
+-----------------------------
+- Release info: Release updated code to following HWM spec Rev.061
+- Release date: Feb 24, 2020
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+    PWBRGA0_AgentController.h     1.4
+    PWBRGA0.cpp                   1.12
+    PWBRGA0.h                     1.8
+    PWBRGA0_Func.cpp              1.7
+    PWBRGA0_Func.h                1.1
+    pwbrga0_regif.cpp             1.4
+    pwbrga0_regif.h               1.3
+    PWBRGA0_cmdif.h               1.1
+    PY_PWBRGA0.cpp                1.2
+    PY_PWBRGA0.h                  1.2
+
+- Supported functions: Not change
+- Non supported functions: Not change
+***************************************************************************************************
+PWM_Output_64bit_20200309.7z
+-----------------------------
+- Release info: Release updated code after updating for feedback #119795
+- Release date: Mar 09, 2020
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+    PWBRGA0_AgentController.h     1.4
+    PWBRGA0.cpp                   1.12
+    PWBRGA0.h                     1.8
+    PWBRGA0_Func.cpp              1.7
+    PWBRGA0_Func.h                1.1
+    pwbrga0_regif.cpp             1.4
+    pwbrga0_regif.h               1.3
+    PWBRGA0_cmdif.h               1.2
+    PY_PWBRGA0.cpp                1.2
+    PY_PWBRGA0.h                  1.2
+
+- Supported functions: Not change
+- Non supported functions: Not change

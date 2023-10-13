@@ -1,0 +1,7 @@
+"Func","PE","TC","Call Count","Cycle Count"
+"_strlen",0,-1,96,4632
+"_a",0,-1,4,30
+"_b",0,-1,4,22
+"_strcpy",0,-1,8,819
+"_myputc",0,-1,88,528
+"_CallFuncs",0,-1,1,1109

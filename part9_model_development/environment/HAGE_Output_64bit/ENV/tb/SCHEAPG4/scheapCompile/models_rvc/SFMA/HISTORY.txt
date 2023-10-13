@@ -1,0 +1,82 @@
+***************************************************************************************************
+SFMA_Output_64bit_20181012.7z
+-----------------------------
+- Release info: Alpha release data
+- Release date: Oct 12, 2018
+- Test environment: SC-HEAP G4 Rev135 64 bit
+- Source code (CVS repository):
+    PY_SFMA.cpp               (v1.1)
+    PY_SFMA.h                 (v1.1)
+    SFMA_AgentController.h    (v1.1)
+    SFMA_cmdif.h              (v1.1)
+    SFMA.cpp                  (v1.1)
+    SFMA_ExternalRead.cpp     (v1.1)
+    SFMA_ExternalRead.h       (v1.1)
+    SFMA_Func.cpp             (v1.1)
+    SFMA_Func.h               (v1.1)
+    SFMA.h                    (v1.1)
+    SFMA_ReadCache.cpp        (v1.1)
+    SFMA_ReadCache.h          (v1.1)
+    sfma_regif.cpp            (v1.1)
+    sfma_regif.h              (v1.1)
+    sfma_regif.txt            (v1.1)
+    SFMA_TlmExtension.h       (v1.1)
+- Supported features:
+    + Serial Flash Memory Interface A (SFMA) controls signals to the serial flash memory connected to the SPI multi I/O bus space
+    + A data bus size of 1 bit, 2 bits, or 4 bits can be selected
+    + Support External Address Space Read Mode and SPI Operating Mode
+    + SPBCLK frequency division ratio can be set from 2 to 4080
+    + Delay times can be set
+
+***************************************************************************************************
+SFMA_Output_64bit_20181031.7z
+-----------------------------
+- Release info: Final release data
+- Release date: Oct 31, 2018
+- Test environment: SC-HEAP G4 Rev135 64 bit
+- Source code (CVS repository):
+    PY_SFMA.cpp               (v1.1)
+    PY_SFMA.h                 (v1.1)
+    SFMA_AgentController.h    (v1.2)
+    SFMA_cmdif.h              (v1.2)
+    SFMA.cpp                  (v1.6)
+    SFMA_ExternalRead.cpp     (v1.2)
+    SFMA_ExternalRead.h       (v1.1)
+    SFMA_Func.cpp             (v1.2)
+    SFMA_Func.h               (v1.1)
+    SFMA.h                    (v1.2)
+    SFMA_ReadCache.cpp        (v1.2)
+    SFMA_ReadCache.h          (v1.1)
+    sfma_regif.cpp            (v1.3)
+    sfma_regif.h              (v1.3)
+    sfma_regif.txt            (v1.2)
+    SFMA_TlmExtension.cpp     (v1.1)
+    SFMA_TlmExtension.h       (v1.2)
+- Supported features: not change from previous release
+- None supported features: None.
+***************************************************************************************************
+SFMA_Output_64bit_20200217.7z
+-----------------------------
+- Release info: Final release data
+- Release date: Feb 17, 2020
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+    PY_SFMA.cpp               (v1.2)
+    PY_SFMA.h                 (v1.2)
+    SFMA_AgentController.h    (v1.3)
+    SFMA_cmdif.h              (v1.3)
+    SFMA.cpp                  (v1.8)
+    SFMA_ExternalRead.cpp     (v1.4)
+    SFMA_ExternalRead.h       (v1.2)
+    SFMA_Func.cpp             (v1.3)
+    SFMA_Func.h               (v1.2)
+    SFMA.h                    (v1.3)
+    SFMA_ReadCache.cpp        (v1.3)
+    SFMA_ReadCache.h          (v1.2)
+    sfma_regif.cpp            (v1.4)
+    sfma_regif.h              (v1.4)
+    sfma_regif.txt            (v1.2)
+    SFMA_TlmExtension.cpp     (v1.2)
+    SFMA_TlmExtension.h       (v1.3)
+- Supported features: not change from previous release
+- None supported features: None.

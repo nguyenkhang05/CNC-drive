@@ -1,0 +1,129 @@
+##############################
+- Release info: Release source code ( Maintenance)
+- Release date:  Jan 17th, 2020.
+
+- File (CVS repository):
+    + DTSG_U2.cpp                     (1.12)
+    + DTSG_U2.h                       (1.7)
+    + DTSG_U2_AgentController.h       (1.3)
+    + DTSG_U2_Common_Guard.cpp        (1.14)
+    + DTSG_U2_Common_Guard.h          (1.4)
+    + DTSG_U2_Func.cpp                (1.12)
+    + DTSG_U2_Func.h                  (1.7)
+    + DTSG_U2_cmdif.h                 (1.4)
+    + PY_DTSG_U2.cpp                  (1.3)
+    + PY_DTSG_U2.h                    (1.3)
+    + dtsg_u2_regif.cpp               (1.7)
+    + dtsg_u2_regif.h                 (1.7)
+
+- Supported functions: As previous release and
+    + Update operation in zero clock and reset ( Software debugger)
+    + Fix issue #112436( issue REMAP: not permit Debug Master access in case zero clock or reset)
+    + Update bit name for DTSGPROT_nnn/GR registers(HWUM061)
+##############################
+- Release info: Release after remove character "'s" in Help message
+- Release date: Apr 19th, 2019.
+
+- File (CVS repository):
+    + DTSG_U2.cpp                     (1.10)
+    + DTSG_U2.h                       (1.5)
+    + DTSG_U2_AgentController.h       (1.2)
+    + DTSG_U2_Common_Guard.cpp        (1.11)
+    + DTSG_U2_Common_Guard.h          (1.3)
+    + DTSG_U2_Func.cpp                (1.11)
+    + DTSG_U2_Func.h                  (1.6)
+    + DTSG_U2_cmdif.h                 (1.3)
+    + PY_DTSG_U2.cpp                  (1.2)
+    + PY_DTSG_U2.h                    (1.2)
+    + dtsg_u2_regif.cpp               (1.6)
+    + dtsg_u2_regif.h                 (1.6)
+
+- Supported functions: As previous release
+
+##############################
+- Release info: Release after function debug on Linux and Window
+- Release date: Dec 25th, 2018.
+
+- File (CVS repository):
+    + DTSG_U2.cpp                     (1.9)
+    + DTSG_U2.h                       (1.5)
+    + DTSG_U2_AgentController.h       (1.2)
+    + DTSG_U2_Common_Guard.cpp        (1.9)
+    + DTSG_U2_Common_Guard.h          (1.3)
+    + DTSG_U2_Func.cpp                (1.11)
+    + DTSG_U2_Func.h                  (1.6)
+    + DTSG_U2_cmdif.h                 (1.3)
+    + PY_DTSG_U2.cpp                  (1.2)
+    + PY_DTSG_U2.h                    (1.2)
+    + dtsg_u2_regif.cpp               (1.6)
+    + dtsg_u2_regif.h                 (1.6)
+
+- Supported functions: As previous release and 
+    + Update model operation in zero clock and reset period
+    + Fix issue in FD phase
+
+###############################
+- Release info: Update port: remove resetz port replace by resetPort in BusBridgeModuleBase
+- Release date: Nov 22th, 2018.
+
+- File (CVS repository):
+    + DTSG_U2.cpp                     (1.5)
+    + DTSG_U2.h                       (1.2)
+    + DTSG_U2_AgentController.h       (1.1)
+    + DTSG_U2_Common_Guard.cpp        (1.2)
+    + DTSG_U2_Common_Guard.h          (1.1)
+    + DTSG_U2_Func.cpp                (1.5)
+    + DTSG_U2_Func.h                  (1.4)
+    + DTSG_U2_cmdif.h                 (1.1)
+    + PY_DTSG_U2.cpp                  (1.1)
+    + PY_DTSG_U2.h                    (1.1)
+    + dtsg_u2_regif.cpp               (1.4)
+    + dtsg_u2_regif.h                 (1.4)
+
+- Supported functions: Not change
+    + Protect peripheral circuits
+      + Support 129 channels (0~127 and GR). 
+      + The number of channel is set in constructor 
+      DTSG_U2(sc_module_name iname, uint32_t rLatency, uint32_t wLatency, uint32_t num_channel, SIM_MODE_T simmode). Example:
+      DTSG_U2 =  new DTSG_U2("DTSG_U2", 0, 0, 129, G4SS->mIssMode);
+        * Module name: DTSG_U2
+        * Read Initialize Latency: 0
+        * Write Initialize Latency: 0
+        * Number of Channel must in range [1~129]: 129 
+        * Simode: G4SS->mIssMode
+      + Up to 8 permitted SPID per 1 channel
+    + Capture error request information
+
+###############################
+- Release info: Source code Alpha version which is fixed ports and registers.
+- Release date: Nov 15th, 2018.
+
+- File (CVS repository):
+    + DTSG_U2.cpp                     (1.1)
+    + DTSG_U2.h                       (1.1)
+    + DTSG_U2_AgentController.h       (1.1)
+    + DTSG_U2_Common_Guard.cpp        (1.1)
+    + DTSG_U2_Common_Guard.h          (1.1)
+    + DTSG_U2_Func.cpp                (1.1)
+    + DTSG_U2_Func.h                  (1.1)
+    + DTSG_U2_cmdif.h                 (1.1)
+    + PY_DTSG_U2.cpp                  (1.1)
+    + PY_DTSG_U2.h                    (1.1)
+    + dtsg_u2_regif.cpp               (1.1)
+    + dtsg_u2_regif.h                 (1.1)
+
+- Supported functions:
+    + Protect peripheral circuits
+      + Support 129 channels (0~127 and GR). 
+      + The number of channel is set in constructor 
+      DTSG_U2(sc_module_name iname, uint32_t rLatency, uint32_t wLatency, uint32_t num_channel, SIM_MODE_T simmode). Example:
+      DTSG_U2 =  new DTSG_U2("DTSG_U2", 0, 0, 129, G4SS->mIssMode);
+        * Module name: DTSG_U2
+        * Read Initialize Latency: 0
+        * Write Initialize Latency: 0
+        * Number of Channel must in range [1~129]: 129 
+        * Simode: G4SS->mIssMode
+      + Up to 8 permitted SPID per 1 channel
+    + Capture error request information
+    
+

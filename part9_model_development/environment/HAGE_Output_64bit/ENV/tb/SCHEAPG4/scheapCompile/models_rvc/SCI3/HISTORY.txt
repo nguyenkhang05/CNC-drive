@@ -1,0 +1,34 @@
+=============================================
+=               RELEASE HISTORY             =
+=============================================
+
+v2019_01_29
+  - Update source code to fix the difference between local variable and register value (refs #81755)
+
+v2018_02_08
+  - Update source code to fix segmentation fault on SC-HEAP (gcc issue?)
+  - Update environment to support "-m64" compilation (applying Regression environment 17004)
+
+v2017_09_06
+  - Update environment to verify with newest all_library
+    + Redmine tickets #88383 (note #18)
+
+v2017_08_31
+  - Fix bug reported by ASTC (clock-synchronous mode, external clock)
+    + Redmine tickets #88383 (and #88438)
+
+v2017_03_29
+  - Release complete version for C1MA
+    + Finish functional debug.
+
+v2017_03_21
+  - Release temporary version for C1MA
+    + Update SCI3 for C1MA : add 16 bits data and double speed features.
+    + Use RegIfGen v2015_03_30.
+    + Finish 80% functional debug : 120/120 Tms of regression test, 9/12 new Tms.
+
+v2015_08_06
+  - Release for C1x-A
+    + Update SCI3 Command IF (re-generate using CommandIF Generator v2015_02_12).
+      Update SCI3 model to dump message in case of setting less-than-0 clock frequency
+      (not checked by new Command IF).

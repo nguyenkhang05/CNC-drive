@@ -1,0 +1,133 @@
+#############################
+## PSIS011_Output_20171218.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Dec 18, 2017.
+
+- Test environment: SCHEAP-G4 Rev132, machine x32, gcc4.1.2.
+
+- File (CVS repository):
+  PSIS011_AgentController.h      1.4
+  PSIS011_Ch_Reg.cpp             1.5
+  PSIS011_Ch_Reg.h               1.4
+  psis011_ch_regif.cpp           1.6
+  psis011_ch_regif.h             1.6
+  PSIS011_cmdif.h                1.4
+  PSIS011_Cmn_Reg.cpp            1.5
+  PSIS011_Func.h                 1.5
+  PSIS011_Cmn_Reg.h              1.4
+  PSIS011_Func.cpp               1.5
+  psis011_cmn_regif.cpp          1.5
+  psis011_cmn_regif.h            1.5
+  PSIS011.cpp                    1.5
+  PSIS011.h                      1.6
+  psis011_mbch_regif.cpp         1.6
+  PY_PSIS011.cpp                 1.4
+  psis011_mbch_regif.h           1.6
+  PY_PSIS011.h                   1.4
+
+- Supported features:
+  + UART communication: 
+    Sampling clock, and baud rate: are not limited in this model.
+    Frame format (total of 10 or 11 bits):
+       Start bit: 1 bit
+       Data: 8 bits
+       Parity: None, event parity, or odd parity (can be specified separately
+       for reception and transmission)
+       Stop bit: 1 bit
+  + Sensor-to-ECU communication:
+    Possible reception of 8 channels of frame data.
+    Possible reception of 8-bit to 28-bit payload.
+    Automatic calculation of CRC and parity values from payload.
+    Possible storage of the CRC and parity bits attached to the data in
+    received frames.
+    Monitoring the number of packets in received frames.
+    Timestamp function for received messages.
+    Monitoring the received frames by WDT.
+  + ECU-to-sensor communication:
+    Automatic calculation of the CRC value to be added to frame data.
+    Output of the formats pursuant to frame 1 to frame 4.
+  + Other interface:
+    Use TLM socket for APB interface.
+    8 interrupt output for 8 channels (ch0-7).
+    8 DMA reception requests for 8 channels (ch0-7).
+    7 DMA transmission requests for 7 channels (ch1-7).
+
+- Non-supported features and limitation:
+  + Not supoprt test mode.
+  + Not support Noise Filter because input port is packet, not wire. Delay
+  period at Noise Filter is set via Python IF command PSIS011_SetDNFDelay().
+  + Just receive whole UART frame only, not store some bits of incomplete
+  frame. So, if an UART frame is not finished receiving at time of WDT error,
+  no bit in this frame is stored.
+
+##################################
+## PSIS011_Output_20180224.7z
+##################################
+- Release info: Support 64bit environment, fix issue in #23128
+- Release date: Feb 22, 2018.
+- Test environment: SCHEAP-G4 Rev163, machine x64, gcc4.9.3
+- Updated source code:
+  PSIS011_AgentController.h      1.4
+  PSIS011_Ch_Reg.h               1.4
+  psis011_ch_regif.h             1.6
+  PSIS011_cmdif.h                1.4
+  PSIS011_Cmn_Reg.h              1.4
+  psis011_cmn_regif.h            1.5
+  PSIS011_Func.h                 1.5
+  psis011_mbch_regif.h           1.6
+  PY_PSIS011.h                   1.4
+  PSIS011.cpp                    1.6
+  PSIS011_Ch_Reg.cpp             1.5
+  psis011_ch_regif.cpp           1.6
+  PSIS011_Cmn_Reg.cpp            1.5
+  psis011_cmn_regif.cpp          1.5
+  PSIS011_Func.cpp               1.5
+  psis011_mbch_regif.cpp         1.6
+  PY_PSIS011.cpp                 1.4
+  PSIS011.h                      1.7
+
+- Supported features: not change from previous release.
+
+##################################
+## PSIS011_Output_20180228.7z
+##################################
+Not change.
+
+##################################
+## PSIS011_Output_20180712.7z
+##################################
+- Release info: Support 64bit environment, fix issue in #45458, alpha release
+- Release date: Jul 12, 2018.
+- Test environment: SCHEAP-G4 Rev163, machine x64, gcc4.9.3
+- Updated source code:
+  PSIS011_AgentController.h      1.4
+  PSIS011_Ch_Reg.h               1.4
+  psis011_ch_regif.h             1.6
+  PSIS011_cmdif.h                1.4
+  PSIS011_Cmn_Reg.h              1.4
+  psis011_cmn_regif.h            1.5
+  PSIS011_Func.h                 1.5
+  psis011_mbch_regif.h           1.6
+  PY_PSIS011.h                   1.4
+  PSIS011.cpp                    1.7
+  PSIS011_Ch_Reg.cpp             1.6
+  psis011_ch_regif.cpp           1.6
+  PSIS011_Cmn_Reg.cpp            1.5
+  psis011_cmn_regif.cpp          1.5
+  PSIS011_Func.cpp               1.5
+  psis011_mbch_regif.cpp         1.6
+  PY_PSIS011.cpp                 1.4
+  PSIS011.h                      1.7
+
+- Supported features: not change from previous release.
+
+##################################
+## PSIS011_Output_20180713.7z
+##################################
+- Release info: Support 64bit environment, fix issue in #45458, final release after test in Windows env.
+- Release date: Jul 13, 2018.
+- Test environment: SCHEAP-G4 Rev163, machine x64, gcc4.9.3
+- Source code not changed.
+- Supported features: not change from previous release.

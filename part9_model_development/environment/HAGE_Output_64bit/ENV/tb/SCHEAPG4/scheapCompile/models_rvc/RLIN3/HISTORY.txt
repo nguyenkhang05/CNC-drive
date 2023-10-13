@@ -1,0 +1,184 @@
+Release note for U2A/RLIN3
+
+###############
+# v2020_11_06 #
+###############
+Update point: Fix bug of cannot set LWBR.NSPB in RLIN3 to values other than 0 in LIN reset mode (refs #126337)
+Update source code files:
+    + rlin3_common.cpp (fix warning compile on window)
+    + rlin3.h, rlin3.cpp
+    + rlin3_master.h, rlin3_master.cpp
+    + rlin3_slave.h, rlin3_slave.cpp
+    + rlin3_uart.h, rlin3_uart.cpp
+
+###############
+# v2020_04_10 #
+###############
+Update point: Fix bug Wrong timing of clearing UTS in case of Bit Error (refs #117342)
+
+###############
+# v2018_12_12 #
+###############
+Update point: Fix similar issue of direction bit (MSB/LSB) (refs #79841)
+
+###############
+# v2018_09_26 #
+###############
+Update point: Enhancement for U2A/RLIN3 (add LBSS & LRSS registers) (refs #58005)
+
+###############
+# v2018_07_16 #
+###############
+Update point: Update source code to fix baud rate calculation (Redmine ticket #43511)
+
+###############
+# v2018_02_28 #
+###############
+Update point: Update source code to fix segmentation fault on SC-HEAP (gcc issue related to double)
+
+###############
+# v2015_02_13 #
+###############
+---------------------------
+Update point: 
+1. Fix issue #147 and similar issue relate to access permission of RLIN3 as below
+                   Issue 1 : Wrong access permission decalaration of LST and LEST registers (Wrong: R-W0 -> Right: R|W0).
+                   Issue 2 : Lack implementation restriction in some notes (LWBR, LSTC, LDFC, LDBN, LTRC, LIDB, LUDB0).
+                   Issue 3 : Wrong implementation behavior of "should" or "should not", "prohibited" access permission of some registers(LWBR, LDBN, LUTDR, LUWTDR).
+                   Issue 4 : Use unexactly access permission of almost registers in UART mode except for LDFC, LURDR, LURDE (Unexactly : W -> exactly: R|W). 
+                   Issue 5 : Use wrong definition condition "operation mode" in UART mode when checking access permission of some register (LTRC, LDFC, LIDB, LUDB0).
+                   Issue 6 : Bug of UART start communication bit : LTRC.RTS bit is not auto cleared after finishing multi-byte transmission or error occurs.
+2. Use newest version of Regif generator : v2014_12_01.
+3. Update Tms 1_1_1, 1_5_1, 1_11_1, 1_17_1, 1_19_1, 3_1_1, 5_1_1 
+
+###############
+# v2015_05_06 #
+###############
+---------------------------
+Update point: 
+1. Fix issue No.1 Bug of multi byte communication in LIN mode.
+    + Phenomenon: Remove transmit respond space at the end of transmitting header             (PDF file No.1.2) 
+    + Phenomenon: Remove transmitting Respond space at the end of header                      (PDF file No.1.2) 
+    + Phenomenon: Update to remove transmit respond space at the end of transmitting header   (PDF file No.1.2) 
+    + Phenomenon: Checksum is only transmitted at the end of last group data                  (PDF file No.1.3,4)
+    + Phenomenon: Also detect Frame error with receving Stop bit of PID                       (PDF file No.2.1) 
+    + Phenomenon: SYNC field error flag                                                       (PDF file No.2.3) 
+    + Phenomenon: Break low detection during reception header or respond TX/RX in Slave mode  (PDF file No.2.5) 
+    + Phenomenon: Break low less than configuration                                           (PDF file No.2.5) 
+    + Phenomenon: Break low less than configuration in Slave mode                             (PDF file No.2.5) 
+
+2. Fix issue No.2 Bug of Wake up transmission error in LIN mode.
+    + Phenomenon: Bit error detection when transmit Wake.up signal                            (PDF file No.3.2,3)
+    + Phenomenon: Respond preparation error condition                                         (PDF file No.4.1,2)
+    + Phenomenon: Only clearing LTRC.FTS in Wake.up mode of Slave mode                        (PDF file No.5.1)
+
+3. Fix issue No.3 Bug of constrain of UART connection mode.
+    + Phenomenon: LUTDR and LUWTDR are the same register but differ address                   (PDF file No.7.1)
+    + Phenomenon: Don't care constrain of full duplex and half duplex in UART mode            (PDF file No.8.1,2,3,9.1)
+    + Phenomenon: FTC flag is not set at single transmission completion in UART mode          (PDF file No.11.1)
+
+4. Update for ticket "[Trac#153] [RLIN3] "Bit error" error message"
+
+###############
+# v2015_08_28 #
+###############
+---------------------------
+Update point: 61 items in update list base on HW RLIN3 ver4.0 
+	No.1 : Interrupt will de-asserts after 1 PCLK clock
+	No.2 : Users shall set “initial value” to the register bit
+	No.3 : Users shall write "1" to BERE bit in LIN Master mode
+	No.4 : Users shall write "1" to FERE bit in LIN Master mode
+	No.5 : LSC.IBS and LSC.IBHS of LIN space configuration bits influence operation in selftest master transmission
+	No.6 : LSC.IBHS of LIN space configuration bits influence operation in selftest master reception
+	No.7 : Users can NOT write to RCDS bit if LTRC[0] bit is set in LIN Wake-up mode
+	No.8 : If number of Response Data bytes is “0”, then, users should only use Classic checksum
+	No.9 : Users can NOT write to this bit if LTRC[1] bit is set
+	No.10: A successful wake-up reception interrupt is generated after 0.5 Tbit when 2.5 consecutive dominant bits where detected on the RXD input pin
+	No.11: Successful Wake-up reception Flag set timing (3.0Tbits)
+	No.12:  (1) LIN Slave Auto Baud Rate mode is NOT supported
+			(2)  CPU is not allowed to access any register (except LCUC.OM0) when communication bit is set
+	No.13: Timeout error should be disabled for data group communication in master mode
+	No.14: HTRC is not need to check when respond complete flag assert
+	No.15:  (1) If checksum error occurs , reception process will not stopped, Frame error will be checked and  both Checksum error flag and Frame error flag will be asserted if Frame error.
+			(2) One byte receive complete flag is asserted even if any error occurs
+	No.16: User can set 4 or 8 samples per bit In LIN Slave mode with Auto Baud rate detection mode
+	No.17:  (1) “Users should not write to this bit if LTRC[2] is set to “1” (No response for received ID).
+			(2) This bit should only be set if the LST.HTRC bit is set after header reception.
+			(3) This bit is automatically cleared when the RLIN3 module successfully detects a new Sync field.
+			(4) LTRC.RTS setting area:
+				Start point：Header reception (LST.HTRC = 1)
+				End point：Sync field detection, Error detection (LST.ERR = 1), Response complete ((LST.FTC = 1 or LST.FRC = 1) and LDFC.LSS = 0)
+			(5) LTRC.RTS active area:
+				 Fixed baud rate mode: Communication is stopped when the RLIN3 module successfully detects a new Break low
+				 Auto baud rate mode: Communication is stopped when the RLIN3 module successfully detects a new Sync field
+	No.18: The "Response Transmission or Reception start" bit and the "LIN No response request" bit are cleared by the LIN Controller at the end of successful detection of SYNC field
+	No.19: User can set LTRC.LNRR bit when RTS = 0 in 1st data group in operation mode
+	No.20: LEST.BER is cleared automatically when LTRC[0] bit is set in LIN Slave mode.
+	No.21: LEST.TER is cleared automatically when LTRC[0] bit is set in LIN Slave mode.
+	No.22: LEST.FER is cleared automatically when LTRC[0] bit is set in LIN Slave mode.
+	No.23: LEST.FER is cleared automatically when LTRC[0] bit is set in LIN Slave mode.
+	No.24: LEST.FER is cleared automatically when LTRC[0] bit is set in LIN Slave mode.
+	No.25: LEST.IPER is cleared automatically when LTRC[0] bit is set in LIN Slave mode.
+	No.26: LEST.RPER is cleared automatically when LTRC[0] bit is set in LIN Slave mode.
+	No.27: Support respond preparation error in respond transmission (RFT = 1) (Slave mode only)
+	No.28: At that time, if Break Low width select is set to 9.5Tbits in fixed baud rate mode, errors detected by byte boundary with new Break may be faster 0.5Tbit. -> no need to update
+	No.29: Users shall write "1" to BERE bit in LIN Slave mode
+	No.30: LEDE.FTERE LIN Frame / Response Timeout Error detection enable bit -> Change name of bit to TERE
+	No.31: Users shall write "1" to FERE bit in LIN Slave mode
+	No.32: Users shall write "1" to IPERE bit in LIN Slave mode
+	No.33:  (1) FTC must be checked, if it is equal 1 when transmission complete, no interrupt asserts.
+			(2) FTC is cleared automatically when LTRC[0] bit is set in LIN Slave mode
+	No.34:  (1) FRC must be checked, if it is equal 1 when reception complete, no interrupt asserts.
+			(2) FRC is cleared automatically when LTRC[0] bit is set in LIN Slave mode
+	No.35:  (1) HTRC must be checked, if it is equal 1 when reception complete, no interrupt asserts.
+			(2) HTRC is cleared automatically when LTRC[0] bit is set in LIN Slave mode
+	No.36: D1RC is cleared automatically when LTRC[0] bit is set in LIN Slave mode
+	No.37:  (1). Set LIN break field and LIN space bits. LSC.IBS of LIN space configuration bits influence operation. Users should set 3'b001 to LSC.IBHS in LIN Slave Self test mode.
+			(2) LTRC.FTS is cleared by transmission completion.
+			(3) Note2: Break Low width is able to be configured only to 9.5Tbit or 10.5Tbit by LBFC.LBLT
+	No.38:  (1). Set LIN break field and LIN space bits. LIN space configuration bits do not influence operation. Users should set 3'b001 to LSC.IBHS in LIN Slave Self test mode.
+			(2) LTRC.FTS is cleared by reception completion. 
+			(3) Note2: Break Low width is able to be configured only to 9.5Tbit or 10.5Tbit by LBFC.LBLT
+	No.39:  (1) UROE is 1, start bit is detected, UROE = 0 , no any reception is performed.
+			(2) When error occurs (Frame , Parity, Overrun) or Reception is completed-> URS is cleared and still stay in operation (wait to next start bit).
+			(3) Note1: UART Reception Status is set in UART Reception when LUOER.UROE is set by Users and Start bit is detected.
+	No.40: If reception error is generated, Receive Data register (LURDR) is still updated. Overrun Error is generated at the time of the next data stop bit detection if users don't read LURDR
+	No.41:  (1) LURDR is updated when any error occurs
+			(2) Note 2: If the RLIN3 module is configured UART 7bit / 8bit mode, Users can use 8-bit access when reading data from this register.
+				Note 3: If the RLIN3 module is configured UART 9bit mode, Users should use 16-bit access when reading data from this register
+	No.42: In Expansion bit mode, users should not set Overrun Error Detection bit when Expansion Bit Data comparison is enabled.
+	No.43: In Expansion bit mode, 9 bits reception is always possible without the comparison of Expansion bit when Expansion bit comparison is disable. Reception completion interrupt occurs regardless of the configuration of the LUOR1. UEBDL bit when 9 bits data is received without Expansion bit match, ID data match and error detection.
+	No.44:  (1) 9bit data is received in case of Expansion bit mode reception without data comparison 
+			(2) When the comparison result of expansion bit is match and the reception error (parity error, framing error) occurs, RLIN3 updates only the reception error flag.
+				When the comparison result of expansion bit is match and the reception error (overrun error) occurs, RLIN3 updates EXBT flag and the reception error flag.
+	No.45: Expansion bit mode reception with data comparison enabled 
+				RLIN3 Module does not judge the expansion bit comparison and expansion bit data comparison, if the reception error (parity error, framing error) occurs.
+				RLIN3 Module judge the expansion bit comparison and expansion bit data comparison, if the reception error (overrun error) occurs
+	No.46: For UART multi-byte transmission, the Transmission interrupt is only generated for the last byte
+	No.47: FTC bit is set when UART multi-byte transmission is completed successfully and configured number of data bytes are transmitted in spite of a presence of an error.
+	No.48: UEBE bit should not be set for UART multi-byte transmission.
+	No.49: UEBDL bit should not be set for UART multi-byte transmission.
+	No.50: UECD bit should not be set for UART multi-byte transmission. Note 2: Users should not set this bit if LUOR1.UEBDCE bit is set.
+	No.51: Users should set RTS bit only when LUOER.UTOE bit is 1
+	No.52: When RLIN3 is in UART mode and the transmit interrupt generation timing is transmission completion (UTIGTS = 1), if users write to the transmission buffer(LUTDR) before the transmission interrupt occurs, the transmission interrupt does not occur.
+	No.53: UROE can NOT set during multi-byte transmission
+	No.54:  (1) UEBDCE bit should not be set for UART multi-byte transmission.
+			(2) Note 2: Users should not set UEBDCE bit if LUOR1.UEBE bit is not set.
+			(3) Note 3: Users should not set UEBDCE bit if LUOR1.UECD bit is set.
+	No.55: Users shall only use LUWTDR register when reception is switched to transmission. Additionally, users shall only write to this register during STOP bit of current reception. This is required for the Half-duplex UART mode operation.
+	No.56: Bit error will flag asserts without waiting byte boundary
+	No.57: SW reset occurs while reception stop bit, data is  stored into register and reception complete interrupt is asserted 
+	No.58: UTS is NOT cleared when transmission abortion after detection of error
+	No.59: Transmission will NOT be aborted when bit error occurs
+	No.60: UTS is NOT cleared when bit error occur
+	No.61: All output signals are initialized when SW reset -> no need to update
+
+###############
+# v2016_10_26 #
+###############
+- Fix time resolution bug
+  - Symptom: the operation is not correct when using a time resolution that is not nano second (SC_NS).
+  - Cause: current code use "sc_time_stamp().to_double()", its result is based on time resolution.
+  - How to fix: add GetCurTime() function, to change other time resolution to nano second (SC_NS)
+  - How to check: add new test patterns tp08_01_001, tp08_02_001, tp08_03_001 (based on tp05_04_05_001)
+                                        tp08_01_002, tp08_02_002, tp08_03_002 (based on tp05_04_06_001)

@@ -1,0 +1,132 @@
+%MODULE ATU5_TIMERF_SUB
+    #              name      offset_size
+    %%REG_INSTANCE  reg_def   6
+
+%REG_CHANNEL reg_def
+    %%TITLE      name      reg_name  wsize     rsize     length    offset    factor_start   factor_end  factor_index    factor_step     access    init         support   callback
+    %%REG        TCR1F     TCR1F     8         8|16|32   8         0x00      -              -           -               -               R/W       0x00         TRUE      W
+    %%REG        TCR2F     TCR2F     8         8|16|32   8         0x02      -              -           -               -               R/W       0x00         TRUE      -
+    %%REG        TIERF     TIERF     8         8|16|32   8         0x07      -              -           -               -               R/W       0x00         TRUE      -
+    %%REG        BKCRF     BKCRF     8         8|16|32   8         0x04      -              -           -               -               R|W       0x00         TRUE      W
+    %%REG        TSRF      TSRF      -         8|16|32   8         0x05      -              -           -               -               R         0x00         TRUE      -
+    %%REG        TSCRF     TSCRF     8         8|16|32   8         0x06      -              -           -               -               W         0x00         TRUE      W
+    %%REG        ECNTAF    ECNTAF    32        8|16|32   32        0x10      -              -           -               -               R|W       0x00000000   TRUE      -
+    %%REG        ECNTBF    ECNTBF    16        8|16|32   16        0x18      -              -           -               -               R|W       0x0000       TRUE      -
+    %%REG        ECNTCF    ECNTCF    32        8|16|32   32        0x20      -              -           -               -               R|W       0x00000000   TRUE      -
+    %%REG        GRAF      GRAF      32        8|16|32   32        0x14      -              -           -               -               R|W       0xFFFFFFFF   TRUE      W
+    %%REG        GRBF      GRBF      16        8|16|32   16        0x1C      -              -           -               -               R|W       0xFFFF       TRUE      -
+    %%REG        GRCF      GRCF      32        8|16|32   32        0x24      -              -           -               -               R|W       0xFFFFFFFF   TRUE      W
+    %%REG        GRDF      GRDF      32        8|16|32   32        0x28      -              -           -               -               R|W       0xFFFFFFFF   TRUE      W
+    %%REG        CDRF      CDRF      -         8|16|32   32        0x2C      -              -           -               -               R         0xFFFFFFFF   TRUE      R
+    %%REG        NCNTFA    NCNTFA    16        8|16|32   16        0x08      -              -           -               -               R|W       0x0000       TRUE      -
+    %%REG        NCNTFB    NCNTFB    16        8|16|32   16        0x0C      -              -           -               -               R|W       0x0000       TRUE      -
+    %%REG        NCRFA     NCRFA     16        8|16|32   16        0x0A      -              -           -               -               R|W       0x0000       TRUE      -
+    %%REG        NCRFB     NCRFB     16        8|16|32   16        0x0E      -              -           -               -               R|W       0x0000       TRUE      -
+
+
+
+%REG_NAME        TCR1F
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            CKSELFx   7         5         0            R|W       TRUE      -
+%%BIT            MDF       4         2         0            R|W       TRUE      W
+%%BIT            EGSELF    1         0         0            R|W       TRUE      -
+
+
+%REG_NAME        TCR2F
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            EISELEF   7         7         0            R|W       TRUE      -
+%%BIT            EISELF    2         0         0            R|W       TRUE      -
+
+
+%REG_NAME        TIERF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            OVECF     3         3         0            R|W       TRUE      -
+%%BIT            OVEBF     2         2         0            R|W       TRUE      -
+%%BIT            OVEAF     1         1         0            R|W       TRUE      -
+%%BIT            ICIEF     0         0         0            R|W       TRUE      -
+
+
+%REG_NAME        BKCRF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            BKENAF    6         6         0            R|W       TRUE      W
+%%BIT            BKENCF    5         5         0            R|W       TRUE      -
+%%BIT            BKENDF    4         4         0            R|W       TRUE      -
+%%BIT            ARSWAF    2         2         0            R|W       TRUE      -
+%%BIT            ARSWCF    1         1         0            R|W       TRUE      -
+%%BIT            ARSWDF    0         0         0            R|W       TRUE      -
+
+
+%REG_NAME        TSRF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            OVFCF     3         3         0            R         TRUE      -
+%%BIT            OVFBF     2         2         0            R         TRUE      -
+%%BIT            OVFAF     1         1         0            R         TRUE      -
+%%BIT            ICFF      0         0         0            R         TRUE      -
+
+
+%REG_NAME        TSCRF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            OVFCCF    3         3         0            W         TRUE      W
+%%BIT            OVFCBF    2         2         0            W         TRUE      W
+%%BIT            OVFCAF    1         1         0            W         TRUE      W
+%%BIT            ICFCF     0         0         0            W         TRUE      W
+
+
+%REG_NAME        ECNTAF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            ECNTAF    31        0         0            R|W       TRUE      -
+
+
+%REG_NAME        ECNTBF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            ECNTBF    15        0         0            R|W       TRUE      -
+
+
+%REG_NAME        ECNTCF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            ECNTCF    31        0         0            R|W       TRUE      -
+
+
+%REG_NAME        GRAF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            GRAF      31        0         0xFFFFFFFF   R|W       TRUE      W
+
+
+%REG_NAME        GRBF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            GRBF      15        0         0xFFFF       R|W       TRUE      -
+
+
+%REG_NAME        GRCF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            GRCF      31        0         0xFFFFFFFF   R|W       TRUE      W
+
+
+%REG_NAME        GRDF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            GRDF      31        0         0xFFFFFFFF   R|W       TRUE      W
+
+
+%REG_NAME        CDRF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            CDRF      31        0         0xFFFFFFFF   R         TRUE      R
+
+
+%REG_NAME        NCNTFA
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            NCNTFA    15        0         0            R|W       TRUE      -
+
+
+%REG_NAME        NCNTFB
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            NCNTFB    15        0         0            R|W       TRUE      -
+
+
+%REG_NAME        NCRFA
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            NCTFA     15        0         0            R|W       TRUE      -
+
+
+%REG_NAME        NCRFB
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            NCTFB     15        0         0            R|W       TRUE      -

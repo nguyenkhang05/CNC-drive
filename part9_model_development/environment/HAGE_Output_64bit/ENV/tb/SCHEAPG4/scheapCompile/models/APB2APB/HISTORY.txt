@@ -1,0 +1,33 @@
+APB2APB HISTORY
+--------------------------------------------------------
+<2018.8.31>
+
+SVN version
+  Rev.122
+
+File
+  - APB2APB.cpp,h
+    fixed the bug of Redmine#183335.
+  - APB2APB_core.cpp,h
+    fixed the bug of Redmine#183350.
+
+--------------------------------------------------------
+<2018.8.27>
+
+SVN version
+  Rev.118
+
+File
+  - APB2APB.cpp
+    fixed the wrong comment for the argument of constructor.
+  - APB2APB.h, APB2APB_core.cpp,h
+    fixed the wrong copyright.
+
+--------------------------------------------------------
+<2018.8.20>
+
+SVN version
+  Rev.113
+
+create new
+

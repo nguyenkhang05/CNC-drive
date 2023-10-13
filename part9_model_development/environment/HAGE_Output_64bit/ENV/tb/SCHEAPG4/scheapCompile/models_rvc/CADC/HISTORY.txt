@@ -1,0 +1,173 @@
+***************************************************************************************************
+CADC_Output_20190926.7z
+-----------------------------
+- Release info: Update code to fix bug #110035 related to wrong conversion result in Pin level self diagnosis
+- Release date: Sep 26, 2019
+- Test environment: SCHEAP G4 Rev73 (64 bit)
+- Updated source code:
+    CADC.cpp 1.2
+    CADC.h 1.1
+    CADC_AgentController.h 1.1
+    CADC_Func.cpp 1.1
+    CADC_Func.h 1.1
+    CADC_UNIT.cpp 1.5
+    CADC_UNIT.h 1.2
+    CADC_UNIT_AgentController.h 1.1
+    CADC_UNIT_Func.cpp 1.4
+    CADC_UNIT_Func.h 1.1
+    CADC_UNIT_cmdif.h 1.0
+    CADC_cmdif.h 1.0
+    PY_CADC.cpp 1.1
+    PY_CADC.h 1.1
+    cadc_cmdif.txt 1.0
+    cadc_regif.cpp 1.1
+    cadc_regif.h 1.1
+    cadc_regif.txt 1.1
+    cadc_unit_cmdif.txt 1.0
+    cadc_unit_regif.cpp 1.1
+    cadc_unit_regif.h 1.1
+    cadc_unit_regif.txt 1.1
+
+- Supported functions: no change
+***************************************************************************************************
+CADC_Output_20181121.7z
+-----------------------------
+- Release info: Update code to fix bug #77135 related to wrong initialized value of CADLE
+- Release date: Nov 21, 2018
+- Test environment: SCHEAP G4 Rev73 (64 bit)
+- Updated source code:
+    CADC.cpp                    1.2
+    CADC.h                      1.1
+    CADC_AgentController.h      1.1
+    CADC_Func.cpp               1.1
+    CADC_Func.h                 1.1
+    CADC_UNIT.cpp               1.5
+    CADC_UNIT.h                 1.2
+    CADC_UNIT_AgentController.h 1.1
+    CADC_UNIT_Func.cpp          1.2
+    CADC_UNIT_Func.h            1.1
+    CADC_UNIT_cmdif.h           1.0
+    CADC_cmdif.h                1.0
+    PY_CADC.cpp                 1.1
+    PY_CADC.h                   1.1
+    cadc_regif.cpp              1.1
+    cadc_regif.h                1.1
+    cadc_unit_regif.cpp         1.1
+    cadc_unit_regif.h           1.1
+
+- Supported functions: no change
+
+***************************************************************************************************
+CADC_Output_20180719.7z
+-----------------------------
+- Release info: Update scripts ưindows
+- Release date: July 19, 2018
+- Test environment: SCHEAP G4 Rev73 (64 bit)
+- Updated source code: no change
+- Supported functions: no change
+
+***************************************************************************************************
+CADC_Output_20180717.7z
+-----------------------------
+- Release info: Update CADC model to specification 0.8
+- Release date: July 17, 2018
+- Test environment: SCHEAP G4 Rev73 (64 bit)
+- Updated source code: no change
+- Supported functions: no change
+
+***************************************************************************************************
+CADC_Output_20180709.7z
+-----------------------------
+- Release info: Update CADC model to specification 0.8
+- Release date: July 09, 2018
+- Test environment: SCHEAP G4 Rev73  (64 bit)
+- Updated source code:
+    + CADC_UNIT_Func.h               (7972)
+    + CADC_Func.h                    (7972)
+    + cadc_unit_regif.h              (7972)
+    + cadc_regif.h                   (7972)
+    + CADC_UNIT_AgentController.h    (7972)
+    + CADC_AgentController.h         (7972)
+    + CADC_UNIT.cpp                  (7972)
+    + CADC.cpp                       (7972)
+    + CADC_UNIT.h                    (7972)
+    + CADC.h                         (7972)
+    + CADC_UNIT_cmdif.h              (7972)
+    + CADC_cmdif.h                   (7972)
+    + PY_CADC.cpp                    (7972)
+    + CADC_UNIT_Func.cpp             (7972)
+    + CADC_Func.cpp                  (7972)
+    + cadc_unit_regif.cpp            (7972)
+    + cadc_regif.cpp                 (7972)
+    + PY_CADC.h                      (7972)
+- Supported functions: no change
+
+***************************************************************************************************
+CADC_Output_03012018.7z
+-----------------------------
+- Release info: Fix bug CADC (email)
+- Release date: Mar 01, 2018
+- Test environment: SCHEAP G4 Rev163
+- Updated source code:
+    + CADC.cpp            (v1.2)    
+    + CADC_UNIT_Func.cpp  (v1.3)
+    + CADC_UNIT.h         (v1.2)
+    + CADC_UNIT.cpp       (v1.4)    
+- Supported functions: no change
+
+***************************************************************************************************
+CADC_Output_04122017.7z
+-----------------------------
+- Release info: Update CADC model to specification 0.5
+- Release date: Apr 12, 2017
+- Test environment: SCHEAP G4 Rev80
+- Updated source code:
+    + CADC.h              (v1.1)
+    + CADC.cpp            (v1.1)    
+    + CADC_UNIT_Func.h    (v1.1)
+    + CADC_UNIT_Func.h    (v1.2)
+    + PY_CADC.h           (v1.1)
+    + PY_CADC.cpp         (v1.1)    
+    + CADC_Func.cpp       (v1.1)    
+    + CADC_Func.h         (v1.1)
+    + cadc_unit_regif.cpp (v1.1)    
+    + cadc_unit_regif.h   (v1.1)
+    + CADC_UNIT.cpp       (v1.3)    
+- Supported functions:    
+ + Analog to digital conversion function
+ + Calibration function
+ + Single End input and Differential input
+ + A/D conversion start/end trigger
+ + Entry to digital filter engine
+ + DMA transfer function
+ + AD error and AD parity error interrupts
+ + Setting range of the analog conversion voltage
+ + A/D conversion monitor output
+ + Disconnection detection function
+ + Safety functions
+ + Boundary Flag Generating Signal Output Function
+
+    
+***************************************************************************************************
+CADC_Output_07222016.7z
+-----------------------------
+- Release info: Update CADC model to specification 0.1
+- Release date: July 22, 2016
+- Test environment: SCHEAP G4 Rev24
+- Updated source code:
+    + All files
+- Supported functions:    
+ + Analog to digital conversion function
+ + Calibration function
+ + Single End input and Differential input
+ + A/D conversion start/end trigger
+ + Entry to digital filter engine
+ + DMA transfer function
+ + AD error and AD parity error interrupts
+ + Setting range of the analog conversion voltage
+ + A/D conversion monitor output
+ + Disconnection detection function
+ + Safety functions
+ + Boundary Flag Generating Signal Output Function
+
+

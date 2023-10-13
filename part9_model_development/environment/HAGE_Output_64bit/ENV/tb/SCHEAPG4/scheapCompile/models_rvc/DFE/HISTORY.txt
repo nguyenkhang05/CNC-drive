@@ -1,0 +1,79 @@
+*****************************
+- Sep 12th, 2018:
+*****************************
+- Test environment: SCHEAP 64 bit R73, machine x64, gcc4.9.3.
+
+- File:
+    DFE.cpp                       1.2 
+    DFE.h                         1.2 
+    DFE_AgentController.h         1.2 
+    DFE_cmdif.h                   1.2 
+    DFE_FIFO.cpp                  1.2 
+    DFE_FIFO.h                    1.2 
+    DFE_FIFO_cmdif.h              1.2 
+    DFE_FIFO_Func.cpp             1.2 
+    DFE_FIFO_Func.h               1.2 
+    dfe_fifo_regif.cpp            1.2 
+    dfe_fifo_regif.h              1.2 
+    DFE_FIFO_Utils.cpp            1.2 
+    DFE_FIFO_Utils.h              1.2 
+    DFE_Func.cpp                  1.3 
+    DFE_Func.h                    1.2 
+    dfe_regif.cpp                 1.2 
+    dfe_regif.h                   1.2 
+    DFE_Wrapper.cpp               1.2 
+    DFE_Wrapper.h                 1.2 
+    DFE_Wrapper_cmdif.h           1.2 
+    PY_DFE.cpp                    1.2 
+    PY_DFE.h                      1.2 
+     
+Updated source file DFE_Func.cpp to fix warning message issue.
+Update condition to dump this warning. It is added condition SUBCTLCHn.SFMT to 0x1.
+Before:
+ if ((fmt_minuend  1) && (fmt_subtrahend  1) && IsFIRSelect(minch) && IsFIRSelect(subch)){
+      re_printf("warning", "Do not set DFEjSUBCTLCH%d.SFMT to 0x1 if input of both SUBCH(=%d) and MINCH(=%d) are integer and FIR is selected.", channel, subch, minch);
+ }
+After fix:
+ if ((fmt_minuend 1) && (fmt_subtrahend 1) && IsFIRSelect(minch) && IsFIRSelect(subch) && ((unsigned int)(*DFEjSUBCTLCHn[channel])["SFMT"] == 1)){
+ re_printf("warning", "Do not set DFEjSUBCTLCH%d.SFMT to 0x1 if input of both SUBCH and MINCH are integer and FIR is selected.", channel, subch, minch);
+ }
+
+- Supported feature: not changed.
+
+*****************************
+- Aug 31, 2018:
+*****************************
+
+- Test environment: SCHEAP 64 bit R73, machine x64, gcc4.9.3.
+
+- File:
+    DFE.cpp                       1.2 
+    DFE.h                         1.2 
+    DFE_AgentController.h         1.2 
+    DFE_cmdif.h                   1.2 
+    DFE_FIFO.cpp                  1.2 
+    DFE_FIFO.h                    1.2 
+    DFE_FIFO_cmdif.h              1.2 
+    DFE_FIFO_Func.cpp             1.2 
+    DFE_FIFO_Func.h               1.2 
+    dfe_fifo_regif.cpp            1.2 
+    dfe_fifo_regif.h              1.2 
+    DFE_FIFO_Utils.cpp            1.2 
+    DFE_FIFO_Utils.h              1.2 
+    DFE_Func.cpp                  1.2 
+    DFE_Func.h                    1.2 
+    dfe_regif.cpp                 1.2 
+    dfe_regif.h                   1.2 
+    DFE_Wrapper.cpp               1.2 
+    DFE_Wrapper.h                 1.2 
+    DFE_Wrapper_cmdif.h           1.2 
+    PY_DFE.cpp                    1.2 
+    PY_DFE.h                      1.2 
+     
+- Supported changed features compare with DFE_Output_161107.7z:
+    + Changed size of registes: DFEjCLRSTCHn, DFEjERMCHn, DFEjTRHCHn, DFEjACA to DFEjACD, DFEjTRG, DFEjPHUPDCn, DFEjPHUPDCn, DFEjERMCHn
+    + Changed the number of cycles of FIR, IIR
+    + Changed behavior of error interrupt when buffer A or buffer B is overflow
+    + Updated behavior of DFEjSUBCLRSTCHn.CLRSDOEN bit when this bit is set to 1.
+    + Updated behavior of DFBFACLR/DFBFBCLR registers when DFBFACLR.CLRA/DFBFBCLR.CLRB is set to 1
+	

@@ -1,0 +1,455 @@
+## ----------------------------------------------------------------------
+## $Id: dfe0051_regif.txt,v 1.2 2017/07/14 03:22:20 chuonghoangle Exp $
+##
+## Copyright(c) 2015 Renesas System Design Co., Ltd.
+## Copyright(c) 2015 Renesas Design Vietnam Co., Ltd.
+## RENESAS ELECTRONICS CONFIDENTIAL AND PROPRIETARY.
+## This program must be used solely for the purpose for which
+## it was furnished by Renesas Electronics Corporation. No part of this
+## program may be reproduced or disclosed to others, in any
+## form, without the prior written permission of Renesas Electronics
+## Corporation.
+## ----------------------------------------------------------------------
+
+%MODULE DFE0051 
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  12
+
+%REG_CHANNEL reg_def
+    %%TITLE    name             reg_name            rsize      wsize      length  offset    factor_start factor_end  factor_index    factor_step access  init        support  callback
+    %%REG      DFEjCTLACHn      DFEjCTLACHn         8|16|32    8|16|32    32      0x000      0           15          -               -           R|W     0           TRUE     -
+    %%REG      DFEjCTLBCHn      DFEjCTLBCHn         8|16|32    8|16|32    32      0x040      0           15          -               -           R|W     0x01010000  TRUE     -
+    %%REG      DFEjDOCHn        DFEjDOCHn           8|16|32    8|16|32    32      0x080      0           15          -               -           R       0           TRUE     R
+    %%REG      DFEjPHCHn        DFEjPHCHn           8|16|32    8|16|32    32      0x0C0      0           15          -               -           R       0x80000000  TRUE     -
+    %%REG      DFEjPHINDCHn     DFEjPHINDCHn        8|16|32    8|16|32    32      0x100      0           15          -               -           R       0           TRUE     -
+    %%REG      DFEjSTCHn        DFEjSTCHn           8|16|32    8|16|32    32      0x140      0           15          -               -           R       0           TRUE     -
+    %%REG      DFEjCLRSTCHn     DFEjCLRSTCHn        8|16|32    8|16|32    32      0x180      0           15          -               -           R|W     0           TRUE     -
+    %%REG      DFEjERMCHn       DFEjERMCHn          8|16|32    8|16|32    32      0x1C0      0           15          -               -           R|W     0           TRUE     -
+    %%REG      DFEjTRGCHn       DFEjTRGCHn          8|16|32    8|16|32    32      0x200      0           15          -               -           R|W     0           TRUE     -
+    %%REG      DFEjTRHCHn       DFEjTRHCHn          8|16|32    8|16|32    32      0x240      0           15          -               -           R       0           TRUE     -
+    %%REG      DFEjCPA          DFEjCPA             8|16|32    8|16|32    32      0x280      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjCPB          DFEjCPB             8|16|32    8|16|32    32      0x284      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjCPC          DFEjCPC             8|16|32    8|16|32    32      0x288      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjCPD          DFEjCPD             8|16|32    8|16|32    32      0x28C      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjPHIA         DFEjPHIA            8|16|32    8|16|32    32      0x290      -           -           -               -           R|W     0x80000000  TRUE     -
+    %%REG      DFEjPHIB         DFEjPHIB            8|16|32    8|16|32    32      0x294      -           -           -               -           R|W     0x80000000  TRUE     -
+    %%REG      DFEjPHIC         DFEjPHIC            8|16|32    8|16|32    32      0x298      -           -           -               -           R|W     0x80000000  TRUE     -
+    %%REG      DFEjPHID         DFEjPHID            8|16|32    8|16|32    32      0x29C      -           -           -               -           R|W     0x80000000  TRUE     -
+    %%REG      DFEjPMITRG0      DFEjPMITRG0         8|16|32    8|16|32    32      0x2A8      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjPMITRG1      DFEjPMITRG1         8|16|32    8|16|32    32      0x2AC      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjACA          DFEjACA             8|16|32    8|16|32    32      0x2B0      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjACB          DFEjACB             8|16|32    8|16|32    32      0x2B4      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjACC          DFEjACC             8|16|32    8|16|32    32      0x2B8      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjACD          DFEjACD             8|16|32    8|16|32    32      0x2BC      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjDI           DFEjDI              8|16|32    8|16|32    32      0x2C0      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjTRG          DFEjTRG             8|16|32    8|16|32    32      0x2C4      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjEST          DFEjEST             8|16|32    8|16|32    32      0x2C8      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjST           DFEjST              8|16|32    8|16|32    32      0x2CC      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjPITRG1       DFEjPITRG1          8|16|32    8|16|32    32      0x2D4      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjMITRG1       DFEjMITRG1          8|16|32    8|16|32    32      0x2D8      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjFITRG1       DFEjFITRG1          8|16|32    8|16|32    32      0x2DC      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjPITRG        DFEjPITRG           8|16|32    8|16|32    32      0x300      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjMITRG        DFEjMITRG           8|16|32    8|16|32    32      0x304      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjFITRG        DFEjFITRG           8|16|32    8|16|32    32      0x308      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjPHUPDCn      DFEjPHUPDCn         8|16|32    8|16|32    32      0x310      0           3           -               -           R|W     0           TRUE     -
+    %%REG      DFEjHOLCH0       DFEjHOLCH0          8|16|32    8|16|32    32      0x320      -           -           -               -           R       0           TRUE     R
+    %%REG      DFEjHOHCH0       DFEjHOHCH0          8|16|32    8|16|32    32      0x324      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLCH2       DFEjHOLCH2          8|16|32    8|16|32    32      0x328      -           -           -               -           R       0           TRUE     R
+    %%REG      DFEjHOHCH2       DFEjHOHCH2          8|16|32    8|16|32    32      0x32C      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLCH4       DFEjHOLCH4          8|16|32    8|16|32    32      0x330      -           -           -               -           R       0           TRUE     R
+    %%REG      DFEjHOHCH4       DFEjHOHCH4          8|16|32    8|16|32    32      0x334      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLCH6       DFEjHOLCH6          8|16|32    8|16|32    32      0x338      -           -           -               -           R       0           TRUE     R
+    %%REG      DFEjHOHCH6       DFEjHOHCH6          8|16|32    8|16|32    32      0x33C      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLCH8       DFEjHOLCH8          8|16|32    8|16|32    32      0x340      -           -           -               -           R       0           TRUE     R
+    %%REG      DFEjHOHCH8       DFEjHOHCH8          8|16|32    8|16|32    32      0x344      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLCH10      DFEjHOLCH10         8|16|32    8|16|32    32      0x348      -           -           -               -           R       0           TRUE     R
+    %%REG      DFEjHOHCH10      DFEjHOHCH10         8|16|32    8|16|32    32      0x34C      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLCH12      DFEjHOLCH12         8|16|32    8|16|32    32      0x350      -           -           -               -           R       0           TRUE     R
+    %%REG      DFEjHOHCH12      DFEjHOHCH12         8|16|32    8|16|32    32      0x354      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLCH14      DFEjHOLCH14         8|16|32    8|16|32    32      0x358      -           -           -               -           R       0           TRUE     R
+    %%REG      DFEjHOHCH14      DFEjHOHCH14         8|16|32    8|16|32    32      0x35C      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLMCH0      DFEjHOLMCH0         8|16|32    8|16|32    32      0x360      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLMCH2      DFEjHOLMCH2         8|16|32    8|16|32    32      0x364      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLMCH4      DFEjHOLMCH4         8|16|32    8|16|32    32      0x368      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLMCH6      DFEjHOLMCH6         8|16|32    8|16|32    32      0x36C      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLMCH8      DFEjHOLMCH8         8|16|32    8|16|32    32      0x370      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLMCH10     DFEjHOLMCH10        8|16|32    8|16|32    32      0x374      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLMCH12     DFEjHOLMCH12        8|16|32    8|16|32    32      0x378      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjHOLMCH14     DFEjHOLMCH14        8|16|32    8|16|32    32      0x37C      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjGAINCHn      DFEjGAINCHn         8|16|32    8|16|32    32      0x380      0           15          -               -           R|W     0x40004000  TRUE     -
+    %%REG      DFEjTMTRGCHn     DFEjTMTRGCHn        8|16|32    8|16|32    32      0x3C0      0           15          -               -           R|W     0           TRUE     -
+    %%REG      DFEjCPOFSTn      DFEjCPOFSTn         8|16|32    8|16|32    32      0x440      0           2           -               -           R|W     0           TRUE     -
+    %%REG      DFEjPH23CCTL0    DFEjPH23CCTL0       8|16|32    8|16|32    32      0x700      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjPH2CTL0      DFEjPH2CTL0         8|16|32    8|16|32    32      0x704      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjPH3CTL0      DFEjPH3CTL0         8|16|32    8|16|32    32      0x708      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjPH20         DFEjPH20            8|16|32    8|16|32    32      0x780      -           -           -               -           R       0x80000000  TRUE     -
+    %%REG      DFEjPH30         DFEjPH30            8|16|32    8|16|32    32      0x784      -           -           -               -           R       0x80000000  TRUE     -
+    %%REG      DFEjPH2IND0      DFEjPH2IND0         8|16|32    8|16|32    32      0x7E0      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjPH3IND0      DFEjPH3IND0         8|16|32    8|16|32    32      0x7E4      -           -           -               -           R       0           TRUE     -
+    %%REG      DFEjSUBCTLCHn    DFEjSUBCTLCHn       8|16|32    8|16|32    32      0x840      0           2           -               -           R|W     0           TRUE     -
+    %%REG      DFEjSUBDOCHn     DFEjSUBDOCHn        8|16|32    8|16|32    32      0x860      0           2           -               -           R       0           TRUE     R
+    %%REG      DFEjSUBSTCHn     DFEjSUBSTCHn        8|16|32    8|16|32    32      0x880      0           2           -               -           R       0           TRUE     -
+    %%REG      DFEjSUBCLRSTCHn  DFEjSUBCLRSTCHn     8|16|32    8|16|32    32      0x8A0      0           2           -               -           R|W     0           TRUE     -
+    %%REG      DFEjSUBERMCHn    DFEjSUBERMCHn       8|16|32    8|16|32    32      0x8C0      0           2           -               -           R|W     0           TRUE     -
+    %%REG      DFEjSUBTRGCHn    DFEjSUBTRGCHn       8|16|32    8|16|32    32      0x8E0      0           2           -               -           R|W     0           TRUE     -
+    %%REG      DFEjSUBTRHCHn    DFEjSUBTRHCHn       8|16|32    8|16|32    32      0x900      0           2           -               -           R       0           TRUE     -
+    %%REG      DFEjSUBTRG0      DFEjSUBTRG0         8|16|32    8|16|32    32      0x920      -           -           -               -           R|W     0           TRUE     -
+    %%REG      DFEjCAPCTLCHn    DFEjCAPCTLCHn       8|16|32    8|16|32    32      0x940      0           2           -               -           R|W     0           TRUE     -
+    %%REG      DFEjCAPDOCHn     DFEjCAPDOCHn        8|16|32    8|16|32    32      0x960      0           2           -               -           R       0           TRUE     R
+    %%REG      DFEjCAPSTCHn     DFEjCAPSTCHn        8|16|32    8|16|32    32      0x980      0           2           -               -           R       0           TRUE     -
+    %%REG      DFEjCAPCLRSTCHn  DFEjCAPCLRSTCHn     8|16|32    8|16|32    32      0x9A0      0           2           -               -           R|W     0           TRUE     -
+    %%REG      DFEjCAPERMCHn    DFEjCAPERMCHn       8|16|32    8|16|32    32      0x9C0      0           2           -               -           R|W     0           TRUE     -
+
+%REG_NAME DFEjCTLACHn      
+    %%TITLE  name           upper  lower  init  access   support  callback    
+    %%BIT    CATAG          30     26     0     R|W      TRUE     -
+    %%BIT    CAEN           25     24     0     R|W      TRUE     -
+    %%BIT    TAG            20     16     0     R|W      TRUE     -
+    %%BIT    CMD            15     12     0     R|W      TRUE     -
+    %%BIT    FMT             8      8     0     R|W      TRUE     -
+    %%BIT    IEP             7      7     0     R|W      TRUE     -
+    %%BIT    IEE             6      6     0     R|W      TRUE     -
+    %%BIT    IEC             5      5     0     R|W      TRUE     -
+    %%BIT    IEO             4      4     0     R|W      TRUE     -
+    %%BIT    CNSL            3      3     0     R|W      TRUE     -
+    %%BIT    CNSLE           2      2     0     R|W      TRUE     -
+    %%BIT    AIME            1      1     0     R|W      TRUE     -
+    %%BIT    EN              0      0     0     R|W      TRUE     W
+
+%REG_NAME DFEjCTLBCHn      
+    %%TITLE  name           upper  lower  init  access   support  callback    
+    %%BIT    OFSL           26     25     0     R|W      TRUE     -
+    %%BIT    DISB           24     24     1     R|W      TRUE     -
+    %%BIT    PHPS           23     23     0     R|W      TRUE     -
+    %%BIT    CPCS           22     22     0     R|W      TRUE     -
+    %%BIT    PHSLB2         19     17     0     R|W      TRUE     -
+    %%BIT    DISA           16     16     1     R|W      TRUE     -
+    %%BIT    PRCSC          15     15     0     R|W      TRUE     -
+    %%BIT    SELB2          14     12     0     R|W      TRUE     -
+    %%BIT    SELB1          11     10     0     R|W      TRUE     -
+    %%BIT    PRCSB           9      8     0     R|W      TRUE     -
+    %%BIT    HOFS            7      7     0     R|W      TRUE     -
+    %%BIT    PICS            6      6     0     R|W      TRUE     -
+    %%BIT    SELA            5      4     0     R|W      TRUE     -
+    %%BIT    PFMT            3      3     0     R|W      TRUE     -
+    %%BIT    ABS             2      2     0     R|W      TRUE     -
+    %%BIT    PRCSA           1      0     0     R|W      TRUE     W
+
+%REG_NAME DFEjPHINDCHn     
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    PHIOW          15     15     0     R        TRUE     -
+    %%BIT    PHIOF          14     14     0     R        TRUE     R
+    %%BIT    PHIND          13      0     0     R        TRUE     -
+
+%REG_NAME DFEjSTCHn       
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    PH23ST         18     16     0     R        TRUE     -
+    %%BIT    VALID          12     12     0     R        TRUE     -
+    %%BIT    PHE            10     10     0     R        TRUE     -
+    %%BIT    CND             9      9     0     R        TRUE     -
+    %%BIT    DOEN            8      8     0     R        TRUE     -
+    %%BIT    CER             5      5     0     R        TRUE     -
+    %%BIT    AER             4      4     0     R        TRUE     -
+    %%BIT    MER             3      3     0     R        TRUE     -
+    %%BIT    GER             2      2     0     R        TRUE     -
+    %%BIT    DOOW            1      1     0     R        TRUE     -
+    %%BIT    DIOW            0      0     0     R        TRUE     -
+
+%REG_NAME DFEjCLRSTCHn     
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    CLRPHIOW       15     15     0     R|W    TRUE     -
+    %%BIT    CLRPHE         10     10     0     R|W    TRUE     -
+    %%BIT    CLRCND          9      9     0     R|W    TRUE     -
+    %%BIT    CLRDOEN         8      8     0     R|W    TRUE     -
+    %%BIT    CLRCER          5      5     0     R|W    TRUE     -
+    %%BIT    CLRAER          4      4     0     R|W    TRUE     -
+    %%BIT    CLRMER          3      3     0     R|W    TRUE     -
+    %%BIT    CLRGER          2      2     0     R|W    TRUE     -
+    %%BIT    CLRDOOW         1      1     0     R|W    TRUE     -
+    %%BIT    CLRDIOW         0      0     0     R|W    TRUE     R|W
+
+%REG_NAME DFEjERMCHn       
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    MSKCER          5      5     0     R|W      TRUE     -
+    %%BIT    MSKAER          4      4     0     R|W      TRUE     -
+    %%BIT    MSKMER          3      3     0     R|W      TRUE     -
+    %%BIT    MSKGER          2      2     0     R|W      TRUE     -
+    %%BIT    MSKDOOW         1      1     0     R|W      TRUE     -
+    %%BIT    MSKDIOW         0      0     0     R|W      TRUE     -
+
+%REG_NAME DFEjTRGCHn       
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    PMFE           23     22     0     R|W     TRUE     -
+    %%BIT    PME            21     20     0     R|W     TRUE     -
+    %%BIT    PFE            19     18     0     R|W     TRUE     -
+    %%BIT    AFE            15     14     0     R|W     TRUE     -
+    %%BIT    PE             11     10     0     R|W     TRUE     -
+    %%BIT    PT              9      8     0     R|W     TRUE     -
+    %%BIT    AE              7      6     0     R|W     TRUE     -
+    %%BIT    AT              5      4     0     R|W     TRUE     -
+    %%BIT    FE              3      2     0     R|W     TRUE     -
+    %%BIT    FT              1      0     0     R|W     TRUE     -
+
+%REG_NAME DFEjTRHCHn       
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    PMITS           6      6     0     R        TRUE     -
+    %%BIT    PMETS           5      5     0     R        TRUE     -
+    %%BIT    PITS            4      4     0     R        TRUE     -
+    %%BIT    PETS            3      3     0     R        TRUE     -
+    %%BIT    MITS            2      2     0     R        TRUE     -
+    %%BIT    METS            1      1     0     R        TRUE     -
+    %%BIT    FITS            0      0     0     R        TRUE     -
+
+%REG_NAME DFEjPMITRG0     
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    PMITMTRG3      28     24     0     R|W     TRUE     -
+    %%BIT    PMITMTRG2      20     16     0     R|W     TRUE     -
+    %%BIT    PMITMTRG1      12      8     0     R|W     TRUE     -
+    %%BIT    PMITMTRG0       4      0     0     R|W     TRUE     -
+
+%REG_NAME DFEjPMITRG1     
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    PMITMTRG5      12      8     0     R|W     TRUE     -
+    %%BIT    PMITMTRG4       4      0     0     R|W     TRUE     -
+
+%REG_NAME DFEjACA     
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    AC              8      0     0     R|W      TRUE     -
+
+%REG_NAME DFEjACB     
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    AC              8      0     0     R|W      TRUE     -
+
+%REG_NAME DFEjACC     
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    AC              8      0     0     R|W      TRUE     -
+
+%REG_NAME DFEjACD     
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    AC              8      0     0     R|W      TRUE     -
+
+%REG_NAME DFEjDI      
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TAG            20     16     0     R|W      TRUE     -
+    %%BIT    DI             15      0     0     R|W      TRUE     W
+
+%REG_NAME DFEjTRG     
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    TRGA            0      0     0     R|W      TRUE     R|W
+
+%REG_NAME DFEjEST     
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    CP2S           18     18     0     R        TRUE     -
+    %%BIT    CP1S           17     17     0     R        TRUE     -
+    %%BIT    CP0S           16     16     0     R        TRUE     -
+    %%BIT    SB2S            2      2     0     R        TRUE     -
+    %%BIT    SB1S            1      1     0     R        TRUE     -
+    %%BIT    SB0S            0      0     0     R        TRUE     -
+
+%REG_NAME DFEjST     
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    CH15S          31     30     0     R        TRUE     -
+    %%BIT    CH14S          29     28     0     R        TRUE     -
+    %%BIT    CH13S          27     26     0     R        TRUE     -
+    %%BIT    CH12S          25     24     0     R        TRUE     -
+    %%BIT    CH11S          23     22     0     R        TRUE     -
+    %%BIT    CH10S          21     20     0     R        TRUE     -
+    %%BIT    CH9S           19     18     0     R        TRUE     -
+    %%BIT    CH8S           17     16     0     R        TRUE     -
+    %%BIT    CH7S           15     14     0     R        TRUE     -
+    %%BIT    CH6S           13     12     0     R        TRUE     -
+    %%BIT    CH5S           11     10     0     R        TRUE     -
+    %%BIT    CH4S            9      8     0     R        TRUE     -
+    %%BIT    CH3S            7      6     0     R        TRUE     -
+    %%BIT    CH2S            5      4     0     R        TRUE     -
+    %%BIT    CH1S            3      2     0     R        TRUE     -
+    %%BIT    CH0S            1      0     0     R        TRUE     -
+
+%REG_NAME DFEjPITRG1  
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    PITMTRG5       12      8     0     R|W     TRUE     -
+    %%BIT    PITMTRG4        4      0     0     R|W     TRUE     -
+
+%REG_NAME DFEjMITRG1  
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    MITMTRG5       12      8     0     R|W     TRUE     -
+    %%BIT    MITMTRG4        4      0     0     R|W     TRUE     -
+
+%REG_NAME DFEjFITRG1  
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    FITMTRG5       12      8     0     R|W     TRUE     -
+    %%BIT    FITMTRG4        4      0     0     R|W     TRUE     -
+
+%REG_NAME DFEjPITRG  
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    PITMTRG3       28     24     0     R|W     TRUE     -
+    %%BIT    PITMTRG2       20     16     0     R|W     TRUE     -
+    %%BIT    PITMTRG1       12      8     0     R|W     TRUE     -
+    %%BIT    PITMTRG0        4      0     0     R|W     TRUE     -
+
+%REG_NAME DFEjMITRG  
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    MITMTRG3       28     24     0     R|W     TRUE     -
+    %%BIT    MITMTRG2       20     16     0     R|W     TRUE     -
+    %%BIT    MITMTRG1       12      8     0     R|W     TRUE     -
+    %%BIT    MITMTRG0        4      0     0     R|W     TRUE     -
+
+%REG_NAME DFEjFITRG  
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    FITMTRG3       28     24     0     R|W     TRUE     -
+    %%BIT    FITMTRG2       20     16     0     R|W     TRUE     -
+    %%BIT    FITMTRG1       12      8     0     R|W     TRUE     -
+    %%BIT    FITMTRG0        4      0     0     R|W     TRUE     -
+
+%REG_NAME DFEjPHUPDCn 
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    PHUPDCH         7      4     0     R|W     TRUE     -
+    %%BIT    PH23SL          2      2     0     R|W     TRUE     -
+    %%BIT    PH23E           1      1     0     R|W     TRUE     -
+    %%BIT    OEPHUPD         0      0     0     R|W     TRUE     -
+
+%REG_NAME DFEjHOHCH0  
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    GURD            5      0     0     R        TRUE     R
+
+%REG_NAME DFEjHOHCH2  
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    GURD            5      0     0     R        TRUE     R
+
+%REG_NAME DFEjHOHCH4  
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    GURD            5      0     0     R        TRUE     R
+
+%REG_NAME DFEjHOHCH6  
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    GURD            5      0     0     R        TRUE     R
+
+%REG_NAME DFEjHOHCH8  
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    GURD            5      0     0     R        TRUE     R
+
+%REG_NAME DFEjHOHCH10 
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    GURD            5      0     0     R        TRUE     R
+
+%REG_NAME DFEjHOHCH12 
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    GURD            5      0     0     R        TRUE     R
+
+%REG_NAME DFEjHOHCH14 
+    %%TITLE  name           upper  lower  init  access  support  callback    
+    %%BIT    GURD            5      0     0     R        TRUE     R
+
+%REG_NAME DFEjGAINCHn 
+    %%TITLE  name           upper  lower  init    access  support  callback    
+    %%BIT    GAIN3          31     16     0x4000  R|W      TRUE     -
+    %%BIT    GAIN2          15      0     0x4000  R|W      TRUE     -
+
+%REG_NAME DFEjTMTRGCHn
+    %%TITLE  name           upper  lower  init    access  support  callback    
+    %%BIT    PMT            14     12     0       R|W     TRUE     -
+    %%BIT    PT             10      8     0       R|W     TRUE     -
+    %%BIT    AT              6      4     0       R|W     TRUE     -
+    %%BIT    FT              2      0     0       R|W     TRUE     -
+
+%REG_NAME DFEjPH23CCTL0
+    %%TITLE  name           upper  lower  init    access  support  callback    
+    %%BIT    CHS             7      4     0       R|W     TRUE     -
+    %%BIT    PFMT            3      3     0       R|W     TRUE     -
+    %%BIT    PEN             0      0     0       R|W     TRUE     W
+
+%REG_NAME DFEjPH2CTL0  
+    %%TITLE  name           upper  lower  init    access  support  callback    
+    %%BIT    OFSL            9      8     0       R|W     TRUE     -
+    %%BIT    PH2SLB2         6      4     0       R|W     TRUE     -
+    %%BIT    PHPS            3      3     0       R|W     TRUE     -
+    %%BIT    CN2SLB2         2      0     0       R|W     TRUE     W
+
+%REG_NAME DFEjPH3CTL0  
+    %%TITLE  name           upper  lower  init    access   support  callback    
+    %%BIT    OFSL            9      8     0       R|W      TRUE     -
+    %%BIT    PH3SLB2         6      4     0       R|W      TRUE     -
+    %%BIT    PHPS            3      3     0       R|W      TRUE     -
+    %%BIT    CN3SLB2         2      0     0       R|W      TRUE     W
+
+%REG_NAME DFEjPH2IND0  
+    %%TITLE  name           upper  lower  init    access  support  callback    
+    %%BIT    PH2IOW         15     15     0       R        TRUE     -
+    %%BIT    PH2IOF         14     14     0       R        TRUE     -
+    %%BIT    PH2IND         13      0     0       R        TRUE     -
+
+%REG_NAME DFEjPH3IND0  
+    %%TITLE  name           upper  lower  init    access  support  callback    
+    %%BIT    PH3IOW         15     15     0       R        TRUE     -
+    %%BIT    PH3IOF         14     14     0       R        TRUE     -
+    %%BIT    PH3IND         13      0     0       R        TRUE     -
+
+%REG_NAME DFEjSUBCTLCHn 
+    %%TITLE  name           upper  lower  init    access  support  callback    
+    %%BIT    CATAG          30     26     0       R|W     TRUE     -
+    %%BIT    CAEN           25     24     0       R|W     TRUE     -
+    %%BIT    MINCH          11      8     0       R|W     TRUE     -
+    %%BIT    SUBCH           7      4     0       R|W     TRUE     -
+    %%BIT    SFMT            3      3     0       R|W     TRUE     -
+    %%BIT    SIEE            2      2     0       R|W     TRUE     -
+    %%BIT    SIEO            1      1     0       R|W     TRUE     -
+    %%BIT    SEN             0      0     0       R|W     TRUE     W
+
+%REG_NAME DFEjSUBSTCHn  
+    %%TITLE  name           upper  lower  init    access  support  callback    
+    %%BIT    SDOEN           8      8     0       R      TRUE     -
+    %%BIT    MINF            7      7     0       R      TRUE     -
+    %%BIT    SUBF            6      6     0       R      TRUE     -
+    %%BIT    SCER            5      5     0       R      TRUE     -
+    %%BIT    SGER            2      2     0       R      TRUE     -
+    %%BIT    SDOOW           1      1     0       R      TRUE     -
+
+%REG_NAME DFEjSUBCLRSTCHn
+    %%TITLE  name           upper  lower  init    access  support  callback    
+    %%BIT    CLRSDOEN        8      8     0       R|W    TRUE     -
+    %%BIT    CLRSCER         5      5     0       R|W    TRUE     -
+    %%BIT    CLRSGER         2      2     0       R|W    TRUE     -
+    %%BIT    CLRSDOOW        1      1     0       R|W    TRUE     R|W
+
+%REG_NAME DFEjSUBERMCHn  
+    %%TITLE  name           upper  lower  init    access  support  callback    
+    %%BIT    MSKSCER         5      5     0       R|W    TRUE     -
+    %%BIT    MSKSGER         2      2     0       R|W    TRUE     -
+    %%BIT    MSKSDOOW        1      1     0       R|W    TRUE     -
+
+%REG_NAME DFEjSUBTRGCHn  
+    %%TITLE  name           upper  lower  init    access support  callback    
+    %%BIT    SBFE           15     14     0       R|W    TRUE     -
+    %%BIT    SBE             7      6     0       R|W    TRUE     -
+    %%BIT    SBT             1      0     0       R|W    TRUE     W
+
+%REG_NAME DFEjSUBTRHCHn  
+    %%TITLE  name           upper  lower  init    access support  callback    
+    %%BIT    SITS            1      1     0       R      TRUE     -
+    %%BIT    SETS            0      0     0       R      TRUE     -
+
+%REG_NAME DFEjSUBTRG0   
+    %%TITLE  name           upper  lower  init    access support  callback    
+    %%BIT    SUBTMTRG2      20     16     0       R|W    TRUE     -
+    %%BIT    SUBTMTRG1      12      8     0       R|W    TRUE     -
+    %%BIT    SUBTMTRG0       4      0     0       R|W    TRUE     -
+
+%REG_NAME DFEjCAPCTLCHn  
+    %%TITLE  name           upper  lower  init    access support  callback    
+    %%BIT    CAPCH           7      4     0       R|W    TRUE     -
+    %%BIT    CIEE            2      2     0       R|W    TRUE     -
+    %%BIT    CEN             0      0     0       R|W    TRUE     W
+
+%REG_NAME DFEjCAPSTCHn  
+    %%TITLE  name           upper  lower  init    access  support  callback    
+    %%BIT    CDOEN           8      8     0       R      TRUE     -
+    %%BIT    CDOOW           1      1     0       R      TRUE     -
+
+%REG_NAME DFEjCAPCLRSTCHn  
+    %%TITLE  name           upper  lower  init    access  support  callback    
+    %%BIT    CLRCDOEN        8      8     0       R|W    TRUE     -
+    %%BIT    CLRCDOOW        1      1     0       R|W    TRUE     R|W
+
+%REG_NAME DFEjCAPERMCHn  
+    %%TITLE  name           upper  lower  init    access  support  callback    
+    %%BIT    MSKCDOOW        1      1     0       R|W     TRUE     -

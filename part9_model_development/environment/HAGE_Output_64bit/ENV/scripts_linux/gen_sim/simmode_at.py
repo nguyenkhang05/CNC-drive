@@ -1,0 +1,1 @@
+SIM_MODE = "AT"

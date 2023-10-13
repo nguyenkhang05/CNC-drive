@@ -1,0 +1,36 @@
+%MODULE ATU5_TIMERD
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         9
+
+%REG_CHANNEL reg_def
+    %%TITLE   name          reg_name      wsize         rsize         length        offset        factor_start  factor_end    factor_index  factor_step   access        init          support       callback
+    %%REG     TSTRD         TSTRD         8|16          8|16|32       16            0x00        -             -             -             -             R|W           0x0000        TRUE          -
+    %%REG     CCAPSELD      CCAPSELD      8             8|16|32       8             0x04        -             -             -             -             R|W           0x0000        TRUE          -
+    %%REG     CICRD         CICRD         8|16|32       8|16|32       32            0x20        0             7             -             0x04          R             0x0000        TRUE          -
+    
+%REG_NAME     TSTRD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         STRD14          14           14          0x0           R|W           TRUE          -
+%%BIT         STRD13          13           13          0x0           R|W           TRUE          -
+%%BIT         STRD12          12           12          0x0           R|W           TRUE          -
+%%BIT         STRD11          11           11          0x0           R|W           TRUE          -
+%%BIT         STRD10          10           10          0x0           R|W           TRUE          -
+%%BIT         STRD9           9            9           0x0           R|W           TRUE          -
+%%BIT         STRD8           8            8           0x0           R|W           TRUE          -
+%%BIT         STRD7           7            7           0x0           R|W           TRUE          -
+%%BIT         STRD6           6            6           0x0           R|W           TRUE          -
+%%BIT         STRD5           5            5           0x0           R|W           TRUE          -
+%%BIT         STRD4           4            4           0x0           R|W           TRUE          -
+%%BIT         STRD3           3            3           0x0           R|W           TRUE          -
+%%BIT         STRD2           2            2           0x0           R|W           TRUE          -
+%%BIT         STRD1           1            1           0x0           R|W           TRUE          -
+%%BIT         STRD0           0            0           0x0           R|W           TRUE          W
+
+%REG_NAME     CCAPSELD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         CCAPSEL         0            0           0x0           R|W           TRUE          -
+
+%REG_NAME     CICRD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         CICRD          31            0           0x0           R             TRUE          -
+

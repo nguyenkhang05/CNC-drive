@@ -1,0 +1,32 @@
+// Description: History file
+// Ref: {UIMPL_SLAVE_DD_ATT1_002, UIMPL_SLAVE_DD_Direction_044}
+
+###############################
+- Release info: source code after coding phase.
+- Release date: - 
+
+- File (CVS repository):
+    + UIMPL_SLAVE.cpp                     (1.1)
+    + UIMPL_SLAVE.h                       (1.1)
+    + UIMPL_SLAVE_cmdif.h                 (1.1)
+    + PY_UIMPL_SLAVE.cpp                  (1.1)
+    + PY_UIMPL_SLAVE.h                    (1.1)
+
+- Supported functions:
+      + UIMPL_SLAVE output error signal and master’s BMID.
+
+    
+###############################
+- Release info: Update source code after UT.
+- Release date: - 
+
+- File (CVS repository):
+    + UIMPL_SLAVE.cpp                     (1.5)
+    + UIMPL_SLAVE.h                       (1.4)
+    + UIMPL_SLAVE_cmdif.h                 (1.2)
+    + PY_UIMPL_SLAVE.cpp                  (1.2)
+    + PY_UIMPL_SLAVE.h                    (1.2)
+
+- Supported functions:
+      + Not changed.
+

@@ -1,0 +1,161 @@
+#############################
+## INTC_Output_20180507.7z
+#############################
+- Release info: Offical release.
+
+- Release date: May 07, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+    NSMVINTC2V02.cpp        1.9
+    NSMVINTC2V02.h          1.4
+    G4_Intc2Func.cpp        1.8
+    G4_Intc2Func.h          1.3
+    G4_Intc2FuncApi.h       1.2
+    G4_Intc2FuncUsr.cpp     1.2
+    G4_Intc2FuncUsr.h       1.2
+    G4_Intc2Wrapper.cpp     1.2
+    G4_Intc2Wrapper.h       1.2
+
+- Supported features:
+ + Interrupt input I/F from outside:
+   2016 channels for EI-level interrupt requests
+ + INTC1 I/F:
+   256 priority levels for EI-level interrupt requests.
+   The attributes of interrupt: Guest mode, Guest on back ground, GPID of guest mode are added to support HV.
+ + System input I/F (reset, clock): Operates on the peripheral clock.
+ + APB I/F: LT with decoupling access, 2-phase AT access.
+ + Control register (EIC32-EIC2047, IMR1-IMR63, I2EIBG0-I2EIBG7, EIBD32-EIBD2047, EEIC32-EEIC2047)
+ + High-level detection.
+ + Synchronous edge detection.
+ + Broadcast notification.
+
+- Non-supported features and limitation:
+ + INTC2 model does not support 64 bit access size.
+
+#############################
+## INTC_Output_20180912.7z
+#############################
+- Release info: Offical release (not change for INTC2)
+
+- Release date: Sep 12, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (CVS repository): Not change
+
+- Supported features: Not change
+
+- Non-supported features and limitation: Not change
+
+#############################
+##  REL update (Yoshinaga)
+#############################
+<2018.11.8>
+
+SVN version
+  Rev.154 (REL svn server's rivision)
+
+File
+  Makefile
+    L75		: Add path "-I$(MODEL_CFOREST_PATH)/COMMON/include" at "INCPATH_MINE"
+
+#############################
+## RVC Update
+#############################
+- Release info: release alpha source.
+   + Fix warning by tool check (1Team, MS Analysis)
+- Release date: Feb 13, 2020.
+
+- File (CVS repository):
+    NSMVINTC2V02.cpp        1.11
+    NSMVINTC2V02.h          1.5
+    G4_Intc2Func.cpp        1.10
+    G4_Intc2Func.h          1.4
+    G4_Intc2FuncApi.h       1.3
+    G4_Intc2FuncUsr.cpp     1.4
+    G4_Intc2FuncUsr.h       1.3
+    G4_Intc2Wrapper.cpp     1.3
+    G4_Intc2Wrapper.h       1.3
+
+-----------------------------
+INTC_Output_64bit_20200331.7z
+-----------------------------
+- Release info: Release source code to following HWM spec Rev.061
+- Release date: Mar 31, 2020
+- Test environment: SC-HEAP G4 Rev298, machine x64, gcc4.9.3.
+- File (CVS repository):
+    NSMVINTC2V02.cpp        1.12
+    NSMVINTC2V02.h          1.6
+    G4_Intc2Func.cpp        1.11
+    G4_Intc2Func.h          1.4
+    G4_Intc2FuncApi.h       1.3
+    G4_Intc2FuncUsr.cpp     1.5
+    G4_Intc2FuncUsr.h       1.3
+    G4_Intc2Wrapper.cpp     1.4
+    G4_Intc2Wrapper.h       1.3
+
+-----------------------------
+Release beta sourc code for issue in #121481 bug in port after reset
+-----------------------------
+- Release info: Release beta source code to fix issue in #121481
+- Release date: Apr 09, 2020
+- Test environment: SC-HEAP G4 Rev298, machine x64, gcc4.9.3.
+- File (CVS repository):
+    NSMVINTC2V02.cpp        1.13
+
+-----------------------------
+Release final data for issue in #121481 bug in port after reset
+-----------------------------
+- Release info: Release beta source code to fix issue in #121481
+- Release date: Apr 20, 2020
+- Test environment: SC-HEAP G4 Rev298, machine x64, gcc4.9.3.
+- File (CVS repository): Same as beta release
+    NSMVINTC2V02.cpp        1.13
+    NSMVINTC2V02.h          1.6
+    G4_Intc2Func.cpp        1.11
+    G4_Intc2Func.h          1.4
+    G4_Intc2FuncApi.h       1.3
+    G4_Intc2FuncUsr.cpp     1.5
+    G4_Intc2FuncUsr.h       1.3
+    G4_Intc2Wrapper.cpp     1.4
+    G4_Intc2Wrapper.h       1.3
+
+-----------------------------
+Release final data for issue in #122365 update copy right for PY_NSMVINTC2V02.* file
+-----------------------------
+- Release info: Release source code to fix issue in #122365
+- Release date: Apr 22, 2020
+- Test environment: SC-HEAP G4 Rev298, machine x64, gcc4.9.3.
+- File (CVS repository): Update copy right for PY_NSMVINTC2V02.* file
+    NSMVINTC2V02.cpp        1.13
+    NSMVINTC2V02.h          1.6
+    G4_Intc2Func.cpp        1.11
+    G4_Intc2Func.h          1.4
+    G4_Intc2FuncApi.h       1.3
+    G4_Intc2FuncUsr.cpp     1.5
+    G4_Intc2FuncUsr.h       1.3
+    G4_Intc2Wrapper.cpp     1.4
+    G4_Intc2Wrapper.h       1.3
+    PY_NSMVINTC2V02.cpp     1.3
+    PY_NSMVINTC2V02.h       1.2
+
+-----------------------------
+Release final data for #122365(note7) update header version of previous release in PY_NSMVINTC1V02.* file
+-----------------------------
+- Release info: Release source code to fix issue in #122365
+- Release date: Apr 23, 2020
+- Test environment: SC-HEAP G4 Rev298, machine x64, gcc4.9.3.
+- File (CVS repository): Same as previous
+    NSMVINTC2V02.cpp        1.13
+    NSMVINTC2V02.h          1.6
+    G4_Intc2Func.cpp        1.11
+    G4_Intc2Func.h          1.4
+    G4_Intc2FuncApi.h       1.3
+    G4_Intc2FuncUsr.cpp     1.5
+    G4_Intc2FuncUsr.h       1.3
+    G4_Intc2Wrapper.cpp     1.4
+    G4_Intc2Wrapper.h       1.3
+    PY_NSMVINTC2V02.cpp     1.3
+    PY_NSMVINTC2V02.h       1.2

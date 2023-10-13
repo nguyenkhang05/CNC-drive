@@ -1,0 +1,12 @@
+=================================
+=        RELEASE HISTORY        =   
+=================================
+
+v2018_03_15
+  - Alpha version (implemented registers and ports)
+v2018_08_03
+  - Beta version (implemented U2A/BIST model)
+v2018_11_14
+  - Fix integration bug reported in #75007
+v2020_10_12
+  - Fix 2 bugs in ticket #126256

@@ -1,0 +1,18 @@
+NSMVBARRV01 HISTORY
+
+--------------------------------------------------------
+<2017.10.25>
+
+SVN version
+  Rev.141
+
+File
+  -NSMVBARRV01.cpp/h
+  -BARRIER_SYNC.cpp/h
+  -BarrierSyncFunc.cpp/h
+    -correspond for 64bit.
+    -change SELF2DEST into SELF2DEST_BARR
+       -SELF2DEST_BARR inherit SELF2DEST_BASE.It makes management easier by doing so.
+  -SELF2DEST_BARR.cpp/h
+    -new create
+

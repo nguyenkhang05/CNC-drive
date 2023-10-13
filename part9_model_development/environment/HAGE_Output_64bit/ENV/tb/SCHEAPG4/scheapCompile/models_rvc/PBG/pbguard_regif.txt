@@ -1,0 +1,56 @@
+%MODULE PBGUARD
+
+%%REG_INSTANCE  reg_def 8
+
+%REG_CHANNEL reg_def
+    %%TITLE     name             reg_name        wsize     rsize     length      offset      access      init           factor_start    factor_end      factor_step     support     callback
+    %%REG       PBGERRCLR        PBGERRCLR       8|16|32   8|16|32   32          0x0         R|W1:0      0x00000000     -               -               -               TRUE        -
+    %%REG       PBGERRSTAT       PBGERRSTAT      8|32      8|16|32   32          0x4         R           0x00000000     -               -               -               TRUE        -
+    %%REG       PBGERRADDR       PBGERRADDR      32        8|16|32   32          0x8         R           0x00000000     -               -               -               TRUE        -
+    %%REG       PBGERRTYPE       PBGERRTYPE      16|32     8|16|32   32          0xC         R           0x00000000     -               -               -               TRUE        -
+    %%REG       PBGKCPROT        PBGKCPROT       32        8|16|32   32          0x10        R|W         0x00000000     -               -               -               TRUE        -
+    %%REG       PBGPROT0         PBGPROT0        8|16|32   8|16|32   32          0x80        R|W         0x00000000     0               15              0x08            TRUE        -
+    %%REG       PBGPROT1         PBGPROT1        8|16|32   8|16|32   32          0x84        R|W         0x00000000     0               15              0x08            TRUE        -
+
+
+%REG_NAME PBGERRCLR
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       CLRO        1       1       0       R|W1:0  TRUE        W
+    %%BIT       CLRE        0       0       0       R|W1:0  TRUE        -
+
+%REG_NAME PBGERRSTAT
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       OVF         1       1       0       R       TRUE        -
+    %%BIT       ERR         0       0       0       R       TRUE        -
+
+%REG_NAME PBGERRADDR
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       ADDR        31      0       0       R       TRUE        -
+
+%REG_NAME PBGERRTYPE
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       SEC         13      13      0       R       TRUE        -
+    %%BIT       DBG         12      12      0       R       TRUE        -
+    %%BIT       UM          11      11      0       R       TRUE        -
+    %%BIT       SPI         10      6       0       R       TRUE        -
+    %%BIT       WRITE       0       0       0       R       TRUE        -
+
+%REG_NAME PBGKCPROT
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       KCPROT      31      1       0       R|W     TRUE        W
+    %%BIT       KCE         0       0       0       R|W     TRUE        -
+
+%REG_NAME PBGPROT0
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       LOCK        31      31      0       R|W     TRUE        W
+    %%BIT       GEN         8       8       0       R|W     TRUE        -
+    %%BIT       SEC         7       7       0       R|W     TRUE        -
+    %%BIT       DBG         6       6       0       R|W     TRUE        -
+    %%BIT       UM          4       4       0       R|W     TRUE        -
+    %%BIT       WG          1       1       0       R|W     TRUE        -
+    %%BIT       RG          0       0       0       R|W     TRUE        -
+
+%REG_NAME PBGPROT1
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       SPID        31      0       0       R|W     TRUE        W
+

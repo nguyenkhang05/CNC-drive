@@ -1,0 +1,62 @@
+%MODULE mecccap_dmdan
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  8 
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name                           reg_name                     wsize   rsize      length offset  factor_start    factor_end  factor_index    factor_step access   init   support  callback
+    %%REG      DA_ERRINT                     DA_ERRINT                   8|16|32 8|16|32      32     0x00    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      DA_SSTCLR                     DA_SSTCLR                   8|16|32 8|16|32      32     0x10    -               -           -               -           W        0x0     TRUE     -
+    %%REG      DA_DSTCLR                     DA_DSTCLR                   8|16|32 8|16|32      32     0x14    -               -           -               -           W        0x0     TRUE     -
+    %%REG      DA_OVFCLR                     DA_OVFCLR                   8|16|32 8|16|32      32     0x18    -               -           -               -           W        0x0     TRUE     -
+    %%REG      DA_SERSTR                     DA_SERSTR                   -       8|16|32      32     0x20    -               -           -               -           R        0x0     TRUE     -
+    %%REG      DA_DERSTR                     DA_DERSTR                   8|16|32 8|16|32      32     0x24    -               -           -               -           R        0x0     TRUE     -
+    %%REG      DA_OVFSTR                     DA_OVFSTR                   8|16|32 8|16|32      32     0x28    -               -           -               -           R        0x0     TRUE     -
+    %%REG      DA_SERINF                     DA_SERINF                   8|16|32 8|16|32      32     0x30    -               -           -               -           R        0x0     TRUE     -
+    %%REG      DA_nSEADR                     DA_nSEADR                   -       8|16|32      32     0x70    0               31          -               4           R        0x0     TRUE     -
+    %%REG      DA_00DEADR                    DA_00DEADR                  -       8|16|32      32     0xF0    -               -           -               -           R        0x0     TRUE     -
+    
+%REG_NAME DA_ERRINT                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SEOVFIE            7        7      1       R|W     TRUE        -
+    %%BIT    DEDIE              1        1      1       R|W     TRUE        -
+    %%BIT    SEDIE              0        0      1       R|W     TRUE        -
+
+%REG_NAME DA_SSTCLR                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SSTCLR00           0        0      0       W       TRUE        W
+
+%REG_NAME DA_DSTCLR                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DSTCLR00           0        0      0       W       TRUE        W
+
+%REG_NAME DA_OVFCLR                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SERROVFCLR1        1        1      0       W       TRUE        -
+    %%BIT    SERROVFCLR0        0        0      0       W       TRUE        W
+
+%REG_NAME DA_SERSTR                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SEDF00             0        0      0       R       TRUE        -
+
+%REG_NAME DA_DERSTR                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DEDF00             1        1      0       R       TRUE        -
+
+%REG_NAME DA_OVFSTR                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SERROVF1           1        1      0       R       TRUE        -
+    %%BIT    SERROVF0           0        0      0       R       TRUE        -
+
+%REG_NAME DA_SERINF                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SEDLINF00          0        0      0       R       TRUE        -
+
+%REG_NAME DA_nSEADR                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SEDL               31       27     0       R       TRUE        -
+    %%BIT    SEADR0             26       2      0       R       TRUE        -
+
+%REG_NAME DA_00DEADR                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DEDL               31       27     0       R       TRUE        -
+    %%BIT    DEADR0             26       2      0       R       TRUE        -

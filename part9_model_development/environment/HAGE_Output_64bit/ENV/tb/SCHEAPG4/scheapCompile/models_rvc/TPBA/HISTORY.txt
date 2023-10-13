@@ -1,0 +1,11 @@
+=================================
+=        RELEASE HISTORY        =   
+=================================
+
+v2019_10_31
+  - Fix issue of reading counter value in debug mode (Redmine #81507)
+
+v2018_02_28
+  - Update source code to fix segmentation fault on SC-HEAP (gcc issue related to double)
+
+[...]

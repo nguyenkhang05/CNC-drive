@@ -1,0 +1,82 @@
+%MODULE DummyMasterRvc
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  6
+
+%REG_CHANNEL reg_def
+    %%TITLE     name            reg_name        wsize   rsize   length  offset  access   init   support  callback
+    %%REG       CTRL_REG        CTRL_REG        32      8|16|32 32      0x00    R|W      0x0    TRUE     -
+    %%REG       DEBUG_MODE_REG  DEBUG_MODE_REG  32      8|16|32 32      0x04    R|W      0x0    TRUE     -
+    %%REG       EXT_REG         EXT_REG         32      8|16|32 32      0x08    R|W      0x0    TRUE     -
+    %%REG       ADDR_REG        ADDR_REG        32      8|16|32 32      0x0C    R|W      0x0    TRUE     -
+    %%REG       SIZE_REG        SIZE_REG        32      8|16|32 32      0x10    R|W      0x0    TRUE     -
+    %%REG       CMD_REG         CMD_REG         32      8|16|32 32      0x14    R|W      0x0    TRUE     -
+    %%REG       WR_DATA_REG     WR_DATA_REG     32      8|16|32 32      0x18    R|W      0x0    TRUE     -
+    %%REG       RD_DATA_REG     RD_DATA_REG     32      8|16|32 32      0x1C    R|W      0x0    TRUE     -
+    %%REG       WR_DATA_REG_0   WR_DATA_REG_0   32      8|16|32 32      0x20    R|W      0x0    TRUE     -
+    %%REG       WR_DATA_REG_1   WR_DATA_REG_1   32      8|16|32 32      0x24    R|W      0x0    TRUE     -
+    %%REG       RD_DATA_REG_0   RD_DATA_REG_0   32      8|16|32 32      0x28    R|W      0x0    TRUE     -
+    %%REG       RD_DATA_REG_1   RD_DATA_REG_1   32      8|16|32 32      0x2C    R|W      0x0    TRUE     -
+    %%REG       APB_EXT_REG     VCI_EXT_REG     32      8|16|32 32      0x30    R|W      0x0    TRUE     -
+    %%REG       PEID_DEBUG_REG  PEID_DEBUG_REG  32      8|16|32 32      0x34    R|W      0x0    TRUE     -
+
+%REG_NAME CTRL_REG
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    CTRL           15      0      0    R|W     TRUE     W
+
+%REG_NAME DEBUG_MODE_REG
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    DEBUG           0      0      0    R|W     TRUE     -
+
+%REG_NAME EXT_REG
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    SEC            31     31      0    R|W     TRUE     -
+    %%BIT    TCID           29     24      0    R|W     TRUE     -
+    %%BIT    VCID           18     16      0    R|W     TRUE     -
+    %%BIT    UM             14     14      0    R|W     TRUE     -
+    %%BIT    VM             13     13      0    R|W     TRUE     -
+    %%BIT    SPID           12      8      0    R|W     TRUE     -
+    %%BIT    PEID            7      0      0    R|W     TRUE     -
+
+%REG_NAME ADDR_REG
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    ADDR           31      0      0    R|W     TRUE     -
+
+%REG_NAME SIZE_REG
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    SIZE            7      0      0    R|W     TRUE     - 
+
+%REG_NAME CMD_REG
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    COMMAND         0      0      0    R|W     TRUE     - 
+
+%REG_NAME WR_DATA_REG
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    DATA           31      0      0    R|W     TRUE     -
+
+%REG_NAME RD_DATA_REG
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    DATA           31      0      0    R|W     TRUE     -
+
+%REG_NAME WR_DATA_REG_0
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    DATA_0         31      0      0    R|W     TRUE     - 
+
+%REG_NAME WR_DATA_REG_1
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    DATA_1         31      0      0    R|W     TRUE     -
+
+%REG_NAME RD_DATA_REG_0
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    DATA_0         31      0      0    R|W     TRUE     - 
+
+%REG_NAME RD_DATA_REG_1
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    DATA_1         31      0      0    R|W     TRUE     -
+
+%REG_NAME APB_EXT_REG
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    APB_EXT        3      0      0     R|W     TRUE     -
+
+%REG_NAME PEID_DEBUG_REG
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    PEID_DEBUG     15     0      0     R|W     TRUE     -

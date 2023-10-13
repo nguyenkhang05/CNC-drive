@@ -1,0 +1,72 @@
+%MODULE HWCORE_VRFBUF
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  11
+
+%REG_CHANNEL reg_def
+  %%TITLE    name               reg_name             size         wsize         rsize       length      offset    factor_start   factor_end   factor_index   factor_step     init             access    support    callback
+  %%REG      CBCTR0             CBCTR0                8            8            8|16|32      8          0x780     -              -            -              -               0x00000000       R|W       TRUE       -
+  %%REG      CBTIM              CBTIM                16           16            8|16|32     16          0x782     -              -            -              -               0x00000000       R|W       TRUE       -
+  %%REG      CBAD               CBAD                 16            -            8|16|32     16          0x784     0              2            -              0x2             0x00000000       R         TRUE       -
+  %%REG      CBTHTRESFIXIN      CBTHTRESFIXIN        16            -            8|16|32     16          0x78A     -              -            -              -               0x00000000       R         TRUE       -
+  %%REG      CBIDFIX            CBIDFIX              32            -            8|16|32     32          0x78C     -              -            -              -               0x00000000       R         TRUE       -
+  %%REG      CBIQFIX            CBIQFIX              32            -            8|16|32     32          0x790     -              -            -              -               0x00000000       R         TRUE       -
+  %%REG      CBPWMUIP           CBPWMUIP             32            -            8|16|32     32          0x794     -              -            -              -               0x00000000       R         TRUE       -
+  %%REG      CBPWMVIP           CBPWMVIP             32            -            8|16|32     32          0x798     -              -            -              -               0x00000000       R         TRUE       -
+  %%REG      CBPWMWIP           CBPWMWIP             32            -            8|16|32     32          0x79C     -              -            -              -               0x00000000       R         TRUE       -
+  %%REG      CBBREC             CBBREC                8            -            8|16|32      8          0x7A0     -              -            -              -               0x00000000       R         TRUE       -
+  %%REG      CBIREC3            CBIREC3               8            -            8|16|32      8          0x7A1     -              -            -              -               0x00000000       R         TRUE       -
+
+%REG_NAME CBCTR0
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   CBMON             2       2     0x0       R        TRUE     -
+    %%BIT   CBEN1             1       1     0x0       R|W      TRUE     -
+    %%BIT   CBEN0             0       0     0x0       R|W      TRUE     W
+
+%REG_NAME CBTIM
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   IREC3WBT         13      13     0x0       R|W      TRUE     -
+    %%BIT   IREC3VBT         12      12     0x0       R|W      TRUE     -
+    %%BIT   IREC3UBT         11      11     0x0       R|W      TRUE     -
+    %%BIT   CMP0BT            9       9     0x0       R|W      TRUE     -
+    %%BIT   PWMBT             2       2     0x0       R|W      TRUE     -
+    %%BIT   INBT              0       0     0x0       R|W      TRUE     -
+
+%REG_NAME CBAD
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             11       0     0x0       R        TRUE     -
+
+%REG_NAME CBTHTRESFIXIN
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             11       0     0x0       R        TRUE     -
+
+%REG_NAME CBIDFIX
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R        TRUE     -
+
+%REG_NAME CBIQFIX
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R        TRUE     -
+
+%REG_NAME CBPWMUIP
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             17       0     0x0       R        TRUE     -
+
+%REG_NAME CBPWMVIP
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             17       0     0x0       R        TRUE     -
+
+%REG_NAME CBPWMWIP
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             17       0     0x0       R        TRUE     -
+
+%REG_NAME CBBREC
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   WPTN              2       2     0x0       R        TRUE     -
+    %%BIT   VPTN              1       1     0x0       R        TRUE     -
+    %%BIT   UPTN              0       0     0x0       R        TRUE     -
+
+%REG_NAME CBIREC3
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   WPTN              2       2     0x0       R        TRUE     -
+    %%BIT   VPTN              1       1     0x0       R        TRUE     -
+    %%BIT   UPTN              0       0     0x0       R        TRUE     -

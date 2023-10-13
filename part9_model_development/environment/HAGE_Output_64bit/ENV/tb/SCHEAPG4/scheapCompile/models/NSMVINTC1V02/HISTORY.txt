@@ -1,0 +1,214 @@
+#############################
+## INTC_Output_20180507.7z
+#############################
+- Release info: Offical release.
+
+- Release date: May 07, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+    NSMVINTC1V02.cpp         1.9
+    NSMVINTC1V02.h           1.6
+    G4_Intc1FuncApi.h        1.3
+    G4_Intc1Func.cpp         1.10
+    G4_Intc1Func.h           1.8
+    G4_Intc1FuncUsr.cpp      1.3
+    G4_Intc1FuncUsr.h        1.3
+    G4_Intc1Wrapper.cpp      1.2
+    G4_Intc1Wrapper.h        1.2
+    G4_intc_def.h            1.2
+    G4_intc_typ.h            1.4
+
+- Supported features:
+ + Interrupt input I/F from outside:
+   32 channels for EI-level interrupt requests
+   16 channels for FE-level interrupt requests
+ + CPU I/F:
+   256 priority levels for EI-level interrupt requests.
+   The attributes of interrupt: Guest mode, Guest on back ground, GPID of guest mode are added to support HV.
+ + INTC2 I/F:
+   256 priority levels for EI-level interrupt requests.
+   The attributes of interrupt: Guest mode, Guest on back ground, GPID of guest mode are added to support HV.
+ + System input I/F (reset, clock): Operates on the CPU clock.
+ + External input I/F (detection type specification):
+   FENMI/FEINT supports only synchronous edge detection.
+   EIINT support both edge detection and level detection.
+ + APB I/F: LT with decoupling access, 2-phase AT access.
+ + Synchronous edge detection.
+ + High-level detection.
+ + Control register (EIC0-EIC31, EEIC0-EEIC31, DBMK, FNC, FIC0-FIC15, IMR0, EIBD0-EIBD31, FIBD0-FIBD15, EIBG, FIBG, IHVCFG)
+ + Support HV configuration: Parse configure file to get the initial value of HVCFG from [G4CPU_HV_INFO] and set the info at mHvcfgIniVal.
+
+- Non-supported features and limitation:
+ + When user changes the value of FNC.FNCT and FIC.FICT via debug access, INTC1 model does not support the behavior.
+ + INTC1 model does not support 64 bit access size.
+
+#############################
+## INTC_Output_20180912.7z
+#############################
+- Release info: Offical release to fix issue related to fenmi in ticket #50447
+
+- Release date: Sep 12, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+    NSMVINTC1V02.cpp         1.10
+    NSMVINTC1V02.h           1.6
+    G4_Intc1FuncApi.h        1.3
+    G4_Intc1Func.cpp         1.10
+    G4_Intc1Func.h           1.8
+    G4_Intc1FuncUsr.cpp      1.3
+    G4_Intc1FuncUsr.h        1.3
+    G4_Intc1Wrapper.cpp      1.2
+    G4_Intc1Wrapper.h        1.2
+    G4_intc_def.h            1.2
+    G4_intc_typ.h            1.4
+
+    File NSMVINTC1V02.cpp is updated to remove "fenmi operate as level detection".
+    It is fixed for ticket #50447.
+
+- Supported features: Correct that FEINT support both edge/level detection.
+ + Interrupt input I/F from outside:
+   32 channels for EI-level interrupt requests
+   16 channels for FE-level interrupt requests
+ + CPU I/F:
+   256 priority levels for EI-level interrupt requests.
+   The attributes of interrupt: Guest mode, Guest on back ground, GPID of guest mode are added to support HV.
+ + INTC2 I/F:
+   256 priority levels for EI-level interrupt requests.
+   The attributes of interrupt: Guest mode, Guest on back ground, GPID of guest mode are added to support HV.
+ + System input I/F (reset, clock): Operates on the CPU clock.
+ + External input I/F (detection type specification):
+   FENMI supports only synchronous edge detection.
+   FEINT/EIINT support both edge detection and level detection.
+ + APB I/F: LT with decoupling access, 2-phase AT access.
+ + Synchronous edge detection.
+ + High-level detection.
+ + Control register (EIC0-EIC31, EEIC0-EEIC31, DBMK, FNC, FIC0-FIC15, IMR0, EIBD0-EIBD31, FIBD0-FIBD15, EIBG, FIBG, IHVCFG)
+ + Support HV configuration: Parse configure file to get the initial value of HVCFG from [G4CPU_HV_INFO] and set the info at mHvcfgIniVal.
+
+- Non-supported features and limitation: Not change
+
+
+#############################
+##  REL update (Yoshinaga)
+#############################
+<2018.11.8>
+
+SVN version
+  Rev.154 (REL svn server's rivision)
+
+File
+  Makefile
+    L73		: Add path "-I$(MODEL_CFOREST_PATH)/COMMON/include" at "INCPATH_MINE"
+    
+#############################
+## RVC Update
+#############################
+- Release info: release alpha source.
+   + Fix warning by tool check (1Team, MS Analysis)
+- Release date: Feb 13, 2020.
+
+- File (CVS repository):
+    NSMVINTC1V02.cpp         1.14
+    NSMVINTC1V02.h           1.7
+    G4_Intc1FuncApi.h        1.4
+    G4_Intc1Func.cpp         1.13
+    G4_Intc1Func.h           1.9
+    G4_Intc1FuncUsr.cpp      1.5
+    G4_Intc1FuncUsr.h        1.4
+    G4_Intc1Wrapper.cpp      1.3
+    G4_Intc1Wrapper.h        1.3
+    G4_intc_def.h            1.3
+    G4_intc_typ.h            1.5
+
+-----------------------------
+INTC_Output_64bit_20200331.7z
+-----------------------------
+- Release info: Release source code to following HWM spec Rev.061
+- Release date: Mar 31, 2020
+- Test environment: SC-HEAP G4 Rev298, machine x64, gcc4.9.3.
+- File (CVS repository):
+    NSMVINTC1V02.cpp         1.16
+    NSMVINTC1V02.h           1.8
+    G4_Intc1FuncApi.h        1.4
+    G4_Intc1Func.cpp         1.14
+    G4_Intc1Func.h           1.9
+    G4_Intc1FuncUsr.cpp      1.6
+    G4_Intc1FuncUsr.h        1.4
+    G4_Intc1Wrapper.cpp      1.4
+    G4_Intc1Wrapper.h        1.3
+    G4_intc_def.h            1.4
+    G4_intc_typ.h            1.5
+
+-----------------------------
+Release beta versio for issue in #121481 bug in port after reset
+-----------------------------
+- Release info: Release beta source code to fix issue in #121481
+- Release date: Apr 09, 2020
+- Test environment: SC-HEAP G4 Rev298, machine x64, gcc4.9.3.
+- File (CVS repository):
+    NSMVINTC1V02.cpp         1.17
+
+-----------------------------
+Release final data for issue in #121481 bug in port after reset
+-----------------------------
+- Release info: Release final source code to fix issue in #121481
+- Release date: Apr 20, 2020
+- Test environment: SC-HEAP G4 Rev298, machine x64, gcc4.9.3.
+- File (CVS repository): Same as beta release
+    NSMVINTC1V02.cpp         1.17
+    NSMVINTC1V02.h           1.8
+    G4_Intc1FuncApi.h        1.4
+    G4_Intc1Func.cpp         1.14
+    G4_Intc1Func.h           1.9
+    G4_Intc1FuncUsr.cpp      1.6
+    G4_Intc1FuncUsr.h        1.4
+    G4_Intc1Wrapper.cpp      1.4
+    G4_Intc1Wrapper.h        1.3
+    G4_intc_def.h            1.4
+    G4_intc_typ.h            1.5
+
+-----------------------------
+Release final data for #122365 update copy right for PY_NSMVINTC1V02.* file
+-----------------------------
+- Release info: Release final source code for #122365
+- Release date: Apr 22, 2020
+- Test environment: SC-HEAP G4 Rev298, machine x64, gcc4.9.3.
+- File (CVS repository): Add version for PY_NSMVINTC1V02.* file
+    NSMVINTC1V02.cpp         1.17
+    NSMVINTC1V02.h           1.8
+    G4_Intc1FuncApi.h        1.4
+    G4_Intc1Func.cpp         1.14
+    G4_Intc1Func.h           1.9
+    G4_Intc1FuncUsr.cpp      1.6
+    G4_Intc1FuncUsr.h        1.4
+    G4_Intc1Wrapper.cpp      1.4
+    G4_Intc1Wrapper.h        1.3
+    G4_intc_def.h            1.4
+    G4_intc_typ.h            1.5
+    PY_NSMVINTC1V02.cpp      1.3
+    PY_NSMVINTC1V02.h        1.2
+    
+-----------------------------
+Release final data for #122365(note7) update header version of previous release in PY_NSMVINTC1V02.* file
+-----------------------------
+- Release info: Release final source code for #122365
+- Release date: Apr 23, 2020
+- Test environment: SC-HEAP G4 Rev298, machine x64, gcc4.9.3.
+- File (CVS repository): Same as previous
+    NSMVINTC1V02.cpp         1.17
+    NSMVINTC1V02.h           1.8
+    G4_Intc1FuncApi.h        1.4
+    G4_Intc1Func.cpp         1.14
+    G4_Intc1Func.h           1.9
+    G4_Intc1FuncUsr.cpp      1.6
+    G4_Intc1FuncUsr.h        1.4
+    G4_Intc1Wrapper.cpp      1.4
+    G4_Intc1Wrapper.h        1.3
+    G4_intc_def.h            1.4
+    G4_intc_typ.h            1.5
+    PY_NSMVINTC1V02.cpp      1.3
+    PY_NSMVINTC1V02.h        1.2

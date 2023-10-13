@@ -1,0 +1,342 @@
+%MODULE HWCORE_PWM
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  11
+
+%REG_CHANNEL reg_def
+  %%TITLE    name               reg_name              rsize        wsize       length      offset     init             access    support    callback
+  %%REG      PWMCTR             PWMCTR              8|16|32        32          32          0x340      0x00000000       R|W       TRUE       w
+  %%REG      PWMDT              PWMDT               8|16|32         8           8          0x344      0x00             R|W       TRUE       -
+  %%REG      VDCRCT             VDCRCT              8|16|32        32          32          0x348      0x00000000       R|W       TRUE       -
+  %%REG      VQCRCT             VQCRCT              8|16|32        32          32          0x34C      0x00000000       R|W       TRUE       -
+  %%REG      VEL                VEL                 8|16|32         -          32          0x350      0x00000000       R         TRUE       -
+  %%REG      VELSFT             VELSFT              8|16|32        32          32          0x354      0x00000000       R|W       TRUE       -
+  %%REG      DECVELG            DECVELG             8|16|32        32          32          0x358      0x00000000       R|W       TRUE       -
+  %%REG      DECFLUX            DECFLUX             8|16|32        32          32          0x35C      0x00000000       R|W       TRUE       -
+  %%REG      DECLD              DECLD               8|16|32        32          32          0x360      0x00000000       R|W       TRUE       -
+  %%REG      DECLQ              DECLQ               8|16|32        32          32          0x364      0x00000000       R|W       TRUE       -
+  %%REG      VD2MAX             VD2MAX              8|16|32        32          32          0x368      0x00000000       R|W       TRUE       -
+  %%REG      VQ2MAX             VQ2MAX              8|16|32        32          32          0x36C      0x00000000       R|W       TRUE       -
+  %%REG      VD2                VD2                 8|16|32        32          32          0x370      0x00000000       R|W       TRUE       -
+  %%REG      VQ2                VQ2                 8|16|32        32          32          0x374      0x00000000       R|W       TRUE       -
+  %%REG      GTHT               GTHT                8|16|32        32          32          0x378      0x00000000       R|W       TRUE       -
+  %%REG      PHI                PHI                 8|16|32        16          16          0x37C      0x0000           R|W       TRUE       -
+  %%REG      THTFORESFT         THTFORESFT          8|16|32        16          16          0x37E      0x0000           R|W       TRUE       -
+  %%REG      THTEPWM            THTEPWM             8|16|32        16          16          0x380      0x0000           R|W       TRUE       -
+  %%REG      THTVSFT            THTVSFT             8|16|32        16          16          0x382      0x0000           R|W       TRUE       -
+  %%REG      VDQSFT             VDQSFT              8|16|32        32          32          0x384      0x00000000       R|W       TRUE       -
+  %%REG      SR23               SR23                8|16|32        32          32          0x388      0x0000D106       R|W       TRUE       -
+  %%REG      VU                 VU                  8|16|32        32          32          0x38C      0x00000000       R|W       TRUE       -
+  %%REG      VV                 VV                  8|16|32        32          32          0x390      0x00000000       R|W       TRUE       -
+  %%REG      VW                 VW                  8|16|32        32          32          0x394      0x00000000       R|W       TRUE       -
+  %%REG      TMAX               TMAX                8|16|32        32          32          0x398      0x00000000       R|W       TRUE       -
+  %%REG      VU0                VU0                 8|16|32        32          32          0x39C      0x00000000       R|W       TRUE       -
+  %%REG      VV0                VV0                 8|16|32        32          32          0x3A0      0x00000000       R|W       TRUE       -
+  %%REG      VW0                VW0                 8|16|32        32          32          0x3A4      0x00000000       R|W       TRUE       -
+  %%REG      PWMK1              PWMK1               8|16|32        32          32          0x3A8      0x00000000       R|W       TRUE       -
+  %%REG      VOLV               VOLV                8|16|32        16          16          0x3AC      0x0000           R|W       TRUE       -
+  %%REG      VU1                VU1                 8|16|32        32          32          0x3B0      0x00000000       R|W       TRUE       -
+  %%REG      VV1                VV1                 8|16|32        32          32          0x3B4      0x00000000       R|W       TRUE       -
+  %%REG      VW1                VW1                 8|16|32        32          32          0x3B8      0x00000000       R|W       TRUE       -
+  %%REG      VUOFS              VUOFS               8|16|32        16          16          0x3BC      0x0000           R|W       TRUE       -
+  %%REG      VVOFS              VVOFS               8|16|32        16          16          0x3BE      0x0000           R|W       TRUE       -
+  %%REG      VWOFS              VWOFS               8|16|32        16          16          0x3C0      0x0000           R|W       TRUE       -
+  %%REG      VU2                VU2                 8|16|32        32          32          0x3C4      0x00000000       R|W       TRUE       -
+  %%REG      VV2                VV2                 8|16|32        32          32          0x3C8      0x00000000       R|W       TRUE       -
+  %%REG      VW2                VW2                 8|16|32        32          32          0x3CC      0x00000000       R|W       TRUE       -
+  %%REG      DTUL               DTUL                8|16|32        32          32          0x3D0      0x00000000       R|W       TRUE       -
+  %%REG      DTLL               DTLL                8|16|32        32          32          0x3D4      0x00000000       R|W       TRUE       -
+  %%REG      VUFIX              VUFIX               8|16|32        32          32          0x3D8      0x00000000       R|W       TRUE       -
+  %%REG      VVFIX              VVFIX               8|16|32        32          32          0x3DC      0x00000000       R|W       TRUE       -
+  %%REG      VWFIX              VWFIX               8|16|32        32          32          0x3E0      0x00000000       R|W       TRUE       -
+  %%REG      PWMK2              PWMK2               8|16|32        32          32          0x3E4      0x00000000       R|W       TRUE       -
+  %%REG      DTT                DTT                 8|16|32        32          32          0x3E8      0x00000FFF       R|W       TRUE       -
+  %%REG      CARR               CARR                8|16|32        32          32          0x3EC      0x00007FFF       R|W       TRUE       -
+  %%REG      CARRBUF            CARRBUF             8|16|32        32          32          0x3F0      0x0000FFFF       R|W       TRUE       -
+  %%REG      PWMU0              PWMU0               8|16|32        32          32          0x3F4      0x00000000       R|W       TRUE       -
+  %%REG      PWMV0              PWMV0               8|16|32        32          32          0x3F8      0x00000000       R|W       TRUE       -
+  %%REG      PWMW0              PWMW0               8|16|32        32          32          0x3FC      0x00000000       R|W       TRUE       -
+  %%REG      DTOTH              DTOTH               8|16|32        32          32          0x400      0x7FFFFFFF       R|W       TRUE       -
+  %%REG      DTOPV              DTOPV               8|16|32        32          32          0x404      0x00000000       R|W       TRUE       -
+  %%REG      DTONV              DTONV               8|16|32        32          32          0x408      0x00000000       R|W       TRUE       -
+  %%REG      PWMUDT             PWMUDT              8|16|32        32          32          0x40C      0x00000000       R|W       TRUE       -
+  %%REG      PWMVDT             PWMVDT              8|16|32        32          32          0x410      0x00000000       R|W       TRUE       -
+  %%REG      PWMWDT             PWMWDT              8|16|32        32          32          0x414      0x00000000       R|W       TRUE       -
+  %%REG      PWMUL              PWMUL               8|16|32        32          32          0x418      0x00000000       R|W       TRUE       -
+  %%REG      PWMLL              PWMLL               8|16|32        32          32          0x41C      0x00000000       R|W       TRUE       -
+  %%REG      PWMUIP             PWMUIP              8|16|32        32          32          0x420      0x00000000       R|W       TRUE       -
+  %%REG      PWMVIP             PWMVIP              8|16|32        32          32          0x424      0x00000000       R|W       TRUE       -
+  %%REG      PWMWIP             PWMWIP              8|16|32        32          32          0x428      0x00000000       R|W       TRUE       -
+  %%REG      PWMU               PWMU                8|16|32        32          32          0x42C      0x000047FF       R|W       TRUE       -
+  %%REG      PWMV               PWMV                8|16|32        32          32          0x430      0x000047FF       R|W       TRUE       -
+  %%REG      PWMW               PWMW                8|16|32        32          32          0x434      0x000047FF       R|W       TRUE       -
+
+%REG_NAME PWMCTR
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   FPWMIBTH         20      20     0x0       R|W      TRUE     -
+    %%BIT   SETDTO           15      15     0x0       R|W      TRUE     -
+    %%BIT   PWMOP            14      13     0x0       R|W      TRUE     w
+    %%BIT   SETDEC           12      12     0x0       R|W      TRUE     -
+    %%BIT   DECIDQ           11      10     0x0       R|W      TRUE     -
+    %%BIT   SETVEL            9       9     0x0       R|W      TRUE     -
+    %%BIT   VDQSEL            8       8     0x0       R|W      TRUE     -
+    %%BIT   PWMSEL            7       7     0x0       R|W      TRUE     -
+    %%BIT   SHIPWM            6       6     0x0       R|W      TRUE     -
+    %%BIT   FLININIP          5       4     0x0       R|W      TRUE     -
+    %%BIT   SETHARM           3       1     0x0       R|W      TRUE     -
+    %%BIT   SETPWM            0       0     0x0       R|W      TRUE     -
+
+%REG_NAME PWMDT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   PWMDT             0       0     0x0       R|W      TRUE     w
+
+%REG_NAME VDCRCT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VQCRCT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VEL
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R        TRUE     -
+
+%REG_NAME VELSFT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME DECVELG
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME DECFLUX
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME DECLD
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME DECLQ
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VD2MAX
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             30       0     0x0       R|W      TRUE     -
+
+%REG_NAME VQ2MAX
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             30       0     0x0       R|W      TRUE     -
+
+%REG_NAME VD2
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VQ2
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME GTHT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME PHI
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R|W      TRUE     -
+
+%REG_NAME THTFORESFT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             11       0     0x0       R|W      TRUE     -
+
+%REG_NAME THTEPWM
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             11       0     0x0       R|W      TRUE     -
+
+%REG_NAME THTVSFT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             11       0     0x0       R|W      TRUE     -
+
+%REG_NAME VDQSFT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME SR23
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0000D106      R|W      TRUE     -
+
+%REG_NAME VU
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VV
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VW
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME TMAX
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VU0
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VV0
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VW0
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME PWMK1
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VOLV
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R|W      TRUE     -
+
+%REG_NAME VU1
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VV1
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VW1
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VUOFS
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R|W      TRUE     -
+
+%REG_NAME VVOFS
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R|W      TRUE     -
+
+%REG_NAME VWOFS
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R|W      TRUE     -
+
+%REG_NAME VU2
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VV2
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VW2
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME DTUL
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME DTLL
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VUFIX
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VVFIX
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME VWFIX
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME PWMK2
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME DTT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             17       0     0xFFF      R|W      TRUE     -
+
+%REG_NAME CARR
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             17       0     0x7FFF      R|W      TRUE     -
+
+%REG_NAME CARRBUF
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             17       0     0xFFFF      R|W      TRUE     -
+
+%REG_NAME PWMU0
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME PWMV0
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME PWMW0
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME DTOTH
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             30       0     0x7FFFFFFF      R|W      TRUE     -
+
+%REG_NAME DTOPV
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME DTONV
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME PWMUDT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME PWMVDT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME PWMWDT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             31       0     0x0       R|W      TRUE     -
+
+%REG_NAME PWMUL
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             17       0     0x0       R|W      TRUE     -
+
+%REG_NAME PWMLL
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             17       0     0x0       R|W      TRUE     -
+
+%REG_NAME PWMUIP
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             17       0     0x0       R|W      TRUE     -
+
+%REG_NAME PWMVIP
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             17       0     0x0       R|W      TRUE     -
+
+%REG_NAME PWMWIP
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             17       0     0x0       R|W      TRUE     -
+
+%REG_NAME PWMU
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             17       0     0x47FF      R|W      TRUE     -
+
+%REG_NAME PWMV
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             17       0     0x47FF      R|W      TRUE     -
+
+%REG_NAME PWMW
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             17       0     0x47FF      R|W      TRUE     -

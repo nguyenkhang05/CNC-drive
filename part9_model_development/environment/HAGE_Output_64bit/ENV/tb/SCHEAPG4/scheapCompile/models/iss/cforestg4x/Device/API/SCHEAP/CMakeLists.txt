@@ -1,0 +1,16 @@
+cmake_minimum_required( VERSION 3.2 )
+
+project( DEVICE_API_SCHEAP )
+
+include_directories(
+  ${CMAKE_CURRENT_SOURCE_DIR}/include
+  ${CMAKE_CURRENT_BINARY_DIR}/include
+)
+add_subdirectory( src )
+
+if( USE_UNIT_TEST OR TEST_BUILD_SCHEAP )
+if( USE_UNIT_TEST )
+  add_definitions( -D_UNIT_TEST )
+endif( )
+  add_subdirectory( test )
+endif( )

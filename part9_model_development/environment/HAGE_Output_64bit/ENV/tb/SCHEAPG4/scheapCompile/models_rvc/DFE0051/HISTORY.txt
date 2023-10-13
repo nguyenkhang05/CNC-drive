@@ -1,0 +1,37 @@
+***************************************************************************************************
+DFE0051_Output_64bit_20171117.7z
+-----------------------------
+- Release info: Support 64bit env & fix bug in DFE0051 module (Redmine ticket #10778).
+- Release date: Nov 17, 2017
+- Updated source code:
+    + DFE0051.cpp           (v1.3)
+    + DFE0051_FIFO_Utils.h  (v1.3)
+    + DFE0051_Func.cpp      (v1.3)
+    + DFE0051_Func.h        (v1.3)
+- Supported functions:
+    Not change from previous release.
+
+***************************************************************************************************
+DFE0051_Output_20170727.7z
+-----------------------------
+- Release info: Official release
+- Release date: July 27, 2017
+- Supported functions:
+    + Incorporates a 16- or 4-channel FIR and IIR digital filter unit in a 
+	DFE0051 IP (only even channels if a 64-tap FIR filter is selected)
+    + Filter coefficients and data are stored in the on-chip RAM
+    + Incorporates an accumulation circuit (for accumulation processing or 
+	decimation processing for filtered data) and a peak-hold circuit (for peak 
+	hold processing or comparison processing)
+    + Subtraction circuit incorporated for subtraction on output data from two 
+	channels.
+    + Peak-Hold circuit incorporated for peak holding and comparison
+    + With the peak-holding function, either upper peaks or lower peaks can be 
+	selected.
+    + On a single arbitrary channel, three different peak values can be detected and 
+	held during a single Peak-Hold process.
+    + Generates an interrupt request when the comparison calculation result is true.
+    + Inputs converted data from the on-chip A/D converter  (SARADC, DSADC, and CADC)
+    + Two types of FIFOs can be used: 8-input 8-stage buffer and 1-input 8-stage 
+	buffer.
+

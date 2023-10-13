@@ -1,0 +1,46 @@
+%MODULE HAGE
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         5
+
+%REG_CHANNEL reg_def
+    %%TITLE   name          reg_name      wsize         rsize         length        offset        factor_start  factor_end    factor_index  factor_step   access        init          support       callback
+    %%REG     HAGECR        HAGECR        8|16|32       8|16|32       32            0x00          -             -             -             -             R|W           0x00000000    TRUE          -
+    %%REG     HAGESEED      HAGESEED      32            32            32            0x04          -             -             -             -             R|W           0x00000000    TRUE          -
+    %%REG     HAGEIDAT      HAGEIDAT      32            32            32            0x08          -             -             -             -             R|W           0x00000000    TRUE          -
+    %%REG     HAGEODAT      HAGEODAT      32            32            32            0x0C          -             -             -             -             R|W           0x00000000    TRUE          -
+    %%REG     HAGESRCADD    HAGESRCADD    32            32            32            0x10          -             -             -             -             R|W           0x00000000    TRUE          -
+    %%REG     HAGEDSTADD    HAGEDSTADD    32            32            32            0x14          -             -             -             -             R|W           0x00000000    TRUE          -
+    %%REG     HAGEDL        HAGEDL        32            32            32            0x18          -             -             -             -             R|W           0x00000000    TRUE          -
+
+%REG_NAME HAGECR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    DMASTR         24     24      0     W|R     TRUE     W
+    %%BIT    PLL            17     16      0     W|R     TRUE     -
+    %%BIT    EINT_MSK        8      8      0     W|R     TRUE     -
+    %%BIT    HASHOUT         2      2      0     W|R     TRUE     -
+    %%BIT    MODSEL          1      1      0     W|R     TRUE     -
+    %%BIT    NEW_SEED        0      0      0     W|R     TRUE     -
+
+%REG_NAME HAGESEED
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    SEED           31      0      0     W|R     TRUE     -
+
+%REG_NAME HAGEIDAT
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    DATA_IN        31      0      0     W|R     TRUE     W
+
+%REG_NAME HAGEODAT
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    DATA_OUT       31      0      0     W|R     TRUE     -
+
+%REG_NAME HAGESRCADD
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    SRC_ADDR       31      0      0     W|R     TRUE     -
+
+%REG_NAME HAGEDSTADD
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    DST_ADDR       31      0      0     W|R     TRUE     -
+
+%REG_NAME HAGEDL
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    DATA_LEN       31      0      0     W|R     TRUE     -

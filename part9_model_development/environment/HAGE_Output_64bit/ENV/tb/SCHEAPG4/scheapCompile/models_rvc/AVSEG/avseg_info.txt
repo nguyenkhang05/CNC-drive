@@ -1,0 +1,90 @@
+# -----------------------------------------------------------------------------
+# $Id$
+#
+# Copyright(c) 2010-2018 Renesas Electronics Corporation
+# Copyright(c) 2010-2018 Renesas Design Vietnam Co., Ltd.
+# RENESAS ELECTRONICS CONFIDENTIAL AND PROPRIETARY.
+# This program must be used solely for the purpose for which
+# it was furnished by Renesas Electronics Corporation. No part of this
+# program may be reproduced or disclosed to others, in any
+# form, without the prior written permission of Renesas Electronics
+# Corporation.
+# -----------------------------------------------------------------------------
+%MODULE AVSEG
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         7
+
+%REG_CHANNEL reg_def
+    %%TITLE  group  name           reg_name       wsize       rsize       length  offset  factor_start    factor_end  factor_index    factor_step     access  init    support     callback
+    %%REG    -      VCCCHSCR       VCCCHSCR       32          8|16|32     32      0x00    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      VCCCNTCR       VCCCNTCR       32          8|16|32     32      0x04    -               -           -               -               W|R     0x101   TRUE        -
+    %%REG    -      EVCCCHSCR      EVCCCHSCR      32          8|16|32     32      0x10    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      EVCCCNTCR      EVCCCNTCR      32          8|16|32     32      0x14    -               -           -               -               W|R     0x101   TRUE        -
+    %%REG    -      AWOVDDCHSCR    AWOVDDCHSCR    32          8|16|32     32      0x20    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      AWOVDDCNTCR    AWOVDDCNTCR    32          8|16|32     32      0x24    -               -           -               -               W|R     0x101   TRUE        -
+    %%REG    -      ISOVDDCHSCR    ISOVDDCHSCR    32          8|16|32     32      0x30    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      ISOVDDCNTCR    ISOVDDCNTCR    32          8|16|32     32      0x34    -               -           -               -               W|R     0x101   TRUE        -
+    %%REG    -      SECVMONERR     SECVMONERR     32          8|16|32     32      0x40    -               -           -               -               R       0x0     TRUE        -
+    %%REG    -      SECVMONCLR     SECVMONCLR     32          8|16|32     32      0x44    -               -           -               -               D       0x0     TRUE        - 
+%REG_NAME VCCCHSCR
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    CHS               7      0     0         W|R     TRUE     W
+
+%REG_NAME VCCCNTCR
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    ENB              28     28     0         W|R     TRUE     W
+    %%BIT    NRMCNT           11      8     1         W|R     TRUE     -
+    %%BIT    ERRCNT            3      0     1         W|R     TRUE     -
+
+%REG_NAME EVCCCHSCR
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    CHS               7      0     0         W|R     TRUE     W
+
+%REG_NAME EVCCCNTCR
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    ENB              28     28     0         W|R     TRUE     W
+    %%BIT    NRMCNT           11      8     1         W|R     TRUE     -
+    %%BIT    ERRCNT            3      0     1         W|R     TRUE     -
+
+%REG_NAME AWOVDDCHSCR
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    CHS               7      0     0         W|R     TRUE     W
+
+%REG_NAME AWOVDDCNTCR
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    ENB              28     28     0         W|R     TRUE     W
+    %%BIT    NRMCNT           11      8     1         W|R     TRUE     -
+    %%BIT    ERRCNT            3      0     1         W|R     TRUE     -
+
+%REG_NAME ISOVDDCHSCR
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    CHS               7      0     0         W|R     TRUE     W
+
+%REG_NAME ISOVDDCNTCR
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    ENB              28     28     0         W|R     TRUE     W
+    %%BIT    NRMCNT           11      8     1         W|R     TRUE     -
+    %%BIT    ERRCNT            3      0     1         W|R     TRUE     -
+
+%REG_NAME SECVMONERR
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    AWOVDD_ULME      19     19     0         R       TRUE     -
+    %%BIT    ISOVDD_ULME      18     18     0         R       TRUE     -
+    %%BIT    EVCC_ULME        17     17     0         R       TRUE     -
+    %%BIT    VCC_ULME         16     16     0         R       TRUE     -
+    %%BIT    AWOVDD_LLME       3      3     0         R       TRUE     -
+    %%BIT    ISOVDD_LLME       2      2     0         R       TRUE     -
+    %%BIT    EVCC_LLME         1      1     0         R       TRUE     -
+    %%BIT    VCC_LLME          0      0     0         R       TRUE     -
+
+%REG_NAME SECVMONCLR
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    AWOVDD_ULMEC     19     19     0         W       TRUE     -
+    %%BIT    ISOVDD_ULMEC     18     18     0         W       TRUE     -
+    %%BIT    EVCC_ULMEC       17     17     0         W       TRUE     -
+    %%BIT    VCC_ULMEC        16     16     0         W       TRUE     -
+    %%BIT    AWOVDD_LLMEC      3      3     0         W       TRUE     -
+    %%BIT    ISOVDD_LLMEC      2      2     0         W       TRUE     -
+    %%BIT    EVCC_LLMEC        1      1     0         W       TRUE     -
+    %%BIT    VCC_LLMEC         0      0     0         W       TRUE     W
+

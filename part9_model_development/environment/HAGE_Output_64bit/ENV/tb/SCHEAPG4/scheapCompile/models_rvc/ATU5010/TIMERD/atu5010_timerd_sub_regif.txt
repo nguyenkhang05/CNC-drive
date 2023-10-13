@@ -1,0 +1,394 @@
+%MODULE ATU5010_TIMERD_SUB
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         9
+
+%REG_CHANNEL reg_def
+    %%TITLE   name          reg_name      wsize         rsize         length        offset        factor_start  factor_end    factor_index  factor_step   access        init          support       callback
+    %%REG     TCRD          TCRD          8|16          8|16|32       16            0x000        -             -             -             -         R|W           0x0000        TRUE          -
+    %%REG     TCCRLRD       TCCRLRD       8|16          8|16|32       16            0x01C        -             -             -             -         R|W           0x0000        TRUE          -
+    %%REG     TIOR1D        TIOR1D        8|16          8|16|32       16            0x004        -             -             -             -         R|W           0x0000        TRUE          -
+    %%REG     TIOR2D        TIOR2D        16|8          8|16|32       16            0x006        -             -             -             -         R|W           0x0000        TRUE          -
+    %%REG     TCMPED        TCMPED        8             8|16|32       8             0x03D        -             -             -             -         R|W           0x00          TRUE          -
+    %%REG     TIORD         TIORD         16|8          8|16|32       16            0x03E        -             -             -             -         R|W           0xFFFF        TRUE          -
+    %%REG     OSELRD        OSELRD        8             8|16|32       8             0x011        -             -             -             -         R|W           0x00          TRUE          -
+    %%REG     ODRD          ODRD          8             8|16|32       8             0x012        -             -             -             -         R|W           0x00          TRUE          -
+    %%REG     DSTRD         DSTRD         8             8|16|32       8             0x008        -             -             -             -         R|W           0x00          TRUE          -
+    %%REG     DSR1D         DSR1D         -             8|16|32       8             0x00A        -             -             -             -         R             0x00          TRUE          -
+    %%REG     DSR2D         DSR2D         -             8|16|32       8             0x00B        -             -             -             -         R             0x00          TRUE          -
+    %%REG     DSCRD         DSCRD         8             8|16|32       8             0x009        -             -             -             -         R|W1:0        0x00          TRUE          -
+    %%REG     DCRD          DCRD          16|8          8|16|32       16            0x002        -             -             -             -         R|W           0x0000        TRUE          -
+    %%REG     TSRD          TSRD          -             8|16|32       16            0x00C        -             -             -             -         R             0x0000        TRUE          -
+    %%REG     TSCRD         TSCRD         16|8          8|16|32       16            0x00E        -             -             -             -         R|W1:0        0x0000        TRUE          -
+    %%REG     TOCRD         TOCRD         8             8|16|32       8             0x010        -             -             -             -         R|W           0x00          TRUE          -
+    %%REG     TOCCRD        TOCCRD        8             8|16|32       8             0x03C        -             -             -             -         R|W           0x00          TRUE          -
+    %%REG     OSBRD         OSBRD         -             8|16|32       32            0x018        -             -             -             -         R             0x00000000    TRUE          -
+    %%REG     TICTSELD      TICTSELD      8             8|16|32       8             0x014        -             -             -             -         R|W           0x0           TRUE          -
+    %%REG     MIGCRD        MIGCRD        8             8|16|32       8             0x016        -             -             -             -         R|W           0x0           TRUE          -
+    %%REG     MIGSELD       MIGSELD       8             8|16|32       8             0x017        -             -             -             -         R|W           0x0           TRUE          -
+    %%REG     TCNT1D        TCNT1D        32            8|16|32       32            0x020        -             -             -             -         R|W           0x00000000    TRUE          -
+    %%REG     TCNT2D        TCNT2D        32            8|16|32       32            0x024        -             -             -             -         R|W           0x00000000    TRUE          -
+    %%REG     CUCR1D        CUCR1D        32            8|16|32       32            0x028        -             -             -             -         R|W           0xFFFFFFFF    TRUE          -
+    %%REG     CUCR2D        CUCR2D        32            8|16|32       32            0x02C        -             -             -             -         R|W           0xFFFFFFFF    TRUE          -
+    %%REG     OCR1D         OCR1D         32            8|16|32       32            0x040        0             3             -             0x20      R|W           0xFFFFFFFF    TRUE          -
+    %%REG     RCR1D         RCR1D         8             8|16|32       8             0x030        -             -             -             -         R|W           0x00          TRUE          -
+    %%REG     OCR2D         OCR2D         32            8|16|32       32            0x048        0             3             -             0x20      R|W           0xFFFFFFFF    TRUE          -
+    %%REG     RCR2D         RCR2D         8             8|16|32       8             0x034        -             -             -             -         R|W           0x00          TRUE          -
+    %%REG     ICR1D         ICR1D         -             8|16|32       32            0x050        0             3             -             0x20      R             0x00000000    TRUE          -
+    %%REG     ICR2D         ICR2D         -             8|16|32       32            0x054        0             3             -             0x20      R             0x00000000    TRUE          -
+    %%REG     DCNTD         DCNTD         32            8|16|32       32            0x058        0             3             -             0x20      R|W           0x00000000    TRUE          -
+    %%REG     TIER1D        TIER1D        8             8|16|32       8             0x0C0        -             -             -             -         R|W           0x00          TRUE          -
+    %%REG     TIER2D        TIER2D        32|16|8       8|16|32       32            0x0C4        -             -             -             -         R|W           0x0000        TRUE          -
+    %%REG     TIER3D        TIER3D        16|8          8|16|32       16            0x0C8        -             -             -             -         R|W           0x0000        TRUE          -
+    %%REG     OFMIND        OFMIND        32            8|16|32       32            0x110        0             3             -             0x40      R|W           0x00000000    TRUE          -
+    %%REG     ONMIND        ONMIND        32            8|16|32       32            0x114        0             3             -             0x40      R|W           0x00000000    TRUE          -
+    %%REG     OTOMIND       OTOMIND       32            8|16|32       32            0x118        0             3             -             0x40      R|W           0x00000000    TRUE          -
+    %%REG     OFMICNTD      OFMICNTD      32            8|16|32       32            0x100        0             3             -             0x40      R|W           0x00000000    TRUE          -
+    %%REG     ONMICNTD      ONMICNTD      32            8|16|32       32            0x104        0             3             -             0x40      R|W           0x00000000    TRUE          -
+    %%REG     OTONMICNTD    OTONMICNTD    32            8|16|32       32            0x108        0             3             -             0x40      R|W           0x00000000    TRUE          -
+    %%REG     ONCAPD1       ONCAPD1       -             8|16|32       32            0x120        0             3             -             0x40      R             0x00000000    TRUE          -
+    %%REG     ONCAPD2       ONCAPD2       -             8|16|32       32            0x124        0             3             -             0x40      R             0x00000000    TRUE          -
+    %%REG     OFCAPD1       OFCAPD1       -             8|16|32       32            0x130        0             3             -             0x40      R             0x00000000    TRUE          -
+    %%REG     OFCAPD2       OFCAPD2       -             8|16|32       32            0x134        0             3             -             0x40      R             0x00000000    TRUE          -
+    %%REG     TSR2D         TSR2D         -             8|16|32       16            0x0D0        -             -             -             -         R             0x0000        TRUE          -
+    %%REG     TSCR2D        TSCR2D        16|8          8|16|32       16            0x0D4        -             -             -             -         R|W1          0x0000        TRUE          -
+
+
+%REG_NAME     TCRD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OBRED         14            14            0x0           R|W           TRUE          W
+%%BIT         C2CED         13            13            0x0           R|W           TRUE          -
+%%BIT         C1CED         12            12            0x0           R|W           TRUE          -
+%%BIT         CLR2D         11            11            0x0           R|W           TRUE          -
+%%BIT         CKSEL2D       10            8             0x0           R|W           TRUE          -
+%%BIT         CLR1D         7             7             0x0           R|W           TRUE          -
+%%BIT         CKSEL1D       6             4             0x0           R|W           TRUE          -
+%%BIT         DCSELD        2             0             0x0           R|W           TRUE          -
+
+%REG_NAME     TCCRLRD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         CLRSEL2D      9             9             0x0           R|W           TRUE          W
+%%BIT         CLRSEL1D      8             8             0x0           R|W           TRUE          -
+%%BIT         CMPSEL2D3     7             7             0x0           R|W           TRUE          -
+%%BIT         CMPSEL2D2     6             6             0x0           R|W           TRUE          -
+%%BIT         CMPSEL2D1     5             5             0x0           R|W           TRUE          -
+%%BIT         CMPSEL2D0     4             4             0x0           R|W           TRUE          -
+%%BIT         CMPSEL1D3     3             3             0x0           R|W           TRUE          -
+%%BIT         CMPSEL1D2     2             2             0x0           R|W           TRUE          -
+%%BIT         CMPSEL1D1     1             1             0x0           R|W           TRUE          -
+%%BIT         CMPSEL1D0     0             0             0x0           R|W           TRUE          -
+
+%REG_NAME     TIOR1D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OSSD3         15            14            0x0            R|W           TRUE          W
+%%BIT         OSSD2         13            12            0x0            R|W           TRUE          -
+%%BIT         OSSD1         11            10            0x0            R|W           TRUE          -
+%%BIT         OSSD0         9             8             0x0            R|W           TRUE          -
+%%BIT         IOAD3         7             6             0x0            R|W           TRUE          -
+%%BIT         IOAD2         5             4             0x0            R|W           TRUE          -
+%%BIT         IOAD1         3             2             0x0            R|W           TRUE          -
+%%BIT         IOAD0         1             0             0x0            R|W           TRUE          -
+
+%REG_NAME     TIOR2D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         IOBD3         14            12            0x0           R|W           TRUE          W
+%%BIT         IOBD2         10            8             0x0           R|W           TRUE          -
+%%BIT         IOBD1         6             4             0x0           R|W           TRUE          -
+%%BIT         IOBD0         2             0             0x0           R|W           TRUE          -
+
+%REG_NAME     TCMPED
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         CMPE2D3       7             7             0x0           R|W           TRUE          W
+%%BIT         CMPE2D2       6             6             0x0           R|W           TRUE          -
+%%BIT         CMPE2D1       5             5             0x0           R|W           TRUE          -
+%%BIT         CMPE2D0       4             4             0x0           R|W           TRUE          -
+%%BIT         CMPE1D3       3             3             0x0           R|W           TRUE          -
+%%BIT         CMPE1D2       2             2             0x0           R|W           TRUE          -
+%%BIT         CMPE1D1       1             1             0x0           R|W           TRUE          -
+%%BIT         CMPE1D0       0             0             0x0           R|W           TRUE          -
+
+%REG_NAME     TIORD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         IO2D3         15            14            0x3           R|W           TRUE          W
+%%BIT         IO2D2         13            12            0x3           R|W           TRUE          -
+%%BIT         IO2D1         11            10            0x3           R|W           TRUE          -
+%%BIT         IO2D0         9             8             0x3           R|W           TRUE          -
+%%BIT         IO1D3         7             6             0x3           R|W           TRUE          -
+%%BIT         IO1D2         5             4             0x3           R|W           TRUE          -
+%%BIT         IO1D1         3             2             0x3           R|W           TRUE          -
+%%BIT         IO1D0         1             0             0x3           R|W           TRUE          -
+
+%REG_NAME     OSELRD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OSELBD3       7             7             0x0           R|W           TRUE          W
+%%BIT         OSELBD2       6             6             0x0           R|W           TRUE          -
+%%BIT         OSELBD1       5             5             0x0           R|W           TRUE          -
+%%BIT         OSELBD0       4             4             0x0           R|W           TRUE          -
+%%BIT         OSELAD3       3             3             0x0           R|W           TRUE          -
+%%BIT         OSELAD2       2             2             0x0           R|W           TRUE          -
+%%BIT         OSELAD1       1             1             0x0           R|W           TRUE          -
+%%BIT         OSELAD0       0             0             0x0           R|W           TRUE          -
+
+%REG_NAME     ODRD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         ODBD3         7             7             0x0           R|W           TRUE          W
+%%BIT         ODBD2         6             6             0x0           R|W           TRUE          -
+%%BIT         ODBD1         5             5             0x0           R|W           TRUE          -
+%%BIT         ODBD0         4             4             0x0           R|W           TRUE          -
+%%BIT         ODAD3         3             3             0x0           R|W           TRUE          -
+%%BIT         ODAD2         2             2             0x0           R|W           TRUE          -
+%%BIT         ODAD1         1             1             0x0           R|W           TRUE          -
+%%BIT         ODAD0         0             0             0x0           R|W           TRUE          -
+
+%REG_NAME     DSTRD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         DSTD3         3             3             0x0           R|W           TRUE          -
+%%BIT         DSTD2         2             2             0x0           R|W           TRUE          -
+%%BIT         DSTD1         1             1             0x0           R|W           TRUE          -
+%%BIT         DSTD0         0             0             0x0           R|W           TRUE          -
+
+%REG_NAME     DSR1D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         DWFD3         7             7             0x0           R             TRUE          -
+%%BIT         DWFD2         6             6             0x0           R             TRUE          -
+%%BIT         DWFD1         5             5             0x0           R             TRUE          -
+%%BIT         DWFD0         4             4             0x0           R             TRUE          -
+%%BIT         DSFD3         3             3             0x0           R             TRUE          -
+%%BIT         DSFD2         2             2             0x0           R             TRUE          -
+%%BIT         DSFD1         1             1             0x0           R             TRUE          -
+%%BIT         DSFD0         0             0             0x0           R             TRUE          -
+
+%REG_NAME     DSR2D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         DWRFD3        7             6             0x0           R             TRUE          -
+%%BIT         DWRFD2        5             4             0x0           R             TRUE          -
+%%BIT         DWRFD1        3             2             0x0           R             TRUE          -
+%%BIT         DWRFD0        1             0             0x0           R             TRUE          -
+
+%REG_NAME     DSCRD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         DWFCD3        7             7             0x0           R|W1:0        TRUE          -
+%%BIT         DWFCD2        6             6             0x0           R|W1:0        TRUE          -
+%%BIT         DWFCD1        5             5             0x0           R|W1:0        TRUE          -
+%%BIT         DWFCD0        4             4             0x0           R|W1:0        TRUE          -
+%%BIT         DWRFCD3       3             3             0x0           R|W1:0        TRUE          -
+%%BIT         DWRFCD2       2             2             0x0           R|W1:0        TRUE          -
+%%BIT         DWRFCD1       1             1             0x0           R|W1:0        TRUE          -
+%%BIT         DWRFCD0       0             0             0x0           R|W1:0        TRUE          W
+
+%REG_NAME     DCRD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         TRGSELD3      15            12            0x0           R|W           TRUE          -
+%%BIT         TRGSELD2      11            8             0x0           R|W           TRUE          -
+%%BIT         TRGSELD1      7             4             0x0           R|W           TRUE          -
+%%BIT         TRGSELD0      3             0             0x0           R|W           TRUE          -
+
+%REG_NAME     TSRD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OVF2D         13            13            0x0           R             TRUE          -
+%%BIT         OVF1D         12            12            0x0           R             TRUE          -
+%%BIT         UDFD3         11            11            0x0           R             TRUE          -
+%%BIT         UDFD2         10            10            0x0           R             TRUE          -
+%%BIT         UDFD1         9             9             0x0           R             TRUE          -
+%%BIT         UDFD0         8             8             0x0           R             TRUE          -
+%%BIT         CMFAD3        7             7             0x0           R             TRUE          -
+%%BIT         CMFAD2        6             6             0x0           R             TRUE          -
+%%BIT         CMFAD1        5             5             0x0           R             TRUE          -
+%%BIT         CMFAD0        4             4             0x0           R             TRUE          -
+%%BIT         CMFBD3        3             3             0x0           R             TRUE          -
+%%BIT         CMFBD2        2             2             0x0           R             TRUE          -
+%%BIT         CMFBD1        1             1             0x0           R             TRUE          -
+%%BIT         CMFBD0        0             0             0x0           R             TRUE          -
+
+%REG_NAME     TSCRD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OVFC2D        13            13            0x0           R|W1:0        TRUE          W
+%%BIT         OVFC1D        12            12            0x0           R|W1:0        TRUE          -
+%%BIT         UDFCD3        11            11            0x0           R|W1:0        TRUE          -
+%%BIT         UDFCD2        10            10            0x0           R|W1:0        TRUE          -
+%%BIT         UDFCD1        9             9             0x0           R|W1:0        TRUE          -
+%%BIT         UDFCD0        8             8             0x0           R|W1:0        TRUE          -
+%%BIT         CMFCAD3       7             7             0x0           R|W1:0        TRUE          -
+%%BIT         CMFCAD2       6             6             0x0           R|W1:0        TRUE          -
+%%BIT         CMFCAD1       5             5             0x0           R|W1:0        TRUE          -
+%%BIT         CMFCAD0       4             4             0x0           R|W1:0        TRUE          -
+%%BIT         CMFCBD3       3             3             0x0           R|W1:0        TRUE          -
+%%BIT         CMFCBD2       2             2             0x0           R|W1:0        TRUE          -
+%%BIT         CMFCBD1       1             1             0x0           R|W1:0        TRUE          -
+%%BIT         CMFCBD0       0             0             0x0           R|W1:0        TRUE          -
+
+%REG_NAME     TOCRD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         TONEBD        1             1             0x0           R|W           TRUE          W
+%%BIT         TONEAD        0             0             0x0           R|W           TRUE          -
+
+%REG_NAME     TOCCRD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         TONEBD3       7             7             0x0           R|W           TRUE          W
+%%BIT         TONEBD2       6             6             0x0           R|W           TRUE          -
+%%BIT         TONEBD1       5             5             0x0           R|W           TRUE          -
+%%BIT         TONEBD0       4             4             0x0           R|W           TRUE          -
+%%BIT         TONEAD3       3             3             0x0           R|W           TRUE          -
+%%BIT         TONEAD2       2             2             0x0           R|W           TRUE          -
+%%BIT         TONEAD1       1             1             0x0           R|W           TRUE          -
+%%BIT         TONEAD0       0             0             0x0           R|W           TRUE          -
+
+%REG_NAME     OSBRD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OSBRD         31            0             0x00000000    R             TRUE          -
+
+%REG_NAME     TICTSELD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         TIDSELD       1             0             0x0           R|W           TRUE          -
+
+
+%REG_NAME     MIGCRD 
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         MIGEND3       3             3             0x0           R|W           TRUE          -
+%%BIT         MIGEND2       2             2             0x0           R|W           TRUE          -
+%%BIT         MIGEND1       1             1             0x0           R|W           TRUE          -
+%%BIT         MIGEND0       0             0             0x0           R|W           TRUE          -
+
+%REG_NAME     MIGSELD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         MIGSEL3       3             3             0x0           R|W           TRUE          -
+%%BIT         MIGSEL2       2             2             0x0           R|W           TRUE          -
+%%BIT         MIGSEL1       1             1             0x0           R|W           TRUE          -
+%%BIT         MIGSEL0       0             0             0x0           R|W           TRUE          -
+
+%REG_NAME     TCNT1D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         TCNT1D        31            0             0x00000000    R|W           TRUE          W
+
+%REG_NAME     TCNT2D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         TCNT2D        31            0             0x00000000    R|W           TRUE          W
+
+%REG_NAME     CUCR1D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         CUCR1D        31            0             0xFFFFFFFF    R|W           TRUE          W
+
+%REG_NAME     CUCR2D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         CUCR2D        31            0             0xFFFFFFFF    R|W           TRUE          W
+
+%REG_NAME     OCR1D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OC1D          31            0             0xFFFFFFFF    R|W           TRUE          W
+
+%REG_NAME     RCR1D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         RC1D          4             0             0x0           R|W           TRUE          W
+
+%REG_NAME     OCR2D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OC2D          31            0             0xFFFFFFFF    R|W           TRUE          W
+
+%REG_NAME     RCR2D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         RC2D          4             0             0x0           R|W           TRUE          W
+
+%REG_NAME     ICR1D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         ICR1D         31            0             0x00000000    R             TRUE          -
+
+%REG_NAME     ICR2D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         ICR2D         31            0             0x00000000    R             TRUE          -
+
+%REG_NAME     DCNTD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         CNTD          31            0             0x00000000    R|W           TRUE          -
+
+%REG_NAME     TIER1D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OV2ED         1             1             0x0           R|W           TRUE          W
+%%BIT         OV1ED         0             0             0x0           R|W           TRUE          -
+
+%REG_NAME     TIER2D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         UNDED3        19            19            0x0           R|W           TRUE          W
+%%BIT         UNDED2        18            18            0x0           R|W           TRUE          -
+%%BIT         UNDED1        17            17            0x0           R|W           TRUE          -
+%%BIT         UNDED0        16            16            0x0           R|W           TRUE          -
+%%BIT         CMPBED3       11            11            0x0           R|W           TRUE          -
+%%BIT         CMPBED2       10            10            0x0           R|W           TRUE          -
+%%BIT         CMPBED1       9             9             0x0           R|W           TRUE          -
+%%BIT         CMPBED0       8             8             0x0           R|W           TRUE          -
+%%BIT         CMPAED3       3             3             0x0           R|W           TRUE          -
+%%BIT         CMPAED2       2             2             0x0           R|W           TRUE          -
+%%BIT         CMPAED1       1             1             0x0           R|W           TRUE          -
+%%BIT         CMPAED0       0             0             0x0           R|W           TRUE          -
+
+%REG_NAME     TIER3D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         FEIED3        11            11            0x0           R|W           TRUE          W
+%%BIT         FEIED2        10            10            0x0           R|W           TRUE          -
+%%BIT         FEIED1        9             9             0x0           R|W           TRUE          -
+%%BIT         FEIED0        8             8             0x0           R|W           TRUE          -
+%%BIT         REIED3        3             3             0x0           R|W           TRUE          -
+%%BIT         REIED2        2             2             0x0           R|W           TRUE          -
+%%BIT         REIED1        1             1             0x0           R|W           TRUE          -
+%%BIT         REIED0        0             0             0x0           R|W           TRUE          -
+
+%REG_NAME     OFMIND
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OFMIND        31            0             0x00000000    R|W           TRUE          -
+
+%REG_NAME     ONMIND
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         ONMIND        31            0             0x00000000    R|W           TRUE          -
+
+%REG_NAME     OTOMIND
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OTOMIND       31            0             0x00000000    R|W           TRUE          -
+
+%REG_NAME     OFMICNTD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OFMICNTD      31            0             0x00000000    R|W           TRUE          W
+
+%REG_NAME     ONMICNTD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         ONMICNTD      31            0             0x00000000    R|W           TRUE          W
+
+%REG_NAME     OTONMICNTD
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OTONMICNTD    31            0             0x00000000    R|W           TRUE          W
+
+%REG_NAME     ONCAPD1
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         ONCAPD1       31            0             0x00000000    R             TRUE          -
+
+%REG_NAME     ONCAPD2
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         ONCAPD2       31            0             0x00000000    R             TRUE          -
+
+%REG_NAME     OFCAPD1
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OFCAPD1       31            0             0x00000000    R             TRUE          -
+
+%REG_NAME     OFCAPD2
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         OFCAPD2       31            0             0x00000000    R             TRUE          -
+
+%REG_NAME     TSR2D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         FEFD3         11            11            0x0           R             TRUE          -
+%%BIT         FEFD2         10            10            0x0           R             TRUE          -
+%%BIT         FEFD1         9             9             0x0           R             TRUE          -
+%%BIT         FEFD0         8             8             0x0           R             TRUE          -
+%%BIT         REFD3         3             3             0x0           R             TRUE          -
+%%BIT         REFD2         2             2             0x0           R             TRUE          -
+%%BIT         REFD1         1             1             0x0           R             TRUE          -
+%%BIT         REFD0         0             0             0x0           R             TRUE          -
+
+%REG_NAME     TSCR2D
+%%TITLE       name          upper         lower         init          access        support       callback
+%%BIT         FEFCD3        11            11            0x0           R|W1          TRUE          W
+%%BIT         FEFCD2        10            10            0x0           R|W1          TRUE          -
+%%BIT         FEFCD1        9             9             0x0           R|W1          TRUE          -
+%%BIT         FEFCD0        8             8             0x0           R|W1          TRUE          -
+%%BIT         REFCD3        3             3             0x0           R|W1          TRUE          -
+%%BIT         REFCD2        2             2             0x0           R|W1          TRUE          -
+%%BIT         REFCD1        1             1             0x0           R|W1          TRUE          -
+%%BIT         REFCD0        0             0             0x0           R|W1          TRUE          -
+

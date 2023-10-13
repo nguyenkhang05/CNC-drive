@@ -1,0 +1,142 @@
+%MODULE ATU5010_TIMERE_SUB
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         8
+
+%REG_CHANNEL reg_def
+    %%TITLE  group  name        reg_name    wsize       rsize       length  offset  factor_start    factor_end  factor_index    factor_step     access      init        support     callback
+    %%REG    -      SSTRE       SSTRE       8           8|16|32     8       0x00    -               -           -               -                W|R        0x0         TRUE        -
+    %%REG    -      PSCRE       PSCRE       8           8|16|32     8       0x04    -               -           -               -                W|R        0x0         TRUE        -
+    %%REG    -      TCRE        TCRE        8           8|16|32     8       0x08   -               -           -               -                 W|R        0x0         TRUE        -
+    %%REG    -      RLDCRE      RLDCRE      8           8|16|32     8       0x0A   -               -           -               -                 W|R        0x0         TRUE        -
+    %%REG    -      POECRE      POECRE      16          8|16|32     16      0x0C   -               -           -               -                 W|R        0x0         TRUE        -
+    %%REG    -      SOLVLE      SOLVLE      8           8|16|32     8       0x0E   -               -           -               -                 W|R        0x0         TRUE        -
+    %%REG    -      TSRE        TSRE        -           8|16|32     16      0x10   -               -           -               -                 R          0x0         TRUE        -
+    %%REG    -      TSCRE       TSCRE       8|16        8|16|32     16      0x12   -               -           -               -                 R|W1:0     0x0         TRUE        -
+    %%REG    -      TOCRE       TOCRE       8           8|16|32     8       0x14   -               -           -               -                 W|R        0x0         TRUE        -
+    %%REG    -      TIERE       TIERE       8|16        8|16|32     16      0x16   -               -           -               -                 W|R        0x0         TRUE        -
+    %%REG    -      PSCCRE      PSCCRE      8           8|16|32     8       0x18   0               3           -              0x01               W|R        0x0         TRUE        -
+    %%REG    -      FCTRGE      FCTRGE      8           8|16|32     8       0x1C   -               -           -              -                  R|W1:0     0x0         TRUE        -
+    %%REG    -      TCNTE       TCNTE       32          8|16|32     32      0x24   0               3           -              0x20               W|R        0x00000100  TRUE        -
+    %%REG    -      CYLRE       CYLRE       32          8|16|32     32      0x28   0               3           -              0x20               W|R        0xFFFFFF00  TRUE        -
+    %%REG    -      DTRE        DTRE        32          8|16|32     32      0x2C   0               3           -              0x20               W|R        0xFFFFFF00  TRUE        -
+    %%REG    -      CRLDE       CRLDE       32          8|16|32     32      0x30   0               3           -              0x20               W|R        0xFFFFFF00  TRUE        -
+    %%REG    -      DRLDE       DRLDE       32          8|16|32     32      0x34   0               3           -              0x20               W|R        0xFFFFFF00  TRUE        -
+
+%REG_NAME SSTRE
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    SSTRE0             0      0     0               W|R     TRUE     W
+    %%BIT    SSTRE1             1      1     0               W|R     TRUE     -
+    %%BIT    SSTRE2             2      2     0               W|R     TRUE     -
+    %%BIT    SSTRE3             3      3     0               W|R     TRUE     -
+                                                          
+%REG_NAME PSCRE                                           
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    PSCE               2      0     0               W|R     TRUE     W
+                                                          
+%REG_NAME PSCCRE                                         
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    PSCCE              7      0     0               W|R     TRUE     W
+                                                          
+%REG_NAME TCRE                                            
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    CKSELE             2      0     0               W|R     TRUE     W
+    %%BIT    PSCSEL             7      7     0               W|R     TRUE     -
+                                                          
+%REG_NAME RLDCRE                                          
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    RLDENE0            0      0     0               W|R     TRUE     W
+    %%BIT    RLDENE1            1      1     0               W|R     TRUE     -
+    %%BIT    RLDENE2            2      2     0               W|R     TRUE     -
+    %%BIT    RLDENE3            3      3     0               W|R     TRUE     -
+                                                          
+%REG_NAME POECRE                                          
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    POEEN0             0      0     0               W|R     TRUE     -
+    %%BIT    POEEN1             1      1     0               W|R     TRUE     -
+    %%BIT    POEEN2             2      2     0               W|R     TRUE     -
+    %%BIT    POEEN3             3      3     0               W|R     TRUE     -
+    %%BIT    POEPOL             4      4     0               W|R     TRUE     -
+    %%BIT    POECRKEY           15     8     0               W|R     TRUE     W
+                                                          
+%REG_NAME SOLVLE                                          
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    PWMSLV0            0      0     0               W|R     TRUE     -
+    %%BIT    PWMSLV1            1      1     0               W|R     TRUE     -
+    %%BIT    PWMSLV2            2      2     0               W|R     TRUE     -
+    %%BIT    PWMSLV3            3      3     0               W|R     TRUE     -
+                                                          
+%REG_NAME TSRE                                            
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    CMFE0              0      0     0               R       TRUE     -
+    %%BIT    CMFE1              1      1     0               R       TRUE     -
+    %%BIT    CMFE2              2      2     0               R       TRUE     -
+    %%BIT    CMFE3              3      3     0               R       TRUE     -
+    %%BIT    OVFE0              4      4     0               R       TRUE     -
+    %%BIT    OVFE1              5      5     0               R       TRUE     -
+    %%BIT    OVFE2              6      6     0               R       TRUE     -
+    %%BIT    OVFE3              7      7     0               R       TRUE     -
+    %%BIT    DMFE0              8      8     0               R       TRUE     -
+    %%BIT    DMFE1              9      9     0               R       TRUE     -
+    %%BIT    DMFE2              10     10    0               R       TRUE     -
+    %%BIT    DMFE3              11     11    0               R       TRUE     -
+                                                          
+%REG_NAME TSCRE                                           
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    CMFCE0             0      0     0               R|W1:0     TRUE     W
+    %%BIT    CMFCE1             1      1     0               R|W1:0     TRUE     -
+    %%BIT    CMFCE2             2      2     0               R|W1:0     TRUE     -
+    %%BIT    CMFCE3             3      3     0               R|W1:0     TRUE     -
+    %%BIT    OVFCE0             4      4     0               R|W1:0     TRUE     -
+    %%BIT    OVFCE1             5      5     0               R|W1:0     TRUE     -
+    %%BIT    OVFCE2             6      6     0               R|W1:0     TRUE     -
+    %%BIT    OVFCE3             7      7     0               R|W1:0     TRUE     -
+    %%BIT    DMFCE0             8      8     0               R|W1:0     TRUE     -
+    %%BIT    DMFCE1             9      9     0               R|W1:0     TRUE     -
+    %%BIT    DMFCE2             10     10    0               R|W1:0     TRUE     -
+    %%BIT    DMFCE3             11     11    0               R|W1:0     TRUE     -
+                                                          
+%REG_NAME TIERE                                           
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    CMEE0              0      0     0               W|R     TRUE     -
+    %%BIT    CMEE1              1      1     0               W|R     TRUE     -
+    %%BIT    CMEE2              2      2     0               W|R     TRUE     -
+    %%BIT    CMEE3              3      3     0               W|R     TRUE     -
+    %%BIT    DMEE0              8      8     0               W|R     TRUE     -
+    %%BIT    DMEE1              9      9     0               W|R     TRUE     -
+    %%BIT    DMEE2              10     10    0               W|R     TRUE     -
+    %%BIT    DMEE3              11     11    0               W|R     TRUE     -
+                                                          
+%REG_NAME TOCRE                                           
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    TONEE0             0      0     0               W|R     TRUE     W
+    %%BIT    TONEE1             1      1     0               W|R     TRUE     -
+    %%BIT    TONEE2             2      2     0               W|R     TRUE     -
+    %%BIT    TONEE3             3      3     0               W|R     TRUE     -
+                                                          
+%REG_NAME FCTRGE                                          
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    FCMT0              0      0     0               R|W1:0     TRUE     W
+    %%BIT    FCMT1              1      1     0               R|W1:0     TRUE     -
+    %%BIT    FCMT2              2      2     0               R|W1:0     TRUE     -
+    %%BIT    FCMT3              3      3     0               R|W1:0     TRUE     -
+                                                          
+%REG_NAME TCNTE                                          
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    TCNTE              31      8    1               W|R     TRUE     W
+     
+%REG_NAME CYLRE
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    CYLRE              31      8   0xFFFFFF         W|R     TRUE     W
+     
+%REG_NAME DTRE
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    DTRE               31      8   0xFFFFFF         W|R     TRUE     W
+     
+%REG_NAME CRLDE
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    CRLDE              31      8   0xFFFFFF         W|R     TRUE     -
+     
+%REG_NAME DRLDE
+    %%TITLE  name             upper  lower  init            access  support  callback
+    %%BIT    DRLDE              31      8   0xFFFFFF         W|R     TRUE     -
+ 

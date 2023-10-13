@@ -1,0 +1,48 @@
+%MODULE ecccnt_dmdan
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  7 
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name             reg_name                    wsize   rsize        length  offset  factor_start    factor_end  factor_index    factor_step access   init   support  callback
+    %%REG      DAECCCTL         DAECCCTL                    8|16|32 8|16|32      32     0x00    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      DAECCTSTCTL      DAECCTSTCTL                 8|16|32 8|16|32      32     0x10    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      DAECCTSTDIN0     DAECCTSTDIN0                8|16|32 8|16|32      32     0x30    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      DAECCTSTDIN1     DAECCTSTDIN1                8|16|32 8|16|32      32     0x34    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      DAECCTSTEIN      DAECCTSTEIN                 8|16|32 8|16|32      32     0x40    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      DATDATBFDATAF0   DATDATBFDATAF0              -       8|16|32      32     0x50    -               -           -               -           R        0x0     TRUE     -
+    %%REG      DATDATBFDATAF1   DATDATBFDATAF1              -       8|16|32      32     0x54    -               -           -               -           R        0x0     TRUE     -
+    %%REG      DATDATBFECCF     DATDATBFECCF                -       8|16|32      32     0x60    -               -           -               -           R        0x0     TRUE     -
+    
+%REG_NAME DAECCCTL                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SECDIS             1        1      0       R|W     TRUE        -
+    %%BIT    ECCDIS             0        0      0       R|W     TRUE        W
+    
+%REG_NAME DAECCTSTCTL                                                        
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    ECCTST             1        1      0       R|W     TRUE        -
+    
+%REG_NAME DAECCTSTDIN0                                                       
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DATA               31       0      0       R|W     TRUE        -
+    
+%REG_NAME DAECCTSTDIN1                                                       
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DATA               31       0      0       R|W     TRUE        -
+    
+%REG_NAME DAECCTSTEIN                                                        
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    ECC                7        0      0       R|W     TRUE        -
+    
+%REG_NAME DATDATBFDATAF0                                                     
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    BFDATA             31       0      0       R       TRUE        -
+    
+%REG_NAME DATDATBFDATAF1                                                     
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    BFDATA             31       0      0       R       TRUE        -
+    
+%REG_NAME DATDATBFECCF                                                       
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    BFECC0             7        0      0       R       TRUE        -
+    

@@ -1,0 +1,27 @@
+/**
+ * @file mock_fsbus.h
+ *
+ * @date Created on: 2016
+ * @author Author: YVo <y.vo.wg@rvc.renesas.com>
+ * @brief UNIT TEST for INTC1.
+ * @par Copyright: 2016 Renesas Electronics Corp.
+ */
+#pragma once
+
+#include "gmock/gmock.h"
+//#include "forest_common_api.h"
+#include "forest_common.h"
+#include "module_vc.h"
+#include "bar.h"
+#include "fsbus.h"
+
+class MockFsBus: public FsBus_IF {
+public:
+  MockFsBus() {};
+  ~MockFsBus() {};
+  MOCK_METHOD1(RemoveCyclicHandler, void (CModuleVc*));
+  MOCK_METHOD1(AddCyclicHandler, void (CModuleVc*));
+  int32_t m_offset_peid = 1;
+  //void AddCyclicHandler (CModuleVc* tgt_vc){}
+  //void RemoveCyclicHandler (CModuleVc* tgt_vc){}
+};

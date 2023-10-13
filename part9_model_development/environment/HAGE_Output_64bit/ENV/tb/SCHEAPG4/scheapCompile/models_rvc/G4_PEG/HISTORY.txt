@@ -1,0 +1,425 @@
+***************************************************************************************************
+PEG_Output_20170821.7z
+-----------------------------
+- Release info: 
+    + fix issue related Calculate Posedge Clock
+- Release date: Aug 21, 2017
+- Test environment: SCHEAP G4 Rev106
+- Update source code:
+    + g4_peg_cap_regif.h             3622    
+    + G4_PEG_ERR_INFO.cpp            3622    
+    + G4_PEGCAP_Func.cpp             3622    
+    + PY_G4_PEG_Wrapper.cpp          3622    
+    + G4_PEGCAP_cmdif.h              3622    
+    + G4_PEG.h                       3622    
+    + G4_PEG.cpp                     3834    
+    + G4_PEG_ERR_INFO.h              3622    
+    + PY_G4_PEG_Wrapper.h            3622    
+    + g4_peg_cl_regif.h              3622    
+    + g4_peg_cl_regif.cpp            3622    
+    + G4_PEG_Wrapper_cmdif.h         3622    
+    + G4_PEG_cmdif.h                 3622    
+    + G4_PEGCAP.h                    3622    
+    + G4_PEGCAP_AgentController.h    3622    
+    + G4_PEGCAP_Func.h               3622    
+    + G4_PEG_Func.cpp                3622    
+    + G4_PEG_DataHandler.cpp         3622    
+    + G4_PEG_DataHandler.h           3622    
+    + G4_PEG_AgentController.h       3622    
+    + G4_PEG_Wrapper.cpp             3622    
+    + G4_PEGCAP.cpp                  3835    
+    + G4_PEG_Wrapper.h               3622    
+    + G4_PEG_Func.h                  3622    
+    + g4_peg_cap_regif.cpp           3622    
+- Supported functions: not change from previous release
+
+***************************************************************************************************
+- Release info: 
+    + Update some registers size
+    + Support SC_SIGNAL_WRITE_CHECK policy
+    + Add code to validate input from PYTHON command "setID"
+- Release date: Aug 3, 2017
+- Test environment: SCHEAP G4 Rev106
+- Update source code:
+    + g4_peg_cap_regif.h             3622    
+    + G4_PEG_ERR_INFO.cpp            3622    
+    + G4_PEGCAP_Func.cpp             3622    
+    + PY_G4_PEG_Wrapper.cpp          3622    
+    + G4_PEGCAP_cmdif.h              3622    
+    + G4_PEG.h                       3622    
+    + G4_PEG.cpp                     3622    
+    + G4_PEG_ERR_INFO.h              3622    
+    + PY_G4_PEG_Wrapper.h            3622    
+    + g4_peg_cl_regif.h              3622    
+    + g4_peg_cl_regif.cpp            3622    
+    + G4_PEG_Wrapper_cmdif.h         3622    
+    + G4_PEG_cmdif.h                 3622    
+    + G4_PEGCAP.h                    3622    
+    + G4_PEGCAP_AgentController.h    3622    
+    + G4_PEGCAP_Func.h               3622    
+    + G4_PEG_Func.cpp                3622    
+    + G4_PEG_DataHandler.cpp         3622    
+    + G4_PEG_DataHandler.h           3622    
+    + G4_PEG_AgentController.h       3622    
+    + G4_PEG_Wrapper.cpp             3622    
+    + G4_PEGCAP.cpp                  3622    
+    + G4_PEG_Wrapper.h               3622    
+    + G4_PEG_Func.h                  3622    
+    + g4_peg_cap_regif.cpp           3622    
+- Supported functions: not change from previous release
+
+
+***************************************************************************************************
+PEG_Output_04072017.7z
+-----------------------------
+- Release info: Fix bugs after release
+- Release date: Apr 7, 2017
+- Test environment: SCHEAP G4 Rev80
+- Update source code:
+    + G4_PEG.cpp                v1.2 (r2660)
+    + G4_PEG.h                  v1.2 (r2551)
+    + G4_PEG_AgentController.h  v1.1 (r2551)
+    + g4_peg_cap_regif.cpp      v1.1 (r2033)
+    + g4_peg_cap_regif.h        v1.1 (r2033)
+    + g4_peg_cl_regif.cpp       v1.1 (r2033)
+    + g4_peg_cl_regif.h         v1.1 (r2033)
+    + G4_PEG_DataHandler.cpp    v1.1 (r2551)
+    + G4_PEG_DataHandler.h      v1.1 (r2551)
+    + G4_PEG_Func.cpp           v1.2 (r2551)
+    + G4_PEG_Func.h             v1.2 (r2551)
+    + G4_PEG_Wrapper.cpp        v1.2 (r2220)
+    + G4_PEG_Wrapper.h          v1.2 (r2219)
+    + G4_PEGCAP_Func.cpp        v1.1 (r2650)
+- Supported functions: not change from previous release
+
+***************************************************************************************************
+PEG_Output_02172017.7z
+-----------------------------
+- Release info: Add API to set PEID
+- Release date: Feb 17, 2017
+- Test environment: SCHEAP G4 Rev80
+- Update source code:
+    + G4_PEG.cpp                v1.1 (r1839)
+    + G4_PEG.h                  v1.1 (r1839)
+    + G4_PEG_Func.cpp           v1.1 (r1839)
+    + G4_PEG_Func.h             v1.1 (r1839)
+    + G4_PEG_Wrapper.cpp        v1.1 (r1847)
+    + G4_PEG_Wrapper.h          v1.1 (r1839)
+    + PY_G4_PEG_Wrapper.cpp     v1.1 (r1840)
+    + PY_G4_PEG_Wrapper.h       v1.1 (r1840)
+- Supported functions: not change from previous release
+
+***************************************************************************************************
+PEG_Output_01212017.7z
+-----------------------------
+- Release info: Official release
+- Release date: Jan 21, 2017
+- Test environment: SCHEAP G4 Rev80
+- Supported functions:
+    + Protect local RAM of PE
+    + LT mode only
+
+***************************************************************************************************
+PEG_Output_64bit_20180529.7z
+-----------------------------
+- Release info: Fix bug #38181 after release
+- Release date: May 19, 2018
+- Test environment: SCHEAP G4 Rev144
+- Update source code:            
+   + G4_PEG.cpp	                     1.2
+   + G4_PEG.h                        1.2
+   + G4_PEGCAP.cpp                   1.2
+   + G4_PEGCAP.h                     1.2
+   + G4_PEGCAP_AgentController.h     1.2
+   + G4_PEGCAP_Func.cpp              1.2
+   + G4_PEGCAP_Func.h                1.2
+   + G4_PEGCAP_cmdif.h               1.2
+   + G4_PEG_AgentController.h        1.2
+   + G4_PEG_DataHandler.cpp          1.2   (*)
+   + G4_PEG_DataHandler.h            1.2
+   + G4_PEG_ERR_INFO.cpp             1.2
+   + G4_PEG_ERR_INFO.h               1.2
+   + G4_PEG_Func.cpp                 1.2
+   + G4_PEG_Func.h                   1.2
+   + G4_PEG_Wrapper.cpp              1.2
+   + G4_PEG_Wrapper.h                1.2
+   + G4_PEG_Wrapper_cmdif.h          1.2
+   + G4_PEG_cmdif.h                  1.2
+   + PY_G4_PEG_Wrapper.cpp           1.2   (*)
+   + PY_G4_PEG_Wrapper.h             1.2
+   + g4_peg_cap_regif.cpp            1.2
+   + g4_peg_cap_regif.h              1.2
+   + g4_peg_cl_regif.cpp             1.2
+   + g4_peg_cl_regif.h               1.2
+- Supported functions: not change from previous release
+- Note: version 1.1 of source code is reused from previous release.
+      (*): files changed to fix bug
+
+***************************************************************************************************
+src_G4_PEG_20180719.7z
+-----------------------------
+- Release info: Release source code for code review 2
+- Release date: July 19, 2018
+- Test environment: SC-HEAP G4 Rev73 64 bit
+- Source code (CVS repository):
+        G4_PEG.cpp                   (v1.3)
+        G4_PEG.h                     (v1.3)
+        G4_PEGCAP.cpp                (v1.3)
+        G4_PEGCAP.h                  (v1.3)
+        G4_PEGCAP_AgentController.h  (v1.2)
+        G4_PEGCAP_E2x_Reg.cpp        (v1.1)
+        G4_PEGCAP_E2x_Reg.h          (v1.1)
+        G4_PEGCAP_Func.cpp           (v1.3)
+        G4_PEGCAP_Func.h             (v1.2)
+        G4_PEGCAP_U2A_Reg.cpp        (v1.2)
+        G4_PEGCAP_U2A_Reg.h          (v1.2)
+        G4_PEGCAP_cmdif.h            (v1.1)
+        G4_PEG_AgentController.h     (v1.1)
+        G4_PEG_DataHandler.cpp       (v1.3)
+        G4_PEG_DataHandler.h         (v1.3)
+        G4_PEG_E2x_Reg.cpp           (v1.1)
+        G4_PEG_E2x_Reg.h             (v1.1)
+        G4_PEG_ERR_INFO.cpp          (v1.2)
+        G4_PEG_ERR_INFO.h            (v1.1)
+        G4_PEG_Func.cpp              (v1.1)
+        G4_PEG_Func.h                (v1.1)
+        G4_PEG_U2A_Reg.cpp           (v1.1)
+        G4_PEG_U2A_Reg.h             (v1.1)
+        G4_PEG_Wrapper.cpp           (v1.4)
+        G4_PEG_Wrapper.h             (v1.3)
+        G4_PEG_Wrapper_cmdif.h       (v1.1)
+        G4_PEG_cmdif.h               (v1.2)
+        PY_G4_PEG_Wrapper.cpp        (v1.1)
+        PY_G4_PEG_Wrapper.h          (v1.1)
+        g4_peg_e2x_regif.cpp         (v1.2)
+        g4_peg_e2x_regif.h           (v1.2)
+        g4_peg_u2a_regif.cpp         (v1.2)
+        g4_peg_u2a_regif.h           (v1.2)
+        g4_pegcap_e2x_regif.cpp      (v1.2)
+        g4_pegcap_e2x_regif.h        (v1.2)
+        g4_pegcap_u2a_regif.cpp      (v1.2)
+        g4_pegcap_u2a_regif.h        (v1.2)
+- Supported features:
+    + Support E2x and U2A platform.
+    + Use TLM target socket to access to registers from APB bus
+    + TLM bus interface for VCI bus.
+        . Using 1 TLM target socket "tsv" and 1 TLM initiator socket "is" to receive and transfer the data from VCI bus.
+        . Side band information is modeled by information of TlmG3mExtension."
+    + Model will read attribute [G4CPU_PE_TYPE] in cfg file and decide number of filter corresponding.
+    + Capable of specifying individual regions to which each filter keeps watch on accesses
+    + Capable of specifying what kind of access is permitted to each region
+    + Existing key-code protection to prevent registers from unexpected accesses
+    + Bus masters can only access the Local RAM area and INTC1 register area if permission is granted. PEG can prevent read and write accesses against which the Local RAM area and INTC1 register area should be protected. If PEG detects illegal access, guard error is reported to ECM
+    + Distinguish the access
+        . When the speculative load bit is set and the guard error occurrs, PEG sends the error signal to the transaction Master PE.
+        . When the speculative load bit isn't set and the guard error occurrs, PEG sends the error signal to the transaction Slave PE"
+		
+***************************************************************************************************
+src_G4_PEG_20180730.7z
+-----------------------------
+- Release info: Release source code for:
+    + Code review 1
+    + Bug #48428, #48434, #48911, #48979, #49564
+    + Fixing comment [rvc-mcs:09775] (Code review 2)
+- Release date: July 30, 2018
+- Test environment: SC-HEAP G4 Rev73 64 bit
+- Source code (CVS repository):
+        G4_PEG.cpp                     (v1.8)
+        G4_PEG.h                       (v1.7)
+        G4_PEGCAP.cpp                  (v1.8)
+        G4_PEGCAP.h                    (v1.7)
+        G4_PEGCAP_AgentController.h    (v1.6)
+        G4_PEGCAP_E2x_Reg.cpp          (v1.2)
+        G4_PEGCAP_E2x_Reg.h            (v1.2)
+        G4_PEGCAP_Func.cpp             (v1.7)
+        G4_PEGCAP_Func.h               (v1.5)
+        G4_PEGCAP_U2A_Reg.cpp          (v1.3)
+        G4_PEGCAP_U2A_Reg.h            (v1.3)
+        G4_PEGCAP_cmdif.h              (v1.5)
+        G4_PEG_AgentController.h       (v1.5)
+        G4_PEG_DataHandler.cpp         (v1.8)
+        G4_PEG_DataHandler.h           (v1.6)
+        G4_PEG_E2x_Reg.cpp             (v1.4)
+        G4_PEG_E2x_Reg.h               (v1.2)
+        G4_PEG_ERR_INFO.cpp            (v1.6)
+        G4_PEG_ERR_INFO.h              (v1.4)
+        G4_PEG_Func.cpp                (v1.4)
+        G4_PEG_Func.h                  (v1.4)
+        G4_PEG_U2A_Reg.cpp             (v1.2)
+        G4_PEG_U2A_Reg.h               (v1.2)
+        G4_PEG_Wrapper.cpp             (v1.9)
+        G4_PEG_Wrapper.h               (v1.6)
+        G4_PEG_Wrapper_cmdif.h         (v1.5)
+        G4_PEG_cmdif.h                 (v1.4)
+        PY_G4_PEG_Wrapper.cpp          (v1.4)
+        PY_G4_PEG_Wrapper.h            (v1.4)
+        g4_peg_e2x_regif.cpp           (v1.2)
+        g4_peg_e2x_regif.h             (v1.2)
+        g4_peg_u2a_regif.cpp           (v1.3)
+        g4_peg_u2a_regif.h             (v1.3)
+        g4_pegcap_e2x_regif.cpp        (v1.3)
+        g4_pegcap_e2x_regif.h          (v1.3)
+        g4_pegcap_u2a_regif.cpp        (v1.3)
+        g4_pegcap_u2a_regif.h          (v1.3)
+- Supported features: (un-change)
+
+***************************************************************************************************
+G4_PEG_Output_64bit_20180806.7z
+-----------------------------
+- Release info: Release final data
+- Release date: Aug 06, 2018
+- Test environment: SC-HEAP G4 Rev73 64 bit
+- Source code (CVS repository):
+        G4_PEG_Wrapper.cpp             (v1.9)
+        G4_PEG_Wrapper.h               (v1.6)
+        G4_PEG_Wrapper_cmdif.h         (v1.5)
+        G4_PEG_cmdif.h                 (v1.4)
+        PY_G4_PEG_Wrapper.cpp          (v1.4)
+        PY_G4_PEG_Wrapper.h            (v1.4)
+        g4_peg_e2x_regif.cpp           (v1.3)
+        g4_peg_e2x_regif.h             (v1.3)
+        g4_peg_u2a_regif.cpp           (v1.4)
+        g4_peg_u2a_regif.h             (v1.4)
+        g4_pegcap_e2x_regif.cpp        (v1.4)
+        g4_pegcap_e2x_regif.h          (v1.4)
+        G4_PEG_U2A_Reg.h               (v1.3)
+        G4_PEGCAP_U2A_Reg.cpp          (v1.4)
+        G4_PEGCAP_U2A_Reg.h            (v1.4)
+        G4_PEGCAP_cmdif.h              (v1.5)
+        G4_PEG_AgentController.h       (v1.5)
+        G4_PEG_DataHandler.cpp         (v1.8)
+        G4_PEG_DataHandler.h           (v1.6)
+        G4_PEG_E2x_Reg.cpp             (v1.5)
+        G4_PEG_E2x_Reg.h               (v1.3)
+        G4_PEG_ERR_INFO.cpp            (v1.6)
+        G4_PEG_ERR_INFO.h              (v1.4)
+        G4_PEG_Func.cpp                (v1.4)
+        G4_PEG_Func.h                  (v1.4)
+        G4_PEG_U2A_Reg.cpp             (v1.3)
+        G4_PEG.cpp                     (v1.8)
+        G4_PEG.h                       (v1.7)
+        G4_PEGCAP.cpp                  (v1.8)
+        G4_PEGCAP.h                    (v1.7)
+        G4_PEGCAP_AgentController.h    (v1.6)
+        G4_PEGCAP_E2x_Reg.cpp          (v1.3)
+        G4_PEGCAP_E2x_Reg.h            (v1.3)
+        G4_PEGCAP_Func.cpp             (v1.7)
+        G4_PEGCAP_Func.h               (v1.5)
+        g4_pegcap_u2a_regif.cpp        (v1.4)
+        g4_pegcap_u2a_regif.h          (v1.4)
+- Supported features: (un-change)
+
+
+***************************************************************************************************
+G4_PEG_Output_64bit_20190611.7z
+-----------------------------
+- Release info: Release final data after update to adapt FCC1 0.60
+- Release date: Jun 11, 2019
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+        G4_PEG.cpp                     (v1.10)
+        G4_PEG.h                       (v1.8 )
+        G4_PEGCAP.cpp                  (v1.10)
+        G4_PEGCAP.h                    (v1.8 )
+        G4_PEGCAP_AgentController.h    (v1.7 )
+        G4_PEGCAP_E2x_Reg.cpp          (v1.4 )
+        G4_PEGCAP_E2x_Reg.h            (v1.4 )
+        G4_PEGCAP_Func.cpp             (v1.8 )
+        G4_PEGCAP_Func.h               (v1.6 )
+        G4_PEGCAP_U2A_Reg.cpp          (v1.5 )
+        G4_PEGCAP_U2A_Reg.h            (v1.5 )
+        G4_PEGCAP_cmdif.h              (v1.6 )
+        G4_PEG_AgentController.h       (v1.6 )
+        G4_PEG_DataHandler.cpp         (v1.9 )
+        G4_PEG_DataHandler.h           (v1.7 )
+        G4_PEG_E2x_Reg.cpp             (v1.6 )
+        G4_PEG_E2x_Reg.h               (v1.4 )
+        G4_PEG_ERR_INFO.cpp            (v1.7 )
+        G4_PEG_ERR_INFO.h              (v1.5 )
+        G4_PEG_Func.cpp                (v1.5 )
+        G4_PEG_Func.h                  (v1.5 )
+        G4_PEG_U2A_Reg.cpp             (v1.4 )
+        G4_PEG_U2A_Reg.h               (v1.4 )
+        G4_PEG_Wrapper.cpp             (v1.11)
+        G4_PEG_Wrapper.h               (v1.7 )
+        G4_PEG_Wrapper_cmdif.h         (v1.6 )
+        G4_PEG_cmdif.h                 (v1.5 )
+        PY_G4_PEG_Wrapper.cpp          (v1.5 )
+        PY_G4_PEG_Wrapper.h            (v1.5 )
+        g4_peg_e2x_regif.cpp           (v1.4 )
+        g4_peg_e2x_regif.h             (v1.4 )
+        g4_peg_u2a_regif.cpp           (v1.5 )
+        g4_peg_u2a_regif.h             (v1.5 )
+        g4_pegcap_e2x_regif.cpp        (v1.5 )
+        g4_pegcap_e2x_regif.h          (v1.5 )
+        g4_pegcap_u2a_regif.cpp        (v1.5 )
+        g4_pegcap_u2a_regif.h          (v1.5 )
+- Supported functions: no change
+  + Allow access registers when clock is zero or reset in debug mode with debug master ID 0xFF
+  + Change CWR_SYSTEMC to USR_CWR_SYSTEM
+  + Use rvc_common_model.cpp/h
+  + Get coverage C1.
+  + Check 2bytes-characters, uninitialized variables
+- Un-support functions: no change
+
+
+***************************************************************************************************
+G4_PEG_Output_64bit_20190625.7z
+-----------------------------
+- Release info: Release data after update Makefile as comment via email [rvc-mcs:11773]
+- Release date: Jun 25, 2019
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository): not change
+- Supported functions: no change
+- Un-support functions: no change
+
+
+***************************************************************************************************
+G4_PEG_Output_64bit_20200203.7z
+-----------------------------
+- Release info: Release final data after update to adapt U2A 0.61
+- Release date: 
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+        G4_PEG.cpp                     (v1.11)
+        G4_PEG.h                       (v1.9 )
+        G4_PEGCAP.cpp                  (v1.12)
+        G4_PEGCAP.h                    (v1.9 )
+        G4_PEGCAP_AgentController.h    (v1.8 )
+        G4_PEGCAP_E2x_Reg.cpp          (v1.5 )
+        G4_PEGCAP_E2x_Reg.h            (v1.5 )
+        G4_PEGCAP_Func.cpp             (v1.11 )
+        G4_PEGCAP_Func.h               (v1.7 )
+        G4_PEGCAP_U2A_Reg.cpp          (v1.6 )
+        G4_PEGCAP_U2A_Reg.h            (v1.6 )
+        G4_PEGCAP_cmdif.h              (v1.7 )
+        G4_PEG_AgentController.h       (v1.7 )
+        G4_PEG_DataHandler.cpp         (v1.10 )
+        G4_PEG_DataHandler.h           (v1.8 )
+        G4_PEG_E2x_Reg.cpp             (v1.7 )
+        G4_PEG_E2x_Reg.h               (v1.5 )
+        G4_PEG_ERR_INFO.cpp            (v1.8 )
+        G4_PEG_ERR_INFO.h              (v1.6 )
+        G4_PEG_Func.cpp                (v1.8 )
+        G4_PEG_Func.h                  (v1.6 )
+        G4_PEG_U2A_Reg.cpp             (v1.5 )
+        G4_PEG_U2A_Reg.h               (v1.5 )
+        G4_PEG_Wrapper.cpp             (v1.12)
+        G4_PEG_Wrapper.h               (v1.8 )
+        G4_PEG_Wrapper_cmdif.h         (v1.7 )
+        G4_PEG_cmdif.h                 (v1.6 )
+        PY_G4_PEG_Wrapper.cpp          (v1.6 )
+        PY_G4_PEG_Wrapper.h            (v1.6 )
+        g4_peg_e2x_regif.cpp           (v1.5 )
+        g4_peg_e2x_regif.h             (v1.5 )
+        g4_peg_u2a_regif.cpp           (v1.6 )
+        g4_peg_u2a_regif.h             (v1.6 )
+        g4_pegcap_e2x_regif.cpp        (v1.6 )
+        g4_pegcap_e2x_regif.h          (v1.6 )
+        g4_pegcap_u2a_regif.cpp        (v1.6 )
+        g4_pegcap_u2a_regif.h          (v1.6 )
+- Supported functions: no change
+  + Update flow read/write register.
+  + Update environment using I_Bridge.
+  + Get coverage C1.
+- Un-support functions: no change

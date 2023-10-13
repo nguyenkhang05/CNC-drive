@@ -1,0 +1,8 @@
+COMMON_RVC HISTORY
+--------------------------------------------------------
+<2020.11.6>
+SVN version
+  Rev.357
+File
+    - Add emu3s_sin_table.h
+

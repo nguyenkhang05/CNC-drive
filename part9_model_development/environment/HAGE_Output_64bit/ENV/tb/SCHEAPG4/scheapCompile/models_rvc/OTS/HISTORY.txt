@@ -1,0 +1,33 @@
+=================================
+=        RELEASE HISTORY        =   
+=================================
+v2018_10_10
+    - Enhance for U2A (refs #58787)
+
+v2018_02_08
+    - Update source code to fix segmentation fault on SC-HEAP (gcc issue?)
+    - Update environment to support "-m64" compilation (applying Regression environment 17004)
+
+v2017_11_03
+    - Update ots.cpp file to fix below issue (E549) occurs during 64bits simulation:
+        --------
+          Error: (E549) uncaught exception: basic_string::erase: __pos (which is 4294967295) > this->size() (which is 6)
+        --------
+
+v2017_10_24, v2017_10_27
+    - Update ots.cpp due to below compiling issue on Windows 64bits:
+        --------
+          ots.cpp(624): error C2678: binary '==': no operator found which takes a left-hand operand of type 'std::ifstream' (or there is no acceptable conversion) ...
+          ots.cpp(671): error C2678: binary '!=': no operator found which takes a left-hand operand of type 'std::istringstream' (or there is no acceptable conversion) ...
+        --------
+
+v2016_11_08: 
+  - Remove redundant commands in sim/scripts_linux/run_all/run_all.csh file.
+  - Revise path in sim/scripts_linux/env_rvc_set.csh and sim/scripts_linux/astc_env_rvc_set.csh files.
+
+v2016_10_25
+- Fix time resolution bug
+  - Symptom: the operation is not correct when using a time resolution that is not nano second (SC_NS).
+  - Cause: current code use "sc_time_stamp().to_double()", its result is based on time resolution.
+  - How to fix: add GetCurTime() function, to change other time resolution to nano second (SC_NS)
+  - How to check: add new test patterns tp05_01_001, tp05_02_001, tp05_03_001 (based on tp03_10_02_001).

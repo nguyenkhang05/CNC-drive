@@ -1,0 +1,248 @@
+#############################
+## ECC_BUS_Output_64bit_20200421.7z
+#############################
+- Release info: Update for REL's comments
+
+- Release date: Apr 21, 2020.
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+     ECC_BUS_AECCCTL_Func.cpp          1.6
+     ECC_BUS_AECCCTL_Func.h            1.4
+     ECC_BUS_DECCCTL_Func.cpp          1.5
+     ECC_BUS_DECCCTL_Func.h            1.4
+     ECC_BUS_ECCCAP_Func.cpp           1.10
+     ECC_BUS_ECCCAP_Func.h             1.6
+     ECC_BUS_SEP_AD.cpp                1.13
+     ECC_BUS_SEP_AD.h                  1.5
+     ECC_BUS_SEP_AD_AgentController.h  1.2
+     ECC_BUS_SEP_AD_cmdif.h            1.3
+     PY_ECC_BUS_SEP_AD.cpp             1.2
+     PY_ECC_BUS_SEP_AD.h               1.2
+     ecc_bus_aeccctl_regif.cpp         1.6
+     ecc_bus_aeccctl_regif.h           1.6
+     ecc_bus_deccctl_regif.cpp         1.7
+     ecc_bus_deccctl_regif.h           1.6
+     ecc_bus_ecccap_regif.cpp          1.10
+     ecc_bus_ecccap_regif.h            1.8
+
+- Supported functions: Not change
+
+- Non-supported features and limitation:  not change
+#############################
+## ECC_BUS_Output_64bit_20200413.7z
+#############################
+- Release info: Update for adapt UM0.70 and  ticket  #40707
+                Final release ECC_BUS_SEP_AD model.
+
+- Release date: Apr 13, 2020.
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+     ECC_BUS_AECCCTL_Func.cpp          1.6
+     ECC_BUS_AECCCTL_Func.h            1.4
+     ECC_BUS_DECCCTL_Func.cpp          1.5
+     ECC_BUS_DECCCTL_Func.h            1.4
+     ECC_BUS_ECCCAP_Func.cpp           1.10
+     ECC_BUS_ECCCAP_Func.h             1.6
+     ECC_BUS_SEP_AD.cpp                1.13
+     ECC_BUS_SEP_AD.h                  1.5
+     ECC_BUS_SEP_AD_AgentController.h  1.2
+     ECC_BUS_SEP_AD_cmdif.h            1.2
+     PY_ECC_BUS_SEP_AD.cpp             1.2
+     PY_ECC_BUS_SEP_AD.h               1.2
+     ecc_bus_aeccctl_regif.cpp         1.6
+     ecc_bus_aeccctl_regif.h           1.6
+     ecc_bus_deccctl_regif.cpp         1.7
+     ecc_bus_deccctl_regif.h           1.6
+     ecc_bus_ecccap_regif.cpp          1.10
+     ecc_bus_ecccap_regif.h            1.8
+
+- Supported functions: Not change
+
+- Non-supported features and limitation:  not change
+#############################
+- Release info: Source code release
+    + Update to add keyopen ports
+- Release date: Apr 1, 2020
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+     ECC_BUS_AECCCTL_Func.cpp          1.6
+     ECC_BUS_AECCCTL_Func.h            1.4
+     ECC_BUS_DECCCTL_Func.cpp          1.5
+     ECC_BUS_DECCCTL_Func.h            1.4
+     ECC_BUS_ECCCAP_Func.cpp           1.10
+     ECC_BUS_ECCCAP_Func.h             1.6
+     ECC_BUS_SEP_AD.cpp                1.13
+     ECC_BUS_SEP_AD.h                  1.5
+     ECC_BUS_SEP_AD_AgentController.h  1.2
+     ECC_BUS_SEP_AD_cmdif.h            1.2
+     PY_ECC_BUS_SEP_AD.cpp             1.2
+     PY_ECC_BUS_SEP_AD.h               1.2
+     ecc_bus_aeccctl_regif.cpp         1.6
+     ecc_bus_aeccctl_regif.h           1.6
+     ecc_bus_deccctl_regif.cpp         1.7
+     ecc_bus_deccctl_regif.h           1.6
+     ecc_bus_ecccap_regif.cpp          1.10
+     ecc_bus_ecccap_regif.h            1.8
+
+- Supported functions: Not change
+
+- Non-supported features and limitation:  not change
+#############################
+- Release info: Source code release
+    + Update to adapt UM0.70
+- Release date: Mar 17, 2020
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+     ECC_BUS_AECCCTL_Func.cpp          1.6
+     ECC_BUS_AECCCTL_Func.h            1.4
+     ECC_BUS_DECCCTL_Func.cpp          1.5
+     ECC_BUS_DECCCTL_Func.h            1.4
+     ECC_BUS_ECCCAP_Func.cpp           1.10
+     ECC_BUS_ECCCAP_Func.h             1.6
+     ECC_BUS_SEP_AD.cpp                1.11
+     ECC_BUS_SEP_AD.h                  1.5
+     ECC_BUS_SEP_AD_AgentController.h  1.2
+     ECC_BUS_SEP_AD_cmdif.h            1.2
+     PY_ECC_BUS_SEP_AD.cpp             1.2
+     PY_ECC_BUS_SEP_AD.h               1.2
+     ecc_bus_aeccctl_regif.cpp         1.5
+     ecc_bus_aeccctl_regif.h           1.6
+     ecc_bus_deccctl_regif.cpp         1.7
+     ecc_bus_deccctl_regif.h           1.6
+     ecc_bus_ecccap_regif.cpp          1.10
+     ecc_bus_ecccap_regif.h            1.8
+
+- Supported functions: Not change
+
+- Non-supported features and limitation:  not change
+#############################
+## ECC_BUS_Output_64bit_20180906.7z
+#############################
+- Release info: Update for ticket #49503 
+                Final release
+
+- Release date: Sep 06, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3 64bit.
+
+- File (CVS repository):
+     ECC_BUS_AECCCTL_Func.cpp         1.3       
+     ECC_BUS_AECCCTL_Func.h           1.2       
+     ECC_BUS_DECCCTL_Func.cpp         1.3       
+     ECC_BUS_DECCCTL_Func.h           1.2       
+     ECC_BUS_ECCCAP_Func.cpp          1.8       
+     ECC_BUS_ECCCAP_Func.h            1.4       
+     ECC_BUS_SEP_AD.cpp               1.8       
+     ECC_BUS_SEP_AD.h                 1.4       
+     ECC_BUS_SEP_AD_AgentController.h 1.1       
+     ECC_BUS_SEP_AD_cmdif.h           1.1       
+     PY_ECC_BUS_SEP_AD.cpp            1.1       
+     PY_ECC_BUS_SEP_AD.h              1.1       
+     ecc_bus_aeccctl_regif.cpp        1.4       
+     ecc_bus_aeccctl_regif.h          1.3       
+     ecc_bus_deccctl_regif.cpp        1.4       
+     ecc_bus_deccctl_regif.h          1.3       
+     ecc_bus_ecccap_regif.cpp         1.7       
+     ecc_bus_ecccap_regif.h           1.5       
+
+	
+- Supported features: not change
+	
+- Non-supported features and limitation: not change
+
+#############################
+## src_ECC_BUS_SEP_AD_20180821.7z
+#############################
+- Release info: Updating ECC_BUS_SEP_AD model for ticket Update for ticket #49503 
+                Release for Code review 2
+
+- Release date: Aug 21, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3 64bit.
+
+- File (CVS repository):
+    ECC_BUS_AECCCTL_Func.cpp             1.3
+    ECC_BUS_AECCCTL_Func.h               1.2
+    ECC_BUS_DECCCTL_Func.cpp             1.3
+    ECC_BUS_DECCCTL_Func.h               1.2
+    ECC_BUS_ECCCAP_Func.cpp              1.6
+    ECC_BUS_ECCCAP_Func.h                1.3
+    ECC_BUS_SEP_AD.cpp                   1.7
+    ECC_BUS_SEP_AD.h                     1.4
+    ECC_BUS_SEP_AD_AgentController.h     1.1
+    ECC_BUS_SEP_AD_cmdif.h               1.1
+    PY_ECC_BUS_SEP_AD.cpp                1.1
+    PY_ECC_BUS_SEP_AD.h                  1.1
+    ecc_bus_aeccctl_regif.cpp            1.4
+    ecc_bus_aeccctl_regif.h              1.3
+    ecc_bus_deccctl_regif.cpp            1.4
+    ecc_bus_deccctl_regif.h              1.3
+    ecc_bus_ecccap_regif.cpp             1.6
+    ecc_bus_ecccap_regif.h               1.5
+	
+- Supported features: not change
+
+- Add supported features:
+    + Selectable error kind:
+        . Model will read parameter "error_kind" from constructor and decide 
+          whether error information is reported when "error_kind" is detected
+        . "error_kind": it can be Address error, Data error or both
+	
+- Non-supported features and limitation: not change
+
+
+#############################
+## ECC_BUS_Output_64bit_20180622.7z
+#############################
+- Release info: Final release ECC_BUS_SEP_AD model.
+
+- Release date: Jun 22, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3 64bit.
+
+- File (CVS repository):
+    ECC_BUS_AECCCTL_Func.cpp	       1.1
+    ECC_BUS_AECCCTL_Func.h	           1.1
+    ECC_BUS_DECCCTL_Func.cpp	       1.1
+    ECC_BUS_DECCCTL_Func.h	           1.1
+    ECC_BUS_ECCCAP_Func.cpp	           1.3
+    ECC_BUS_ECCCAP_Func.h	           1.2
+    ECC_BUS_SEP_AD.cpp	               1.4
+    ECC_BUS_SEP_AD.h	               1.3
+    ECC_BUS_SEP_AD_AgentController.h   1.1
+    ECC_BUS_SEP_AD_cmdif.h	           1.1
+    PY_ECC_BUS_SEP_AD.cpp	           1.1
+    PY_ECC_BUS_SEP_AD.h                1.1
+    ecc_bus_aeccctl_regif.cpp	       1.1
+    ecc_bus_aeccctl_regif.h	           1.1
+    ecc_bus_deccctl_regif.cpp	       1.1
+    ecc_bus_deccctl_regif.h	           1.1
+    ecc_bus_ecccap_regif.cpp	       1.2
+    ecc_bus_ecccap_regif.h	           1.2
+
+- Supported features:
+    + Error notification: 
+      The occurrence of a Data ECC error or an Address ECC error is reported to the Error Control Module. 
+      * Data ECC Error:
+         • Error notification can be either enabled or disabled upon detection of an ECC 2-bit error.
+         • Error notification can be either enabled or disabled upon detection of an ECC 1-bit error.
+         In the initial state, error notification is enabled upon detection of an ECC 2-bit and ECC 1-bit error.
+      * Address ECC Error:
+         • Error notification can be either enabled or disabled upon detection of an ECC 2-bit error.
+         • Error notification can be either enabled or disabled upon detection of an ECC 1-bit error.
+         In the initial state, error notification is enabled upon detection of an ECC 2-bit and ECC 1-bit error.
+       The error notification signal is output with an Address ECC 2-bit error, an Address ECC 1-bit error handled as one source, 
+       and a Data ECC 2-bit error and a Data ECC 1-bit error are handled as individual sources. 
+     
+    + Error status:
+    A status register is provided that indicates the status of Data ECC 2-bit error detection, Data ECC 1-bit error detection, 
+    Address ECC 2-bit error detection, and Address ECC 1-bit error detection. If an error occurs while no error status is set, 
+    the corresponding status is set. The error status can be cleared using the clear register.
+	
+- Non-supported features and limitation:
+  + Not support Encoder and Decoder.Data ECC error is issued from Python I/F API.
+  + Not support self-diagnosis because it is covered by Python I/F API.

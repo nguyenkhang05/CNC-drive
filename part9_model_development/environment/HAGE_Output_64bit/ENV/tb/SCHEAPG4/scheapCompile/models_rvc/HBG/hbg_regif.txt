@@ -1,0 +1,21 @@
+%MODULE HBG
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  9
+
+%REG_CHANNEL reg_def
+    %%TITLE     name            reg_name        wsize   rsize   length  offset  access   init   support  callback
+    %%REG       HBGPROT0        HBGPROT0        8|16|32 8|16|32 32      0x00    R|W      0x141  TRUE     -
+    %%REG       HBGPROT1        HBGPROT1        8|16|32 8|16|32 32      0x04    R|W      0xF    TRUE     -
+
+%REG_NAME HBGPROT0
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    LOCK            31     31     0x0   R|W     TRUE     W
+    %%BIT    GEN             8      8      0x1   R|W     TRUE     -
+    %%BIT    DBG             6      6      0x1   R|W     TRUE     -
+    %%BIT    UM              4      4      0x0   R|W     TRUE     -
+    %%BIT    WG              1      1      0x0   R|W     TRUE     -
+    %%BIT    RG              0      0      0x1   R|W     TRUE     -
+
+%REG_NAME HBGPROT1
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    SPID            31     0      0xF   R|W     TRUE     W

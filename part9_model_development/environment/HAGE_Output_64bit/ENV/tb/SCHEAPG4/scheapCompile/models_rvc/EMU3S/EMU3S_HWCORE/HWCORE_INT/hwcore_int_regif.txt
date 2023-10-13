@@ -1,0 +1,135 @@
+%MODULE HWCORE_INT
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  11
+
+%REG_CHANNEL reg_def
+  %%TITLE    name               reg_name             size         wsize         rsize       length      offset    factor_start   factor_end   factor_index   factor_step     init             access    support    callback
+  %%REG      INT                INT                  32           8|16|32       8|16|32     32          0x700     0              7            -              0x4             0x00000000       R|W       TRUE       -
+  %%REG      INTSD              INTSD                32                 -       8|16|32     32          0x720     -              -            -              -               0x00000000       R         TRUE       -
+  %%REG      INTSDC             INTSDC               32           8|16|32       8|16|32     32          0x724     -              -            -              -               0x00000000       R|W       TRUE       -
+  %%REG      ERR                ERR                  16              8|16       8|16|32     16          0x730     0              7            -              0x2             0x00000000       R|W       TRUE       -
+  %%REG      ERRSD              ERRSD                16                 -       8|16|32     16          0x740     -              -            -              -               0x00000000       R         TRUE       -
+  %%REG      ERRSDC             ERRSDC               16              8|16       8|16|32     16          0x742     -              -            -              -               0x00000000       R|W       TRUE       -
+  %%REG      OFMON              OFMON                 8                 -       8|16|32      8          0x744     -              -            -              -               0x00000000       R         TRUE       -
+  %%REG      ZDMON              ZDMON                 8                 -       8|16|32      8          0x745     -              -            -              -               0x00000000       R         TRUE       -
+
+%REG_NAME INT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   FWGBINT          23      23     0x0       R|W      TRUE     -
+    %%BIT   FWGAINT          22      22     0x0       R|W      TRUE     -
+    %%BIT   IREC3WINT        21      21     0x0       R|W      TRUE     -
+    %%BIT   IREC3VINT        20      20     0x0       R|W      TRUE     -
+    %%BIT   IREC3UINT        19      19     0x0       R|W      TRUE     -
+    %%BIT   IIR2INT          18      18     0x0       R|W      TRUE     -
+    %%BIT   IIR1INT          17      17     0x0       R|W      TRUE     -
+    %%BIT   IIR0INT          16      16     0x0       R|W      TRUE     -
+    %%BIT   SMBINT           15      15     0x0       R|W      TRUE     -
+    %%BIT   MADINT           14      14     0x0       R|W      TRUE     -
+    %%BIT   VADINT           13      13     0x0       R|W      TRUE     -
+    %%BIT   ADINT            12      12     0x0       R|W      TRUE     -
+    %%BIT   PMT2CPINT        11      11     0x0       R|W      TRUE     -
+    %%BIT   INSINT           10      10     0x0       R|W      TRUE     -
+    %%BIT   ERRINT            9       9     0x0       R|W      TRUE     -
+    %%BIT   CMP1INT           8       8     0x0       R|W      TRUE     -
+    %%BIT   CMP0INT           7       7     0x0       R|W      TRUE     -
+    %%BIT   CARMINT           6       6     0x0       R|W      TRUE     -
+    %%BIT   CARVINT           5       5     0x0       R|W      TRUE     -
+    %%BIT   CBUFINT           4       4     0x0       R|W      TRUE     -
+    %%BIT   RECINT            3       3     0x0       R|W      TRUE     -
+    %%BIT   PWMINT            2       2     0x0       R|W      TRUE     -
+    %%BIT   PIINT             1       1     0x0       R|W      TRUE     -
+    %%BIT   ININT             0       0     0x0       R|W      TRUE     -
+
+%REG_NAME INTSD
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   FWGBIF           23      23     0x0       R        TRUE     -
+    %%BIT   FWGAIF           22      22     0x0       R        TRUE     -
+    %%BIT   IREC3WIF         21      21     0x0       R        TRUE     -
+    %%BIT   IREC3VIF         20      20     0x0       R        TRUE     -
+    %%BIT   IREC3UIF         19      19     0x0       R        TRUE     -
+    %%BIT   IIR2IF           18      18     0x0       R        TRUE     -
+    %%BIT   IIR1IF           17      17     0x0       R        TRUE     -
+    %%BIT   IIR0IF           16      16     0x0       R        TRUE     -
+    %%BIT   SMBIF            15      15     0x0       R        TRUE     -
+    %%BIT   MADIF            14      14     0x0       R        TRUE     -
+    %%BIT   VADIF            13      13     0x0       R        TRUE     -
+    %%BIT   ADIF             12      12     0x0       R        TRUE     -
+    %%BIT   PMT2CPIF         11      11     0x0       R        TRUE     -
+    %%BIT   INSIF            10      10     0x0       R        TRUE     -
+    %%BIT   ERRIF             9       9     0x0       R        TRUE     -
+    %%BIT   CMP1IF            8       8     0x0       R        TRUE     -
+    %%BIT   CMP0IF            7       7     0x0       R        TRUE     -
+    %%BIT   CARMIF            6       6     0x0       R        TRUE     -
+    %%BIT   CARVIF            5       5     0x0       R        TRUE     -
+    %%BIT   CBUFIF            4       4     0x0       R        TRUE     -
+    %%BIT   RECIF             3       3     0x0       R        TRUE     -
+    %%BIT   PWMIF             2       2     0x0       R        TRUE     -
+    %%BIT   PIIF              1       1     0x0       R        TRUE     -
+    %%BIT   INIF              0       0     0x0       R        TRUE     -
+
+%REG_NAME INTSDC
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   FWGBIFC          23      23     0x0       R|W      TRUE     -
+    %%BIT   FWGAIFC          22      22     0x0       R|W      TRUE     -
+    %%BIT   IREC3WIFC        21      21     0x0       R|W      TRUE     -
+    %%BIT   IREC3VIFC        20      20     0x0       R|W      TRUE     -
+    %%BIT   IREC3UIFC        19      19     0x0       R|W      TRUE     -
+    %%BIT   IIR2IFC          18      18     0x0       R|W      TRUE     -
+    %%BIT   IIR1IFC          17      17     0x0       R|W      TRUE     -
+    %%BIT   IIR0IFC          16      16     0x0       R|W      TRUE     -
+    %%BIT   SMBIFC           15      15     0x0       R|W      TRUE     -
+    %%BIT   MADIFC           14      14     0x0       R|W      TRUE     -
+    %%BIT   VADIFC           13      13     0x0       R|W      TRUE     -
+    %%BIT   ADIFC            12      12     0x0       R|W      TRUE     -
+    %%BIT   PMT2CPIFC        11      11     0x0       R|W      TRUE     -
+    %%BIT   INSIFC           10      10     0x0       R|W      TRUE     -
+    %%BIT   ERRIFC            9       9     0x0       R|W      TRUE     -
+    %%BIT   CMP1IFC           8       8     0x0       R|W      TRUE     -
+    %%BIT   CMP0IFC           7       7     0x0       R|W      TRUE     -
+    %%BIT   CARMIFC           6       6     0x0       R|W      TRUE     -
+    %%BIT   CARVIFC           5       5     0x0       R|W      TRUE     -
+    %%BIT   CBUFIFC           4       4     0x0       R|W      TRUE     -
+    %%BIT   RECIFC            3       3     0x0       R|W      TRUE     -
+    %%BIT   PWMIFC            2       2     0x0       R|W      TRUE     -
+    %%BIT   PIIFC             1       1     0x0       R|W      TRUE     -
+    %%BIT   INIFC             0       0     0x0       R|W      TRUE     W
+
+%REG_NAME ERR
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   IR3EEN            12      12    0x0       R|W      TRUE     -
+    %%BIT   SMMEN             7       7     0x0       R|W      TRUE     -
+    %%BIT   ADMEN             6       6     0x0       R|W      TRUE     -
+    %%BIT   KCLEN             5       5     0x0       R|W      TRUE     -
+    %%BIT   PMT2OFEN          4       4     0x0       R|W      TRUE     -
+    %%BIT   ZDEN              1       1     0x0       R|W      TRUE     -
+    %%BIT   OVFEN             0       0     0x0       R|W      TRUE     -
+
+%REG_NAME ERRSD
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   IR3EEF            12      12    0x0       R        TRUE     -
+    %%BIT   SMMEF             7       7     0x0       R        TRUE     -
+    %%BIT   ADMEF             6       6     0x0       R        TRUE     -
+    %%BIT   KCLEF             5       5     0x0       R        TRUE     -
+    %%BIT   PMT2OFEF          4       4     0x0       R        TRUE     -
+    %%BIT   ZDEF              1       1     0x0       R        TRUE     -
+    %%BIT   OVFEF             0       0     0x0       R        TRUE     -
+
+%REG_NAME ERRSDC
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   IR3EEFC           12      12    0x0       R|W      TRUE     -
+    %%BIT   SMMEFC            7       7     0x0       R|W      TRUE     -
+    %%BIT   ADMEFC            6       6     0x0       R|W      TRUE     -
+    %%BIT   KCLEFC            5       5     0x0       R|W      TRUE     -
+    %%BIT   PMT2OFEFC         4       4     0x0       R|W      TRUE     -
+    %%BIT   ZDEFC             1       1     0x0       R|W      TRUE     -
+    %%BIT   OVFEFC            0       0     0x0       R|W      TRUE     W
+
+%REG_NAME OFMON
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   OVFIP             7       4     0x0       R        TRUE     -
+    %%BIT   OVFFUNC           3       0     0x0       R        TRUE     -
+
+%REG_NAME ZDMON
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   ZDIP              7       4     0x0       R        TRUE     -
+    %%BIT   ZDFUNC            3       0     0x0       R        TRUE     -

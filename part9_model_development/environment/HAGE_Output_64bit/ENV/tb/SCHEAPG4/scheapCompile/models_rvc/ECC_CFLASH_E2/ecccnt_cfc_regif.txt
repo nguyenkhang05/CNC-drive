@@ -1,0 +1,11 @@
+%MODULE ecccnt_cfc
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  7 
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name                           reg_name                     wsize   rsize        length  offset  factor_start    factor_end  factor_index    factor_step access   init   support  callback
+    %%REG      CFCAPCTL                      CFCAPCTL                    8|16|32 8|16|32      32      0x00    -               -           -               -           R/W      0x0     TRUE     -
+    
+%REG_NAME CFCAPCTL                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    APEDIS             2        2      0       R|W     TRUE        W

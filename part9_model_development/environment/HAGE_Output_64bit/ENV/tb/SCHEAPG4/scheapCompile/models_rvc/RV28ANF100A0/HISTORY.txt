@@ -1,0 +1,22 @@
+#############################
+## RV28ANF100A0_Output_64bit_20180524.7z
+#############################
+- Release info: Final data release.
+
+- Release date: May 24, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  RV28ANF100A0.h                 ver1.6
+  RV28ANF100A0.cpp               ver1.9
+  RV28ANF100A0_cmdif.h           ver1.2
+  PY_RV28ANF100A0.cpp            ver1.5
+  PY_RV28ANF100A0.h              ver1.1
+    
+- Supported features:
+  + Noise filters to dump away small glitches from analog input port.
+  + Detecting rising edges or falling edges or both from the analog filter output. 
+
+- Non-supported features and limitation:
+  N/A

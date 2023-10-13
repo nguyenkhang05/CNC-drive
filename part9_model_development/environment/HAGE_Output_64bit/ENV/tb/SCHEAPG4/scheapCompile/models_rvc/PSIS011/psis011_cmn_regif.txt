@@ -1,0 +1,216 @@
+%MODULE psis011_cmn
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  12 
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name                           reg_name                     wsize   rsize      length offset  factor_start    factor_end  factor_index    factor_step access   init   support  callback
+    %%REG      PSI5SPUOEB                    PSI5SPUOEB                  8|16|32 8|16|32      32     0x000   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPUOMD                    PSI5SPUOMD                  8|16|32 8|16|32      32     0x004   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPUOS                     PSI5SPUOS                   8|16|32 8|16|32      32     0x008   -               -           -               -           R        0x0     TRUE     -
+    %%REG      PSI5SPUNFST                   PSI5SPUNFST                 8|16|32 8|16|32      32     0x00C   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPUSWR                    PSI5SPUSWR                  8|16|32 8|16|32      32     0x010   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPRMBC                    PSI5SPRMBC                  8|16|32 8|16|32      32     0x014   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPUCLB                    PSI5SPUCLB                  8|16|32 8|16|32      32     0x020   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPUPTS                    PSI5SPUPTS                  8|16|32 8|16|32      32     0x024   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPUBCE                    PSI5SPUBCE                  8|16|32 8|16|32      32     0x028   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPUBPR                    PSI5SPUBPR                    16|32 8|16|32      32     0x02C   -               -           -               -           R|W      0x40000 TRUE     -
+    %%REG      PSI5SPTPS                     PSI5SPTPS                        32 8|16|32      32     0x030   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPTCAS                    PSI5SPTCAS                  8|16|32 8|16|32      32     0x034   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPTCBS                    PSI5SPTCBS                  8|16|32 8|16|32      32     0x038   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPTCAE                    PSI5SPTCAE                  8|16|32 8|16|32      32     0x040   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPTCAC                    PSI5SPTCAC                  8|16|32 8|16|32      32     0x044   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPTCBE                    PSI5SPTCBE                  8|16|32 8|16|32      32     0x048   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPTCBC                    PSI5SPTCBC                  8|16|32 8|16|32      32     0x04C   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPATCE                    PSI5SPATCE                  8|16|32 8|16|32      32     0x050   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPATCC                    PSI5SPATCC                  8|16|32 8|16|32      32     0x054   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SUCRIE                    PSI5SUCRIE                  8|16|32 8|16|32      32     0x058   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SUCTIE                    PSI5SUCTIE                  8|16|32 8|16|32      32     0x05C   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SUCDRE                    PSI5SUCDRE                  8|16|32 8|16|32      32     0x060   -               -           -               -           R|W      0x0     TRUE     -
+
+    %%REG      PSI5SUCRD                     PSI5SUCRD                   8|16|32 8|16|32      32     0x070   -               -           -               -           R        0x0     TRUE     -
+    %%REG      PSI5SUCRS                     PSI5SUCRS                   8|16|32 8|16|32      32     0x074   -               -           -               -           R        0x0     TRUE     -
+    %%REG      PSI5SUCRSC                    PSI5SUCRSC                  8|16|32 8|16|32      32     0x078   -               -           -               -           R|W      0x0     TRUE     -
+
+    %%REG      PSI5SPTFST                    PSI5SPTFST                  8|16|32 8|16|32      32     0x080   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPTFNM                    PSI5SPTFNM                  8|16|32 8|16|32      32     0x084   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPTFD1                    PSI5SPTFD1                  8|16|32 8|16|32      32     0x088   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPTFD2                    PSI5SPTFD2                  8|16|32 8|16|32      32     0x08C   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SPTFS                     PSI5SPTFS                   8|16|32 8|16|32      32     0x090   -               -           -               -           R        0x0     TRUE     -
+    %%REG      PSI5SPTFIS                    PSI5SPTFIS                  8|16|32 8|16|32      32     0x094   -               -           -               -           R        0x1     TRUE     -
+    %%REG      PSI5SUCTD                     PSI5SUCTD                   8|16|32 8|16|32      32     0x0A0   -               -           -               -           R|W      0x0     TRUE     -
+    %%REG      PSI5SUCTM                     PSI5SUCTM                   8|16|32 8|16|32      32     0x0A4   -               -           -               -           R        0x0     TRUE     -
+    %%REG      PSI5SUCTS                     PSI5SUCTS                   8|16|32 8|16|32      32     0x0A8   -               -           -               -           R        0x0     TRUE     -
+    %%REG      PSI5SUCTSC                    PSI5SUCTSC                  8|16|32 8|16|32      32     0x0AC   -               -           -               -           R|W      0x0     TRUE     -
+
+    
+%REG_NAME PSI5SPUOEB                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    OPEN               0        0      0       R|W     TRUE        W
+
+%REG_NAME PSI5SPUOMD                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    OPMD               0        0      0       R|W     TRUE        W
+
+%REG_NAME PSI5SPUOS                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    MSTS               2        2      0       R       TRUE        -
+    %%BIT    ACSTS              1        1      0       R       TRUE        -
+    %%BIT    SWSTS              0        0      0       R       TRUE        -
+
+%REG_NAME PSI5SPUNFST                                                         
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    NFSET              0        0      0       R|W     TRUE        W
+
+%REG_NAME PSI5SPUSWR                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SWRST              0        0      0       R|W     TRUE        W
+
+%REG_NAME PSI5SPRMBC                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    MBCLR              0        0      0       R|W     TRUE        W
+
+%REG_NAME PSI5SPUCLB                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    TMKV               7        1      0       R|W     TRUE        -
+    %%BIT    LBEN               0        0      0       R|W     TRUE        W
+
+%REG_NAME PSI5SPUPTS                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    UTPRTY             9        8      0       R|W     TRUE        W
+    %%BIT    URPRTY             1        0      0       R|W     TRUE        W
+
+%REG_NAME PSI5SPUBCE                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SCKEN              0        0      0       R|W     TRUE        W
+
+%REG_NAME PSI5SPUBPR                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    RXOSMP             19      16      4       R|W     TRUE        W
+    %%BIT    SCKDIV             15      8       0       R|W     TRUE        -
+    %%BIT    SCKPRS             6       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SPTPS                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    TSPRSU             25      16      0       R|W     TRUE        -
+    %%BIT    TSPRSL             6       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SPTCAS                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    TSCACLS            16      16      0       R|W     TRUE        W
+    %%BIT    TSCAEBS            8       8       0       R|W     TRUE        W
+    %%BIT    TSCACKS            0       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SPTCBS                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    TSCBCLS            16      16      0       R|W     TRUE        W
+    %%BIT    TSCBEBS            8       8       0       R|W     TRUE        W
+    %%BIT    TSCBCKS            0       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SPTCAE                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    TSCAEB             0       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SPTCAC                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    TSCACLR            0       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SPTCBE                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    TSCBEB             0       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SPTCBC                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    TSCBCLR            0       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SPATCE                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    ATSCEB             0       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SPATCC                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    ATSCCLR            0       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SUCRIE                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    IERFIN             3       3       0       R|W     TRUE        -
+    %%BIT    IEROE              2       2       0       R|W     TRUE        -
+    %%BIT    IERFE              1       1       0       R|W     TRUE        -
+    %%BIT    IERPE              0       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SUCTIE                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    IETFIN             1       1       0       R|W     TRUE        -
+    %%BIT    IETOWE             0       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SUCDRE                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DRQEUTFN           1       1       0       R|W     TRUE        -
+    %%BIT    DRQEURFN           0       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SUCRD                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    UTRDT              7       0       0       R       TRUE        R
+
+%REG_NAME PSI5SUCRS                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    UTRFIN             3       3       0       R       TRUE        -
+    %%BIT    UTROE              2       2       0       R       TRUE        -
+    %%BIT    UTRFE              1       1       0       R       TRUE        -
+    %%BIT    UTRPE              0       0       0       R       TRUE        -
+
+%REG_NAME PSI5SUCRSC                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    UTRFINCL           3       3       0       R|W     TRUE        -
+    %%BIT    UTROECL            2       2       0       R|W     TRUE        -
+    %%BIT    UTRFECL            1       1       0       R|W     TRUE        -
+    %%BIT    UTRPECL            0       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SPTFST                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    TXST               0       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SPTFNM                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    TXNUM              2       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SPTFD1                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    TDT4               31      24      0       R|W     TRUE        W
+    %%BIT    TDT3               23      16      0       R|W     TRUE        W
+    %%BIT    TDT2               15      8       0       R|W     TRUE        W
+    %%BIT    TDT1               7       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SPTFD2                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    TDT8               31      24      0       R|W     TRUE        W
+    %%BIT    TDT7               23      16      0       R|W     TRUE        W
+    %%BIT    TDT6               15      8       0       R|W     TRUE        W
+    %%BIT    TDT5               7       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SPTFS                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    TXSTS              0       0       0       R       TRUE        -
+
+%REG_NAME PSI5SPTFIS                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    TXFFFL             1       1       0       R       TRUE        -
+    %%BIT    TXFFEP             0       0       1       R       TRUE        -
+
+%REG_NAME PSI5SUCTD                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    UTTDT              7       0       0       R|W     TRUE        W
+
+%REG_NAME PSI5SUCTM                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    UTTF               1       1       0       R       TRUE        -
+    %%BIT    UTTBBF             0       0       0       R       TRUE        -
+
+%REG_NAME PSI5SUCTS                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    UTTFIN             1       1       0       R       TRUE        -
+    %%BIT    UTTOWE             0       0       0       R       TRUE        -
+
+%REG_NAME PSI5SUCTSC                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    UTTFINCL           1       1       0       R|W     TRUE        -
+    %%BIT    UTTOWECL           0       0       0       R|W     TRUE        W

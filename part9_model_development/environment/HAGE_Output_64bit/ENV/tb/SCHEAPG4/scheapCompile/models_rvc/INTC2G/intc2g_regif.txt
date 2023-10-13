@@ -1,0 +1,99 @@
+%MODULE INTC2G
+    # the INTC2G registers with base addresses
+    #    32'hFFC6_4000
+    # consider these part as a continous range, the range of the whole INTC2G
+    # becomes from 32'hFFC6_4000 to 32'hFFC6_48FF, with base address 
+    # is 32'hFFC6_4000 and offset part specifies the range from 0x000 to 0xB60
+    # size of offset part should be 12 bit
+    
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         14
+	%REG_CHANNEL reg_def
+	
+%%TITLE    name               reg_name              wsize  rsize      length    offset    factor_start    factor_end    factor_index    factor_step    access     init             support     callback
+%%REG      INTC2GKCPROT       INTC2GKCPROT          32     8|16|32    32        0x000     -               -             -               -              R|W        0x00000000       TRUE         W
+%%REG      INTC2GERRCLR       INTC2GERRCLR          32     8|16|32    32        0x004     -               -             -               -              R|W1:0     0x00000000       TRUE         W
+%%REG      INTC2GERRSTAT      INTC2GERRSTAT          -     8|16|32    32        0x008     -               -             -               -              R          0x00000000       TRUE         -
+%%REG      INTC2GERRADDR      INTC2GERRADDR          -     8|16|32    32        0x00C     -               -             -               -              R          0x00000000       TRUE         -
+%%REG      INTC2GERRTYPE      INTC2GERRTYPE          -     8|16|32    32        0x010     -               -             -               -              R          0x00000000       TRUE         -
+%%REG      INTC2GMPID         INTC2GMPID          8|32     8|16|32    32        0x040     0               7             -               0x04           R|W        0x00000000       TRUE         W
+%%REG      INTC2GPROT_GR      INTC2GPROT_GR         32     8|16|32    32        0x0F0     -               -             -               -              R|W        0x00000000       TRUE         W
+%%REG      INTC2GPROT         INTC2GPROT            32     8|16|32    32        0x180     32              2048          -               0x04           R|W        0x00000000       TRUE         W
+
+#-------------------------------------------------------------------------------
+# Guard error clear register
+#-------------------------------------------------------------------------------
+%REG_NAME INTC2GERRCLR
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      CLRE    0        0        0       R|W1:0    TRUE        W
+%%BIT      CLRO    1        1        0       R|W1:0    TRUE        -
+
+#-------------------------------------------------------------------------------
+#  Guard error status register
+#-------------------------------------------------------------------------------
+%REG_NAME INTC2GERRSTAT
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      ERR     0        0        0       R         TRUE       -
+%%BIT      OVF     1        1        0       R         TRUE       -
+
+#-------------------------------------------------------------------------------
+#  Guard error address register
+#-------------------------------------------------------------------------------
+%REG_NAME INTC2GERRADDR
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      ADDR    31       0        0       R         TRUE       -
+
+#-------------------------------------------------------------------------------
+#  Guard error access information register
+#-------------------------------------------------------------------------------
+%REG_NAME INTC2GERRTYPE
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      WRITE   0        0        0       R         TRUE       -
+%%BIT      SPID    10       6        0       R         TRUE       -
+%%BIT      UM      11       11       0       R         TRUE       -
+%%BIT      DBG     12       12       0       R         TRUE       -
+%%BIT      SEC     13       13       0       R         TRUE       -
+
+#-------------------------------------------------------------------------------
+#  Key code protection register
+#-------------------------------------------------------------------------------
+%REG_NAME INTC2GKCPROT
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      KCE     0        0        0       R|W       TRUE        W
+%%BIT      KCPROT  31       1        0         W       TRUE        -
+
+#-------------------------------------------------------------------------------
+#  SPID Setting Register 
+#-------------------------------------------------------------------------------
+%REG_NAME INTC2GMPID
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      SPID    4        0        0       R|W        TRUE        W
+
+
+#-------------------------------------------------------------------------------
+#  Channel protection control register
+#-------------------------------------------------------------------------------
+%REG_NAME INTC2GPROT
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      RG      0        0        0       R|W       TRUE       W
+%%BIT      WG      1        1        0       R|W       TRUE       -
+%%BIT      UM      4        4        0       R|W       TRUE       -
+%%BIT      DBG     6        6        0       R|W       TRUE       -
+%%BIT      GEN     8        8        0       R|W       TRUE       -
+%%BIT      MPID   23       16        0       R|W       TRUE       -
+
+#-------------------------------------------------------------------------------
+#  Channel protection control register
+#-------------------------------------------------------------------------------
+%REG_NAME INTC2GPROT_GR
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      RG      0        0        0       R|W       TRUE       W
+%%BIT      WG      1        1        0       R|W       TRUE       -
+%%BIT      UM      4        4        0       R|W       TRUE       -
+%%BIT      DBG     6        6        0       R|W       TRUE       -
+%%BIT      GEN     8        8        0       R|W       TRUE       -
+%%BIT      MPID   23       16        0       R|W       TRUE       -
+
+#######################################################################################################################################################
+# vim:nowrap
+#######################################################################################################################################################

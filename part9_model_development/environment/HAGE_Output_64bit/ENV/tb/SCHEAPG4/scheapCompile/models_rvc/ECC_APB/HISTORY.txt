@@ -1,0 +1,51 @@
+#############################
+## ECC_APB_Output_20180212.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Feb 12, 2018.
+
+- Test environment: SCHEAP-G4 Rev163, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  ECC_APB.cpp                    1.4
+  ECC_APB.h                      1.4
+  ECC_APB_AgentController.h      1.4
+  ECC_APB_cmdif.h                1.2
+  ECC_APB_Func.cpp               1.8
+  ECC_APB_Func.h                 1.3
+  ecc_apb_regif.cpp              1.3
+  ecc_apb_regif.h                1.3
+  ecc_apb_regif.txt              -  
+  ECC_U2A_def.h                  1.2
+  PY_ECC_APB.cpp                 1.2
+  PY_ECC_APB.h                   1.1
+
+- Supported features:
+  + Error notification: 
+    ECC Error:
+     • Error notification can be either enabled or disabled upon detection of an ECC 2-bit error in data.
+     • Error notification can be either enabled or disabled upon detection of an ECC 1-bit error in data.
+     • Error notification can be either enabled or disabled upon detection of an ECC 2-bit error in address.
+     • Error notification can be either enabled or disabled upon detection of an ECC 1-bit error in address.
+     In the initial state, error notification is enabled upon detection of an ECC 2-bit error in data,
+     ECC 1-bit error in data, ECC 2-bit error in address, ECC 1-bit error in address.
+    Overflow Error:
+     • Error notification can be either enabled or disabled if a second error occurs
+     while either of the error flags in the error status register is set, 
+     except when both the error address and source of the second error are the same as those of the first error.
+  + Error status: 
+    A status register is provided, which indicates the statuses of ECC 2-bit error in data detection, 
+    ECC 1-bit error in data detection, ECC 2-bit error in address detection, ECC 1-bit error in address detection. 
+    If an error occurs while no error status is set, the corresponding status is set. 
+    The error status can be cleared using the clear register.
+  + Address capture: 
+    The address is captured when an ECC 2-bit error in data detection, ECC 1-bit error in data detection,
+    ECC 2-bit error in address is detected. The error status serves as the enable bit of the capture address.
+    Captured address is updated if the error status is cleared.
+    There is 1 register to capture error-address.
+
+- Non-supported features and limitation:
+  + Not support Encoder and Decoder. Error input is modelled in Python I/F 
+  (ECC_APB_SetErrorAddr command and ECC_APB_IssueError command)
+  + Not support test function (test mode)

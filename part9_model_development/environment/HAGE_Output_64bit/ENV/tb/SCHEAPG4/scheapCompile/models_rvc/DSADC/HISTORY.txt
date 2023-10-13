@@ -1,0 +1,147 @@
+
+***************************************************************************************************
+DSADC_Output_20191128.7z
+-----------------------------
+- Release info: Official release
+- Release date: Nov 28, 2019
+- Test environment: SC-HEAP G4 Rev191, gcc4.9.3, x64
+- Updated source code:  Update DSADC_Func.cpp to prohibit transaction access with NULL extension. 
+   + DSADC.cpp              	1.7
+   + DSADC.h                	1.3
+   + DSADC_AgentController.h	1.3
+   + DSADC_cmdif.h          	1.2
+   + DSADC_Func.cpp         	1.5 (change)
+   + DSADC_Func.h           	1.3
+   + dsadc_regif.cpp        	1.2
+   + dsadc_regif.h          	1.2
+   + PY_DSADC.cpp           	1.2
+   + PY_DSADC.h             	1.2
+- Supported functions (NOT CHANGE):
+    + Analog to digital conversion function
+    + Calibration function
+    + Time-stamp output function
+    + Single End input and Differential input
+    + Input gain function
+    + A/D conversion start/end trigger
+    + Entry to digital filter engine
+    + DMA transfer function
+    + AD error and AD parity error interrupts
+    + Setting range of the analog conversion voltage
+    + A/D conversion monitor output
+    + Disconnection detection function
+    + Safety functions
+    + Boundary Flag Generating Signal Output Function
+
+***************************************************************************************************
+DSADC_Output_20191126.7z
+-----------------------------
+- Release info: Official release
+- Release date: Nov 26, 2019
+- Test environment: SC-HEAP G4 Rev191, gcc4.9.3, x64
+- Updated source code:  Update DSADC_Func.cpp to prohibit transaction access with NULL extension. 
+   + DSADC.cpp              	1.7
+   + DSADC.h                	1.3
+   + DSADC_AgentController.h	1.3
+   + DSADC_cmdif.h          	1.2
+   + DSADC_Func.cpp         	1.4 (change)
+   + DSADC_Func.h           	1.3
+   + dsadc_regif.cpp        	1.2
+   + dsadc_regif.h          	1.2
+   + PY_DSADC.cpp           	1.2
+   + PY_DSADC.h             	1.2
+- Supported functions (NOT CHANGE):
+    + Analog to digital conversion function
+    + Calibration function
+    + Time-stamp output function
+    + Single End input and Differential input
+    + Input gain function
+    + A/D conversion start/end trigger
+    + Entry to digital filter engine
+    + DMA transfer function
+    + AD error and AD parity error interrupts
+    + Setting range of the analog conversion voltage
+    + A/D conversion monitor output
+    + Disconnection detection function
+    + Safety functions
+    + Boundary Flag Generating Signal Output Function
+
+***************************************************************************************************
+DSADC_Output_64bit_20190625.7z
+-----------------------------
+- Release info: Merge source code with E2x/FCC1 & update to 64bit env191.
+- Release date: June 26, 2019
+- Supported functions: not change from previous release
+- Updated source code: Update 10 target socket and using common file.
+                       Using UNIT from DSADC_Base.
+
+   + DSADC.cpp              	1.7
+   + DSADC.h                	1.3
+   + DSADC_AgentController.h	1.3
+   + DSADC_cmdif.h          	1.2
+   + DSADC_Func.cpp         	1.3
+   + DSADC_Func.h           	1.3
+   + dsadc_regif.cpp        	1.2
+   + dsadc_regif.h          	1.2
+   + PY_DSADC.cpp           	1.2
+   + PY_DSADC.h             	1.2
+
+***************************************************************************************************
+DSADC_Output_64bit_20190515.7z
+-----------------------------
+- Release info: Merge source code with E2x/FCC1 & update to 64bit env191.
+- Release date: May 15, 2019
+- Supported functions: not change from previous release
+- Updated source code: Update 10 target socket and using common file.
+                       Using UNIT from DSADC_Base. 
+
+   + DSADC.cpp              	1.5
+   + DSADC.h                	1.3
+   + DSADC_AgentController.h	1.3
+   + DSADC_cmdif.h          	1.2
+   + DSADC_Func.cpp         	1.3
+   + DSADC_Func.h           	1.3
+   + dsadc_regif.cpp        	1.2
+   + dsadc_regif.h          	1.2
+   + PY_DSADC.cpp           	1.2
+   + PY_DSADC.h             	1.2
+   
+***************************************************************************************************
+DSADC_Output_64bit_20180212.7z
+-----------------------------
+- Release info: fix bugs exist in FCC2/DSADC developement (ticket #26626) & update to 64bit env.
+- Release date: Feb 08, 2018
+- Supported functions: not change from previous release
+- Updated source code:
+    + DSADC_Func.cpp            5318
+    + DSADC_UNIT_Func.cpp       5318
+
+***************************************************************************************************
+DSADC_Output_08292017.7z
+-----------------------------
+- Release info: fix CalculateCLKPosEdge issue (ticket #87854)
+- Release date: Aug 29, 2017
+- Supported functions: not change from previous release
+- Updated source code:
+    + DSADC.cpp         3892
+
+***************************************************************************************************
+DSADC_Output_07072017.7z
+-----------------------------
+- Release info: Official release
+- Release date: July 07, 2017
+- Supported functions:
+    + Analog to digital conversion function
+    + Calibration function
+    + Time-stamp output function
+    + Single End input and Differential input
+    + Input gain function
+    + A/D conversion start/end trigger
+    + Entry to digital filter engine
+    + DMA transfer function
+    + AD error and AD parity error interrupts
+    + Setting range of the analog conversion voltage
+    + A/D conversion monitor output
+    + Disconnection detection function
+    + Safety functions
+    + Boundary Flag Generating Signal Output Function
+

@@ -1,0 +1,11 @@
+=============================================
+=               RELEASE HISTORY             =
+=============================================
+
+v2015_10_16
+  - New creation : Support ADOP function and sarad113x wrapper
+v2015_10_28
+  - Add PY_ADOP.h and PY_ADOP.cpp file to src folder
+  - Update sarad113x_w.h file and sarad113x files in tb after fix issue when
+    running on SC-HEAP environment in AT mode and fix 0 for PSEL port.
+  - Update astc_env_rel_set.csh file 

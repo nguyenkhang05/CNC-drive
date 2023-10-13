@@ -1,0 +1,137 @@
+%MODULE CADC_UNIT
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         8
+
+%REG_CHANNEL reg_def
+    %%TITLE  name          reg_name      wsize    rsize    length  offset  factor_start  factor_end  factor_index  factor_step  access init        support callback
+    %%REG    CADCnVCR      CADCnVCR      8|16|32  8|16|32  32      0x00    0             7           -             -            W|R    0           TRUE    -
+    %%REG    CADCnDIR      CADCnDIR      8|16|32  8|16|32  32      0x20    0             7           -             -            R      0           TRUE    -
+    %%REG    CADCnADSTCR   CADCnADSTCR   8        8|16|32  8       0x40    -             -           -             -            W      0           TRUE    W
+    %%REG    CADCnADENDCR  CADCnADENDCR  8        8|16|32  8       0x44    -             -           -             -            W      0           TRUE    W
+    %%REG    CADCnCLBSTCR  CADCnCLBSTCR  8        8|16|32  8       0x48    -             -           -             -            W      0           TRUE    W
+    %%REG    CADCnCLBEDCR  CADCnCLBEDCR  8        8|16|32  8       0x4C    -             -           -             -            W      0           TRUE    W
+    %%REG    CADCnADTCR    CADCnADTCR    8        8|16|32  8       0x50    -             -           -             -            W|R    0           TRUE    -
+    %%REG    CADCnUCR      CADCnUCR      8|16|32  8|16|32  32      0x54    -             -           -             -            W|R    0           TRUE    -
+    %%REG    CADCnVCPTRR   CADCnVCPTRR   8        8|16|32  8       0x58    -             -           -             -            W|R    0           TRUE    W
+    %%REG    CADCnADSR     CADCnADSR     8|16|32  8|16|32  8       0x60    -             -           -             -            R      0           TRUE    -
+    %%REG    CADCnUDPTRR   CADCnUDPTRR   8|16|32  8|16|32  8       0x64    -             -           -             -            R      0           TRUE    -
+    %%REG    CADCnUDIR     CADCnUDIR     8|16|32  8|16|32  32      0x68    -             -           -             -            R      0           TRUE    -
+    %%REG    CADCnSMPCR    CADCnSMPCR    8|16|32  8|16|32  32      0x6C    -             -           -             -            R|W    0x00010707  TRUE    -
+    %%REG    CADCnSFTCR    CADCnSFTCR    8        8|16|32  8       0x70    -             -           -             -            W|R    0           TRUE    -
+    %%REG    CADCnECR      CADCnECR      8        8|16|32  8       0x74    -             -           -             -            W      0           TRUE    W
+    %%REG    CADCnER       CADCnER       8|16|32  8|16|32  32      0x78    -             -           -             -            R      0           TRUE    -
+    %%REG    CADCnTDLVR    CADCnTDLVR    8        8|16|32  8       0x7C    -             -           -             -            W|R    0           TRUE    -
+    %%REG    CADCnULTBR    CADCnULTBR    16|32    8|16|32  32      0x80    0             3           -             -            W|R    0x7FFF8000  TRUE    -
+
+
+%REG_NAME CADCnVCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00VCULME      27     27     0     W|R     TRUE     -
+    %%BIT    CADC00VCLLME      26     26     0     W|R     TRUE     -
+    %%BIT    CADC00VCULLMTBS   25     24     0     W|R     TRUE     -
+    %%BIT    CADC00ADIE        15     15     0     W|R     TRUE     -
+    %%BIT    CADC00ULEIE       14     14     0     W|R     TRUE     -
+    %%BIT    CADC00DFENT       12     12     0     W|R     TRUE     -
+    %%BIT    CADC00DFTAG       11     8      0     W|R     TRUE     -
+    %%BIT    CADC00CNVCLS      5      4      0     W|R     TRUE     -
+    %%BIT    CADC00GCTRL       3      0      0     W|R     TRUE     -
+
+%REG_NAME CADCnDIR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00IDEF          26     26     0     R       TRUE     -
+    %%BIT    CADC00WFLG        25     25     0     R       TRUE     -
+    %%BIT    CADC00PRTY        24     24     0     R       TRUE     -
+    %%BIT    CADC00DR          15     0      0     R       TRUE     -
+
+%REG_NAME CADCnADSTCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00ADST        0      0      0     W       TRUE     W
+
+%REG_NAME CADCnADENDCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00ADEND       0      0      0     W       TRUE     W
+
+%REG_NAME CADCnCLBSTCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00CLBST       0      0      0     W       TRUE     W
+
+%REG_NAME CADCnCLBEDCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00CLBEND      0      0      0     W       TRUE     W
+
+%REG_NAME CADCnADTCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00ENDTRGE     1      1      0     W|R     TRUE     -
+    %%BIT    CADC00STTRGE      0      0      0     W|R     TRUE     -
+
+%REG_NAME CADCnUCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00VPRSTE      29     29     0     W|R     TRUE     -
+    %%BIT    CADC00RDMA        28     28     0     W|R     TRUE     -
+    %%BIT    CADC00DFMT        11     8      0     W|R     TRUE     -
+    %%BIT    CADC00VCEP        2      0      0     W|R     TRUE     -
+
+%REG_NAME CADCnVCPTRR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00VCPTR       2      0      0     W|R     TRUE     W
+
+%REG_NAME CADCnADSR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00CLBACT      1      1      0     R       TRUE     -
+    %%BIT    CADC00ADACT       0      0      0     R       TRUE     -
+
+%REG_NAME CADCnUDPTRR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00UDPTR       2      0      0     R       TRUE     -
+
+%REG_NAME CADCnUDIR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00CHNUM       31     29     0     R       TRUE     -
+    %%BIT    CADC00UIDEF       26     26     0     R       TRUE     -
+    %%BIT    CADC00UWFLG       25     25     0     R       TRUE     -
+    %%BIT    CADC00UPRTY       24     24     0     R       TRUE     -
+    %%BIT    CADC00UDR         15     0      0     R       TRUE     -
+
+%REG_NAME CADCnSMPCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00ODAV       16     16     0x1   R|W       TRUE     R
+
+%REG_NAME CADCnSFTCR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00RDCLRE      7      7      0     W|R     TRUE     -
+    %%BIT    CADC00OWEIE       2      2      0     W|R     TRUE     -
+    %%BIT    CADC00PEIE        1      1      0     W|R     TRUE     -
+    %%BIT    CADC00IDEIE       0      0      0     W|R     TRUE     -
+
+%REG_NAME CADCnECR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00ULEC        4      4      0     W       TRUE     W
+    %%BIT    CADC00LLEC        3      3      0     W       TRUE     -
+    %%BIT    CADC00OWEC        2      2      0     W       TRUE     -
+    %%BIT    CADC00PEC         1      1      0     W       TRUE     -
+
+%REG_NAME CADCnER
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00ULE         31     31     0     R       TRUE     -
+    %%BIT    CADC00LLE         30     30     0     R       TRUE     -
+    %%BIT    CADC00ULECAP      26     24     0     R       TRUE     -
+    %%BIT    CADC00OWE         23     23     0     R       TRUE     -
+    %%BIT    CADC00OWECAP      18     16     0     R       TRUE     -
+    %%BIT    CADC00PE          15     15     0     R       TRUE     -
+    %%BIT    CADC00PECAP       10     8      0     R       TRUE     -
+
+%REG_NAME CADCnTDLVR
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CADC00AN3NLV      7      7      0     W|R     TRUE     -
+    %%BIT    CADC00AN3PLV      6      6      0     W|R     TRUE     -
+    %%BIT    CADC00AN2NLV      5      5      0     W|R     TRUE     -
+    %%BIT    CADC00AN2PLV      4      4      0     W|R     TRUE     -
+    %%BIT    CADC00AN1NLV      3      3      0     W|R     TRUE     -
+    %%BIT    CADC00AN1PLV      2      2      0     W|R     TRUE     -
+    %%BIT    CADC00AN0NLV      1      1      0     W|R     TRUE     -
+    %%BIT    CADC00AN0PLV      0      0      0     W|R     TRUE     -
+
+%REG_NAME CADCnULTBR
+    %%TITLE  name        upper  lower  init    access  support  callback
+    %%BIT    CADC00ULMTB       31     16     0x7FFF  W|R     TRUE     -
+    %%BIT    CADC00LLMTB       15     0      0x8000  W|R     TRUE     -

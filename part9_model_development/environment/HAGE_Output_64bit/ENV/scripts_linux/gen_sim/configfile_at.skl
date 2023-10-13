@@ -1,0 +1,9 @@
+[SIM_MODE]                      = CAISS
+[G4CPU_PROGRAM]                 = (0, ./%%TM_NAME.hex)
+[PE_NUM]                        = 1
+[G4CPU_PE_TYPE]                 = (0, G4MH_V20)
+[G4CPU_PROFILE_TRACE]           = trace.log
+[G4CPU_PROFILE_TRACE_FORMAT]    = PC
+[FASTISS_MAP_FILE]              = FASTISS.map
+[CAISS_MAP_FILE]                = CAISS.map
+[BUS_MAP_FILE]                  = BUS.map

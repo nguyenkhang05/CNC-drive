@@ -1,0 +1,10 @@
+=================================
+=        RELEASE HISTORY        =   
+=================================
+
+v2017_07_07
+    Update source code and unit test environment for E2x/FCC2 : Finish
+    functional debug on unit test.
+
+v2016_08_25
+    First release

@@ -1,0 +1,74 @@
+%MODULE HSIF020_UNIT
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         7
+
+%REG_CHANNEL reg_def
+    %%TITLE  name          reg_name      wsize    rsize    length  offset  factor_start  factor_end  factor_index  factor_step  access   init        support callback
+    %%REG    HSIFnCMD    HSIFnCMD    8|16|32     8|16|32     32    0x00          -             -          -            -          R|W    0x0          TRUE        -
+    %%REG    HSIFnCCT    HSIFnCCT    8|16|32     8|16|32     32    0x08          -             -          -            -          R|W    0x0          TRUE        -
+    %%REG    HSIFnCST    HSIFnCST    8|16|32     8|16|32     32    0x10          -             -          -            -          R      0x0          TRUE        -
+    %%REG    HSIFnCSC    HSIFnCSC    8|16|32     8|16|32     32    0x18          -             -          -            -          R|W    0x0          TRUE        -
+    %%REG    HSIFnCIE    HSIFnCIE    8|16|32     8|16|32     32    0x20          -             -          -            -          R|W    0x0          TRUE        -  
+    %%REG    HSIFnCAR    HSIFnCAR    8|16|32     8|16|32     32    0x28          -             -          -            -          R|W    0x0          TRUE        -
+    %%REG    HSIFnCWD    HSIFnCWD    8|16|32     8|16|32     32    0x30          -             -          -            -          R|W    0x0          TRUE        -
+    %%REG    HSIFnCRD    HSIFnCRD    8|16|32     8|16|32     32    0x38          -             -          -            -          R      0x0          TRUE        -
+ 	
+%REG_NAME HSIFnCMD
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    INME             0       0     0         R|W     TRUE     -
+    %%BIT    TNME             16      16    0         R|W     TRUE     W
+
+%REG_NAME HSIFnCCT
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    CTY              4       0     0         R|W     TRUE     -
+    %%BIT    CTYW             7       7     0         R|W     TRUE     W
+
+%REG_NAME HSIFnCST
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    RAR              0       0     0         R       TRUE     -
+    %%BIT    AKR              1       1     0         R       TRUE     -
+    %%BIT    AKE              2       2     0         R       TRUE     -
+    %%BIT    TOE              4       4     0         R       TRUE     -
+    %%BIT    IDE              5       5     0         R       TRUE     -
+    %%BIT    AOE              7       7     0         R       TRUE     -
+    %%BIT    RDY              15      15    0         R       TRUE     -
+    %%BIT    TER              16      16    0         R       TRUE     -
+	%%BIT    BRE              20      20    0         R       TRUE     -
+	%%BIT    CRE              31      31    0         R       TRUE     W
+                                                              
+%REG_NAME HSIFnCSC
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    RARC             0       0     0         R|W     TRUE     -
+    %%BIT    AKRC             1       1     0         R|W     TRUE     -
+    %%BIT    AKEC             2       2     0         R|W     TRUE     -
+    %%BIT    TOEC             4       4     0         R|W     TRUE     -
+    %%BIT    IDEC             5       5     0         R|W     TRUE     -
+    %%BIT    AOEC             7       7     0         R|W     TRUE     -
+    %%BIT    TERC             16      16    0         R|W     TRUE     -
+	%%BIT    BREC             20      20    0         R|W     TRUE     -
+	%%BIT    CREC             31      31    0         R|W     TRUE     W
+
+%REG_NAME HSIFnCIE
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    RARE             0       0     0         R|W     TRUE     -
+    %%BIT    AKRE             1       1     0         R|W     TRUE     -
+    %%BIT    AKEE             2       2     0         R|W     TRUE     -
+    %%BIT    TOEE             4       4     0         R|W     TRUE     -
+    %%BIT    IDEE             5       5     0         R|W     TRUE     -
+    %%BIT    AOEE             7       7     0         R|W     TRUE     -
+    %%BIT    TERE             16      16    0         R|W     TRUE     -
+	%%BIT    BREE             20      20    0         R|W     TRUE     -
+	%%BIT    CREE             31      31    0         R|W     TRUE     W
+
+%REG_NAME HSIFnCAR
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    CAR              31       0     0         R|W     TRUE     W
+
+%REG_NAME HSIFnCWD
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    CWD              31       0     0         R|W     TRUE     W
+	
+%REG_NAME HSIFnCRD
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    CRD              31       0     0         R       TRUE     W
+    

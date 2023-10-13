@@ -1,0 +1,46 @@
+%MODULE HBGERRSLV
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  9
+
+%REG_CHANNEL reg_def
+    %%TITLE     name            reg_name        wsize   rsize   length  offset  access   init   support  callback
+    %%REG       HBGOVFCLR       HBGOVFCLR       8|16|32 8|16|32 32      0x00    R|W      0x0    TRUE     -
+    %%REG       HBGOVFSTAT      HBGOVFSTAT      8|16|32 8|16|32 32      0x04    R|W      0x0    TRUE     -
+    %%REG       HBGERRADDR      HBGERRADDR      32      8|16|32 32      0x08    R|W      0x0    TRUE     -
+    %%REG       HBGERRTYPE      HBGERRTYPE      16|32   8|16|32 32      0x0C    R|W      0x0    TRUE     -
+    %%REG       HBGSPIDERRCLR   HBGSPIDERRCLR   32      8|16|32 32      0x10    R|W      0x0    TRUE     -
+    %%REG       HBGSPIDERRSTAT  HBGSPIDERRSTAT  32      8|16|32 32      0x14    R|W      0x0    TRUE     -
+    %%REG       HBGKCPROT       HBGKCPROT       32      8|16|32 32      0x18    R|W      0x0    TRUE     -
+
+%REG_NAME HBGOVFCLR
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    CLRO            1      1      0x0   W       TRUE     W
+
+%REG_NAME HBGOVFSTAT
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    OVF             1      1      0x0   R       TRUE     -
+
+%REG_NAME HBGERRADDR
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    ADDR            31     0      0x0   R       TRUE     -
+
+%REG_NAME HBGERRTYPE
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    SEC             13     13     0x0   R       TRUE     -
+    %%BIT    DBG             12     12     0x0   R       TRUE     -
+    %%BIT    UM              11     11     0x0   R       TRUE     -
+    %%BIT    SPID            10     6      0x0   R       TRUE     -
+    %%BIT    WRITE           0      0      0x0   R       TRUE     -
+
+%REG_NAME HBGSPIDERRCLR
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    SPIDCLR         31     0      0x0   W       TRUE     W
+
+%REG_NAME HBGSPIDERRSTAT
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    SPIDERR         31     0      0x0   R       TRUE     -
+
+%REG_NAME HBGKCPROT
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    KCPROT          31     1      0x0   W       TRUE     W
+    %%BIT    KCE             0      0      0x0   R|W     TRUE     -

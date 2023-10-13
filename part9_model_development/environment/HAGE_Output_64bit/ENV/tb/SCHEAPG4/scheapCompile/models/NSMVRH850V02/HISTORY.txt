@@ -1,0 +1,32 @@
+NSMVRH850V02 HISTORY
+
+--------------------------------------------------------
+<2018.12.4>
+
+SVN version
+  Rev.169
+
+File
+  pltfrmGND.cpp 
+    - added the connection beween dummy master and INTC2G_U2 in case of no RH850 peripheral connection.
+
+--------------------------------------------------------
+<2018.2.22>
+
+SVN version
+  Rev.30
+
+File
+  pltfrmGND.cpp,h 
+    - changed the bus connection from GAPB_PFSS0 to GAPB_PFSS
+      for unitary test of CPU(CRG&PEG)
+
+--------------------------------------------------------
+<2017.8.28>
+
+SVN version
+  Rev.124
+
+File
+  pltfrmGND.cpp 
+    - added dummy master for INTC2G in case of no RH850 peripheral connection.

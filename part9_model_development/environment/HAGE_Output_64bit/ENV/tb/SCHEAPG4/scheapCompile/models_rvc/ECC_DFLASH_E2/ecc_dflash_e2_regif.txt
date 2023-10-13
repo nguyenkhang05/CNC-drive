@@ -1,0 +1,57 @@
+%MODULE ecc_dflash_e2
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  8
+ 
+%REG_CHANNEL reg_def
+  %%TITLE           name        rsize   wsize   length  offset  init    access  support callback
+  %%REG             DFECCCTL    8|16|32   16|32 32      0x00    0x0     R|W     TRUE    W
+  %%REG             DFERSTR     8|16|32      32 32      0x04    0x0     R       TRUE    -
+  %%REG             DFERSTC     8|16|32 8|16|32 32      0x08    0x0     W       TRUE    W
+  %%REG             DFOVFSTR    8|16|32      32 32      0x0C    0x0     R       TRUE    -
+  %%REG             DFOVFSTC    8|16|32 8|16|32 32      0x10    0x0     W       TRUE    W
+  %%REG             DFERRINT    8|16|32 8|16|32 32      0x14    0x7     R|W     TRUE    R
+  %%REG             DFEADR      8|16|32      32 32      0x18    0x0     R       TRUE    -
+  %%REG             DFTSTCTL    8|16|32   16|32 32      0x1C    0x0     R|W     TRUE    -
+  %%REG             DFKCPROT    8|16|32      32 32      0x20    0x0     R|W     TRUE    W
+
+%REG_NAME DFECCCTL
+    %%TITLE  name           upper  lower  init  access   support  callback    
+    %%BIT    SEDDIS          1      1      0     R|W      TRUE     -
+    %%BIT    ECCDIS          0      0      0     R|W      TRUE     W
+
+%REG_NAME DFERSTR
+    %%TITLE  name           upper  lower  init  access   support  callback    
+    %%BIT    DEDF            1      1      0     R        TRUE     -
+    %%BIT    SEDF            0      0      0     R        TRUE     -
+
+%REG_NAME DFERSTC
+    %%TITLE  name           upper  lower  init  access   support  callback    
+    %%BIT    ERRCLR          0      0      0     W        TRUE     W
+
+%REG_NAME DFOVFSTR
+    %%TITLE  name           upper  lower  init  access   support  callback    
+    %%BIT    ERROVF          0      0      0     R        TRUE     -
+
+%REG_NAME DFOVFSTC
+    %%TITLE  name           upper  lower  init  access   support  callback    
+    %%BIT    ERROVFCLR       0      0      0     W        TRUE     W
+
+%REG_NAME DFERRINT
+    %%TITLE  name           upper  lower  init  access   support  callback    
+    %%BIT    EOVFIE          2      2      1     R|W      TRUE     R
+    %%BIT    DEDIE           1      1      1     R|W      TRUE     -
+    %%BIT    SEDIE           0      0      1     R|W      TRUE     -
+
+%REG_NAME DFEADR  
+    %%TITLE  name           upper  lower  init  access   support  callback    
+    %%BIT    DFEADR          20     2      0     R        TRUE     -
+
+%REG_NAME DFTSTCTL
+    %%TITLE  name           upper  lower  init  access   support  callback    
+    %%BIT    ECCTST          0      0      0     R|W      TRUE     -
+
+%REG_NAME DFKCPROT
+    %%TITLE  name           upper  lower  init  access   support  callback    
+    %%BIT    KCPROT          31     1      0     W        TRUE     -
+    %%BIT    KCE             0      0      0     R|W      TRUE     W
+

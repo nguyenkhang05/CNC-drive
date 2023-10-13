@@ -1,0 +1,145 @@
+***************************************************************************************************
+INTC2G_Output_20170829.7z
+-----------------------------
+- Release info: Official release
+- Release date: Aug 29, 2017
+- Test environment: SCHEAP G4 Rev106
+- Updated source code: 
+    INTC2G.cpp                                 (3898)
+    INTC2G.h                                (3844)
+    INTC2G_CommonGuard.cpp                  (3844)
+    INTC2G_CommonGuard.h                    (3844)
+    INTC2G_CommonGuardAgentControllerIf.h   (3844)
+    INTC2G_Func.cpp                         (3844)
+    INTC2G_Func.h                           (3844)
+    INTC2G_cmdif.h                          (3844)
+    Makefile
+    PY_INTC2G.cpp                           (3844)
+    PY_INTC2G.h                             (3844)
+    intc2g_regif.cpp                        (3844)
+    intc2g_regif.h                          (3844)
+    intc2g_regif.txt
+- Updated functions:
+    + Update some registers size
+    + Fix issue related to Calculate Posedge Clock Function
+- Supported features: Not change from previous release
+
+***************************************************************************************************
+INTC2G_Output_04172017.7z
+-----------------------------
+- Release info: Update source code to change PEID of Debug master to 0xFF
+- Release date: Apr 17, 2017
+- Test environment: SCHEAP G4 Rev80
+- Updated source code:
+    + INTC2G_CommonGuard.cpp    (v1.1 (r2906))
+- Supported features: Not change from previous release
+
+***************************************************************************************************
+INTC2G_Output_20170323.7z
+-----------------------------
+- Release info: Official release
+- Release date: Mar 23, 2017
+- Test environment: SCHEAP G4 Rev80
+- Supported features:
+    + INTC2 Guard is slave guards can protect respectively the read and write access against INTC2
+      registers of each error source. Notify guard error to ECM if INTC2 Guard detects illegal access
+    + The protection is configurable by setting- and control-registers. These registers, in turn, are
+      also protected by key-code
+      
+***************************************************************************************************
+INTC2G_Output_20180620.7z
+-----------------------------
+- Release info: Official release
+- Release date: June 20, 2018
+- Test environment: SCHEAP G4 Rev73
+- Update source code:
+    PY_INTC2G.cpp                             7543      
+    INTC2G_CommonGuard.cpp                    7686      
+    INTC2G_Func.cpp                           7543      
+    intc2g_regif.cpp                          7306      
+    PY_INTC2G.h                               7306      
+    INTC2G.cpp                                7681      
+    INTC2G_CommonGuard.h                      7306      
+    INTC2G_Func.h                             7308      
+    intc2g_regif.h                            7308      
+    INTC2G_CommonGuardAgentControllerIf.h       7308      
+    INTC2G.h                                     7308      
+    INTC2G_cmdif.h                            7306      
+- Supported features:
+    + INTC2 Guard change access size.
+    + INTC2 Guard Error Address Register: Error address is stored in this register only
+when INTC2GERRSTAT.ERR bit is not set.
+    + INTC2 Guard Error Access Information Register: Error information is stored in this register
+only when INTC2GERRSTAT.ERR bit is not set.
+
+***************************************************************************************************
+INTC2G_Output_20180629.7z
+-----------------------------
+- Release info: Official release
+- Release date: June 29, 2018
+- Test environment: SCHEAP G4 Rev73
+- Supported features:
+    Not change.
+    
+***************************************************************************************************
+INTC2G_Output_20180705.7z
+-----------------------------
+- Release info: Official release
+- Release date: Jul 05, 2018
+- Test environment: SCHEAP G4 Rev73
+- Supported features:
+    Not change.
+
+***************************************************************************************************
+INTC2G_Output_20190805.7z
+-----------------------------
+- Release info: Official release
+- Release date: August 05, 2019 
+- Test environment: SCHEAP G4 Rev191
+- Updated source code: 
+    INTC2G.cpp                                1.4
+    INTC2G.h                                  1.3
+    INTC2G_CommonGuard.cpp                    1.2
+    INTC2G_CommonGuard.h                      1.2
+    INTC2G_Func.cpp                           1.2
+    INTC2G_CommonGuardAgentControllerIf.h     1.1
+    INTC2G_Func.h                             1.1
+    INTC2G_cmdif.h                            1.1
+    PY_INTC2G.cpp                             1.2
+    PY_INTC2G.h                               1.1
+    intc2g_regif.cpp                          1.2
+    intc2g_regif.h                            1.2
+- Updated functions:
+    + Update number of register INTC2GPROT_m from 511 up to 695.
+    + Modified constructor of INTC2G. 
+    + Using common function instead of internal function.
+    + Modified method reading/writing matching with newest modeling guild line. 
+    + Add python command enable register message. 
+- Supported features: Not change from previous release
+
+***************************************************************************************************
+INTC2G_Output_20190924.7z
+-----------------------------
+- Release info: Update constructor and add python API to set number of INTC2GPROT_n register 
+- Release date: Sep 24, 2019
+- Test environment: SCHEAP G4 Rev191
+- Updated source code: 
+    HISTORY.txt                    -         
+    INTC2G.cpp                     1.5       
+    INTC2G.h                       1.4       
+    INTC2G_CommonGuard.cpp         1.2       
+    INTC2G_CommonGuard.h           1.2       
+    INTC2G_CommonGuardAgentControllerIf.h 1.1
+    INTC2G_Func.cpp                1.4    
+    INTC2G_Func.h                  1.2       
+    INTC2G_cmdif.h                 1.1       
+    PY_INTC2G.cpp                  1.3       
+    PY_INTC2G.h                    1.2       
+    intc2g_regif.cpp               1.3       
+    intc2g_regif.h                 1.3       
+    intc2g_regif.txt               -         
+
+- Supported features: Not change from previous release
+
+***************************************************************************************************
+    

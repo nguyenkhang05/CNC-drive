@@ -1,0 +1,117 @@
+#############################
+## APLTSC000_Output_20180212.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Feb 12, 2018.
+
+- Test environment: SCHEAP-G4 Rev163, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+	APLTSC000.cpp					1.3
+	APLTSC000.h						1.3
+	APLTSC000_AgentController.h 	1.2
+	APLTSC000_Func.cpp				1.3
+	APLTSC000_Func.h				1.3
+	APLTSC000_cmdif.h				1.2
+	PY_APLTSC000.cpp				1.2
+	PY_APLTSC000.h					1.2
+	APLTSC000_regif.cpp				1.2
+	APLTSC000_regif.h				1.2
+
+- Supported features:
+  + Start / Stop APLTSC000:
+	- Use 2 register LSTCTS and LSTCTT to start and stop counter.
+  + Update the counter value:
+   - It is possible to start the counter from the unique value by 
+   setting timer counter register low and high in advance.
+  +Emulation Function
+   - LTSC provide SVSTOP pin and LTSC timer emulation register (LSTCEMU) 
+   as emulation functions. SVSTOP input is controlled with SVSDIS in LTSCEMU register.
+  + Reset
+   - There are Application reset and System reset for LTSC. 
+   To System reset, all of the LTSC registers will be initialized, 
+   to the Application reset, user can mask it or not. 
+   All the register behave as shown in the below table upon the Application reset or System reset.
+
+#############################
+## APLTSC000_Output_20180713.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Jul 13, 2018.
+
+- Test environment: SCHEAP-G4 Rev163, machine x64, gcc4.9.3. (Not change)
+
+- File (CVS repository): (Not change)
+	APLTSC000.cpp					1.3
+	APLTSC000.h						1.3
+	APLTSC000_AgentController.h 	1.2
+	APLTSC000_Func.cpp				1.3
+	APLTSC000_Func.h				1.3
+	APLTSC000_cmdif.h				1.2
+	PY_APLTSC000.cpp				1.2
+	PY_APLTSC000.h					1.2
+	APLTSC000_regif.cpp				1.2
+	APLTSC000_regif.h				1.2
+
+- Supported features: (Not change)
+  + Start / Stop APLTSC000:
+	- Use 2 register LSTCTS and LSTCTT to start and stop counter.
+  + Update the counter value:
+   - It is possible to start the counter from the unique value by 
+   setting timer counter register low and high in advance.
+  +Emulation Function
+   - LTSC provide SVSTOP pin and LTSC timer emulation register (LSTCEMU) 
+   as emulation functions. SVSTOP input is controlled with SVSDIS in LTSCEMU register.
+  + Reset
+   - There are Application reset and System reset for LTSC. 
+   To System reset, all of the LTSC registers will be initialized, 
+   to the Application reset, user can mask it or not. 
+   All the register behave as shown in the below table upon the Application reset or System reset.
+
+#############################
+## http://172.29.139.78/mcu_modeling_01/release/source_code/17017_U2A_APLTSC000
+#############################
+- Release info: Alpha source code release.
+
+- Release date: Mar 16, 2020.
+
+- Test environment: N/A
+
+- File (CVS repository): (the version is restarted because legacy root is lost)
+        APLTSC000.cpp 1.2
+        APLTSC000.h 1.2
+        APLTSC000_AgentController.h 1.2
+        APLTSC000_Func.cpp 1.2
+        APLTSC000_Func.h 1.2
+        APLTSC000_cmdif.h 1.2
+        PY_APLTSC000.cpp 1.3
+        PY_APLTSC000.h 1.2
+        apltsc000_regif.cpp 1.2
+        apltsc000_regif.h 1.2
+
+- Supported features: (Not change)
+
+#############################
+## APLTSC000_Output_20200323.7z
+#############################
+- Release info: Final data release (for update to U2A UM 0.61).
+
+- Release date: Mar 24, 2020.
+
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+    APLTSC000.cpp 1.3
+    APLTSC000.h 1.3
+    APLTSC000_AgentController.h 1.2
+    APLTSC000_Func.cpp 1.3
+    APLTSC000_Func.h 1.2
+    APLTSC000_cmdif.h 1.2
+    PY_APLTSC000.cpp 1.3
+    PY_APLTSC000.h 1.2
+    apltsc000_regif.cpp 1.3
+    apltsc000_regif.h 1.3
+
+- Supported features: (Not change)

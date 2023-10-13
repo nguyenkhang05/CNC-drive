@@ -1,0 +1,114 @@
+common HISTORY
+--------------------------------------------------------
+<2018.06.21>
+
+SVN version
+  Rev.63
+
+File
+  - G4_CommonPrototype.h/cpp 
+    - fix a bug for U2A.(finished to prepare UT PR)
+
+--------------------------------------------------------
+
+--------------------------------------------------------
+<2018.05.11>
+
+SVN version
+  Rev.63
+
+File
+  - G4_CommonPrototype.h/cpp 
+    - new
+
+--------------------------------------------------------
+
+--------------------------------------------------------
+<2017.12.5>
+
+SVN version
+  Rev.157
+
+File
+  - BusMasterIf.h 
+  - BusSlaveIf.h
+  - OSCI2.h
+    - updated the Copyright
+
+--------------------------------------------------------
+<2017.11.29>
+
+SVN version
+  Rev.153
+
+File
+  - Makefile 
+  - Makefile_astc
+    - Removed SELF2DEST class
+
+--------------------------------------------------------
+<2017.11.27>
+
+SVN version
+  Rev.152
+
+File
+  - OSCI2.h
+    - Added BusAccessBreak class
+  - BusMasterIf.h
+    - Added the calling of bus access break function before b_transport() and nb_transport_fw()
+  - BusSlaveIf.h
+    - Added the calling of bus access break function after read() and write()
+
+--------------------------------------------------------
+<2017.10.26>
+
+SVN version
+  Rev.142 (Adapted to 64 bit OS)
+
+File
+  - BusMasterIf.h, BusSlaveIf.h
+    - deleted the cast of "int" for pointer at debug log output
+    - in addition to above, the format specifier was changed from %x to %llx
+  - Common.cpp
+    - the format specifier for "unsigned long long" was changed from %d to %llu in the argument of printf()
+
+--------------------------------------------------------
+<2017.10.25>
+
+SVN version
+  Rev.141
+
+File
+  -SELF2DEST_BASE.cpp/h
+   correspond for 64bit.
+
+
+--------------------------------------------------------
+<2017.8.4>
+
+SVN version
+  Rev.121
+
+File
+  - BusMasterBase.h, BusSlaveBase.h 
+    - fixed the memory leakage issue
+  - BusMasterIf.h
+    - adapted the addition of Speculative-load-flag and Secure-master-request-flag in TlmG3mExtension
+    - fixed the issue in corner case of transport_dbg
+  - BusSlaveIf.h
+    - fixed the issue in corner case of transport_dbg
+  - OSCI2.h
+    - added Speculative-load-flag and Secure-master-request-flag in TlmG3mExtension
+
+--------------------------------------------------------
+<2017.7.6>
+
+SVN version
+  Rev.117
+
+File
+  SELF2DEST_BASE.cpp/h
+	new creat.
+	This class is used by NSMVTPTMV01 class. 
+

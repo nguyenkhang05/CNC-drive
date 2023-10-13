@@ -1,0 +1,9 @@
+=================================
+=        RELEASE HISTORY        =   
+=================================
+
+v2016_01_18
+- Create new E2x/IFC with HWM: 24_E2xFCC1_ADCB_target_specifications_rev02 
+
+v2016_05_23
+- Remove wait() in tgt_acc_dbg() function to fix bug.

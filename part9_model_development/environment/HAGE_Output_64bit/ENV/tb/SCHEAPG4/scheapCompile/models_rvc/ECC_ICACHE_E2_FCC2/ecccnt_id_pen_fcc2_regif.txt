@@ -1,0 +1,17 @@
+%MODULE ecccnt_id_pen_fcc2
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  7 
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name              reg_name                    wsize   rsize        length  offset  factor_start    factor_end  factor_index  factor_step access   init   support  callback
+    %%REG      IDECCCTL          IDECCCTL                    8|16|32 8|16|32      32      0x00    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      IDAFINV           IDAFINV                     8|16|32 8|16|32      32      0x20    -               -           -               -           R/W      0x0     TRUE     -
+    
+%REG_NAME IDECCCTL                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    AFEDIS             3        3      0       R|W     TRUE        -
+    %%BIT    ECCDIS             0        0      0       R|W     TRUE        W
+    
+%REG_NAME IDAFINV                                                             
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    AFINV              12       3      0       R|W     TRUE        -

@@ -1,0 +1,120 @@
+%MODULE ATU5_TIMERC_SUB
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         12
+
+%REG_CHANNEL reg_def
+    %%TITLE  name       reg_name   wsize   rsize    length  offset  factor_start  factor_end  factor_index  factor_step  access         init        support  callback
+    %%REG    TSCRC      TSCRC      8|16    8|16|32  16      0x822         -             -           -             -             W|R      0           TRUE     -
+    %%REG    TCRC       TCRC       8|16    8|16|32  16      0x824         -             -           -             -             W|R      0           TRUE     W
+    %%REG    TSRC       TSRC       -       8|16|32  16      0x826         -             -           -             -             R        0           TRUE     -
+    %%REG    TIORC      TIORC      8|16    8|16|32  16      0x828         -             -           -             -             W|R      0           TRUE     W
+    %%REG    TIERC      TIERC      8|16    8|16|32  16      0x834         -             -           -             -             W|R      0           TRUE     -
+    %%REG    TCNTC      TCNTC      32      8|16|32  32      0x838         -             -           -             -             W|R      0           TRUE     -
+    %%REG    CUCRC      CUCRC      32      8|16|32  32      0x83C         -             -           -             -             W|R      0xFFFFFFFF  TRUE     -
+    %%REG    GRCn       GRCn       32      8|16|32  32      0x840         0             3           -             0x4           W|R      0xFFFFFFFF  TRUE     -
+    %%REG    OCRCn      OCRCn      32      8|16|32  32      0x850         0             3           -             0x4           W|R      0xFFFFFFFF  TRUE     -
+    %%REG    RCR1C      RCR1C      8       8|16|32  8       0x860         -             -           -             -             W|R      0           TRUE     -
+    %%REG    RCR2C      RCR2C      8       8|16|32  8       0x862         -             -           -             -             W|R      0           TRUE     -
+    %%REG    NCNTCn     NCNTCn     16      8|16|32  16      0x870         0             3           -             0x4           W|R      0           TRUE     -
+    %%REG    NCRCn      NCRCn      16      8|16|32  16      0x872         0             3           -             0x4           W|R      0           TRUE     -
+    %%REG    OCMRCn     OCMRCn     -       8|16|32  32      0x880         0             3           -             0x8           R        0xFFFFFFFF  TRUE     -
+    %%REG    GMRCn      GMRCn      -       8|16|32  32      0x884         0             3           -             0x8           R        0xFFFFFFFF  TRUE     -
+
+%REG_NAME TSCRC
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    OCMFCC3     11      11      0     W|R     TRUE     -
+    %%BIT    OCMFCC2     10      10      0     W|R     TRUE     -
+    %%BIT    OCMFCC1     9       9       0     W|R     TRUE     -
+    %%BIT    OCMFCC0     8       8       0     W|R     TRUE     -
+    %%BIT    OVFCC       4       4       0     W|R     TRUE     - 
+    %%BIT    IMFCC3      3       3       0     W|R     TRUE     -
+    %%BIT    IMFCC2      2       2       0     W|R     TRUE     -
+    %%BIT    IMFCC1      1       1       0     W|R     TRUE     -
+    %%BIT    IMFCC0      0       0       0     W|R     TRUE     -
+
+%REG_NAME TCRC
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    FOCMC3      15      15      0     W|R     TRUE     -
+    %%BIT    FOCMC2      14      14      0     W|R     TRUE     -
+    %%BIT    FOCMC1      13      13      0     W|R     TRUE     -
+    %%BIT    FOCMC0      12      12      0     W|R     TRUE     -
+    %%BIT    CLRCSELC    9       9       0     W|R     TRUE     - 
+    %%BIT    CLRC        8       8       0     W|R     TRUE     - 
+    %%BIT    FCMC3       7       7       0     W|R     TRUE     -
+    %%BIT    FCMC2       6       6       0     W|R     TRUE     -
+    %%BIT    FCMC1       5       5       0     W|R     TRUE     -
+    %%BIT    FCMC0       4       4       0     W|R     TRUE     -
+    %%BIT    PWM0        3       3       0     W|R     TRUE     -
+    %%BIT    CKSELC      2       0       0     W|R     TRUE     -
+
+%REG_NAME TSRC
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    OCMFC3      11      11      0     R       TRUE     -
+    %%BIT    OCMFC2      10      10      0     R       TRUE     -
+    %%BIT    OCMFC1      9       9       0     R       TRUE     -
+    %%BIT    OCMFC0      8       8       0     R       TRUE     -
+    %%BIT    OVFC        4       4       0     R       TRUE     - 
+    %%BIT    IMFC3       3       3       0     R       TRUE     -
+    %%BIT    IMFC2       2       2       0     R       TRUE     -
+    %%BIT    IMFC1       1       1       0     R       TRUE     -
+    %%BIT    IMFC0       0       0       0     R       TRUE     -
+
+%REG_NAME TIORC
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    IOC3      15      12      0     W|R     TRUE     W
+    %%BIT    IOC2      11      8       0     W|R     TRUE     -
+    %%BIT    IOC1      7       4       0     W|R     TRUE     -
+    %%BIT    IOC0      3       0       0     W|R     TRUE     -
+
+%REG_NAME TIERC
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    OCRCE3      11      11      0     W|R     TRUE     -
+    %%BIT    OCRCE2      10      10      0     W|R     TRUE     -
+    %%BIT    OCRCE1      9       9       0     W|R     TRUE     -
+    %%BIT    OCRCE0      8       8       0     W|R     TRUE     -
+    %%BIT    OVCE        4       4       0     W|R     TRUE     - 
+    %%BIT    GRCE3       3       3       0     W|R     TRUE     -
+    %%BIT    GRCE2       2       2       0     W|R     TRUE     -
+    %%BIT    GRCE1       1       1       0     W|R     TRUE     -
+    %%BIT    GRCE0       0       0       0     W|R     TRUE     -
+
+%REG_NAME TCNTC
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CNTC        31      0      0      W|R     TRUE     W
+
+ %REG_NAME CUCRC
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    CUCRC       31      0   0xFFFFFFFF  W|R     TRUE     -
+
+%REG_NAME GRCn
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    GRC         31      0   0xFFFFFFFF  W|R     TRUE     -
+
+%REG_NAME OCRCn
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    OCR        31      0  0xFFFFFFFF  W|R     TRUE     -
+
+%REG_NAME RCR1C
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    RCR1C       4       0      0     W|R      TRUE     -
+
+%REG_NAME RCR2C
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    RCR2C       4       0      0     W|R      TRUE     -
+
+%REG_NAME NCNTCn
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    NCNTC       15      0     0      W|R     TRUE      -
+
+%REG_NAME NCRCn
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    NCRC        15      0     0      W|R     TRUE     -
+
+%REG_NAME OCMRCn
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    OCMRC       31      0  0xFFFFFFFF  W|R     TRUE     -
+
+%REG_NAME GMRCn
+    %%TITLE  name        upper  lower  init  access  support  callback
+    %%BIT    GMRC        31      0  0xFFFFFFFF  W|R     TRUE     -
+

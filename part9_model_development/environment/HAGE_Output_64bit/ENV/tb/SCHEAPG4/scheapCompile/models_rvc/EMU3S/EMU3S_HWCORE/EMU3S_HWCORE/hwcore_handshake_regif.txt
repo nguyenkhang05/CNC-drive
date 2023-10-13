@@ -1,0 +1,86 @@
+%MODULE HWCORE_HANDSHAKE
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  12
+
+%REG_CHANNEL reg_def
+  %%TITLE    name               reg_name             size         wsize         rsize       length      offset    factor_start   factor_end     factor_index    factor_step   init             access    support    callback
+  %%REG      DATSETWB            DATSETWB            8            8             8|16|32     8           0x800     -              -              -               -             0x00000000       R|W       TRUE       W
+  %%REG      DATSETBR            DATSETBR            8            8             8|16|32     8           0x810     -              -              -               -             0x00000000       R|W       TRUE       W
+  %%REG      DATSETW0            DATSETW0            16|32        16|32         8|16|32     16          0x820     0              3              -               0x2           0x00000000       R|W       TRUE       -
+  %%REG      DATSETW1            DATSETW1            16|32        16|32         8|16|32     16          0x828     0              3              -               0x2           0x00000000       R|W       TRUE       -
+  %%REG      DATSETW2            DATSETW2            16|32        16|32         8|16|32     16          0x830     0              3              -               0x2           0x00000000       R|W       TRUE       -
+  %%REG      DATSETW3            DATSETW3            16|32        16|32         8|16|32     16          0x838     0              3              -               0x2           0x00000000       R|W       TRUE       -
+  %%REG      DATSETW4            DATSETW4            16|32        16|32         8|16|32     16          0x840     0              3              -               0x2           0x00000000       R|W       TRUE       -
+  %%REG      DATSETW5            DATSETW5            16|32        16|32         8|16|32     16          0x848     0              3              -               0x2           0x00000000       R|W       TRUE       -
+  %%REG      DATSETR0            DATSETR0            16           -             8|16|32     16          0x860     0              3              -               0x2           0x00000000       R         TRUE       -
+  %%REG      DATSETR1            DATSETR1            16           -             8|16|32     16          0x868     0              3              -               0x2           0x00000000       R         TRUE       -
+  %%REG      DATSETR2            DATSETR2            16           -             8|16|32     16          0x870     0              3              -               0x2           0x00000000       R         TRUE       -
+  %%REG      DATSETR3            DATSETR3            16           -             8|16|32     16          0x878     0              3              -               0x2           0x00000000       R         TRUE       -
+  %%REG      DATSETR4            DATSETR4            16           -             8|16|32     16          0x880     0              3              -               0x2           0x00000000       R         TRUE       -
+  %%REG      DATSETR5            DATSETR5            16           -             8|16|32     16          0x888     0              3              -               0x2           0x00000000       R         TRUE       -
+
+%REG_NAME DATSETWB
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   TR5               5       5     0x0       R|W      TRUE     -
+    %%BIT   TR4               4       4     0x0       R|W      TRUE     -
+    %%BIT   TR3               3       3     0x0       R|W      TRUE     -
+    %%BIT   TR2               2       2     0x0       R|W      TRUE     -
+    %%BIT   TR1               1       1     0x0       R|W      TRUE     -
+    %%BIT   TR0               0       0     0x0       R|W      TRUE     W
+
+%REG_NAME DATSETBR
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   TR5               5       5     0x0       R|W      TRUE     -
+    %%BIT   TR4               4       4     0x0       R|W      TRUE     -
+    %%BIT   TR3               3       3     0x0       R|W      TRUE     -
+    %%BIT   TR2               2       2     0x0       R|W      TRUE     -
+    %%BIT   TR1               1       1     0x0       R|W      TRUE     -
+    %%BIT   TR0               0       0     0x0       R|W      TRUE     W
+
+%REG_NAME DATSETW0
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R|W      TRUE     -
+
+%REG_NAME DATSETW1
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R|W      TRUE     -
+
+%REG_NAME DATSETW2
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R|W      TRUE     -
+
+%REG_NAME DATSETW3
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R|W      TRUE     -
+
+%REG_NAME DATSETW4
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R|W      TRUE     -
+
+%REG_NAME DATSETW5
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R|W      TRUE     -
+
+%REG_NAME DATSETR0
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R        TRUE     -
+
+%REG_NAME DATSETR1
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R        TRUE     -
+
+%REG_NAME DATSETR2
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R        TRUE     -
+
+%REG_NAME DATSETR3
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R        TRUE     -
+
+%REG_NAME DATSETR4
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R        TRUE     -
+
+%REG_NAME DATSETR5
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DATA             15       0     0x0       R        TRUE     -

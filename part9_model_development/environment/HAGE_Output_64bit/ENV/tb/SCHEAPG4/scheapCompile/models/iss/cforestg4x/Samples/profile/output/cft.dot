@@ -1,0 +1,50 @@
+digraph  {
+	node [label="\N"];
+	_strlen	 [label="{<f0> _strlen
+PE: 0,TC: -1|<f1> Cycle: 4632
+
+}",
+		shape=record];
+	_a	 [label="{<f0> _a
+PE: 0,TC: -1|<f1> Cycle: 30
+
+}",
+		shape=record];
+	_strcpy	 [label="{<f0> _strcpy
+PE: 0,TC: -1|<f1> Cycle: 819
+
+}",
+		shape=record];
+	_b	 [label="{<f0> _b
+PE: 0,TC: -1|<f1> Cycle: 22
+
+}",
+		shape=record];
+	_myputc	 [label="{<f0> _myputc
+PE: 0,TC: -1|<f1> Cycle: 528
+
+}",
+		shape=record];
+	_CallFuncs	 [label="{<f0> _CallFuncs
+PE: 0,TC: -1|<f1> Cycle: 1109
+
+}",
+		shape=record];
+	_CallFuncs -> _strlen	 [color=blue,
+		label="count: 96"];
+	_CallFuncs -> _a	 [color=blue,
+		label="count: 4"];
+	_CallFuncs -> _strcpy	 [color=blue,
+		label="count: 8"];
+	_CallFuncs -> _b	 [color=blue,
+		label="count: 4"];
+	_CallFuncs -> _myputc	 [color=blue,
+		label="count: 88"];
+	_main	 [label="{<f0> _main
+PE: 0,TC: -1|<f1> Cycle: 615
+
+}",
+		shape=record];
+	_main -> _CallFuncs	 [color=blue,
+		label="count: 1"];
+}

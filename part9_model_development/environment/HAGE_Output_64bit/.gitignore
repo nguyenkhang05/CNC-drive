@@ -1,0 +1,15 @@
+*.d
+*.o
+*sim.x
+*.bak
+ENV/tb/SCHEAPG4/scheapCompile/lib-*
+ENV/tb/SCHEAPG4/scheapCompile/build/TOPV02/*.a
+ENV/tb/SCHEAPG4/pltfrmCompile/lib/SCHEAP-G4.a
+ENV/tb/SCHEAPG4/pltfrmCompile/lib/osci-linux-gcc49-x64/libPFV02.a
+ENV/tb/SCHEAPG4/pltfrmCompile/lib/osci-linux-gcc49-x64/librh850g4-core.a
+ENV/tb/SCHEAPG4/scheapCompile/models_rvc/HAGE/
+ENV/log/*
+ENV/pat/*
+ENV/reports/*
+ENV/results/*
+ENV/sim*

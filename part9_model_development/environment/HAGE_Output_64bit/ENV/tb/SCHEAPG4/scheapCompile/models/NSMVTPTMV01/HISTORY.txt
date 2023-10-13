@@ -1,0 +1,187 @@
+NSMVTPTMV01 HISTOR
+---------------------------------------------------------
+<2020.09.24>
+
+SVN version
+  Rev.351
+
+File
+TPTM.h/cpp
+TptmFunc.h/cpp
+UP_COUNTER_TIMER.h/cpp
+  update for TPTM U2B AI after CD PR
+---------------------------------------------------------
+---------------------------------------------------------
+<2020.09.16>
+
+SVN version
+  Rev.344
+
+File
+NSMVTPTMV01.h/cpp
+TPTM.h/cpp
+TptmFunc.h/cpp
+UP_COUNTER_TIMER.h/cpp
+TPTM_def.h
+  update for TPTM U2B AI before CD PR
+---------------------------------------------------------
+---------------------------------------------------------
+<2020.06.05>
+
+SVN version
+  Rev.336
+
+File
+  INTERVAL_TIMER.h/cpp
+  UP_COUNTER_TIMER.cpp
+---------------------------------------------------------
+---------------------------------------------------------
+<2020.06.02>
+
+SVN version
+  Rev.335
+
+File
+  TptmFunc.cpp
+---------------------------------------------------------
+---------------------------------------------------------
+<2020.04.23>
+
+SVN version
+  Rev.329
+
+File
+  UP_COUNTER_TIMER.cpp
+  INTERVAL_TIMER.cpp
+  FREE_RUN_TIMER.cpp
+---------------------------------------------------------
+---------------------------------------------------------
+<2020.02.25>
+
+SVN version
+  Rev.305
+
+File
+  FREE_RUN_TIMER.cpp/h
+  INTERVAL_TIMER.cpp/h
+  TptmFunc.cpp
+  TPTMG.cpp/h
+  TptmgFunc.cpp/h
+---------------------------------------------------------
+---------------------------------------------------------
+<2020.02.13>
+
+SVN version
+  Rev.304
+
+File
+  NSMVTPTMV01.cpp/h
+  TPTM.cpp/h
+  TptmFunc.cpp/h
+  UP_COUNTER_TIMER.cpp
+  TPTM_def.h
+    update for U2A HW UM Rev0.6
+  other files
+    modify comment. not affect function.
+
+---------------------------------------------------------
+---------------------------------------------------------
+<2018.06.21>
+
+SVN version
+  Rev.93
+
+File
+  NSMVTPTMV01.cpp
+  UP_COUNTER_TIMER.cpp
+    fix some bugs for U2A.(finished to prepare UT PR)
+  FREE_RUN_TIMER.h
+    modify comment. not affect function.
+
+--------------------------------------------------------
+--------------------------------------------------------
+<2018.06.13>
+
+SVN version
+  Rev.90
+
+File
+  NSMVTPTMV01.cpp/h
+  TPTM.cpp/h
+  TptmFunc.cpp/h
+  INTERVAL_TIMER.cpp/h
+  FREE_RUN_TIMER.cpp/h
+  UP_COUNTER_TIMER.cpp/h
+  TPTMG.cpp/h
+  TptmgFunc.cpp/h
+  TPTM_OUTPUT_SIG.cpp/h
+  TPTM_def.h
+    fix some bugs for U2A.(finished UTP phase)
+
+--------------------------------------------------------
+
+--------------------------------------------------------
+<2018.05.11>
+
+SVN version
+  Rev.63
+
+File
+  NSMVTPTMV01.cpp/h
+  TPTM.cpp/h
+  TptmFunc.cpp/h
+  INTERVAL_TIMER.cpp/h
+  FREE_RUN_TIMER.cpp/h
+  UP_COUNTER_TIMER.cpp/h
+  TPTMG.cpp/h
+  TptmgFunc.cpp/h
+  TPTM_OUTPUT_SIG.cpp/h
+    correspond for U2A.(finished CD phase)
+
+--------------------------------------------------------
+
+--------------------------------------------------------
+<2017.10.25>
+
+SVN version
+  Rev.141
+
+File
+  NSMVTPTMV01.cpp/h
+  TPTM.cpp/h
+  TptmFunc.cpp/h
+  INTERVAL_TIMER.cpp/h
+  FREE_RUN_TIMER.cpp/h
+    correspond for 64bit.
+
+--------------------------------------------------------
+<2017.7.18>
+
+SVN version
+  Rev.119
+
+File
+  INTERVAL_TIMER.cpp
+  TptmFunc.cpp
+	Because I registered the file incorrectly, I registered the correct file again.
+
+--------------------------------------------------------
+<2017.7.6>
+
+SVN version
+  Rev.117
+
+File
+  NSMVTPTMV01.cpp/h
+  TPTM.cpp/h
+  TptmFunc.cpp/h
+  INTERVAL_TIMER.cpp/h
+  FREE_RUN_TIMER.cpp/h
+	new creat.
+
+  
+	
+	
+
+
+

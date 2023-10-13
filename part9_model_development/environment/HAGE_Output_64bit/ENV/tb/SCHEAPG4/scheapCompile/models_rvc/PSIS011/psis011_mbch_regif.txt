@@ -1,0 +1,164 @@
+%MODULE psis011_mbch
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  8 
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name            reg_name        wsize   rsize  length offset  access   init   support  callback
+    %%REG      PSI5SPMBn1S    PSI5SPMBn1S    -       8|16|32  32     0x00   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn1D    PSI5SPMBn1D    -       8|16|32  32     0x04   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn1T    PSI5SPMBn1T    -       8|16|32  32     0x08   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn2S    PSI5SPMBn2S    -       8|16|32  32     0x0C   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn2D    PSI5SPMBn2D    -       8|16|32  32     0x10   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn2T    PSI5SPMBn2T    -       8|16|32  32     0x14   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn3S    PSI5SPMBn3S    -       8|16|32  32     0x18   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn3D    PSI5SPMBn3D    -       8|16|32  32     0x1C   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn3T    PSI5SPMBn3T    -       8|16|32  32     0x20   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn4S    PSI5SPMBn4S    -       8|16|32  32     0x24   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn4D    PSI5SPMBn4D    -       8|16|32  32     0x28   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn4T    PSI5SPMBn4T    -       8|16|32  32     0x2C   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn5S    PSI5SPMBn5S    -       8|16|32  32     0x30   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn5D    PSI5SPMBn5D    -       8|16|32  32     0x34   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn5T    PSI5SPMBn5T    -       8|16|32  32     0x38   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn6S    PSI5SPMBn6S    -       8|16|32  32     0x3C   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn6D    PSI5SPMBn6D    -       8|16|32  32     0x40   R        0x0     TRUE     -
+    %%REG      PSI5SPMBn6T    PSI5SPMBn6T    -       8|16|32  32     0x44   R        0x0     TRUE     -
+
+%REG_NAME PSI5SPMBn1S                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    CHID               24      22      0       R       TRUE        -
+    %%BIT    FID                21      19      0       R       TRUE        -
+    %%BIT    MBORERR            18      18      0       R       TRUE        -
+    %%BIT    WDTERR             17      17      0       R       TRUE        -
+    %%BIT    UTFRERR            15      15      0       R       TRUE        -
+    %%BIT    UTPTERR            14      14      0       R       TRUE        -
+    %%BIT    HEADERR            13      13      0       R       TRUE        -
+    %%BIT    HEADST             12      11      0       R       TRUE        -
+    %%BIT    CRCERR             10      10      0       R       TRUE        -
+    %%BIT    CRC                9       7       0       R       TRUE        -
+    %%BIT    XCRCERR            6       6       0       R       TRUE        -
+    %%BIT    XCRC               5       0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn1D                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    DATA               27      0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn1T                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    TMST               23      0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn2S                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    CHID               24      22      0       R       TRUE        -
+    %%BIT    FID                21      19      0       R       TRUE        -
+    %%BIT    MBORERR            18      18      0       R       TRUE        -
+    %%BIT    WDTERR             17      17      0       R       TRUE        -
+    %%BIT    UTFRERR            15      15      0       R       TRUE        -
+    %%BIT    UTPTERR            14      14      0       R       TRUE        -
+    %%BIT    HEADERR            13      13      0       R       TRUE        -
+    %%BIT    HEADST             12      11      0       R       TRUE        -
+    %%BIT    CRCERR             10      10      0       R       TRUE        -
+    %%BIT    CRC                9       7       0       R       TRUE        -
+    %%BIT    XCRCERR            6       6       0       R       TRUE        -
+    %%BIT    XCRC               5       0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn2D                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    DATA               27      0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn2T                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    TMST               23      0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn3S                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    CHID               24      22      0       R       TRUE        -
+    %%BIT    FID                21      19      0       R       TRUE        -
+    %%BIT    MBORERR            18      18      0       R       TRUE        -
+    %%BIT    HEADERR            13      13      0       R       TRUE        -
+    %%BIT    HEADST             12      11      0       R       TRUE        -
+    %%BIT    CRCERR             10      10      0       R       TRUE        -
+    %%BIT    CRC                9       7       0       R       TRUE        -
+    %%BIT    XCRC               5       0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn3D                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    DATA               27      0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn3T                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    TMST               23      0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn4S                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    CHID               24      22      0       R       TRUE        -
+    %%BIT    FID                21      19      0       R       TRUE        -
+    %%BIT    MBORERR            18      18      0       R       TRUE        -
+    %%BIT    HEADERR            13      13      0       R       TRUE        -
+    %%BIT    HEADST             12      11      0       R       TRUE        -
+    %%BIT    CRCERR             10      10      0       R       TRUE        -
+    %%BIT    CRC                9       7       0       R       TRUE        -
+    %%BIT    XCRC               5       0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn4D                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    DATA               27      0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn4T                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    TMST               23      0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn5S                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    CHID               24      22      0       R       TRUE        -
+    %%BIT    FID                21      19      0       R       TRUE        -
+    %%BIT    MBORERR            18      18      0       R       TRUE        -
+    %%BIT    HEADERR            13      13      0       R       TRUE        -
+    %%BIT    HEADST             12      11      0       R       TRUE        -
+    %%BIT    CRCERR             10      10      0       R       TRUE        -
+    %%BIT    CRC                9       7       0       R       TRUE        -
+    %%BIT    XCRC               5       0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn5D                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    DATA               27      0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn5T                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    TMST               23      0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn6S                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    CHID               24      22      0       R       TRUE        -
+    %%BIT    FID                21      19      0       R       TRUE        -
+    %%BIT    MBORERR            18      18      0       R       TRUE        -
+    %%BIT    HEADERR            13      13      0       R       TRUE        -
+    %%BIT    HEADST             12      11      0       R       TRUE        -
+    %%BIT    CRCERR             10      10      0       R       TRUE        -
+    %%BIT    CRC                9       7       0       R       TRUE        -
+    %%BIT    XCRC               5       0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn6D                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    DATA               27      0       0       R       TRUE        -
+
+%REG_NAME PSI5SPMBn6T                                                          
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DCI                31      28      0       R       TRUE        -
+    %%BIT    TMST               23      0       0       R       TRUE        -

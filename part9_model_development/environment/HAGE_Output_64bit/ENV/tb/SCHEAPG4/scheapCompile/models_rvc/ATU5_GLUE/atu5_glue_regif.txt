@@ -1,0 +1,133 @@
+%MODULE ATU5_GLUE
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         8
+
+%REG_CHANNEL reg_def
+    %%TITLE  name           reg_name       wsize    rsize    length  offset  factor_start  factor_end  factor_index  factor_step  access init  support callback
+    %%REG    ATUINTSELA     ATUINTSELA     8|16|32  8|16|32  32      0x00    -             -           -             -            W|R    0     TRUE    -
+    %%REG    ATUINTSELC0    ATUINTSELC0    8|16|32  8|16|32  32      0x04    -             -           -             -            W|R    0     TRUE    -
+    %%REG    ATUINTSELC1    ATUINTSELC1    8|16|32  8|16|32  32      0x08    -             -           -             -            W|R    0     TRUE    -
+    %%REG    ATUINTSELD     ATUINTSELD     8|16|32  8|16|32  32      0x0C    0             3           -             0x4          W|R    0     TRUE    -
+    %%REG    ATUINTSELD4    ATUINTSELD4    8|16|32  8|16|32  32      0x1C    -             -           -             -            W|R    0     TRUE    -
+    %%REG    ATUDMASELB     ATUDMASELB     8|16|32  8|16|32  32      0x2C    -             -           -             -            W|R    0     TRUE    -
+    %%REG    ATUDMASELCD    ATUDMASELCD    8|16|32  8|16|32  32      0x30    0             7           -             0x4          W|R    0     TRUE    -
+    %%REG    ATUDMASELE     ATUDMASELE     8|16|32  8|16|32  32      0x50    -             -           -             -            W|R    0     TRUE    -
+    %%REG    ATUDFEENTQ     ATUDFEENTQ     8|16|32  8|16|32  32      0x80    0             2           -             0x8          W|R    0     TRUE    -
+    %%REG    ATUDFESEL      ATUDFESEL      8|16|32  8|16|32  32      0x84    0             2           -             0x8          W|R    0     TRUE    -
+    %%REG    ATUDFESELD1T   ATUDFESELD1T   8|16|32  8|16|32  32      0x98    -             -           -             -            W|R    0     TRUE    -
+    %%REG    ATUDSSELDSTS   ATUDSSELDSTS   8|16|32  8|16|32  32      0x9C    -             -           -             -            W|R    0     TRUE    -
+    %%REG    ATUCASELCATS   ATUCASELCATS   8|16|32  8|16|32  32      0xA0    -             -           -             -            W|R    0     TRUE    -
+    %%REG    ATUP5SSEL      ATUP5SSEL      8|16|32  8|16|32  32      0xA4    -             -           -             -            W|R    0     TRUE    -
+
+
+%REG_NAME ATUINTSELA
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    ATU_INTSEL_A3  14     12     0     W|R     TRUE     -
+    %%BIT    ATU_INTSEL_A2  10     8      0     W|R     TRUE     -
+    %%BIT    ATU_INTSEL_A1  6      4      0     W|R     TRUE     -
+    %%BIT    ATU_INTSEL_A0  2      0      0     W|R     TRUE     W
+
+%REG_NAME ATUINTSELC0
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    ATU_INTSEL_C0  31     0      0     W|R     TRUE     W
+
+%REG_NAME ATUINTSELC1
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    ATU_INTSEL_C1  11     0      0     W|R     TRUE     W
+
+%REG_NAME ATUINTSELD
+    %%TITLE  name            upper  lower  init  access  support  callback
+    %%BIT    ATU_INTSEL_D13  30     28     0     W|R     TRUE     -
+    %%BIT    ATU_INTSEL_D12  26     24     0     W|R     TRUE     -
+    %%BIT    ATU_INTSEL_D11  22     20     0     W|R     TRUE     -
+    %%BIT    ATU_INTSEL_D10  18     16     0     W|R     TRUE     -
+    %%BIT    ATU_INTSEL_D03  14     12     0     W|R     TRUE     -
+    %%BIT    ATU_INTSEL_D02  10     8      0     W|R     TRUE     -
+    %%BIT    ATU_INTSEL_D01  6      4      0     W|R     TRUE     -
+    %%BIT    ATU_INTSEL_D00  2      0      0     W|R     TRUE     W
+
+%REG_NAME ATUINTSELD4
+    %%TITLE  name            upper  lower  init  access  support  callback
+    %%BIT    ATU_INTSEL_D03  14     12     0     W|R     TRUE     -
+    %%BIT    ATU_INTSEL_D02  10     8      0     W|R     TRUE     -
+    %%BIT    ATU_INTSEL_D01  6      4      0     W|R     TRUE     -
+    %%BIT    ATU_INTSEL_D00  2      0      0     W|R     TRUE     W
+
+%REG_NAME ATUDMASELB
+    %%TITLE  name            upper  lower  init  access  support  callback
+    %%BIT    ATU_DMASEL_B3   15     12     0     W|R     TRUE     -
+    %%BIT    ATU_DMASEL_B2   11     8      0     W|R     TRUE     -
+    %%BIT    ATU_DMASEL_B1   7      4      0     W|R     TRUE     -
+    %%BIT    ATU_DMASEL_B0   3      0      0     W|R     TRUE     W
+
+%REG_NAME ATUDMASELCD
+    %%TITLE  name            upper  lower  init  access  support  callback
+    %%BIT    ATU_DMASEL_CD7  30     28     0     W|R     TRUE     -
+    %%BIT    ATU_DMASEL_CD6  26     24     0     W|R     TRUE     -
+    %%BIT    ATU_DMASEL_CD5  22     20     0     W|R     TRUE     -
+    %%BIT    ATU_DMASEL_CD4  18     16     0     W|R     TRUE     -
+    %%BIT    ATU_DMASEL_CD3  14     12     0     W|R     TRUE     -
+    %%BIT    ATU_DMASEL_CD2  10     8      0     W|R     TRUE     -
+    %%BIT    ATU_DMASEL_CD1  6      4      0     W|R     TRUE     -
+    %%BIT    ATU_DMASEL_CD0  2      0      0     W|R     TRUE     W
+
+%REG_NAME ATUDMASELE
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    ATU_DMASEL_E   17     0      0     W|R     TRUE     W
+
+%REG_NAME ATUDFEENTQ
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    ATU_DFEEN_TQ   11     0      0     W|R     TRUE     W
+
+%REG_NAME ATUDFESEL
+    %%TITLE  name            upper  lower  init  access  support  callback
+    %%BIT    ATU_DFESEL_C91  29     29     0     W|R     TRUE     -
+    %%BIT    ATU_DFESEL_C90  28     28     0     W|R     TRUE     -
+    %%BIT    ATU_DFESEL_C83  27     27     0     W|R     TRUE     -
+    %%BIT    ATU_DFESEL_C82  26     26     0     W|R     TRUE     -
+    %%BIT    ATU_DFESEL_C81  25     25     0     W|R     TRUE     -
+    %%BIT    ATU_DFESEL_C80  24     24     0     W|R     TRUE     -
+    %%BIT    ATU_DFESEL_D11  22     20     0     W|R     TRUE     -
+    %%BIT    ATU_DFESEL_D10  18     16     0     W|R     TRUE     -
+    %%BIT    ATU_DFESEL_D03  14     12     0     W|R     TRUE     -
+    %%BIT    ATU_DFESEL_D02  10     8      0     W|R     TRUE     -
+    %%BIT    ATU_DFESEL_D01  6      4      0     W|R     TRUE     -
+    %%BIT    ATU_DFESEL_D00  2      0      0     W|R     TRUE     W
+
+%REG_NAME ATUDFESELD1T
+    %%TITLE  name            upper  lower  init  access  support  callback
+    %%BIT    ATU_DFESEL_D1T  2      0      0     W|R     TRUE     W
+
+%REG_NAME ATUDSSELDSTS
+    %%TITLE  name             upper  lower  init  access  support  callback
+    %%BIT    ATU_DSSEL_DSTS9  19     18     0     W|R     TRUE     -
+    %%BIT    ATU_DSSEL_DSTS8  17     16     0     W|R     TRUE     -
+    %%BIT    ATU_DSSEL_DSTS7  15     14     0     W|R     TRUE     -
+    %%BIT    ATU_DSSEL_DSTS6  13     12     0     W|R     TRUE     -
+    %%BIT    ATU_DSSEL_DSTS5  11     10     0     W|R     TRUE     -
+    %%BIT    ATU_DSSEL_DSTS4  9      8      0     W|R     TRUE     -
+    %%BIT    ATU_DSSEL_DSTS3  7      6      0     W|R     TRUE     -
+    %%BIT    ATU_DSSEL_DSTS2  5      4      0     W|R     TRUE     -
+    %%BIT    ATU_DSSEL_DSTS1  3      2      0     W|R     TRUE     -
+    %%BIT    ATU_DSSEL_DSTS0  1      0      0     W|R     TRUE     W
+
+%REG_NAME ATUCASELCATS
+    %%TITLE  name             upper  lower  init  access  support  callback
+    %%BIT    ATU_CASEL_CATS0  1      0      0     W|R     TRUE     W
+
+%REG_NAME ATUP5SSEL
+    %%TITLE  name              upper  lower  init  access  support  callback
+    %%BIT    ATU_P5SSEL_SSTSB  27     26     0     W|R     TRUE     -
+    %%BIT    ATU_P5SSEL_SSTSA  25     24     0     W|R     TRUE     -
+    %%BIT    ATU_P5SSEL_CRTSB  23     22     0     W|R     TRUE     -
+    %%BIT    ATU_P5SSEL_CRTSA  21     20     0     W|R     TRUE     -
+    %%BIT    ATU_P5SSEL_CKTSB  19     18     0     W|R     TRUE     -
+    %%BIT    ATU_P5SSEL_CKTSA  17     16     0     W|R     TRUE     -
+    %%BIT    ATU_P5SSEL_TGC7   15     14     0     W|R     TRUE     -
+    %%BIT    ATU_P5SSEL_TGC6   13     12     0     W|R     TRUE     -
+    %%BIT    ATU_P5SSEL_TGC5   11     10     0     W|R     TRUE     -
+    %%BIT    ATU_P5SSEL_TGC4   9      8      0     W|R     TRUE     -
+    %%BIT    ATU_P5SSEL_TGC3   7      6      0     W|R     TRUE     -
+    %%BIT    ATU_P5SSEL_TGC2   5      4      0     W|R     TRUE     -
+    %%BIT    ATU_P5SSEL_TGC1   3      2      0     W|R     TRUE     -
+    %%BIT    ATU_P5SSEL_TGC0   1      0      0     W|R     TRUE     W

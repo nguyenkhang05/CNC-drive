@@ -1,0 +1,272 @@
+%MODULE PSI5
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         9
+
+%REG_CHANNEL reg_def
+    %%TITLE  group  name          reg_name     wsize    rsize    length  offset  factor_start  factor_end  factor_index  factor_step  access  init        support  callback
+    %%REG    -      CHCTRL        CHCTRL       32       8|16|32  32      0x000   -             -           -             -            W|R     0x0         TRUE     W  
+    %%REG    -      CHSTATUS      CHSTATUS     8|16|32  8|16|32  32      0x004   -             -           -             -              R     0x0         TRUE     -  
+    %%REG    -      IPTIMERCTRL   IPTIMERCTRL  32       8|16|32  32      0x010   -             -           -             -            W|R     0x10000     TRUE     W  
+    %%REG    -      IPTIMER       IPTIMER      32       8|16|32  32      0x014   -             -           -             -            W|R     0x0         TRUE     W|R  
+    %%REG    -      OPMCOMM       OPMCOMM      32       8|16|32  32      0x020   -             -           -             -            W|R     0x0         TRUE     W  
+    %%REG    -      OPMBITRATE    OPMBITRATE   32       8|16|32  32      0x024   -             -           -             -            W|R     0x29F       TRUE     W  
+    %%REG    -      OPMCYCT       OPMCYCT      32       8|16|32  32      0x028   -             -           -             -            W|R     0x9C3F      TRUE     W  
+    %%REG    -      PSI5INT       PSI5INT      8|16|32  8|16|32  32      0x030   -             -           -             -              R     0x0         TRUE     -  
+    %%REG    -      EMRXDATA      EMRXDATA     8|16|32  8|16|32  32      0x040   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      EMRXDST       EMRXDST      8|16|32  8|16|32  32      0x044   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      EMRXDTIM      EMRXDTIM     8|16|32  8|16|32  32      0x048   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      EMRXDFIFO     EMRXDFIFO    8|16|32  8|16|32  32      0x04C   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      EMRXMRXMSG    EMRXMRXMSG   8|16|32  8|16|32  32      0x050   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      EMRXMRXST     EMRXMRXST    8|16|32  8|16|32  32      0x054   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      EMRXMRXTIM    EMRXMRXTIM   8|16|32  8|16|32  32      0x058   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      EMRXMFIFO     EMRXMFIFO    8|16|32  8|16|32  32      0x05C   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      TXSETTING     TXSETTING    32       8|16|32  32      0x080   -             -           -             -            W|R     0x106747F7  TRUE     W  
+    %%REG    -      SYNCCTRL      SYNCCTRL     32       8|16|32  32      0x084   -             -           -             -            W|R     0x0         TRUE     W  
+    %%REG    -      TXST          TXST         8|16|32  8|16|32  32      0x088   -             -           -             -              R     0x1         TRUE     -  
+    %%REG    -      TXSTCLR       TXSTCLR      32       8|16|32  32      0x08C   -             -           -             -            W|R     0x0         TRUE     W  
+    %%REG    -      TXSTINTEN     TXSTINTEN    32       8|16|32  32      0x090   -             -           -             -            W|R     0x0         TRUE     W  
+    %%REG    -      TXDCTRL       TXDCTRL      32       8|16|32  32      0x094   -             -           -             -            W|R     0x1         TRUE     -  
+    %%REG    -      TXDATA        TXDATA       32       8|16|32  32      0x098   -             -           -             -            W|R     0x0         TRUE     W  
+    %%REG    -      RXSPLSET      RXSPLSET     32       8|16|32  32      0x100   -             -           -             -            W|R     0x27        TRUE     W  
+    %%REG    -      RXWINSET      RXWINSET     32       8|16|32  32      0x104   -             -           -             -            W|R     0xB03130C   TRUE     W  
+    %%REG    -      RXSSET        RXSSET       32       8|16|32  32      0x108   1             8           -             0x4          W|R     0xA00000    TRUE     W  
+    %%REG    -      RXDATA        RXDATA       8|16|32  8|16|32  32      0x128   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      RXDST         RXDST        8|16|32  8|16|32  32      0x12C   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      RXDTIM        RXDTIM       8|16|32  8|16|32  32      0x130   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      RXDFIFO       RXDFIFO      8|16|32  8|16|32  32      0x134   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      RXMODST       RXMODST      8|16|32  8|16|32  32      0x138   -             -           -             -              R     0x0         TRUE     -  
+    %%REG    -      RXMODSTCLR    RXMODSTCLR   32       8|16|32  32      0x13C   -             -           -             -            W|R     0x0         TRUE     W  
+    %%REG    -      RXMODSTINTEN  RXMODSTINTEN 32       8|16|32  32      0x140   -             -           -             -            W|R     0x0         TRUE     W  
+    %%REG    -      RXMSET        RXMSET       32       8|16|32  32      0x180   -             -           -             -            W|R     0x0         TRUE     W  
+    %%REG    -      RXMRXMSG      RXMRXMSG     8|16|32  8|16|32  32      0x184   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      RXMRXST       RXMRXST      8|16|32  8|16|32  32      0x188   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      RXMRXTIM      RXMRXTIM     8|16|32  8|16|32  32      0x18C   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      RXMFIFO       RXMFIFO      8|16|32  8|16|32  32      0x190   -             -           -             -              R     0x0         TRUE     R  
+    %%REG    -      RXMMST        RXMMST       8|16|32  8|16|32  32      0x194   -             -           -             -              R     0x0         TRUE     -  
+    %%REG    -      RXMMSTCLR     RXMMSTCLR    32       8|16|32  32      0x198   -             -           -             -             W|R    0x0         TRUE     W  
+    %%REG    -      RXMMSTINTEN   RXMMSTINTEN  32       8|16|32  32      0x19C   -             -           -             -             W|R    0x0         TRUE     W  
+
+%REG_NAME CHCTRL
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    CHEN             0      0      0         W|R     TRUE     W
+    %%BIT    RSV              16     16     0         W|R     TRUE     -
+
+%REG_NAME CHSTATUS
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    CHANNELNUM       15     0      0         R       TRUE     -
+
+%REG_NAME IPTIMERCTRL
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    IPTIMEN          0      0      0         W|R     TRUE     -
+    %%BIT    TSCLR            8      8      0         W|R     TRUE     W
+    %%BIT    MSTSLV           16     16     1         W|R     TRUE     -
+
+%REG_NAME IPTIMER
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    COUNTVAL         31     0      0         W|R     TRUE     W|R
+
+%REG_NAME OPMCOMM
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    COMMODE          2      0      0         W|R     TRUE     W
+
+%REG_NAME OPMBITRATE
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    BITRATECNT       15      0     0x29F     W|R     TRUE     W
+
+%REG_NAME OPMCYCT
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    TTTTCNT          19      0     0x9C3F    W|R     TRUE     W
+
+%REG_NAME PSI5INT
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    INT_RXMEXIST     0      0      0         R       TRUE     -
+    %%BIT    INT_RXMFOVF      1      1      0         R       TRUE     -
+    %%BIT    INT_RXMERR       2      2      0         R       TRUE     -
+    %%BIT    INT_RXDEXIST     3      3      0         R       TRUE     -
+    %%BIT    INT_RXDFOVF      4      4      0         R       TRUE     -
+    %%BIT    INT_RXDERR       5      5      0         R       TRUE     -
+    %%BIT    INT_RXDSCNFERR   6      6      0         R       TRUE     -
+    %%BIT    INT_TXDEMPTY     16     16     0         R       TRUE     -
+    %%BIT    INT_SYNCST       17     17     0         R       TRUE     -
+    %%BIT    INT_SYNCED       18     18     0         R       TRUE     -
+
+%REG_NAME EMRXDATA
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXDATA           31     0      0         R       TRUE     -
+
+%REG_NAME EMRXDST
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXSTATUS         0      0      0         R       TRUE     -
+    %%BIT    RXSLOTNUM        7      4      0         R       TRUE     -
+    %%BIT    RXCHKD           10     8      0         R       TRUE     -
+
+%REG_NAME EMRXDTIM
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXDTIM           31     0      0         R       TRUE     -
+
+%REG_NAME EMRXDFIFO
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXDST            31     0      0         R       TRUE     R
+
+%REG_NAME EMRXMRXMSG
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    DATAFIELD        15     0      0         R       TRUE     -
+    %%BIT    SERIALID         23     16     0         R       TRUE     -
+    %%BIT    CONFIGBIT        31     31     0         R       TRUE     -
+
+%REG_NAME EMRXMRXST
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXSTATUS         0      0      0         R       TRUE     -
+    %%BIT    SLOTNUM          7      4      0         R       TRUE     -
+    %%BIT    RXCRC            13     8      0         R       TRUE     -
+    %%BIT    RXSYNC           18     16     0         R       TRUE     -
+
+%REG_NAME EMRXMRXTIM
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXMTIM           31     0      0         R       TRUE     -
+
+%REG_NAME EMRXMFIFO
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXMFIFO          31     0      0         R       TRUE     R
+
+%REG_NAME TXSETTING
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    SHORTCNT         13     0      0x7F7     W|R     TRUE     W
+    %%BIT    DEFTXVAL         14     14     1         W|R     TRUE     -
+    %%BIT    PHYMODE          15     15     0         W|R     TRUE     -
+    %%BIT    LONGCNT          31     16     0x1067    W|R     TRUE     -
+
+%REG_NAME SYNCCTRL
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    VALTIMSYNC       0      0      0x0       W|R     TRUE     W
+
+%REG_NAME TXST
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    TXDEMPTY         0      0      1         R       TRUE     -
+    %%BIT    SYNCST           8      8      0         R       TRUE     -
+    %%BIT    SYNCED           9      9      0         R       TRUE     -
+
+%REG_NAME TXSTCLR
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    SYNCSTCLR        8      8      0         W|R     TRUE     W
+    %%BIT    SYNCEDCLR        9      9      0         W|R     TRUE     -
+
+%REG_NAME TXSTINTEN
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    TXDEMPTYINTEN    0      0      0         W|R     TRUE     W
+    %%BIT    SYNCSTINTEN      8      8      0         W|R     TRUE     -
+    %%BIT    SYNCEDINTEN      9      9      0         W|R     TRUE     -
+
+%REG_NAME TXDCTRL
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    FRMFORMAT        2      0      1         W|R     TRUE     -
+
+%REG_NAME TXDATA
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    TXDATA           31     0      0         W|R     TRUE     W
+
+%REG_NAME RXSPLSET
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    SMPLPROD         7      0      0x27      W|R     TRUE     W
+
+%REG_NAME RXWINSET
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    DWINSTPOS        7      0      0xC       W|R     TRUE     W
+    %%BIT    DWINEDPOS        15     8      0x13      W|R     TRUE     -
+    %%BIT    NDWINSTPOS       23     16     0x3       W|R     TRUE     -
+    %%BIT    NDWINEDPOS       31     24     0xB       W|R     TRUE     -
+
+%REG_NAME RXSSET
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    OFFSETCNT        19     0      0         W|R     TRUE     W
+    %%BIT    LENGTH           24     20     0xA       W|R     TRUE     -
+    %%BIT    ERRDET           25     25     0         W|R     TRUE     -
+    %%BIT    PASCMP           26     26     0         W|R     TRUE     -
+    %%BIT    SLTEN            31     31     0         W|R     TRUE     -
+
+%REG_NAME RXDATA
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXDATA           31     0      0         R       TRUE     R
+
+%REG_NAME RXDST
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXSTATUS         0      0      0         R       TRUE     R
+    %%BIT    RXSLOTNUM        7      4      0         R       TRUE     -
+    %%BIT    RXCHKD           10     8      0         R       TRUE     -
+
+%REG_NAME RXDTIM
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXDTIM           31     0      0         R       TRUE     R
+
+%REG_NAME RXDFIFO
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXDST            31     0      0         R       TRUE     R
+
+%REG_NAME RXMODST
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXDEXIST         0      0      0         R       TRUE     -
+    %%BIT    RXDFOVF          8      8      0         R       TRUE     -
+    %%BIT    RXDERR           16     16     0         R       TRUE     -
+    %%BIT    RXDSCNFERR       24     24     0         R       TRUE     -
+
+%REG_NAME RXMODSTCLR
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXDFOVFCLR       8      8      0         W|R     TRUE     W
+    %%BIT    RXDERRCLR        16     16     0         W|R     TRUE     -
+    %%BIT    RXDSCNFERRCLR    24     24     0         W|R     TRUE     -
+
+%REG_NAME RXMODSTINTEN
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXDEXISTINTEN    0      0      0         W|R     TRUE     W
+    %%BIT    RXDFOVFINTEN     8      8      0         W|R     TRUE     -
+    %%BIT    RXDERRINTEN      16     16     0         W|R     TRUE     -
+    %%BIT    RXDSCNFERRINTEN  24     24     0         W|R     TRUE     -
+
+%REG_NAME RXMSET
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXM1EN           0      0      0         W|R     TRUE     W
+    %%BIT    RXM2EN           1      1      0         W|R     TRUE     -
+    %%BIT    RXM3EN           2      2      0         W|R     TRUE     -
+    %%BIT    RXM4EN           3      3      0         W|R     TRUE     -
+    %%BIT    RXM5EN           4      4      0         W|R     TRUE     -
+    %%BIT    RXM6EN           5      5      0         W|R     TRUE     -
+    %%BIT    RXM7EN           6      6      0         W|R     TRUE     -
+    %%BIT    RXM8EN           7      7      0         W|R     TRUE     -
+
+%REG_NAME RXMRXMSG
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    DATAFIELD        15     0      0         R       TRUE     R
+    %%BIT    SERIALID         23     16     0         R       TRUE     -
+    %%BIT    CONFIGBIT        31     31     0         R       TRUE     -
+
+%REG_NAME RXMRXST
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXSTATUS         0      0      0         R       TRUE     R
+    %%BIT    SLOTNUM          7      4      0         R       TRUE     -
+    %%BIT    RXCRC            13     8      0         R       TRUE     -
+    %%BIT    RXSYNC           18     16     0         R       TRUE     -
+
+%REG_NAME RXMRXTIM
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXMTIM           31     0      0         R       TRUE     R
+
+%REG_NAME RXMFIFO
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXMFIFO          31     0      0         R       TRUE     R
+
+%REG_NAME RXMMST
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXMEXIST         0      0      0         R       TRUE     -
+    %%BIT    RXMFOVF          8      8      0         R       TRUE     -
+    %%BIT    RXMERR           16     16     0         R       TRUE     -
+
+%REG_NAME RXMMSTCLR
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXMFOVFCLR       8      8      0         W|R      TRUE     W
+    %%BIT    RXMSERRCLR       16     16     0         W|R      TRUE     -
+
+%REG_NAME RXMMSTINTEN
+    %%TITLE  name             upper  lower  init      access  support  callback                                     
+    %%BIT    RXMEXISTINTEN    0      0      0         W|R     TRUE     W
+    %%BIT    RXMFOVFINTEN     8      8      0         W|R     TRUE     -
+    %%BIT    RXMERRINTEN      16     16     0         W|R     TRUE     -

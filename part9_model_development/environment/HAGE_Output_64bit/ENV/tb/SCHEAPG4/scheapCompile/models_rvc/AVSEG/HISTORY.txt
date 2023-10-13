@@ -1,0 +1,43 @@
+=================================
+=        RELEASE HISTORY        =   
+=================================
+
+v2018_02_28
+- Update source code to fix segmentation fault on SC-HEAP (gcc issue related to double)
+
+v2016_08_25
+- Create new E2x/AVSEG with HWM: NoSecurity_r01uh0641ej0010_rh850e2x-fcc1.pdf
+
+v2016_08_31
+- Add SetLatency_TLM() function to work correcly in AT mode
+
+v2016_09_07
+- Add TMs for time resolution checking in LT mode
+   + tp04_05_001
+   + tp04_05_002
+   + tp04_05_003
+   + tp04_05_004
+   + tp04_05_005
+   + tp04_05_006
+- Get the expected log for following TMs of time resolution checking for AT mode on Windows
+   + tp04_05_001
+   + tp04_05_002
+   + tp04_05_003
+   + tp04_05_004
+   + tp04_05_005
+   + tp04_05_006
+- Remove the setting for time resolution checking of following TMs on Windows
+   + tp01_01_001
+   + tp01_02_001
+   + tp01_03_001
+   + tp01_04_001
+   + tp01_05_001
+   + tp01_06_001
+
+v2016_09_13
+- Fixed Purity memory error
+  (SetLatency_TLM() function should be operated after the initiation of mTimeResolutionUnit)
+
+
+v2018_10_29
+- Release U2A/AVSEG

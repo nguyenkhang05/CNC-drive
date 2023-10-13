@@ -1,0 +1,121 @@
+#############################
+## 
+#############################
+- Release info: Release source code.
+
+- Release date: Mar 05, 2020.
+
+- Test environment: SC-HEAP G4 Rev191 64 bit
+
+- File:
+    IBG_U2.cpp					            (v1.2)		
+    IBG_U2_Func.cpp					        (v1.3)		
+    IBG_U2_regif.cpp					    (v1.3)		
+    PY_IBG_U2.cpp					        (v1.2)		
+    IBG_U2_CommonGuard.cpp					(v1.3)		
+    IBG_U2_CommonGuard.h					(v1.2)		
+    IBG_U2_CommonGuardAgentControllerIf.h	(v1.2)		
+    IBG_U2_cmdif.h					        (v1.2)		
+    IBG_U2.h					            (v1.2)		
+    IBG_U2_Func.h					        (v1.2)		
+    IBG_U2_regif.h					        (v1.2)		
+    PY_IBG_U2.h					            (v1.2)		
+
+     
+- Supported functions : No change
+- Non supported features and limitations (No change)
+- Updated points : 
+  + Update to fix bug follow ticket #113877, #112436
+  + Update follow new modeling guideline for software debugger transaction behavior
+#############################
+## IBG_U2_Output_20180524.7z
+#############################
+- Release info: Offical release.
+
+- Release date: May 24, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File:
+    IBG_U2.h                                  6715
+    IBG_U2.cpp                                6715
+    IBG_U2_cmdif.h                            6715
+    IBG_U2_CommonGuard.h                      6715
+    IBG_U2_CommonGuard.cpp                    6715
+    IBG_U2_CommonGuardAgentControllerIf.h     6715
+    IBG_U2_Func.h                             6715
+    IBG_U2_Func.cpp                           6715
+    ibg_u2_regif.h                            6715
+    ibg_u2_regif.cpp                          6715
+     
+- Supported functions:
+    + I-Bus Guard (Inter-cluster Bus Guard)  protects the Barrier Synchronization (BARR), Time Protection Timer(TPTM) and Inter-Processor Interrupt (IPIR) from illegal accesses
+    + Notify error to ECM (Error Control Module)
+    + The protection is configurable by setting and control registers. These registers, in turn, is also protected by key-code protect register
+    
+- Non supported features and limitations:
+    + Have no limitations
+
+
+#############################
+## IBG_U2_Output_20180525.7z
+#############################
+- Not change any thing.
+
+#############################
+## IBG_U2_Output_20180614.7z
+#############################
+- Not change any thing.
+
+
+#############################
+## IBG_U2_Output_20180705.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Jul 5, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File:
+	IBG_U2_Func.cpp							7614
+	IBG_U2.cpp     							6715
+	IBG_U2_Func.h  							6526
+	PY_IBG_U2.cpp  							6715
+	IBG_U2_cmdif.h 							6526
+	ibg_u2_regif.h 							6715
+	IBG_U2.h       							6643
+	IBG_U2_CommonGuard.cpp					7808
+	IBG_U2_CommonGuardAgentControllerIf.h	6526
+	ibg_u2_regif.cpp    					6715
+	PY_IBG_U2.h         					6453
+	IBG_U2_CommonGuard.h					6526
+
+- Fixed code relate to SPIDERRSTAT bug.
+
+#############################
+## IBG_U2_Output_201900314.7z
+#############################
+- Release info: release for fixing bug #90916
+
+- Release date: Mar 18, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (CVS version)
+    IBG_U2.cpp	                            v1.1
+    IBG_U2.h	                            v1.1
+    IBG_U2_CommonGuard.cpp	                v1.2
+    IBG_U2_CommonGuard.h	                v1.1
+    IBG_U2_CommonGuardAgentControllerIf.h	v1.1
+    IBG_U2_Func.cpp	                        v1.2
+    IBG_U2_Func.h	                        v1.1
+    IBG_U2_cmdif.h	                        v1.1
+    PY_IBG_U2.cpp	                        v1.1
+    PY_IBG_U2.h	                            v1.1
+    ibg_u2_regif.cpp	                    v1.2
+    ibg_u2_regif.h	                        v1.1
+    
+- Supported features: no change
+- Non supported features: no change
+	

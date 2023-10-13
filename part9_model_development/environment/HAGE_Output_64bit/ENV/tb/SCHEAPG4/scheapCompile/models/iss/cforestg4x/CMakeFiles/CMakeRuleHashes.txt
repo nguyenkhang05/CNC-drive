@@ -1,0 +1,7 @@
+# Hashes of file build rules.
+00c6c1ff6a255badfacec58b65c3da34 Device/Core/MICROARCHDB/src/CMakeFiles/gen_cedar_arch_info
+64d52ff4ff205897575fe6dd56cbb23b Device/Core/MICROARCHDB/src/cedar_arch_info.cpp
+ac0fbc9a0ad21084ce470780f12a05e4 Device/Core/REG/include/sreg.h
+75e640695aa048e36a04a01686d2c88a Device/Core/REG/include/sreg_enum.h
+e691dd58b679e1e804bc950a2beffcdf Device/Core/REG/include/sregfile.h
+cec629ee35f830255478d9e54dd73149 Device/Core/TRACE/include/trace_operand.h

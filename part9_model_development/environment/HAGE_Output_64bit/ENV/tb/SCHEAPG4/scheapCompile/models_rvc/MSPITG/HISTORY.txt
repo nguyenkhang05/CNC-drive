@@ -1,0 +1,69 @@
+// Description: History file
+// Ref: {MSPITG_DD_ATT1_003}
+- Release info: Release data after fix source code change copyright file MSPITG_cmdif.h
+- Release date: Feb 20, 2020.
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  MSPITG.cpp               1.5
+  MSPITG.h                 1.5
+  MSPITG_AgentController.h 1.2
+  MSPITG_Func.cpp          1.2
+  MSPITG_Func.h            1.3
+  MSPITG_cmdif.h           1.3
+  PY_MSPITG.cpp            1.1
+  PY_MSPITG.h              1.1
+  mspitg_regif.h           1.3
+  mspitg_regif.cpp         1.3
+
+- Supported features:
+  + DMA/DTS trigger generator 
+ 
+- Non-supported features and limitation:
+  + None.
+
+----------------------------------------------------------------
+- Release info: Release data 
+- Release date: Feb 12, 2020.
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  MSPITG.cpp               1.5
+  MSPITG.h                 1.5
+  MSPITG_AgentController.h 1.2
+  MSPITG_Func.cpp          1.2
+  MSPITG_Func.h            1.3
+  MSPITG_cmdif.h           1.2
+  PY_MSPITG.cpp            1.1
+  PY_MSPITG.h              1.1
+  mspitg_regif.h           1.3
+  mspitg_regif.cpp         1.3
+
+- Supported features:
+  + DMA/DTS trigger generator 
+ 
+- Non-supported features and limitation:
+  + None.
+
+----------------------------------------------------------------
+- Release info: Release alpha source code.
+- Release date: Feb 05, 2020.
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  MSPITG.cpp               1.5
+  MSPITG.h                 1.5
+  MSPITG_AgentController.h 1.2
+  MSPITG_Func.cpp          1.2
+  MSPITG_Func.h            1.3
+  MSPITG_cmdif.h           1.2
+  PY_MSPITG.cpp            1.1
+  PY_MSPITG.h              1.1
+  mspitg_regif.h           1.3
+  mspitg_regif.cpp         1.3
+
+- Supported features:
+  + DMA/DTS trigger generator 
+ 
+- Non-supported features and limitation:
+  + None.

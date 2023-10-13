@@ -1,0 +1,93 @@
+%MODULE IBG
+    # the IBG contains 4 parts of registers with base addresses
+    #    32'hFFC6_A000 BARR
+    # consider these part as a continous range, the range of the whole IBG
+    # becomes from 32'hFFC6_A000 to 32'hFFC6_A1FF, with base address 
+    # is 32'hFFC6_A000 and offset part specifies the range from 0x000 to 0x1FF
+    # size of offset part (0x1FF = 9'b111111111) should be 9 bit
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         9
+%REG_CHANNEL reg_def
+#######################################################################################################################################################
+#  Module Name  Register Name                               Symbol                  Address                               Access      Access Protection
+#  GUARD_BARR  Guard error clear register                   GERRCLR                 <GUARD_base> + 00H               8|32
+#              Guard error status register                  GERRSTAT                <GUARD_base> + 04H               8|32
+#              Guard error address register                 GERRADDR                <GUARD_base> + 08H               32
+#              Guard error access information register      GERRTYPE                <GUARD_base> + 0CH               16|32
+#              Key code protection register                 GKCPROT                 <GUARD_base> + 10H               32
+#              Channel protection control register          GPROT0_n (n = 0-15)     <GUARD_base> + 80H + n x 08H    8|16|32           GKCPROT
+#              Channel SPID setting register                GPROT1_n (n = 0-15)     <GUARD_base> + 84H + n x 08H    8|16|32           GKCPROT
+#######################################################################################################################################################
+%%TITLE    name          reg_name      wsize     rsize      length    offset    factor_start    factor_end    factor_index    factor_step    access     init             support     callback
+%%REG      GERRCLR       GERRCLR        8|32     8|16|32    32        0x000     -               -             -               -              R|W1:0     0x00000000       TRUE        R|W
+%%REG      GERRSTAT      GERRSTAT       8|32     8|16|32    32        0x004     -               -             -               -              R          0x00000000       TRUE        R|W
+%%REG      GERRADDR      GERRADDR         32     8|16|32    32        0x008     -               -             -               -              R          0x00000000       TRUE        R|W
+%%REG      GERRTYPE      GERRTYPE      16|32     8|16|32    32        0x00C     -               -             -               -              R          0x00000000       TRUE        R|W
+%%REG      GKCPROT       GKCPROT          32     8|16|32    32        0x010     -               -             -               -              R|W        0x00000000       TRUE        R|W
+%%REG      GPROT0        GPROT0_     8|16|32     8|16|32    32        0x080     0               16            -               0x08           R|W        0x00000000       TRUE        R|W
+%%REG      GPROT1        GPROT1_     8|16|32     8|16|32    32        0x084     0               16            -               0x08           R|W        0x00000000       TRUE        R|W
+
+#-------------------------------------------------------------------------------
+# Guard error clear register
+#-------------------------------------------------------------------------------
+%REG_NAME GERRCLR
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      CLRE    0        0        0       R|W1:0    TRUE       R|W
+%%BIT      CLRO    1        1        0       R|W1:0    TRUE       R|W
+
+#-------------------------------------------------------------------------------
+#  Guard error status register
+#-------------------------------------------------------------------------------
+%REG_NAME GERRSTAT
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      ERR     0        0        0       R         TRUE       -
+%%BIT      OVF     1        1        0       R         TRUE       -
+
+#-------------------------------------------------------------------------------
+#  Guard error address register
+#-------------------------------------------------------------------------------
+%REG_NAME GERRADDR
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      ADDR    31       0        0       R         TRUE       -
+
+#-------------------------------------------------------------------------------
+#  Guard error access information register
+#-------------------------------------------------------------------------------
+%REG_NAME GERRTYPE
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      WRITE   0        0        0       R         TRUE       -
+%%BIT      SPID    10       6        0       R         TRUE       -
+%%BIT      UM      11       11       0       R         TRUE       -
+%%BIT      DBG     12       12       0       R         TRUE       -
+%%BIT      SEC     13       13       0       R         TRUE       -
+
+#-------------------------------------------------------------------------------
+#  Key code protection register
+#-------------------------------------------------------------------------------
+%REG_NAME GKCPROT
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      KCE     0        0        0       R|W       TRUE       R|W
+%%BIT      KCPROT  31       1        0         W       TRUE       R|W
+
+
+#-------------------------------------------------------------------------------
+#  Channel protection control register
+#-------------------------------------------------------------------------------
+%REG_NAME GPROT0
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      RG      0        0        0       R|W       TRUE       R|W
+%%BIT      WG      1        1        0       R|W       TRUE       R|W
+%%BIT      UM      4        4        0       R|W       TRUE       -
+%%BIT      DBG     6        6        0       R|W       TRUE       -
+%%BIT      GEN     8        8        0       R|W       TRUE       -
+
+#-------------------------------------------------------------------------------
+#  Channel SPID setting register
+#-------------------------------------------------------------------------------
+%REG_NAME GPROT1
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      SPID    31       0        0       R|W       TRUE       R|W
+
+#######################################################################################################################################################
+# vim:nowrap
+#######################################################################################################################################################

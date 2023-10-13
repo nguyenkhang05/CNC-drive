@@ -1,0 +1,20 @@
+=================================
+=        RELEASE HISTORY        =   
+=================================
+
+v2019_02_25
+- Update source code to fix bug about reset (refs #88069)
+
+v2018_02_28
+- Update source code to fix segmentation fault on SC-HEAP (gcc issue related to double)
+
+v2016_01_29
+- Create new E2x/ASF with HWM: 24_E2xFCC1_ADCB_target_specifications_rev02.doc
+
+v2016_02_26
+- Update src/asf.* files to add the timing 1 PCLK period from receiving ASREQ to starting accumulation and 1 PCLK period from finishing accumulation to outputting interrupt INT_ACE
+
+v2016_06_20
+- Update src/asf.cpp file to support CTL0.ACSL as below:
+  [OLD] CTL0.ACSL[2:0] = 0h/1h/2h/3h/7h
+  [NEW] CTL0.ACSL[2:0] = 0h/1h/2h/3h/4h/5h/6h/7h

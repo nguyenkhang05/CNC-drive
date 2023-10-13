@@ -1,0 +1,23 @@
+%MODULE DNFP020_E2_Sub
+    #              name      offset_size
+    %%REG_INSTANCE  reg_def   3
+
+%REG_CHANNEL reg_def
+    %%TITLE     name             reg_name        wsize     rsize     length      offset      access      init    factor_start    factor_end      factor_step     support     callback
+    %%REG       DNFP02EDC        DNFP02EDC       8         8|16|32   8           0x04        R|W         0x0     -               -               -               TRUE        -
+    %%REG       DNFP02EDF        DNFP02EDF       8         8|16|32   8           0x00        R|W         0x0     -               -               -               TRUE        -
+
+
+%REG_NAME DNFP02EDC
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       NFEN        7       7       0       R|W     TRUE        W
+    %%BIT       DMD         4       3       0       R|W     TRUE        -
+
+%REG_NAME DNFP02EDF
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       EDF         7       7       0       R       TRUE        -
+    %%BIT       CLED        0       0       0       R|W     TRUE        W
+
+
+
+

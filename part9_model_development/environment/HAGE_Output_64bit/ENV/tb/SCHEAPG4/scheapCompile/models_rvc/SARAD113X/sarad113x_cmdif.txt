@@ -1,0 +1,33 @@
+# -----------------------------------------------------------------------------
+# $Id$
+#
+# Copyright(c) 2015 Renesas Electronics Corporation
+# Copyright(c) 2015 Renesas Design Vietnam Co., Ltd.
+# RENESAS ELECTRONICS CONFIDENTIAL AND PROPRIETARY.
+# This program must be used solely for the purpose for which
+# it was furnished by Renesas Electronics Corporation. No part of this
+# program may be reproduced or disclosed to others, in any
+# form, without the prior written permission of Renesas Electronics
+# Corporation.
+# -----------------------------------------------------------------------------
+
+%MODULE sarad113x
+%CMD_BASEID  tgt reg
+%CMD_NODUMP_API EnableInsertInput EnableDumpResult DumpProfile ClearProfile
+%CMD_RW DumpInterrupt      <enable: bool=false>             @ Display interrupt information when interrupt get set[ns]
+%CMD_RW EnableConvertInfo  <enable: bool=false>             @ Display AD convert activity
+
+%CMD_RW Avrefh            <Avrefh: double=3.3>              @ Reference voltage of AVREFH
+%CMD_RW AVcc              <AVcc: double=3.3>                @ Reference voltage of AVCC
+%CMD_RW AVss              <AVss: double=0>                  @ Reference voltage of AVSS
+
+%CMD_RW EX_HLD_CDT         <EX_HLD_CDT: unsigned int=18>    @ Number of ADCLK cycle from starting to hold an analog input until starting AD conversion
+%CMD_RW EX_CNVT            <EX_CNVT: unsigned int=22>       @ Number of ADCLK cycle for successive approximation AD conversion
+%CMD_RW tD                 <tD: double=0>                   @ Delay time until starting scan group for SW trigger (ns)
+%CMD_RW tPWDD              <tPWDD: double=0>                @ Delay time until starting scan group for PVCR_TRG (ns)
+%CMD_RW tED                <tED: double=0>                  @ Delay time until ending scan group (ns)
+
+%CMD_RW EnableTimeCalculation   <enable: bool=true>         @ Enable using formula to calculate the delay times
+
+%CMD_ACTION DumpStatInfo : void @ Dump the statistical information about SAR model activity
+%CMD_ACTION SetCLKfreq <clk_name: std::string> <clk_freq: double>: void @ Setup the new clock frequency

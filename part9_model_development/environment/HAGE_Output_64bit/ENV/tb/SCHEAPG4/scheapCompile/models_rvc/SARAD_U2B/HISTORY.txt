@@ -1,0 +1,12 @@
+=============================================
+=               RELEASE HISTORY             =
+=============================================
+
+v2020_10_19
+  - Final version 
+     + source code: Final version with full verification environment
+
+v2020_12_14
+  - Fixing offset address of SGDIAGPCCR0, SGDIAGPCCR1, SGDIAGSR (refs #134867)
+  - Update source code file:
+      + adc_u2b_regif.h, adc_u2b_regif.cpp

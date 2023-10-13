@@ -1,0 +1,156 @@
+***************************************************************************************************
+src_PRM_Diag_20180820.7z
+-----------------------------
+- Release info: Send alpha source code
+- Release date: Aug 20, 2018
+- Test environment: SCHEAP G4 Rev73, gcc 4.1.3, x64
+- Update source code:
+    PWGENC0_AgentController.h   1.2
+    PWGENC0.cpp                 1.8
+    PWGENC0.h                   1.2
+    PWGENC0_Func.cpp            1.4
+    PWGENC0_Func.h              1.1
+    pwgenc0_regif.cpp           1.2
+    pwgenc0_regif.h             1.2
+    PY_PWGENC0.cpp              1.1
+    PY_PWGENC0.h                1.1
+    PWGENC0_cmdif.h             1.1
+
+- Supported functions: 
+    + 16 bit timer, two 16bit compare registers, and one 17bit compare register
+        . There is 16bit counter (PWG0CNT register)
+        . There are two 16bit compare registers: PWG0CTBR register and PWG0CSBR register
+        . There is one 17bit compare register: PWG0CRBR register.
+    + One timer output (PWM), two interrupt output, and one A/D trigger out
+        . One timer output: PWG_TOUT
+        . Two interrupt output: PWG_INTF, PWG_INTR
+        . One A/D trigger out: PWG_TRGOUT
+    + Four clock enable input from UCIAPPWBRGA0
+        . This macro has four count clock input. PWG_CKI3-0 are not connected to the clock terminal of F/F. 
+        The count clock indicates the period that the clock source (PCLK) is active. 
+        The period should be 1 PCLK cycle to activate one time clock (PCLK).
+    + Synchronous start input (from connected macro)
+        . PWG_STE should be synchronized to PCLK.
+        If PWG starts operation by rising edge of PWG_STE, PWG stops operation by falling edge of PWG_STE. 
+        If PWG_STE is high level, the setting to PWG0TS and PWG0TT is invalid. 
+    + One 16bit period input
+        . There is one 16bit period input PWG_PERIOD
+
+***************************************************************************************************
+PWM_Output_20180904.7z
+-----------------------------
+- Release info: Final release
+- Release date: Sep 04, 2018
+- Test environment: SCHEAP G4 Rev73, gcc 4.1.3, x64
+- Update source code:
+    PWGENC0_AgentController.h   1.3
+    PWGENC0.cpp                 1.21
+    PWGENC0.h                   1.3
+    PWGENC0_Func.cpp            1.8
+    PWGENC0_Func.h              1.2
+    pwgenc0_regif.cpp           1.2
+    pwgenc0_regif.h             1.2
+    PY_PWGENC0.cpp              1.1
+    PY_PWGENC0.h                1.1
+    PWGENC0_cmdif.h             1.1
+
+- Supported functions: Not change
+- Non supported functions:
+    + Not support SCAN test
+    + Not support emulation same with HWM.
+    + The PWG0TE, PWG0TS, PWG0TT registers are disclosed to users.
+
+***************************************************************************************************
+PWM_Output_20180915.7z
+-----------------------------
+Not change.
+
+***************************************************************************************************
+src_PRM_Diag_20180924.7z
+-----------------------------
+- Release info: Release updated code to improve simulation speed as ticket #59163
+- Release date: Sep 24, 2018
+- Test environment: SCHEAP G4 Rev73, gcc 4.1.3, x64
+- Update source code:
+    PWGENC0_AgentController.h   1.3
+    PWGENC0.cpp                 1.24
+    PWGENC0.h                   1.5
+    PWGENC0_Func.cpp            1.8
+    PWGENC0_Func.h              1.2
+    pwgenc0_regif.cpp           1.2
+    pwgenc0_regif.h             1.2
+    PY_PWGENC0.cpp              1.2
+    PY_PWGENC0.h                1.2
+    PWGENC0_cmdif.h             1.1
+
+    Update PWGENC0.cpp to ver1.24, PWGENC0.h to ver1.4, PY_PWGENC0.cpp ver1.2, PY_PWGENC0.h ver1.2 to:
+      + change input PWG_CKI[4] ports from bool to sc_dt::uint64. Matching time of CRBR, CSBR, CTBR, PWG_PERIOD is calculated and use event to trigger.
+      + add python command EnableRegisterMessage to enable/disable info/warning/error message of register IF 
+
+- Supported functions: Not change
+- Non supported functions: Not change
+
+***************************************************************************************************
+PWM_Output_20181002.7z
+-----------------------------
+- Release info: Release updated code to improve simulation speed as ticket #59163
+- Release date: Oct 01, 2018
+- Test environment: SCHEAP G4 Rev73, gcc 4.1.3, x64
+- Update source code:
+    PWGENC0_AgentController.h   1.3
+    PWGENC0.cpp                 1.24 ->1.36
+    PWGENC0.h                   1.5  ->1.7
+    PWGENC0_Func.cpp            1.8
+    PWGENC0_Func.h              1.2
+    pwgenc0_regif.cpp           1.2
+    pwgenc0_regif.h             1.2
+    PY_PWGENC0.cpp              1.2
+    PY_PWGENC0.h                1.2
+    PWGENC0_cmdif.h             1.1
+
+    Update PWGENC0.cpp to ver1.36, PWGENC0.h to ver1.7 to fix bugs during functional debug
+
+- Supported functions: Not change
+- Non supported functions: Not change
+
+***************************************************************************************************
+PWM_Output_64bit_20200224.7z
+-----------------------------
+- Release info: Release updated code to following HWM spec Rev.061
+                Updated code to handle read debug for counter register as ticket #81100
+- Release date: Feb 24, 2020
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+    PWGENC0_AgentController.h   1.3
+    PWGENC0.cpp                 1.37
+    PWGENC0.h                   1.8
+    PWGENC0_Func.cpp            1.10
+    PWGENC0_Func.h              1.2
+    pwgenc0_regif.cpp           1.3
+    pwgenc0_regif.h             1.3
+    PY_PWGENC0.cpp              1.2
+    PY_PWGENC0.h                1.2
+    PWGENC0_cmdif.h             1.1
+
+- Supported functions: Not change
+- Non supported functions: Not change
+***************************************************************************************************
+PWM_Output_64bit_20200309.7z
+-----------------------------
+- Release info: Release updated code after updating for feedback #119795
+- Release date: Mar 09, 2020
+- Test environment: SC-HEAP G4 Rev191 64 bit
+- Source code (CVS repository):
+    PWGENC0_AgentController.h   1.3
+    PWGENC0.cpp                 1.37
+    PWGENC0.h                   1.8
+    PWGENC0_Func.cpp            1.10
+    PWGENC0_Func.h              1.2
+    pwgenc0_regif.cpp           1.3
+    pwgenc0_regif.h             1.3
+    PY_PWGENC0.cpp              1.2
+    PY_PWGENC0.h                1.2
+    PWGENC0_cmdif.h             1.2
+
+- Supported functions: Not change
+- Non supported functions: Not change

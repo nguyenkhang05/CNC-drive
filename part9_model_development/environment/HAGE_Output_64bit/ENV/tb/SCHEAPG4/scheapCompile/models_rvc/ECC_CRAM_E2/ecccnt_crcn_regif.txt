@@ -1,0 +1,28 @@
+%MODULE ecccnt_crcn
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  7 
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name                         reg_name                    wsize   rsize        length offset  factor_start    factor_end  factor_index    factor_step access   init   support  callback
+    %%REG      CRCAFCTL                     CRCAFCTL                    8|16|32 8|16|32      32      0x00    -               -           -               -           R/W      0x4     TRUE     -
+    %%REG      CRCECCTSTCTL                 CRCECCTSTCTL                8|16|32 8|16|32      32      0x10    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      CRCAFINV                     CRCAFINV                    8|16|32 8|16|32      32      0x20    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      CRCTDATBFECCF                CRCTDATBFECCF               -       8|16|32      32      0x60    -               -           -               -           R        0x0     TRUE     -
+    
+%REG_NAME CRCAFCTL                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    AFEDIS             3        3      0       R|W     TRUE        W
+    %%BIT    RESERVED           2        2      1       R       TRUE        -
+%REG_NAME CRCECCTSTCTL                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    ECCTST             1        1      0       R|W     TRUE        -
+    %%BIT    DATSEL             0        0      0       R|W     TRUE        -
+%REG_NAME CRCAFINV                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    AFINV              18       4      0       R|W     TRUE        -
+%REG_NAME CRCTDATBFECCF                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    BFECC3             30       24     0       R        TRUE        -
+    %%BIT    BFECC2             22       16     0       R        TRUE        -
+    %%BIT    BFECC1             14       8      0       R        TRUE        -
+    %%BIT    BFECC0             6        0      0       R        TRUE        -

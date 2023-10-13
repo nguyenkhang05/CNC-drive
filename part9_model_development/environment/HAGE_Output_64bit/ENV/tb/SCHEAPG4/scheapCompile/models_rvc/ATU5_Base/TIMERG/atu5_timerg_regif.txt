@@ -1,0 +1,221 @@
+
+
+%MODULE ATU5_TimerG
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         8
+
+%REG_CHANNEL reg_def
+
+
+%%TITLE    name      reg_name    wsize       rsize      length    offset    factor_start    factor_end    factor_index    factor_step    access           init    support    callback
+%%REG      TSTRG     TSTRG       8|16        8|16|32    16        0x0000    -               -             -               -                R|W         0x0000       TRUE          W
+%%REG      TIERG     TIERG       8|16        8|16|32    16        0x0004    -               -             -               -                R|W         0x0000       TRUE         - 
+%%REG      RLDCRG    RLDCRG      8|16        8|16|32    16        0x0008    -               -             -               -                R|W         0x0000       TRUE          W
+#####%%REG      EVSELG    EVSELG      8           8|16|32    8         0x000C    -               -             -               -                R|W           0x00       TRUE          W 
+%%REG      TCRG      TCRG        8           8|16|32    8         0x0010    0               9             -               0x10             R|W           0x00       TRUE          W
+%%REG      TSRG      TSRG        -           8|16|32    8         0x0012    0               9             -               0x10             R             0x00       TRUE        R
+%%REG      TSCRG     TSCRG       8           8|16|32    8         0x0013    0               9             -               0x10             R|W1:0        0x00       TRUE          W
+%%REG      TCNTG     TCNTG           32      8|16|32    32        0x0014    0               9             -               0x10             R|W     0x00000000       TRUE        R|W
+%%REG      OCRG      OCRG            32      8|16|32    32        0x0018    0               9             -               0x10             R|W     0xFFFFFFFF       TRUE        R|W
+%%REG      RLDG      RLDG            32      8|16|32    32        0x001C    0               9             -               0x10             R|W     0xFFFFFFFF       TRUE          W
+
+#-------------------------------------------------------------------------------
+# timer start register (1)
+#-------------------------------------------------------------------------------
+# * type: input control signal from software
+# * register call back:
+#     write: yes -> start counter event
+#                -> clear the event detect flag
+#     read: no
+# * storage: [ ] function model   [x] register block  [ ] agent controller
+#          values of fields are stored in the register block and are accessible
+#          via API. It's unnecessary to have another mirror of these fields
+#          inside function model
+# * usage:
+#      write call-back fires start-counter and clear-even-detect events
+#-------------------------------------------------------------------------------
+%REG_NAME    TSTRG
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      STRG    9        0        0       R|W       TRUE       W
+
+
+#-------------------------------------------------------------------------------
+# timer interrupt enable register (1)
+#-------------------------------------------------------------------------------
+# * type: input control signal from software
+# * register call back:
+#     write: no
+#     read: no
+# * storage: [ ] function model   [x] register block  [ ] agent controller
+#          values of fields are stored in the register block and are accessible
+#          via API. It's unnecessary to have another mirror of these fields
+#          inside function model
+# * usage:
+#     value of this register is read whenever an interrupt source occurs and
+#     it's required to check whether interrupt request is allowed to be issued or
+#     not.
+#-------------------------------------------------------------------------------
+%REG_NAME    TIERG
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      CMPIEG  9        0        0       R|W       TRUE       -
+
+#-------------------------------------------------------------------------------
+# reload control register (1)
+#-------------------------------------------------------------------------------
+# * type: input control signal from software
+# * register call back:
+#     write: no
+#     read: no
+# * storage: [ ] function model   [x] register block  [ ] agent controller
+#          values of fields are stored in the register block and are accessible
+#          via API. It's unnecessary to have another mirror of these fields
+#          inside function model
+# * usage:
+#     value of this register is read whenever a compare-match occurs and
+#     it's required to check whether not.
+#-------------------------------------------------------------------------------
+%REG_NAME    RLDCRG
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      RLENG   9        0        0       R|W       TRUE       W
+
+#-------------------------------------------------------------------------------
+# event select register (1)
+#-------------------------------------------------------------------------------
+# * type: input control signal from software
+# * register call back:
+#     write: no
+#     read: no
+# * storage: [ ] function model   [x] register block  [ ] agent controller
+#          values of fields are stored in the register block and are accessible
+#          via API. It's unnecessary to have another mirror of these fields
+#          inside function model
+# * usage:
+#     value of this register is read whenever any change in external input
+#     events of the agent controller.
+#-------------------------------------------------------------------------------
+#####%REG_NAME    EVSELG
+#####%%TITLE    name    upper    lower    init    access    support    callback
+#####%%BIT      EVSELG  1        0        0       R|W       TRUE       W
+
+
+#-------------------------------------------------------------------------------
+# timer control registers (SUBBLK_NUM)
+#-------------------------------------------------------------------------------
+# * type: input control signal from software
+# * register call back:
+#     write: yes -> change clock frequency
+#                -> change operation mode
+#     read: no
+# * storage: [ ] function model   [x] register block  [ ] agent controller
+#          values of fields are stored in the register block and are accessible
+#          via API. It's unnecessary to have another mirror of these fields
+#          inside function model
+# * usage:
+#      write call-back causes selected clock frequency to be updated, operation
+#      mode also update.
+#-------------------------------------------------------------------------------
+%REG_NAME    TCRG
+%%TITLE    name      upper    lower    init    access    support    callback
+%%BIT      EVSYMG    0        0        0       R|W       TRUE       W
+%%BIT      CKSELG    6        4        0       R|W       TRUE       W
+
+
+
+#-------------------------------------------------------------------------------
+# timer status registers (SUBBLK_NUM)
+#-------------------------------------------------------------------------------
+# * type: output status signals from hardware
+# * register call back:
+#     write: no
+#     read: yes
+# * storage: [x] function model   [ ] register block  [ ] agent controller
+#          values of fields are stored in the functional model, whenever
+#          software reads this values, the call-back read mirrors the value of
+#          fields in functional model into register block.
+# * usage:
+#      call-back read mirrors the value of fields in functional model into
+#      register block.
+#-------------------------------------------------------------------------------
+%REG_NAME    TSRG
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      CMFG      0        0        0       R       TRUE       R
+%%BIT      OVFG      1        1        0       R       TRUE       R
+%%BIT      EVDTFG    2        2        0       R       TRUE       R
+
+
+#-------------------------------------------------------------------------------
+# timer status clear registers (SUBBLK_NUM)
+#-------------------------------------------------------------------------------
+# * type: input control signal from software
+# * register call back:
+#     write: yes -> clear flags specified in written data.
+#     read: no
+# * storage: [ ] function model   [x] register block  [ ] agent controller
+#          technically, it's unnecessary to store value of status-clear register.
+#          When write access into this occurs, clearing-bit is specified
+#          by written data. Written data may be access via value of this register
+#          or via written-data (how??)
+# * usage:
+#      call-back write clears status flags specified in written data.
+#-------------------------------------------------------------------------------
+%REG_NAME    TSCRG
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      CMFCG    0       0        0       R|W1:0    TRUE       W
+%%BIT      OVFCG    1       1        0       R|W1:0    TRUE       W
+
+#-------------------------------------------------------------------------------
+# timer counter registers (SUBBLK_NUM)
+#-------------------------------------------------------------------------------
+# * type: output status signals from hardware
+# * register call back:
+#     write: yes -> force new value written into counter
+#     read:  yes -> read access mirrors value of functional model into register
+#                   block
+# * storage: [x] function model   [ ] register block  [ ] agent controller
+#            counter is implemented inside the functional model.
+# * usage:
+#      call-back read mirrors value of functional model into register block.
+#-------------------------------------------------------------------------------
+%REG_NAME    TCNTG
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      TCNTG   31       0        0       R|W       TRUE       R|W
+
+#-------------------------------------------------------------------------------
+# output compare registers (SUBBLK_NUM)
+#-------------------------------------------------------------------------------
+# * type: input control from software
+# * register call back:
+#     write: yes -> force new value written into compare register and new
+#                   comparison occurs
+#     read : yes -> read access mirrors value of this register inside
+#                   functional model into register block
+# * storage: [x] function model   [ ] register block  [ ] agent controller
+#           compare match register is implemented inside the functional model,
+#           because of reload operation.
+# * usage:
+#      call-back read mirrors value of functional model into register block.
+#-------------------------------------------------------------------------------
+%REG_NAME    OCRG
+%%TITLE    name    upper    lower    init          access    support    callback
+%%BIT      OCRG    31       0        0xFFFFFFFF    R|W       TRUE       R|W
+
+
+#-------------------------------------------------------------------------------
+# reload registers (SUBBLK_NUM)
+#-------------------------------------------------------------------------------
+# * type: input data signals from software
+# * register call back:
+#     write: no
+#     read: no
+# * storage: [ ] function model   [x] register block  [ ] agent controller
+#          values of fields are stored in the register block and are accessible
+#          via API. It's unnecessary to have another mirror of these fields
+#          inside function model
+# * usage:
+#     value of this register is read whenever an compare-match occurs.
+#     it's required to check if reload operation is allowed or not.
+#-------------------------------------------------------------------------------
+%REG_NAME    RLDG
+%%TITLE    name    upper    lower    init          access    support    callback
+%%BIT      RLDG    31       0        0xFFFFFFFF    R|W       TRUE       W
+

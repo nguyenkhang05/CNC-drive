@@ -1,0 +1,23 @@
+=================================
+=        RELEASE HISTORY        =   
+=================================
+
+v2017_07_14
+- Update expected log tp5-5-6-1 of Linux and Window
+
+v2017_07_07
+- Update source code and unit test environment for E2x/FCC2 product : finish
+  functional debug on unit test.
+
+v2016_08_29
+- Create new E2x/ABFG with HWM: NoSecurity_r01uh0641ej0010_rh850e2x-fcc1.pdf
+
+v2016_08_31
+- Update source code to add SetLatencyTLM()function
+- Update gen_mot.pl script to disable dumping register R/W info.
+- Update expected log Linux, Windows
+- Update TM5-5-5-4, 5-5-5-5, 5-5-5-6
+
+v2016_09_13
+- Fixed Purity memory error
+  (SetLatency_TLM() function should be operated after the initiation of mTimeResolutionUnit)

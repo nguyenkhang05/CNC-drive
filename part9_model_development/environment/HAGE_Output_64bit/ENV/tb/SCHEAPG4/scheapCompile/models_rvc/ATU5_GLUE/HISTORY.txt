@@ -1,0 +1,52 @@
+***************************************************************************************************
+src_FCC2_ATU5011_20190503.7z
+-----------------------------
+- Release info: Send source code after functional debug for FCC1/ATU5 2-cut UM1.00
+- Release date: May 03, 2019
+- Test environment: SCHEAP G4 Rev73, gcc 4.1.3, x64
+
+-- Glue
+------------
+- Update source code:
+    ATU5_GLUE.cpp                 1.4
+    ATU5_GLUE.h                   1.1
+    ATU5_GLUE_AgentController.h   1.1
+    ATU5_GLUE_Func.cpp            1.1
+    ATU5_GLUE_Func.h              1.1
+    ATU5_GLUE_cmdif.h             1.1
+    PY_ATU5_GLUE.cpp              1.1
+    PY_ATU5_GLUE.h                1.1
+    atu5_glue_regif.cpp           1.3
+    atu5_glue_regif.h             1.3
+
+- Supported functions: 
+    + Trigger select function - Interrupt signal communicated to INTC is selected. 
+    + Trigger select function -  Interrupt signal communicated to sDMA/DTS is selected.
+    + Trigger select function - "Timer DFE Capture trigger i (i = 0 to 2)" communicated to DFE selected. 
+    + Trigger select function -"Timer FIFO Capture trigger" communicated to DFE is selected. 
+    + Trigger select function -"read gate" communicated to DSADC is selected. 
+    + Trigger select function -"read gate" communicated to CADC is selected. 
+    + Trigger select function - "time stamp" and "sync pulse" communicated to PSI5S is selected. 
+
+***************************************************************************************************
+src_E2x_ATU5_20191017.7z
+-----------------------------
+- Release info: Not use ternary operator (?:) and fix bug in timer C about address decoder
+- Release date: Oct 17, 2019
+- Test environment: SCHEAP G4 Rev191, gcc 4.1.3, x64
+
+-- Glue
+------------
+- Update source code:
+    ATU5_GLUE.cpp 1.6
+    ATU5_GLUE.h 1.3
+    ATU5_GLUE_AgentController.h 1.3
+    ATU5_GLUE_Func.cpp 1.3
+    ATU5_GLUE_Func.h 1.3
+    ATU5_GLUE_cmdif.h 1.3
+    PY_ATU5_GLUE.cpp 1.3
+    PY_ATU5_GLUE.h 1.3
+    atu5_glue_regif.cpp 1.5
+    atu5_glue_regif.h 1.5
+    atu5_glue_regif.txt 1.1
+- Supported functions: not changed

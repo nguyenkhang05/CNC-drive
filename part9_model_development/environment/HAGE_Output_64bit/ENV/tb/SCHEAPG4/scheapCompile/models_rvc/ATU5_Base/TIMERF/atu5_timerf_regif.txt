@@ -1,0 +1,61 @@
+%MODULE ATU5_TIMERF
+    #              name      offset_size
+    %%REG_INSTANCE  reg_def   15
+
+%REG_CHANNEL reg_def
+    %%TITLE      name      reg_name  wsize     rsize     length    offset    factor_start   factor_end  factor_index    factor_step     access    init         support   callback
+    %%REG        TSTRF     TSTRF     8|16|32   8|16|32   32        0x5000    -              -           -               -               R|W       0x00000000   TRUE      W
+    %%REG        NCMCR1F   NCMCR1F   8|16|32   8|16|32   32        0x5004    -              -           -               -               R|W       0x00000000   TRUE      -
+    %%REG        NCMCR2F   NCMCR2F   8|16|32   8|16|32   32        0x5008    -              -           -               -               R|W       0x00000000   TRUE      -
+    %%REG        NCCRF     NCCRF     8|16|32   8|16|32   32        0x500C    -              -           -               -               R|W       0x00000000   TRUE      -
+    %%REG        PVFCRF    PVFCRF    16        8|16|32   16        0x5010    -              -           -               -               R/W       0x0000       TRUE      W
+
+
+
+
+
+
+%REG_NAME        TSTRF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            STRF0     0         0         0            R|W       TRUE      W
+%%BIT            STRF1     1         1         0            R|W       TRUE      W
+%%BIT            STRF2     2         2         0            R|W       TRUE      W
+%%BIT            STRF3     3         3         0            R|W       TRUE      W
+%%BIT            STRF4     4         4         0            R|W       TRUE      W
+%%BIT            STRF5     5         5         0            R|W       TRUE      W
+%%BIT            STRF6     6         6         0            R|W       TRUE      W
+%%BIT            STRF7     7         7         0            R|W       TRUE      W
+%%BIT            STRF8     8         8         0            R|W       TRUE      W
+%%BIT            STRF9     9         9         0            R|W       TRUE      W
+%%BIT            STRF10    10        10        0            R|W       TRUE      W
+%%BIT            STRF11    11        11        0            R|W       TRUE      W
+%%BIT            STRF12    12        12        0            R|W       TRUE      W
+%%BIT            STRF13    13        13        0            R|W       TRUE      W
+%%BIT            STRF14    14        14        0            R|W       TRUE      W
+%%BIT            STRF15    15        15        0            R|W       TRUE      W
+%%BIT            STRF16    16        16        0            R|W       TRUE      -
+%%BIT            STRF17    17        17        0            R|W       TRUE      -
+%%BIT            STRF18    18        18        0            R|W       TRUE      -
+%%BIT            STRF19    19        19        0            R|W       TRUE      -
+
+
+%REG_NAME        NCMCR1F
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            NCM1F     19        0         0            R|W       TRUE      -
+
+
+%REG_NAME        NCMCR2F
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            NCM2F     19        0         0            R|W       TRUE      -
+
+
+%REG_NAME        NCCRF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            NCEF      19        0         0            R|W       TRUE      -
+
+
+%REG_NAME        PVFCRF
+%%TITLE          name      upper     lower     init         access    support   callback
+%%BIT            PVFCRKEY  15        8         0            R|W       TRUE      W
+%%BIT            GRDFCMEN  1         1         0            R|W       TRUE      -
+%%BIT            BKCRWEN   0         0         0            R|W       TRUE      -

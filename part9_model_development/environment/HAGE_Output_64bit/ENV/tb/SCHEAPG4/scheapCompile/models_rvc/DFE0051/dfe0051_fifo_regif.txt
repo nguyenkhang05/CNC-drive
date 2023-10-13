@@ -1,0 +1,94 @@
+
+
+%MODULE DFE0051_FIFO
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         8
+
+%REG_CHANNEL reg_def
+
+%%TITLE    name         reg_name    wsize       rsize      length    offset    factor_start    factor_end    factor_index    factor_step    access     init             support     callback
+%%REG      DFBFACCTL    DFBFACCTL   8|16|32     8|16|32    32        0x0000    -               -             -               -              R|W        0x00000000       TRUE        R|W
+%%REG      DFBFACTLCH   DFBFACTLCH  8|16|32     8|16|32    32        0x0010    0               7             -               0x4            R|W        0x00000000       TRUE        R|W
+%%REG      DFBFADOCH    DFBFADOCH   32          8|16|32    32        0x0050    0               7             -               0x4            R          0x00000000       TRUE        R|W
+%%REG      DFBFACLR     DFBFACLR    8|16|32     8|16|32    32        0x0090    -               -             -               -              R|W1:0     0x00000000       TRUE        R|W
+%%REG      DFBFACST     DFBFACST    32          8|16|32    32        0x00A0    -               -             -               -              R          0x003F0000       TRUE        R|W
+%%REG      DFBFBCTL     DFBFBCTL    8|16|32     8|16|32    32        0x00B0    -               -             -               -              R|W        0x00000000       TRUE        R|W
+%%REG      DFBFBDO      DFBFBDO     32          8|16|32    32        0x00B4    -               -             -               -              R          0x00000000       TRUE        R|W
+%%REG      DFBFBCLR     DFBFBCLR    8|16|32     8|16|32    32        0x00B8    -               -             -               -              R|W1:0     0x00000000       TRUE        R|W
+%%REG      DFBFBST      DFBFBST     32          8|16|32    32        0x00BC    -               -             -               -              R          0x00000020       TRUE        R|W
+
+
+#-------------------------------------------------------------------------------
+# Buffer A common control register
+#-------------------------------------------------------------------------------
+%REG_NAME  DFBFACCTL
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      AEN     0        0        0       R|W       TRUE       R|W
+%%BIT      AIEO    1        1        0       R|W       TRUE       R|W
+%%BIT      AIEE    2        2        0       R|W       TRUE       R|W
+%%BIT      AUNE    3        3        0       R|W       TRUE       R|W
+
+#-------------------------------------------------------------------------------
+# Buffer A control register (FCH(z)) for FIFO channel (z)
+#-------------------------------------------------------------------------------
+%REG_NAME  DFBFACTLCH
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      CHEN    0        0        0       R|W       TRUE       R|W
+%%BIT      ADSL    3        3        0       R|W       TRUE       R|W
+%%BIT      BFACH   11       8        0       R|W       TRUE       R|W
+
+#-------------------------------------------------------------------------------
+# Buffer A output register (FCH(z)) for FIFO channel (z)
+#-------------------------------------------------------------------------------
+%REG_NAME  DFBFADOCH
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      ADO     31       0        0       R         TRUE       R
+
+#-------------------------------------------------------------------------------
+# Buffer A clear register
+#-------------------------------------------------------------------------------
+%REG_NAME  DFBFACLR
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      CLRA    0        0        0       R|W1:0    TRUE       R|W
+
+#-------------------------------------------------------------------------------
+# Buffer A common status register
+#-------------------------------------------------------------------------------
+%REG_NAME  DFBFACST
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      OVFA     7        0        0       R         TRUE       R
+%%BIT      EMPA     23       16       255     R         TRUE       R
+
+#-------------------------------------------------------------------------------
+# Buffer B control register
+#-------------------------------------------------------------------------------
+%REG_NAME  DFBFBCTL
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      BEN     0        0        0       R|W       TRUE       R|W
+%%BIT      BIEO    1        1        0       R|W       TRUE       R|W
+%%BIT      BIEE    2        2        0       R|W       TRUE       R|W
+%%BIT      BDSL    3        3        0       R|W       TRUE       R|W
+%%BIT      BFBCH   11       8        0       R|W       TRUE       R|W
+
+#-------------------------------------------------------------------------------
+# Buffer B output register
+#-------------------------------------------------------------------------------
+%REG_NAME  DFBFBDO
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      BDO     31       0        0       R         TRUE       R
+
+#-------------------------------------------------------------------------------
+# Buffer B clear register
+#-------------------------------------------------------------------------------
+%REG_NAME  DFBFBCLR
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      CLRB    0        0        0       R|W1:0    TRUE       R|W
+
+#-------------------------------------------------------------------------------
+# Buffer B status register
+#-------------------------------------------------------------------------------
+%REG_NAME  DFBFBST
+%%TITLE    name    upper    lower    init    access    support    callback
+%%BIT      OVFB    0        0        0       R         TRUE       R
+%%BIT      EMPB    1        1        1       R         TRUE       R
+

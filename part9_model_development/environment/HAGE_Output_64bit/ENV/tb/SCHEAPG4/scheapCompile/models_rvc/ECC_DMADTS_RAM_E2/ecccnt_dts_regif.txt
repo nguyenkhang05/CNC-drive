@@ -1,0 +1,44 @@
+%MODULE ecccnt_dts
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  7 
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name             reg_name                    wsize   rsize        length  offset  factor_start    factor_end  factor_index    factor_step access   init   support  callback
+    %%REG      DRECCCTL         DRECCCTL                    8|16|32 8|16|32      32     0x00    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      DRECCTSTCTL      DRECCTSTCTL                 8|16|32 8|16|32      32     0x10    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      DRAFINV          DRAFINV                     8|16|32 8|16|32      32     0x20    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      DRECCTSTDIN0     DRECCTSTDIN0                8|16|32 8|16|32      32     0x30    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      DRECCTSTEIN      DRECCTSTEIN                 8|16|32 8|16|32      32     0x40    -               -           -               -           R/W      0x0     TRUE     -
+    %%REG      DRTDATBFDATAF0   DRTDATBFDATAF0              -       8|16|32      32     0x50    -               -           -               -           R        0x0     TRUE     -
+    %%REG      DRTDATBFECCF     DRTDATBFECCF                -       8|16|32      32     0x60    -               -           -               -           R        0x0     TRUE     -
+    
+%REG_NAME DRECCCTL                                                           
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    AFEDIS             3        3      0       R|W     TRUE        -
+    %%BIT    SECDIS             1        1      0       R|W     TRUE        -
+    %%BIT    ECCDIS             0        0      0       R|W     TRUE        W
+    
+%REG_NAME DRECCTSTCTL                                                        
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    ECCTST             1        1      0       R|W     TRUE        -
+    
+%REG_NAME DRAFINV                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    AFINV              11       2      0       R|W     TRUE        -
+    
+%REG_NAME DRECCTSTDIN0                                                       
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    DATA               31       0      0       R|W     TRUE        -
+    
+%REG_NAME DRECCTSTEIN                                                        
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    ECC                6        0      0       R|W     TRUE        -
+    
+%REG_NAME DRTDATBFDATAF0                                                     
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    BFDATA             31       0      0       R       TRUE        -
+    
+%REG_NAME DRTDATBFECCF                                                       
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    BFECC0             6        0      0       R       TRUE        -
+    

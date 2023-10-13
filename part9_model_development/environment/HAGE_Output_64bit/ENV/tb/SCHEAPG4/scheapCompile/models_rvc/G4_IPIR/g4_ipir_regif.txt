@@ -1,0 +1,15 @@
+%MODULE G4_IPIR
+#               name    offset_size     offset_start    offset_skip     offset_times
+%%REG_INSTANCE  pe      12              0x00            0x100           8
+
+%REG_CHANNEL pe
+  %%TITLE           name    offset  offset_skip offset_times    
+  %%REG_INSTANCE    ch      0x00    0x20        4               
+
+%REG_CHANNEL ch
+  %%TITLE           name        rsize   wsize   length  offset  init    access  support callback
+  %%REG             IPInENm     8|16|32 8|16|32 8       0x800   0x0     R|W     TRUE    -
+  %%REG             IPInFLGm    8|16|32 8|16|32 8       0x804   0x0     R       TRUE    -
+  %%REG             IPInFCLRm   8|16|32 8|16|32 8       0x808   0x0     W       TRUE    W
+  %%REG             IPInREQm    8|16|32 8|16|32 8       0x810   0x0     R|W     TRUE    W
+  %%REG             IPInRCLRm   8|16|32 8|16|32 8       0x814   0x0     W       TRUE    W

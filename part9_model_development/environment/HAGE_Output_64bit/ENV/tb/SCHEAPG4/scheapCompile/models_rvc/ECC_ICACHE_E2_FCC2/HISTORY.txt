@@ -1,0 +1,454 @@
+#############################
+## 20170422_ECC_Output_part1.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Apr 22, 2017.
+
+- Test environment: SCHEAP-G4 Rev80, machine x32, gcc4.1.2.
+
+- File (SVN repository):
+  ECCCNT_ID_PEn_Func.h            2563
+  ecccnt_id_pen_regif.h           2703
+  ECCCNT_IT_PEn_Func.h            2563
+  ecccnt_it_pen_regif.h           2703
+  ECC_ICACHE_E2.h                 2995
+  ECC_ICACHE_E2_AgentControler.h  2791
+  ECC_ICACHE_E2_cmdif.h           2563
+  MECCCAP_ID_PEn_Func.h           2563
+  mecccap_id_pen_regif.h          2791
+  MECCCAP_IT_PEn_Func.h           2563
+  mecccap_it_pen_regif.h          2791
+  PY_ECC_ICACHE_E2.h              2563
+  ECCCNT_ID_PEn_Func.cpp          2791
+  ecccnt_id_pen_regif.cpp         2703
+  ECCCNT_IT_PEn_Func.cpp          2791
+  ecccnt_it_pen_regif.cpp         2703
+  ECC_ICACHE_E2.cpp               2995
+  MECCCAP_ID_PEn_Func.cpp         2718
+  mecccap_id_pen_regif.cpp        2791
+  MECCCAP_IT_PEn_Func.cpp         2718
+  mecccap_it_pen_regif.cpp        2791
+  PY_ECC_ICACHE_E2.cpp            2563
+  ecccnt_id_pen_regif.txt         2703
+  ecccnt_it_pen_regif.txt         2703
+  mecccap_id_pen_regif.txt        2791
+  mecccap_it_pen_regif.txt        2791
+    
+- Supported features:
+  + Error notification: 
+  ECC Error:
+    Error notification can be either enabled or disabled upon detection of an ECC 2-bit error.
+    Error notification can be either enabled or disabled upon detection of an ECC 1-bit error.
+    In the initial state, notification of the ECC 2-bit error is disabled, and notification of the ECC 1-bit error is disabled.
+  Address Feedback Error:
+    Error notification can be either enabled or disabled upon detection of an address feedback error.
+    In the initial state, error notification is disabled upon detection of an address feedback error.
+  + Error status:
+    A status register is provided, which indicates the statuses of ECC 2-bit error detection, 
+    ECC 1-bit error detection and address feedback error detection. 
+    If an error occurs while no error status is set, the corresponding status is set. 
+    The error status can be cleared using the clear register.
+  + Address capture:
+    The address is captured when an ECC 2-bit error, an ECC 1-bit error or an address feedback error is detected.
+    The error status serves as the enable bit of the capture address.
+    If an ECC error occurs while no error status is set, the address at which the associated error has occurred is captured.
+
+- Non-supported features and limitation:
+  + Not implemet ECC Encoder/Decoder. Only ECC Control block is modeled.
+  Error input signal from ECC Decoder & error address is modeled by parameter.
+  + Not support test mode.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+#############################
+## 20170425_ECC_Output_part1.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Apr 25, 2017.
+
+- Test environment: Not change
+
+- File (SVN repository): not change
+    
+- Supported features: not change
+
+- Non-supported features and limitation: not change
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+#############################
+## 20170607_ECC_Output_part1.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Jun 07, 2017.
+
+- Test environment: not change
+
+- File (SVN repository):
+  ECCCNT_ID_PEn_Func.h            2563
+  ecccnt_id_pen_regif.h           3197
+  ECCCNT_IT_PEn_Func.h            2563
+  ecccnt_it_pen_regif.h           3197
+  ECC_ICACHE_E2.h                 2995
+  ECC_ICACHE_E2_AgentControler.h  2791
+  ECC_ICACHE_E2_cmdif.h           2563
+  MECCCAP_ID_PEn_Func.h           2563
+  mecccap_id_pen_regif.h          2791
+  MECCCAP_IT_PEn_Func.h           2563
+  mecccap_it_pen_regif.h          2791
+  PY_ECC_ICACHE_E2.h              2563
+  ECCCNT_ID_PEn_Func.cpp          2791
+  ecccnt_id_pen_regif.cpp         3197
+  ECCCNT_IT_PEn_Func.cpp          2791
+  ecccnt_it_pen_regif.cpp         3197
+  ECC_ICACHE_E2.cpp               3197
+  MECCCAP_ID_PEn_Func.cpp         2718
+  mecccap_id_pen_regif.cpp        2791
+  MECCCAP_IT_PEn_Func.cpp         2718
+  mecccap_it_pen_regif.cpp        2791
+  PY_ECC_ICACHE_E2.cpp            2563
+  ecccnt_id_pen_regif.txt         3197
+  ecccnt_it_pen_regif.txt         3197
+  mecccap_id_pen_regif.txt        2791
+  mecccap_it_pen_regif.txt        2791
+
+  Revise following files to fix Bug #83980 (dont_initialize() for reset methods are removed):
+  ECC_ICACHE_E2.cpp
+  ecccnt_it_pen_regif.txt
+  ecccnt_it_pen_regif.h/cpp
+  ecccnt_id_pen_regif.txt
+  ecccnt_id_pen_regif.h/cpp
+
+- Supported features: Not change
+
+- Non-supported features and limitation: not change
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+#############################
+## ECC_Output_part1_20171002.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Sep 29, 2017.
+
+- Test environment: not change
+
+- File (SVN repository):
+  ECCCNT_ID_PEn_Func.h            2563
+  ecccnt_id_pen_regif.h           3197
+  ECCCNT_IT_PEn_Func.h            2563
+  ecccnt_it_pen_regif.h           3197
+  ECC_ICACHE_E2.h                 2995
+  ECC_ICACHE_E2_AgentControler.h  2791
+  ECC_ICACHE_E2_cmdif.h           2563
+  MECCCAP_ID_PEn_Func.h           2563
+  mecccap_id_pen_regif.h          2791
+  MECCCAP_IT_PEn_Func.h           2563
+  mecccap_it_pen_regif.h          2791
+  PY_ECC_ICACHE_E2.h              2563
+  ECCCNT_ID_PEn_Func.cpp          4180
+  ecccnt_id_pen_regif.cpp         3197
+  ECCCNT_IT_PEn_Func.cpp          4180
+  ecccnt_it_pen_regif.cpp         3197
+  ECC_ICACHE_E2.cpp               3888
+  MECCCAP_ID_PEn_Func.cpp         2718
+  mecccap_id_pen_regif.cpp        2791
+  MECCCAP_IT_PEn_Func.cpp         2718
+  mecccap_it_pen_regif.cpp        2791
+  PY_ECC_ICACHE_E2.cpp            2563
+  ecccnt_id_pen_regif.txt         3197
+  ecccnt_it_pen_regif.txt         3197
+  mecccap_id_pen_regif.txt        2791
+  mecccap_it_pen_regif.txt        2791
+
+  Revise following files to fix Bug #87854 (CalPosEdge), and fix masked address in ECCCNT blocks (found by FPT when developing FCC2).
+  ECCCNT_ID_PEn_Func.cpp
+  ECCCNT_IT_PEn_Func.cpp
+  ECC_ICACHE_E2.cpp
+    
+- Supported features: not change
+
+- Non-supported features and limitation: not change
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+#############################
+## ECC_Output_20171109.7z
+#############################
+- Release info: Offical release for E2x-FCC2.
+This code is used for both FCC1 and FCC2 by defining macro.
+
+- Release date: Nov 09, 2017.
+
+- Test environment: SCHEAP-G4 Rev106, machine x32, gcc4.1.2.
+
+- File (SVN repository):
+  PY_ECC_ICACHE_E2.cpp            4590
+  ecccnt_it_pen_regif.h           4590
+  ecccnt_it_pen_regif.cpp         4590
+  MECCCAP_IT_PEn_Func.cpp         4590
+  ECC_ICACHE_E2.h                 4590
+  MECCCAP_IT_PEn_Func.h           4590
+  ECCCNT_IT_PEn_Func.h            4590
+  MECCCAP_ID_PEn_Func.h           4590
+  ECCCNT_ID_PEn_Func.h            4590
+  mecccap_id_pen_regif.h          4590
+  MECCCAP_ID_PEn_Func.cpp         4590
+  ECC_ICACHE_E2_cmdif.h           4590
+  ecccnt_id_pen_regif.cpp         4590
+  ECCCNT_IT_PEn_Func.cpp          4590
+  mecccap_it_pen_regif.h          4590
+  ECC_ICACHE_E2_AgentController.h 4590
+  mecccap_it_pen_regif.cpp        4590
+  ECCCNT_ID_PEn_Func.cpp          4590
+  ecccnt_id_pen_regif.h           4590
+  ECC_ICACHE_E2.cpp               4590
+  PY_ECC_ICACHE_E2.h              4590
+  mecccap_id_pen_regif.cpp        4590
+
+  The source code is change to add macro FCC1, FCC2.
+  Some parameters are changed accroding this macro.
+
+- Supported features: not change
+
+- Non-supported features and limitation: not change
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_20171124.7z
+##################################
+- Release info: Support 64bit environment
+- Release date: Nov 24, 2017.
+- Test environment: SCHEAP-G4 Rev144, machine x64, gcc4.9.3
+- Updated source code:
+    ECCCNT_ID_PEn_Func.cpp        4677
+    ECCCNT_IT_PEn_Func.cpp        4677
+    ECC_ICACHE_E2.cpp             4677
+    MECCCAP_ID_PEn_Func.cpp       4677
+    MECCCAP_IT_PEn_Func.cpp       4677
+
+- Supported features: not change from previous release.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_20171204.7z
+##################################
+- Release info: Separate source code for E2x-FCC2, not use same source with FCC1:
+  + Remove macro definition for FCC1, FCC2
+  + Add "FCC2", "fcc2" to file name and class name.
+
+- Release date: Dec 04, 2017.
+- Test environment: SCHEAP-G4 Rev144, machine x64, gcc4.9.3
+- Updated source code: 
+    ECCCNT_ID_PEn_FCC2_Func.h            4698
+    ecccnt_id_pen_fcc2_regif.h           4698
+    ECCCNT_IT_PEn_FCC2_Func.h            4698
+    ecccnt_it_pen_fcc2_regif.h           4698
+    ECC_ICACHE_E2_FCC2.h                 4698
+    ECC_ICACHE_E2_FCC2_AgentControler.h  4698
+    ECC_ICACHE_E2_FCC2_cmdif.h           4698
+    MECCCAP_ID_PEn_FCC2_Func.h           4698
+    mecccap_id_pen_fcc2_regif.h          4698
+    MECCCAP_IT_PEn_FCC2_Func.h           4698
+    mecccap_it_pen_fcc2_regif.h          4698
+    PY_ECC_ICACHE_E2_FCC2.h              4698
+    ECCCNT_ID_PEn_FCC2_Func.cpp          4698
+    ecccnt_id_pen_fcc2_regif.cpp         4698
+    ECCCNT_IT_PEn_FCC2_Func.cpp          4698
+    ecccnt_it_pen_fcc2_regif.cpp         4698
+    ECC_ICACHE_E2_FCC2.cpp               4698
+    MECCCAP_ID_PEn_FCC2_Func.cpp         4698
+    mecccap_id_pen_fcc2_regif.cpp        4698
+    MECCCAP_IT_PEn_FCC2_Func.cpp         4698
+    mecccap_it_pen_fcc2_regif.cpp        4698
+    PY_ECC_ICACHE_E2_FCC2.cpp            4698
+    ecccnt_id_pen_fcc2_regif.txt         4698
+    ecccnt_it_pen_fcc2_regif.txt         4698
+    mecccap_id_pen_fcc2_regif.txt        4698
+    mecccap_it_pen_fcc2_regif.txt        4698
+
+- Supported features: not change from previous release.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_20180306.7z
+##################################
+- Release info: Change constructor to add argument about PE_NUM
+- Release date: Mar 06, 2018.
+- Test environment: SCHEAP-G4 Rev144, machine x64, gcc4.9.3
+- Updated source code:
+    ECCCNT_ID_PEn_FCC2_Func.h            5348
+    ecccnt_id_pen_fcc2_regif.h           5348
+    ECCCNT_IT_PEn_FCC2_Func.h            5348
+    ecccnt_it_pen_fcc2_regif.h           5348
+    ECC_ICACHE_E2_FCC2.h                 5348
+    ECC_ICACHE_E2_FCC2_AgentControler.h  5348
+    ECC_ICACHE_E2_FCC2_cmdif.h           5348
+    MECCCAP_ID_PEn_FCC2_Func.h           5348
+    mecccap_id_pen_fcc2_regif.h          5348
+    MECCCAP_IT_PEn_FCC2_Func.h           5348
+    mecccap_it_pen_fcc2_regif.h          5348
+    PY_ECC_ICACHE_E2_FCC2.h              5348
+    ECCCNT_ID_PEn_FCC2_Func.cpp          5348
+    ecccnt_id_pen_fcc2_regif.cpp         5348
+    ECCCNT_IT_PEn_FCC2_Func.cpp          5348
+    ecccnt_it_pen_fcc2_regif.cpp         5348
+    ECC_ICACHE_E2_FCC2.cpp               5348
+    MECCCAP_ID_PEn_FCC2_Func.cpp         5348
+    mecccap_id_pen_fcc2_regif.cpp        5348
+    MECCCAP_IT_PEn_FCC2_Func.cpp         5348
+    mecccap_it_pen_fcc2_regif.cpp        5348
+    PY_ECC_ICACHE_E2_FCC2.cpp            5348
+    ecccnt_id_pen_fcc2_regif.txt         5348
+    ecccnt_it_pen_fcc2_regif.txt         5348
+    mecccap_id_pen_fcc2_regif.txt        5348
+    mecccap_it_pen_fcc2_regif.txt        5348
+
+- Supported features: not change from previous release.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_20180309.7z
+##################################
+No change.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_20190228.7z
+##################################
+- Release info: Fix warning, remove bit name SEOVFIE from IT_ERRINT of Cmecccap_it_pen_fcc2_regif
+and ID_ERRINT of mecccap_id_pen_fcc2_regif, update Operation accordingly.
+- Release date: Feb 28, 2019.
+- Test environment: SCHEAP-G4 Rev135, machine x64, gcc4.9.3
+- Source code (CVS repository):
+    ECCCNT_ID_PEn_FCC2_Func.cpp            1.2
+    ECCCNT_ID_PEn_FCC2_Func.h              1.2
+    ecccnt_id_pen_fcc2_regif.cpp           1.3
+    ecccnt_id_pen_fcc2_regif.h             1.3
+    ecccnt_id_pen_fcc2_regif.txt           1.1
+    ECCCNT_IT_PEn_FCC2_Func.cpp            1.2
+    ECCCNT_IT_PEn_FCC2_Func.h              1.2
+    ecccnt_it_pen_fcc2_regif.cpp           1.3
+    ecccnt_it_pen_fcc2_regif.h             1.3
+    ecccnt_it_pen_fcc2_regif.txt           1.1
+    ECC_ICACHE_E2_FCC2.cpp                 1.3
+    ECC_ICACHE_E2_FCC2.h                   1.2
+    ECC_ICACHE_E2_FCC2_AgentController.h   1.2
+    ECC_ICACHE_E2_FCC2_cmdif.h             1.2
+    MECCCAP_ID_PEn_FCC2_Func.cpp           1.3
+    MECCCAP_ID_PEn_FCC2_Func.h             1.2
+    mecccap_id_pen_fcc2_regif.cpp          1.4
+    mecccap_id_pen_fcc2_regif.h            1.4
+    mecccap_id_pen_fcc2_regif.txt          1.1
+    MECCCAP_IT_PEn_FCC2_Func.cpp           1.3
+    MECCCAP_IT_PEn_FCC2_Func.h             1.2
+    mecccap_it_pen_fcc2_regif.cpp          1.4
+    mecccap_it_pen_fcc2_regif.h            1.4
+    mecccap_it_pen_fcc2_regif.txt          1.1
+    PY_ECC_ICACHE_E2_FCC2.cpp              1.2
+    PY_ECC_ICACHE_E2_FCC2.h                1.2
+    
+- Supported features: no longer support SEOVFIE bit in ID_ERRINT and IT_ERRINT.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_20190306.7z
+##################################
+- Release info: Updated cvs version.
+- Release date: Mar 06, 2019.
+- Test environment: SCHEAP-G4 Rev135, machine x64, gcc4.9.3
+- Source code (CVS repository):
+    ECCCNT_ID_PEn_FCC2_Func.cpp           1.4                  
+    ECCCNT_ID_PEn_FCC2_Func.h             1.3                  
+    ecccnt_id_pen_fcc2_regif.cpp          1.4                  
+    ecccnt_id_pen_fcc2_regif.h            1.4                                          
+    ECCCNT_IT_PEn_FCC2_Func.cpp           1.4                  
+    ECCCNT_IT_PEn_FCC2_Func.h             1.3                         
+    ecccnt_it_pen_fcc2_regif.cpp          1.4                  
+    ecccnt_it_pen_fcc2_regif.h            1.4                                            
+    ECC_ICACHE_E2_FCC2.cpp                1.9            
+    ECC_ICACHE_E2_FCC2.h                  1.6                  
+    ECC_ICACHE_E2_FCC2_AgentController.h  1.3                   
+    ECC_ICACHE_E2_FCC2_cmdif.h            1.3                  
+    MECCCAP_ID_PEn_FCC2_Func.cpp          1.5                                   
+    MECCCAP_ID_PEn_FCC2_Func.h            1.3                  
+    mecccap_id_pen_fcc2_regif.cpp         1.4             
+    mecccap_id_pen_fcc2_regif.h           1.4                            
+    MECCCAP_IT_PEn_FCC2_Func.cpp          1.5            
+    MECCCAP_IT_PEn_FCC2_Func.h            1.3            
+    mecccap_it_pen_fcc2_regif.cpp         1.4      
+    mecccap_it_pen_fcc2_regif.h           1.4           
+    PY_ECC_ICACHE_E2_FCC2.cpp             1.4      
+    PY_ECC_ICACHE_E2_FCC2.h               1.4      
+    
+- Supported features: not change from previous release.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_20190823.7z
+##################################
+- Release info: Updated cvs version.
+- Release date: Aug 23, 2019.
+- Test environment: SCHEAP-G4 Rev135, machine x64, gcc4.9.3
+- Source code (CVS /shsv/MobAP2/prj_MCS/08_Repository/cvsroot_ECC_E2x/):
+    ECCCNT_ID_PEn_FCC2_Func.cpp           1.4                  
+    ECCCNT_ID_PEn_FCC2_Func.h             1.3                  
+    ecccnt_id_pen_fcc2_regif.cpp          1.4                  
+    ecccnt_id_pen_fcc2_regif.h            1.4                                          
+    ECCCNT_IT_PEn_FCC2_Func.cpp           1.4                  
+    ECCCNT_IT_PEn_FCC2_Func.h             1.3                         
+    ecccnt_it_pen_fcc2_regif.cpp          1.4                  
+    ecccnt_it_pen_fcc2_regif.h            1.4                                            
+    ECC_ICACHE_E2_FCC2.cpp                1.9            
+    ECC_ICACHE_E2_FCC2.h                  1.6                  
+    ECC_ICACHE_E2_FCC2_AgentController.h  1.3                   
+    ECC_ICACHE_E2_FCC2_cmdif.h            1.3                  
+    MECCCAP_ID_PEn_FCC2_Func.cpp          1.5                                   
+    MECCCAP_ID_PEn_FCC2_Func.h            1.3                  
+    mecccap_id_pen_fcc2_regif.cpp         1.4             
+    mecccap_id_pen_fcc2_regif.h           1.4                            
+    MECCCAP_IT_PEn_FCC2_Func.cpp          1.5            
+    MECCCAP_IT_PEn_FCC2_Func.h            1.3            
+    mecccap_it_pen_fcc2_regif.cpp         1.4      
+    mecccap_it_pen_fcc2_regif.h           1.4           
+    PY_ECC_ICACHE_E2_FCC2.cpp             1.4      
+    PY_ECC_ICACHE_E2_FCC2.h               1.4      
+    
+- Supported features: not change from previous release.
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_21091028.7z
+##################################
+- Release info: + Fix issue ticket #107618, #94223
+                + Add rvc_common_model
+                + Modified method reading/writing matching with newest modeling guild line.
+                + Add new python parameter to matching newest modeling guild line.
+- Release date: Oct 28, 2019.
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3
+- Source code (cvsroot_E2x-ECC):
+ Filename                       Revision   Codeline
+----------------------------------------------------
+ ECCCNT_ID_PEn_FCC2_Func.cpp    1.7        149
+ ECCCNT_ID_PEn_FCC2_Func.h      1.5        41
+ ECCCNT_IT_PEn_FCC2_Func.cpp    1.7        149
+ ECCCNT_IT_PEn_FCC2_Func.h      1.5        41
+ ECC_ICACHE_E2_FCC2.cpp         1.17       2268
+ ECC_ICACHE_E2_FCC2.h           1.9        297
+ ECC_ICACHE_E2_FCC2_AgentController.h 1.3        41
+ ECC_ICACHE_E2_FCC2_cmdif.h     1.3        720
+ MECCCAP_ID_PEn_FCC2_Func.cpp   1.9        325
+ MECCCAP_ID_PEn_FCC2_Func.h     1.5        59
+ MECCCAP_IT_PEn_FCC2_Func.cpp   1.9        325
+ MECCCAP_IT_PEn_FCC2_Func.h     1.5        59
+ PY_ECC_ICACHE_E2_FCC2.cpp      1.6        442
+ PY_ECC_ICACHE_E2_FCC2.h        1.6        41
+ ecccnt_id_pen_fcc2_regif.cpp   1.6        992
+ ecccnt_id_pen_fcc2_regif.h     1.6        173
+ ecccnt_it_pen_fcc2_regif.cpp   1.6        992
+ ecccnt_it_pen_fcc2_regif.h     1.6        173
+ mecccap_id_pen_fcc2_regif.cpp  1.4        1205
+ mecccap_id_pen_fcc2_regif.h    1.4        246
+ mecccap_it_pen_fcc2_regif.cpp  1.4        1205
+ mecccap_it_pen_fcc2_regif.h    1.4        246
+    
+- Supported features: not change from previous release.

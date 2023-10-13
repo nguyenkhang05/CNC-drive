@@ -1,0 +1,41 @@
+***************************************************************************************************
+(*) Status of ATU5010_Output_r24_20170913.7z/ATU5010_Output_r106_20170913.7z:
+-----------------------------
+- Release info: Fix bug in ATUDMASELE.DMASEL_E9[19:18] bit (mail [rvc-mcs:06689])
+- Release date: Sep 13, 2017
+- Test environment: SCHEAP G4 Rev24 & Rev106
+
+- Updated files:
+    atu5010_glue_regif.cpp          v1.1
+    atu5010_glue_regif.h            v1.1
+
+- Supported features: not change from previous release.
+
+- Non-supported features and limitation: none
+
+***************************************************************************************************
+(*) Status of ATU5010_Output_r24_20170824.7z/ATU5010_Output_r106_20170824.7z:
+-----------------------------
+- Release info: This module's development is based on E2x-FCC1's ATU5_GLUE module and updated some new features
+- Release date: Aug 24, 2017
+- Test environment: SCHEAP G4 Rev24 & Rev106
+
+- Files:
+    ATU5010_GLUE.cpp                v1.0
+    ATU5010_GLUE.h                  v1.0
+    ATU5010_GLUE_AgentController.h  v1.0
+    ATU5010_GLUE_cmdif.h            v1.0
+    ATU5010_GLUE_Func.cpp           v1.0
+    ATU5010_GLUE_Func.h             v1.0
+    atu5010_glue_regif.cpp          v1.0
+    atu5010_glue_regif.h            v1.0
+    PY_ATU5010_GLUE.cpp             v1.0
+    PY_ATU5010_GLUE.h               v1.0
+
+- Supported features:
+    1. Trigger select function
+    2. DFE interface
+    3. DSADC/CADC/PSI5S Time stamp trigger interface
+
+- Non-supported features and limitation: none
+***************************************************************************************************

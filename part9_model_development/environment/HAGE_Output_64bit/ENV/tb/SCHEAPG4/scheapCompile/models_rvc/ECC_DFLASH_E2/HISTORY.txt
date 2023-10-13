@@ -1,0 +1,232 @@
+#############################
+## 20170422_ECC_Output_part1.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Apr 22, 2017.
+
+- Test environment: SCHEAP-G4 Rev80, machine x32, gcc4.1.2.
+
+- File (CVS repository):
+  ECC_DFLASH_E2.cpp               1.9
+  ECC_DFLASH_E2.h                 1.8
+  ECC_DFLASH_E2_AgentController.h 1.4
+  ECC_DFLASH_E2_cmdif.h           1.2
+  ECC_DFLASH_E2_Func.h            1.9
+  ecc_dflash_e2_regif.h           1.6
+  PY_ECC_DFLASH_E2.h              1.4
+  ECC_DFLASH_E2_Func.cpp          1.9
+  ecc_dflash_e2_regif.cpp         1.6
+  PY_ECC_DFLASH_E2.cpp            1.8
+  ecc_dflash_e2_regif.txt         1.5
+    
+- Supported features:
+  + Error notification: 
+  + Error status:
+  + Address capture:
+
+- Non-supported features and limitation:
+  + Not support ECC error detection and correction.
+  + Not support Self-diagnosis.
+  + Not support pslverr_out_eeprom_output.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+#############################
+## 20170425_ECC_Output_part1.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Apr 25, 2017.
+
+- Test environment: Not change
+
+- File (SVN repository): not change
+    
+- Supported features: not change
+
+- Non-supported features and limitation: not change
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+#############################
+## 20170607_ECC_Output_part1.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Jun 07, 2017.
+
+- Test environment: not change
+
+- File (CVS repository):
+  ECC_DFLASH_E2.cpp               1.11
+  ECC_DFLASH_E2.h                 1.8
+  ECC_DFLASH_E2_AgentController.h 1.4
+  ECC_DFLASH_E2_cmdif.h           1.2
+  ECC_DFLASH_E2_Func.h            1.9
+  ecc_dflash_e2_regif.h           1.6
+  PY_ECC_DFLASH_E2.h              1.4
+  ECC_DFLASH_E2_Func.cpp          1.9
+  ecc_dflash_e2_regif.cpp         1.6
+  PY_ECC_DFLASH_E2.cpp            1.8
+  ecc_dflash_e2_regif.txt         1.5
+
+  Revise following files to fix Bug #83980 (dont_initialize() for reset methods are removed):
+  ECC_DFLASH_E2.cpp
+
+- Supported features: Not change
+
+- Non-supported features and limitation: not change
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+#############################
+## ECC_Output_part1_20171002.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Sep 29, 2017.
+
+- Test environment: not change
+
+- File (SVN repository):
+  ECC_DFLASH_E2.cpp               3888
+  ECC_DFLASH_E2.h                 3888
+  ECC_DFLASH_E2_AgentController.h 3888
+  ECC_DFLASH_E2_cmdif.h           3888
+  ECC_DFLASH_E2_Func.h            3888
+  ecc_dflash_e2_regif.h           3888
+  PY_ECC_DFLASH_E2.h              3888
+  ECC_DFLASH_E2_Func.cpp          3888
+  ecc_dflash_e2_regif.cpp         3888
+  PY_ECC_DFLASH_E2.cpp            3888
+  ecc_dflash_e2_regif.txt         3888
+
+  Revise following files to fix Bug #87854 (CalPosEdge)
+  ECC_DFLASH_E2.cpp
+    
+- Supported features: not change
+
+- Non-supported features and limitation: not change
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+#############################
+## ECC_Output_20171109.7z
+#############################
+- Release info: Offical release for E2x-FCC2.
+Source code is not change. It is reused for FCC2.
+
+- Release date: Nov 09, 2017.
+
+- Test environment: SCHEAP-G4 Rev106, machine x32, gcc4.1.2.
+
+- File (SVN repository):
+  ecc_dflash_e2_regif.h             4950
+  ecc_dflash_e2_regif.txt           4950
+  PY_ECC_DFLASH_E2.h                4950
+  ECC_DFLASH_E2_AgentController.h   4950
+  ecc_dflash_e2_regif.cpp           4950
+  ECC_DFLASH_E2.h                   4950
+  ECC_DFLASH_E2_Func.h              4950
+  ECC_DFLASH_E2_cmdif.h             4950
+  PY_ECC_DFLASH_E2.cpp              4950
+  ECC_DFLASH_E2_Func.cpp            4950
+  ECC_DFLASH_E2.cpp                 4950
+(The SVN change due to merge all ECC models into 1 output folder)
+
+- Supported features: not change
+
+- Non-supported features and limitation: not change
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_20171124.7z
+##################################
+- Release info: Support 64bit environment
+- Release date: Nov 24, 2017.
+- Test environment: SCHEAP-G4 Rev144, machine x64, gcc4.9.3
+- Updated source code:
+    ECC_DFLASH_E2_Func.cpp          4677
+
+- Supported features: not change from previous release.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_20180306.7z
+##################################
+- Release info: Release along with updated ECC_CFLASH_E2_FCC2, ECC_ICACHE_E2_FCC2, ECC_CRAM_E2_FCC2, ECC_LRAM_E2_FCC2
+- Release date: Mar 06, 2018.
+- Test environment: SCHEAP-G4 Rev144, machine x64, gcc4.9.3
+- Updated source code: None
+
+- Supported features: not change from previous release.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_20180309.7z
+##################################
+No change.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_20190228.7z
+##################################
+- Release info: Fix warning in Constructor.
+- Release date: Feb 28, 2019.
+- Test environment: SCHEAP-G4 Rev135, machine x64, gcc4.9.3
+- Source code (CVS repository):
+    ECC_DFLASH_E2.cpp               1.3 
+    ECC_DFLASH_E2.h                 1.1 
+    ECC_DFLASH_E2_AgentController.h 1.1
+    ECC_DFLASH_E2_cmdif.h           1.1 
+    ECC_DFLASH_E2_Func.cpp          1.1 
+    ECC_DFLASH_E2_Func.h            1.1 
+    ecc_dflash_e2_regif.cpp         1.1 
+    ecc_dflash_e2_regif.h           1.1 
+    ecc_dflash_e2_regif.txt         1.1 
+    PY_ECC_DFLASH_E2.cpp            1.1 
+    PY_ECC_DFLASH_E2.h              1.1 
+    
+- Supported features: not change from previous release.
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_20190306.7z
+##################################
+- Release info: Updated cvs version.
+- Release date: Mar 06, 2019.
+- Test environment: SCHEAP-G4 Rev135, machine x64, gcc4.9.3
+- Source code (CVS repository):
+    ECC_DFLASH_E2.cpp                1.4           
+    ECC_DFLASH_E2.h                  1.2           
+    ECC_DFLASH_E2_AgentController.h  1.2         
+    ECC_DFLASH_E2_cmdif.h            1.2                  
+    ECC_DFLASH_E2_Func.cpp           1.4           
+    ECC_DFLASH_E2_Func.h             1.2           
+    ecc_dflash_e2_regif.cpp          1.2           
+    ecc_dflash_e2_regif.h            1.2                                 
+    PY_ECC_DFLASH_E2.cpp             1.2 
+    PY_ECC_DFLASH_E2.h               1.2 
+	
+- Supported features: not change from previous release.
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_21091028.7z
+##################################
+- Release info: + Fix issue ticket #94223
+                + Add rvc_common_model
+                + Modified method reading/writing matching with newest modeling guild line.
+                + Add new python parameter to matching newest modeling guild line.
+- Release date: Oct 28, 2019.
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3
+- Source code (cvsroot_E2x-ECC):
+ Filename                       Revision   Codeline
+----------------------------------------------------
+ ECC_DFLASH_E2.cpp              1.10       711
+ ECC_DFLASH_E2.h                1.4        134
+ ECC_DFLASH_E2_AgentController.h 1.2        35
+ ECC_DFLASH_E2_Func.cpp         1.8        290
+ ECC_DFLASH_E2_Func.h           1.4        62
+ ECC_DFLASH_E2_cmdif.h          1.2        719
+ PY_ECC_DFLASH_E2.cpp           1.5        390
+ PY_ECC_DFLASH_E2.h             1.4        38
+ ecc_dflash_e2_regif.cpp        1.4        1181
+ ecc_dflash_e2_regif.h          1.4        242
+
+- Supported features: not change from previous release.

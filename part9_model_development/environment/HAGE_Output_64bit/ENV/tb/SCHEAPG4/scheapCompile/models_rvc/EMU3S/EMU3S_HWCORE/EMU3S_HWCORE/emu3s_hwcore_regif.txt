@@ -1,0 +1,255 @@
+%MODULE EMU3S_HWCORE
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  8
+
+%REG_CHANNEL reg_def
+  %%TITLE    name               reg_name             size         wsize         rsize       length      offset    factor_start   factor_end   factor_index   factor_step     init        access    support    callback
+  %%REG      PRT                 PRT                   8                8       8|16|32         8       0x000        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      CTR                 CTR                   8                8       8|16|32         8       0x004        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      REFCTR              REFCTR                8                8       8|16|32         8       0x008        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      AHBPRT              AHBPRT                8                8       8|16|32         8       0x00C        -             -            -             -             0x0000000D       R|W       TRUE       -
+  %%REG      AHBPRI              AHBPRI                8                8       8|16|32         8       0x00D        -             -            -             -             0x00000001       R|W       TRUE       -
+  %%REG      APBPRI              APBPRI                8                8       8|16|32         8       0x00E        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      IPTRG               IPTRG                 8                8       8|16|32         8       0x010        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      IPSFT               IPSFT                 8                8       8|16|32         8       0x014        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      TBLADR              TBLADR               32               32       8|16|32        32       0x018        -             -            -             -             0xFFFFFFFC       R|W       TRUE       -
+  %%REG      IPTRGCTR            IPTRGCTR              8                8       8|16|32         8       0x020        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      IPTRGNUM            IPTRGNUM             32          8|16|32       8|16|32        32       0x024        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      IPTRGMON            IPTRGMON             32                -       8|16|32        32       0x028        -             -            -             -             0x00000000       R         TRUE       -
+  %%REG      FUNCIDLEGRPA0       FUNCIDLEGRPA0        16               16       8|16|32        16       0x040        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      FUNCIDLEGRPA1       FUNCIDLEGRPA1        16               16       8|16|32        16       0x042        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      FUNCIDLEGRPA2       FUNCIDLEGRPA2        16               16       8|16|32        16       0x044        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      FUNCFINGRPA         FUNCFINGRPA          16                -       8|16|32        16       0x046        -             -            -             -             0x00000000       R         TRUE       -
+  %%REG      FUNCIDLEGRPB        FUNCIDLEGRPB         16               16       8|16|32        16       0x048        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      FUNCFINGRPB         FUNCFINGRPB          16                -       8|16|32        16       0x04A        -             -            -             -             0x00000000       R         TRUE       -
+  %%REG      FUNCWAITGRPA        FUNCWAITGRPA         16               16       8|16|32        16       0x050        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      FUNCWAITGRPB        FUNCWAITGRPB         16               16       8|16|32        16       0x054        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      FUNCSTGRPA          FUNCSTGRPA           32               32       8|16|32        32       0x058        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      FUNCSTGRPB          FUNCSTGRPB           16               16       8|16|32        16       0x05C        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      FSMSTGRPA           FSMSTGRPA            32                -       8|16|32        32       0x068        -             -            -             -             0x00000000       R         TRUE       -
+  %%REG      FSMSTGRPB           FSMSTGRPB            32                -       8|16|32        32       0x06C        -             -            -             -             0x00000000       R         TRUE       -
+  %%REG      FUNCFLGRPA0         FUNCFLGRPA0          16               16       8|16|32        16       0x070        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      FUNCFLGRPA1         FUNCFLGRPA1           8                8       8|16|32         8       0x074        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      FUNCFLGRPA2         FUNCFLGRPA2          32               32       8|16|32        32       0x078        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      FUNCFLGRPB          FUNCFLGRPB           32               32       8|16|32        32       0x07C        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      RECMD               RECMD                 8                8       8|16|32         8       0x0A0        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      ADRDCSL             ADRDCSL               8                8       8|16|32         8       0x0A4        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      EDCCTR              EDCCTR                8                8       8|16|32         8       0x0B0        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      SFERC               SFERC                 8                8       8|16|32         8       0x0B1        -             -            -             -             0x00000033       R|W       TRUE       -
+  %%REG      EDCSERR             EDCSERR               8                -       8|16|32         8       0x0B4        -             -            -             -             0x00000000       R         TRUE       -
+  %%REG      EDCDERR             EDCDERR               8                -       8|16|32         8       0x0B5        -             -            -             -             0x00000000       R         TRUE       -
+  %%REG      EDCSECLR            EDCSECLR              8                8       8|16|32         8       0x0B8        -             -            -             -             0x00000000       R|W       TRUE       -
+  %%REG      EDCDECLR            EDCDECLR              8                8       8|16|32         8       0x0B9        -             -            -             -             0x00000000       R|W       TRUE       -
+
+%REG_NAME PRT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   MEM0PRT           4       4     0x0       R|W      TRUE     W
+    %%BIT   PRTCT             0       0     0x0       R|W      TRUE     -
+
+%REG_NAME CTR
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   EMUST             0       0     0x0       R|W      TRUE     W
+
+%REG_NAME REFCTR
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   FPWMREFPER        0       0     0x0       R|W      TRUE     W
+
+%REG_NAME AHBPRT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   HPRT              3       0     0xD       R|W      TRUE     W
+
+%REG_NAME AHBPRI
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   HPRI              1       0     0x1       R|W      TRUE     -
+
+%REG_NAME APBPRI
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   PPRI              1       0     0x0       R|W      TRUE     -
+
+%REG_NAME IPTRG
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   RECIPTRG          4       4     0x0       R|W      TRUE     -
+    %%BIT   PWMIPTRG          3       3     0x0       R|W      TRUE     -
+    %%BIT   PIIPTRG           2       2     0x0       R|W      TRUE     -
+    %%BIT   INIPTRG           1       0     0x0       R|W      TRUE     -
+
+%REG_NAME IPSFT
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   RECIPSFT          3       3     0x0       R|W      TRUE     -
+    %%BIT   PWMIPSFT          2       2     0x0       R|W      TRUE     -
+    %%BIT   PIIPSFT           1       1     0x0       R|W      TRUE     -
+    %%BIT   INIPSFT           0       0     0x0       R|W      TRUE     W
+
+%REG_NAME TBLADR
+    %%TITLE  name           upper   lower   init            access   support   callback
+    %%BIT   DATA             31       0     0xFFFFFFFC      R|W      TRUE      W
+
+%REG_NAME IPTRGCTR
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   TNEN              0       0     0x0       R|W      TRUE     W
+
+%REG_NAME IPTRGNUM 
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   PWMTRGNUM        31      24     0x0       R|W      TRUE     -
+    %%BIT   PITRGNUM         23      16     0x0       R|W      TRUE     -
+    %%BIT   INTRGNUM         15       8     0x0       R|W      TRUE     -
+    %%BIT   ADTRGNUM          7       0     0x0       R|W      TRUE     W
+
+%REG_NAME IPTRGMON 
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   PWMTRGNUM        31      24     0x0       R        TRUE     -
+    %%BIT   PITRGNUM         23      16     0x0       R        TRUE     -
+    %%BIT   INTRGNUM         15       8     0x0       R        TRUE     -
+    %%BIT   ADTRGNUM          7       0     0x0       R        TRUE     R
+    
+%REG_NAME FUNCIDLEGRPA0
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   SFTEN            12      12     0x0       R|W      TRUE     W
+    %%BIT   IP                8       8     0x0       R|W      TRUE     -
+    %%BIT   FUNC              2       0     0x0       R|W      TRUE     -
+
+%REG_NAME FUNCIDLEGRPA1
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   SFTEN            12      12     0x0       R|W      TRUE     W
+    %%BIT   IP                8       8     0x0       R|W      TRUE     -
+    %%BIT   FUNC              0       0     0x0       R|W      TRUE     -
+
+%REG_NAME FUNCIDLEGRPA2
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   SFTEN            12      12     0x0       R|W      TRUE     W
+    %%BIT   IP                8       8     0x0       R|W      TRUE     -
+    %%BIT   FUNC              3       0     0x0       R|W      TRUE     -
+
+%REG_NAME FUNCFINGRPA
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   IP                9       8     0x0       R        TRUE     -
+    %%BIT   FUNC              3       0     0x0       R        TRUE     -
+
+%REG_NAME FUNCIDLEGRPB
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   IP                8       8     0x0       R|W      TRUE     W
+    %%BIT   FUNC              3       0     0x0       R|W      TRUE     -
+
+%REG_NAME FUNCFINGRPB
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   IP                8       8     0x0       R        TRUE     -
+    %%BIT   FUNC              3       0     0x0       R        TRUE     -
+
+%REG_NAME FUNCWAITGRPA
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   IP                9       8     0x0       R|W      TRUE     W
+    %%BIT   FUNC              3       0     0x0       R|W      TRUE     -
+
+%REG_NAME FUNCWAITGRPB
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   IP                8       8     0x0       R|W      TRUE     W
+    %%BIT   FUNC              3       0     0x0       R|W      TRUE     -
+
+%REG_NAME FUNCSTGRPA
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   PWM10            19      19     0x0       R|W      TRUE     -
+    %%BIT   PWM9             18      18     0x0       R|W      TRUE     -
+    %%BIT   PWM8             17      17     0x0       R|W      TRUE     -
+    %%BIT   PWM7             16      16     0x0       R|W      TRUE     -
+    %%BIT   PWM6             15      15     0x0       R|W      TRUE     -
+    %%BIT   PWM5             14      14     0x0       R|W      TRUE     -
+    %%BIT   PWM4             13      13     0x0       R|W      TRUE     -
+    %%BIT   PWM3             12      12     0x0       R|W      TRUE     -
+    %%BIT   PWM2             11      11     0x0       R|W      TRUE     -
+    %%BIT   PWM1             10      10     0x0       R|W      TRUE     -
+    %%BIT   PWM0              9       9     0x0       R|W      TRUE     -
+    %%BIT   PI1               8       8     0x0       R|W      TRUE     -
+    %%BIT   PI0               7       7     0x0       R|W      TRUE     -
+    %%BIT   INPUT3            3       3     0x0       R|W      TRUE     -
+    %%BIT   INPUT2            2       2     0x0       R|W      TRUE     -
+    %%BIT   INPUT1            1       1     0x0       R|W      TRUE     -
+    %%BIT   INPUT0            0       0     0x0       R|W      TRUE     W
+
+%REG_NAME FUNCSTGRPB
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   ANG3              3       3     0x0       R|W      TRUE     -
+    %%BIT   ANG2              2       2     0x0       R|W      TRUE     -
+    %%BIT   ANG1              1       1     0x0       R|W      TRUE     -
+    %%BIT   ANG0              0       0     0x0       R|W      TRUE     W
+
+%REG_NAME FSMSTGRPA
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   IP               17      16     0x0       R        TRUE     -
+    %%BIT   WAIT              8       8     0x0       R        TRUE     -
+    %%BIT   BUSY              0       0     0x0       R        TRUE     -
+
+%REG_NAME FSMSTGRPB
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   IP               16      16     0x0       R        TRUE     -
+    %%BIT   WAIT              8       8     0x0       R        TRUE     -
+    %%BIT   BUSY              0       0     0x0       R        TRUE     -
+
+%REG_NAME FUNCFLGRPA0
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   INPUT3            7       6     0x0       R|W      TRUE     -
+    %%BIT   INPUT2            5       4     0x0       R|W      TRUE     -
+    %%BIT   INPUT1            3       2     0x0       R|W      TRUE     -
+    %%BIT   INPUT0            1       0     0x0       R|W      TRUE     W
+
+%REG_NAME FUNCFLGRPA1
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   PI1               3       2     0x0       R|W      TRUE     -
+    %%BIT   PI0               1       0     0x0       R|W      TRUE     W
+
+%REG_NAME FUNCFLGRPA2
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   PWM10            21      20     0x0       R|W      TRUE     -
+    %%BIT   PWM9             19      18     0x0       R|W      TRUE     -
+    %%BIT   PWM8             17      16     0x0       R|W      TRUE     -
+    %%BIT   PWM7             15      14     0x0       R|W      TRUE     -
+    %%BIT   PWM6             13      12     0x0       R|W      TRUE     -
+    %%BIT   PWM5             11      10     0x0       R|W      TRUE     -
+    %%BIT   PWM4              9       8     0x0       R|W      TRUE     -
+    %%BIT   PWM3              7       6     0x0       R|W      TRUE     -
+    %%BIT   PWM2              5       4     0x0       R|W      TRUE     -
+    %%BIT   PWM1              3       2     0x0       R|W      TRUE     -
+    %%BIT   PWM0              1       0     0x0       R|W      TRUE     W
+
+%REG_NAME FUNCFLGRPB
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   ANG3              7       6     0x0       R|W      TRUE     -
+    %%BIT   ANG2              5       4     0x0       R|W      TRUE     -
+    %%BIT   ANG1              3       2     0x0       R|W      TRUE     -
+    %%BIT   ANG0              1       0     0x0       R|W      TRUE     W
+
+%REG_NAME RECMD
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   RECMD             0       0     0x0       R|W      TRUE     -
+
+%REG_NAME ADRDCSL
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   ADSEL             1       1     0x0       R|W      TRUE     W
+    %%BIT   RDCSEL            0       0     0x0       R|W      TRUE     -
+
+%REG_NAME EDCCTR
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   EDCDIS            0       0     0x0       R|W      TRUE     W
+
+%REG_NAME SFERC
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   CDNE              5       5     0x1       R|W      TRUE     -
+    %%BIT   PDNE              4       4     0x1       R|W      TRUE     -
+    %%BIT   DENE              1       1     0x1       R|W      TRUE     -
+    %%BIT   SENE              0       0     0x1       R|W      TRUE     W
+
+%REG_NAME EDCSERR
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   SES               0       0     0x0       R        TRUE     -
+
+%REG_NAME EDCDERR
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DES               0       0     0x0       R        TRUE     -
+
+%REG_NAME EDCSECLR
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   SESCLR            0       0     0x0       R|W      TRUE     W
+
+%REG_NAME EDCDECLR
+    %%TITLE  name           upper   lower   init    access   support   callback
+    %%BIT   DESCLR            0       0     0x0       R|W      TRUE     W
+    

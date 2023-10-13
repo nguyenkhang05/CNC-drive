@@ -1,0 +1,37 @@
+%MODULE G4_PEG_E2X
+    #              name      offset_size
+    %%REG_INSTANCE  reg_def   8
+
+%REG_CHANNEL reg_def
+    %%TITLE     name             reg_name        wsize       rsize     length      offset      access      init           factor_start    factor_end      factor_step     support     callback
+    %%REG       PEGKCPROT        PEGKCPROT       32          8|16|32   32          0x00        R|W         0x0            -               -               -               TRUE        W
+    %%REG       PEGPROT          PEGPROT         8|16|32     8|16|32   32          0x40        R|W         0x0            0               3               0x10            TRUE        W
+    %%REG       PEGSPID          PEGSPID         8|16|32     8|16|32   32          0x44        R|W         0x0            0               3               0x10            TRUE        W
+    %%REG       PEGBAD           PEGBAD          32          8|16|32   32          0x48        R|W         0xFC000000     0               3               0x10            TRUE        W
+    %%REG       PEGADV           PEGADV          32          8|16|32   32          0x4C        R|W         0x0            0               3               0x10            TRUE        W
+
+
+%REG_NAME PEGKCPROT
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       KCPROT      31      1       0       R|W     TRUE        W
+    %%BIT       KCE         0       0       0       R|W     TRUE        -
+
+%REG_NAME PEGPROT
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       GEN         8       8       0       R|W     TRUE        W
+    %%BIT       DBG         6       6       0       R|W     TRUE        -
+    %%BIT       UM          4       4       0       R|W     TRUE        -
+    %%BIT       WG          1       1       0       R|W     TRUE        -
+    %%BIT       RG          0       0       0       R|W     TRUE        -
+
+%REG_NAME PEGSPID
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       SPID        31      0       0       R|W     TRUE        W
+
+%REG_NAME PEGBAD
+    %%TITLE     name        upper   lower   init          access  support     callback
+    %%BIT       BAD         31      12      0xFC000       R|W     TRUE        W
+
+%REG_NAME PEGADV
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       ADV         25      12      0       R|W     TRUE        W

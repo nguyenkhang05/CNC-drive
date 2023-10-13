@@ -1,0 +1,18 @@
+%MODULE QLAPBFICTLAV1_Sub
+    #              name      offset_size
+    %%REG_INSTANCE  reg_def   2
+
+%REG_CHANNEL reg_def
+    %%TITLE     name             reg_name        wsize     rsize     length      offset      access      init    factor_start    factor_end      factor_step     support     callback
+    %%REG       FCLACTL         FCLACTL      	  8        8|16|32     8          0x00        R|W        0x0           -               -               -          TRUE         -
+
+
+%REG_NAME FCLACTL
+    %%TITLE     name        upper   lower   init    access  support     callback
+    %%BIT       BYPS   7       7       0       R|W     TRUE        W
+    %%BIT       INTL   2       2       0       R|W     TRUE        W
+    %%BIT       INTF   1       1       0       R|W     TRUE        W
+    %%BIT       INTR   0       0       0       R|W     TRUE        W
+
+
+

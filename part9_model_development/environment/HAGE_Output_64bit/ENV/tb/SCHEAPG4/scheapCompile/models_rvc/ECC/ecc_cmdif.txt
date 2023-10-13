@@ -1,0 +1,18 @@
+%MODULE ecc
+ 
+%CMD_BASEID tgt reg
+%CMD_NODUMP_API DumpProfile ClearProfile EnableInsertInput EnableDumpResult
+
+%CMD_RW DumpInterrupt   <enable:bool=false>                 @ Display interrupt information when interrupt get set[ns]
+%CMD_RW RamReadData     <RamReadData:unsigned int=0>        @ Read data from RAM to set the E710TED register
+%CMD_RW RamReadEccPart  <RamReadEccPart:unsigned char=0>    @ Read data of ECC part from RAM to set the E710TRC.ECHORD register
+%CMD_RW RamWriteEccPart <RamWriteEccPart:unsigned char=0>   @ Write data of ECC part from RAM to set the E710TRC.ECERDB register
+%CMD_RW EncodeResult    <EncodeResult:unsigned char=0>      @ Encode result to set the E710TRC.ECECRD register
+%CMD_RW DecodeResult    <DecodeResult:unsigned char=0>      @ Decode result to set the E710TRC.ECSYND register
+%CMD_RW EccErrorAddress <EccErrorAddress:unsigned int=0>    @ Read address detecting ECC error to set the E70EAD register
+%CMD_RW NumOfErrorStage <NumOfErrorStage:unsigned char=1>   @ Number of stages of ECC error address register (set value from 0 to 8)
+%CMD_RW AccEnErrJudg    <enable:bool=false>                 @ Access enable signal of error judgment enable bit
+%CMD_RW TwoBitsErrJudg  <enable:bool=true>                  @ 2bits error judgment enable signal
+
+%CMD_ACTION SetCLKfreq <clk_name: std::string> <frequency: double>: void @ Setup the new clock frequency
+%CMD_ACTION EccError <err_det_set: unsigned int> :void @ Set the status of ECC change to EccError and assert corresponding interrupt (set value 1/2)

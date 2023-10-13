@@ -1,0 +1,90 @@
+***************************************************************************************************
+- Release info: Official release (FCC2 version)
+- Release date: Mar 13, 2018
+- Test environment: SCHEAP G4 Rev144
+
+***HSIFWP0 model***
+- File:
+	+ HSIFWP0.h							5617
+	+ HSIFWP0.cpp						5617	
+	
+- Supported functions:
+	+ The RHSIF Wrapper distribute clock source (ACLK, PCLK, CCLK) and reset to HSIFL10_ALL and HSIF020 models.
+	
+- Non supported features and limitations:
+	+ There is no limitation in the model
+ 
+***************************************************************************************************
+- Release info: Official release (both FCC1/FCC2 versions)
+- Release date: Mar 19, 2018
+- Test environment: SCHEAP G4 Rev144
+
+***HSIFWP0 model***
+- File:
+    HSIFWP0.h                           5760
+    HSIFWP0.cpp                         5760
+    
+- Supported functions: 
+    Support specify version of model (FCC1 or FCC2) in contructor.
+    
+***************************************************************************************************
+- Release info: Official release - Update 
+- Release date: May 14, 2018
+- Test environment: SCHEAP G4 Rev41
+	
+***HSIFWP0 model***
+- File:
+    + No change
+    
+***************************************************************************************************
+- Release info: Official release (Support Limitation)
+- Release date: Jun 4, 2018
+- Test environment: SCHEAP G4 Rev144
+  
+***HSIFWP0 model***
+  + No change
+
+****************************************************************************************************
+- Release info: Official release (Update coverage)
+- Release date: Aug 13, 2018
+- Test environment: SCHEAP G4 Rev144
+  
+***HSIFWP0 model***
+    HSIFWP0.h							1.3
+    HSIFWP0.cpp						    1.3	
+
+****************************************************************************************************
+- Release info: update FCC2
+- Release date: Sep 16, 2019
+- Test environment: SCHEAP G4 Rev191
+  
+***HSIFWP0 model***
+	HSIFWP0.cpp 						1.4
+	HSIFWP0.h 							1.4
+
+****************************************************************************************************
+- Release info: update read(), write() API to use "if else" instead of sc_assert() for the TLM generic payload extension checking
+- Release date: Nov 14, 2019
+- Test environment: SCHEAP G4 Rev191
+  
+***HSIFWP0 model***
+- File:
+    + No change
+
+****************************************************************************************************
+- Release info: update SetModelID(), add mSecure to distinghuise between ICUP and CPU and add SetBusMasterID() to support E2xFCC1, E2xFCC2, and U2A
+- Release date: Jan 14, 2020
+- Test environment: SCHEAP G4 Rev191
+      
+***HSIFWP0 model***
+	HSIFWP0.cpp 			        1.5
+	HSIFWP0.h 			            1.4
+****************************************************************************************************
+- Release info: update type of interrupts
+- Release date: Mar 26, 2020
+- Test environment: SCHEAP G4 Rev191
+      
+***HSIFWP0 model***
+- File:
+    HSIFWP0.cpp 			        1.6
+    HSIFWP0.h 			            1.5

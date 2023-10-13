@@ -1,0 +1,15 @@
+# Libraries
+libs/
+
+# Visual Studio files
+*.sdf
+*.opensdf
+*.VC.opendb
+*.VC.db
+*.suo
+_ReSharper.Caches/
+*Debug/
+*Release/
+
+# Python
+*.pyc

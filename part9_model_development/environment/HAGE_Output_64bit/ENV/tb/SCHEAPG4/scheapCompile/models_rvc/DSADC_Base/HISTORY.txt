@@ -1,0 +1,59 @@
+***************************************************************************************************
+DSADC_Output_64bit_20191128.7z
+-----------------------------
+- Release info: Common source for E2xFCC2 and E2x/FCC1. 
+- Release date: Nov 28, 2019
+- Test environment: SC-HEAP G4 Rev191, gcc4.9.3, x64
+- Updated source code:  Update DSADC_UNIT_Func.cpp to prohibit transaction with NULL extension.
+   + DSADC_Base.h                	1.3	
+   + DSADC_UNIT.cpp              	1.6	
+   + DSADC_UNIT.h                	1.3	
+   + DSADC_UNIT_AgentController.h	1.3	
+   + DSADC_UNIT_cmdif.h          	1.3	
+   + DSADC_UNIT_Func.cpp         	1.6 (change)	
+   + DSADC_UNIT_Func.h           	1.4	
+   + dsadc_unit_regif.cpp        	1.3	
+   + dsadc_unit_regif.h          	1.2	
+   
+- Supported functions: Refer to DSADC or DSADC_E2XFCC1_2ND or detail.
+
+***************************************************************************************************
+DSADC_Output_64bit_20191126.7z
+-----------------------------
+- Release info: Common source for E2xFCC2 and E2x/FCC1. 
+- Release date: Nov 26, 2019
+- Test environment: SC-HEAP G4 Rev191, gcc4.9.3, x64
+- Updated source code:  Update DSADC_UNIT_Func.cpp to prohibit transaction with NULL extension.
+   + DSADC_Base.h                	1.3	
+   + DSADC_UNIT.cpp              	1.6	
+   + DSADC_UNIT.h                	1.3	
+   + DSADC_UNIT_AgentController.h	1.3	
+   + DSADC_UNIT_cmdif.h          	1.3	
+   + DSADC_UNIT_Func.cpp         	1.5 (change)	
+   + DSADC_UNIT_Func.h           	1.4	
+   + dsadc_unit_regif.cpp        	1.3	
+   + dsadc_unit_regif.h          	1.2	
+   
+- Supported functions: Refer to DSADC or DSADC_E2XFCC1_2ND or detail.
+
+***************************************************************************************************
+DSADC_Output_64bit_20190515.7z
+-----------------------------
+- Release info: Common source for E2xFCC2 and E2x/FCC1. 
+- Release date: May 15, 2019
+- Test environment: SC-HEAP G4 Rev191, gcc4.9.3, x64
+- Updated source code:  Create DSADC_Base.h for using common UNIT to E2x/FCC1 and E2xFCC2. 
+                        Rename "DSADC_E2XFCC1_2ND_UNIT" to "DSADC_UNIT". 
+
+   + DSADC_Base.h                	1.3	
+   + DSADC_UNIT.cpp              	1.6	
+   + DSADC_UNIT.h                	1.3	
+   + DSADC_UNIT_AgentController.h	1.3	
+   + DSADC_UNIT_cmdif.h          	1.3	
+   + DSADC_UNIT_Func.cpp         	1.3	
+   + DSADC_UNIT_Func.h           	1.3	
+   + dsadc_unit_regif.cpp        	1.3	
+   + dsadc_unit_regif.h          	1.2	
+   
+- Supported functions: Not change from previous release
+

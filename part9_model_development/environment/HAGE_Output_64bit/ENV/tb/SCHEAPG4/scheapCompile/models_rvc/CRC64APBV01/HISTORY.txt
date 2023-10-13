@@ -1,0 +1,52 @@
+#############################
+Update code for fix bug in ticket #111165 and update HW UM 061
+#############################
+- File (CVS repository):
+  CRC64APBV01.h                 ver1.8
+  CRC64APBV01.cpp               ver1.9
+  CRC64APBV01_Func.h            ver1.9
+  CRC64APBV01_Func.cpp          ver1.13
+  CRC64APBV01_cmdif.h           ver1.3
+  CRC64APBV01_AgentController.h ver1.5
+  PY_CRC64APBV01.cpp            ver1.7
+  PY_CRC64APBV01.h              ver1.5
+  crc64apbv01_regif.txt         ver1.5
+  crc64apbv01_regif.h           ver1.5
+  crc64apbv01_regif.cpp         ver1.6
+
+#############################
+## CRC64APBV01_Output_20180213.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Feb. 13, 2018.
+
+- Test environment: SCHEAP-G4 Rev163, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+  CRC64APBV01.h                 ver1.6
+  CRC64APBV01.cpp               ver1.7
+  CRC64APBV01_Func.h            ver1.7
+  CRC64APBV01_Func.cpp          ver1.11
+  CRC64APBV01_cmdif.h           ver1.2
+  CRC64APBV01_AgentController.h ver1.4
+  PY_CRC64APBV01.cpp            ver1.6
+  PY_CRC64APBV01.h              ver1.4
+  crc64apbv01_regif.txt         ver1.4
+  crc64apbv01_regif.h           ver1.4
+  crc64apbv01_regif.cpp         ver1.5
+    
+- Supported features:
+  + Selectable input data size. (8/16/32-bit)
+  + Supported Reflection of Input data.
+  + Supported Reflection of Output data.
+  + Supported Reflection of Polynomial.
+  + Supported XOR Mask of output data.
+  + CRC generation to an arbitrary data block length by register.
+    CRC generation to an arbitrary polynomial by register. Setting must be done according to Table 1 in register sheet.
+  + After initialization of the output data register, every write access to the input register generates a new CRC
+    according to the chosen polynomial and the result is stored in the output data register
+  + Supported AUTOSAR 4.3.0
+
+- Non-supported features and limitation:
+  N/A

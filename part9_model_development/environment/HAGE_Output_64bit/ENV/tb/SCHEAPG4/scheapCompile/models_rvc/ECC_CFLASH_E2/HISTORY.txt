@@ -1,0 +1,209 @@
+#############################
+## 20170422_ECC_Output_part1.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Apr 22, 2017.
+
+- Test environment: SCHEAP-G4 Rev80, machine x32, gcc4.1.2.
+
+- File (SVN repository):
+  ECCCNT_CFC_Func.cpp               2512
+  ecccnt_cfc_regif.cpp              2701
+  ECCCNT_CFP_PEn_Func.cpp           2512
+  ecccnt_cfp_pen_regif.cpp          2701
+  ECCCNT_CFS_Func.cpp               2512
+  ecccnt_cfs_regif.cpp              2473
+  ECC_CFLASH_E2.cpp                 2992
+  MECCCAP_CFL_Func.cpp              2715
+  mecccap_cfl_regif.cpp             2701
+  PY_ECC_CFLASH_E2.cpp              2473
+  ECCCNT_CFC_Func.h                 2318
+  ecccnt_cfc_regif.h                2701
+  ECCCNT_CFP_PEn_Func.h             2423
+  ecccnt_cfp_pen_regif.h            2701
+  ECCCNT_CFS_Func.h                 2423
+  ecccnt_cfs_regif.h                2473
+  ECC_CFLASH_E2.h                   2992
+  ECC_CFLASH_E2_AgentController.h   2512
+  ECC_CFLASH_E2_cmdif.h             2318
+  MECCCAP_CFL_Func.h                2560
+  mecccap_cfl_regif.h               2570
+  PY_ECC_CFLASH_E2.h                2473
+    
+- Supported features:
+  + Error notification: 
+  ECC Error:
+    Error notification can be either enabled or disabled upon detection of an ECC 2-bit error.
+    Error notification can be either enabled or disabled upon detection of an ECC 1-bit error.
+    In the initial state, error notification is enabled upon detection of an ECC 2-bit error, and error notification is enabled upon detection of an ECC 1-bit error."
+  Address Parity Error:
+    Error notification can be either enabled or disabled upon detection of an address parity error.
+    In the initial state, error notification is enabled upon detection of an address parity error."
+  Overflow Error:
+    Error notification can be either enable or disable upon detection of an address buffer overflow error for ECC 1-bit error.
+    In the initial state, error notification is enabled upon detection of an address buffer overflow error.
+    An address parity error, an ECC 2-bit error, an ECC 1-bit error and an overflow error are handled as individual source in ECM.
+    An ECC 1-bit error signal is only issued to the ECM, if the ECC 1-bit error address is not yet stored in the error address buffer."
+  + Error status:
+  A status register is provided, which indicates the statuses of ECC 2-bit error detection, ECC 1-bit error detection, and address parity error detection. 
+  A four-stage buffer is provided for 1-bit errors. An one-stage buffer is provided for 2-bit error and the buffer is shared for parity error.
+  The status register indicates the state of each stage. 
+  The error status can be cleared using the clear register."
+  + Address capture:
+  The address is captured when an ECC 2-bit error, an ECC 1-bit error, or an address parity error is detected.
+  The error status serves as the enable bit of the capture address.
+  Address buffers are updated if the error status is cleared.
+  Multi-stage address buffers are provided for an ECC 1bit error.
+  ECC 1-bit error: Four stages
+  ECC 2-bit error, address parity error: One stage"
+
+- Non-supported features and limitation:
+  + Not implemet ECC Encoder/Decoder. Only ECC Control block is modeled.
+  Error input signal from ECC Decoder & error address is modeled by parameter.
+  + Not support test mode.
+
+#############################
+## 20170425_ECC_Output_part1.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Apr 25, 2017.
+
+- Test environment: Not change
+
+- File (SVN repository): not change
+    
+- Supported features: not change
+
+- Non-supported features and limitation: not change
+
+#############################
+## 20170607_ECC_Output_part1.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Jun 07, 2017.
+
+- Test environment: not change
+
+- File (SVN repository):
+  ECCCNT_CFC_Func.cpp               2512
+  ecccnt_cfc_regif.cpp              3197
+  ECCCNT_CFP_PEn_Func.cpp           2512
+  ecccnt_cfp_pen_regif.cpp          3197
+  ECCCNT_CFS_Func.cpp               2512
+  ecccnt_cfs_regif.cpp              3197
+  ECC_CFLASH_E2.cpp                 3197
+  MECCCAP_CFL_Func.cpp              2715
+  mecccap_cfl_regif.cpp             2701
+  PY_ECC_CFLASH_E2.cpp              2473
+  ECCCNT_CFC_Func.h                 2318
+  ecccnt_cfc_regif.h                3197
+  ECCCNT_CFP_PEn_Func.h             2423
+  ecccnt_cfp_pen_regif.h            3197
+  ECCCNT_CFS_Func.h                 2423
+  ecccnt_cfs_regif.h                3197
+  ECC_CFLASH_E2.h                   2992
+  ECC_CFLASH_E2_AgentController.h   2512
+  ECC_CFLASH_E2_cmdif.h             2318
+  MECCCAP_CFL_Func.h                2560
+  mecccap_cfl_regif.h               3197
+  PY_ECC_CFLASH_E2.h                2473
+
+  Revise following files to fix Bug #83980 (dont_initialize() for reset methods are removed):
+  ECC_CFLASH_E2.cpp
+  ecccnt_cfc_regif.txt
+  ecccnt_cfc_regif.h/cpp
+  ecccnt_cfp_pen_regif.txt
+  ecccnt_cfp_pen_regif.h/cpp
+  ecccnt_cfs_regif.txt
+  ecccnt_cfs_regif.h/cpp
+
+- Supported features: Not change
+
+- Non-supported features and limitation: not change
+
+
+#############################
+## ECC_Output_part1_20171002.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Sep 29, 2017.
+
+- Test environment: not change
+
+- File (SVN repository):
+  ECCCNT_CFC_Func.cpp               4180
+  ecccnt_cfc_regif.cpp              3197
+  ECCCNT_CFP_PEn_Func.cpp           4180
+  ecccnt_cfp_pen_regif.cpp          3197
+  ECCCNT_CFS_Func.cpp               4180
+  ecccnt_cfs_regif.cpp              3197
+  ECC_CFLASH_E2.cpp                 3888
+  MECCCAP_CFL_Func.cpp              2715
+  mecccap_cfl_regif.cpp             2701
+  PY_ECC_CFLASH_E2.cpp              2473
+  ECCCNT_CFC_Func.h                 2318
+  ecccnt_cfc_regif.h                3197
+  ECCCNT_CFP_PEn_Func.h             2423
+  ecccnt_cfp_pen_regif.h            3197
+  ECCCNT_CFS_Func.h                 2423
+  ecccnt_cfs_regif.h                3197
+  ECC_CFLASH_E2.h                   2992
+  ECC_CFLASH_E2_AgentController.h   2512
+  ECC_CFLASH_E2_cmdif.h             2318
+  MECCCAP_CFL_Func.h                2560
+  mecccap_cfl_regif.h               3197
+  PY_ECC_CFLASH_E2.h                2473
+
+  Revise following files to fix Bug #87854 (CalPosEdge), and fix masked address in ECCCNT blocks (found by FPT when developing FCC2).
+  ECC_CFLASH_E2.cpp
+  ECCCNT_CFC_Func.cpp
+  ECCCNT_CFP_PEn_Func.cpp
+  ECCCNT_CFS_Func.cpp
+    
+- Supported features: not change
+
+- Non-supported features and limitation: not change
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+##################################
+## ECC_Output_64bit_21091028.7z
+##################################
+- Release info: + Fix issue ticket #107618, #107620, #109281, #94223, #14058
+                + Add rvc_common_model
+                + Modified method reading/writing matching with newest modeling guild line.
+                + Add new python parameter to matching newest modeling guild line.
+                + Replace template by constructor for specify PE num (#14058)
+- Release date: Oct 28, 2019.
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3
+- Source code (cvsroot_E2x-ECC):
+
+ Filename                       Revision   Codeline
+----------------------------------------------------
+ ECCCNT_CFC_Func.cpp            1.1        147
+ ECCCNT_CFC_Func.h              1.1        40
+ ecccnt_cfc_regif.cpp           1.1        965
+ ecccnt_cfc_regif.h             1.1        163
+ ECCCNT_CFP_PEn_Func.cpp        1.1        148
+ ECCCNT_CFP_PEn_Func.h          1.1        41
+ ecccnt_cfp_pen_regif.cpp       1.1        990
+ ecccnt_cfp_pen_regif.h         1.1        171
+ ECCCNT_CFS_Func.cpp            1.1        152
+ ECCCNT_CFS_Func.h              1.1        41
+ ecccnt_cfs_regif.cpp           1.1        997
+ ecccnt_cfs_regif.h             1.1        175
+ ECC_CFLASH_E2.cpp              1.3        1455
+ ECC_CFLASH_E2.h                1.1        241
+ ECC_CFLASH_E2_AgentController.h 1.1        41
+ ECC_CFLASH_E2_cmdif.h          1.1        720
+ MECCCAP_CFL_Func.cpp           1.1        397
+ MECCCAP_CFL_Func.h             1.1        65
+ mecccap_cfl_regif.cpp          1.1        1312
+ mecccap_cfl_regif.h            1.1        288
+ PY_ECC_CFLASH_E2.h             1.1        42
+
+
+- Supported features: not change from previous release.

@@ -1,0 +1,38 @@
+// Description: History file of UTILITY model
+
+**************************************************************
+- Release info:
+    + Change API name after got comment from Sharing meeting
+    + Remove inheriting rvc_common_model
+- Release date: Jan 25, 2021
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+- CVS repository: /shsv/MobAP2/prj_MCS/08_Repository/UTILITY
+
+- UTILITY model:
+  UTILITY.cpp               1.2
+  UTILITY.h                 1.2
+  UTILITY_cmdif.h           1.1
+  PY_UTILITY.cpp            1.2
+  PY_UTILITY.h              1.2
+
+- Supported features: No change
+
+**************************************************************
+
+- Release info: Release source code.
+- Release date: Jan 25, 2021
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+- CVS repository: /shsv/MobAP2/prj_MCS/08_Repository/UTILITY
+
+- UTILITY model:
+  UTILITY.cpp               1.1
+  UTILITY.h                 1.1
+  PY_UTILITY.cpp            1.1
+  PY_UTILITY.h              1.1
+
+- Supported features:
+  + Check exactly timing.
+  + Trace port and handshake with Python to handle data.
+  + Dump all hierarchical of signal/port and its value of model.
+  + Read/Write signal/port.
+  + Check value of signal/port.

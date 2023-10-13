@@ -1,0 +1,62 @@
+// Description: History ADTRG
+// Ref: {HWCORE_ADTRG_UD_ATT1_003}
+**************************************************************
+-Release info: Update source code after functional debug. Release final data.
+-Release date: Oct 28, 2020
+-Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+-----------------------------
+HWCORE_ADTRG_Output_64bit_20201027.7z
+-----------------------------
+
+- HWCORE_ADTRG (CVS repository):
+  HWCORE_ADTRG.cpp               1.14
+  HWCORE_ADTRG.h                 1.7
+  HWCORE_ADTRG_AgentController.h 1.3
+  HWCORE_ADTRG_Func.cpp          1.4
+  HWCORE_ADTRG_Func.h            1.3
+  HWCORE_ADTRG_cmdif.h           1.2
+  PY_HWCORE_ADTRG.cpp            1.4
+  PY_HWCORE_ADTRG.h              1.3
+  hwcore_adtrg_regif.h           1.4
+  hwcore_adtrg_regif.cpp         1.5
+  Makefile
+- Supported features: No change
+- Non-supported features and limitation: None
+
+**************************************************************
+-Release info: Add retify ID for message and correct Makefile
+-Release date: Sep 14, 2020
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- HWCORE_ADTRG (CVS repository):
+  HWCORE_ADTRG.cpp               1.4
+  Makefile
+- Supported features: No change
+- Non-supported features and limitation: None
+
+**************************************************************
+- Release info: Release alpha source code.
+- Release date: Sep 11, 2020.
+- Test environment: SCHEAP-G4 Rev338, machine x64, gcc4.9.3.
+
+- HWCORE_ADTRG (CVS repository):
+  HWCORE_ADTRG.cpp               1.3
+  HWCORE_ADTRG.h                 1.3
+  HWCORE_ADTRG_AgentController.h 1.2
+  HWCORE_ADTRG_Func.cpp          1.2
+  HWCORE_ADTRG_Func.h            1.2
+  HWCORE_ADTRG_cmdif.h           1.2
+  PY_HWCORE_ADTRG.cpp            1.2
+  PY_HWCORE_ADTRG.h              1.2
+  hwcore_adtrg_regif.h           1.2
+  hwcore_adtrg_regif.cpp         1.2
+
+
+- Supported features:
+  + Sampling trigger generation
+  + A/D conversion control (delay timer)
+  + Angle value latch control (delay timer)
+  + Sampling function
+ 
+- Non-supported features and limitation:
+  + None.

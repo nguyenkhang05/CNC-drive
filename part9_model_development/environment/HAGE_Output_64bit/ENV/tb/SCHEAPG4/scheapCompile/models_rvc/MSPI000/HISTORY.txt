@@ -1,0 +1,359 @@
+#############################
+## final release data to fix bug ticket 112867 #68 ( Accesses INTF registers, INTF model always outputs the error message "Invalid access address xxxxx" )
+#############################
+- Release date: Apr 03, 2020.
+
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+    MSPI000.cpp                  1.19
+    MSPI000.h                    1.15
+    MSPI000_AgentController.h    1.8
+    MSPI000_Func.cpp             1.16
+    MSPI000_Func.h               1.7
+    MSPI000_INT_FACTOR_Func.cpp  1.3 -> 1.4
+    MSPI000_INT_FACTOR_Func.h    1.3
+    MSPI000_cmdif.h              1.5
+    PY_MSPI000.cpp               1.8
+    PY_MSPI000.h                 1.6
+    mspi000_int_factor_regif.cpp 1.4
+    mspi000_int_factor_regif.h   1.4
+    mspi000_regif.cpp            1.7
+    mspi000_regif.h              1.5
+
+- Supported features: similar to previous release
+- Non-supported features and limitation: similar to previous release
+#############################
+## final release data to fix bug #112867 (trac306) and update copyright
+#############################
+- Release date: Mar 18, 2020.
+
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+    MSPI000.cpp 1.18->1.19
+    MSPI000.h 1.14->1.15
+    MSPI000_AgentController.h 1.7->1.8
+    MSPI000_Func.cpp 1.15->1.16
+    MSPI000_Func.h 1.6->1.7
+    MSPI000_INT_FACTOR_Func.cpp 1.2->1.3
+    MSPI000_INT_FACTOR_Func.h 1.2->1.3
+    MSPI000_cmdif.h 1.4->1.5
+    PY_MSPI000.cpp 1.7->1.8
+    PY_MSPI000.h 1.5->1.6
+    mspi000_int_factor_regif.cpp 1.3->1.4
+    mspi000_int_factor_regif.h 1.3->1.4
+    mspi000_regif.cpp 1.6->1.7
+    mspi000_regif.h 1.4->1.5
+
+- Supported features: similar to previous release
+- Non-supported features and limitation: similar to previous release
+#############################
+## Beta source release to fix bug #112867 (trac306) 
+#############################
+- Release info: beta source release to fix bug #112867 (trac306).
+
+- Release date: Feb 28, 2020.
+
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+    MSPI000.cpp 1.17->1.18
+    MSPI000.h 1.13->1.14
+    MSPI000_AgentController.h 1.6->1.7
+    MSPI000_Func.cpp 1.14->1.15
+    MSPI000_Func.h 1.6
+    MSPI000_INT_FACTOR_Func.cpp 1.2
+    MSPI000_INT_FACTOR_Func.h 1.2
+    MSPI000_cmdif.h 1.4
+    PY_MSPI000.cpp 1.7
+    PY_MSPI000.h 1.5
+    mspi000_int_factor_regif.cpp 1.3
+    mspi000_int_factor_regif.h 1.3
+    mspi000_regif.cpp 1.6
+    mspi000_regif.h 1.4
+
+- Supported features: similar to previous release
+- Non-supported features and limitation: similar to previous release
+
+#############################
+## MSPI000_Output_64bit_20200114.7z  
+#############################
+- Release info: final release to update to U2A UM 0.61.
+
+- Release date: Jan 14, 2020.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+    MSPI000.cpp 1.17
+    MSPI000.h 1.13
+    MSPI000_AgentController.h 1.6
+    MSPI000_Func.cpp 1.14
+    MSPI000_Func.h 1.6
+    MSPI000_INT_FACTOR_Func.cpp 1.2
+    MSPI000_INT_FACTOR_Func.h 1.2
+    MSPI000_cmdif.h 1.4
+    PY_MSPI000.cpp 1.7
+    PY_MSPI000.h 1.5
+    mspi000_int_factor_regif.cpp 1.3
+    mspi000_int_factor_regif.h 1.3
+    mspi000_regif.cpp 1.6
+    mspi000_regif.h 1.4
+
+- Supported features: similar to previous release
+- Non-supported features and limitation: similar to previous release
+
+#############################
+## src_U2A_MSPI_20191219.7z 
+#############################
+- Release info: Update from HW Spec v1.0 to UM 0.61
+
+- Release date: Dec 19, 2019.
+
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3.
+
+- File (CVS repository):
+                                
+    INT_FACTOR_Func.cpp            1.3 
+    INT_FACTOR_Func.h              1.3 
+    int_factor_regif.cpp           1.3 
+    int_factor_regif.h             1.3 
+    MSPI000_AgentController.h      1.6 
+    MSPI000_cmdif.h                1.4 
+    MSPI000.cpp                    1.9 
+    MSPI000_Func.cpp               1.10
+    MSPI000_Func.h                 1.6 
+    MSPI000.h                      1.8 
+    mspi000_regif.cpp              1.4 
+    mspi000_regif.h                1.4 
+    MSPI_Common_Model.cpp          1.3 
+    MSPI_Common_Model.h            1.3 
+    PY_MSPI000.cpp                 1.5 
+    PY_MSPI000.h                   1.5 
+  
+- Supported features: 
+  + similar to previous release
+  + Add combine Interrupt Port (MINTMSPInTX, INTMSPInRX, INTMSPInFE, INTMSPInERR)
+- Non-supported features and limitation: similar to previous release
+
+#############################
+## MSPI000_Output_64bit_20180725.7z  
+#############################
+- Release info: Update TM to update coverage line
+
+- Release date: July 25, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (SVN repository): (Not change)
+                                | Revision
+  + Common_Model.cpp            | 6710
+  + Common_Model.h              | 6710
+  + MSPI000_AgentController.h   | 7642
+  + MSPI000_cmdif.h             | 5974
+  + MSPI000.cpp                 | 7683 
+  + MSPI000_Func.cpp            | 7683 
+  + MSPI000_Func.h              | 7613
+  + MSPI000.h                   | 7662
+  + mspi000_regif.cpp           | 6330
+  + mspi000_regif.h             | 6330
+  + PY_MSPI000.cpp              | 6417
+  + PY_MSPI000.h                | 6417
+  
+- Supported features: similar to previous release
+- Non-supported features and limitation: similar to previous release
+
+#############################
+## src_U2A_MSPI_20180630.7z 
+#############################
+- Release info: fix bug in Redmine ticket #45348 (mirror register bug).
+Fix the mirror register issue for <=16-bit transfer in the Fixed Buffer mode.
+
+- Release date: Jun. 30, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (SVN repository):
+                                | Revision
+  + Common_Model.cpp            | 6710
+  + Common_Model.h              | 6710
+  + MSPI000_AgentController.h   | 7642
+  + MSPI000_cmdif.h             | 5974
+  + MSPI000.cpp                 | 7683 (*)
+  + MSPI000_Func.cpp            | 7683 (*)
+  + MSPI000_Func.h              | 7613
+  + MSPI000.h                   | 7662
+  + mspi000_regif.cpp           | 6330
+  + mspi000_regif.h             | 6330
+  + PY_MSPI000.cpp              | 6417
+  + PY_MSPI000.h                | 6417
+  (*) updated source code in this release
+  
+- Supported features: similar to previous release
+- Non-supported features and limitation: similar to previous release
+
+#############################
+## src_U2A_MSPI_20180628.7x  
+#############################
+- Release info: fix bug in Redmine ticket #45348 (mirror register bug).
+(cannot use non-mirror registers i.e. TXDA/RXDA to transfer/receive data <=16-bit)
+
+- Release date: Jun. 28, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (SVN repository):
+                                | Revision
+  + Common_Model.cpp            | 6710
+  + Common_Model.h              | 6710
+  + MSPI000_AgentController.h   | 7642 (*)
+  + MSPI000_cmdif.h             | 5974
+  + MSPI000.cpp                 | 7642 (*)
+  + MSPI000_Func.cpp            | 7653 (*)
+  + MSPI000_Func.h              | 7613 (*)
+  + MSPI000.h                   | 7662 (*)
+  + mspi000_regif.cpp           | 6330
+  + mspi000_regif.h             | 6330
+  + PY_MSPI000.cpp              | 6417
+  + PY_MSPI000.h                | 6417
+  (*) updated source code in this release
+  
+- Supported features: similar to previous release
+- Non-supported features and limitation: similar to previous release
+
+#############################
+## src_U2A_MSPI_20180623.7x  
+#############################
+- Release info: fix bug in Redmine ticket #45348 (lack RX interrupt bug).
+(when 4 frames are received by slave, there are only 2 RX interrupts)
+
+- Release date: Jun. 23, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (SVN repository):
+                                | Revision
+  + Common_Model.cpp            | 6710
+  + Common_Model.h              | 6710
+  + MSPI000_AgentController.h   | 6755
+  + MSPI000_cmdif.h             | 5974
+  + MSPI000.cpp                 | 7582 (*)
+  + MSPI000_Func.cpp            | 7582 (*)
+  + MSPI000_Func.h              | 6797
+  + MSPI000.h                   | 6786
+  + mspi000_regif.cpp           | 6330
+  + mspi000_regif.h             | 6330
+  + PY_MSPI000.cpp              | 6417
+  + PY_MSPI000.h                | 6417
+  (*) updated source code in this release
+  
+- Supported features: similar to previous release
+- Non-supported features and limitation: similar to previous release
+
+#############################
+## src_U2A_MSPI_20180615.7x  
+#############################
+- Release info: fix bug in Redmine ticket #43825.
+
+- Release date: Jun. 15, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (SVN repository):
+                                | Revision
+  + Common_Model.cpp            | 6710
+  + Common_Model.h              | 6710
+  + MSPI000_AgentController.h   | 6755
+  + MSPI000_cmdif.h             | 5974
+  + MSPI000.cpp                 | 6797
+  + MSPI000_Func.cpp            | 7337
+  + MSPI000_Func.h              | 6797
+  + MSPI000.h                   | 6786
+  + mspi000_regif.cpp           | 6330
+  + mspi000_regif.h             | 6330
+  + PY_MSPI000.cpp              | 6417
+  + PY_MSPI000.h                | 6417
+  
+- Supported features: similar to previous release
+- Non-supported features and limitation: similar to previous release
+
+#############################
+## MSPI000_Output_20180522.7z
+#############################
+- Release info: Offical release.
+
+- Release date: May. 22, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (SVN repository):
+                                | Revision
+  + Common_Model.cpp            | 6710
+  + Common_Model.h              | 6710
+  + MSPI000_AgentController.h   | 6755
+  + MSPI000_cmdif.h             | 5974
+  + MSPI000.cpp                 | 6797
+  + MSPI000_Func.cpp            | 6797
+  + MSPI000_Func.h              | 6797
+  + MSPI000.h                   | 6786
+  + mspi000_regif.cpp           | 6330
+  + mspi000_regif.h             | 6330
+  + PY_MSPI000.cpp              | 6417
+  + PY_MSPI000.h                | 6417
+  
+- Supported features:
+  + Master/Slave mode operation
+  + Frame length and Frame count
+  + Chip select signal function
+  + Clock Polarity and Data Phase
+  + SO default level and idle time level
+  + Serial Data Direction Selection
+  + Channel priority control
+  + Error detection
+  + Communication stop or IP initialize
+  + Loop-back mode
+  + Safe-SPI protocol function
+  + Support three types of Memory mode: Direct, Fixed Buffer and Fixed FIFO memory mode.
+- Non-supported features and limitation:
+  + Don't support MSPInEMRXm0 registers (MSPIn Emulation Receive Data Register m0)
+  
+#############################
+## src_U2A_MSPI_Output_20180507.7z
+#############################
+- Release info: Offical release.
+
+- Release date: May. 07, 2018.
+
+- Test environment: SCHEAP-G4 Rev41, machine x64, gcc4.9.3.
+
+- File (SVN repository):
+                                | Revision
+  + Common_Model.cpp            | 6086
+  + Common_Model.h              | 5974
+  + MSPI000_AgentController.h   | 6351
+  + MSPI000_cmdif.h             | 5974
+  + MSPI000.cpp                 | 6422
+  + MSPI000_Func.cpp            | 6421
+  + MSPI000_Func.h              | 6351
+  + MSPI000.h                   | 6417
+  + mspi000_regif.cpp           | 6330
+  + mspi000_regif.h             | 6330
+  + PY_MSPI000.cpp              | 6417
+  + PY_MSPI000.h                | 6417
+  
+- Supported features:
+  + Master/Slave mode operation
+  + Frame length and Frame count
+  + Chip select signal function
+  + Clock Polarity and Data Phase
+  + SO default level and idle time level
+  + Serial Data Direction Selection
+  + Channel priority control
+  + Error detection
+  + Communication stop or IP initialize
+  + Loop-back mode
+  + Safe-SPI protocol function
+  + Support three types of Memory mode: Direct, Fixed Buffer and Fixed FIFO memory mode.
+- Non-supported features and limitation:
+  + Don't support MSPInEMRXm0 registers (MSPIn Emulation Receive Data Register m0)

@@ -1,0 +1,131 @@
+%MODULE ATU5_TIMERA
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         9
+
+%REG_CHANNEL reg_def
+    %%TITLE  group  name        reg_name    wsize       rsize       length  offset  factor_start    factor_end  factor_index    factor_step     access  init    support     callback
+    %%REG    -      TCR1A       TCR1A       8           8|16|32      8      0x00    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      TCR2A       TCR2A       8|16        8|16|32     16      0x02    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      TCR3A       TCR3A       8|16        8|16|32     16      0x04    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      TCR4A       TCR4A       8|16        8|16|32     16      0x06    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      TSRA        TSRA        -           8|16|32     16      0x08    -               -           -               -               R       0x0     TRUE        -
+    %%REG    -      TSCRA       TSCRA       8|16        8|16|32     16      0x0A    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      NCMCR1A     NCMCR1A     8           8|16|32      8      0x0C    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      NCMCR2A     NCMCR2A     8           8|16|32      8      0x0E    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      TIOR1A      TIOR1A      8|16        8|16|32     16      0x10    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      TIOR2A      TIOR2A      8|16|32     8|16|32     32      0x14    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      TILRA       TILRA       -           8|16|32      8      0x18    -               -           -               -               R       0x0     TRUE        -
+    %%REG    -      TCR5A       TCR5A       8           8|16|32      8      0x1C    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      TCNTA       TCNTA       32          8|16|32     32      0x20    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      TCR2AS1     TCR2AS1     8           8|16|32      8      0x24    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      TCR2AS2     TCR2AS2     8           8|16|32      8      0x26    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      TIERA       TIERA       8|16        8|16|32     16      0x2C    -               -           -               -               W|R     0x0     TRUE        -
+    %%REG    -      NCNTA       NCNTA       16          8|16|32     16      0x40    0               7           -               0x20            W|R     0x0     TRUE        -
+    %%REG    -      NCRA        NCRA        16          8|16|32     16      0x42    0               7           -               0x20            W|R     0x0     TRUE        -
+    %%REG    -      ICRA        ICRA        -           8|16|32     32      0x44    0               7           -               0x20            R       0x0     TRUE        -
+    %%REG    -      ICRA2       ICRA2       -           8|16|32     32      0x48    0               7           -               0x20            R       0x0     TRUE        -
+
+%REG_NAME TCR1A
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    CKSELA            2      0     0         W|R     TRUE     W
+    %%BIT    EVOSEL1           5      3     0         W|R     TRUE     -
+    %%BIT    EVOSEL2B          6      6     0         W|R     TRUE     -
+    %%BIT    EVOSEL2A          7      7     0         W|R     TRUE     -
+
+%REG_NAME TCR2A
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    EVOSELE1          7      0     0         W|R     TRUE     -
+    %%BIT    EVOSELE1E        15     15     0         W|R     TRUE     -
+
+%REG_NAME TCR3A
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    EVOSELE2A         7      0     0         W|R     TRUE     -
+    %%BIT    EVOSELE2AE       15     15     0         W|R     TRUE     -
+
+%REG_NAME TCR4A
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    EVOSELE2B         7      0     0         W|R     TRUE     -
+    %%BIT    EVOSELE2BE       15     15     0         W|R     TRUE     -
+
+%REG_NAME TSRA
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    ICFA              7      0     0         R       TRUE     -
+    %%BIT    OVFA             15     15     0         R       TRUE     -
+
+%REG_NAME TSCRA
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    ICFCA             7      0     0         W|R     TRUE     W
+    %%BIT    OVFCA            15     15     0         W|R     TRUE     -
+
+%REG_NAME NCMCR1A
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    NCM1A             7      0     0         W|R     TRUE     W
+
+%REG_NAME NCMCR2A
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    NCM2A             7      0     0         W|R     TRUE     W
+
+%REG_NAME TIOR1A
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    IOA0              1      0     0         W|R     TRUE     -
+    %%BIT    IOA1              3      2     0         W|R     TRUE     -
+    %%BIT    IOA2              5      4     0         W|R     TRUE     -
+    %%BIT    IOA3              7      6     0         W|R     TRUE     -
+    %%BIT    IOA4              9      8     0         W|R     TRUE     -
+    %%BIT    IOA5             11     10     0         W|R     TRUE     -
+    %%BIT    IOA6             13     12     0         W|R     TRUE     -
+    %%BIT    IOA7             15     14     0         W|R     TRUE     -
+
+%REG_NAME TIOR2A
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    NCEA              7      0     0         W|R     TRUE     W
+    %%BIT    NCKA             15      8     0         W|R     TRUE     -
+    %%BIT    NCKGA            23     16     0         W|R     TRUE     -
+
+%REG_NAME TILRA
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    TIAL0             7      0     0         R       TRUE     -
+
+%REG_NAME TCR5A
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    ICRA2SEL          0      0     0         W|R     TRUE     -
+
+%REG_NAME TCNTA
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    CNTA             31      0     0         W|R     TRUE     W
+
+%REG_NAME TCR2AS1
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    EVOSELE1S1        7      0     0         W|R     TRUE     -
+
+%REG_NAME TCR2AS2
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    EVOSELE1S2        7      0     0         W|R     TRUE     -
+
+%REG_NAME TIERA
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    ICIEA0            0      0     0         W|R     TRUE     -
+    %%BIT    ICIEA1            1      1     0         W|R     TRUE     -
+    %%BIT    ICIEA2            2      2     0         W|R     TRUE     -
+    %%BIT    ICIEA3            3      3     0         W|R     TRUE     -
+    %%BIT    ICIEA4            4      4     0         W|R     TRUE     -
+    %%BIT    ICIEA5            5      5     0         W|R     TRUE     -
+    %%BIT    ICIEA6            6      6     0         W|R     TRUE     -
+    %%BIT    ICIEA7            7      7     0         W|R     TRUE     -
+    %%BIT    OVEA             15     15     0         W|R     TRUE     -
+
+%REG_NAME NCNTA
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    NCNTA            15      0     0         W|R     TRUE     -
+
+%REG_NAME NCRA
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    NCTA             15      0     0         W|R     TRUE     -
+
+%REG_NAME ICRA
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    ICA              31      0     0         R       TRUE     -
+
+%REG_NAME ICRA2
+    %%TITLE  name             upper  lower  init      access  support  callback
+    %%BIT    ICA2             31      0     0         R       TRUE     -

@@ -1,0 +1,125 @@
+#############################
+## MMC44_Output_64bit_20200420.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Apr. 20, 2020.
+
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3-64bit.
+
+- File (CVS repository):
+                                | Revision
+  + MMC44_AgentController.h     | v1.2
+  + MMC44_cmdif.h               | v1.1 -> v1.2
+  + MMC44.cpp                   | v1.4
+  + MMC44_Func.cpp              | v1.3
+  + MMC44_Func.h                | v1.2
+  + MMC44.h                     | v1.3
+  + mmc44_regif.cpp             | v1.2 -> v1.3
+  + mmc44_regif.h               | v1.2 -> v1.3
+  + PY_MMC44.cpp                | v1.1 -> v1.4
+  + PY_MMC44.h                  | v1.1 -> v1.4
+  
+- The Multi Media Card Interface 44 (MMC44) has change as below
+  + Fix redmine ticket #122097
+  
+- Supported features: Not change
+- Non-supported features: Not change
+
+#############################
+## MMC44_Output_64bit_20200408.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Apr. 08, 2020.
+
+- Test environment: SCHEAP-G4 Rev191, machine x64, gcc4.9.3-64bit.
+
+- File (CVS repository):
+                                | Revision
+  + MMC44_Common_Model.cpp      | v1.1 -> Remove
+  + MMC44_Common_Model.h        | v1.1 -> Remove
+  + MMC44_AgentController.h     | v1.1 -> v1.2
+  + MMC44_cmdif.h               | v1.1
+  + MMC44.cpp                   | v1.1 -> v1.4
+  + MMC44_Func.cpp              | v1.1 -> v1.3
+  + MMC44_Func.h                | v1.1 -> v1.2
+  + MMC44.h                     | v1.2 -> v1.3
+  + mmc44_regif.cpp             | v1.1 -> v1.2
+  + mmc44_regif.h               | v1.1 -> v1.2
+  + PY_MMC44.h.cpp              | v1.1
+  + PY_MMC44.h.h                | v1.1
+  
+- The Multi Media Card Interface 44 (MMC44) has change as below
+  + Remove header and implement of MMC44_Common_Model class to apply rvc_common_model.
+  + Move define/enums from MMC44_Common_Model to MMC44_AgentController.
+  + Fix error/warning message of static check.
+  + Replace macro CWR_SYSTEMC by USR_CWR_SYSTEMC.
+  + Apply RVC common requirement for read/write register.
+  
+- Supported features: Not change
+- Non-supported features: Not change
+
+#############################
+## MMC44_Output_64bit_20181126.7z
+#############################
+- Release info: Offical release.
+
+- Release date: Nov. 26, 2018.
+
+- Test environment: SCHEAP-G4 Rev135, machine x64, gcc4.9.3-64bit.
+
+- File (CVS repository):
+                                | Revision
+  + MMC44_Common_Model.cpp      | v1.1
+  + MMC44_Common_Model.h        | v1.1
+  + MMC44_AgentController.h     | v1.1
+  + MMC44_cmdif.h               | v1.1
+  + MMC44.cpp                   | v1.1
+  + MMC44_Func.cpp              | v1.1
+  + MMC44_Func.h                | v1.1
+  + MMC44.h                     | v1.1
+  + mmc44_regif.cpp             | v1.1
+  + mmc44_regif.h               | v1.1
+  + PY_MMC44.h.cpp              | v1.1
+  + PY_MMC44.h.h                | v1.1
+  
+- The Multi Media Card Interface 44 (MMC44) has some function below
+  + DMA transfer requests: buffer write and buffer read
+  + Buffer for read/write
+  + Supports block transfer: Command transfer, Single block read, Single block write, multi-block read, multi block write
+  + Automatic CMD12 Issuance 
+  + Supports boot operation.
+  + MMC clock frequency settings are adjustable in the boot mode.
+  + Interrupt requests: normal operation and error/timeout
+  + Terminate the sequence forcibly and execute software reset
+  + Other operation: HPI & Background Operation
+
+#############################
+## MMC44_Output_64bit_20181212.7z
+#############################
+- Release info: Offical release to fix issue in ticket #81036 (related to removinf GetResetStatus())
+
+- Release date: Dec. 12, 2018.
+
+- Test environment: SCHEAP-G4 Rev135, machine x64, gcc4.9.3-64bit.
+
+- File (CVS repository):
+                                | Revision
+  + MMC44_Common_Model.cpp      | v1.1
+  + MMC44_Common_Model.h        | v1.1
+  + MMC44_AgentController.h     | v1.1
+  + MMC44_cmdif.h               | v1.1
+  + MMC44.cpp                   | v1.1
+  + MMC44_Func.cpp              | v1.1
+  + MMC44_Func.h                | v1.1
+  + MMC44.h                     | v1.1 ->v1.2
+  + mmc44_regif.cpp             | v1.1
+  + mmc44_regif.h               | v1.1
+  + PY_MMC44.h.cpp              | v1.1
+  + PY_MMC44.h.h                | v1.1
+  
+  Update code of MMC44.h to remove declaration of GetResetStatus() because of redundant code.
+  
+- Supported features: Not change
+- Non-supported features: Not change

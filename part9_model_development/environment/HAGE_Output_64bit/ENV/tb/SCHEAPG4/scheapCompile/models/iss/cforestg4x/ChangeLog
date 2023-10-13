@@ -1,0 +1,789 @@
+
+20190222 / 2019-02-22
+=====================
+
+  * Refac: [BAR] Clear BRnCHKm when Barrier synchronization is disable (rvc-refs #88151)
+  * Bug: [BAR] Barrier synchronization is checked only for last accessed channnel (rvc-refs #88151)
+  * Bug: [BAR] Doesn't clear the BRnCHKm for unattended PE when synchronization establised (rvc-refs #88151)
+  * Func: [BAR] Change timing to check barrier synchronization (rvc-refs #88151)
+  * Support: [CSPLUS] Disable SetGuard/SetGuardParam in CS+I/F (refs #3898)
+  * Support: [CSPLUS] Call NotifySPID/NotifyCpuOperationMode (refs #3898)
+  * Support: [CSPLUS] Support NotifySPID/NotifyCpuOperationMode (refs #3898)
+  * Support: [CSPLUS] Support SetFeintToIntc1/SetFenmiToIntc1 APIs (refs #3898)
+  * Support: [CSPLUS] Remove is_gm/gpid/is_bgint from ReqPseudo interruption APIs (refs #3898)
+  * Support: [CSPLUS] Return error when ReqPseudo interruption APIs are called for G4MH2.0 or later (refs #3898)
+  * Support: [CSPLUS] Return error for illegal priority on ReqPseudoEiint (refs #3898)
+  * Support: remove python set_peripheral_base() (cont) (rvc-refs #56781)
+  * Support: remove python set_peripheral_base() (rvc-refs #56781)
+  * Support: rename set_eiint_channel_offset() to set_ipir_eiint_ch() and add option to set_peripherals() (rvc-refs #56781)
+  * Support: remove redundant code of python set_eiint_channel_offset() and set_peripheral_base() (rvc-refs #56781)
+  * Support: update set_eiint_channel_offset() and set_peripheral_base() for cmprunner (rvc-refs #56781)
+  * [Support] python (cont') (rvc-refs #56781)
+  * [Support]: python set_eiint_channel_offset() for ipir (rvc-refs #56781)
+  * [Support]: python set_peripheral_base() to change base address of peripheral from default (rvc-refs# 56781)
+  * Refac: [CSPLUS] Use correct namespace for values (refs #3893)
+  * Refac: [CSPLUS] Add comments for SetIORBaseAddr and SetLocalIOROffsetAddr (refs #3893)
+  * Refac: [CSPLUS] Initialize offset address for all peripherals at first when SetIORBaseAddr is called (refs #3893)
+  * Bug: [UTILITY] BARRIER is enabled wrongly at default on CS+ (refs #3890)
+  * Bug: [CSPLUS] BARRIER is invalid in CS+ I/F even if ENABLE_BARRIER_CSP is defined (refs #3889)
+  * Refac: [CMAKE] Support policy CMP0048 NEW (refs #3882)
+  * Refac: [GDB] Use fallthrough attirbute to avoid compiler warning (refs #3881)
+  * Refac: [GDB] Update snprintf to avoid compiler warning (refs #3881)
+  * Refac: [CYCLESIM] Remove unused lines (refs #3881)
+  * Refac: [TRACE] Cast to avoid compiler warning (refs #3881)
+  * Refac: [CFORESTG4X] Use reference to catch C++ exception (refs #3881)
+  * [OSTM][UT] remove unused line in OSTM UT (rvc-refs #73104)
+  * [OSTM][UT] Update content of test_ostm_tregostm0core UT (rvc-refs #75056)
+  * [OSTM][UT] Update common UT OSTM (rvc-refs #75056)
+  * [OSTM][UT] Update Cmakelist OSTM (rvc-refs #75056)
+  * [OSTM] Fix issue: Control logic for case MD2 change while running (rvc-refs #75057 Note#24)
+  * [OSTM] Fix issue: Control logic for case not performs restart in Free-Run Mode (rvc-refs #75057)
+  * [OSTM] Fix issue: Update operations calculate schedule timer (rvc-refs #75057)
+  * [Doxygen] Corrects the mistake of the comment.(ref #3865)
+  * [Doxygen] Adds comment to make hyperlink on html document.(refs #3865)
+  * [Doxygen] Documentation update in INTC2.(rvc-ref #78900)
+  * [Doxygen] Documentation warning fix in INTC2.(rvc-ref #78900)
+  * [Doxygen] Documentation update4 in intc/src.(rvc-ref #77810)
+  * [Doxygen] Documentation update3 in intc/src.(rvc-ref #77810)
+  * [Doxygen] Documentation update2 in intc/src.(rvc-ref #77810)
+  * [Doxygen] Documentation update in intc/src.(rvc-ref #77810)
+  * [Doxygen] Documentation problem fix more in intc/src.(rvc-ref #77810)
+  * [Doxygen] Documentation problem fix in intc/src.(rvc-ref #77810)
+  * [Doxygen] Documentation problem fix in intc/include, intc/test.(rvc-ref #77810)
+  * [Doxygen] Documentation warining fix in GUARD.(rvc-ref #78960)
+  * [Doxygen] Documentation warning fix in GUARD_BASE.(rvc-ref #78908)
+  * [Doxygen] TRACE document fix, more.(refs #3839_7)
+  * [Doxyten] Documentation problem fix in Peripheral/UART. (refs #76999)
+  * Refac: [MECNT] fix typo from GOMEV to G0MEV (rvc-ref #76997)
+  * [Doxygen] Documentation problem fix in Peripheral/MECNT. (refs #76997)
+  * [Doxygen] Documentation problem fix in Peripheral/IPIR in cforestg4x. (refs #76793)
+  * [Doxygen] Documentation problem fix in Peripheral/BAR, more. (refs #76332)
+  * [Doxygen] Documentation problem fix in Peripheral/BAR. (refs #76332)
+  * Refac: [INST] separate base class for FsCtrl (refs #3861)
+  * Refac: [LATENCYINFO] Separate base class of latency info (refs #3861)
+  * [Doxygen] INST,inst_v850, Fixes warnings. Translates to Japanese to English. (refs #3860)
+  * [Doxygen] INST FPU documentation.(refs #3852)
+
+20181029 / 2018-10-29
+=====================
+
+20181012 / 2018-10-11
+=====================
+
+  * Refac: [CSPLUS] Update comments (refs #3824)
+  * Support: [CSPLUS] Support BaseAddr_BAR (refs #3841)
+  * Refac: [MPU] Add template instanciation for UT of CSPLUS (refs #3825)
+  * Refac: [COMPRUNNER] Add SetGuardParam (refs #3825)
+  * Refac: [CSPLUS] Update comment for ReqPseudoSyserr (refs #3825)
+  * Support: [CSPLUS] Add ReqPseudoOperandSyserr (refs #3825)
+  * Support: [UTILITY] Add NoticeOperandErrorResponce for any mode (refs #3825)
+  * Support: [CSPLUS] Support FEINT/GMFEINT/BGFEINT (refs #3825)
+  * Support: [CSPLUS] Support EIINT/GMEIINT/BGEIINT (refs #3825)
+  * Support: [CSPLUS] Support SetGuardParam (refs #3825)
+  * Support: [CSPLUS] Support 32 MPU entry for G4MH2.0 (refs #3825)
+  * Support: [CSPLUS] Support G4MH2.0 CoreType (refs #3825)
+  * Support: [CSPLUS] Support SetPEinfoID for G4MH2.0 (refs #3825)
+  * Refac: [UTILITY] Update comment for ExpCode (refs #3825)
+  * Support: [UTILITY] Update Copyright from 2014 to 2018 (refs #3840)
+  * [Doxygen] TRACE fix function description. (refs #3839)
+  * [Doxygen] MICROARCHDB fix function description.(refs #3838)
+  * Support: [ICACHE] Update comments. (refs #3819)
+  * Support: [ICACHE] Doxygen Document Japanese->English. (refs #3819)
+  * [MISR] Doxygen Documentation Japanese->English, complete (refs #3823)
+  * Support: [MISR] Doxygen Documentation Japanese->English (refs #3823)
+  * Support: [LSU] Update comment. (refs #3822)
+  * Support:  [LSU] Doxygen Document Japanese->English and period. (refs #3822)
+  * [DOXYGEN] Update command of frog_if (rvc-refs #56784-33)
+  * [DOXYGEN] Update command of frog_if.h (rvc-refs #56784-31)
+  * [DOXYGEN] Update command of frog_if.h (rvc-refs #56784)
+  * [DOXYGEN] Update command about ref of frog_if.h (rvc-refs #56784)
+  * [DOXYGEN] Update \param - and @ref of frog_if nd frog_internals (rvc-refs #56784)
+  * [DOXYGEN] Update 2 command about @tparam of frog_if.cpp  (rvc-refs #56784)
+  * [DOXYGEN] Update parameter description of frog_if and frog_internals (rvc-refs #56784)
+  * Support: [BTB] Add doxygen @todo for blank in @param. (rvc-refs #55593)
+  * Support: [BTB] Edit Doxygen comments complete (rvc-refs #55593)
+  * Support: [MISR] Doxygen Documentation (refs #3823)
+  * Support: [LSU] Doxygen documentation (refs #3822)
+  * Support: [ICACHE] Doxygen param has "To be documented." (refs #3819)
+  * Support: [ICACHE] Fix Doxygen document more
+  * Support: [ICACHE] Fix Doxygen document
+  * Support: [FSBUS] Doxygen documentation of \todo for blank. (refs #3821)
+  * Support: [FSBUS] Doxygen documentation (refs #3821)
+  * [GUARD][UT] Fix issue in pattern test_guard_internal.cpp (rvc-refs #49126 - Note#25)
+  * [GUARD][UT] Correct typo in paterns mentioned in Note#19 (rvc-refs #49126)
+  * [GUARD][UT] Fix issue in pattern test_treg_gspid.cpp (rvc-refs #49126)
+  * [GUARD][UT] Add test CSG function for G4MH20 (rvc-refs #49126)
+  * [GUARD][UT] Add test CRG function for G4MH20 (rvc-refs #49126)
+  * [GUARD][UT] Add test CRG registers for G4MH20 (rvc-refs #49126)
+  * [GUARD][UT] Update CRG part relate to GuardIntenal for G4MH1x (rvc-refs #49126)
+  * [GUARD][UT] Update CRG part relate to GuardIntenal (rvc-refs #49126)
+  * [GUARD][UT] Add test PEG main functions for G4MH20 (rvc-refs #49126)
+  * [GUARD][UT] Add test PEGERR registers for G4MH20 (rvc-refs #49126)
+  * [GUARD][UT] Update relate to GuardInternal (rvc-refs #49126)
+  * [GUARD][UT] Add test PROT register for G4MH20 (rvc-refs #49126)
+  * [GUARD][UT] Add test IVCSPID register (rvc-refs #49126)
+  * [GUARD][UT] Add test IVCOWNR register (rvc-refs #49126)
+  * [GUARD][UT] Update relate to GuardInternal (rvc-refs #49126)
+
+20180905 / 2018-09-05
+=====================
+
+  * Refac: [LATENCYINFO] Add include algorithm for std::max (refs #3660)
+  * Refac: [GUARD] Use bool for boolean variable (refs #3660)
+  * Refac: static cast for VS2015 warnings (refs #3660)
+  * Support: [CSPLUS] Update UT param of RBASE for G4MH (refs #3614)
+  * Support: [CSPLUS] use printf on UT (refs #3614)
+  * Support: [CSPLUS] Update UT param for G4MH (refs #3614)
+  * Support: [CSPLUS] Return API_E_PARAM on ReqPseudoFeint (refs #3614)
+  * Support: [CSPLUS] Update UT for CACHE_SIZE_32K (refs #3614)
+  * Support: [CSPLUS] Support CACHE_SIZE_32K (refs #3614)
+  * Support: [CSPLUS] Update UT for G4MH11 (refs #3614)
+  * Support: [CSPLUS] Support CoreType G4MH11 (refs #3614)
+
+20180716 / 2018-07-16
+=====================
+
+  * Bug: [BAR] Fix Read/Write behavior of BRCHK and BRSYNC (rvc-ref #38428)
+  * Func: [SOFTFLOAT] Update SoftFloat lib to SoftFloat 3e (rvc-refs #27160)
+  * Func: [SOFTFLOAT] Fix wrong condition for selecting Emin value (rvc-refs #47710)
+  * Func: [GUARD][CRG] Support CRG for G4MH2x (rvc-refs #41131)
+  * Func: [GUARD][PEG] Support PEG for G4MH2x (rvc-refs #37927)
+  * Func: [CYCLESIM] Update memory access timing of LSU (refs #3647)
+  * Func: [CYCLESIM] Improve RESBANK/LDM/STM/HALT/SYNC/LDL/STC cycle (refs #3626)
+  * Support: [UTILITY] Record PEID on VMemReadDebug and VMemWriteDebug for peripheral functions of PEID (rvc-ref #38428)
+  * Support: [INTC2] Use peid in WriteBody for IMR register (rvc-ref #38428)
+  * Support: [UTILITY] Add SetGuardParam (refs #3643)
+  * Support: [UTILITY] Delete GMEIINT/BGEIINT requests by CancelInterruptToCpu for SC-HEAP (refs #3630)
+  * Support: [GUARD][PYTHON] Update python script file for Guard function on G4MHv2 (rvc-refs #46230)
+  * Refac: [INTC] Revise EIP checking in WriteBody() (rvc-refs #35457)
+  * Refac: [INTC] Change SetEIP_L() to SetEIP() in EIC register (rvc-refs #35457)
+  * Refac: [INTC] Revise update order EEIC - EIC (rvc-refs #35456)
+  * Refac: [INTC] Remove not used SetEIP(), SetEIP_H(), m_eip_h in EIC register (rvc-refs #35457)
+
+20180309b / 2018-03-13
+======================
+
+  * Bug: [SOFTFLOAT] Fix wrong type for 64bit significant field in Windows+VS2015 (rvc-ref #28369)
+
+20180309 / 2018-03-09
+=====================
+
+  * Func: [PE] Support G4MH2.0 Draft2.7 (refs #3440)
+  * Func: [INTC2] Support INTC2 for G4MH2.0 (rvc-ref #15965)
+  * Func: [INTC1] Support INTC1 for G4MH2.0 (rvc-ref #77535)
+  * Func: [PE] Support G4MH1.1 (refs #3439)
+  * Func: [CYCLESYM] Change cycle on xxRET (rvc-ref #89704)
+  * Func: [CYCLESIM] Update SYNC timing (refs #3612)
+  * Func: [SOFTFLOAT] Update SoftFloat library to 3b (rvc-ref #82449)
+  * Func: [INST] Update one of 32bit RIE (reserved) instruction to 48bit RIE instruction for G4MH (rvc-ref #19468)
+
+20160905k / 2017-04-10
+======================
+
+  * Bug: [LATENCYINFO] Coredump when reset isn't called before StepExecute after MemoryAlloc (rvc-ref #80243)
+
+20160905j / 2017-04-07
+======================
+
+  * Support: [CYCLESIM] Change SYNC timing by usign LSU timing additonally (refs #3456)
+  * Support: [CYCLESIM] Add DEBUG_CS_LSU for debug of lsu buffer (refs #3456)
+  * Support: [CYCLESIM] Update log for outstand info for DEBUG_CS_MEM (refs #3456)
+  * Support: [CYCLESIM] Update DEBUG_CS log for lsu info for DEBUG_CS (refs #3456)
+  * Support: [CYCLESIM] Update checking routine for DEBUG_CS (refs #3456)
+  * Support: [CYCLESIM] Add max stall log for DEBUG_CS (refs #3456)
+  * Func: [CYCLESIM] Sync PE not only EA but also LSU (refs #3456)
+  * Refac: [OUTSTAND] Move GetBankId to headder file (refs #3456)
+  * Func: [OUTSTAND] Support MBI slot in CRAM (refs #3456)
+  * Bug: [OUTSTAND] Fix huge stall when multi PE accesses are conflicted (refs #3456)
+  * Support: [UTILITY] Record multiple break event for SC-HEAP (refs #3462)
+  * Support: [UTILITY] change type of BreakHitAttribute from enum to uint32_t (refs #3462)
+  * Support: [UTILITY] Change BreakEvent type from enum to uint32_t (refs #3462)
+
+20160905i / 2017-03-01
+======================
+
+  * Refac: [UTILITY] Update peg_bus/crg_bus connection for test with SC-HEAP build (rvc-fef #77584)
+  * Func: [LSU] Change GD_PEG_ERR to GD_PEG_ERR_M/S for SC-HEAP (rvc-fef #77584)
+  * Func: [PEG] Specify PEG return value in case PEG error (rvc-fef #77584)
+  * Support: [UTILITY] Add SysErrCause value for PEG (rvc-ref #77584)
+
+20160905h / 2017-01-27
+======================
+
+  * Bug: [SOFTFLOAT] Add test case for test_float32_madd/msub. (refs #3437)
+  * Bug: [SOFTFLOAT] Add test case for test_float32_madd. (refs #3437)
+  * Bug: [SOFTFLOAT] Fix incorrect exception detection method. (refs #3437)
+  * Func: [PEG] Update PEG error to be consistency with latest SPCLD operation (rvc-ref #75284)
+  * Bug: [LSU] DATA_READ to INTC1 area is issued with SPCLD=1 wrongly (rvc-ref #75284)
+  * Func: [PEG] Update PEG error to PEGCAP_S in case Fetch access (rvc-fef #75284)
+  * Func: [LSU] Fetch from not-FlashROM area is issued with SPCLD=0 (rvc-ref #75284)
+
+20160905g / 2016-10-18
+======================
+
+  * Refac: [CLBRIDGE] change for cppcheck warning (refs #3267)
+  * Bug: [LSU] Wrong gurad error info for SC-HEAP (refs #3418)
+
+20160905f / 2016-10-14
+======================
+
+  * Bug: [FSBUS] Add template for BusFetchPhys for SC-HEAP (refs #3416)
+
+20160905e / 2016-10-13
+======================
+
+  * Support: [IPIR] Update access size in UT test_tregipient.cpp (rvc-refs #56696)
+  * Support: [PEG][UT] Correct UT in case memory access is self PE (rvc-ref #59571)
+  * Func: [UTILITY] Support fetch access by API (refs #3416)
+  * Bug: [INST] gcc generates wrong object for TRFSRV.W4 on SC-HEAP (refs #3415)
+  * Refac: [IPIR] revise WriteBody() for UT in IPIR (rvc-ref #65844)
+  * Func: [IPIR] Ignore 32/16bit access to IPIR (rvc-ref #65844)
+  * Bug: [IPIR] WriteBody() is empty in IPIR (rvc-ref #65844)
+
+20160905d / 2016-10-04
+======================
+
+  * Refac: [TRACE] move some code from cpp to h (refs #3409)
+  * Refac: [INST] refactoring CountPerformance function
+  * Support: [TRACE] change the num of shite space for exception message in CForest log
+  * Support: [CYCLESIM] improve cycle count on dispose for sc-heap area (refs #3414)
+  * Bug: [CYCLESIM] Wrong waiting SCHEAP response on resbank (refs #3414)
+  * Refac: [CYCLESIM] refactoring IFQ const variables
+  * Bug: [UTILITY] CRG/PEG registers can't be accessed from SC-HEAP (refs #3413)
+  * Refac: [INST] Add likely/unlikely sentence
+  * Refac: [CYCLESIM] merged duplicated code
+  * Refac: [CYCLESIM] move +1 to out of loop
+  * Refac: [CYCLESIM] remove unnecessary branch
+  * Refac: [INST] disable FSMODE
+  * Refac: [CYCLESIM] move const function to header (refs #3409)
+  * Refac: [CYCLESIM] change const to static const (refs #3409)
+  * Support: [CMAKE] Change default option to disable DEBUG_CS and USE_STALL_COUNT (refs #3409)
+  * Support: [CMAKE] Change optimize option from O2 to O3 (refs #3409)
+  * Refac: [INST] improve checking of DB mode for PMC
+  * Refac: [REG] Add ifdef to ignore PMC event conditions for debug mode
+  * Bug: [REG] SYSCALL isn't counted in PMCTRL.CND=0x18 wrongly (rvc-ref #66041)
+  * Bug: [CYCLECOUNT] Wrong cycle count of SNOOZE inst (refs #3411)
+
+20160905c / 2016-09-09
+======================
+
+  * Bug: [INST] Halt state isn't released by reset (refs #3405)
+
+20160905b / 2016-09-05
+======================
+
+  * Refac: [GUARD][UT] Separate the UT (rvc-ref #59571)
+  * Refac: [CRG][UT] Update the value of UT (rvc-ref #59571)
+  * Refac: [PEG][UT] Update the value of UT (rvc-ref #59571)
+  * Func: [CRG][UT] Add UT for checking all functions in Crg class (rvc-ref #59571)
+  * Func: [CRG][UT] Add UT for checking function of capture registers (rvc-ref #59571)
+  * Func: [CRG][UT] Add UT for checking function of control registers (rvc-ref #59571)
+  * Func: [CRG][UT] Add UT for checking constructor of error registers (rvc-ref #59571)
+  * Func: [CRG][UT] Add UT for checking constructor of control registers (rvc-ref #59571)
+  * Func: [GUARD_BASE][UT] Add UT for checking all functions in Peg class (rvc-ref #59571)
+  * Refac: [GUARD_BASE][UT] Add more UT for checking PEG control registers (rvc-ref #59571)
+  * Func: [GUARD_BASE][UT] Add UT for checking basic functions in Peg class (rvc-ref #59571)
+  * Func: [GUARD_BASE][UT] Add UT for checking Peg Capture function (rvc-ref #59571)
+  * Bug: [GUARD_BASE][UT] Corrct base address in case PEGCTRL (rvc-ref #59571)
+  * Bug: [GUARD] Add condition to ignore WriteBody function calling in TargetWriteDebug for GERRSTAT, GERRTYPE, GERRADDR (rvc-ref #58063)
+  * Func: [GUARD_BASE][UT] Add UT for checking guard internal functions (rvc-ref #59571)
+  * Refac: [GUARD_BASE][UT] Update UT after refactoried code (rvc-ref #59571)
+  * Refac: [GUARD] Add guard internal class to manage enable condition (con't) (1) (rvc-ref #58063)
+  * Refac: [GUARD] Add guard internal class to manage enable condition (rvc-ref #58063)
+  * Func: [PEG][UT] Add UT for checking PegCtrl (rvc-ref #59571)
+  * Support: [CSPLUS] Add NotifyTraceInst callback for CS+ (refs #3342)
+
+20160905 / 2016-09-05
+=====================
+
+  * Refac: [LATENCYINFO] fix compiler warning
+  * Support: [CYCLESIM] Improve RMW access latency (refs #3324)
+  * Support: [CYCLESIM] Trial support for study IC by canceled prefetch code (refs #3324)
+  * Support: [CYCLESIM] Release AMU by InO (refs #3324)
+  * Support: [CYCLESIM] Improve st.b/h to LRAM (refs #3324)
+  * Support: [CYCLESIM] Change InO request for CRAM access (refs #3324)
+  * Bug: [INST] Initialize forgotten FPSR_IF bit (refs #3404)
+  * Bug: [INST][SOFTFLOAT] Writeback forgotten FPSR_IF bit. (refs #3404)
+
+20160719 / 2016-07-19
+=====================
+
+  * Refac: [PYTHON] Separate python command def for 65536 maximum char length
+  * Add Change log
+  * Bug: [GUARD_BASE] Add initial value for GSPID, GBAD, GADV in case 8bit, 16bit access (rvc-ref #58063)
+  * Bug: [GUARD_BASE] Change mask value for GSPID, GBAD, GADV in case 8bit, 16bit access (rvc-ref #58063)
+  * Add Change log
+
+20160719 / 2016-07-19
+=====================
+
+  * Bug: [GUARD_BASE] Add initial value for GSPID, GBAD, GADV in case 8bit, 16bit access (rvc-ref #58063)
+  * Bug: [GUARD_BASE] Change mask value for GSPID, GBAD, GADV in case 8bit, 16bit access (rvc-ref #58063)
+  * Add Change log
+
+20160719 / 2016-07-19
+=====================
+
+20160610_scheap / 2016-06-10
+============================
+
+  * Support: [CMAKE] remove -pg when coverage is disabled (rvc-ref #59927)
+  * Refac: [TRACE] remove generated header file in src directory (refs #3362)
+  * Refac: [MICROARCHDB] remove generated header file in src directory (refs #3362)
+  * Refac: [INTC][INTC2] Use common function instead of GetEICT/GetFICT/GetFNCT (rvc-ref #59752)
+  * Func: [INTC] Support level detection in FIC (rvc-ref #59752)
+  * Func: [INTC] Support level detection in FNC cont (rvc-ref #59752)
+  * Func: [INTC/INTC2] Support level detection in FNC (rvc-refs #59752)
+  * Support: [Python] Update python command for set_peripherals with no_ipir_mecnt_barrier (rvc-ref #59874)
+  * Support: [Python] Remove set_peripherals (no_ipir_mecnt_barrier) (rvc-ref #59874)
+  * Support: [Python] Don't update deprecated peripheral setting by set_peripherals with all (rvc-ref #59874)
+  * Support: [Python] Update help for set_peripherals (rvc-ref #59874)
+  * Support: [Python] Support simio in set_peripherals command (rvc-ref #59874)
+  * Support: [Python] Update help for no_ipir_mecnt_barrier (rvc-ref #59874)
+  * Support: [CSPLUS] invalid icache=1/2/4/32/64, MPU!=24ch (refs #3360)
+  * Support: [CSPLUS] Add SetGuard API (refs #3360)
+  * Bug: [COUNTERBASE] DB exceptions aren't counted in PMCTRL.CND=22/23h (rvc-ref #59770)
+  * Bug: [DEBUGBREAK] RMW inst checks LSAB for read or write (rel-ref #280887)
+  * Refac: [DEBUGBREAK] Merge waste routine for RLB (rel-ref #280887)
+  * Bug: [COMPRUNNER] Correct CmpGetRegInfo function in case XDump arithmetic (rvc-ref #58112)
+  * Func: [ICACHE] CISTI updates V and L when WT=1 (rvc-ref #57307)
+  * Refac: [COMPRUNNER] Update EIBD address as G4MH spec (rvc-ref #58112)
+  * Refac: [COMPRUNNER] Correct CompRunner message and comment (rvc-ref #58112)
+  * Refac: [COMPRUNNER] Clear EIRF after EIINT is acknowledgement (rvc-ref #58112)
+  * Bug: [COMPRUNNER] Disable EIINT is generated automatically (rvc-ref #58112)
+  * Func: [INTC] Update DBMK::SetEI (rvc-ref #59752)
+  * Func: [INTC] Use Dummy DBMK in intc2 (rvc-ref #59752)
+  * Support: [INTC/INTC2]Fix issue related to DBMK mask EIINT
+  * Refac: [INTC/INTC2] Modified DBMK bits structure, move to correct position
+  * Func [COUNTERBASE] Uncount first ldsr and count final ldsr (rvc-ref #59720)
+  * Func: [COUNTERBASE] Change count timing again for pmc (refs #3359)
+  * Func: [COUNTERBASE] remove DBRET from counting target for pmc (refs #3359)
+  * Func: [COUNTERBASE] change count timing for pmc (refs #3359)
+  * Support: [COUNTERBASE] fix return type of GetCondition for PMC (refs #3359)
+  * Refac: [COUNTERBASE] remove waste code (refs #3359)
+  * Func: [COUNTERBASE] Fix instruction count (refs #3359)
+  * Func: [COUNTERBASE] Fix counted value when cnd is change (refs #3359)
+  * Support: change record num for regbank access (refs #3309)
+  * Refac: [UTILITY] Move GetCPuTime to ForestInternals (refs #3359)
+  * Func: [COUNTERBASE] support PMCTRL.CND=40 (refs #3364)
+  * Func: [COUNTERBASE] fix counter condition (refs #3359)
+  * Func: [COUNTERBASE] fix counter to count halt period (refs #3359)
+  * Support: [CYCLESIM] change ldsr issue rate (refs #3364)
+  * Bug:[CYCLESIM] fix internal error in resbank (rel-ref #279463)
+  * Func: [COUNTERBASE] Support PMCTRL.CND=28/29 (refs #3359)
+  * Func: [COUNTERBASE] Support events for PMCTRL.CND except 28/29/40 (refs #3359)
+  * Refac: [Utility] Use common function in ForestInternals (refs #3359)
+  * Func: [COUNTERBASE] Add count function for PMCTRL.CND of memory access (refs #3359)
+  * Func: [COUNTERBASE] Add count function for PMCTRL.CND=18~23 (refs #3359)
+  * Refac: [COMPRUNNER] Add message in case last commit is mismatch (rvc-ref #58112)
+  * Bug: [COMPRUNNER] Fix register not found when the same NBLKID is used 2 times in 1 instruction (rvc-ref #59617)
+  * Refac: [LSU] refactoring 128bit access (refs #3270)
+  * Support: [INTC/INTC2] Write function for FIC.FICT read-only bit
+  * Support: [INTC/INTC2] Write function for FNC on Debug mode
+  * Support: [Python] Add set_guards command (refs #3360)
+  * Support: [UTILITY] Fix compile error on API (refs #3360)
+  * Support: [CLBRIDGE] temporally disable to compile (refs #3360)
+  * Support: [UTILITY] Add SetPeripheral API (refs #3360)
+  * Refac: [UTILITY] Use IsValidPeipheralId for checking (refs #3360)
+  * Support: [UTILITY] Don't support not-exist setting for MPU_REGION_NUM and ICSIZE on CS+ and SC-HEAP (refs #3360)
+  * Support: [UTILITY] Update CLID function (refs #3360)
+  * Support: [CMAKE] Update CMAKE file for FROG UT (refs #3360)
+  * Support: [UTILITY] Update MEM attribute API (refs #3360)
+  * Support: [UTILITY] Update Guard API (refs #3360)
+  * Support: [UTILITY] Change initial sequence to prevent segmentation fault (refs #3360)
+  * Support: [UTILITY] Update CreateDefaultLatency (refs #3360)
+  * Support: [UTILITY] Add cl_latency to API (refs #3360)
+  * Support: [UTILITY] Remove mirror API (refs #3360)
+  * Support: [UTILITY] Add clid to SetPe (refs #3360)
+  * Bug: [INST] Update EIPC and EIPSW wrongly when SYSERR occurs by RBNR.BN overflow (rvc-ref #59306)
+  * Support: [COMPILER] change debug info option for RelWithDebInfo (refs #3285)
+  * Support: [FROG] Update cmake for FROG release (refs #3285)
+  * Support: [FROG] Update UT for FROG (refs #3285)
+  * Refac: [FROG] don't use boost::to_upper_copy in frog_ut (refs #3285)
+  * Bug: [FROG] Fix ToUpperCopy for memory leak (refs #3285)
+  * Func: [LLSC] Clear LLbit by BusWritePhys and external master access (refs #3358)
+  * Func: [LSU] Compare address value without self addr translation for STC (refs #3357)
+  * Support: [MECNT] Update address space size (rvc-refs #56207)
+  * Bug: [IPIR] each PE has IPIR module independently (rvc-ref #52473)
+  * Revert "Bug: Fix MPU checking by Cache instructions (rvc-ref #53735)"
+  * Func: [DEBUGBREAK] Add BPC.TE and BE to SQ condition for ISA spec 1.20 (refs #3353)
+  * Func: [REG] Update name of RDBCR.RDBDBE for ISA spec 1.20 (refs #3353)
+  * Func: [REG] Update L1RLNK0.V from R/W to R for ISA spec 1.20 (refs #3353)
+  * Func: [REG] Update ICBKEY and DCBKEY registers for ISA spec 1.20 (refs #3353)
+  * Func: [MPU] Update MPU checking function for ISA spec 1.20 (refs #3353)
+  * Func: [INST] Support updated EIIC on interruption for ISA spec 1.20 (refs #3353)
+  * Bug: Fix NaN result in ADDSUBNx and SUBADDNx (rvc-ref #51093)
+  * Bug: PCB doesn't occur when it conflicts with MIP (rvc-ref #58993)
+  * Func: [COMPRUNNER] Support ICSR update as G4MH spec (rvc-ref #58385)
+  * Refac: [COMPRUNNER] Keep flag enable in case no register write-back (rvc-ref #58385)
+  * Support: [CYCLESIM] Fix typo in internal error message (refs #3355)
+  * Bug: [REG] Wrong KEYCODE value to write to L1RLNK1 (rvc-ref #55681)
+  * Bug: [MICROARCHDB] Fix latency for stc.h and stc.b (refs #3349)
+  * Support: [Tools] Add tools to convert archdb.xls to archdb.txt (refs #3349)
+  * Bug: [DEBUGBREAK] Wrong exception priority in RMW inst (refs #3351)
+  * Refac: [DEBUGBREAK] remove unused code (refs #3351)
+  * Bug: [COUNTERBASE] Performance counter isn't counted wrongly (rvc-ref #57850)
+  * Support: [INTC/INTC2] Remove conflict IsIntc1Channel() function
+  * Support: [INTC/INTC2] Modified TRegDBMK:Write, WriteBody (rvc-refs #46884)
+  * Support: [INTC/INTC2] Remove all old code that still exist in commented line (rvc-refs #46884)
+  * Support: [INTC/INTC2] Modified INTC1.FNC/FIC (rvc-refs #46884)
+  * Support: [INTC/INTC2] Add DBMK register, remove EIDM/FEDM (rvc-refs #46884)
+  * Func: [INST] Record PSW.SAT in CLIP instruction for CompRunner (rvc-ref #56002)
+  * Support: [INTC] Add CancelFeintToCpu(arg) for SC-HEAP (refs #3343)
+  * Support: [UTILITY] Add fflush to flush log for SC-HEAP (refs #3343)
+  * Support: Add code to prevent use STL between SC-HEAP and CForest (refs #3343)
+  * Bug: [INST] Set PSW.S to 0 in AND wrongly (refs #3341)
+  * Refac: [LATENCYINFO] change name from DBUF_ENABLE_G3MH to DBUF_FROM_G4MH (refs #3281)
+  * Refac: [LATENCYINFO] change name from DBUF_DISABLE_G3MH to DBUF_CRAM_G4MH (refs #3281)
+  * Refac: [LATENCYINFO] remove DBUF_ENABLE_G3M (refs #3281)
+  * Refac: [LATENCYINFO] change name from DBUF_DISABLE_G3M to DBUF_SIMPLE_MEM (refs #3281)
+  * Refac: remove btb for G3M (refs #3281)
+  * Refac: remove CsIbuf for G3M (refs #3281)
+  * Support: Add dependency for auto generated files (refs #3330)
+  * Support: Add SetLramArea (refs #3281)
+  * Refac: Remove checking for CORE_G4MH (refs #3281)
+  * Func: [INST] remove RtlDependMode for E3xISS log (refs #3281)
+  * Func: [COREGUARD] remove IPG (refs #3281)
+  * Func: [LSU] return correct address when error response occur (refs #3338)
+  * Refac: [INST] change name cancel_mem_write to is_mdp_suppressed (refs #3338)
+  * Func: [SEG] remove SEG (refs #3281)
+  * Refac: [FROG] temporal commit : don't use boost::to_upper_copy (refs #3285)
+  * Support: [FROG] Add gen_frog_reg_profile (refs #3285)
+  * Support: remove GRAM WTB 2 (refs #3281)
+  * Bug: remove ARG_R1_R2_VR3 type (refs #3329)
+  * Support: remove GRAM WTB (refs #3281)
+  * Support: remove BaseAddr_SAT (refs #3281)
+  * Support: disable coverage options when CODE_COVERAGE=OFF (refs #3339)
+  * Func: [CMAKE] Coverage get for multiple binaries. (refs #3337)
+  * Add Change log
+  * Func: [LSU] Fetch from memory when DIR0.DM=1 as ISA rev1.10 (refs #3329)
+  * Func: [DEBUGBREAK] Don't check sequential break event on invalid setting as ISA rev1.10 (refs #3329)
+  * Func: [DEBUGBREAK] Don't check break event on invalid setting as ISA rev1.10 (refs #3329)
+  * Func: [INST] Remove some of LDV/STV/LDVZ/STVZ instructions as ISA rev1.10 (refs #3329)
+  * Refac: [INST] ANDI set PSW.S to 0 always as ISA rev1.10 (refs #3329)
+  * Func: [REG] Add Link registers as ISA rev1.10 (refs #3329)
+  * Func: [REG] fix LSUCR as ISA rev1.10 (refs #3329)
+  * Func: [REG] Add RDBSTAT as ISA rev1.10 (refs #3329)
+  * Func: [REG] Update RDBADATn as ISA rev1.10 (refs #3329)
+  * Func: [REG] Update RDBATAG as ISA rev1.10 (refs #3329)
+  * Func: [REG] Update RDBACR as ISA rev1.10 (refs #3329)
+  * Func: [REG] Update RDBCR as ISA rev1.10 (refs #3329)
+  * Func: [REG] Update LSUCR as ISA rev1.10 (refs #3329)
+  * Func: [REG] Add DCBKEY as ISA rev1.10 (refs #3329)
+  * Func: [REG] Change LSU registers to selid=13 as ISA rev1.10 (refs #3329)
+  * Func: [REG] Support ICBKEY and IFCR1 as ISA rev1.10 (refs #3329)
+  * Func: [REG] Add DBSPC.D4PCB for ISA rev1.10 (refs #3329)
+  * Func: [REG] Add PMCTRL.CND=0x51 for ISA rev1.10 (refs #3329)
+  * Func: [REG] Change PID value as ISA rev1.10 (refs #3329)
+  * Bug: [ICACHE] ICTAGL.LPN[31:25] is fixed to 0 (rvc-ref #57284)
+  * Support: [INST] record SAT bit on satsub/satadd inst for CompRunner (rvc-ref #56002)
+  * Support: Fix PeVec definition (refs #3328)
+  * Support: Fix include for ut of SCHEAP (refs #3328)
+  * Refac: fix unused variables warning (refs #3327)
+  * Refac: fix const warning (refs #3327)
+  * Refac: [SCHEAP] remove unused function (refs #3327)
+  * Refac: fix warnings for comparision between sign and unsign value (refs #3327)
+  * Refac: fix warnings for comparision n >= 0 for unsigned value (refs #3327)
+  * Func: Support python name sent by SV side in CompG4MH (rvc-ref #56574)
+  * Refac: Correct CompG4MH message in case DBINT, DBNMI (rvc-ref #50909)
+  * Refac: Correct CompG4MH message in case EIINT, FEINT, FENMI (rvc-ref #50909)
+  * Func: Add flag in case EIINT table reading to resolve SV side issue (2) (rvc-ref #50909)
+  * Func: Update base address of INTC1, INTC2 as new spec in CompG4MH (rvc-ref #50909)
+  * Refac: Correct CompG4MH message in case EIINT table reading (rvc-ref #50909)
+  * Func: Add flag in case EIINT table reading to resolve SV side issue (rvc-ref #50909)
+  * Func: Update python script to CompG4MH and CForest G4MH (rvc-ref #50384)
+  * Bug: Correct message in case undefined value from SV side in CompG4MH log (rvc-ref #50384)
+  * Bug: Correct condition for break channel in DPI_ExpDBIntNotify in CompG4MH (rvc-ref #50909)
+  * Bug: Correct error number in case Non-blocking commit in CompG4MH log (rvc-ref #50384)
+  * Bug: Fix MPU checking by Cache instructions (rvc-ref #53735)
+  * Func: [IPIR] Add sample test for IPIR.
+  * [MECNT] fix content of the comment.
+  * Func: [IPIR] Add sample test for IPIR's register.
+  * Bug: [Core][REG] ICERR[15].ICHEWY isn't fixed to 0 wrongly (rvc-ref #53748)
+  * Bug: [Core][REG] ICTAGH[15:14].TAGECC isn't fixed to 0 wrongly (rvc-ref #53748)
+  * Bug: [Core][REG]Wrong TSCTRL/PMCTRL.OVF (rvc-ref #53699)
+  * Func: [UTILITY] Update peripheral address (refs #3326)
+  * Support: [PYTHON] Add repeat count for set_event and set_clear_event command (rvc-ref #55858)
+  * Func: [CYCLESIM] Update CS for instructions which update PSW (refs #3324)
+  * Func: [CYCLESIM] update latency info for HW spec 0.08a (refs #3324)
+  * Support: [PYTHON] Add set_base_peid command to change first PEID
+  * Refac: [COMPRUNNER] Correct CompG4MH message in case mismatch (rvc-def #50384)
+  * Func: [COMPRUNNER] Support WAW status in XDump functions in CompG4MH (rvc-def #52470)
+  * Refac: [COMPRUNNER] Modify CompG4MH message for easy reference (rvc-ref #50384)
+  * Func: [COMPRUNNER] Support error count in CompG4MH log (rvc-ref #50384)
+  * Bug: [COMPRUNNER] Correct return value when one element is deleted in CompG4MH (rvc-ref #50384)
+  * Refac: [COMPRUNNER] Arrange print function in CompG4MH (2) (rvc-ref #51445)
+  * Refac: [COMPRUNNER] Arrange print function in CompG4MH (rvc-ref #51445)
+  * Refac: [COMPRUNNER] Change error message for 4-state in SV side in CompG4MH (rvc-ref #51445)
+  * Update ChangeLog
+  * Bug: [INTC] FEINT is cleared when multiple FEINT are requested (rvc-ref #55379)
+  * Support: [CMake] Code coverage opion exclude the Windows environment(VS2015).
+  * Func: [CMAKE] Add code coverage function to discover untested parts of CForestG4X. (refs #3321)
+  * Fix typo from Inc to Corp.
+  * Change indent of Changelog
+  * Bug: can't build on VS because conflict DLLEXPORT (refs #3300)
+  * Bug: [INST] load inc/dec with reg1=reg3 wrong reg1 value (rvc-ref #53711)
+  * Func: [COMPRUNNER] merge commit from g3m repo 9875ff7-09b4727 (refs #3282)
+  * Func: [MPU] If MCR.OV=1, other MCR bits are 0 in MPU checking function (rvc-ref #53295)
+  * Func: [INST] update print format of addr on cache and pref inst (refs #3315)
+  * Func: [INST] Don't go to HAL state on debug mode (rvc-ref #53401)
+  * Bug: [INST] PREF and CACHE instruction for Dcahce is shown in log file (refs #3315)
+  * Bug: [INST] RBNR isn't updated wrongly when MDP suppressed (rvc-ref #53487)
+  * Func: [ICACHE] Update LRU on prefi with ICHIT (rvc-ref #53479)
+  * Func: [COMPRUNNER] merge Comprunner commits from g3m repo 599ef9d-45172c6 (refs #3282)
+  * Add Change log
+  * Support: [COMMON] Enable define DLLEXPORT in MSVC for SCHEAP (refs #3300)
+  * Bug: [INTC2] EIC.EICT can be modified wrongly (rvc-ref #53818)
+  * Bug: [SCHEAP] NotifyLoadLatency doesn't affect to inc/dec load instructions (refs #3314)
+  * Support: [Samples] Update python script at 7b28f65 in g3m repo
+  * Func: [CORE] Update archdb xls for CLL in g3m repo 0f3706f (refs #3273)
+  * Refac: fix compiler warns in g3m repo 33ca4e2-9249eef
+  * Func: [CORE] Support G4MH ISA spec rev1.00 in g3m repo b3a2771-2cccca5 (refs #3273)
+  * Refac: [FROG] refactoring frog if in g3m repo in g3m repo 9015357-ac2d577 (rvc-ref #52907)
+  * Support: [FROG] create ut for frog if in g3m repo in g3m repo cb4c601-ab17d7e (rvc-refs #45261)
+  * Refac: [CORE][REG] change to english comment to prevent invalid char in g3m repo 39540ab (refs #3306)
+  * Func: [CORE] Support MDP suppress mode in g3m repo c05d000-1908e2d (refs #3306)
+  * Support: [FROG] Update frog if for new trace format in g3m repo 708005c-8a5f4ca
+  * Refac: [TARGETREG] remove include forest.h (refs #3313)
+  * Fix typo from ReqIntByPripheral to ReqIntByPeripheral
+  * [MECNT] Add new test sample for mecnt.
+  * Add Change log
+  * Bug: [CFORESTG4X] Overwrite the initial value of ICCTRL.ICHEN unexpectedly (refs #3305)
+  * Func: [SCHEAP] Change library from static to shared for scheap (refs #3300)
+  * Func: [SCHEAP] Change include inttype.h in old VS for scheap (refs #3300)
+  * Func: [SCHEAP] Add DLL_EXPORT_IMPORT for scheap (refs #3300)
+  * Func: [PYTHON] Remove EXT_PIN_INT_EXPAND (refs #3300)
+  * Func: [PE] Remove EXT_PIN_INT_EXPAND (refs #3300)
+  * Func: [UTILITY] Remove EXT_PIN_INT_EXPAND (refs #3300)
+  * Func: [PYTHON] Add set_mpudmdp command for EXT_PIN_MDP_DMDP (refs #3300)
+  * Func: [PE] Add EXT_PIN_MDP_DMDP (refs #3300)
+  * Refac: [CSPLUS] change enum name for EXT_PIN_MDP_DMDP (refs #3300)
+  * Func: [UTILITY] change enum name for EXT_PIN_MDP_DMDP (refs #3300)
+
+20160510_standalone / 2016-05-10
+================================
+
+  * Func: [LSU] Fetch from memory when DIR0.DM=1 as ISA rev1.10 (refs #3329)
+  * Func: [DEBUGBREAK] Don't check sequential break event on invalid setting as ISA rev1.10 (refs #3329)
+  * Func: [DEBUGBREAK] Don't check break event on invalid setting as ISA rev1.10 (refs #3329)
+  * Func: [INST] Remove some of LDV/STV/LDVZ/STVZ instructions as ISA rev1.10 (refs #3329)
+  * Refac: [INST] ANDI set PSW.S to 0 always as ISA rev1.10 (refs #3329)
+  * Func: [REG] Add Link registers as ISA rev1.10 (refs #3329)
+  * Func: [REG] fix LSUCR as ISA rev1.10 (refs #3329)
+  * Func: [REG] Add RDBSTAT as ISA rev1.10 (refs #3329)
+  * Func: [REG] Update RDBADATn as ISA rev1.10 (refs #3329)
+  * Func: [REG] Update RDBATAG as ISA rev1.10 (refs #3329)
+  * Func: [REG] Update RDBACR as ISA rev1.10 (refs #3329)
+  * Func: [REG] Update RDBCR as ISA rev1.10 (refs #3329)
+  * Func: [REG] Update LSUCR as ISA rev1.10 (refs #3329)
+  * Func: [REG] Add DCBKEY as ISA rev1.10 (refs #3329)
+  * Func: [REG] Change LSU registers to selid=13 as ISA rev1.10 (refs #3329)
+  * Func: [REG] Support ICBKEY and IFCR1 as ISA rev1.10 (refs #3329)
+  * Func: [REG] Add DBSPC.D4PCB for ISA rev1.10 (refs #3329)
+  * Func: [REG] Add PMCTRL.CND=0x51 for ISA rev1.10 (refs #3329)
+  * Func: [REG] Change PID value as ISA rev1.10 (refs #3329)
+  * Bug: [ICACHE] ICTAGL.LPN[31:25] is fixed to 0 (rvc-ref #57284)
+  * Support: [INST] record SAT bit on satsub/satadd inst for CompRunner (rvc-ref #56002)
+  * Support: Fix PeVec definition (refs #3328)
+  * Support: Fix include for ut of SCHEAP (refs #3328)
+  * Refac: fix unused variables warning (refs #3327)
+  * Refac: fix const warning (refs #3327)
+  * Refac: [SCHEAP] remove unused function (refs #3327)
+  * Refac: fix warnings for comparision between sign and unsign value (refs #3327)
+  * Refac: fix warnings for comparision n >= 0 for unsigned value (refs #3327)
+  * Func: Support python name sent by SV side in CompG4MH (rvc-ref #56574)
+  * Refac: Correct CompG4MH message in case DBINT, DBNMI (rvc-ref #50909)
+  * Refac: Correct CompG4MH message in case EIINT, FEINT, FENMI (rvc-ref #50909)
+  * Func: Add flag in case EIINT table reading to resolve SV side issue (2) (rvc-ref #50909)
+  * Func: Update base address of INTC1, INTC2 as new spec in CompG4MH (rvc-ref #50909)
+  * Refac: Correct CompG4MH message in case EIINT table reading (rvc-ref #50909)
+  * Func: Add flag in case EIINT table reading to resolve SV side issue (rvc-ref #50909)
+  * Func: Update python script to CompG4MH and CForest G4MH (rvc-ref #50384)
+  * Bug: Correct message in case undefined value from SV side in CompG4MH log (rvc-ref #50384)
+  * Bug: Correct condition for break channel in DPI_ExpDBIntNotify in CompG4MH (rvc-ref #50909)
+  * Bug: Correct error number in case Non-blocking commit in CompG4MH log (rvc-ref #50384)
+  * Bug: Fix MPU checking by Cache instructions (rvc-ref #53735)
+  * Func: [IPIR] Add sample test for IPIR.
+  * [MECNT] fix content of the comment.
+  * Func: [IPIR] Add sample test for IPIR's register.
+  * Bug: [Core][REG] ICERR[15].ICHEWY isn't fixed to 0 wrongly (rvc-ref #53748)
+  * Bug: [Core][REG] ICTAGH[15:14].TAGECC isn't fixed to 0 wrongly (rvc-ref #53748)
+  * Bug: [Core][REG]Wrong TSCTRL/PMCTRL.OVF (rvc-ref #53699)
+  * Func: [UTILITY] Update peripheral address (refs #3326)
+  * Support: [PYTHON] Add repeat count for set_event and set_clear_event command (rvc-ref #55858)
+  * Func: [CYCLESIM] Update CS for instructions which update PSW (refs #3324)
+  * Func: [CYCLESIM] update latency info for HW spec 0.08a (refs #3324)
+  * Support: [PYTHON] Add set_base_peid command to change first PEID
+  * Refac: [COMPRUNNER] Correct CompG4MH message in case mismatch (rvc-def #50384)
+  * Func: [COMPRUNNER] Support WAW status in XDump functions in CompG4MH (rvc-def #52470)
+  * Refac: [COMPRUNNER] Modify CompG4MH message for easy reference (rvc-ref #50384)
+  * Func: [COMPRUNNER] Support error count in CompG4MH log (rvc-ref #50384)
+  * Bug: [COMPRUNNER] Correct return value when one element is deleted in CompG4MH (rvc-ref #50384)
+  * Refac: [COMPRUNNER] Arrange print function in CompG4MH (2) (rvc-ref #51445)
+  * Refac: [COMPRUNNER] Arrange print function in CompG4MH (rvc-ref #51445)
+  * Refac: [COMPRUNNER] Change error message for 4-state in SV side in CompG4MH (rvc-ref #51445)
+  * Support: [CMake] Code coverage opion exclude the Windows environment(VS2015).
+  * Func: [CMAKE] Add code coverage function to discover untested parts of CForestG4X. (refs #3321)
+  * Fix typo from Inc to Corp.
+  * Change indent of Changelog
+  * Bug: can't build on VS because conflict DLLEXPORT (refs #3300)
+  * Bug: [INST] load inc/dec with reg1=reg3 wrong reg1 value (rvc-ref #53711)
+  * Func: [COMPRUNNER] merge commit from g3m repo 9875ff7-09b4727 (refs #3282)
+  * Func: [MPU] If MCR.OV=1, other MCR bits are 0 in MPU checking function (rvc-ref #53295)
+  * Func: [INST] update print format of addr on cache and pref inst (refs #3315)
+  * Func: [INST] Don't go to HAL state on debug mode (rvc-ref #53401)
+  * Bug: [INST] PREF and CACHE instruction for Dcahce is shown in log file (refs #3315)
+  * Bug: [INST] RBNR isn't updated wrongly when MDP suppressed (rvc-ref #53487)
+  * Func: [ICACHE] Update LRU on prefi with ICHIT (rvc-ref #53479)
+  * Func: [COMPRUNNER] merge Comprunner commits from g3m repo 599ef9d-45172c6 (refs #3282)
+  * Support: [Samples] Update python script at 7b28f65 in g3m repo
+  * Func: [CORE] Update archdb xls for CLL in g3m repo 0f3706f (refs #3273)
+  * Refac: fix compiler warns in g3m repo 33ca4e2-9249eef
+  * Func: [CORE] Support G4MH ISA spec rev1.00 in g3m repo b3a2771-2cccca5 (refs #3273)
+  * Refac: [FROG] refactoring frog if in g3m repo in g3m repo 9015357-ac2d577 (rvc-ref #52907)
+  * Support: [FROG] create ut for frog if in g3m repo in g3m repo cb4c601-ab17d7e (rvc-refs #45261)
+  * Refac: [CORE][REG] change to english comment to prevent invalid char in g3m repo 39540ab (refs #3306)
+  * Func: [CORE] Support MDP suppress mode in g3m repo c05d000-1908e2d (refs #3306)
+  * Support: [FROG] Update frog if for new trace format in g3m repo 708005c-8a5f4ca
+  * Refac: [TARGETREG] remove include forest.h (refs #3313)
+  * Fix typo from ReqIntByPripheral to ReqIntByPeripheral
+  * [MECNT] Add new test sample for mecnt.
+
+20160301c_scheap / 2016-04-20
+=============================
+  * Bug: [INTC] FEINT is cleared when multiple FEINT are requested (rvc-ref #55379)
+
+20160301b_scheap / 2016-03-29
+=============================
+
+  * Support: [COMMON] Enable define DLLEXPORT in MSVC for SCHEAP (refs #3300)
+  * Bug: [INTC2] EIC.EICT can be modified wrongly (rvc-ref #53818)
+  * Bug: [SCHEAP] NotifyLoadLatency doesn't affect to inc/dec load instructions (refs #3314)
+
+20160301_scheap / 2016-03-01
+============================
+
+  * Bug: [CFORESTG4X] Overwrite the initial value of ICCTRL.ICHEN unexpectedly (refs #3305)
+  * Func: [SCHEAP] Change library from static to shared for scheap (refs #3300)
+  * Func: [SCHEAP] Change include inttype.h in old VS for scheap (refs #3300)
+  * Func: [SCHEAP] Add DLL_EXPORT_IMPORT for scheap (refs #3300)
+  * Func: [PYTHON] Remove EXT_PIN_INT_EXPAND (refs #3300)
+  * Func: [PE] Remove EXT_PIN_INT_EXPAND (refs #3300)
+  * Func: [UTILITY] Remove EXT_PIN_INT_EXPAND (refs #3300)
+  * Func: [PYTHON] Add set_mpudmdp command for EXT_PIN_MDP_DMDP (refs #3300)
+  * Func: [PE] Add EXT_PIN_MDP_DMDP (refs #3300)
+  * Refac: [CSPLUS] change enum name for EXT_PIN_MDP_DMDP (refs #3300)
+  * Func: [UTILITY] change enum name for EXT_PIN_MDP_DMDP (refs #3300)
+
+20160301_csplus / 2016-03-01
+============================
+
+  * Support: [CMAKE] remove link time optimization in debug build (refs #3301)
+  * Refac: [INTC] Remove FNC.FNCT (rvc-ref #51991)
+  * Func: [INTC] Support FIC.FICT (rvc-ref #51991)
+  * Bug: [INTC] Remove duplicated function which cause seg fault (rvc-ref #51990)
+  * Bug: [INTC] Can't cause FENMI (rvc-ref #51829)
+  * Support: [CMAKE] enable link time optimization on VS (refs #3301)
+  * Support: [CSPLUS] select STATIC or SHARED for g++ or VS (refs #3301)
+  * Support: [CSPLUS] change DLL name to CForest_G4x.dll (refs #3301)
+  * Support: [CSPLUS] change .lib to .dll (refs #3301)
+  * Support: [SAMPLES] Update cmake rule for sample_g4mh (refs #3291)
+  * Bug: [UTILITY] Don't use PEG when PEG is disabled (refs #3302)
+  * Support: [SAMPLES] Fix samples (refs #3291)
+  * Support: [SAMPLES] Add samples (refs #3291)
+
+20160217_csplus / 2016-02-17
+============================
+
+  * Support: update VS option for warning (refs #3258)
+  * Bug: fix BOM generating by perl (refs #3293)
+  * Feature: [TRACE] Add the utf8-bom and crlf option to trace_operand_gen.pl. (refs #3253)
+  * Feature: [REG] Add the utf8-bom and crlf option to sreg*_gen.pl. (refs #3253)
+  * Feature: [MICROARCHDB] Add the utf8-bom and crlf option to cedar_arch_info_gen.pl. (refs #3253)
+  * Support: [REG] Remove SESR reg routine (refs #3280)
+  * Support: [TRACE] Support new trace format (refs #3280)
+  * Support: [CSPLUS] Remove updating next_xxx (cont) (refs #3280)
+  * Support: Rmove VM from API (refs #3280)
+  * Bug: [FSBUS] fix memory leak (refs #3280)
+  * Support: [CSPLUS] Remove PAddr (refs #3280)
+  * Support: [REG] Update WR registers (refs #3280)
+  * Support: [REG] Remove VR registers for SIMD (refs #3280)
+  * Support: [CSPLUS] Change STAGE_XXX name (refs #3280)
+  * Support: [CSPLUS] Remove updating next_xxx (refs #3280)
+  * Support: [COMPRUNNER] Update for new API (refs #3280)
+  * Support: [CSPLUS] Update CS+ API (refs #3280)
+  * Support: [CSPLUS] Update Cmake rule for CS+ (refs #3279)
+  * Support: [COMPRUNNER] ignore R32 but compare others (rvc-ref #51089)
+  * Support: [COMPRUNNER] Fix compiler error on xdump (refs #3284)
+  * Support: [COMPRUNNER] Update make rules (refs #3284)
+  * Func: merge commits from g3m repo 6a26471 (refs #3282)
+  * Patch: [CMAKE] Fix CppcheckTargets.cmake. (refs #3268)
+  * Func: [CMAKE] Add cppcheck targets. (refs #3268)
+  * Patch: [CMAKE] Improve the module to the individual targets (refs #3268)
+  * Func: [CMAKE] Add support module for cppcheck. (refs #3268)
+  * Defect: [CYCLESIM] Fix the SCHEAP target build error. (refs #3264)
+  * Patch: [CMAKE] Refactoring the cmake setting. (refs #3257)
+  * Defect: [CMAKE] Reorganize the cpack variables. (refs #3257)
+
+20160201_scheap / 2016-02-01
+============================
+
+  * Refac: change file extension for softfloat-xxx to softfloat-xxx.cpp (refs #3253)
+  * Support: GDB and UART are disabled on MSVC (refs #3253)
+  * Support: Add -wd4100 to ignore unused var warnings on MSVC (refs #3253)
+  * Support: Add -wd4201 to ignore unnamed structure on MSVC (refs #3253)
+  * Support: Remove -Za and -WX option from MSVC (refs #3253)
+  * Func: Disable GDB and UART in MSVC (refs #3253)
+  * Func: Add static link files to build SCHEAP test (refs #3257)
+  * Func: Update make rule for SCHEAP (refs #3257)
+  * Support: Add -m32 option for building SC-HEAP library (refs #3257)
+  * Support: remove -march=native option
+  * Func: change macro and dependency for CFORESTG4X (refs #3257)
+  * Func: copy files from cforest_g3m repo at d30b80c for update INTC
+  * Func: copy files from cforest_g3m repo at d9857e6
+  * Squashed 'Tools/binutils/' content from commit d64450d
+  * Patch: [CMAKE] Fix revision number definition.
+  * Defect: [CMAKE] Modify to bring the search order of the python package to the top. (refs #3256)
+
+20160129 / 2016-01-29
+=====================
+
+  * Feature: [CMAKE] Add the header file of SCHEAP for Cpack.
+  * Patch: [CMAKE] Change how to link the Python library. (refs #3256)
+  * Patch: [CMAKE] Fix version number definition.
+  * Patch: [CMAKE] Change how to define a config file.
+  * Defect: [CMAKE] Repair dependency of source code. (refs #3256)
+
+20160127b / 2016-01-27
+======================
+
+  * Defect: [MECNT] fix include path for the test sample.
+  * Patch: [CMAKE] Add cmake policy CMP0065.
+
+20160127 / 2016-01-27
+=====================
+
+  * Patch: [MECNT] fix test sample.
+  * Patch: [CMAKE] Add definitions for UNIT_TEST & fix enable_testing switch.
+  * Squashed 'Tools/googletest/' changes from 13206d6..82b11b8
+  * Feature: [CMAKE] Enable c++14 option, upgrade cmake from 2.8 to 3.2. (refs #3255)
+  * Patch: [CMAKE] Redefinition of build options.
+  * Patch: [MECNT] Change how to build a target from via library to via the object files for Visual Studio.
+  * Feature: [CMAKE] Add SC_HEAP TARGET.
+  * Defect: [CMAKE] Change the search path from the project name based path to the relative path from the top directory.
+  * Patch: [MECNT] move test sample.
+  * Patch: [CMAKE] changes to the use of findperl.cmake and cmake command.
+  * Patch: The adjustment of the new line & delete comments.
+  * [MECNT] Add test sample.
+  * Change module name from MECONT to MECNT.
+  * Modify cmake option for test.
+  * Add Change log
+  * Squashed 'Tools/git_template/' content from commit 1a02029
+  * Squashed 'Tools/git-extras/' content from commit 642eede
+  * Squashed 'Tools/gitflow/' content from commit 0c6712f
+  * Squashed 'Tools/googletest/' content from commit 13206d6
+
+20160115 / 2016-01-15
+=====================
+
+  * Initial commit.

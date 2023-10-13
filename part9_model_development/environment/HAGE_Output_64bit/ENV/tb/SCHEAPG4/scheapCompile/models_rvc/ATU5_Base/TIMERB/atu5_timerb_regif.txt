@@ -1,0 +1,405 @@
+%MODULE ATU5_TIMERB
+    #                   name            offset_size
+    %%REG_INSTANCE      reg_def         9
+
+%REG_CHANNEL reg_def
+    %%TITLE  group  name        reg_name    wsize       rsize       length  offset  factor_start    factor_end  factor_index    factor_step     access  init        support     callback
+    %%REG    -      TCRB        TCRB        8           8|16|32      8      0x000   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      TIORB       TIORB       8           8|16|32      8      0x002   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      TSRB        TSRB        -           8|16|32     16      0x004   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      TSCRB       TSCRB       8|16        8|16|32     16      0x006   -               -           -               -               W1|R    0x0         TRUE        -
+    %%REG    -      TICRB       TICRB       8           8|16|32      8      0x008   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      TIERB       TIERB       8|16        8|16|32     16      0x00A   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      CHSELBR     CHSELBR     8           8|16|32      8      0x00C   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      TCNT4CRB    TCNT4CRB    8           8|16|32      8      0x00E   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      TCRBS1      TCRBS1      8           8|16|32      8      0x010   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      TCRBS2      TCRBS2      8           8|16|32      8      0x014   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      TCNTB0S1    TCNTB0S1    32          8|16|32     32      0x040   -               -           -               -               W|R     0x1         TRUE        -
+    %%REG    -      ICRB0S1     ICRB0S1     -           8|16|32     32      0x044   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      OCRB0S1     OCRB0S1     32          8|16|32     32      0x048   -               -           -               -               W|R     0xFFFFFFFF  TRUE        -
+    %%REG    -      TCNTB1S1    TCNTB1S1    8           8|16|32      8      0x04C   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      OCRB1S1     OCRB1S1     8           8|16|32      8      0x04E   -               -           -               -               W|R     0xFF        TRUE        -
+    %%REG    -      OCRB10S1    OCRB10S1    8           8|16|32      8      0x050   -               -           -               -               W|R     0xFF        TRUE        -
+    %%REG    -      OCRB11S1    OCRB11S1    8           8|16|32      8      0x052   -               -           -               -               W|R     0xFF        TRUE        -
+    %%REG    -      OCRB12S1    OCRB12S1    8           8|16|32      8      0x054   -               -           -               -               W|R     0xFF        TRUE        -
+    %%REG    -      ICRB1S1     ICRB1S1     -           8|16|32     32      0x058   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      ICRB2S1     ICRB2S1     -           8|16|32     32      0x05C   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      TCNTB0S2    TCNTB0S2    32          8|16|32     32      0x060   -               -           -               -               W|R     0x1         TRUE        -
+    %%REG    -      ICRB0S2     ICRB0S2     -           8|16|32     32      0x064   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      OCRB0S2     OCRB0S2     32          8|16|32     32      0x068   -               -           -               -               W|R     0xFFFFFFFF  TRUE        -
+    %%REG    -      TCNTB1S2    TCNTB1S2    8           8|16|32      8      0x06C   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      OCRB1S2     OCRB1S2     8           8|16|32      8      0x06E   -               -           -               -               W|R     0xFF        TRUE        -
+    %%REG    -      OCRB10S2    OCRB10S2    8           8|16|32      8      0x070   -               -           -               -               W|R     0xFF        TRUE        -
+    %%REG    -      OCRB11S2    OCRB11S2    8           8|16|32      8      0x072   -               -           -               -               W|R     0xFF        TRUE        -
+    %%REG    -      OCRB12S2    OCRB12S2    8           8|16|32      8      0x074   -               -           -               -               W|R     0xFF        TRUE        -
+    %%REG    -      ICRB1S2     ICRB1S2     -           8|16|32     32      0x078   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      ICRB2S2     ICRB2S2     -           8|16|32     32      0x07C   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      TCNTB0      TCNTB0      32          8|16|32     32      0x080   -               -           -               -               W|R     0x1         TRUE        -
+    %%REG    -      ICRB0       ICRB0       -           8|16|32     32      0x084   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      RECRB       RECRB       32          8|16|32     32      0x088   1               6           -               0x4             W|R     0x0         TRUE        -
+    %%REG    -      RBURB       RBURB       32          8|16|32     32      0x0A0   0               6           -               0x4             W|R     0x0         TRUE        -
+    %%REG    -      OCRB0       OCRB0       32          8|16|32     32      0x0BC   -               -           -               -               W|R     0xFFFFFFFF  TRUE        -
+    %%REG    -      MIICRB0     MIICRB0     -           8|16|32     32      0x0C0   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      TCNTB1      TCNTB1      8           8|16|32      8      0x0C4   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      OCRB1       OCRB1       8           8|16|32      8      0x0C6   -               -           -               -               W|R     0xFF        TRUE        -
+    %%REG    -      OCRB10      OCRB10      8           8|16|32      8      0x0C8   -               -           -               -               W|R     0xFF        TRUE        -
+    %%REG    -      OCRB11      OCRB11      8           8|16|32      8      0x0CA   -               -           -               -               W|R     0xFF        TRUE        -
+    %%REG    -      OCRB12      OCRB12      8           8|16|32      8      0x0CC   -               -           -               -               W|R     0xFF        TRUE        -
+    %%REG    -      ICRB1       ICRB1       -           8|16|32     32      0x0D0   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      ICRB2       ICRB2       -           8|16|32     32      0x0D4   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      ICRB        ICRB        -           8|16|32      8      0x0D8   30              37          -               0x1             R       0x0         TRUE        -
+    %%REG    -      OCRB        OCRB        8           8|16|32      8      0x0E0   20              43          -               0x1             W|R     0xFF        TRUE        -
+    %%REG    -      LDB         LDB         32          8|16|32     32      0x100   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      RLDB        RLDB        32          8|16|32     32      0x104   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      TCNTB2      TCNTB2      32          8|16|32     32      0x108   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      PIMR1       PIMR1       16          8|16|32     16      0x10C   -               -           -               -               W|R     0x1         TRUE        -
+    %%REG    -      PIMR2       PIMR2       16          8|16|32     16      0x10E   -               -           -               -               W|R     0x1         TRUE        -
+    %%REG    -      TCNTB6      TCNTB6      32          8|16|32     32      0x110   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      ICRB6       ICRB6       -           8|16|32     32      0x114   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      RARB6       RARB6       8           8|16|32      8      0x118   -               -           -               -               W|R     0x40        TRUE        -
+    %%REG    -      TCNTB6M     TCNTB6M     32          8|16|32     32      0x11C   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      OCRB6       OCRB6       32          8|16|32     32      0x120   -               -           -               -               W|R     0xFFFFF000  TRUE        -
+    %%REG    -      OCRB7       OCRB7       32          8|16|32     32      0x124   -               -           -               -               W|R     0xFFFFF000  TRUE        -
+    %%REG    -      TSEQCRB     TSEQCRB     8           8|16|32      8      0x140   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      TSEQRB      TSEQRB      -           8|16|32      8      0x142   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      TSEQENB     TSEQENB     8           8|16|32      8      0x144   0               2           -               0x1             W|R     0x0         TRUE        -
+    %%REG    -      TEPCFB      TEPCFB      16          8|16|32     16      0x148   0               23          -               0x2             W|R     0x300       TRUE        -
+    %%REG    -      TEPCFENB    TEPCFENB    8           8|16|32      8      0x178   0               2           -               0x1             W|R     0x0         TRUE        -
+    %%REG    -      TCNTB3      TCNTB3      32          8|16|32     32      0x180   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      TCNTB4      TCNTB4      32          8|16|32     32      0x184   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      TCNTB5      TCNTB5      32          8|16|32     32      0x188   -               -           -               -               W|R     0x1000      TRUE        -
+    %%REG    -      TCCLFRB     TCCLFRB     -           8|16|32      8      0x18C   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      TCCLRB      TCCLRB      32          8|16|32     32      0x190   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      OCRB8       OCRB8       32          8|16|32     32      0x194   -               -           -               -               W|R     0xFFFFF000  TRUE        -
+    %%REG    -      DICRB0      DICRB0      -           8|16|32     32      0x1C0   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      DRECRB1     DRECRB1     32          8|16|32     32      0x1C4   -               -           -               -               W|R     0x0         TRUE        -
+    %%REG    -      TEPCRECRB1  TEPCRECRB1  -           8|16|32     32      0x1C8   -               -           -               -               R       0x0         TRUE        -
+    %%REG    -      TEPCVALRB0  TEPCVALRB0  -           8|16|32     32      0x1CC   -               -           -               -               R       0x0         TRUE        -
+
+
+%REG_NAME TCRB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CKSELB            1      0     0x0             W|R     TRUE        W
+    %%BIT    CLRB1SEL          2      2     0x0             W|R     TRUE        -
+    %%BIT    CLRB3SEL          4      3     0x0             W|R     TRUE        -
+    %%BIT    CLRB1             5      5     0x0             W|R     TRUE        -
+    %%BIT    CLRB3             6      6     0x0             W|R     TRUE        -
+    %%BIT    PIMRSEL           7      7     0x0             W|R     TRUE        -
+
+%REG_NAME TIORB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    IOB6              0      0     0x0             W|R     TRUE        -
+    %%BIT    CCS               3      3     0x0             W|R     TRUE        -
+    %%BIT    LDEN              4      4     0x0             W|R     TRUE        -
+    %%BIT    EVCNTB            5      5     0x0             W|R     TRUE        -
+    %%BIT    CTCNTB5           6      6     0x0             W|R     TRUE        -
+    %%BIT    LDSEL             7      7     0x0             W|R     TRUE        W
+
+%REG_NAME TSRB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CMFB0             0      0     0x0             R       TRUE        -
+    %%BIT    ICFB0             1      1     0x0             R       TRUE        -
+    %%BIT    CMFB1             2      2     0x0             R       TRUE        -
+    %%BIT    CMFB6             3      3     0x0             R       TRUE        -
+    %%BIT    CMFB10            4      4     0x0             R       TRUE        -
+    %%BIT    CMFB11            5      5     0x0             R       TRUE        -
+    %%BIT    CMFB12            6      6     0x0             R       TRUE        -
+    %%BIT    CMFB6M            8      8     0x0             R       TRUE        -
+    %%BIT    CMFB6E            9      9     0x0             R       TRUE        -
+
+%REG_NAME TSCRB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CMFCB0            0      0     0x0             W1|R    TRUE        W
+    %%BIT    ICFCB0            1      1     0x0             W1|R    TRUE        -
+    %%BIT    CMFCB1            2      2     0x0             W1|R    TRUE        -
+    %%BIT    CMFCB6            3      3     0x0             W1|R    TRUE        -
+    %%BIT    CMFCB10           4      4     0x0             W1|R    TRUE        -
+    %%BIT    CMFCB11           5      5     0x0             W1|R    TRUE        -
+    %%BIT    CMFCB12           6      6     0x0             W1|R    TRUE        -
+    %%BIT    CMFCB6M           8      8     0x0             W1|R    TRUE        -
+    %%BIT    CMFCB6E           9      9     0x0             W1|R    TRUE        -
+
+%REG_NAME TICRB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    IREGB6            1      0     0x0             W|R     TRUE        W
+    %%BIT    IREGB6E           3      2     0x0             W|R     TRUE        -
+
+%REG_NAME TIERB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CMFB0IE           0      0     0x0             W|R     TRUE        -
+    %%BIT    ICFB0IE           1      1     0x0             W|R     TRUE        -
+    %%BIT    CMFB1IE           2      2     0x0             W|R     TRUE        -
+    %%BIT    CMFB6IE           3      3     0x0             W|R     TRUE        -
+    %%BIT    CMFB10IE          4      4     0x0             W|R     TRUE        -
+    %%BIT    CMFB11IE          5      5     0x0             W|R     TRUE        -
+    %%BIT    CMFB12IE          6      6     0x0             W|R     TRUE        -
+    %%BIT    CMFB6MIE          8      8     0x0             W|R     TRUE        -
+    %%BIT    CMFB6EIE          9      9     0x0             W|R     TRUE        -
+
+%REG_NAME CHSELBR
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CHSELB            1      0     0x0             W|R     TRUE        -
+    
+%REG_NAME TCNT4CRB    
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CU4SEL            0      0     0x0             W|R     TRUE        -
+
+%REG_NAME TCRBS1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CLRB1SELS1        2      2     0x0             W|R     TRUE        -
+    %%BIT    CLRB1S1           5      5     0x0             W|R     TRUE        -
+
+%REG_NAME TCRBS2
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CLRB1SELS2        2      2     0x0             W|R     TRUE        -
+    %%BIT    CLRB1S2           5      5     0x0             W|R     TRUE        -
+
+%REG_NAME TCNTB0S1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CNTB0S1          31      0     0x1             W|R     TRUE        W
+
+%REG_NAME ICRB0S1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    ICB0S1           31      0     0x0             R       TRUE        -
+
+%REG_NAME OCRB0S1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB0S1           31      0     0xFFFFFFFF      W|R     TRUE        W
+
+%REG_NAME TCNTB1S1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CNTB1S1           7      0     0x0             W|R     TRUE        -
+
+%REG_NAME OCRB1S1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB1S1            7      0     0xFF            W|R     TRUE        -
+
+%REG_NAME OCRB10S1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB10S1           7      0     0xFF            W|R     TRUE        -
+
+%REG_NAME OCRB11S1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB11S1           7      0     0xFF            W|R     TRUE        -
+
+%REG_NAME OCRB12S1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB12S1           7      0     0xFF            W|R     TRUE        -
+
+%REG_NAME ICRB1S1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    ICB1S1           31      0     0x0             R       TRUE        -
+
+%REG_NAME ICRB2S1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    ICB2S1           31      0     0x0             R       TRUE        -
+
+%REG_NAME TCNTB0S2
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CNTB0S2          31      0     0x1             W|R     TRUE        W
+
+%REG_NAME ICRB0S2
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    ICB0S2           31      0     0x0             R       TRUE        -
+
+%REG_NAME OCRB0S2
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB0S2           31      0     0xFFFFFFFF      W|R     TRUE        W
+
+%REG_NAME TCNTB1S2
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CNTB1S2           7      0     0x0             W|R     TRUE        -
+
+%REG_NAME OCRB1S2
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB1S2            7      0     0xFF            W|R     TRUE        -
+
+%REG_NAME OCRB10S2
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB10S2           7      0     0xFF            W|R     TRUE        -
+
+%REG_NAME OCRB11S2
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB11S2           7      0     0xFF            W|R     TRUE        -
+
+%REG_NAME OCRB12S2
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB12S2           7      0     0xFF            W|R     TRUE        -
+
+%REG_NAME ICRB1S1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    ICB1S2           31      0     0x0             R       TRUE        -
+
+%REG_NAME ICRB2S1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    ICB2S2           31      0     0x0             R       TRUE        -
+
+%REG_NAME TCNTB0
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CNTB0            31      0     0x1             W|R     TRUE        W
+
+%REG_NAME ICRB0
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    ICB0             31      0     0x0             R       TRUE        -
+
+%REG_NAME RECRB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    RECRB            31      0     0x0             W|R     TRUE        -
+
+%REG_NAME RBURB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    RBURB            31      0     0x0             W|R     TRUE        -
+
+%REG_NAME OCRB0
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB0             31      0     0xFFFFFFFF      W|R     TRUE        W
+
+%REG_NAME MIICRB0
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    ICB0             31      0     0x0             R       TRUE        -
+
+%REG_NAME TCNTB1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CNTB1             7      0     0x0             W|R     TRUE        -
+
+%REG_NAME OCRB1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB1              7      0     0xFF            W|R     TRUE        -
+
+%REG_NAME OCRB10
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB10             7      0     0xFF            W|R     TRUE        -
+
+%REG_NAME OCRB11
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB11             7      0     0xFF            W|R     TRUE        -
+
+%REG_NAME OCRB12
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB12             7      0     0xFF            W|R     TRUE        -
+
+%REG_NAME ICRB1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    ICB1             31      0     0x0             R       TRUE        -
+
+%REG_NAME ICRB2
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    ICB2             31      0     0x0             R       TRUE        -
+
+%REG_NAME ICRB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    ICB               7      0     0x0             R       TRUE        -
+
+%REG_NAME OCRB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB               7      0     0xFF            W|R     TRUE        W
+
+%REG_NAME LDB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    LDVAL            23      0     0x0             W|R     TRUE        -
+
+%REG_NAME RLDB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    RLDVAL           31      8     0x0             W|R     TRUE        -
+
+%REG_NAME TCNTB2
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CNTB2            31      8     0x0             W|R     TRUE        W|R
+
+%REG_NAME PIMR1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    PIM1             11      0     0x1             W|R     TRUE        W
+
+%REG_NAME PIMR2
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    PIM2             11      0     0x1             W|R     TRUE        -
+
+%REG_NAME TCNTB6
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CNTB6            31     12     0x0             W|R     TRUE        -
+
+%REG_NAME ICRB6
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    ICB6             31     12     0x0             R       TRUE        -
+
+%REG_NAME RARB6
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    RARB6             7      0     0x40            W|R     TRUE        -
+
+%REG_NAME TCNTB6M
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CNTB6M           31      6     0x0             W|R     TRUE        -
+
+%REG_NAME OCRB6
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB6             31     12     0xFFFFF         W|R     TRUE        -
+
+%REG_NAME OCRB7
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB7             31     12     0xFFFFF         W|R     TRUE        -
+
+%REG_NAME TSEQCRB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    EVSEQENB          0      0     0x0             W|R     TRUE        W
+
+%REG_NAME TSEQRB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    SEQB              4      0     0x0             R       TRUE        -
+    %%BIT    FONS              7      7     0x0             R       TRUE        -
+
+%REG_NAME TSEQENB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    TSEQNENB          7      0     0x0             W|R     TRUE        -
+
+%REG_NAME TEPCFB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CRFIT2            2      0     0x0             W|R     TRUE        W
+    %%BIT    CRFIT1            6      4     0x0             W|R     TRUE        -
+    %%BIT    COEFF            10      8     0x3             W|R     TRUE        -
+    %%BIT    HALFEN           12     12     0x0             W|R     TRUE        -
+
+%REG_NAME TEPCFENB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    FON               7      0     0x0             W|R     TRUE        -
+
+%REG_NAME TCNTB3
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CNTB3            31     12     0x0             W|R     TRUE        -
+
+%REG_NAME TCNTB4
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CNTB4            31     12     0x0             W|R     TRUE        W
+
+%REG_NAME TCNTB5
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CNTB5            31     12     0x1             W|R     TRUE        W|R
+
+%REG_NAME TCCLFRB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    TCCLFB            0      0     0x0             R       TRUE        -
+
+%REG_NAME TCCLRB
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    CCLRB            31     12     0x0             W|R     TRUE        W
+
+%REG_NAME OCRB8
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    OCB8             31     12     0xFFFFF         W|R     TRUE        -
+
+%REG_NAME DICRB0
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    ICB0             31      0     0x0             R       TRUE        -
+
+%REG_NAME DRECRB1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    RECRB1           31      0     0x0             W|R     TRUE        -
+
+%REG_NAME TEPCRECRB1
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    TEPCRECRB1       31      0     0x0             R       TRUE        -
+
+%REG_NAME TEPCVALRB0
+    %%TITLE  name             upper  lower  init            access  support     callback
+    %%BIT    TEPCVALRB0       31      0     0x0             R       TRUE        -
+
+

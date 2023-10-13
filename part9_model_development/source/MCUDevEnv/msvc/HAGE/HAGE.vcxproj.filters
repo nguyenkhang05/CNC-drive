@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Gtest">
+      <UniqueIdentifier>{0cfd8cf9-7d0c-4041-86ca-dadf449ab431}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{f34402d3-2d00-41cd-a545-e602f0d5e0ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestSuite">
+      <UniqueIdentifier>{a192a1c9-f770-42e2-8d7b-49759b77969b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestENV">
+      <UniqueIdentifier>{939e917b-1c02-4399-950c-f1f85e99e2dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{91bee7fb-099e-4232-838a-582ad7c13bf5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestSuite\PythonTest">
+      <UniqueIdentifier>{31babbe4-df1b-49bf-9430-8222c8c6d5a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestENV\NSMVRH850LITE">
+      <UniqueIdentifier>{0a2ec18d-3825-4f55-b7af-d41642fd8ced}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestENV\NSMVG4SSLITE">
+      <UniqueIdentifier>{52d96c47-14ac-40ab-b7fe-0882fd44b839}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestENV\HAGE">
+      <UniqueIdentifier>{0a3c66c7-1af2-4df5-94eb-c97ea54baa95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestENV\HAGE\DummyMaster">
+      <UniqueIdentifier>{666fdf09-8aea-40a0-8368-330f95f84b97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TestENV\HAGE\DummyPeripheral">
+      <UniqueIdentifier>{ac0f93d7-6444-4302-81ab-53c271ce460a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Models\HAGE">
+      <UniqueIdentifier>{3aee2795-a3c7-4444-be1f-454a6d59bd42}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\gtest\src\gtest_main.cc">
+      <Filter>Gtest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gtest\src\gtest-all.cc">
+      <Filter>Gtest</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\TestENV\src\BV_TestENV.cpp">
+      <Filter>TestENV</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\TestENV\src\ShPythonAPI.cpp">
+      <Filter>TestENV</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\test\UT_Top\UT_Top.cpp">
+      <Filter>TestENV\HAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\TestENV\src\NSMVRH850LITE\NSMVRH850LITE.cpp">
+      <Filter>TestENV\NSMVRH850LITE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\TestENV\src\NSMVRH850LITE\pltfrmGND.cpp">
+      <Filter>TestENV\NSMVRH850LITE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\TestENV\src\NSMVG4SSLITE\NSMVG4SSLITE.cpp">
+      <Filter>TestENV\NSMVG4SSLITE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models\APISS\APISS.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models\common\CmErrMsg.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\COMMON_RVC\re_register.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\COMMON_RVC\rvc_common_model.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\DummyMasterRvc.cpp">
+      <Filter>TestENV\HAGE\DummyMaster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\DummyMasterRvc_Func.cpp">
+      <Filter>TestENV\HAGE\DummyMaster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\dummymasterrvc_regif.cpp">
+      <Filter>TestENV\HAGE\DummyMaster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\PY_DummyMasterRvc.cpp">
+      <Filter>TestENV\HAGE\DummyMaster</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\DummyPeripheralRvc.cpp">
+      <Filter>TestENV\HAGE\DummyPeripheral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\DummyPeripheralRvc_Func.cpp">
+      <Filter>TestENV\HAGE\DummyPeripheral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\dummyperipheralrvc_regif.cpp">
+      <Filter>TestENV\HAGE\DummyPeripheral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\PY_DummyPeripheralRvc.cpp">
+      <Filter>TestENV\HAGE\DummyPeripheral</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models\VCI2APB\VCI2APB.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models\VCI2APB\VCI2APB_core.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\HAGE\HAGE.cpp">
+      <Filter>Models\HAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\HAGE\HAGE_Func.cpp">
+      <Filter>Models\HAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\HAGE\hage_regif.cpp">
+      <Filter>Models\HAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\HAGE\PY_HAGE.cpp">
+      <Filter>Models\HAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryRVC.cpp">
+      <Filter>TestENV\HAGE\DummyPeripheral</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\TestENV\src\BV_TestENV.h">
+      <Filter>TestENV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\TestENV\src\ShPythonAPI.h">
+      <Filter>TestENV</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\test\UT_Top\UT_Python_Load.h">
+      <Filter>TestENV\HAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\test\UT_Top\UT_Top.h">
+      <Filter>TestENV\HAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\TestENV\src\NSMVRH850LITE\NSMVRH850LITE.h">
+      <Filter>TestENV\NSMVRH850LITE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\TestENV\src\NSMVG4SSLITE\NSMVG4SSLITE.h">
+      <Filter>TestENV\NSMVG4SSLITE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\DummyMasterRvc.h">
+      <Filter>TestENV\HAGE\DummyMaster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\DummyMasterRvc_Base.h">
+      <Filter>TestENV\HAGE\DummyMaster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\DummyMasterRvc_Func.h">
+      <Filter>TestENV\HAGE\DummyMaster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\dummymasterrvc_regif.h">
+      <Filter>TestENV\HAGE\DummyMaster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\iodefine_dummymasterrvc.h">
+      <Filter>TestENV\HAGE\DummyMaster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC\PY_DummyMasterRvc.h">
+      <Filter>TestENV\HAGE\DummyMaster</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\DummyPeripheralRvc.h">
+      <Filter>TestENV\HAGE\DummyPeripheral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\DummyPeripheralRvc_Base.h">
+      <Filter>TestENV\HAGE\DummyPeripheral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\DummyPeripheralRvc_Func.h">
+      <Filter>TestENV\HAGE\DummyPeripheral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\dummyperipheralrvc_regif.h">
+      <Filter>TestENV\HAGE\DummyPeripheral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\iodefine_dummyperipheralrvc.h">
+      <Filter>TestENV\HAGE\DummyPeripheral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\environment\HAGE_Output_64bit\ENV\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC\PY_DummyPeripheralRvc.h">
+      <Filter>TestENV\HAGE\DummyPeripheral</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\HAGE\HAGE.h">
+      <Filter>Models\HAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\HAGE\HAGE_AgentController.h">
+      <Filter>Models\HAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\HAGE\HAGE_Func.h">
+      <Filter>Models\HAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\HAGE\hage_regif.h">
+      <Filter>Models\HAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\HAGE\PY_HAGE.h">
+      <Filter>Models\HAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\HAGE\iodefine_hage.h">
+      <Filter>Models\HAGE</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryRVC.h">
+      <Filter>TestENV\HAGE\DummyPeripheral</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\test\PythonTest\iodef.py">
+      <Filter>TestSuite\PythonTest</Filter>
+    </None>
+    <None Include="..\..\..\test\PythonTest\simmode.py">
+      <Filter>TestSuite\PythonTest</Filter>
+    </None>
+    <None Include="..\..\..\test\PythonTest\test_script.py">
+      <Filter>TestSuite\PythonTest</Filter>
+    </None>
+    <None Include="..\..\..\test\BUS.map">
+      <Filter>TestENV\HAGE</Filter>
+    </None>
+    <None Include="..\..\..\test\config.cfg">
+      <Filter>TestENV\HAGE</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\HAGE\hage_regif.txt">
+      <Filter>Models\HAGE</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

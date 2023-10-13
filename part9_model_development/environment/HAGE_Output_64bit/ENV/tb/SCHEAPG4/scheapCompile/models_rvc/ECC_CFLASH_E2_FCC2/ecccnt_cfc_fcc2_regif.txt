@@ -1,0 +1,15 @@
+%MODULE ecccnt_cfc_fcc2
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  7 
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name                           reg_name                     wsize   rsize        length  offset  factor_start    factor_end  factor_index    factor_step access   init   support  callback
+    %%REG      CFCECCCTL                      CFCECCCTL                    8|16|32 8|16|32      32      0x00    -               -           -               -           R|W      0x0     TRUE     -
+    
+%REG_NAME CFCECCCTL                                                            
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    BLANKMASKENABLE    24       24     0       R|W     TRUE        W	
+    %%BIT    APEDIS             2        2      0       R|W     TRUE        W
+    %%BIT    SECDIS             1        1      0       R|W     TRUE        -
+    %%BIT    ECCDIS             0        0      0       R|W     TRUE        W
+

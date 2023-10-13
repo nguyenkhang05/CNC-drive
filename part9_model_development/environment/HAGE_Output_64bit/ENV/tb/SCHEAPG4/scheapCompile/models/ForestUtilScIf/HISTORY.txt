@@ -1,0 +1,13 @@
+ForestUtilScIf HISTORY
+--------------------------------------------------------
+<2018.11.8>
+
+SVN version
+  Rev.154
+
+File
+  Makefile 
+    L60	   	: Add the include path "-I$(MODEL_CFOREST_PATH)/COMMON/include/" for config.h
+  msvc140/ForestUtilScIf.vcxproj
+    L122, 151  	: Add the include path "$(SCHEAP_HOME)\scheapCompile\models\iss\cforestg4x\Device\COMMON\include;" for config.h
+--------------------------------------------------------

@@ -1,0 +1,69 @@
+ %MODULE ECC
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  6
+
+%REG_CHANNEL reg_def
+    %%TITLE   name       reg_name    wsize     rsize     length   offset  factor_start  factor_end  access   init   support   callback
+    %%REG     EC710CTL   EC710CTL    32|16|8   8|16|32   32       0x00         -            -       R|W      0x10   TRUE      -
+    %%REG     EC710TMC   EC710TMC    32|16|8   8|16|32   16       0x04         -            -       R|W      0      TRUE      -
+    %%REG     EC710TRC   EC710TRC    32        8|16|32   32       0x08         -            -       R|W      0      TRUE      -
+    %%REG     EC710TED   EC710TED    32        8|16|32   32       0x0C         -            -       R|W      0      TRUE      -
+    %%REG     EC710EAD   EC710EAD    32        8|16|32   32       0x10         0            7       R        0      TRUE      -
+
+%REG_NAME EC710CTL
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    ECDEDF7        31     31     0     R       TRUE     -
+    %%BIT    ECSEDF7        30     30     0     R       TRUE     -
+    %%BIT    ECDEDF6        29     29     0     R       TRUE     -
+    %%BIT    ECSEDF6        28     28     0     R       TRUE     -
+    %%BIT    ECDEDF5        27     27     0     R       TRUE     -
+    %%BIT    ECSEDF5        26     26     0     R       TRUE     -
+    %%BIT    ECDEDF4        25     25     0     R       TRUE     -
+    %%BIT    ECSEDF4        24     24     0     R       TRUE     -
+    %%BIT    ECDEDF3        23     23     0     R       TRUE     -
+    %%BIT    ECSEDF3        22     22     0     R       TRUE     -
+    %%BIT    ECDEDF2        21     21     0     R       TRUE     -
+    %%BIT    ECSEDF2        20     20     0     R       TRUE     -
+    %%BIT    ECDEDF1        19     19     0     R       TRUE     -
+    %%BIT    ECSEDF1        18     18     0     R       TRUE     -
+    %%BIT    ECDEDF0        17     17     0     R       TRUE     -
+    %%BIT    ECSEDF0        16     16     0     R       TRUE     -
+    %%BIT    EMCA1          15     15     0     R|W     TRUE     R|W
+    %%BIT    EMCA0          14     14     0     R|W     TRUE     -
+    %%BIT    ECOVFF         11     11     0     R       TRUE     -
+    %%BIT    ECER2C         10     10     0     R|W     TRUE     -
+    %%BIT    ECER1C         9      9      0     R|W     TRUE     -
+    %%BIT    ECTHM          7      7      0     R|W     FALSE    -
+    %%BIT    ECERVF         6      6      0     R|W     TRUE     -
+    %%BIT    EC1ECP         5      5      0     R|W     FALSE    -
+    %%BIT    EC2EDIC        4      4      1     R|W     TRUE     -
+    %%BIT    EC1EDIC        3      3      0     R|W     TRUE     -
+    %%BIT    ECER2F         2      2      0     R       TRUE     -
+    %%BIT    ECER1F         1      1      0     R       TRUE     -
+    %%BIT    ECEMF          0      0      0     R|W     FALSE    -
+
+%REG_NAME EC710TMC
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    ETMA1          15     15     0     R|W     TRUE     R|W
+    %%BIT    ETMA0          14     14     0     R|W     TRUE     -
+    %%BIT    ECTMCE         7      7      0     R|W     TRUE     -
+    %%BIT    ECTRRS         4      4      0     R|W     TRUE     -
+    %%BIT    ECREOS         3      3      0     R|W     FALSE    -
+    %%BIT    ECENS          2      2      0     R|W     FALSE    -
+    %%BIT    ECDCS          1      1      0     R|W     FALSE    -
+    %%BIT    ECREIS         0      0      0     R|W     FALSE    -
+
+%REG_NAME EC710TED
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    ECEDB          31     0      0     R|W     TRUE     R|W
+
+%REG_NAME EC710TRC
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    ECSYND         30     24     0     R       TRUE     -
+    %%BIT    ECHORD         22     16     0     R       TRUE     -
+    %%BIT    ECECRD         14     8      0     R       TRUE     -
+    %%BIT    ECERDB         6      0      0     R|W     TRUE     R|W
+
+%REG_NAME EC710EAD
+    %%TITLE  name           upper  lower  init  access  support  callback
+    %%BIT    ECEAD          30     0      0     R       TRUE     -

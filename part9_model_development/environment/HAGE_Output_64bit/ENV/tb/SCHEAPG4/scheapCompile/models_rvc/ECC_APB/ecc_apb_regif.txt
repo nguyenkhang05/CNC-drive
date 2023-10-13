@@ -1,0 +1,43 @@
+%MODULE ecc_apb
+    #              name     offset_size
+    %%REG_INSTANCE reg_def  8 
+
+%REG_CHANNEL reg_def                                                       
+    %%TITLE    name        reg_name      wsize   rsize      length offset   access   init   support  callback
+    %%REG      ECCCTL      ECCCTL          16|32 8|16|32    32     0x00     R|W      0x0     TRUE     -
+    %%REG      ERRINT      ERRINT        8|16|32 8|16|32    32     0x04     R|W      0x33    TRUE     -
+    %%REG      ERSTCLR     ERSTCLR       8|16|32 8|16|32    32     0x08     R|W      0x0     TRUE     -
+    %%REG      OVFSTR      OVFSTR              - 8|16|32    32     0x0C     R        0x0     TRUE     -
+    %%REG      ERSTR       ERSTR               - 8|16|32    32     0x10     R        0x0     TRUE     -
+    %%REG      EADR        EADR                - 8|16|32    32     0x50     R        0x0     TRUE     -
+
+    
+%REG_NAME ECCCTL
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    PROT               15      14      0       R|W     TRUE        W
+    %%BIT    ASECDIS            3       3       0       R|W     TRUE        -
+    %%BIT    AECCDIS            2       2       0       R|W     TRUE        -
+    %%BIT    SECDIS             1       1       0       R|W     TRUE        -
+    %%BIT    ECCDIS             0       0       0       R|W     TRUE        -
+
+%REG_NAME ERRINT
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    ADEDIE             5       5       1       R|W     TRUE        -
+    %%BIT    ASEDIE             4       4       1       R|W     TRUE        -
+    %%BIT    DEDIE              1       1       1       R|W     TRUE        -
+    %%BIT    SEDIE              0       0       1       R|W     TRUE        -
+
+%REG_NAME ERSTCLR
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    SSTCLR             0       0       0       R|W     TRUE        W
+
+%REG_NAME OVFSTR
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    ERROVF             0       0       0       R       TRUE        -
+
+%REG_NAME ERSTR
+    %%TITLE  name               upper   lower   init    access  support     callback
+    %%BIT    ADEDF              7       7       0       R       TRUE        -
+    %%BIT    ASEDF              6       6       0       R       TRUE        -
+    %%BIT    DEDF               1       1       0       R       TRUE        -
+    %%BIT    SEDF               0       0       0       R       TRUE        -

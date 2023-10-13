@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros">
+    <SCHEAP_SYSTEMC_HOME>C:\Users\khang.duong-nguyen\Downloads\utilities-master\common\appl\systemc\systemc-2.3.1a_MOD_vc140_64bit</SCHEAP_SYSTEMC_HOME>
+    <SCHEAP_PYTHON_HOME>C:\Users\khang.duong-nguyen\Downloads\utilities-master\common\appl\python\Python2.7.3_w10_msvc140</SCHEAP_PYTHON_HOME>
+    <SCHEAP_GTEST_HOME>C:\Users\khang.duong-nguyen\Downloads\googletest</SCHEAP_GTEST_HOME>
+    <SCHEAP_HOME>C:\Users\khang.duong-nguyen\Documents\Newcomer\Input\mcu_training\part9_model_development\environment\HAGE_Output_64bit\ENV</SCHEAP_HOME>
+    <CONFIG_FILE>C:\Users\khang.duong-nguyen\Documents\Newcomer\Input\mcu_training\part9_model_development\source\test\config.cfg</CONFIG_FILE>
+    <PYTHON_TEST_HOME>C:\Users\khang.duong-nguyen\Documents\Newcomer\Input\mcu_training\part9_model_development\source\test\PythonTest</PYTHON_TEST_HOME>
+  </PropertyGroup>
+  <PropertyGroup>
+    <IncludePath>$(SCHEAP_SYSTEMC_HOME)\src;$(SCHEAP_PYTHON_HOME)\Include;$(SCHEAP_GTEST_HOME)\googletest;$(SCHEAP_GTEST_HOME)\googletest\include;..\..\TestENV\src;..\..\TestENV\src\NSMVG4SSLITE;..\..\TestENV\src\NSMVRH850LITE;$(SCHEAP_HOME)\tb\SCHEAPG4\scheapCompile\models_rvc\COMMON_RVC;$(SCHEAP_HOME)\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_MASTER_RVC;$(SCHEAP_HOME)\tb\SCHEAPG4\scheapCompile\models_rvc\DUMMY_PERIPHERAL_RVC;$(SCHEAP_HOME)\tb\SCHEAPG4\scheapCompile\models\common;$(SCHEAP_HOME)\tb\SCHEAPG4\scheapCompile\models\common_bus;$(SCHEAP_HOME)\tb\SCHEAPG4\scheapCompile\models\APISS;$(SCHEAP_HOME)\tb\SCHEAPG4\scheapCompile\models\VCI2APB;$(SCHEAP_HOME)\tb\SCHEAPG4\scheapCompile\models\NSMVG4CPUV01;$(IncludePath)</IncludePath>
+    <_PropertySheetDisplayName>UserSetting</_PropertySheetDisplayName>
+    <LibraryPath>C:\Users\khang.duong-nguyen\Downloads\googletest\build\lib\Debug;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>gtest.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="SCHEAP_SYSTEMC_HOME">
+      <Value>$(SCHEAP_SYSTEMC_HOME)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SCHEAP_PYTHON_HOME">
+      <Value>$(SCHEAP_PYTHON_HOME)</Value>
+      <EnvironmentVariable>true</EnvironmentVariable>
+    </BuildMacro>
+    <BuildMacro Include="SCHEAP_GTEST_HOME">
+      <Value>$(SCHEAP_GTEST_HOME)</Value>
+    </BuildMacro>
+    <BuildMacro Include="SCHEAP_HOME">
+      <Value>$(SCHEAP_HOME)</Value>
+    </BuildMacro>
+    <BuildMacro Include="CONFIG_FILE">
+      <Value>$(CONFIG_FILE)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PYTHON_TEST_HOME">
+      <Value>$(PYTHON_TEST_HOME)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

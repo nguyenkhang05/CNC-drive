@@ -1,0 +1,3 @@
+[submodule "Device/Core/INST/test/data"]
+	path = Device/Core/INST/test/data
+	url = https://cpusys.mu.renesas.com/git/cforest/softfloat_ut_data.git
